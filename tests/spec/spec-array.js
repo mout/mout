@@ -59,6 +59,28 @@ define(['src/array'], function(arrayUtils){
                 expect( idx(arr, 'foo', 4) ).toEqual( -1 );
             });
 
+            it('should handle negative fromIndex', function(){
+                var arr = [1, 'a', 2, 'b'];
+
+                expect( idx(arr, 1, -2) ).toEqual( -1 );
+                expect( idx(arr, 'a', -2) ).toEqual( -1 );
+                expect( idx(arr, 2, -2) ).toEqual( 2 );
+                expect( idx(arr, 'b', -2) ).toEqual( 3 );
+
+                expect( idx(arr, 'foo', -2) ).toEqual( -1 );
+            });
+
+            it('should handle fromIndex greater than length', function(){
+                var arr = [1, 'a', 2, 'b'];
+
+                expect( idx(arr, 1, 15) ).toEqual( -1 );
+                expect( idx(arr, 'a', 15) ).toEqual( -1 );
+                expect( idx(arr, 2, 15) ).toEqual( -1 );
+                expect( idx(arr, 'b', 15) ).toEqual( -1 );
+
+                expect( idx(arr, 'foo', 15) ).toEqual( -1 );
+            });
+
         });
 
         describe('remove()', function(){

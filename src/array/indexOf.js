@@ -12,7 +12,9 @@ define(function(){
         if(_idxOf && arr.indexOf === _idxOf){
             return arr.indexOf(item, fromIndex);
         } else {
-            for(var i = fromIndex, n = arr.length; i < n; i += 1){
+            var n = arr.length,
+                i = fromIndex < 0? n + fromIndex : fromIndex;
+            for(; i < n; i += 1){
                 if(arr[i] === item) return i;
             }
             return -1;
@@ -20,5 +22,4 @@ define(function(){
     }
 
     return indexOf;
-
 });
