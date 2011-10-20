@@ -1,0 +1,25 @@
+define(function(){
+
+    function slice(arr, offset){
+        return Array.prototype.slice.call(arr, offset || 0);
+    }
+
+    /**
+     * Return a function that will execute in the given context, optionally adding any additional supplied parameters to the beginning of the arguments collection.
+     * @param {Function} fn  Function.
+     * @param {object} context   Execution context.
+     * @param {rest} args    Arguments (0...n arguments).
+     * @return {Function} Wrapped Function.
+     * @version 0.1.0 (2011/02/18)
+     * @author Miller Medeiros
+     */
+    function bind(fn, context, args){
+        var argsArr = slice(arguments, 2); //curried args
+        return function(){
+            return fn.apply(context, argsArr.concat(slice(arguments)));
+        };
+    }
+
+    return bind;
+});
+

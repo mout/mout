@@ -1,0 +1,101 @@
+# amd-utils #
+
+JavaScript utilities written in the [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
+format.
+
+All code is library agnostic and consist mostly of helper methods that aren't
+directly related with the DOM, the purpose of this library isn't to replace
+Dojo, jQuery, YUI, Mootools, etc, but to provide modular solutions for common
+problems that aren't solved by most of them.
+
+
+
+## Main goals ##
+
+ - increase code reuse;
+ - be clear (code should be clean/readable);
+ - be easy to debug;
+ - be easy to maintain;
+ - follow best practices;
+ - follow standards when possible;
+ - **don't convert JavaScript into another language!**
+ - be compatible with other frameworks;
+ - be modular;
+ - have unit tests for all modules.
+
+
+
+## What shouldn't be here ##
+
+ - UI components;
+ - CSS selector engine;
+ - Event system - pub/sub;
+ - Template engine;
+ - Anything that could be a separate library and/or isn't a modular utility...
+
+
+
+## Notes ##
+
+Since each function is a separate module they should have a separate version
+number and last edit date.
+
+Still unsure how this library will be distributed and if it will ever
+be used by more people / other libraries. Most of the code so far is originated
+from [Miller Medeiros personal JS library](https://github.com/millermedeiros/MM_js_lib/).
+
+This library is on an early stage and features will be added as needed, some
+modules still need to be broken and some stuff still needed to be ported from
+legacy code.
+
+For more utilities check [uber.js](https://github.com/phiggins42/uber.js),
+which have a slightly different goal/approach.
+
+
+
+## Important ##
+
+Since code is very modular (broken into multiple files) it is really important
+that you run an optimizer before deploying the code to a server, otherwise you
+may end up having too many file requests which can [degrade load-time
+performance](http://developer.yahoo.com/performance/rules.html#num_http) a lot.
+See [RequireJS optimization](http://requirejs.org/docs/optimization.html) for
+more info.
+
+
+
+## Contributing ##
+
+Be sure to always create tests for each proposed module. Features will only be
+merged if they contain proper tests and documentation.
+
+We should do a code review before merging to make sure names makes sense and
+implementation is as good as possible.
+
+Add your name to the list of contributors and also your name to the `@author`
+JSdoc tag.
+
+
+
+## Why AMD? ##
+
+**Because AMD is awesome!** Read these links if you still can't see why:
+
+ - [Why AMD?](http://requirejs.org/docs/whyamd.html)
+ - [AMD is better for the web than CJS modules](blog.millermedeiros.com/2011/09/amd-is-better-for-the-web-than-commonjs-modules/)
+ - [AMD & CommonJS modules](http://briancavalier.com/presentations/pgh-js-amd-10-2011/)
+ - [AMD vs. CJS](http://unscriptable.com/index.php/2011/09/30/amd-versus-cjs-whats-the-best-format/)
+
+Your mileage may vary...
+
+
+
+## Contributors ##
+
+ - [Miller Medeiros](http://blog.millermedeiros.com/)
+
+
+
+## License ##
+
+Released under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
