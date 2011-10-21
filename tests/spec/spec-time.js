@@ -4,11 +4,11 @@ define(['src/time'], function(timeUtils){
 
         describe('split()', function(){
 
-            it('should handle miliseconds to seconds', function(){
+            it('should handle milliseconds to seconds', function(){
 
                 var time = timeUtils.split(999);
 
-                expect(time.miliseconds).toBe(999);
+                expect(time.milliseconds).toBe(999);
                 expect(time.seconds).toBe(0);
                 expect(time.minutes).toBe(0);
                 expect(time.hours).toBe(0);
@@ -17,7 +17,7 @@ define(['src/time'], function(timeUtils){
 
                 time = timeUtils.split(1000);
 
-                expect(time.miliseconds).toBe(0);
+                expect(time.milliseconds).toBe(0);
                 expect(time.seconds).toBe(1);
                 expect(time.minutes).toBe(0);
                 expect(time.hours).toBe(0);
@@ -26,7 +26,7 @@ define(['src/time'], function(timeUtils){
 
                 time = timeUtils.split(1001);
 
-                expect(time.miliseconds).toBe(1);
+                expect(time.milliseconds).toBe(1);
                 expect(time.seconds).toBe(1);
                 expect(time.minutes).toBe(0);
                 expect(time.hours).toBe(0);
@@ -39,7 +39,7 @@ define(['src/time'], function(timeUtils){
 
                 var time = timeUtils.split(59999);
 
-                expect(time.miliseconds).toBe(999);
+                expect(time.milliseconds).toBe(999);
                 expect(time.seconds).toBe(59);
                 expect(time.minutes).toBe(0);
                 expect(time.hours).toBe(0);
@@ -48,7 +48,7 @@ define(['src/time'], function(timeUtils){
 
                 time = timeUtils.split(60000);
 
-                expect(time.miliseconds).toBe(0);
+                expect(time.milliseconds).toBe(0);
                 expect(time.seconds).toBe(0);
                 expect(time.minutes).toBe(1);
                 expect(time.hours).toBe(0);
@@ -57,7 +57,7 @@ define(['src/time'], function(timeUtils){
 
                 time = timeUtils.split(61000);
 
-                expect(time.miliseconds).toBe(0);
+                expect(time.milliseconds).toBe(0);
                 expect(time.seconds).toBe(1);
                 expect(time.minutes).toBe(1);
                 expect(time.hours).toBe(0);
@@ -70,7 +70,7 @@ define(['src/time'], function(timeUtils){
 
                 var time = timeUtils.split(3599999);
 
-                expect(time.miliseconds).toBe(999);
+                expect(time.milliseconds).toBe(999);
                 expect(time.seconds).toBe(59);
                 expect(time.minutes).toBe(59);
                 expect(time.hours).toBe(0);
@@ -79,7 +79,7 @@ define(['src/time'], function(timeUtils){
 
                 time = timeUtils.split(3600000);
 
-                expect(time.miliseconds).toBe(0);
+                expect(time.milliseconds).toBe(0);
                 expect(time.seconds).toBe(0);
                 expect(time.minutes).toBe(0);
                 expect(time.hours).toBe(1);
@@ -88,7 +88,7 @@ define(['src/time'], function(timeUtils){
 
                 time = timeUtils.split(3660000);
 
-                expect(time.miliseconds).toBe(0);
+                expect(time.milliseconds).toBe(0);
                 expect(time.seconds).toBe(0);
                 expect(time.minutes).toBe(1);
                 expect(time.hours).toBe(1);
@@ -101,7 +101,7 @@ define(['src/time'], function(timeUtils){
 
                 var time = timeUtils.split(86399999);
 
-                expect(time.miliseconds).toBe(999);
+                expect(time.milliseconds).toBe(999);
                 expect(time.seconds).toBe(59);
                 expect(time.minutes).toBe(59);
                 expect(time.hours).toBe(23);
@@ -110,7 +110,7 @@ define(['src/time'], function(timeUtils){
 
                 time = timeUtils.split(86400000);
 
-                expect(time.miliseconds).toBe(0);
+                expect(time.milliseconds).toBe(0);
                 expect(time.seconds).toBe(0);
                 expect(time.minutes).toBe(0);
                 expect(time.hours).toBe(0);
@@ -119,7 +119,7 @@ define(['src/time'], function(timeUtils){
 
                 time = timeUtils.split(90000000);
 
-                expect(time.miliseconds).toBe(0);
+                expect(time.milliseconds).toBe(0);
                 expect(time.seconds).toBe(0);
                 expect(time.minutes).toBe(0);
                 expect(time.hours).toBe(1);
@@ -140,8 +140,8 @@ define(['src/time'], function(timeUtils){
             });
 
             it('should work for large numbers', function(){
-                expect( timeUtils.toTimeString(timeUtils.DAY) ).toBe('24:00:00');
-                expect( timeUtils.toTimeString(timeUtils.WEEK) ).toBe('168:00:00');
+                expect( timeUtils.toTimeString(86400000) ).toBe('24:00:00');
+                expect( timeUtils.toTimeString(86400000 * 7) ).toBe('168:00:00');
             });
 
         });

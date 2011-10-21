@@ -1,11 +1,12 @@
 define(function(){
     /**
     * Count number of full steps.
-    * @version 0.1.0 (2011/08/09)
+    * @version 0.2.0 (2011/10/21)
     * @author Miller Medeiros
     */
-    function countSteps(val, step){
-        return Math.floor(val / step);
+    function countSteps(val, step, overflow){
+        //if (val/step == 0) mod oveflow will return NaN, so ~~ converts it to 0
+        return overflow? ~~(Math.floor(val / step) % overflow) : Math.floor(val / step);
     }
     return countSteps;
 });

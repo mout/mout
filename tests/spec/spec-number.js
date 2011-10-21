@@ -90,6 +90,16 @@ define(['src/number'], function(numberUtils){
             });
         });
 
+        describe('pad()', function(){
+            it('should add zeroes if number length is < minLength', function(){
+                expect( numberUtils.pad(15, 0) ).toEqual( '15' );
+                expect( numberUtils.pad(15, 1) ).toEqual( '15' );
+                expect( numberUtils.pad(15, 2) ).toEqual( '15' );
+                expect( numberUtils.pad(15, 3) ).toEqual( '015' );
+                expect( numberUtils.pad(15, 4) ).toEqual( '0015' );
+            });
+        });
+
         //=======
     });
 });

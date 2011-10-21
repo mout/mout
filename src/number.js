@@ -11,9 +11,10 @@ define(function(require){
         MAX_INT : require('./number/MAX_INT'),
         toInt : require('./number/toInt'),
         toUInt : require('./number/toUInt'),
+        enforcePrecision : require('./number/enforcePrecision'),
         ror : require('./number/ror'),
         rol : require('./number/rol'),
-        enforcePrecision : require('./number/enforcePrecision')
+        pad : require('./number/pad')
     };
 
 });
