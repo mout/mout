@@ -76,6 +76,20 @@ define(['src/number'], function(numberUtils){
             });
         });
 
+        describe('rol()', function(){
+            it('should rotate bits left', function(){
+                expect( numberUtils.rol( parseInt('10101', 2), 5).toString(2) ).toEqual( '1010100000' );
+                expect( numberUtils.rol( 1 << 30, 5).toString(2) ).toEqual( '1000' );
+            });
+        });
+
+        describe('ror()', function(){
+            it('should rotate bits right', function(){
+                expect( numberUtils.ror( parseInt('10101', 2), 6).toString(2) ).toEqual( '10101'+ (new Array(27)).join(0) );
+                expect( numberUtils.ror( 1 << 30, 5).toString(2) ).toEqual( '1'+ (new Array(26)).join('0') );
+            });
+        });
+
         //=======
     });
 });
