@@ -145,19 +145,19 @@ define(['src/math'], function(mathUtils){
 
         });
 
-        describe('lratio()', function(){
+        describe('norm()', function(){
 
-            var lratio = mathUtils.lratio;
+            var norm = mathUtils.norm;
 
             it('should normalize value inside range', function(){
-                expect( lratio(50, 0, 100) ).toEqual(0.5);
-                expect( lratio(200, 0, 500) ).toEqual(0.4);
-                expect( lratio(200, 0, 1000) ).toEqual(0.2);
+                expect( norm(50, 0, 100) ).toEqual(0.5);
+                expect( norm(200, 0, 500) ).toEqual(0.4);
+                expect( norm(200, 0, 1000) ).toEqual(0.2);
             });
 
             it('should calculate ratio even outside range', function(){
-                expect( lratio(1500, 0, 1000) ).toEqual(1.5);
-                expect( lratio(-1500, 0, 1000) ).toEqual(-1.5);
+                expect( norm(1500, 0, 1000) ).toEqual(1.5);
+                expect( norm(-1500, 0, 1000) ).toEqual(-1.5);
             });
 
         });
@@ -226,7 +226,7 @@ define(['src/math'], function(mathUtils){
                 var t = random();
                 var y = random();
                 expect( q ).not.toBeUndefined();
-                expect( q ).not.toEqual( Number.Infinity );
+                expect( q ).not.toEqual( Infinity );
                 expect( q ).toDiffAny(w, e, r, t, y);
             });
 
@@ -303,7 +303,7 @@ define(['src/math'], function(mathUtils){
                 var t = randomInt();
                 var y = randomInt();
                 expect( q ).not.toBeUndefined();
-                expect( q ).not.toEqual( Number.Infinity );
+                expect( q ).not.toEqual( Infinity );
                 expect( q ).toDiffAny(w, e, r, t, y);
             });
 

@@ -12,7 +12,7 @@ define(function(require){
         inRange    : require('./math/inRange'),
         isNear     : require('./math/isNear'),
         lerp       : require('./math/lerp'),
-        lratio     : require('./math/lratio'),
+        norm       : require('./math/norm'),
         snap       : require('./math/snap'),
         countSteps : require('./math/countSteps'),
         map        : require('./math/map'),
