@@ -59,7 +59,7 @@ which have a slightly different goal/approach.
 Right now most modules have JSDoc style comments but I'm not using it to
 generate documentation files... Considering to drop JSDoc altogether and just
 update the `README.mdown` files inside each folder. - See [issue
-#3](https://github.com/millermedeiros/amd-utils/issues/3) for more details.
+3](https://github.com/millermedeiros/amd-utils/issues/3) for more details.
 
 
 
