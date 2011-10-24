@@ -1,0 +1,192 @@
+# amd-utils / math #
+
+Math utilities.
+
+
+
+## <a href="#toc" name="toc">Table of Contents</a>
+
+ - [`clamp`](#clamp)
+ - [`countSteps`](#countSteps)
+ - [`inRange`](#inRange)
+ - [`isNear`](#isNear)
+ - [`lerp`](#lerp)
+ - [`loop`](#loop)
+ - [`map`](#map)
+ - [`norm`](#norm)
+ - [`random`](#random)
+ - [`randomInt`](#randomInt)
+ - [`snap`](#snap)
+
+
+
+## <a href="#clamp" name="clamp">clamp(val, min, max):Number</a>
+
+Clamps value inside range.
+
+### Example:
+
+```js
+clamp(12, 1, 10);  // 10
+clamp(-50, 1, 10); // 1
+```
+
+
+
+## <a href="#countSteps" name="countSteps">countSteps(val, step, overflow):Number</a>
+
+Count number of full steps.
+
+
+
+## <a href="#inRange" name="inRange">inRange(val, min, max, [threshold]):Boolean</a>
+
+Checks if value is inside the range.
+
+### Example:
+
+```js
+inRange(-6, 1, 10);    // false
+inRange( 5, 1, 10);    // true
+inRange(12, 1, 10);    // false
+inRange(12, 1, 10, 2); // true
+inRange(13, 1, 10, 2); // false
+```
+
+
+
+## <a href="#isNear" name="isNear">isNear(val, target, threshold):Boolean</a>
+
+Check if value is close to target.
+
+### Example:
+
+```js
+isNear(10.2, 10, 0.5);  // true
+isNear(10.5, 10, 0.5);  // true
+isNear(10.51, 10, 0.5); // false
+```
+
+
+
+## <a href="#lerp" name="lerp">lerp(ratio, start, end):Number</a>
+
+Linear interpolation.
+
+### Example:
+
+```js
+lerp(0.5, 0, 10); // 5
+lerp(0.75, 0, 10); // 7.5
+```
+
+
+
+## <a href="#loop" name="loop">loop(val, min, max):Number</a>
+
+Loops value inside range. Will return `min` if `val > max` and `max` if `val
+< min`, otherwise it returns `val`.
+
+### Example:
+
+```js
+loop(9, 0, 10);  // 9
+loop(10, 0, 10); // 10
+loop(11, 0, 10); // 0
+loop(-1, 0, 10); // 10
+```
+
+
+
+## <a href="#map" name="map">map(val, min1, max1, min2, max2):Number</a>
+
+Maps a number from one scale to another.
+
+### Example:
+
+```js
+map(3, 0, 4, -1, 1) // 0.5
+map(3, 0, 10, 0, 100) // 30
+```
+
+
+
+## <a href="#norm" name="norm">norm(val, min, max):Number</a>
+
+Gets normalized ratio of value inside range.
+
+### Example:
+
+```js
+norm(50, 0, 100); // 0.5
+norm(75, 0, 100); // 0.75
+```
+
+
+## <a href="#random" name="random">random([min], [max], [shouldSnap]):Number</a>
+
+Gets a random number inside range or snap to min/max values.
+
+### Arguments:
+
+ 1. `[min]` (Number)         : Minimum value. Defaults to `number.MIN_INT`.
+ 2. `[max]` (Number)         : Maximum value. Defaults to `number.MAX_INT`.
+ 3. `[shouldSnap]` (Boolean) : If it should snap random number to min/max.
+
+
+### Example:
+
+```js
+random();            // 448740433.55274725
+random();            // -31797596.097682
+random(0, 10);       // 7.369723
+random(0, 10);       // 5.987042
+random(0, 10, true); // 0
+random(0, 10, true); // 10
+```
+
+
+
+## <a href="#randomInt" name="randomInt">randomInt([min], [max], [shouldSnap]):Number</a>
+
+Gets a random integer inside range or snap to min/max values.
+
+### Arguments:
+
+ 1. `[min]` (Number)         : Minimum value. Defaults to `number.MIN_INT`.
+ 2. `[max]` (Number)         : Maximum value. Defaults to `number.MAX_INT`.
+ 3. `[shouldSnap]` (Boolean) : If it should snap random number to min/max.
+
+
+### Example:
+
+```js
+randomInt();            // 448740433
+randomInt();            // -31797596
+randomInt(0, 10);       // 7
+randomInt(0, 10);       // 5
+randomInt(0, 10, true); // 0
+randomInt(0, 10, true); // 10
+```
+
+
+
+## <a href="#snap" name="snap">snap(val, step):Number</a>
+
+Snap value to full steps.
+
+### Example:
+
+```js
+snap(7, 5); // 5
+snap(11, 5); // 10
+snap(15, 5); // 15
+```
+
+
+-------------------------------------------------------------------------------
+
+For more usage examples check specs inside `/tests` folder. Unit tests are the
+best documentation you can get...
+
+
