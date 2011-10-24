@@ -17,7 +17,7 @@ documentation you can get...
 
 
 
-### filter(arr, callback, [thisObj]):Array <small>[<a href="#filter" id="filter">link</a>]</small>
+## <a href="#filter" name="filter">filter(arr, callback, [thisObj]):Array </a>
 
 ES5 Array filter: Creates a new array with all elements that pass the callback test.
 
@@ -25,7 +25,7 @@ more info [MDN Array#filter](https://developer.mozilla.org/en/JavaScript/Referen
 
 
 
-### forEach(arr, callback, [thisObj]):void <small>[<a href="#forEach" id="forEach">link</a>]</small>
+## <a href="#forEach" name="forEach">forEach(arr, callback, [thisObj]):void</a>
 
 ES5 Array forEach.
 
@@ -33,7 +33,7 @@ more info [MDN Array#forEach](https://developer.mozilla.org/en/JavaScript/Refere
 
 
 
-### indexOf(arr, item, [fromIndex]):Number <small>[<a href="#indexOf" id="indexOf">link</a>]</small>
+## <a href="#indexOf" name="indexOf">indexOf(arr, item, [fromIndex]):Number</a>
 
 ES5 indexOf (since it doesn't work on IE 6-8 natively)
 
@@ -41,13 +41,13 @@ more info [MDN Array#indexOf](https://developer.mozilla.org/en/JavaScript/Refere
 
 
 
-### remove(arr, item):void <small>[<a href="#remove" id="remove">link</a>]</small>
+## <a href="#remove" name="remove">remove(arr, item):void</a>
 
 Remove a single item from the array.
 
 IMPORTANT: it won't remove duplicates, just a single item.
 
-#### Example
+### Example
 
 ```js
 var foo = [1, 2, 3, 4];
@@ -56,12 +56,12 @@ var bar = remove(foo, 2); // [1, 3, 4]
 
 
 
-### removeAll(arr, item):void <small>[<a href="#removeAll" id="removeAll">link</a>]</small>
+## <a href="#removeAll" name="removeAll">removeAll(arr, item):void</a>
 
 Remove all instances of an item from the array.
 
 
 
-## unique(arr):Array <small>[<a href="#unique" id="unique">link</a>]</small>
+## <a href="#unique" name="unique">unique(arr):Array</a>
 
 Return a new Array of unique items.

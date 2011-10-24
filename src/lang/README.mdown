@@ -15,11 +15,11 @@ documentation you can get...
 
 
 
-### bind(fn, context, [args]):Function <small>[<a href="#bind" id="bind">link</a>]</small>
+## <a href="#bind" name="bind">bind(fn, context, [...args]):Function</a>
 
 Return a function that will execute in the given context, optionally adding any additional supplied parameters to the beginning of the arguments collection.
 
-#### Arguments
+### Arguments
 
  1. `fn` (Function)    : Target Function
  2. `context` (Object) : Execution context (object used as `this`)
@@ -27,32 +27,32 @@ Return a function that will execute in the given context, optionally adding any 
 
 
 
-### createObject(parent, props):Object <small>[<a href="#createObject" id="createObject">link</a>]</small>
+## <a href="#createObject" name="createObject">createObject(parent, [props]):Object</a>
 
 Create Object using prototypal inheritance and setting custom properties.
 
 Mix between [Douglas Crockford Prototypal Inheritance](http://javascript.crockford.com/prototypal.html) and the EcmaScript 5 `Object.create()` method.
 
-#### Arguments
+### Arguments
 
  1. `parent` (Object)  : Parent Object
  2. `[props]` (Object) : Object properties
 
 
 
-### inheritPrototype(child, parent):void <small>[<a href="#inheritPrototype" id="inheritPrototype">link</a>]</small>
+## <a href="#inheritPrototype" name="inheritPrototype">inheritPrototype(child, parent):void</a>
 
 Inherit prototype from another Object.
 
 
 
-### mixIn(target, objects):Object <small>[<a href="#mixIn" id="mixIn">link</a>]</small>
+## <a href="#mixIn" name="mixIn">mixIn(target, ...objects):Object</a>
 
 Combine properties from all the objects into first one.
 
 This method affects target object in place, if you want to create a new Object pass an empty object as first param.
 
-#### Arguments
+### Arguments
 
  1. `target` (Object)        : Target Object.
  2. `...objects` (...Object) : Objects to be combined (0...n objects).
