@@ -2,8 +2,6 @@
 
 Language Utilities. Easier inheritance and scope handling.
 
-For usage examples check specs inside `/tests` folder. Unit tests are the best
-documentation you can get...
 
 
 ## <span id="toc">Table of Contents</span>
@@ -58,3 +56,8 @@ This method affects target object in place, if you want to create a new Object p
  2. `...objects` (...Object) : Objects to be combined (0...n objects).
 
 
+
+-------------------------------------------------------------------------------
+
+For more usage examples check specs inside `/tests` folder. Unit tests are the
+best documentation you can get...

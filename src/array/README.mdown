@@ -2,11 +2,9 @@
 
 Array utilities.
 
-For usage examples check specs inside `/tests` folder. Unit tests are the best
-documentation you can get...
 
 
-## <span id="toc">Table of Contents</span>
+## <a href="#toc" name="toc">Table of Contents</a>
 
  - [`filter()`](#filter)
  - [`forEach()`](#forEach)
@@ -19,9 +17,11 @@ documentation you can get...
 
 ## <a href="#filter" name="filter">filter(arr, callback, [thisObj]):Array </a>
 
-ES5 Array filter: Creates a new array with all elements that pass the callback test.
+ES5 Array filter.
 
-more info [MDN Array#filter](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/filter)
+Creates a new array with all elements that pass the callback test.
+
+more info at [MDN Array#filter](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/filter)
 
 
 
@@ -29,7 +29,7 @@ more info [MDN Array#filter](https://developer.mozilla.org/en/JavaScript/Referen
 
 ES5 Array forEach.
 
-more info [MDN Array#forEach](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/forEach)
+more info at [MDN Array#forEach](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/forEach)
 
 
 
@@ -37,7 +37,7 @@ more info [MDN Array#forEach](https://developer.mozilla.org/en/JavaScript/Refere
 
 ES5 indexOf (since it doesn't work on IE 6-8 natively)
 
-more info [MDN Array#indexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf)
+more info at [MDN Array#indexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf)
 
 
 
@@ -51,7 +51,8 @@ IMPORTANT: it won't remove duplicates, just a single item.
 
 ```js
 var foo = [1, 2, 3, 4];
-var bar = remove(foo, 2); // [1, 3, 4]
+remove(foo, 2);
+console.log(foo); // [1, 3, 4]
 ```
 
 
@@ -60,8 +61,32 @@ var bar = remove(foo, 2); // [1, 3, 4]
 
 Remove all instances of an item from the array.
 
+### Example
+
+```js
+var foo = [1, 2, 3, 4, 2, 2];
+removeAll(foo, 2);
+console.log(foo); // [1, 3, 4];
+```
+
 
 
 ## <a href="#unique" name="unique">unique(arr):Array</a>
 
 Return a new Array of unique items.
+
+### Example
+
+```js
+var foo = [1, 2, 3, 4, 2, 2, 3, 4];
+var bar = unique(foo);
+console.log(foo); // [1, 2, 3, 4];
+```
+
+
+
+-------------------------------------------------------------------------------
+
+For more usage examples check specs inside `/tests` folder. Unit tests are the
+best documentation you can get...
+
