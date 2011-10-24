@@ -7,14 +7,14 @@ define(function(require){
      * @version 0.1.0 (2011/10/21)
      */
     return {
-        MIN_INT : require('./number/MIN_INT'),
-        MAX_INT : require('./number/MAX_INT'),
-        toInt : require('./number/toInt'),
-        toUInt : require('./number/toUInt'),
+        MIN_INT          : require('./number/MIN_INT'),
+        MAX_INT          : require('./number/MAX_INT'),
+        toInt            : require('./number/toInt'),
+        toUInt           : require('./number/toUInt'),
         enforcePrecision : require('./number/enforcePrecision'),
-        ror : require('./number/ror'),
-        rol : require('./number/rol'),
-        pad : require('./number/pad')
+        ror              : require('./number/ror'),
+        rol              : require('./number/rol'),
+        pad              : require('./number/pad')
     };
 
 });

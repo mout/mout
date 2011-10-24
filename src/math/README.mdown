@@ -6,17 +6,17 @@ Math utilities.
 
 ## <a href="#toc" name="toc">Table of Contents</a>
 
- - [`clamp`](#clamp)
- - [`countSteps`](#countSteps)
- - [`inRange`](#inRange)
- - [`isNear`](#isNear)
- - [`lerp`](#lerp)
- - [`loop`](#loop)
- - [`map`](#map)
- - [`norm`](#norm)
- - [`random`](#random)
- - [`randomInt`](#randomInt)
- - [`snap`](#snap)
+ - [`clamp()`](#clamp)
+ - [`countSteps()`](#countSteps)
+ - [`inRange()`](#inRange)
+ - [`isNear()`](#isNear)
+ - [`lerp()`](#lerp)
+ - [`loop()`](#loop)
+ - [`map()`](#map)
+ - [`norm()`](#norm)
+ - [`random()`](#random)
+ - [`randomInt()`](#randomInt)
+ - [`snap()`](#snap)
 
 
 
@@ -33,9 +33,30 @@ clamp(-50, 1, 10); // 1
 
 
 
-## <a href="#countSteps" name="countSteps">countSteps(val, step, overflow):Number</a>
+## <a href="#countSteps" name="countSteps">countSteps(val, step, [overflow]):Number</a>
 
 Count number of full steps.
+
+### Arguments:
+
+ 1. `val` (Number)        : Value.
+ 2. `step` (Number)       : Step size.
+ 3. `[overflow]` (Number) : Maximum number of steps, nSteps will loop if
+greater than overflow.
+
+
+### Example:
+
+```js
+countSteps(3,  5);    // 0
+countSteps(6,  5);    // 1
+countSteps(12, 5);    // 2
+countSteps(18, 5);    // 3
+countSteps(18, 5, 3); // 0
+countSteps(20, 5, 3); // 1
+countSteps(25, 5, 3); // 2
+countSteps(30, 5, 3); // 0
+```
 
 
 
@@ -62,8 +83,8 @@ Check if value is close to target.
 ### Example:
 
 ```js
-isNear(10.2, 10, 0.5);  // true
-isNear(10.5, 10, 0.5);  // true
+isNear( 10.2, 10, 0.5); // true
+isNear( 10.5, 10, 0.5); // true
 isNear(10.51, 10, 0.5); // false
 ```
 
@@ -76,7 +97,7 @@ Linear interpolation.
 ### Example:
 
 ```js
-lerp(0.5, 0, 10); // 5
+lerp(0.5, 0, 10);  // 5
 lerp(0.75, 0, 10); // 7.5
 ```
 
@@ -90,7 +111,7 @@ Loops value inside range. Will return `min` if `val > max` and `max` if `val
 ### Example:
 
 ```js
-loop(9, 0, 10);  // 9
+loop( 9, 0, 10); // 9
 loop(10, 0, 10); // 10
 loop(11, 0, 10); // 0
 loop(-1, 0, 10); // 10
@@ -105,7 +126,7 @@ Maps a number from one scale to another.
 ### Example:
 
 ```js
-map(3, 0, 4, -1, 1) // 0.5
+map(3, 0, 4, -1, 1)   // 0.5
 map(3, 0, 10, 0, 100) // 30
 ```
 
@@ -178,7 +199,7 @@ Snap value to full steps.
 ### Example:
 
 ```js
-snap(7, 5); // 5
+snap(7, 5);  // 5
 snap(11, 5); // 10
 snap(15, 5); // 15
 ```
