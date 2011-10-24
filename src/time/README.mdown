@@ -1,0 +1,36 @@
+# amd-utils / time #
+
+Utilities for time manipulation.
+
+
+## <a href="#toc" name="toc">Table of Contents</a>
+
+ - [`split()`](#split)
+ - [`toTimeString()`](#toTimeString)
+
+
+
+## <a href="#split" name="split">split(ms):Object</a>
+
+Parse timestamp (milliseconds) into an object `{milliseconds:number,
+seconds:number, minutes:number, hours:number, days:number}`.
+
+### Example
+
+```js
+split(2348765454); // {days: 27, hours: 4, minutes: 26, seconds:5, milliseconds: 454}
+```
+
+
+
+## <a href="#toTimeString" name="toTimeString">toTimeString(ms):String</a>
+
+Convert timestamp (milliseconds) into a time string in the format "HH:MM:SS".
+
+### Example
+
+```js
+toTimeString(12513);   // "00:00:12"
+toTimeString(951233);  // "00:15:51"
+toTimeString(8765235); // "02:26:05"
+```

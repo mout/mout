@@ -1,0 +1,263 @@
+# amd-utils / string #
+
+String utilities.
+
+
+## <a href="#toc" name="toc">Table of Contents</a>
+
+ - [`camelCase()`](#camelCase)
+ - [`hyphenate()`](#hyphenate)
+ - [`lowerCase()`](#lowerCase)
+ - [`ltrim()`](#ltrim)
+ - [`makePath()`](#makePath)
+ - [`properCase()`](#properCase)
+ - [`removeNonASCII()`](#removeNonASCII)
+ - [`removeNonWord()`](#removeNonWord)
+ - [`replaceAccents()`](#replaceAccents)
+ - [`rtrim()`](#rtrim)
+ - [`sentenceCase()`](#sentenceCase)
+ - [`stripHtmlTags()`](#stripHtmlTags)
+ - [`toSlug()`](#toSlug)
+ - [`trim()`](#trim)
+ - [`truncate()`](#truncate)
+ - [`unCamelCase()`](#unCamelCase)
+ - [`unHyphenate()`](#unHyphenate)
+ - [`upperCase()`](#upperCase)
+
+
+
+## <a href="#camelCase" name="camelCase">camelCase(str):String</a>
+
+Convert string to "camelCase" text.
+
+### Example
+
+```js
+camelCase('lorem-ipsum-dolor'); // "loremIpsumDolor"
+camelCase('lorem ipsum dolor'); // "loremIpsumDolor"
+```
+
+
+
+## <a href="#hyphenate" name="hyphenate">hyphenate(str):String</a>
+
+Replaces spaces with hyphens, split camelCase text, remove non-word chars, remove accents and convert to lower case.
+
+```js
+hyphenate(' %# lorem ipsum  ? $  dolor'); // "lorem-ipsum-dolor"
+hyphenate('spéçïãl çhârs');               // "special-chars"
+```
+
+
+
+## <a href="#lowerCase" name="lowerCase">lowerCase(str):String</a>
+
+"Safer" `String.toLowerCase()`. (Used internally)
+
+### Example
+
+```js
+(null).toLowerCase();      // Error!
+(undefined).toLowerCase(); // Error!
+lowerCase(null);           // ""
+lowerCase(undefined);      // ""
+```
+
+
+
+## <a href="#ltrim" name="ltrim">ltrim(str):String</a>
+
+Remove white-spaces from beginning of string.
+
+### Example
+
+```js
+ltrim('   lorem ipsum   ');  // "lorem ipsum   "
+```
+
+
+
+## <a href="#makePath" name="makePath">makePath(...args):String</a>
+
+Group arguments as path segments, if any of the args is `null` or `undefined`
+it will be ignored from resulting path. It will also remove duplicate "/".
+
+### Example
+
+```js
+makePath('lorem', 'ipsum', null, 'dolor'); // "lorem/ipsum/dolor"
+makePath('foo/', '//bar', '/');            // "foo/bar/"
+```
+
+
+
+## <a href="#properCase" name="properCase">properCase(str):String</a>
+
+UPPERCASE first char of each word.
+
+### Example
+
+```js
+properCase('loRem iPSum'); // "Lorem Ipsum"
+```
+
+
+
+## <a href="#removeNonASCII" name="removeNonASCII">removeNonASCII(str):String</a>
+
+Remove [non-printable ASCII
+chars](http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters).
+
+### Example
+
+```js
+removeNonASCII('äÄçÇéÉêlorem-ipsumöÖÐþúÚ'); // "lorem-ipsum"
+```
+
+
+
+## <a href="#removeNonWord" name="removeNonWord">removeNonWord(str):String</a>
+
+Remove non-word chars.
+
+### Example
+
+```js
+var str = 'lorem ~!@#$%^&*()_+`-={}[]|\\:";\'/?><., ipsum';
+removeNonWord(str); // "lorem - ipsum"
+```
+
+
+
+## <a href="#replaceAccents" name="replaceAccents">replaceAccents(str):String</a>
+
+Replaces all accented chars with regular ones.
+
+**Important:** Only covers **Basic Latin** and **Latin-1** unicode chars.
+
+### Example
+
+```js
+replaceAccents('spéçïãl çhârs'); // "special chars"
+```
+
+
+
+## <a href="#rtrim" name="rtrim">rtrim(str):String</a>
+
+Remove white-spaces from end of string.
+
+### Example
+
+```js
+rtrim('   lorem ipsum   '); // "   lorem ipsum"
+```
+
+
+
+## <a href="#sentenceCase" name="sentenceCase">sentenceCase(str):String</a>
+
+UPPERCASE first char of each sentence and lowercase other chars.
+
+### Example
+
+```js
+sentenceCase('Lorem IpSum DoLOr. maeCeNnas Ullamcor.'); // "Lorem ipsum dolor. Maecennas ullamcor."
+```
+
+
+
+## <a href="#stripHtmlTags" name="stripHtmlTags">stripHtmlTags(str):String</a>
+
+Remove HTML tags from string.
+
+### Example
+
+```js
+stripHtmlTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // "lorem ipsum"
+```
+
+
+
+## <a href="#toSlug" name="toSlug">toSlug(str):String</a>
+
+Convert to lower case, remove accents, remove non-word chars and replace spaces
+with hyphens.
+
+Only difference from [string/hyphenate](#hyphenate) is that it doesn't split
+camelCase text.
+
+### Example
+
+```js
+toSlug('loremIpsum dolor spéçïãl chârs'); // "loremipsum-dolor-special-chars"
+```
+
+
+
+## <a href="#trim" name="trim">trim(str):String</a>
+
+Remove white-spaces from beginning and end of string.
+
+### Example
+
+```js
+trim('   lorem ipsum   '); // "lorem ipsum"
+```
+
+
+
+## <a href="#truncate" name="truncate">truncate(str, [maxChars], [append]):String</a>
+
+Limit number of chars.
+
+### Example
+
+```js
+truncate('lorem ipsum dolor', 10);      // "lorem..."
+truncate('lorem ipsum dolor', 10, '+'); // "lorem+"
+```
+
+
+
+## <a href="#unCamelCase" name="unCamelCase">unCamelCase(str):String</a>
+
+Add space between camelCase text and convert first char of each word to lower
+case.
+
+### Example
+
+```js
+unCamelCase('loremIpsumDolor'); // "lorem ipsum dolor"
+```
+
+
+## <a href="#unHyphenate" name="unHyphenate">unHyphenate(str):String</a>
+
+Replaces hyphens with spaces. (only hyphens between word chars)
+
+### Example
+
+```js
+unHyphenate('lorem-ipsum-dolor'); // "lorem ipsum dolor"
+```
+
+
+## <a href="#upperCase" name="upperCase">upperCase(str):String</a>
+
+"Safer" `String.toUpperCase()`. (Used internally)
+
+### Example
+
+```js
+(null).toUpperCase();      // Error!
+(undefined).toUpperCase(); // Error!
+upperCase(null);           // ""
+upperCase(undefined);      // ""
+```
+
+-------------------------------------------------------------------------------
+
+For more usage examples check specs inside `/tests` folder. Unit tests are the
+best documentation you can get...
+

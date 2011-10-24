@@ -7,7 +7,7 @@ define(function(require){
      * @author Miller Medeiros
      */
     return {
-        split : require('./time/split'),
+        split        : require('./time/split'),
         toTimeString : require('./time/toTimeString')
     };
 
