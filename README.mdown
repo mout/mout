@@ -40,9 +40,10 @@ problems that aren't solved by most of them.
 Since each function is a separate module they should have a separate version
 number and last edit date.
 
-Still unsure how this library will be distributed and if it will ever
-be used by more people / other libraries. Most of the code so far is originated
-from [Miller Medeiros personal JS library](https://github.com/millermedeiros/MM_js_lib/).
+Still unsure how this library will be distributed (how versioning will work,
+etc) and if it will ever be used by more people / other libraries. Most of the
+code so far is originated from [Miller Medeiros personal JS
+library](https://github.com/millermedeiros/MM_js_lib/).
 
 This library is on an early stage and features will be added as needed, some
 modules still need to be broken and some stuff still needed to be ported from

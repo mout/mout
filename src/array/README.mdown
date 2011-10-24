@@ -1,0 +1,67 @@
+# amd-utils / array #
+
+Array utilities.
+
+For usage examples check specs inside `/tests` folder. Unit tests are the best
+documentation you can get...
+
+
+## <span id="toc">Table of Contents</span>
+
+ - [`filter()`](#filter)
+ - [`forEach()`](#forEach)
+ - [`indexOf()`](#indexOf)
+ - [`remove()`](#remove)
+ - [`removeAll()`](#removeAll)
+ - [`unique()`](#unique)
+
+
+
+### filter(arr, callback, [thisObj]):Array <small>[<a href="#filter" id="filter">link</a>]</small>
+
+ES5 Array filter: Creates a new array with all elements that pass the callback test.
+
+more info [MDN Array#filter](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/filter)
+
+
+
+### forEach(arr, callback, [thisObj]):void <small>[<a href="#forEach" id="forEach">link</a>]</small>
+
+ES5 Array forEach.
+
+more info [MDN Array#forEach](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/forEach)
+
+
+
+### indexOf(arr, item, [fromIndex]):Number <small>[<a href="#indexOf" id="indexOf">link</a>]</small>
+
+ES5 indexOf (since it doesn't work on IE 6-8 natively)
+
+more info [MDN Array#indexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf)
+
+
+
+### remove(arr, item):void <small>[<a href="#remove" id="remove">link</a>]</small>
+
+Remove a single item from the array.
+
+IMPORTANT: it won't remove duplicates, just a single item.
+
+#### Example
+
+```js
+var foo = [1, 2, 3, 4];
+var bar = remove(foo, 2); // [1, 3, 4]
+```
+
+
+
+### removeAll(arr, item):void <small>[<a href="#removeAll" id="removeAll">link</a>]</small>
+
+Remove all instances of an item from the array.
+
+
+
+## unique(arr):Array <small>[<a href="#unique" id="unique">link</a>]</small>
+
+Return a new Array of unique items.
