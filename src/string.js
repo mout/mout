@@ -4,7 +4,7 @@ define(function(require){
      * String utilities.
      * @exports amd-utils/string
      * @author Miller Medeiros
-     * @version 0.1.0 (2011/10/20)
+     * @version 0.1.1 (2011/10/26)
      */
     return {
         trim           : require('./string/trim'),
@@ -16,6 +16,7 @@ define(function(require){
         toSlug         : require('./string/toSlug'),
         camelCase      : require('./string/camelCase'),
         unCamelCase    : require('./string/unCamelCase'),
+        pascalCase     : require('./string/pascalCase'),
         properCase     : require('./string/properCase'),
         sentenceCase   : require('./string/sentenceCase'),
         makePath       : require('./string/makePath'),
