@@ -10,6 +10,7 @@ String utilities.
  - [`lowerCase()`](#lowerCase)
  - [`ltrim()`](#ltrim)
  - [`makePath()`](#makePath)
+ - [`pascalCase()`](#pascalCase)
  - [`properCase()`](#properCase)
  - [`removeNonASCII()`](#removeNonASCII)
  - [`removeNonWord()`](#removeNonWord)
@@ -29,6 +30,8 @@ String utilities.
 ## <a href="#camelCase" name="camelCase">camelCase(str):String</a>
 
 Convert string to "camelCase" text.
+
+See: [`pascalCase()`](#pascalCase)
 
 ### Example
 
@@ -87,6 +90,21 @@ it will be ignored from resulting path. It will also remove duplicate "/".
 ```js
 makePath('lorem', 'ipsum', null, 'dolor'); // "lorem/ipsum/dolor"
 makePath('foo/', '//bar', '/');            // "foo/bar/"
+```
+
+
+
+## <a href="#pascalCase" name="pascalCase">pascalCase(str):String</a>
+
+Convert string to "PascalCase" text.
+
+See: [`camelCase()`](#camelCase)
+
+### Example
+
+```js
+pascalCase('lorem-ipsum-dolor'); // "LoremIpsumDolor"
+pascalCase('lorem ipsum dolor'); // "LoremIpsumDolor"
 ```
 
 
