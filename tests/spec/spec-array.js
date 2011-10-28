@@ -83,6 +83,28 @@ define(['src/array'], function(arrayUtils){
 
         });
 
+        describe('isSparse()', function(){
+
+            var isSparse = arrayUtils.isSparse;
+
+            it('should check if array contain empty items', function(){
+                var arr = ['foo'];
+                arr[6] = 'bar';
+                expect( isSparse(arr) ).toBe( true );
+            });
+
+            it('should not give false positives', function(){
+                var arr = ['foo', false, null, 123, 'bar'];
+                expect( isSparse(arr) ).toBe( false );
+            });
+
+            it('should consider undefined as empty', function(){
+                var arr = ['foo', false, null, 123, undefined, 'bar'];
+                expect( isSparse(arr) ).toBe( true );
+            });
+
+        });
+
         describe('remove()', function(){
 
             var remove = arrayUtils.remove;

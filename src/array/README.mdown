@@ -9,6 +9,7 @@ Array utilities.
  - [`filter()`](#filter)
  - [`forEach()`](#forEach)
  - [`indexOf()`](#indexOf)
+ - [`isSparse()`](#isSparse)
  - [`remove()`](#remove)
  - [`removeAll()`](#removeAll)
  - [`unique()`](#unique)
@@ -38,6 +39,24 @@ more info at [MDN Array#forEach](https://developer.mozilla.org/en/JavaScript/Ref
 ES5 indexOf (since it doesn't work on IE 6-8 natively)
 
 more info at [MDN Array#indexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf)
+
+
+
+
+## <a href="#isSparse" name="isSparse">isSparse(arr):Boolean</a>
+
+Checks if it is a *sparse* array (contains `undefined`/*empty* items).
+
+### Example
+
+```js
+var arr = ['foo'];
+arr[6] = 'bar';
+isSparse(arr); // true
+
+var arr2 = ['lorem', 'ipsum'];
+isSparse(arr2); // false
+```
 
 
 
