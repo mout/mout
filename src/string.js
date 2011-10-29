@@ -4,26 +4,27 @@ define(function(require){
      * String utilities.
      * @exports amd-utils/string
      * @author Miller Medeiros
-     * @version 0.1.1 (2011/10/26)
+     * @version 0.2.0 (2011/10/29)
      */
     return {
-        trim           : require('./string/trim'),
-        ltrim          : require('./string/ltrim'),
-        rtrim          : require('./string/rtrim'),
-        truncate       : require('./string/truncate'),
-        hyphenate      : require('./string/hyphenate'),
-        unHyphenate    : require('./string/unHyphenate'),
-        toSlug         : require('./string/toSlug'),
         camelCase      : require('./string/camelCase'),
-        unCamelCase    : require('./string/unCamelCase'),
+        hyphenate      : require('./string/hyphenate'),
+        ltrim          : require('./string/ltrim'),
+        makePath       : require('./string/makePath'),
         pascalCase     : require('./string/pascalCase'),
         properCase     : require('./string/properCase'),
-        sentenceCase   : require('./string/sentenceCase'),
-        makePath       : require('./string/makePath'),
-        replaceAccents : require('./string/replaceAccents'),
-        removeNonWord  : require('./string/removeNonWord'),
         removeNonASCII : require('./string/removeNonASCII'),
-        stripHtmlTags  : require('./string/stripHtmlTags')
+        removeNonWord  : require('./string/removeNonWord'),
+        replaceAccents : require('./string/replaceAccents'),
+        rtrim          : require('./string/rtrim'),
+        sentenceCase   : require('./string/sentenceCase'),
+        stripHtmlTags  : require('./string/stripHtmlTags'),
+        toSlug         : require('./string/toSlug'),
+        trim           : require('./string/trim'),
+        truncate       : require('./string/truncate'),
+        typecast       : require('./string/typecast'),
+        unCamelCase    : require('./string/unCamelCase'),
+        unHyphenate    : require('./string/unHyphenate')
     };
 
 });

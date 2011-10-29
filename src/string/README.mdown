@@ -21,6 +21,7 @@ String utilities.
  - [`toSlug()`](#toSlug)
  - [`trim()`](#trim)
  - [`truncate()`](#truncate)
+ - [`typecast()`](#typecast)
  - [`unCamelCase()`](#unCamelCase)
  - [`unHyphenate()`](#unHyphenate)
  - [`upperCase()`](#upperCase)
@@ -234,6 +235,22 @@ Limit number of chars.
 ```js
 truncate('lorem ipsum dolor', 10);      // "lorem..."
 truncate('lorem ipsum dolor', 10, '+'); // "lorem+"
+```
+
+
+
+## <a href="#typecast" name="typecast">typecast(str):*</a>
+
+Parses string and convert it into a native value.
+
+### Example
+
+```js
+typecast('lorem ipsum'); // "lorem ipsum"
+typecast('123');         // 123
+typecast('123.45');      // 123.45
+typecast('false');       // false
+typecast('true');        // true
 ```
 
 
