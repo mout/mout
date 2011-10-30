@@ -16,7 +16,8 @@ Utilities for query string manipulation.
 
 ## <a href="#decodeQuery" name="decodeQuery">decodeQuery(str):Object</a>
 
-Parses query string and creates an object of keys => vals.
+Parses query string and creates an object of keys => vals. Will typecast value
+with `string/typecast`
 
 ```js
 decodeQuery('?foo=bar&lorem=123'); // {foo: "bar", lorem: 123}
@@ -34,13 +35,13 @@ encodeQuery({foo: "bar", lorem: 123}); // "?foo=bar&lorem=123"
 
 ## <a href="#getParam" name="getParam">getParam(param, url):*</a>
 
-Get query parameter value. Will typecast value if boolean or number.
+Get query parameter value. Will typecast value with `string/typecast`.
 Allow parsing a custom URL or uses `location.href` by default.
 
 ### Arguments:
 
- 1. `param` (String)    : Parameter name.
- 2. `[url]` (String)    : Url. Will use `location.href` by default.
+ 1. `param` (String) : Parameter name.
+ 2. `[url]` (String) : Url. Will use `location.href` by default.
 
 ### Example:
 
@@ -57,15 +58,16 @@ getParam('dolor', 'http://example.com/?dolor=amet'); // "amet"
 
 ## <a href="#getQueryObject" name="getQueryObject">getQueryObject(url):Object</a>
 
-Parses URL, extracts query string and decodes it. Alias to
-`decodeQuery(getQueryString(url))`. Will use `location.href` by default.
+Parses URL, extracts query string and decodes it. Will use `location.href` by default.
+
+Alias to: `decodeQuery(getQueryString(url))`.
 
 ```js
 //if current URI = http://example.com/?foo=bar&lorem=123&ipsum=false
 getQueryObject(); // {foo: "bar", lorem: 123, ipsum: false}
 
 //allow custom URL
-getQueryObject('http://example.com/?lorem=ipsum'); // {lorem: ipsum}
+getQueryObject('http://example.com/?lorem=ipsum'); // {lorem: "ipsum"}
 ```
 
 

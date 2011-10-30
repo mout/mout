@@ -251,6 +251,8 @@ typecast('123');         // 123
 typecast('123.45');      // 123.45
 typecast('false');       // false
 typecast('true');        // true
+typecast('null');        // null
+typecast('undefined');   // undefined
 ```
 
 

@@ -6,5 +6,7 @@ loading multiple modules, "array.js" will load all the modules inside the
 
 **Documentation for each module will be on a README file inside each folder.**
 
-For usage examples check specs inside `/tests` folder. Unit tests are the best
-documentation you can get...
+-------------------------------------------------------------------------------
+
+For more usage examples check specs inside `/tests` folder. Unit tests are the
+best documentation you can probably get...

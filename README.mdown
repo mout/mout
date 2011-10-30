@@ -1,7 +1,7 @@
 # amd-utils #
 
-JavaScript utilities written in the [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
-format.
+modular JavaScript utilities written in the
+[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) format.
 
 All code is library agnostic and consist mostly of helper methods that aren't
 directly related with the DOM, the purpose of this library isn't to replace
@@ -56,9 +56,11 @@ which have a slightly different goal/approach.
 
 ## Documentation ##
 
-Right now most modules have JSDoc style comments but I'm not using it to
-generate documentation files... Considering to drop JSDoc altogether and just
-update the `README.mdown` files inside each folder. - See [issue
+Check `README.mdown` files inside each folder, Github displays them nicelly and
+will show them automatically while browsing shource code. Also check the specs
+inside the `tests/` folder for more usage examples.
+
+So far we don't have an HTML version of the docs. See [issue
 3](https://github.com/millermedeiros/amd-utils/issues/3) for more details.
 
 
@@ -76,15 +78,21 @@ more info.
 
 ## Contributing ##
 
-Avoid unnamed functions and follow the other modules format. By only using
+ > "Write clearly, don't be too clever" - The Elements of Programming Style
+
+Avoid unnamed functions and follow the other modules structure. By only using
 named functions it will be easier to extract the code from the AMD module if
 needed and it will also give better error messages, JavaScript minifiers like
 [Google Closure Compiler](http://code.google.com/closure/compiler/) and
 [UglifyJS](https://github.com/mishoo/UglifyJS) will make sure code is as
 small/optimized as possible.
 
+ > "Make it clear before you make it faster." - The Elements of Programming Style
+
 Be sure to always create tests for each proposed module. Features will only be
 merged if they contain proper tests and documentation.
+
+ > "Good code is its own best documentation." - Steve McConnell
 
 We should do a code review before merging to make sure names makes sense and
 implementation is as good as possible.

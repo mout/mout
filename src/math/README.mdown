@@ -27,8 +27,9 @@ Clamps value inside range.
 ### Example:
 
 ```js
-clamp(12, 1, 10);  // 10
 clamp(-50, 1, 10); // 1
+clamp(7, 1, 10);   // 7
+clamp(12, 1, 10);  // 10
 ```
 
 
@@ -42,7 +43,7 @@ Count number of full steps.
  1. `val` (Number)        : Value.
  2. `step` (Number)       : Step size.
  3. `[overflow]` (Number) : Maximum number of steps, nSteps will loop if
-greater than overflow.
+`>=` than overflow.
 
 
 ### Example:
@@ -52,10 +53,11 @@ countSteps(3,  5);    // 0
 countSteps(6,  5);    // 1
 countSteps(12, 5);    // 2
 countSteps(18, 5);    // 3
+
+countSteps(3, 5, 3);  // 0
+countSteps(6, 5, 3);  // 1
+countSteps(12, 5, 3); // 2
 countSteps(18, 5, 3); // 0
-countSteps(20, 5, 3); // 1
-countSteps(25, 5, 3); // 2
-countSteps(30, 5, 3); // 0
 ```
 
 
