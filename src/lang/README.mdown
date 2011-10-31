@@ -8,6 +8,7 @@ Language Utilities. Easier inheritance, scope handling, type checks.
 
  - [`bind()`](#bind)
  - [`createObject()`](#createObject)
+ - [`isArguments()`](#isArguments)
  - [`isArray()`](#isArray)
  - [`isBoolean()`](#isBoolean)
  - [`isDate()`](#isDate)
@@ -22,6 +23,7 @@ Language Utilities. Easier inheritance, scope handling, type checks.
  - [`kindOf()`](#kindOf)
  - [`inheritPrototype()`](#inheritPrototype)
  - [`mixIn()`](#mixIn)
+ - [`toArray()`](#toArray)
 
 
 
@@ -48,11 +50,52 @@ Mix between [Douglas Crockford Prototypal Inheritance](http://javascript.crockfo
  1. `parent` (Object)  : Parent Object
  2. `[props]` (Object) : Object properties
 
+### Example
+
+```js
+function Bar(){}
+Bar.prototype = {
+    name : 'lorem ipsum'
+};
+
+var myObj = createObject(Bar.prototype, {
+    foo : function(){
+        console.log( this.name );
+    }
+});
+```
+
 
 
 ## <a href="#inheritPrototype" name="inheritPrototype">inheritPrototype(child, parent):void</a>
 
 Inherit prototype from another Object.
+
+```js
+function Foo(name){
+    this.name = name;
+}
+Foo.prototype = {
+    getName : function(){
+        return this.name;
+    }
+};
+
+function Bar(name){
+    this.name = name;
+}
+//should be called before calling constructor
+lang.inheritPrototype(Bar, Foo);
+
+var myObj = new Bar('lorem ipsum');
+myObj.getName(); // "lorem ipsum"
+```
+
+
+
+## <a href="#isArguments" name="isArguments">isArguments(val):Boolean</a>
+
+If value is an "Arguments" object.
 
 
 

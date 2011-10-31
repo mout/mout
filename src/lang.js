@@ -4,12 +4,13 @@ define(function(require){
      * Language Utilities. Easier inheritance and scope handling.
      * @exports amd-utils/lang
      * @author Miller Medeiros
-     * @version 0.2.0 (2011/10/31)
+     * @version 0.3.0 (2011/10/31)
      */
     return {
         bind             : require('./lang/bind'),
         createObject     : require('./lang/createObject'),
         inheritPrototype : require('./lang/inheritPrototype'),
+        isArguments      : require('./lang/isArguments'),
         isArray          : require('./lang/isArray'),
         isBoolean        : require('./lang/isBoolean'),
         isDate           : require('./lang/isDate'),
@@ -22,7 +23,8 @@ define(function(require){
         isString         : require('./lang/isString'),
         isUndefined      : require('./lang/isUndefined'),
         kindOf           : require('./lang/kindOf'),
-        mixIn            : require('./lang/mixIn')
+        mixIn            : require('./lang/mixIn'),
+        toArray          : require('./lang/toArray')
     };
 
 });

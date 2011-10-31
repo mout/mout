@@ -6,6 +6,7 @@ Array utilities.
 
 ## <a href="#toc" name="toc">Table of Contents</a>
 
+ - [`contains()`](#contains)
  - [`every()`](#every)
  - [`filter()`](#filter)
  - [`forEach()`](#forEach)
@@ -20,7 +21,19 @@ Array utilities.
 
 
 
-## <a href="#every" name="every">every(arr, callback, [thisObj]):Array </a>
+## <a href="#contains" name="contains">contains(arr, value):Boolean</a>
+
+Checks if Array contains value. Alias to `indexOf(arr, val) !== -1`.
+
+```js
+var arr = [1, 2, 3];
+contains(arr, 2);      // true
+contains(arr, 'foo');  // false
+```
+
+
+
+## <a href="#every" name="every">every(arr, callback, [thisObj]):Array</a>
 
 ES5 Array every.
 
@@ -30,7 +43,7 @@ more info at [MDN Array#every](https://developer.mozilla.org/en/JavaScript/Refer
 
 
 
-## <a href="#filter" name="filter">filter(arr, callback, [thisObj]):Array </a>
+## <a href="#filter" name="filter">filter(arr, callback, [thisObj]):Array</a>
 
 ES5 Array filter.
 

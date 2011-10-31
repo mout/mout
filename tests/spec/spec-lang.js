@@ -187,6 +187,7 @@ define(['src/lang'], function(lang){
         describe('isKind()', function(){
 
             var isKind      = lang.isKind,
+                isArguments = lang.isArguments,
                 isArray     = lang.isArray,
                 isBoolean   = lang.isBoolean,
                 isDate      = lang.isDate,
@@ -239,9 +240,51 @@ define(['src/lang'], function(lang){
 
                 expect( isKind(new Date(), 'Date') ).toBe( true );
                 expect( isDate(new Date()) ).toBe( true );
+
+                expect( isKind(arguments, 'Arguments') ).toBe( true );
+                expect( isArguments(arguments) ).toBe( true );
             });
 
         });
+
+
+        describe('toArray()', function () {
+            var toArray = lang.toArray;
+
+            it('should convert array like objects into array', function () {
+
+                var arr = ["foo", "bar", "dolor"];
+                var obj = {
+                    "0" : "foo",
+                    "1" : "bar",
+                    "2" : "dolor",
+                    "length" : 3
+                };
+
+                expect( toArray(obj) ).toEqual( arr );
+            });
+
+            it('should convert arguments obj', function () {
+                var result;
+                var fn = function(a, b, c){
+                    result = toArray(arguments);
+                };
+
+                fn("foo", "bar", 123);
+
+                expect( result ).toEqual( ["foo", "bar", 123] );
+            });
+
+            it('should handle strings, numbers, regexp and window', function () {
+                expect( toArray('lorem') ).toEqual( ['lorem'] );
+                expect( toArray(123) ).toEqual( [123] );
+                expect( toArray(/\w+/) ).toEqual( [/\w+/] );
+                expect( toArray(window) ).toEqual( [window] );
+            });
+
+        });
+
+
 
     });
 });
