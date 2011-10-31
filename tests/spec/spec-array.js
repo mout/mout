@@ -83,6 +83,108 @@ define(['src/array'], function(arrayUtils){
 
         });
 
+        describe('lastIndexOf()', function(){
+
+            var lastIdx = arrayUtils.lastIndexOf;
+
+            it('should work in regular arrays', function(){
+                var arr = [1, 'a', 2, 'b'];
+
+                expect( lastIdx(arr, 1) ).toEqual( 0 );
+                expect( lastIdx(arr, 'a') ).toEqual( 1 );
+                expect( lastIdx(arr, 2) ).toEqual( 2 );
+                expect( lastIdx(arr, 'b') ).toEqual( 3 );
+
+                expect( lastIdx(arr, 'foo') ).toEqual( -1 );
+            });
+
+            it('should work in sparse arrays', function(){
+                var arr = [];
+                arr[1] = 1;
+                arr[3] = 'a';
+                arr[6] = 2;
+                arr[8] = 'b';
+
+                expect( lastIdx(arr, 1) ).toEqual( 1 );
+                expect( lastIdx(arr, 'a') ).toEqual( 3 );
+                expect( lastIdx(arr, 2) ).toEqual( 6 );
+                expect( lastIdx(arr, 'b') ).toEqual( 8 );
+
+                expect( lastIdx(arr, 'foo') ).toEqual( -1 );
+            });
+
+            it('should handle fromIndex', function(){
+                var arr = [1, 'a', 2, 'b'];
+
+                expect( lastIdx(arr, 1, 2) ).toEqual( 0 );
+                expect( lastIdx(arr, 'a', -4) ).toEqual( -1 );
+                expect( lastIdx(arr, 2, 2) ).toEqual( 2 );
+                expect( lastIdx(arr, 'b', 2) ).toEqual( -1 );
+
+                expect( lastIdx(arr, 'foo', 2) ).toEqual( -1 );
+            });
+
+            it('should handle fromIndex in sparse arrays', function(){
+                var arr = [];
+                arr[1] = 1;
+                arr[3] = 'a';
+                arr[6] = 2;
+                arr[8] = 'b';
+
+                expect( lastIdx(arr, 1, 0) ).toEqual( -1 );
+                expect( lastIdx(arr, 'a', 2) ).toEqual( -1 );
+                expect( lastIdx(arr, 2, 7) ).toEqual( 6 );
+                expect( lastIdx(arr, 'b', 8) ).toEqual( 8 );
+
+                expect( lastIdx(arr, 'foo', 4) ).toEqual( -1 );
+            });
+
+            it('should handle negative fromIndex', function(){
+                var arr = [1, 'a', 2, 'b'];
+
+                expect( lastIdx(arr, 1, -2) ).toEqual( 0 );
+                expect( lastIdx(arr, 'a', -2) ).toEqual( 1 );
+                expect( lastIdx(arr, 2, -2) ).toEqual( 2 );
+                expect( lastIdx(arr, 'b', -2) ).toEqual( -1 );
+
+                expect( lastIdx(arr, 'foo', -2) ).toEqual( -1 );
+            });
+
+            it('should handle fromIndex greater than length', function(){
+                var arr = [1, 'a', 2, 'b'];
+
+                expect( lastIdx(arr, 1, 15) ).toEqual( 0 );
+                expect( lastIdx(arr, 'a', 15) ).toEqual( 1 );
+                expect( lastIdx(arr, 2, 15) ).toEqual( 2 );
+                expect( lastIdx(arr, 'b', 15) ).toEqual( 3 );
+
+                expect( lastIdx(arr, 'foo', 15) ).toEqual( -1 );
+            });
+
+        });
+
+        describe('isSparse()', function(){
+
+            var isSparse = arrayUtils.isSparse;
+
+            it('should check if array contain empty items', function(){
+                var arr = ['foo'];
+                arr[6] = 'bar';
+                expect( isSparse(arr) ).toBe( true );
+            });
+
+            it('should not give false positives', function(){
+                var arr = ['foo', false, null, 123, 'bar'];
+                expect( isSparse(arr) ).toBe( false );
+            });
+
+            it('should consider undefined as empty', function(){
+                var arr = ['foo', false, null, 123, undefined, 'bar'];
+                expect( isSparse(arr) ).toBe( true );
+            });
+
+        });
+
         describe('isSparse()', function(){
 
             var isSparse = arrayUtils.isSparse;
@@ -204,6 +306,26 @@ define(['src/array'], function(arrayUtils){
                 expect( result[0] ).toEqual( 1 );
                 expect( result[1] ).toEqual( 3 );
                 expect( result[2] ).toEqual( 5 );
+            });
+
+        });
+
+
+        describe('map()', function(){
+
+            var map = arrayUtils.map;
+
+            it('should return a new array with modified items', function () {
+                var base = [1,2,3,4,5];
+                var r = map(base, function(val, i){
+                    return val + i;
+                });
+
+                expect( r[0] ).toBe( 1 );
+                expect( r[1] ).toBe( 3 );
+                expect( r[2] ).toBe( 5 );
+                expect( r[3] ).toBe( 7 );
+                expect( r[4] ).toBe( 9 );
             });
 
         });

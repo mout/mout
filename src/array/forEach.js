@@ -1,11 +1,12 @@
 define(function(){
 
-    var _forEach = Array.prototype.forEach;
+    var _forEach = Array.prototype.forEach,
+        UNDEF;
 
     /**
-     * ES5 forEach
+     * ES5 Array.forEach
      * @author Miller Medeiros
-     * @version 0.1.0 (2011/10/18)
+     * @version 0.2.0 (2011/10/31)
      */
      function forEach(arr, callback, thisObj){
         if(_forEach && arr.forEach === _forEach){
@@ -15,7 +16,7 @@ define(function(){
                 item = arr[i];
                 //according to spec callback should only be called for
                 //existing items
-                if(typeof item !== 'undefined'){
+                if(item !== UNDEF){
                     callback.call(thisObj, item, i, arr);
                 }
             }

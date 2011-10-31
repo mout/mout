@@ -10,6 +10,8 @@ Array utilities.
  - [`forEach()`](#forEach)
  - [`indexOf()`](#indexOf)
  - [`isSparse()`](#isSparse)
+ - [`lastIndexOf()`](#lastIndexOf)
+ - [`map()`](#map)
  - [`remove()`](#remove)
  - [`removeAll()`](#removeAll)
  - [`unique()`](#unique)
@@ -57,6 +59,23 @@ isSparse(arr); // true
 var arr2 = ['lorem', 'ipsum'];
 isSparse(arr2); // false
 ```
+
+
+
+## <a href="#indexOf" name="lastIndexOf">lastIndexOf(arr, item, [fromIndex]):Number</a>
+
+ES5 Array.lastIndexOf (since it doesn't work on IE 6-8 natively)
+
+more info at [MDN Array#lastIndexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
+
+
+
+## <a href="#map" name="map">map(arr, callback):Array</a>
+
+ES5 Array.map : Creates a new array with the results of calling
+a provided function on every element in this array.
+
+more info at [MDN Array#map](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/map)
 
 
 
