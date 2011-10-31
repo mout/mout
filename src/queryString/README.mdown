@@ -17,7 +17,8 @@ Utilities for query string manipulation.
 ## <a href="#decodeQuery" name="decodeQuery">decodeQuery(str):Object</a>
 
 Parses query string and creates an object of keys => vals. Will typecast value
-with `string/typecast`
+with `string/typecast` and decode string parameters using
+`decodeURIComponent()`.
 
 ```js
 decodeQuery('?foo=bar&lorem=123'); // {foo: "bar", lorem: 123}
@@ -26,7 +27,8 @@ decodeQuery('?foo=bar&lorem=123'); // {foo: "bar", lorem: 123}
 
 ## <a href="#encodeQuery" name="encodeQuery">encodeQuery(obj):String</a>
 
-Encode object into a query string.
+Encode object into a query string. Will encode parameters with
+`encodeURIComponent()`.
 
 ```js
 encodeQuery({foo: "bar", lorem: 123}); // "?foo=bar&lorem=123"
@@ -103,8 +105,8 @@ hasParam('foo');   // true
 hasParam('dolor'); // false
 
 //allow custom URL
-getQueryString('lorem', 'http://example.com/?lorem=ipsum'); // true
-getQueryString('foo', 'http://example.com/?lorem=ipsum');   //false
+hasParam('lorem', 'http://example.com/?lorem=ipsum'); // true
+hasParam('foo', 'http://example.com/?lorem=ipsum');   //false
 ```
 
 -------------------------------------------------------------------------------
