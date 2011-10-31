@@ -6,6 +6,7 @@ String utilities.
 ## <a href="#toc" name="toc">Table of Contents</a>
 
  - [`camelCase()`](#camelCase)
+ - [`crop()`](#crop)
  - [`hyphenate()`](#hyphenate)
  - [`lowerCase()`](#lowerCase)
  - [`ltrim()`](#ltrim)
@@ -39,6 +40,20 @@ See: [`pascalCase()`](#pascalCase)
 ```js
 camelCase('lorem-ipsum-dolor'); // "loremIpsumDolor"
 camelCase('lorem ipsum dolor'); // "loremIpsumDolor"
+```
+
+
+## <a href="#crop" name="crop">crop(str, maxChars, [append]):String</a>
+
+Truncate string at full words. Alias to `truncate(str, maxChars, append, true);`.
+
+See: [`truncate()`](#truncate)
+
+### Example
+
+```js
+crop('lorem ipsum dolor', 10);      // "lorem..."
+crop('lorem ipsum dolor', 10, '+'); // "lorem+"
 ```
 
 
@@ -226,15 +241,27 @@ trim('   lorem ipsum   '); // "lorem ipsum"
 
 
 
-## <a href="#truncate" name="truncate">truncate(str, [maxChars], [append]):String</a>
+## <a href="#truncate" name="truncate">truncate(str, maxChars, [append], [onlyFullWords]):String</a>
 
-Limit number of chars.
+Limit number of chars. Returned string `length` will be `<= maxChars`.
+
+See: [`crop()`](#crop)
+
+### Arguments
+
+ 1. `str` (String) : String
+ 2. `maxChars` (Number) : Maximum number of characters including `append.length`.
+ 3. `[append]` (String) : Value that should be added to the end of string.
+    Defaults to "...".
+ 4. `[onlyFullWords]` (Boolean) : If it shouldn't break words. Default is
+    `false`. (favor [`crop()`](#crop) since code will be clearer).
 
 ### Example
 
 ```js
-truncate('lorem ipsum dolor', 10);      // "lorem..."
-truncate('lorem ipsum dolor', 10, '+'); // "lorem+"
+truncate('lorem ipsum dolor', 11);             // "lorem ip..."
+truncate('lorem ipsum dolor', 11, '+');        // "lorem ip+"
+truncate('lorem ipsum dolor', 11, null, true); // "lorem..."
 ```
 
 

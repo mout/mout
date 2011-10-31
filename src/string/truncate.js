@@ -1,24 +1,20 @@
 define(['./trim'], function(trim){
     /**
     * Limit number of chars.
-    * @example truncate('lorem ipsum dolor sit amet', 10) -> 'lorem...'
-    * @param {string} str
-    * @param {number} [maxChars] Default to 125 chars. (including append.length)
-    * @param {string} [append] Default to '...'
-    * @return {string}
-    * @version 0.2.0 (2011/08/09)
+    * @version 0.3.0 (2011/10/31)
     * @author Miller Medeiros
     */
-    function truncate(str, maxChars, append){
-        maxChars = maxChars || 125;
+    function truncate(str, maxChars, append, onlyFullWords){
         append = append || '...';
+        maxChars = onlyFullWords? maxChars + 1 : maxChars;
 
         str = trim(str);
         if(str.length <= maxChars){
             return str;
         }
-        str = str.substr(0, maxChars - append.length + 1);
-        str = str.substr(0, str.lastIndexOf(' ')); //crop at last space
+        str = str.substr(0, maxChars - append.length);
+        //crop at last space or remove trailing whitespace
+        str = onlyFullWords? str.substr(0, str.lastIndexOf(' ')) : trim(str);
         return str + append;
     }
     return truncate;

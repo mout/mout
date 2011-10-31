@@ -4,10 +4,11 @@ define(function(require){
      * String utilities.
      * @exports amd-utils/string
      * @author Miller Medeiros
-     * @version 0.2.0 (2011/10/29)
+     * @version 0.3.0 (2011/10/31)
      */
     return {
         camelCase      : require('./string/camelCase'),
+        crop           : require('./string/crop'),
         hyphenate      : require('./string/hyphenate'),
         ltrim          : require('./string/ltrim'),
         makePath       : require('./string/makePath'),
