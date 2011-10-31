@@ -26,8 +26,8 @@ rounding issues.
 enforcePrecision(0.615, 2); // 0.62
 enforcePrecision(0.625, 2); // 0.63
 //floating point rounding "error" (rounds to odd number)
-(0.615).toFixed(2);         // 0.61
-(0.625).toFixed(2);         // 0.63
++(0.615).toFixed(2);        // 0.61
++(0.625).toFixed(2);        // 0.63
 ```
 
 
@@ -51,10 +51,12 @@ Add padding zeros if `n.length` < `minLength`.
 ### Example:
 
 ```js
-pad(15, 5);     // 00015
-pad(4444, 5);   // 04444
-pad(55555, 5);  // 55555
-pad(666666, 5); // 666666
+pad(1, 5);      // 00001
+pad(12, 5);     // 00012
+pad(123, 5);    // 00123
+pad(1234, 5);   // 01234
+pad(12345, 5);  // 12345
+pad(123456, 5); // 123456
 ```
 
 
@@ -64,7 +66,6 @@ pad(666666, 5); // 666666
 Bitwise circular shift left.
 
 More info at [Wikipedia#Circular_shift](http://en.wikipedia.org/wiki/Circular_shift)
-
 
 
 
@@ -78,8 +79,8 @@ More info at [Wikipedia#Circular_shift](http://en.wikipedia.org/wiki/Circular_sh
 
 ## <a href="#toInt" name="toInt">toInt(val):Number</a>
 
-"Convert" value into an 32-bit integer.  Works like `Math.floor` if val > 0 and
-`Math.ceil` if val < 0.
+"Convert" value into an 32-bit integer.  Works like `Math.floor` if `val > 0` and
+`Math.ceil` if `val < 0`.
 
 **IMPORTANT:** val should be inside range
 [number/MIN_INT](#MIN_INT)...[number/MAX_INT](#MAX_INT).

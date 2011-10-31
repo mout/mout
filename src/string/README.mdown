@@ -260,7 +260,7 @@ See: [`crop()`](#crop)
 
 ```js
 truncate('lorem ipsum dolor', 11);             // "lorem ip..."
-truncate('lorem ipsum dolor', 11, '+');        // "lorem ip+"
+truncate('lorem ipsum dolor', 11, '+');        // "lorem ipsu+"
 truncate('lorem ipsum dolor', 11, null, true); // "lorem..."
 ```
 
