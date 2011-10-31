@@ -174,38 +174,12 @@ define(['src/array'], function(arrayUtils){
             });
 
             it('should not give false positives', function(){
-                var arr = ['foo', false, null, 123, 'bar'];
+                var arr = ['foo', false, null, 123, 'bar', undefined, 'dolor'];
                 expect( isSparse(arr) ).toBe( false );
-            });
-
-            it('should consider undefined as empty', function(){
-                var arr = ['foo', false, null, 123, undefined, 'bar'];
-                expect( isSparse(arr) ).toBe( true );
             });
 
         });
 
-        describe('isSparse()', function(){
-
-            var isSparse = arrayUtils.isSparse;
-
-            it('should check if array contain empty items', function(){
-                var arr = ['foo'];
-                arr[6] = 'bar';
-                expect( isSparse(arr) ).toBe( true );
-            });
-
-            it('should not give false positives', function(){
-                var arr = ['foo', false, null, 123, 'bar'];
-                expect( isSparse(arr) ).toBe( false );
-            });
-
-            it('should consider undefined as empty', function(){
-                var arr = ['foo', false, null, 123, undefined, 'bar'];
-                expect( isSparse(arr) ).toBe( true );
-            });
-
-        });
 
         describe('remove()', function(){
 
@@ -350,7 +324,78 @@ define(['src/array'], function(arrayUtils){
         });
 
 
+        describe('every()', function(){
 
+            var every = arrayUtils.every;
+            var isEven = function(val, i, arr){
+                return (val % 2 === 0);
+            };
+
+            it('should work on normal array', function () {
+                var a1 = [1, 2, 3];
+                var a2 = [1, 3, 5];
+                var a3 = [2, 4, 6];
+
+                expect( every(a1, isEven) ).toBe( false );
+                expect( every(a2, isEven) ).toBe( false );
+                expect( every(a3, isEven) ).toBe( true );
+            });
+
+            it('should work on sparse array', function () {
+                var a1 = [1, 2, 3];
+                a1[10] = 8;
+                var a2 = [1, 3, 5];
+                a2[10] = 7;
+                var a3 = [2, 4, 6];
+                a3[10] = 10;
+
+                expect( every(a1, isEven) ).toBe( false );
+                expect( every(a2, isEven) ).toBe( false );
+                expect( every(a3, isEven) ).toBe( true );
+            });
+
+            it('should work on empty arrays', function () {
+                //t is vacuously true that all elements of the empty set satisfy any given condition.
+                expect( every([], isEven) ).toBe( true );
+            });
+
+        });
+
+        describe('some()', function(){
+
+            var some = arrayUtils.some;
+            var isEven = function(val, i, arr){
+                return (val % 2 === 0);
+            };
+
+            it('should work on normal array', function () {
+                var a1 = [1, 2, 3];
+                var a2 = [1, 3, 5];
+                var a3 = [2, 4, 6];
+
+                expect( some(a1, isEven) ).toBe( true );
+                expect( some(a2, isEven) ).toBe( false );
+                expect( some(a3, isEven) ).toBe( true );
+            });
+
+            it('should work on sparse array', function () {
+                var a1 = [1, 2, 3];
+                a1[10] = 8;
+                var a2 = [1, 3, 5];
+                a2[10] = 7;
+                var a3 = [2, 4, 6];
+                a3[10] = 10;
+
+                expect( some(a1, isEven) ).toBe( true );
+                expect( some(a2, isEven) ).toBe( false );
+                expect( some(a3, isEven) ).toBe( true );
+            });
+
+            it('should work on empty arrays', function () {
+                expect( some([], isEven) ).toBe( false );
+            });
+
+        });
 
     });
 
