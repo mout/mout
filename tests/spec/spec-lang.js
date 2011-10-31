@@ -280,6 +280,7 @@ define(['src/lang'], function(lang){
                 expect( toArray(123) ).toEqual( [123] );
                 expect( toArray(/\w+/) ).toEqual( [/\w+/] );
                 expect( toArray(window) ).toEqual( [window] );
+                expect( toArray({foo:"bar", lorem:123}) ).toEqual( ["bar", 123] );
             });
 
         });

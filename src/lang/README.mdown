@@ -8,6 +8,7 @@ Language Utilities. Easier inheritance, scope handling, type checks.
 
  - [`bind()`](#bind)
  - [`createObject()`](#createObject)
+ - [`inheritPrototype()`](#inheritPrototype)
  - [`isArguments()`](#isArguments)
  - [`isArray()`](#isArray)
  - [`isBoolean()`](#isBoolean)
@@ -21,7 +22,6 @@ Language Utilities. Easier inheritance, scope handling, type checks.
  - [`isString()`](#isString)
  - [`isUndefined()`](#isUndefined)
  - [`kindOf()`](#kindOf)
- - [`inheritPrototype()`](#inheritPrototype)
  - [`mixIn()`](#mixIn)
  - [`toArray()`](#toArray)
 
@@ -53,16 +53,17 @@ Mix between [Douglas Crockford Prototypal Inheritance](http://javascript.crockfo
 ### Example
 
 ```js
-function Bar(){}
-Bar.prototype = {
-    name : 'lorem ipsum'
+var base = {
+    trace : function(){
+        console.log(this.name);
+    }
 };
 
-var myObj = createObject(Bar.prototype, {
-    foo : function(){
-        console.log( this.name );
-    }
+var myObj = createObject(base, {
+    name : 'Lorem Ipsum'
 });
+
+myObject.trace(); // "Lorem Ipsum"
 ```
 
 
@@ -177,13 +178,48 @@ Used internally by `isKind()` and most of the other *isSomething* checks.
 
 Combine properties from all the objects into first one.
 
-This method affects target object in place, if you want to create a new Object pass an empty object as first param.
+This method affects target object in place, if you want to create a new Object
+pass an empty object as first parameter.
 
 ### Arguments
 
  1. `target` (Object)        : Target Object.
  2. `...objects` (...Object) : Objects to be combined (0...n objects).
 
+### Example
+
+```js
+var a = {foo: "bar"};
+var b = {lorem: 123};
+
+mixIn({}, a, b); // {foo: "bar", lorem: 123}
+console.log(a);  // {foo: "bar"}
+
+mixIn(a, b);     // {foo: "bar", lorem: 123}
+console.log(a);  // {foo: "bar", lorem: 123}
+```
+
+
+## <a href="#toArray" name="toArray">toArray(val):Array</a>
+
+Convert array-like object into Array or wrap value into Array.
+
+```js
+toArray({
+    "0" : "foo",
+    "1" : "bar",
+    "length" : 2
+});                              // ["foo", "bar"]
+
+function foo(){
+    return toArray(arguments);
+}
+foo("lorem", 123);               // ["lorem", 123]
+
+toArray("lorem ipsum");          // ["lorem ipsum"]
+toArray(window);                 // [window]
+toArray({foo:"bar", lorem:123}); // ["bar", 123]
+```
 
 
 -------------------------------------------------------------------------------
