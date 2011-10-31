@@ -140,5 +140,108 @@ define(['src/lang'], function(lang){
 
         });
 
+
+        describe('kindOf()', function(){
+
+            var kindOf = lang.kindOf;
+
+            it('should get the kind of value', function () {
+
+                expect( kindOf('') ).toEqual( 'String' );
+                expect( kindOf('foo') ).toEqual( 'String' );
+                expect( kindOf(new String('lorem')) ).toEqual( 'String' );
+                expect( kindOf(String(123)) ).toEqual( 'String' );
+
+                expect( kindOf(0) ).toEqual( 'Number' );
+                expect( kindOf(123) ).toEqual( 'Number' );
+                expect( kindOf(new Number(123)) ).toEqual( 'Number' );
+                expect( kindOf(Number('123')) ).toEqual( 'Number' );
+
+                expect( kindOf(true) ).toEqual( 'Boolean' );
+                expect( kindOf(false) ).toEqual( 'Boolean' );
+                expect( kindOf(new Boolean(false)) ).toEqual( 'Boolean' );
+                expect( kindOf(new Boolean(true)) ).toEqual( 'Boolean' );
+                expect( kindOf(Boolean(0)) ).toEqual( 'Boolean' );
+                expect( kindOf(Boolean(1)) ).toEqual( 'Boolean' );
+
+                expect( kindOf([1, 'foo']) ).toEqual( 'Array' );
+                expect( kindOf(new Array(3)) ).toEqual( 'Array' );
+
+                expect( kindOf(function () {}) ).toEqual( 'Function' );
+                expect( kindOf(new Function('return 1;')) ).toEqual( 'Function' );
+
+                expect( kindOf(/\w+/) ).toEqual( 'RegExp' );
+                expect( kindOf(new RegExp('\\w+', 'g')) ).toEqual( 'RegExp' );
+
+                expect( kindOf(new Date()) ).toEqual( 'Date' );
+
+
+                expect( kindOf(null) ).toEqual( 'Null' );
+
+                expect( kindOf(undefined) ).toEqual( 'Undefined' );
+                expect( kindOf() ).toEqual( 'Undefined' );
+            });
+
+        });
+
+        describe('isKind()', function(){
+
+            var isKind      = lang.isKind,
+                isArray     = lang.isArray,
+                isBoolean   = lang.isBoolean,
+                isDate      = lang.isDate,
+                isFunction  = lang.isFunction,
+                isNumber    = lang.isNumber,
+                isNull      = lang.isNull,
+                isObject    = lang.isObject,
+                isRegExp    = lang.isRegExp,
+                isString    = lang.isString,
+                isUndefined = lang.isUndefined;
+
+            it('should check kind of value', function () {
+
+                expect( isKind('', 'String') ).toBe( true );
+                expect( isString('foo') ).toBe( true );
+                expect( isString(new String('lorem')) ).toBe( true );
+                expect( isString(String(123)) ).toBe( true );
+
+                expect( isNumber(0) ).toBe( true );
+                expect( isNumber(123) ).toBe( true );
+                expect( isNumber(new Number(123)) ).toBe( true );
+                expect( isNumber(Number('123')) ).toBe( true );
+
+                expect( isBoolean(true) ).toBe( true );
+                expect( isBoolean(false) ).toBe( true );
+                expect( isBoolean(new Boolean(false)) ).toBe( true );
+                expect( isBoolean(new Boolean(true)) ).toBe( true );
+                expect( isBoolean(Boolean(0)) ).toBe( true );
+                expect( isBoolean(Boolean(1)) ).toBe( true );
+
+
+                expect( isKind([1, 'foo'], 'Array') ).toBe( true );
+                expect( isArray([1, 'foo']) ).toBe( true );
+                expect( isArray(new Array(3)) ).toBe( true );
+
+                expect( isKind(null, 'Null') ).toBe( true );
+                expect( isNull(null) ).toBe( true );
+
+                expect( isKind(undefined, 'Undefined') ).toBe( true );
+                expect( isUndefined(undefined) ).toBe( true );
+                expect( isUndefined() ).toBe( true );
+
+                expect( isKind(function () {}, 'Function') ).toBe( true );
+                expect( isFunction(function () {}) ).toBe( true );
+                expect( isFunction(new Function('return 1;')) ).toBe( true );
+
+                expect( isKind(/\w+/, 'RegExp') ).toBe( true );
+                expect( isRegExp(/\w+/) ).toBe( true );
+                expect( isRegExp(new RegExp('\\w+', 'g')) ).toBe( true );
+
+                expect( isKind(new Date(), 'Date') ).toBe( true );
+                expect( isDate(new Date()) ).toBe( true );
+            });
+
+        });
+
     });
 });

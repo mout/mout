@@ -1,6 +1,6 @@
 # amd-utils / lang #
 
-Language Utilities. Easier inheritance and scope handling.
+Language Utilities. Easier inheritance, scope handling, type checks.
 
 
 
@@ -8,6 +8,18 @@ Language Utilities. Easier inheritance and scope handling.
 
  - [`bind()`](#bind)
  - [`createObject()`](#createObject)
+ - [`isArray()`](#isArray)
+ - [`isBoolean()`](#isBoolean)
+ - [`isDate()`](#isDate)
+ - [`isFunction()`](#isFunction)
+ - [`isKind()`](#isKind)
+ - [`isNull()`](#isNull)
+ - [`isNumber()`](#isNumber)
+ - [`isObject()`](#isObject)
+ - [`isRegExp()`](#isRegExp)
+ - [`isString()`](#isString)
+ - [`isUndefined()`](#isUndefined)
+ - [`kindOf()`](#kindOf)
  - [`inheritPrototype()`](#inheritPrototype)
  - [`mixIn()`](#mixIn)
 
@@ -41,6 +53,80 @@ Mix between [Douglas Crockford Prototypal Inheritance](http://javascript.crockfo
 ## <a href="#inheritPrototype" name="inheritPrototype">inheritPrototype(child, parent):void</a>
 
 Inherit prototype from another Object.
+
+
+
+## <a href="#isArray" name="isArray">isArray(val):Boolean</a>
+
+If value is an Array.
+
+
+
+## <a href="#isBoolean" name="isBoolean">isBoolean(val):Boolean</a>
+
+If value is a Boolean.
+
+
+
+## <a href="#isDate" name="isDate">isDate(val):Boolean</a>
+
+If value is a Date.
+
+
+
+## <a href="#isFunction" name="isFunction">isFunction(val):Boolean</a>
+
+If value is a Function.
+
+
+
+## <a href="#isKind" name="isKind">isKind(val, kind):Boolean</a>
+
+If value is of "kind". (used internally by most of the *isSomething* checks),
+favor the other methods since strings are commonly mistyped.
+
+
+
+## <a href="#isNull" name="isNull">isNull(val):Boolean</a>
+
+If value is `null`.
+
+
+
+## <a href="#isNumber" name="isNumber">isNumber(val):Boolean</a>
+
+If value is a Number.
+
+
+
+## <a href="#isObject" name="isObject">isObject(val):Boolean</a>
+
+If value is an Object.
+
+
+
+## <a href="#isRegExp" name="isRegExp">isRegExp(val):Boolean</a>
+
+If value is a RegExp.
+
+
+
+## <a href="#isString" name="isString">isString(val):Boolean</a>
+
+If value is a String.
+
+
+
+## <a href="#isUndefined" name="isUndefined">isUndefined(val):Boolean</a>
+
+If value is `undefined`.
+
+
+
+## <a href="#kindOf" name="kindOf">kindOf(val):String</a>
+
+Gets kind of value (e.g. "String", "Number", "RegExp", "Null", "Date").
+Used internally by `isKind()` and most of the other *isSomething* checks.
 
 
 

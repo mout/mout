@@ -4,13 +4,25 @@ define(function(require){
      * Language Utilities. Easier inheritance and scope handling.
      * @exports amd-utils/lang
      * @author Miller Medeiros
-     * @version 0.1.0 (2011/10/20)
+     * @version 0.2.0 (2011/10/31)
      */
     return {
-        mixIn            : require('./lang/mixIn'),
-        inheritPrototype : require('./lang/inheritPrototype'),
+        bind             : require('./lang/bind'),
         createObject     : require('./lang/createObject'),
-        bind             : require('./lang/bind')
+        inheritPrototype : require('./lang/inheritPrototype'),
+        isArray          : require('./lang/isArray'),
+        isBoolean        : require('./lang/isBoolean'),
+        isDate           : require('./lang/isDate'),
+        isFunction       : require('./lang/isFunction'),
+        isKind           : require('./lang/isKind'),
+        isNull           : require('./lang/isNull'),
+        isNumber         : require('./lang/isNumber'),
+        isObject         : require('./lang/isObject'),
+        isRegExp         : require('./lang/isRegExp'),
+        isString         : require('./lang/isString'),
+        isUndefined      : require('./lang/isUndefined'),
+        kindOf           : require('./lang/kindOf'),
+        mixIn            : require('./lang/mixIn')
     };
 
 });
