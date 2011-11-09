@@ -152,8 +152,8 @@ Gets a random number inside range or snap to min/max values.
 
 ### Arguments:
 
- 1. `[min]` (Number)         : Minimum value. Defaults to `number.MIN_INT`.
- 2. `[max]` (Number)         : Maximum value. Defaults to `number.MAX_INT`.
+ 1. `[min]` (Number)         : Minimum value. Defaults to `number/MIN_INT`.
+ 2. `[max]` (Number)         : Maximum value. Defaults to `number/MAX_INT`.
  3. `[shouldSnap]` (Boolean) : If it should snap random number to min/max.
 
 
@@ -176,8 +176,8 @@ Gets a random integer inside range or snap to min/max values.
 
 ### Arguments:
 
- 1. `[min]` (Number)         : Minimum value. Defaults to `number.MIN_INT`.
- 2. `[max]` (Number)         : Maximum value. Defaults to `number.MAX_INT`.
+ 1. `[min]` (Number)         : Minimum value. Defaults to `number/MIN_INT`.
+ 2. `[max]` (Number)         : Maximum value. Defaults to `number/MAX_INT`.
  3. `[shouldSnap]` (Boolean) : If it should snap random number to min/max.
 
 

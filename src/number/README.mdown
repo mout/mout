@@ -36,12 +36,22 @@ enforcePrecision(0.625, 2); // 0.63
 
 Maximum 32-bit signed integer value. `Math.pow(2, 31) - 1`
 
+### Example:
+
+```js
+console.log( MAX_INT ); // 2147483647
+```
 
 
 ## <a href="#MIN_INT" name="MIN_INT">MIN_INT:Number</a>
 
 Minimum 32-bit signed integer value. `Math.pow(2, 31) * -1`.
 
+### Example:
+
+```js
+console.log( MIN_INT ); // -2147483648
+```
 
 
 ## <a href="#pad" name="pad">pad(n, minLength):String</a>
@@ -90,6 +100,14 @@ feature is commonly needed.
 
 [Perf tests](http://jsperf.com/vs-vs-parseint-bitwise-operators/7)
 
+### Example:
+
+```js
+toInt(1.25);   // 1
+toInt(0.75);   // 0
+toInt(-0.55);  // 0
+toInt(-5.0001) // -5
+```
 
 
 ## <a href="#toUInt" name="toUInt">toUInt(val):Number</a>
@@ -99,6 +117,14 @@ feature is commonly needed.
 **IMPORTANT:** val should be inside range
 [number/MIN_INT](#MIN_INT)...[number/MAX_INT](#MAX_INT).
 
+### Example:
+
+```js
+toUInt(1.25);   // 1
+toUInt(0.75);   // 0
+toUInt(-0.55);  // 0
+toUInt(-5.0001) // 0
+```
 
 
 -------------------------------------------------------------------------------

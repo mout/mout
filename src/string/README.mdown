@@ -65,6 +65,7 @@ Replaces spaces with hyphens, split camelCase text, remove non-word chars, remov
 ```js
 hyphenate(' %# lorem ipsum  ? $  dolor'); // "lorem-ipsum-dolor"
 hyphenate('spéçïãl çhârs');               // "special-chars"
+hyphenate('loremIpsum');                  // "lorem-ipsum"
 ```
 
 
@@ -88,6 +89,8 @@ lowerCase(undefined);      // ""
 
 Remove white-spaces from beginning of string.
 
+See: [`rtrim()`](#rtrim), [`trim()`](#trim)
+
 ### Example
 
 ```js
@@ -105,7 +108,7 @@ it will be ignored from resulting path. It will also remove duplicate "/".
 
 ```js
 makePath('lorem', 'ipsum', null, 'dolor'); // "lorem/ipsum/dolor"
-makePath('foo/', '//bar', '/');            // "foo/bar/"
+makePath('foo///bar/');                    // "foo/bar/"
 ```
 
 
@@ -127,7 +130,7 @@ pascalCase('lorem ipsum dolor'); // "LoremIpsumDolor"
 
 ## <a href="#properCase" name="properCase">properCase(str):String</a>
 
-UPPERCASE first char of each word.
+UPPERCASE first char of each word, lowercase other chars.
 
 ### Example
 
@@ -181,6 +184,8 @@ replaceAccents('spéçïãl çhârs'); // "special chars"
 
 Remove white-spaces from end of string.
 
+See: [`trim()`](#trim), [`ltrim()`](#ltrim)
+
 ### Example
 
 ```js
@@ -203,7 +208,7 @@ sentenceCase('Lorem IpSum DoLOr. maeCeNnas Ullamcor.'); // "Lorem ipsum dolor. M
 
 ## <a href="#stripHtmlTags" name="stripHtmlTags">stripHtmlTags(str):String</a>
 
-Remove HTML tags from string.
+Remove HTML/XML tags from string.
 
 ### Example
 
@@ -232,6 +237,8 @@ toSlug('loremIpsum dolor spéçïãl chârs'); // "loremipsum-dolor-special-char
 ## <a href="#trim" name="trim">trim(str):String</a>
 
 Remove white-spaces from beginning and end of string.
+
+See: [`rtrim()`](#rtrim), [`ltrim()`](#ltrim)
 
 ### Example
 
