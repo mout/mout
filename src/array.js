@@ -4,7 +4,7 @@ define(function(require){
      * Basic array utilities.
      * @exports amd-utils/array
      * @author Miller Medeiros
-     * @version 0.5.0 (2011/10/31)
+     * @version 0.6.0 (2011/11/14)
      */
     return {
         contains    : require('./array/contains'),
@@ -15,6 +15,7 @@ define(function(require){
         isSparse    : require('./array/isSparse'),
         lastIndexOf : require('./array/lastIndexOf'),
         map         : require('./array/map'),
+        reduce      : require('./array/reduce'),
         remove      : require('./array/remove'),
         removeAll   : require('./array/removeAll'),
         some        : require('./array/some'),

@@ -12,8 +12,11 @@ Array utilities.
  - [`forEach()`](#forEach)
  - [`indexOf()`](#indexOf)
  - [`isSparse()`](#isSparse)
+ - [`join()`](#join)
  - [`lastIndexOf()`](#lastIndexOf)
  - [`map()`](#map)
+ - [`reduce()`](#reduce)
+ - [`reduceRight()`](#reduceRight)
  - [`remove()`](#remove)
  - [`removeAll()`](#removeAll)
  - [`some()`](#some)
@@ -35,7 +38,7 @@ contains(arr, 'foo');  // false
 
 ## <a href="#every" name="every">every(arr, callback, [thisObj]):Array</a>
 
-ES5 Array every.
+Crossbrowser ES5 `Array.every()`.
 
 Tests whether all elements in the array pass the test implemented by the provided function.
 
@@ -45,7 +48,7 @@ more info at [MDN Array#every](https://developer.mozilla.org/en/JavaScript/Refer
 
 ## <a href="#filter" name="filter">filter(arr, callback, [thisObj]):Array</a>
 
-ES5 Array filter.
+Crossbrowser ES5 `Array.filter()`.
 
 Creates a new array with all elements that pass the callback test.
 
@@ -55,7 +58,7 @@ more info at [MDN Array#filter](https://developer.mozilla.org/en/JavaScript/Refe
 
 ## <a href="#forEach" name="forEach">forEach(arr, callback, [thisObj]):void</a>
 
-ES5 Array forEach.
+Crossbrowser ES5 `Array.forEach()`.
 
 more info at [MDN Array#forEach](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/forEach)
 
@@ -63,7 +66,7 @@ more info at [MDN Array#forEach](https://developer.mozilla.org/en/JavaScript/Ref
 
 ## <a href="#indexOf" name="indexOf">indexOf(arr, item, [fromIndex]):Number</a>
 
-ES5 indexOf (since it doesn't work on IE 6-8 natively)
+Crossbrowser ES5 `Array.indexOf()`.
 
 more info at [MDN Array#indexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf)
 
@@ -87,20 +90,57 @@ isSparse(arr2); // false
 
 
 
-## <a href="#indexOf" name="lastIndexOf">lastIndexOf(arr, item, [fromIndex]):Number</a>
+## <a href="#lastIndexOf" name="lastIndexOf">lastIndexOf(arr, item, [fromIndex]):Number</a>
 
-ES5 Array.lastIndexOf (since it doesn't work on IE 6-8 natively)
+Crossbrowser ES5 `Array.lastIndexOf()`.
 
 more info at [MDN Array#lastIndexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
 
 
 
+## <a href="#join" name="join">join(arr, separator):String</a>
+
+Siilar to `Array.join()` but ignores `undefined` and `null` items.
+
+### Example
+
+```js
+['lorem', null, 'ipsum', 'dolor'].join(',');  // "lorem,,ipsum,dolor"
+join(['lorem', null, 'ipsum', 'dolor'], ','); // "lorem,ipsum,dolor"
+```
+
+
+
 ## <a href="#map" name="map">map(arr, callback):Array</a>
 
-ES5 Array.map : Creates a new array with the results of calling
-a provided function on every element in this array.
+Crossbrowser ES5 `Array.map()`.
+
+Creates a new array with the results of calling a provided function on every
+element in this array.
 
 more info at [MDN Array#map](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/map)
+
+
+
+## <a href="#reduce" name="reduce">reduce(arr, fn):*</a>
+
+Crossbrowser ES5 `Array.reduce()`.
+
+Apply a function against an accumulator and each value of the array (from
+left-to-right) as to reduce it to a single value.
+
+more info at [MDN Array#reduce](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/reduce)
+
+
+
+## <a href="#reduceRight" name="reduceRight">reduceRight(arr, fn):*</a>
+
+Crossbrowser ES5 `Array.reduceRight()`.
+
+Apply a function simultaneously against two values of the array (from
+right-to-left) as to reduce it to a single value.
+
+more info at [MDN Array#reduceRight](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/reduceRight)
 
 
 
@@ -136,7 +176,7 @@ console.log(foo); // [1, 3, 4];
 
 ## <a href="#some" name="some">some(arr, callback, [thisObj]):Array </a>
 
-ES5 Array some.
+Crossbrowser ES5 `Array.some()`.
 
 Tests whether some element in the array passes the test implemented by the provided function.
 
