@@ -1,27 +1,25 @@
-define(function(){
-
-    var _nativeIndexOf = Array.prototype.indexOf;
+define(function () {
 
     /**
-     * ES5 Array.indexOf (since it doesn't work on IE 6-8 natively)
+     * ES5 Array.indexOf
      * @author Miller Medeiros
-     * @version 0.1.0 (2011/10/18)
+     * @version 0.2.0 (2011/11/15)
      */
-    function indexOf(arr, item, fromIndex) {
-        fromIndex = fromIndex || 0;
-        if (_nativeIndexOf && arr.indexOf === _nativeIndexOf) {
-            return arr.indexOf(item, fromIndex);
-        } else {
-            var n = arr.length,
-                i = fromIndex < 0? n + fromIndex : fromIndex;
-            for (; i < n; i += 1) {
-                if (arr[i] === item) {
-                    return i;
-                }
-            }
-            return -1;
-        }
-    }
+    var indexOf = Array.prototype.indexOf?
+                    function (arr, item, fromIndex) {
+                        return arr.indexOf(item, fromIndex);
+                    } :
+                    function (arr, item, fromIndex) {
+                        fromIndex = fromIndex || 0;
+                        var n = arr.length,
+                            i = fromIndex < 0? n + fromIndex : fromIndex;
+                        for (; i < n; i++) {
+                            if (arr[i] === item) {
+                                return i;
+                            }
+                        }
+                        return -1;
+                    };
 
     return indexOf;
 });

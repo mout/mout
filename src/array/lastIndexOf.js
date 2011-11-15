@@ -1,28 +1,25 @@
 define(function () {
 
-    var _nativeLastIndexOf = Array.prototype.lastIndexOf;
-
     /**
-     * ES5 Array.lastIndexOf (since it doesn't on work on IE 6-8 natively)
+     * ES5 Array.lastIndexOf
      * @author Miller Medeiros
-     * @version 0.1.0 (2011/10/31)
+     * @version 0.2.0 (2011/11/15)
      */
-    function lastIndexOf(arr, item, fromIndex){
-        fromIndex = (fromIndex == null)? arr.length - 1 : fromIndex;
-
-        if(_nativeLastIndexOf && arr.lastIndexOf === _nativeLastIndexOf){
-            return arr.lastIndexOf(item, fromIndex);
-        } else {
-            var n = fromIndex < 0? arr.length + fromIndex : fromIndex;
-            while (n >= 0) {
-                if (arr[n] === item) {
-                    return n;
-                }
-                n -= 1;
-            }
-            return -1;
-        }
-    }
+    var lastIndexOf = Array.prototype.lastIndexOf?
+                    function (arr, item, fromIndex) {
+                            return fromIndex == null? arr.lastIndexOf(item) : arr.lastIndexOf(item, fromIndex);
+                    } :
+                    function (arr, item, fromIndex) {
+                        fromIndex = (fromIndex == null || fromIndex >= arr.length)? arr.length - 1 : fromIndex;
+                        fromIndex = (fromIndex < 0)? arr.length + fromIndex : fromIndex;
+                        while (fromIndex >= 0) {
+                            if (arr[fromIndex] === item) {
+                                return fromIndex;
+                            }
+                            fromIndex--;
+                        }
+                        return -1;
+                    };
 
     return lastIndexOf;
 });

@@ -1,27 +1,23 @@
-define(['./forEach'], function(forEach){
-
-    var _nativeFilter = Array.prototype.filter;
+define(['./forEach'], function (forEach) {
 
     /**
-     * ES5 Array.filter: Creates a new array with all elements that pass the callback test.
-     * @return {array}
+     * ES5 Array.filter
      * @author Miller Medeiros
-     * @version 0.2.0 (2011/10/31)
+     * @version 0.3.0 (2011/11/15)
      */
-     function filter(arr, callback, thisObj){
-        var results;
-        if(_nativeFilter && arr.filter === _nativeFilter){
-            results = arr.filter(callback, thisObj);
-        } else {
-            results = [];
-            forEach(arr, function(val, i, arr){
-                if(callback.call(thisObj, val, i, arr)){
-                    results.push(val);
-                }
-            });
-        }
-        return results;
-    }
+    var filter = Array.prototype.filter?
+                function (arr, callback, thisObj) {
+                    return arr.filter(callback, thisObj);
+                } :
+                function (arr, callback, thisObj) {
+                    var results = [];
+                    forEach(arr, function (val, i, arr) {
+                        if ( callback.call(thisObj, val, i, arr) ) {
+                            results.push(val);
+                        }
+                    });
+                    return results;
+                };
 
     return filter;
 

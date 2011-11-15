@@ -62,7 +62,9 @@ define(['src/array/lastIndexOf'], function (lastIndexOf) {
             expect( lastIdx(arr, 1, -2) ).toEqual( 0 );
             expect( lastIdx(arr, 'a', -2) ).toEqual( 1 );
             expect( lastIdx(arr, 2, -2) ).toEqual( 2 );
+            expect( lastIdx(arr, 'b', -1) ).toEqual( 3 );
             expect( lastIdx(arr, 'b', -2) ).toEqual( -1 );
+            expect( lastIdx(arr, 'b', -3) ).toEqual( -1 );
 
             expect( lastIdx(arr, 'foo', -2) ).toEqual( -1 );
         });

@@ -1,24 +1,21 @@
 define(['./forEach'], function (forEach) {
 
-    var _nativeMap = Array.prototype.map;
-
     /**
-     * ES5 Array.map : Creates a new array with the results of calling
-     * a provided function on every element in this array.
+     * ES5 Array.map
      * @author Miller Medeiros
-     * @version 0.1.0 (2011/10/31)
+     * @version 0.2.0 (2011/11/15)
      */
-     function map(arr, callback, thisObj){
-         var results;
-         if(_nativeMap && arr.map === _nativeMap){
-             results = arr.map(callback, thisObj);
-         } else {
-            results = [];
-            forEach(arr, function(val, i, arr){
-                results[results.length] = callback.call(thisObj, val, i, arr);
-            });
-         }
-         return results;
-     }
+    var map = Array.prototype.map?
+                function (arr, callback, thisObj) {
+                    return arr.map(callback, thisObj);
+                } :
+                function (arr, callback, thisObj) {
+                    var results = [];
+                    forEach(arr, function (val, i, arr) {
+                        results[results.length] = callback.call(thisObj, val, i, arr);
+                    });
+                    return results;
+                };
+
      return map;
 });
