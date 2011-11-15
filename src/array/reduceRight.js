@@ -1,11 +1,11 @@
-define(['./forEach'], function (forEach) {
+define(function () {
 
     var _nativeReduceRight = Array.prototype.reduceRight;
 
     /**
      * ES5 Array.reduceRight
      * @author Miller Medeiros
-     * @version 0.1.0 (2011/11/15)
+     * @version 0.1.1 (2011/11/15)
      */
     function reduceRight(arr, fn, initVal) {
         var hasInit = typeof initVal !== 'undefined';
