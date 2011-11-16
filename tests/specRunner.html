@@ -15,7 +15,7 @@
                 paths : {
                     'src' : '../../src'
                 },
-                waitSeconds : (location.protocol === 'file:' || location.href.indexOf('://localhost') !== -1)? 2 : 45, //fail early locally
+                waitSeconds : (location.protocol === 'file:' || location.href.indexOf('://localhost') !== -1)? 5 : 45, //fail early locally
                 urlArgs : 'bust='+ (+new Date)
             });
 

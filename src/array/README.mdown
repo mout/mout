@@ -21,6 +21,7 @@ Array utilities.
  - [`reduceRight()`](#reduceRight)
  - [`remove()`](#remove)
  - [`removeAll()`](#removeAll)
+ - [`shuffle()`](#shuffle)
  - [`some()`](#some)
  - [`unique()`](#unique)
 
@@ -205,6 +206,19 @@ Remove all instances of an item from the array.
 var foo = [1, 2, 3, 4, 2, 2];
 removeAll(foo, 2);
 console.log(foo); // [1, 3, 4];
+```
+
+
+
+## <a href="#shuffle" name="shuffle">shuffle(arr):Array </a>
+
+Returns a new Array with items randomly sorted (shuffled). Similar to Ruby Array#shuffle.
+
+### Example
+
+```js
+var arr = ['a', 'b', 'c', 'd', 'e'];
+shuffle(arr); // ['b', 'd', 'e', 'c', 'a']
 ```
 
 

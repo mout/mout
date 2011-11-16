@@ -7,8 +7,10 @@ define([
     'math/spec-loop',
     'math/spec-map',
     'math/spec-norm',
-    'math/spec-random',
-    'math/spec-randomInt',
+    'math/spec-rand',
+    'math/spec-randBit',
+    'math/spec-randInt',
+    'math/spec-randSign',
     'math/spec-snap'
 ], function(){
     //noop

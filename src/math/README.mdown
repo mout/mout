@@ -14,8 +14,10 @@ Math utilities.
  - [`loop()`](#loop)
  - [`map()`](#map)
  - [`norm()`](#norm)
- - [`random()`](#random)
- - [`randomInt()`](#randomInt)
+ - [`rand()`](#rand)
+ - [`randBit()`](#randBit)
+ - [`randInt()`](#randInt)
+ - [`randSign()`](#randSign)
  - [`snap()`](#snap)
 
 
@@ -146,7 +148,8 @@ norm(75, 0, 100); // 0.75
 ```
 
 
-## <a href="#random" name="random">random([min], [max], [shouldSnap]):Number</a>
+
+## <a href="#rand" name="rand">rand([min], [max], [shouldSnap]):Number</a>
 
 Gets a random number inside range or snap to min/max values.
 
@@ -160,17 +163,36 @@ Gets a random number inside range or snap to min/max values.
 ### Example:
 
 ```js
-random();            // 448740433.55274725
-random();            // -31797596.097682
-random(0, 10);       // 7.369723
-random(0, 10);       // 5.987042
-random(0, 10, true); // 0
-random(0, 10, true); // 10
+rand();            // 448740433.55274725
+rand();            // -31797596.097682
+rand(0, 10);       // 7.369723
+rand(0, 10);       // 5.987042
+rand(0, 10, true); // 0
+rand(0, 10, true); // 10
+```
+
+
+## <a href="#randBit" name="randBit">randBit():Number</a>
+
+Returns a random "bit" (0 or 1). Useful for addition/subtraction.
+It's slightly faster than calling `rand()` or `randInt()` since implementation
+is simpler.
+
+
+### Example:
+
+```js
+randBit(); // 1
+randBit(); // 0
+
+//same effect as
+randInt(0, 1, true); // 0
+rand(0, 1, true);    // 1
 ```
 
 
 
-## <a href="#randomInt" name="randomInt">randomInt([min], [max], [shouldSnap]):Number</a>
+## <a href="#randInt" name="randInt">randInt([min], [max], [shouldSnap]):Number</a>
 
 Gets a random integer inside range or snap to min/max values.
 
@@ -184,12 +206,33 @@ Gets a random integer inside range or snap to min/max values.
 ### Example:
 
 ```js
-randomInt();            // 448740433
-randomInt();            // -31797596
-randomInt(0, 10);       // 7
-randomInt(0, 10);       // 5
-randomInt(0, 10, true); // 0
-randomInt(0, 10, true); // 10
+randInt();            // 448740433
+randInt();            // -31797596
+randInt(0, 10);       // 7
+randInt(0, 10);       // 5
+randInt(0, 10, true); // 0
+randInt(0, 10, true); // 10
+```
+
+
+
+## <a href="#randSign" name="randSign">randSign():Number</a>
+
+Returns a random "sign" (-1 or 1). Useful for multiplications.
+
+It's slightly faster than calling `rand()` or `randInt()` since implementation
+is simpler.
+
+
+### Example:
+
+```js
+randSign(); // -1
+randSign(); // 1
+
+//same effect as:
+randInt(-1, 1, true); // -1
+rand(-1, 1, true);    // -1
 ```
 
 

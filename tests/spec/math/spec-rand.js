@@ -1,6 +1,6 @@
-define(['src/math/random'], function (random) {
+define(['src/math/rand'], function (rand) {
 
-    describe('math/random()', function(){
+    describe('math/rand()', function(){
 
         beforeEach(function(){
             this.addMatchers({
@@ -17,25 +17,25 @@ define(['src/math/random'], function (random) {
             });
         });
 
-        it('returns a random number at each call', function(){
-            var q = random();
-            var w = random();
-            var e = random();
-            var r = random();
-            var t = random();
-            var y = random();
+        it('returns a rand number at each call', function(){
+            var q = rand();
+            var w = rand();
+            var e = rand();
+            var r = rand();
+            var t = rand();
+            var y = rand();
             expect( q ).not.toBeUndefined();
             expect( q ).not.toEqual( Infinity );
             expect( q ).toDiffAny(w, e, r, t, y);
         });
 
-        it('returns a random number inside range', function(){
-            var q = random(0, 9999);
-            var w = random(0, 9999);
-            var e = random(0, 9999);
-            var r = random(0, 9999);
-            var t = random(0, 9999);
-            var y = random(0, 9999);
+        it('returns a rand number inside range', function(){
+            var q = rand(0, 9999);
+            var w = rand(0, 9999);
+            var e = rand(0, 9999);
+            var r = rand(0, 9999);
+            var t = rand(0, 9999);
+            var y = rand(0, 9999);
             expect( q ).toBeLessThan(9999.01);
             expect( q ).toBeGreaterThan(-0.01);
             expect( w ).toBeLessThan(9999.01);
@@ -53,16 +53,16 @@ define(['src/math/random'], function (random) {
         });
 
         it('snap to min or max', function(){
-            var q = random(0, 10, true);
-            var w = random(0, 10, true);
-            var e = random(0, 10, true);
-            var r = random(0, 10, true);
-            var t = random(0, 10, true);
-            var y = random(0, 10, true);
-            var u = random(0, 10, true);
-            var i = random(0, 10, true);
-            var o = random(0, 10, true);
-            var p = random(0, 10, true);
+            var q = rand(0, 10, true);
+            var w = rand(0, 10, true);
+            var e = rand(0, 10, true);
+            var r = rand(0, 10, true);
+            var t = rand(0, 10, true);
+            var y = rand(0, 10, true);
+            var u = rand(0, 10, true);
+            var i = rand(0, 10, true);
+            var o = rand(0, 10, true);
+            var p = rand(0, 10, true);
 
             expect( q ).toSnap(0, 10);
             expect( w ).toSnap(0, 10);

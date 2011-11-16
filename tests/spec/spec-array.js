@@ -15,6 +15,7 @@ define([
    'array/spec-remove',
    'array/spec-removeAll',
    'array/spec-some',
+   'array/spec-shuffle',
    'array/spec-unique'
 ], function(){
     //noop
