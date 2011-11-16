@@ -6,6 +6,7 @@ Array utilities.
 
 ## <a href="#toc" name="toc">Table of Contents</a>
 
+ - [`compact()`](#compact)
  - [`contains()`](#contains)
  - [`every()`](#every)
  - [`filter()`](#filter)
@@ -21,6 +22,18 @@ Array utilities.
  - [`removeAll()`](#removeAll)
  - [`some()`](#some)
  - [`unique()`](#unique)
+
+
+
+## <a href="#compact" name="compact">compact(arr):Array</a>
+
+Returns a new Array without any `null` or `undefined` values. Note that it will
+keep empty strings and other falsy values (simillar to Ruby Array#compact).
+
+```js
+var arr = [0, 1, null, false, '', 'foo', undefined, 'bar'];
+compact(arr); // [0, 1, false, '', 'foo', 'bar'];
+```
 
 
 

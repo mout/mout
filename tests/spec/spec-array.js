@@ -1,4 +1,5 @@
 define([
+   'array/spec-compact',
    'array/spec-contains',
    'array/spec-every',
    'array/spec-filter',
