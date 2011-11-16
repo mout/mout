@@ -17,6 +17,7 @@ define(function(require){
         'join'        : require('./array/join'),
         'lastIndexOf' : require('./array/lastIndexOf'),
         'map'         : require('./array/map'),
+        'range'       : require('./array/range'),
         'reduce'      : require('./array/reduce'),
         'reduceRight' : require('./array/reduceRight'),
         'remove'      : require('./array/remove'),

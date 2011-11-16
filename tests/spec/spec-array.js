@@ -9,6 +9,7 @@ define([
    'array/spec-join',
    'array/spec-lastIndexOf',
    'array/spec-map',
+   'array/spec-range',
    'array/spec-reduce',
    'array/spec-reduceRight',
    'array/spec-remove',

@@ -16,6 +16,7 @@ Array utilities.
  - [`join()`](#join)
  - [`lastIndexOf()`](#lastIndexOf)
  - [`map()`](#map)
+ - [`range()`](#range)
  - [`reduce()`](#reduce)
  - [`reduceRight()`](#reduceRight)
  - [`remove()`](#remove)
@@ -85,7 +86,6 @@ more info at [MDN Array#indexOf](https://developer.mozilla.org/en/JavaScript/Ref
 
 
 
-
 ## <a href="#isSparse" name="isSparse">isSparse(arr):Boolean</a>
 
 Checks if it is a *sparse* array.
@@ -132,6 +132,28 @@ Creates a new array with the results of calling a provided function on every
 element in this array.
 
 more info at [MDN Array#map](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/map)
+
+
+
+## <a href="#range" name="range">range([start], stop[, step]):Array</a>
+
+Creates a new Array with all the values inside the range. Works similarly to
+Python#range or PHP#range.
+
+### Arguments
+
+ 1. `[start]` (Number) : Range start. Default is `0`.
+ 2. `stop` (Number) : Range limit.
+ 3. `[step]` (Number) : Step size. Default is `1`.
+
+### Example
+
+```js
+range(5);         // [0, 1, 2, 3, 4, 5]
+range(0, 5);      // [0, 1, 2, 3, 4, 5]
+range(0, 5, 2);   // [0, 2, 4]
+range(20, 40, 5); // [20, 25, 30, 35, 40]
+```
 
 
 
