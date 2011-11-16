@@ -7,7 +7,7 @@ define(['../number/MIN_INT', '../number/MAX_INT', '../number/toInt', './countSte
      */
     function randInt(min, max, shouldSnap){
         min = min == null? MIN_INT : toInt(min);
-        max = min == null? MAX_INT : toInt(max);
+        max = max == null? MAX_INT : toInt(max);
 
         var rnd = Math.random(),
             diff = max - min;

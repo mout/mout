@@ -30,6 +30,19 @@ define(['src/math/randInt'], function (randInt) {
             expect( q ).toDiffAny(w, e, r, t, y);
         });
 
+        it('returns a same number if mix/max are same', function(){
+            var q = randInt(1, 1);
+            var w = randInt(1, 1);
+            var e = randInt(1, 1);
+            var r = randInt(1, 1);
+            var t = randInt(1, 1);
+            var y = randInt(1, 1);
+            expect( q ).not.toBeUndefined();
+            expect( q ).not.toEqual( Infinity );
+            expect( q ).not.toEqual( NaN );
+            expect( q ).not.toDiffAny(w, e, r, t, y);
+        });
+
         it('returns a random number inside range', function(){
             var q = randInt(0, 9999);
             var w = randInt(0, 9999);
