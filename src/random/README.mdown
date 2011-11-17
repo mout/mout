@@ -13,7 +13,6 @@ Pseudo-random generators.
 
 
 
-
 ## <a href="#choice" name="choice">choice(...items):*</a>
 
 Returns a random element from the supplied arguments or from an array if single
@@ -50,15 +49,24 @@ rand(0, 10); // 5.987042
 ```
 
 
+
 ## <a href="#randBit" name="randBit">randBit():Number</a>
 
 Returns a random "bit" (0 or 1). Useful for addition/subtraction.
+
+It's slightly faster than `choice(0, 1)` since implementation is simpler (not
+that it will make a huge difference in most cases).
+
+See: [`choice()`](#choice)
 
 ### Example:
 
 ```js
 randBit(); // 1
 randBit(); // 0
+
+//same effect as
+choice(0, 1);
 ```
 
 
@@ -88,9 +96,10 @@ randInt(0, 10); // 5
 
 Returns a random "sign" (-1 or 1). Useful for multiplications.
 
-It's slightly faster than calling `rand()` or `randInt()` since implementation
-is simpler.
+It's slightly faster than `choice(-1, 1)` since implementation is simpler (not
+that it will make a huge difference in most cases).
 
+See: [`choice()`](#choice)
 
 ### Example:
 
@@ -98,7 +107,6 @@ is simpler.
 randSign(); // -1
 randSign(); // 1
 
-//same effect as:
-randInt(-1, 1, true); // -1
-rand(-1, 1, true);    // -1
+//same effect as
+choice(-1, 1);
 ```
