@@ -1,9 +1,9 @@
-define(['../math/randInt', './forEach'], function (randInt, forEach) {
+define(['../random/randInt', './forEach'], function (randInt, forEach) {
 
     /**
      * Shuffle array items.
      * @author Miller Medeiros
-     * @version 0.1.0 (2011/10/15)
+     * @version 0.2.0 (2011/11/17)
      */
     function shuffle(arr) {
         var result = [],
@@ -12,7 +12,7 @@ define(['../math/randInt', './forEach'], function (randInt, forEach) {
             if (!i) {
                 result[0] = val;
             } else {
-                rnd = randInt(0, i+1);
+                rnd = randInt(0, i);
                 result[i] = result[rnd];
                 result[rnd] = val;
             }

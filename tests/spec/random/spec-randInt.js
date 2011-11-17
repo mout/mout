@@ -1,12 +1,9 @@
-define(['src/math/randInt'], function (randInt) {
+define(['src/random/randInt'], function (randInt) {
 
-    describe('math/randInt()', function(){
+    describe('random/randInt()', function(){
 
         beforeEach(function(){
             this.addMatchers({
-                toSnap : function(min, max){
-                    return this.actual === min || this.actual === max;
-                },
                 toDiffAny : function(vals){
                     var n = arguments.length;
                     while(n--){
@@ -66,32 +63,6 @@ define(['src/math/randInt'], function (randInt) {
             expect( q ).toDiffAny(w, e, r, t, y);
         });
 
-        it('snap to min or max', function(){
-            var q = randInt(0, 10.6, true);
-            var w = randInt(0.6, 10, true);
-            var e = randInt(0, 10, true);
-            var r = randInt(0, 10, true);
-            var t = randInt(0, 10, true);
-            var y = randInt(0, 10, true);
-            var u = randInt(0, 10, true);
-            var i = randInt(0, 10, true);
-            var o = randInt(0, 10, true);
-            var p = randInt(0, 10, true);
-
-            expect( q ).toSnap(0, 10);
-            expect( w ).toSnap(0, 10);
-            expect( e ).toSnap(0, 10);
-            expect( r ).toSnap(0, 10);
-            expect( t ).toSnap(0, 10);
-            expect( y ).toSnap(0, 10);
-            expect( u ).toSnap(0, 10);
-            expect( i ).toSnap(0, 10);
-            expect( o ).toSnap(0, 10);
-            expect( p ).toSnap(0, 10);
-
-            expect( q ).toDiffAny(w, e, r, t, y, u, i, o, p);
-        });
-
         it('shouldn\t be biased', function () {
 
             var c1 = 0,
@@ -140,10 +111,10 @@ define(['src/math/randInt'], function (randInt) {
                 }
             }
 
-            expect( c0 ).toBeLessThan( 540 );
-            expect( c0 ).toBeGreaterThan( 460 );
-            expect( c1 ).toBeLessThan( 540 );
-            expect( c1 ).toBeGreaterThan( 460 );
+            expect( c0 ).toBeLessThan( 550 );
+            expect( c0 ).toBeGreaterThan( 450 );
+            expect( c1 ).toBeLessThan( 550 );
+            expect( c1 ).toBeGreaterThan( 450 );
 
         });
 

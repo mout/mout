@@ -1,6 +1,6 @@
-define(['src/math/rand'], function (rand) {
+define(['src/random/rand'], function (rand) {
 
-    describe('math/rand()', function(){
+    describe('random/rand()', function(){
 
         beforeEach(function(){
             this.addMatchers({
@@ -50,28 +50,6 @@ define(['src/math/rand'], function (rand) {
             expect( y ).toBeGreaterThan(-0.01);
 
             expect( q ).toDiffAny(w, e, r, t, y);
-        });
-
-        it('snap to min or max', function(){
-            var q = rand(0, 10, true);
-            var w = rand(0, 10, true);
-            var e = rand(0, 10, true);
-            var r = rand(0, 10, true);
-            var t = rand(0, 10, true);
-            var y = rand(0, 10, true);
-            var u = rand(0, 10, true);
-            var i = rand(0, 10, true);
-            var o = rand(0, 10, true);
-            var p = rand(0, 10, true);
-
-            expect( q ).toSnap(0, 10);
-            expect( w ).toSnap(0, 10);
-            expect( e ).toSnap(0, 10);
-            expect( r ).toSnap(0, 10);
-            expect( t ).toSnap(0, 10);
-            expect( y ).toSnap(0, 10);
-
-            expect( q ).toDiffAny(w, e, r, t, y, u, i, o, p);
         });
 
     });

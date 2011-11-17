@@ -1,0 +1,104 @@
+# amd-utils / random #
+
+Pseudo-random generators.
+
+
+## <a href="#toc" name="toc">Table of Contents</a>
+
+ - [`choice()`](#choice)
+ - [`rand()`](#rand)
+ - [`randBit()`](#randBit)
+ - [`randInt()`](#randInt)
+ - [`randSign()`](#randSign)
+
+
+
+
+## <a href="#choice" name="choice">choice(...items):*</a>
+
+Returns a random element from the supplied arguments or from an array if single
+argument is an array.
+
+### Example:
+
+```js
+choice(1, 2, 3, 4, 5); // 3
+
+var arr = ['lorem', 'ipsum', 'dolor'];
+choice(arr); // 'dolor'
+```
+
+
+
+## <a href="#rand" name="rand">rand([min], [max]):Number</a>
+
+Gets a random number inside range or snap to min/max values.
+
+### Arguments:
+
+ 1. `[min]` (Number)         : Minimum value. Defaults to `number/MIN_INT`.
+ 2. `[max]` (Number)         : Maximum value. Defaults to `number/MAX_INT`.
+
+
+### Example:
+
+```js
+rand();      // 448740433.55274725
+rand();      // -31797596.097682
+rand(0, 10); // 7.369723
+rand(0, 10); // 5.987042
+```
+
+
+## <a href="#randBit" name="randBit">randBit():Number</a>
+
+Returns a random "bit" (0 or 1). Useful for addition/subtraction.
+
+### Example:
+
+```js
+randBit(); // 1
+randBit(); // 0
+```
+
+
+
+## <a href="#randInt" name="randInt">randInt([min], [max]):Number</a>
+
+Gets a random integer inside range or snap to min/max values.
+
+### Arguments:
+
+ 1. `[min]` (Number)         : Minimum value. Defaults to `number/MIN_INT`.
+ 2. `[max]` (Number)         : Maximum value. Defaults to `number/MAX_INT`.
+
+
+### Example:
+
+```js
+randInt();      // 448740433
+randInt();      // -31797596
+randInt(0, 10); // 7
+randInt(0, 10); // 5
+```
+
+
+
+## <a href="#randSign" name="randSign">randSign():Number</a>
+
+Returns a random "sign" (-1 or 1). Useful for multiplications.
+
+It's slightly faster than calling `rand()` or `randInt()` since implementation
+is simpler.
+
+
+### Example:
+
+```js
+randSign(); // -1
+randSign(); // 1
+
+//same effect as:
+randInt(-1, 1, true); // -1
+rand(-1, 1, true);    // -1
+```

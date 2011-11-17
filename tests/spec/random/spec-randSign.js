@@ -1,6 +1,6 @@
-define(['src/math/randSign'], function (randSign) {
+define(['src/random/randSign'], function (randSign) {
 
-    describe('math/randSign()', function(){
+    describe('random/randSign()', function(){
 
         beforeEach(function(){
             this.addMatchers({

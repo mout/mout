@@ -1,6 +1,6 @@
-define(['src/math/randBit'], function (randBit) {
+define(['src/random/randBit'], function (randBit) {
 
-    describe('math/randBit()', function(){
+    describe('random/randBit()', function(){
 
         beforeEach(function(){
             this.addMatchers({
