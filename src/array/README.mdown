@@ -13,7 +13,6 @@ Array utilities.
  - [`forEach()`](#forEach)
  - [`indexOf()`](#indexOf)
  - [`isSparse()`](#isSparse)
- - [`join()`](#join)
  - [`lastIndexOf()`](#lastIndexOf)
  - [`map()`](#map)
  - [`range()`](#range)
@@ -109,19 +108,6 @@ isSparse(arr2); // false
 Crossbrowser ES5 `Array.lastIndexOf()`.
 
 more info at [MDN Array#lastIndexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
-
-
-
-## <a href="#join" name="join">join(arr, separator):String</a>
-
-Siilar to `Array.join()` but ignores `undefined` and `null` items.
-
-### Example
-
-```js
-['lorem', null, 'ipsum', 'dolor'].join(',');  // "lorem,,ipsum,dolor"
-join(['lorem', null, 'ipsum', 'dolor'], ','); // "lorem,ipsum,dolor"
-```
 
 
 

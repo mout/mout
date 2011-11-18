@@ -4,7 +4,7 @@ define(function(require){
      * Basic array utilities.
      * @exports amd-utils/array
      * @author Miller Medeiros
-     * @version 0.7.0 (2011/11/15)
+     * @version 0.8.0 (2011/11/17)
      */
     return {
         'compact'     : require('./array/compact'),
@@ -14,7 +14,6 @@ define(function(require){
         'forEach'     : require('./array/forEach'),
         'indexOf'     : require('./array/indexOf'),
         'isSparse'    : require('./array/isSparse'),
-        'join'        : require('./array/join'),
         'lastIndexOf' : require('./array/lastIndexOf'),
         'map'         : require('./array/map'),
         'range'       : require('./array/range'),

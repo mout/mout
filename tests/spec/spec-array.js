@@ -6,7 +6,6 @@ define([
    'array/spec-forEach',
    'array/spec-indexOf',
    'array/spec-isSparse',
-   'array/spec-join',
    'array/spec-lastIndexOf',
    'array/spec-map',
    'array/spec-range',
