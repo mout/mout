@@ -1,4 +1,7 @@
 {{> header}}
+<a class="fork" href="http://github.com/millermedeiros/amd-utils/">
+    <img alt="Fork me on GitHub" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+</a>
 {{{content}}}
 <h2>Modules</h2>
 {{#modules}}

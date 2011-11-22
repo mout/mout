@@ -487,6 +487,18 @@ hr {
     display:none !important;
 }
 
+.fork {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 150px;
+    height: 150px;
+}
+
+.fork:hover {
+    background:transparent !important;
+}
+
 #topnav{
     list-style:none;
     position:fixed;

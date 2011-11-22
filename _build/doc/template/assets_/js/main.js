@@ -132,8 +132,8 @@
                 $tmp;
 
             $h2.each(function(i, el){
-                mod = $(el).find('a').attr('href').replace('#', '');
-                if (mod !== 'toc') {
+                mod = ($(el).find('a').attr('href') || '').replace('#', '');
+                if (mod && mod !== 'toc') {
                     $tmp = $ul.clone();
                     $tmp.find('.a-src').attr('href', _srcUrl + _curMod +'/'+ mod +'.js');
                     $tmp.find('.a-specs').attr('href', _specsUrl + _curMod +'/spec-'+ mod +'.js');
