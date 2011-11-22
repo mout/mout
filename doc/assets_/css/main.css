@@ -526,7 +526,6 @@ hr {
 }
 
 #sidebar {
-    display:none;
     width: 250px;
     position: absolute;
     overflow-y: auto;
@@ -620,7 +619,7 @@ hr {
 #content {
     max-width:700px;
     margin:0 auto;
-    padding:1em 2em;
+    padding:1em 2em 1em 280px;
 }
 
 .h2-mod {
@@ -666,11 +665,11 @@ hr {
     border-right: 1px solid #eee !important;
 }
 
-@media screen and (min-width:750px) {
+@media screen and (max-width:750px) {
     #sidebar {
-        display: block;
+        display: none;
     }
     #content {
-        padding-left:280px;
+        padding-left:2em;
     }
 }
