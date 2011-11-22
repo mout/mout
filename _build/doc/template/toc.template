@@ -1,0 +1,19 @@
+<div class="hd">
+    <input id="search" type="search" placeholder="search" />
+    <label><input id="show-desc" type="checkbox" /> Show Description</label>
+</div>
+<div class="bd">
+    <div class="toc">
+        {{#modules}}
+            <h3 class="toc-mod-title"><a href="{{file}}">{{module}}</a></h3>
+            <div class="toc-list">
+                {{#toc}}
+                <a class="toc-item" href="{{../file}}#{{href}}">
+                    <h4>{{title}}</h4>
+                    <span class="desc">{{{description}}}</span>
+                </a>
+                {{/toc}}
+            </div>
+        {{/modules}}
+    </div>
+</div>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>amd-utils / array : AMD Utils</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets_/css/shCore.css">
+        <link rel="stylesheet" href="assets_/css/shThemeDefault.css">
+        <link rel="stylesheet" href="assets_/css/main.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="content">
+
+<ul id="topnav">
+    <li><a href="index.html">Index</a></li>
+    <li><a href="#toc">TOC</a></li>
+</ul>
+<h1>amd-utils / array</h1>
+
+<p>Array utilities.</p>
+
+<h2><a href="#toc" name="toc">Table of Contents</a></h2>
+
+<ul>
+<li><a href="#compact"><code>compact()</code></a></li>
+<li><a href="#contains"><code>contains()</code></a></li>
+<li><a href="#every"><code>every()</code></a></li>
+<li><a href="#filter"><code>filter()</code></a></li>
+<li><a href="#forEach"><code>forEach()</code></a></li>
+<li><a href="#indexOf"><code>indexOf()</code></a></li>
+<li><a href="#isSparse"><code>isSparse()</code></a></li>
+<li><a href="#lastIndexOf"><code>lastIndexOf()</code></a></li>
+<li><a href="#map"><code>map()</code></a></li>
+<li><a href="#range"><code>range()</code></a></li>
+<li><a href="#reduce"><code>reduce()</code></a></li>
+<li><a href="#reduceRight"><code>reduceRight()</code></a></li>
+<li><a href="#remove"><code>remove()</code></a></li>
+<li><a href="#removeAll"><code>removeAll()</code></a></li>
+<li><a href="#shuffle"><code>shuffle()</code></a></li>
+<li><a href="#some"><code>some()</code></a></li>
+<li><a href="#unique"><code>unique()</code></a></li>
+</ul>
+
+<h2><a href="#compact" name="compact">compact(arr):Array</a></h2>
+
+<p>Returns a new Array without any <code>null</code> or <code>undefined</code> values. Note that it will
+keep empty strings and other falsy values (simillar to Ruby Array#compact).</p>
+
+<pre class="brush:js">
+var arr = [0, 1, null, false, '', 'foo', undefined, 'bar'];
+compact(arr); // [0, 1, false, '', 'foo', 'bar'];
+</pre>
+
+<h2><a href="#contains" name="contains">contains(arr, value):Boolean</a></h2>
+
+<p>Checks if Array contains value. Alias to <code>indexOf(arr, val) !== -1</code>.</p>
+
+<pre class="brush:js">
+var arr = [1, 2, 3];
+contains(arr, 2);      // true
+contains(arr, 'foo');  // false
+</pre>
+
+<h2><a href="#every" name="every">every(arr, callback, [thisObj]):Array</a></h2>
+
+<p>Crossbrowser ES5 <code>Array.every()</code>.</p>
+
+<p>Tests whether all elements in the array pass the test implemented by the provided function.</p>
+
+<p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/every">MDN Array#every</a></p>
+
+<h2><a href="#filter" name="filter">filter(arr, callback, [thisObj]):Array</a></h2>
+
+<p>Crossbrowser ES5 <code>Array.filter()</code>.</p>
+
+<p>Creates a new array with all elements that pass the callback test.</p>
+
+<p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/filter">MDN Array#filter</a></p>
+
+<h2><a href="#forEach" name="forEach">forEach(arr, callback, [thisObj]):void</a></h2>
+
+<p>Crossbrowser ES5 <code>Array.forEach()</code>.</p>
+
+<p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/forEach">MDN Array#forEach</a></p>
+
+<h2><a href="#indexOf" name="indexOf">indexOf(arr, item, [fromIndex]):Number</a></h2>
+
+<p>Crossbrowser ES5 <code>Array.indexOf()</code>.</p>
+
+<p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf">MDN Array#indexOf</a></p>
+
+<h2><a href="#isSparse" name="isSparse">isSparse(arr):Boolean</a></h2>
+
+<p>Checks if it is a <em>sparse</em> array.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+var arr = ['foo'];
+arr[6] = 'bar';
+isSparse(arr); // true
+
+var arr2 = ['lorem', 'ipsum'];
+isSparse(arr2); // false
+</pre>
+
+<h2><a href="#lastIndexOf" name="lastIndexOf">lastIndexOf(arr, item, [fromIndex]):Number</a></h2>
+
+<p>Crossbrowser ES5 <code>Array.lastIndexOf()</code>.</p>
+
+<p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/lastIndexOf">MDN Array#lastIndexOf</a></p>
+
+<h2><a href="#map" name="map">map(arr, callback):Array</a></h2>
+
+<p>Crossbrowser ES5 <code>Array.map()</code>.</p>
+
+<p>Creates a new array with the results of calling a provided function on every
+element in this array.</p>
+
+<p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/map">MDN Array#map</a></p>
+
+<h2><a href="#range" name="range">range([start], stop[, step]):Array</a></h2>
+
+<p>Creates a new Array with all the values inside the range. Works similarly to
+Python#range or PHP#range.</p>
+
+<h3>Arguments</h3>
+
+<ol>
+<li><code>[start]</code> (Number) : Range start. Default is <code>0</code>.</li>
+<li><code>stop</code> (Number) : Range limit.</li>
+<li><code>[step]</code> (Number) : Step size. Default is <code>1</code>.</li>
+</ol>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+range(5);         // [0, 1, 2, 3, 4, 5]
+range(0, 5);      // [0, 1, 2, 3, 4, 5]
+range(0, 5, 2);   // [0, 2, 4]
+range(20, 40, 5); // [20, 25, 30, 35, 40]
+</pre>
+
+<h2><a href="#reduce" name="reduce">reduce(arr, fn):*</a></h2>
+
+<p>Crossbrowser ES5 <code>Array.reduce()</code>.</p>
+
+<p>Apply a function against an accumulator and each value of the array (from
+left-to-right) as to reduce it to a single value.</p>
+
+<p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/reduce">MDN Array#reduce</a></p>
+
+<h2><a href="#reduceRight" name="reduceRight">reduceRight(arr, fn):*</a></h2>
+
+<p>Crossbrowser ES5 <code>Array.reduceRight()</code>.</p>
+
+<p>Apply a function simultaneously against two values of the array (from
+right-to-left) as to reduce it to a single value.</p>
+
+<p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/reduceRight">MDN Array#reduceRight</a></p>
+
+<h2><a href="#remove" name="remove">remove(arr, item):void</a></h2>
+
+<p>Remove a single item from the array.</p>
+
+<p>IMPORTANT: it won't remove duplicates, just a single item.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+var foo = [1, 2, 3, 4];
+remove(foo, 2);
+console.log(foo); // [1, 3, 4]
+</pre>
+
+<h2><a href="#removeAll" name="removeAll">removeAll(arr, item):void</a></h2>
+
+<p>Remove all instances of an item from the array.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+var foo = [1, 2, 3, 4, 2, 2];
+removeAll(foo, 2);
+console.log(foo); // [1, 3, 4];
+</pre>
+
+<h2><a href="#shuffle" name="shuffle">shuffle(arr):Array </a></h2>
+
+<p>Returns a new Array with items randomly sorted (shuffled). Similar to Ruby Array#shuffle.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+var arr = ['a', 'b', 'c', 'd', 'e'];
+shuffle(arr); // ['b', 'd', 'e', 'c', 'a']
+</pre>
+
+<h2><a href="#some" name="some">some(arr, callback, [thisObj]):Array </a></h2>
+
+<p>Crossbrowser ES5 <code>Array.some()</code>.</p>
+
+<p>Tests whether some element in the array passes the test implemented by the provided function.</p>
+
+<p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/some">MDN Array#some</a></p>
+
+<h2><a href="#unique" name="unique">unique(arr):Array</a></h2>
+
+<p>Return a new Array of unique items.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+var foo = [1, 2, 3, 4, 2, 2, 3, 4];
+var bar = unique(foo);
+console.log(foo); // [1, 2, 3, 4];
+</pre>
+
+<hr />
+
+<p>For more usage examples check specs inside <code>/tests</code> folder. Unit tests are the
+best documentation you can get...</p>
+            </div>
+        </div>
+        <script src="assets_/js/lib/jquery.js"></script>
+        <script src="assets_/js/lib/syntax-highlighter/shCore.js"></script>
+        <script src="assets_/js/lib/syntax-highlighter/shAutoloader.js"></script>
+        <script src="assets_/js/main.js"></script>
+    </body>
+</html>
+

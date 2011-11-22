@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>amd-utils / string : AMD Utils</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets_/css/shCore.css">
+        <link rel="stylesheet" href="assets_/css/shThemeDefault.css">
+        <link rel="stylesheet" href="assets_/css/main.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="content">
+
+<ul id="topnav">
+    <li><a href="index.html">Index</a></li>
+    <li><a href="#toc">TOC</a></li>
+</ul>
+<h1>amd-utils / string</h1>
+
+<p>String utilities.</p>
+
+<h2><a href="#toc" name="toc">Table of Contents</a></h2>
+
+<ul>
+<li><a href="#camelCase"><code>camelCase()</code></a></li>
+<li><a href="#crop"><code>crop()</code></a></li>
+<li><a href="#hyphenate"><code>hyphenate()</code></a></li>
+<li><a href="#lowerCase"><code>lowerCase()</code></a></li>
+<li><a href="#ltrim"><code>ltrim()</code></a></li>
+<li><a href="#makePath"><code>makePath()</code></a></li>
+<li><a href="#pascalCase"><code>pascalCase()</code></a></li>
+<li><a href="#properCase"><code>properCase()</code></a></li>
+<li><a href="#removeNonASCII"><code>removeNonASCII()</code></a></li>
+<li><a href="#removeNonWord"><code>removeNonWord()</code></a></li>
+<li><a href="#replaceAccents"><code>replaceAccents()</code></a></li>
+<li><a href="#rtrim"><code>rtrim()</code></a></li>
+<li><a href="#sentenceCase"><code>sentenceCase()</code></a></li>
+<li><a href="#stripHtmlTags"><code>stripHtmlTags()</code></a></li>
+<li><a href="#toSlug"><code>toSlug()</code></a></li>
+<li><a href="#trim"><code>trim()</code></a></li>
+<li><a href="#truncate"><code>truncate()</code></a></li>
+<li><a href="#typecast"><code>typecast()</code></a></li>
+<li><a href="#unCamelCase"><code>unCamelCase()</code></a></li>
+<li><a href="#unHyphenate"><code>unHyphenate()</code></a></li>
+<li><a href="#upperCase"><code>upperCase()</code></a></li>
+</ul>
+
+<h2><a href="#camelCase" name="camelCase">camelCase(str):String</a></h2>
+
+<p>Convert string to "camelCase" text.</p>
+
+<p>See: <a href="#pascalCase"><code>pascalCase()</code></a></p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+camelCase('lorem-ipsum-dolor'); // "loremIpsumDolor"
+camelCase('lorem ipsum dolor'); // "loremIpsumDolor"
+</pre>
+
+<h2><a href="#crop" name="crop">crop(str, maxChars, [append]):String</a></h2>
+
+<p>Truncate string at full words. Alias to <code>truncate(str, maxChars, append, true);</code>.</p>
+
+<p>See: <a href="#truncate"><code>truncate()</code></a></p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+crop('lorem ipsum dolor', 10);      // "lorem..."
+crop('lorem ipsum dolor', 10, '+'); // "lorem+"
+</pre>
+
+<h2><a href="#hyphenate" name="hyphenate">hyphenate(str):String</a></h2>
+
+<p>Replaces spaces with hyphens, split camelCase text, remove non-word chars, remove accents and convert to lower case.</p>
+
+<pre class="brush:js">
+hyphenate(' %# lorem ipsum  ? $  dolor'); // "lorem-ipsum-dolor"
+hyphenate('spéçïãl çhârs');               // "special-chars"
+hyphenate('loremIpsum');                  // "lorem-ipsum"
+</pre>
+
+<h2><a href="#lowerCase" name="lowerCase">lowerCase(str):String</a></h2>
+
+<p>"Safer" <code>String.toLowerCase()</code>. (Used internally)</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+(null).toLowerCase();      // Error!
+(undefined).toLowerCase(); // Error!
+lowerCase(null);           // ""
+lowerCase(undefined);      // ""
+</pre>
+
+<h2><a href="#ltrim" name="ltrim">ltrim(str):String</a></h2>
+
+<p>Remove white-spaces from beginning of string.</p>
+
+<p>See: <a href="#rtrim"><code>rtrim()</code></a>, <a href="#trim"><code>trim()</code></a></p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+ltrim('   lorem ipsum   ');  // "lorem ipsum   "
+</pre>
+
+<h2><a href="#makePath" name="makePath">makePath(...args):String</a></h2>
+
+<p>Group arguments as path segments, if any of the args is <code>null</code> or <code>undefined</code>
+it will be ignored from resulting path. It will also remove duplicate "/".</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+makePath('lorem', 'ipsum', null, 'dolor'); // "lorem/ipsum/dolor"
+makePath('foo///bar/');                    // "foo/bar/"
+</pre>
+
+<h2><a href="#pascalCase" name="pascalCase">pascalCase(str):String</a></h2>
+
+<p>Convert string to "PascalCase" text.</p>
+
+<p>See: <a href="#camelCase"><code>camelCase()</code></a></p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+pascalCase('lorem-ipsum-dolor'); // "LoremIpsumDolor"
+pascalCase('lorem ipsum dolor'); // "LoremIpsumDolor"
+</pre>
+
+<h2><a href="#properCase" name="properCase">properCase(str):String</a></h2>
+
+<p>UPPERCASE first char of each word, lowercase other chars.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+properCase('loRem iPSum'); // "Lorem Ipsum"
+</pre>
+
+<h2><a href="#removeNonASCII" name="removeNonASCII">removeNonASCII(str):String</a></h2>
+
+<p>Remove <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">non-printable ASCII
+chars</a>.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+removeNonASCII('äÄçÇéÉêlorem-ipsumöÖÐþúÚ'); // "lorem-ipsum"
+</pre>
+
+<h2><a href="#removeNonWord" name="removeNonWord">removeNonWord(str):String</a></h2>
+
+<p>Remove non-word chars.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+var str = 'lorem ~!@#$%^&*()_+`-={}[]|\\:";\'/?><., ipsum';
+removeNonWord(str); // "lorem - ipsum"
+</pre>
+
+<h2><a href="#replaceAccents" name="replaceAccents">replaceAccents(str):String</a></h2>
+
+<p>Replaces all accented chars with regular ones.</p>
+
+<p><strong>Important:</strong> Only covers <strong>Basic Latin</strong> and <strong>Latin-1</strong> unicode chars.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+replaceAccents('spéçïãl çhârs'); // "special chars"
+</pre>
+
+<h2><a href="#rtrim" name="rtrim">rtrim(str):String</a></h2>
+
+<p>Remove white-spaces from end of string.</p>
+
+<p>See: <a href="#trim"><code>trim()</code></a>, <a href="#ltrim"><code>ltrim()</code></a></p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+rtrim('   lorem ipsum   '); // "   lorem ipsum"
+</pre>
+
+<h2><a href="#sentenceCase" name="sentenceCase">sentenceCase(str):String</a></h2>
+
+<p>UPPERCASE first char of each sentence and lowercase other chars.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+sentenceCase('Lorem IpSum DoLOr. maeCeNnas Ullamcor.'); // "Lorem ipsum dolor. Maecennas ullamcor."
+</pre>
+
+<h2><a href="#stripHtmlTags" name="stripHtmlTags">stripHtmlTags(str):String</a></h2>
+
+<p>Remove HTML/XML tags from string.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+stripHtmlTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // "lorem ipsum"
+</pre>
+
+<h2><a href="#toSlug" name="toSlug">toSlug(str):String</a></h2>
+
+<p>Convert to lower case, remove accents, remove non-word chars and replace spaces
+with hyphens.</p>
+
+<p>Only difference from <a href="#hyphenate">string/hyphenate</a> is that it doesn't split
+camelCase text.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+toSlug('loremIpsum dolor spéçïãl chârs'); // "loremipsum-dolor-special-chars"
+</pre>
+
+<h2><a href="#trim" name="trim">trim(str):String</a></h2>
+
+<p>Remove white-spaces from beginning and end of string.</p>
+
+<p>See: <a href="#rtrim"><code>rtrim()</code></a>, <a href="#ltrim"><code>ltrim()</code></a></p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+trim('   lorem ipsum   '); // "lorem ipsum"
+</pre>
+
+<h2><a href="#truncate" name="truncate">truncate(str, maxChars, [append], [onlyFullWords]):String</a></h2>
+
+<p>Limit number of chars. Returned string <code>length</code> will be <code>&lt;= maxChars</code>.</p>
+
+<p>See: <a href="#crop"><code>crop()</code></a></p>
+
+<h3>Arguments</h3>
+
+<ol>
+<li><code>str</code> (String) : String</li>
+<li><code>maxChars</code> (Number) : Maximum number of characters including <code>append.length</code>.</li>
+<li><code>[append]</code> (String) : Value that should be added to the end of string.
+Defaults to "...".</li>
+<li><code>[onlyFullWords]</code> (Boolean) : If it shouldn't break words. Default is
+<code>false</code>. (favor <a href="#crop"><code>crop()</code></a> since code will be clearer).</li>
+</ol>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+truncate('lorem ipsum dolor', 11);             // "lorem ip..."
+truncate('lorem ipsum dolor', 11, '+');        // "lorem ipsu+"
+truncate('lorem ipsum dolor', 11, null, true); // "lorem..."
+</pre>
+
+<h2><a href="#typecast" name="typecast">typecast(str):*</a></h2>
+
+<p>Parses string and convert it into a native value.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+typecast('lorem ipsum'); // "lorem ipsum"
+typecast('123');         // 123
+typecast('123.45');      // 123.45
+typecast('false');       // false
+typecast('true');        // true
+typecast('null');        // null
+typecast('undefined');   // undefined
+</pre>
+
+<h2><a href="#unCamelCase" name="unCamelCase">unCamelCase(str):String</a></h2>
+
+<p>Add space between camelCase text and convert first char of each word to lower
+case.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+unCamelCase('loremIpsumDolor'); // "lorem ipsum dolor"
+</pre>
+
+<h2><a href="#unHyphenate" name="unHyphenate">unHyphenate(str):String</a></h2>
+
+<p>Replaces hyphens with spaces. (only hyphens between word chars)</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+unHyphenate('lorem-ipsum-dolor'); // "lorem ipsum dolor"
+</pre>
+
+<h2><a href="#upperCase" name="upperCase">upperCase(str):String</a></h2>
+
+<p>"Safer" <code>String.toUpperCase()</code>. (Used internally)</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+(null).toUpperCase();      // Error!
+(undefined).toUpperCase(); // Error!
+upperCase(null);           // ""
+upperCase(undefined);      // ""
+</pre>
+
+<hr />
+
+<p>For more usage examples check specs inside <code>/tests</code> folder. Unit tests are the
+best documentation you can get...</p>
+            </div>
+        </div>
+        <script src="assets_/js/lib/jquery.js"></script>
+        <script src="assets_/js/lib/syntax-highlighter/shCore.js"></script>
+        <script src="assets_/js/lib/syntax-highlighter/shAutoloader.js"></script>
+        <script src="assets_/js/main.js"></script>
+    </body>
+</html>
+

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>amd-utils / lang : AMD Utils</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets_/css/shCore.css">
+        <link rel="stylesheet" href="assets_/css/shThemeDefault.css">
+        <link rel="stylesheet" href="assets_/css/main.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="content">
+
+<ul id="topnav">
+    <li><a href="index.html">Index</a></li>
+    <li><a href="#toc">TOC</a></li>
+</ul>
+<h1>amd-utils / lang</h1>
+
+<p>Language Utilities. Easier inheritance, scope handling, type checks.</p>
+
+<h2><span id="toc">Table of Contents</span></h2>
+
+<ul>
+<li><a href="#bind"><code>bind()</code></a></li>
+<li><a href="#createObject"><code>createObject()</code></a></li>
+<li><a href="#inheritPrototype"><code>inheritPrototype()</code></a></li>
+<li><a href="#isArguments"><code>isArguments()</code></a></li>
+<li><a href="#isArray"><code>isArray()</code></a></li>
+<li><a href="#isBoolean"><code>isBoolean()</code></a></li>
+<li><a href="#isDate"><code>isDate()</code></a></li>
+<li><a href="#isFunction"><code>isFunction()</code></a></li>
+<li><a href="#isKind"><code>isKind()</code></a></li>
+<li><a href="#isNull"><code>isNull()</code></a></li>
+<li><a href="#isNumber"><code>isNumber()</code></a></li>
+<li><a href="#isObject"><code>isObject()</code></a></li>
+<li><a href="#isRegExp"><code>isRegExp()</code></a></li>
+<li><a href="#isString"><code>isString()</code></a></li>
+<li><a href="#isUndefined"><code>isUndefined()</code></a></li>
+<li><a href="#kindOf"><code>kindOf()</code></a></li>
+<li><a href="#mixIn"><code>mixIn()</code></a></li>
+<li><a href="#toArray"><code>toArray()</code></a></li>
+</ul>
+
+<h2><a href="#bind" name="bind">bind(fn, context, [...args]):Function</a></h2>
+
+<p>Return a function that will execute in the given context, optionally adding any additional supplied parameters to the beginning of the arguments collection.</p>
+
+<h3>Arguments</h3>
+
+<ol>
+<li><code>fn</code> (Function)    : Target Function</li>
+<li><code>context</code> (Object) : Execution context (object used as <code>this</code>)</li>
+<li><code>[...args]</code> (*)    : Arguments (0...n arguments)</li>
+</ol>
+
+<h2><a href="#createObject" name="createObject">createObject(parent, [props]):Object</a></h2>
+
+<p>Create Object using prototypal inheritance and setting custom properties.</p>
+
+<p>Mix between <a href="http://javascript.crockford.com/prototypal.html">Douglas Crockford Prototypal Inheritance</a> and the EcmaScript 5 <code>Object.create()</code> method.</p>
+
+<h3>Arguments</h3>
+
+<ol>
+<li><code>parent</code> (Object)  : Parent Object</li>
+<li><code>[props]</code> (Object) : Object properties</li>
+</ol>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+var base = {
+    trace : function(){
+        console.log(this.name);
+    }
+};
+
+var myObj = createObject(base, {
+    name : 'Lorem Ipsum'
+});
+
+myObject.trace(); // "Lorem Ipsum"
+</pre>
+
+<h2><a href="#inheritPrototype" name="inheritPrototype">inheritPrototype(child, parent):void</a></h2>
+
+<p>Inherit prototype from another Object.</p>
+
+<pre class="brush:js">
+function Foo(name){
+    this.name = name;
+}
+Foo.prototype = {
+    getName : function(){
+        return this.name;
+    }
+};
+
+function Bar(name){
+    this.name = name;
+}
+//should be called before calling constructor
+lang.inheritPrototype(Bar, Foo);
+
+var myObj = new Bar('lorem ipsum');
+myObj.getName(); // "lorem ipsum"
+</pre>
+
+<h2><a href="#isArguments" name="isArguments">isArguments(val):Boolean</a></h2>
+
+<p>If value is an "Arguments" object.</p>
+
+<h2><a href="#isArray" name="isArray">isArray(val):Boolean</a></h2>
+
+<p>If value is an Array.</p>
+
+<h2><a href="#isBoolean" name="isBoolean">isBoolean(val):Boolean</a></h2>
+
+<p>If value is a Boolean.</p>
+
+<h2><a href="#isDate" name="isDate">isDate(val):Boolean</a></h2>
+
+<p>If value is a Date.</p>
+
+<h2><a href="#isFunction" name="isFunction">isFunction(val):Boolean</a></h2>
+
+<p>If value is a Function.</p>
+
+<h2><a href="#isKind" name="isKind">isKind(val, kind):Boolean</a></h2>
+
+<p>If value is of "kind". (used internally by most of the <em>isSomething</em> checks),
+favor the other methods since strings are commonly mistyped.</p>
+
+<h2><a href="#isNull" name="isNull">isNull(val):Boolean</a></h2>
+
+<p>If value is <code>null</code>.</p>
+
+<h2><a href="#isNumber" name="isNumber">isNumber(val):Boolean</a></h2>
+
+<p>If value is a Number.</p>
+
+<h2><a href="#isObject" name="isObject">isObject(val):Boolean</a></h2>
+
+<p>If value is an Object.</p>
+
+<h2><a href="#isRegExp" name="isRegExp">isRegExp(val):Boolean</a></h2>
+
+<p>If value is a RegExp.</p>
+
+<h2><a href="#isString" name="isString">isString(val):Boolean</a></h2>
+
+<p>If value is a String.</p>
+
+<h2><a href="#isUndefined" name="isUndefined">isUndefined(val):Boolean</a></h2>
+
+<p>If value is <code>undefined</code>.</p>
+
+<h2><a href="#kindOf" name="kindOf">kindOf(val):String</a></h2>
+
+<p>Gets kind of value (e.g. "String", "Number", "RegExp", "Null", "Date").
+Used internally by <code>isKind()</code> and most of the other <em>isSomething</em> checks.</p>
+
+<h2><a href="#mixIn" name="mixIn">mixIn(target, ...objects):Object</a></h2>
+
+<p>Combine properties from all the objects into first one.</p>
+
+<p>This method affects target object in place, if you want to create a new Object
+pass an empty object as first parameter.</p>
+
+<h3>Arguments</h3>
+
+<ol>
+<li><code>target</code> (Object)        : Target Object.</li>
+<li><code>...objects</code> (...Object) : Objects to be combined (0...n objects).</li>
+</ol>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+var a = {foo: "bar"};
+var b = {lorem: 123};
+
+mixIn({}, a, b); // {foo: "bar", lorem: 123}
+console.log(a);  // {foo: "bar"}
+
+mixIn(a, b);     // {foo: "bar", lorem: 123}
+console.log(a);  // {foo: "bar", lorem: 123}
+</pre>
+
+<h2><a href="#toArray" name="toArray">toArray(val):Array</a></h2>
+
+<p>Convert array-like object into Array or wrap value into Array.</p>
+
+<pre class="brush:js">
+toArray({
+    "0" : "foo",
+    "1" : "bar",
+    "length" : 2
+});                              // ["foo", "bar"]
+
+function foo(){
+    return toArray(arguments);
+}
+foo("lorem", 123);               // ["lorem", 123]
+
+toArray("lorem ipsum");          // ["lorem ipsum"]
+toArray(window);                 // [window]
+toArray({foo:"bar", lorem:123}); // ["bar", 123]
+</pre>
+
+<hr />
+
+<p>For more usage examples check specs inside <code>/tests</code> folder. Unit tests are the
+best documentation you can get...</p>
+            </div>
+        </div>
+        <script src="assets_/js/lib/jquery.js"></script>
+        <script src="assets_/js/lib/syntax-highlighter/shCore.js"></script>
+        <script src="assets_/js/lib/syntax-highlighter/shAutoloader.js"></script>
+        <script src="assets_/js/main.js"></script>
+    </body>
+</html>
+

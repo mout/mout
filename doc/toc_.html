@@ -1,0 +1,481 @@
+<div class="hd">
+    <input id="search" type="search" placeholder="search" />
+    <label><input id="show-desc" type="checkbox" /> Show Description</label>
+</div>
+<div class="bd">
+    <div class="toc">
+        
+            <h3 class="toc-mod-title"><a href="array.html">array</a></h3>
+            <div class="toc-list">
+                
+                <a class="toc-item" href="array.html#compact">
+                    <h4>compact(arr):Array</h4>
+                    <span class="desc">Returns a new Array without any <code>null</code> or <code>undefined</code> values. Note that it will keep empty strings and other falsy values (simillar to Ruby Array#compact).</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#contains">
+                    <h4>contains(arr, value):Boolean</h4>
+                    <span class="desc">Checks if Array contains value. Alias to <code>indexOf(arr, val) !== -1</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#every">
+                    <h4>every(arr, callback, [thisObj]):Array</h4>
+                    <span class="desc">Crossbrowser ES5 <code>Array.every()</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#filter">
+                    <h4>filter(arr, callback, [thisObj]):Array</h4>
+                    <span class="desc">Crossbrowser ES5 <code>Array.filter()</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#forEach">
+                    <h4>forEach(arr, callback, [thisObj]):void</h4>
+                    <span class="desc">Crossbrowser ES5 <code>Array.forEach()</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#indexOf">
+                    <h4>indexOf(arr, item, [fromIndex]):Number</h4>
+                    <span class="desc">Crossbrowser ES5 <code>Array.indexOf()</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#isSparse">
+                    <h4>isSparse(arr):Boolean</h4>
+                    <span class="desc">Checks if it is a <em>sparse</em> array.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#lastIndexOf">
+                    <h4>lastIndexOf(arr, item, [fromIndex]):Number</h4>
+                    <span class="desc">Crossbrowser ES5 <code>Array.lastIndexOf()</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#map">
+                    <h4>map(arr, callback):Array</h4>
+                    <span class="desc">Crossbrowser ES5 <code>Array.map()</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#range">
+                    <h4>range([start], stop[, step]):Array</h4>
+                    <span class="desc">Creates a new Array with all the values inside the range. Works similarly to Python#range or PHP#range.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#reduce">
+                    <h4>reduce(arr, fn):*</h4>
+                    <span class="desc">Crossbrowser ES5 <code>Array.reduce()</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#reduceRight">
+                    <h4>reduceRight(arr, fn):*</h4>
+                    <span class="desc">Crossbrowser ES5 <code>Array.reduceRight()</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#remove">
+                    <h4>remove(arr, item):void</h4>
+                    <span class="desc">Remove a single item from the array.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#removeAll">
+                    <h4>removeAll(arr, item):void</h4>
+                    <span class="desc">Remove all instances of an item from the array.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#shuffle">
+                    <h4>shuffle(arr):Array </h4>
+                    <span class="desc">Returns a new Array with items randomly sorted (shuffled). Similar to Ruby Array#shuffle.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#some">
+                    <h4>some(arr, callback, [thisObj]):Array </h4>
+                    <span class="desc">Crossbrowser ES5 <code>Array.some()</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#unique">
+                    <h4>unique(arr):Array</h4>
+                    <span class="desc">Return a new Array of unique items.</span>
+                </a>
+                
+            </div>
+        
+            <h3 class="toc-mod-title"><a href="lang.html">lang</a></h3>
+            <div class="toc-list">
+                
+                <a class="toc-item" href="lang.html#bind">
+                    <h4>bind(fn, context, [...args]):Function</h4>
+                    <span class="desc">Return a function that will execute in the given context, optionally adding any additional supplied parameters to the beginning of the arguments collection.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#createObject">
+                    <h4>createObject(parent, [props]):Object</h4>
+                    <span class="desc">Create Object using prototypal inheritance and setting custom properties.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#inheritPrototype">
+                    <h4>inheritPrototype(child, parent):void</h4>
+                    <span class="desc">Inherit prototype from another Object.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#isArguments">
+                    <h4>isArguments(val):Boolean</h4>
+                    <span class="desc">If value is an "Arguments" object.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#isArray">
+                    <h4>isArray(val):Boolean</h4>
+                    <span class="desc">If value is an Array.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#isBoolean">
+                    <h4>isBoolean(val):Boolean</h4>
+                    <span class="desc">If value is a Boolean.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#isDate">
+                    <h4>isDate(val):Boolean</h4>
+                    <span class="desc">If value is a Date.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#isFunction">
+                    <h4>isFunction(val):Boolean</h4>
+                    <span class="desc">If value is a Function.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#isKind">
+                    <h4>isKind(val, kind):Boolean</h4>
+                    <span class="desc">If value is of "kind". (used internally by most of the <em>isSomething</em> checks), favor the other methods since strings are commonly mistyped.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#isNull">
+                    <h4>isNull(val):Boolean</h4>
+                    <span class="desc">If value is <code>null</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#isNumber">
+                    <h4>isNumber(val):Boolean</h4>
+                    <span class="desc">If value is a Number.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#isObject">
+                    <h4>isObject(val):Boolean</h4>
+                    <span class="desc">If value is an Object.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#isRegExp">
+                    <h4>isRegExp(val):Boolean</h4>
+                    <span class="desc">If value is a RegExp.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#isString">
+                    <h4>isString(val):Boolean</h4>
+                    <span class="desc">If value is a String.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#isUndefined">
+                    <h4>isUndefined(val):Boolean</h4>
+                    <span class="desc">If value is <code>undefined</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#kindOf">
+                    <h4>kindOf(val):String</h4>
+                    <span class="desc">Gets kind of value (e.g. "String", "Number", "RegExp", "Null", "Date"). Used internally by <code>isKind()</code> and most of the other <em>isSomething</em> checks.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#mixIn">
+                    <h4>mixIn(target, ...objects):Object</h4>
+                    <span class="desc">Combine properties from all the objects into first one.</span>
+                </a>
+                
+                <a class="toc-item" href="lang.html#toArray">
+                    <h4>toArray(val):Array</h4>
+                    <span class="desc">Convert array-like object into Array or wrap value into Array.</span>
+                </a>
+                
+            </div>
+        
+            <h3 class="toc-mod-title"><a href="math.html">math</a></h3>
+            <div class="toc-list">
+                
+                <a class="toc-item" href="math.html#clamp">
+                    <h4>clamp(val, min, max):Number</h4>
+                    <span class="desc">Clamps value inside range.</span>
+                </a>
+                
+                <a class="toc-item" href="math.html#countSteps">
+                    <h4>countSteps(val, step, [overflow]):Number</h4>
+                    <span class="desc">Count number of full steps.</span>
+                </a>
+                
+                <a class="toc-item" href="math.html#inRange">
+                    <h4>inRange(val, min, max, [threshold]):Boolean</h4>
+                    <span class="desc">Checks if value is inside the range.</span>
+                </a>
+                
+                <a class="toc-item" href="math.html#isNear">
+                    <h4>isNear(val, target, threshold):Boolean</h4>
+                    <span class="desc">Check if value is close to target.</span>
+                </a>
+                
+                <a class="toc-item" href="math.html#lerp">
+                    <h4>lerp(ratio, start, end):Number</h4>
+                    <span class="desc">Linear interpolation.</span>
+                </a>
+                
+                <a class="toc-item" href="math.html#loop">
+                    <h4>loop(val, min, max):Number</h4>
+                    <span class="desc">Loops value inside range. Will return <code>min</code> if <code>val &gt; max</code> and <code>max</code> if <code>val &lt; min</code>, otherwise it returns <code>val</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="math.html#map">
+                    <h4>map(val, min1, max1, min2, max2):Number</h4>
+                    <span class="desc">Maps a number from one scale to another.</span>
+                </a>
+                
+                <a class="toc-item" href="math.html#norm">
+                    <h4>norm(val, min, max):Number</h4>
+                    <span class="desc">Gets normalized ratio of value inside range.</span>
+                </a>
+                
+                <a class="toc-item" href="math.html#snap">
+                    <h4>snap(val, step):Number</h4>
+                    <span class="desc">Snap value to full steps.</span>
+                </a>
+                
+            </div>
+        
+            <h3 class="toc-mod-title"><a href="number.html">number</a></h3>
+            <div class="toc-list">
+                
+                <a class="toc-item" href="number.html#enforcePrecision">
+                    <h4>enforcePrecision(val, nDecimalDigits):Number</h4>
+                    <span class="desc">Enforce a specific amount of decimal digits and also fix floating point rounding issues.</span>
+                </a>
+                
+                <a class="toc-item" href="number.html#MAX_INT">
+                    <h4>MAX_INT:Number</h4>
+                    <span class="desc">Maximum 32-bit signed integer value. <code>Math.pow(2, 31) - 1</code></span>
+                </a>
+                
+                <a class="toc-item" href="number.html#MIN_INT">
+                    <h4>MIN_INT:Number</h4>
+                    <span class="desc">Minimum 32-bit signed integer value. <code>Math.pow(2, 31) * -1</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="number.html#pad">
+                    <h4>pad(n, minLength):String</h4>
+                    <span class="desc">Add padding zeros if <code>n.length</code> &lt; <code>minLength</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="number.html#rol">
+                    <h4>rol(val, shift):Number</h4>
+                    <span class="desc">Bitwise circular shift left.</span>
+                </a>
+                
+                <a class="toc-item" href="number.html#ror">
+                    <h4>ror(val, shift):Number</h4>
+                    <span class="desc">Bitwise circular shift right.</span>
+                </a>
+                
+                <a class="toc-item" href="number.html#toInt">
+                    <h4>toInt(val):Number</h4>
+                    <span class="desc">"Convert" value into an 32-bit integer.  Works like <code>Math.floor</code> if <code>val &gt; 0</code> and <code>Math.ceil</code> if <code>val &lt; 0</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="number.html#toUInt">
+                    <h4>toUInt(val):Number</h4>
+                    <span class="desc">"Convert" value into an 31-bit unsigned integer (since 1 bit is used for sign).</span>
+                </a>
+                
+            </div>
+        
+            <h3 class="toc-mod-title"><a href="queryString.html">queryString</a></h3>
+            <div class="toc-list">
+                
+                <a class="toc-item" href="queryString.html#decodeQuery">
+                    <h4>decodeQuery(str):Object</h4>
+                    <span class="desc">Parses query string and creates an object of keys => vals. Will typecast value with <code>string/typecast</code> and decode string parameters using
+<code>decodeURIComponent()</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="queryString.html#encodeQuery">
+                    <h4>encodeQuery(obj):String</h4>
+                    <span class="desc">Encode object into a query string. Will encode parameters with <code>encodeURIComponent()</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="queryString.html#getParam">
+                    <h4>getParam(param, url):*</h4>
+                    <span class="desc">Get query parameter value. Will typecast value with <code>string/typecast</code>. Allow parsing a custom URL or uses <code>location.href</code> by default.</span>
+                </a>
+                
+                <a class="toc-item" href="queryString.html#getQueryObject">
+                    <h4>getQueryObject(url):Object</h4>
+                    <span class="desc">Parses URL, extracts query string and decodes it. Will use <code>location.href</code> by default.</span>
+                </a>
+                
+                <a class="toc-item" href="queryString.html#getQueryString">
+                    <h4>getQueryString(url):String</h4>
+                    <span class="desc">Gets full query as string with all special chars decoded. It avoid issues with query string inside <code>location.hash</code> (e.g. "index.html?dolor=1#/lorem/?foo=bar").
+Will use <code>location.href</code> by default.</span>
+                </a>
+                
+                <a class="toc-item" href="queryString.html#hasParam">
+                    <h4>hasParam(paramName, url):Boolen</h4>
+                    <span class="desc">Checks if query string contains parameter.</span>
+                </a>
+                
+            </div>
+        
+            <h3 class="toc-mod-title"><a href="random.html">random</a></h3>
+            <div class="toc-list">
+                
+                <a class="toc-item" href="random.html#choice">
+                    <h4>choice(...items):*</h4>
+                    <span class="desc">Returns a random element from the supplied arguments or from an array if single argument is an array.</span>
+                </a>
+                
+                <a class="toc-item" href="random.html#rand">
+                    <h4>rand([min], [max]):Number</h4>
+                    <span class="desc">Gets a random number inside range or snap to min/max values.</span>
+                </a>
+                
+                <a class="toc-item" href="random.html#randBit">
+                    <h4>randBit():Number</h4>
+                    <span class="desc">Returns a random "bit" (0 or 1). Useful for addition/subtraction.</span>
+                </a>
+                
+                <a class="toc-item" href="random.html#randInt">
+                    <h4>randInt([min], [max]):Number</h4>
+                    <span class="desc">Gets a random integer inside range or snap to min/max values.</span>
+                </a>
+                
+                <a class="toc-item" href="random.html#randSign">
+                    <h4>randSign():Number</h4>
+                    <span class="desc">Returns a random "sign" (-1 or 1). Useful for multiplications.</span>
+                </a>
+                
+            </div>
+        
+            <h3 class="toc-mod-title"><a href="string.html">string</a></h3>
+            <div class="toc-list">
+                
+                <a class="toc-item" href="string.html#camelCase">
+                    <h4>camelCase(str):String</h4>
+                    <span class="desc">Convert string to "camelCase" text.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#crop">
+                    <h4>crop(str, maxChars, [append]):String</h4>
+                    <span class="desc">Truncate string at full words. Alias to <code>truncate(str, maxChars, append, true);</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#hyphenate">
+                    <h4>hyphenate(str):String</h4>
+                    <span class="desc">Replaces spaces with hyphens, split camelCase text, remove non-word chars, remove accents and convert to lower case.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#lowerCase">
+                    <h4>lowerCase(str):String</h4>
+                    <span class="desc">"Safer" <code>String.toLowerCase()</code>. (Used internally)</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#ltrim">
+                    <h4>ltrim(str):String</h4>
+                    <span class="desc">Remove white-spaces from beginning of string.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#makePath">
+                    <h4>makePath(...args):String</h4>
+                    <span class="desc">Group arguments as path segments, if any of the args is <code>null</code> or <code>undefined</code> it will be ignored from resulting path. It will also remove duplicate "/".</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#pascalCase">
+                    <h4>pascalCase(str):String</h4>
+                    <span class="desc">Convert string to "PascalCase" text.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#properCase">
+                    <h4>properCase(str):String</h4>
+                    <span class="desc">UPPERCASE first char of each word, lowercase other chars.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#removeNonASCII">
+                    <h4>removeNonASCII(str):String</h4>
+                    <span class="desc">Remove non-printable ASCII chars.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#removeNonWord">
+                    <h4>removeNonWord(str):String</h4>
+                    <span class="desc">Remove non-word chars.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#replaceAccents">
+                    <h4>replaceAccents(str):String</h4>
+                    <span class="desc">Replaces all accented chars with regular ones.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#rtrim">
+                    <h4>rtrim(str):String</h4>
+                    <span class="desc">Remove white-spaces from end of string.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#sentenceCase">
+                    <h4>sentenceCase(str):String</h4>
+                    <span class="desc">UPPERCASE first char of each sentence and lowercase other chars.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#stripHtmlTags">
+                    <h4>stripHtmlTags(str):String</h4>
+                    <span class="desc">Remove HTML/XML tags from string.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#toSlug">
+                    <h4>toSlug(str):String</h4>
+                    <span class="desc">Convert to lower case, remove accents, remove non-word chars and replace spaces with hyphens.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#trim">
+                    <h4>trim(str):String</h4>
+                    <span class="desc">Remove white-spaces from beginning and end of string.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#truncate">
+                    <h4>truncate(str, maxChars, [append], [onlyFullWords]):String</h4>
+                    <span class="desc">Limit number of chars. Returned string <code>length</code> will be <code>&lt;= maxChars</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#typecast">
+                    <h4>typecast(str):*</h4>
+                    <span class="desc">Parses string and convert it into a native value.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#unCamelCase">
+                    <h4>unCamelCase(str):String</h4>
+                    <span class="desc">Add space between camelCase text and convert first char of each word to lower case.</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#unHyphenate">
+                    <h4>unHyphenate(str):String</h4>
+                    <span class="desc">Replaces hyphens with spaces. (only hyphens between word chars)</span>
+                </a>
+                
+                <a class="toc-item" href="string.html#upperCase">
+                    <h4>upperCase(str):String</h4>
+                    <span class="desc">"Safer" <code>String.toUpperCase()</code>. (Used internally)</span>
+                </a>
+                
+            </div>
+        
+            <h3 class="toc-mod-title"><a href="time.html">time</a></h3>
+            <div class="toc-list">
+                
+                <a class="toc-item" href="time.html#split">
+                    <h4>split(ms):Object</h4>
+                    <span class="desc">Parse timestamp (milliseconds) into an object <code>{milliseconds:number, seconds:number, minutes:number, hours:number, days:number}</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="time.html#toTimeString">
+                    <h4>toTimeString(ms):String</h4>
+                    <span class="desc">Convert timestamp (milliseconds) into a time string in the format "HH:MM:SS".</span>
+                </a>
+                
+            </div>
+        
+    </div>
+</div>

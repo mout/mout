@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AMD Utils</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets_/css/shCore.css">
+        <link rel="stylesheet" href="assets_/css/shThemeDefault.css">
+        <link rel="stylesheet" href="assets_/css/main.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="content">
+
+<h1>amd-utils</h1>
+
+<p><a href='http://millermedeiros.github.com/amd-utils'>http://millermedeiros.github.com/amd-utils</a></p>
+
+<p>modular JavaScript utilities written in the
+<a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD</a> format.</p>
+
+<p>All code is library agnostic and consist mostly of helper methods that aren't
+directly related with the DOM, the purpose of this library isn't to replace
+Dojo, jQuery, YUI, Mootools, etc, but to provide modular solutions for common
+problems that aren't solved by most of them.</p>
+
+<h2>Main goals</h2>
+
+<ul>
+<li>increase code reuse;</li>
+<li>be clear (code should be clean/readable);</li>
+<li>be easy to debug;</li>
+<li>be easy to maintain;</li>
+<li>follow best practices;</li>
+<li>follow standards when possible;</li>
+<li><strong>don't convert JavaScript into another language!</strong></li>
+<li>be compatible with other frameworks;</li>
+<li>be modular;</li>
+<li>have unit tests for all modules.</li>
+</ul>
+
+<h2>What shouldn't be here</h2>
+
+<ul>
+<li>UI components;</li>
+<li>CSS selector engine;</li>
+<li>Event system - pub/sub;</li>
+<li>Template engine;</li>
+<li>Anything that could be a separate library and/or isn't a modular utility...</li>
+</ul>
+
+<h2>Notes</h2>
+
+<p>Since each function is a separate module they have independent version numbers.</p>
+
+<p>This library is on an early stage and features will be added as needed, some
+stuff still needed to be ported from legacy code.</p>
+
+<h2>Important</h2>
+
+<p>Since code is very modular (broken into multiple files) it is really important
+that you run an optimizer before deploying the code to a server, otherwise you
+may end up having too many file requests which can <a href="http://developer.yahoo.com/performance/rules.html#num_http">degrade load-time
+performance</a> a lot.
+See <a href="http://requirejs.org/docs/optimization.html">RequireJS optimization</a> for
+more info.</p>
+
+<h2>Contributing</h2>
+
+<p>Fork the project on Github: <a href='https://github.com/millermedeiros/amd-utils'>https://github.com/millermedeiros/amd-utils</a></p>
+
+<blockquote>
+  <p>"Write clearly, don't be too clever" - The Elements of Programming Style</p>
+</blockquote>
+
+<p>Avoid unnamed functions and follow the other modules structure. By only using
+named functions it will be easier to extract the code from the AMD module if
+needed and it will also give better error messages, JavaScript minifiers like
+<a href="http://code.google.com/closure/compiler/">Google Closure Compiler</a> and
+<a href="https://github.com/mishoo/UglifyJS">UglifyJS</a> will make sure code is as
+small/optimized as possible.</p>
+
+<blockquote>
+  <p>"Make it clear before you make it faster." - The Elements of Programming Style</p>
+</blockquote>
+
+<p>Be sure to always create tests for each proposed module. Features will only be
+merged if they contain proper tests and documentation.</p>
+
+<blockquote>
+  <p>"Good code is its own best documentation." - Steve McConnell</p>
+</blockquote>
+
+<p>We should do a code review before merging to make sure names makes sense and
+implementation is as good as possible.</p>
+
+<p>Add your name to the list of contributors and also your name to the <code>@author</code>
+JSdoc tag.</p>
+
+<h2>Why AMD?</h2>
+
+<p><strong>Because AMD is awesome!</strong> Read these links if you still can't see why:</p>
+
+<ul>
+<li><a href="http://requirejs.org/docs/whyamd.html">Why AMD?</a></li>
+<li><a href="blog.millermedeiros.com/2011/09/amd-is-better-for-the-web-than-commonjs-modules/">AMD is better for the web than CJS modules</a></li>
+<li><a href="http://briancavalier.com/presentations/pgh-js-amd-10-2011/">AMD &amp; CommonJS modules</a></li>
+<li><a href="http://unscriptable.com/index.php/2011/09/30/amd-versus-cjs-whats-the-best-format/">AMD vs. CJS</a></li>
+</ul>
+
+<p>Your mileage may vary...</p>
+
+<h2>Author</h2>
+
+<ul>
+<li><a href="http://blog.millermedeiros.com/">Miller Medeiros</a></li>
+</ul>
+
+<h2>License</h2>
+
+<p>Released under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.</p>
+
+<h2>Building The Documentation</h2>
+
+<p>The documentation is generated based on the <code>README.mdown</code> files inside each
+<code>src</code> folder. To compile the docs run:</p>
+
+<pre><code>npm install handlebars
+npm install wrench
+node build.js
+</code></pre>
+
+<p>It will replace all the files inside the <code>doc/</code> folder.</p>
+
+<p>Documentation files should be always up-to-date since modules are only
+committed to the <code>master</code> branch after they get proper tests and documentation.</p>
+
+<p>Online documentation can be found at <a href='http://millermedeiros.github.com/amd-utils'>http://millermedeiros.github.com/amd-utils</a></p>
+<h2>Modules</h2>
+
+<div class="mod">
+    <h3><a href="array.html">array</a></h3>
+    <ul>
+        
+        <li><a href="array.html#compact">compact()</a></li>
+        
+        <li><a href="array.html#contains">contains()</a></li>
+        
+        <li><a href="array.html#every">every()</a></li>
+        
+        <li><a href="array.html#filter">filter()</a></li>
+        
+        <li><a href="array.html#forEach">forEach()</a></li>
+        
+        <li><a href="array.html#indexOf">indexOf()</a></li>
+        
+        <li><a href="array.html#isSparse">isSparse()</a></li>
+        
+        <li><a href="array.html#lastIndexOf">lastIndexOf()</a></li>
+        
+        <li><a href="array.html#map">map()</a></li>
+        
+        <li><a href="array.html#range">range()</a></li>
+        
+        <li><a href="array.html#reduce">reduce()</a></li>
+        
+        <li><a href="array.html#reduceRight">reduceRight()</a></li>
+        
+        <li><a href="array.html#remove">remove()</a></li>
+        
+        <li><a href="array.html#removeAll">removeAll()</a></li>
+        
+        <li><a href="array.html#shuffle">shuffle()</a></li>
+        
+        <li><a href="array.html#some">some()</a></li>
+        
+        <li><a href="array.html#unique">unique()</a></li>
+        
+    </ul>
+</div>
+
+<div class="mod">
+    <h3><a href="lang.html">lang</a></h3>
+    <ul>
+        
+        <li><a href="lang.html#bind">bind()</a></li>
+        
+        <li><a href="lang.html#createObject">createObject()</a></li>
+        
+        <li><a href="lang.html#inheritPrototype">inheritPrototype()</a></li>
+        
+        <li><a href="lang.html#isArguments">isArguments()</a></li>
+        
+        <li><a href="lang.html#isArray">isArray()</a></li>
+        
+        <li><a href="lang.html#isBoolean">isBoolean()</a></li>
+        
+        <li><a href="lang.html#isDate">isDate()</a></li>
+        
+        <li><a href="lang.html#isFunction">isFunction()</a></li>
+        
+        <li><a href="lang.html#isKind">isKind()</a></li>
+        
+        <li><a href="lang.html#isNull">isNull()</a></li>
+        
+        <li><a href="lang.html#isNumber">isNumber()</a></li>
+        
+        <li><a href="lang.html#isObject">isObject()</a></li>
+        
+        <li><a href="lang.html#isRegExp">isRegExp()</a></li>
+        
+        <li><a href="lang.html#isString">isString()</a></li>
+        
+        <li><a href="lang.html#isUndefined">isUndefined()</a></li>
+        
+        <li><a href="lang.html#kindOf">kindOf()</a></li>
+        
+        <li><a href="lang.html#mixIn">mixIn()</a></li>
+        
+        <li><a href="lang.html#toArray">toArray()</a></li>
+        
+    </ul>
+</div>
+
+<div class="mod">
+    <h3><a href="math.html">math</a></h3>
+    <ul>
+        
+        <li><a href="math.html#clamp">clamp()</a></li>
+        
+        <li><a href="math.html#countSteps">countSteps()</a></li>
+        
+        <li><a href="math.html#inRange">inRange()</a></li>
+        
+        <li><a href="math.html#isNear">isNear()</a></li>
+        
+        <li><a href="math.html#lerp">lerp()</a></li>
+        
+        <li><a href="math.html#loop">loop()</a></li>
+        
+        <li><a href="math.html#map">map()</a></li>
+        
+        <li><a href="math.html#norm">norm()</a></li>
+        
+        <li><a href="math.html#snap">snap()</a></li>
+        
+    </ul>
+</div>
+
+<div class="mod">
+    <h3><a href="number.html">number</a></h3>
+    <ul>
+        
+        <li><a href="number.html#enforcePrecision">enforcePrecision()</a></li>
+        
+        <li><a href="number.html#MAX_INT">MAX_IN</a></li>
+        
+        <li><a href="number.html#MIN_INT">MIN_IN</a></li>
+        
+        <li><a href="number.html#pad">pad()</a></li>
+        
+        <li><a href="number.html#rol">rol()</a></li>
+        
+        <li><a href="number.html#ror">ror()</a></li>
+        
+        <li><a href="number.html#toInt">toInt()</a></li>
+        
+        <li><a href="number.html#toUInt">toUInt()</a></li>
+        
+    </ul>
+</div>
+
+<div class="mod">
+    <h3><a href="queryString.html">queryString</a></h3>
+    <ul>
+        
+        <li><a href="queryString.html#decodeQuery">decodeQuery()</a></li>
+        
+        <li><a href="queryString.html#encodeQuery">encodeQuery()</a></li>
+        
+        <li><a href="queryString.html#getParam">getParam()</a></li>
+        
+        <li><a href="queryString.html#getQueryObject">getQueryObject()</a></li>
+        
+        <li><a href="queryString.html#getQueryString">getQueryString()</a></li>
+        
+        <li><a href="queryString.html#hasParam">hasParam()</a></li>
+        
+    </ul>
+</div>
+
+<div class="mod">
+    <h3><a href="random.html">random</a></h3>
+    <ul>
+        
+        <li><a href="random.html#choice">choice()</a></li>
+        
+        <li><a href="random.html#rand">rand()</a></li>
+        
+        <li><a href="random.html#randBit">randBit)</a></li>
+        
+        <li><a href="random.html#randInt">randInt()</a></li>
+        
+        <li><a href="random.html#randSign">randSign)</a></li>
+        
+    </ul>
+</div>
+
+<div class="mod">
+    <h3><a href="string.html">string</a></h3>
+    <ul>
+        
+        <li><a href="string.html#camelCase">camelCase()</a></li>
+        
+        <li><a href="string.html#crop">crop()</a></li>
+        
+        <li><a href="string.html#hyphenate">hyphenate()</a></li>
+        
+        <li><a href="string.html#lowerCase">lowerCase()</a></li>
+        
+        <li><a href="string.html#ltrim">ltrim()</a></li>
+        
+        <li><a href="string.html#makePath">makePath()</a></li>
+        
+        <li><a href="string.html#pascalCase">pascalCase()</a></li>
+        
+        <li><a href="string.html#properCase">properCase()</a></li>
+        
+        <li><a href="string.html#removeNonASCII">removeNonASCII()</a></li>
+        
+        <li><a href="string.html#removeNonWord">removeNonWord()</a></li>
+        
+        <li><a href="string.html#replaceAccents">replaceAccents()</a></li>
+        
+        <li><a href="string.html#rtrim">rtrim()</a></li>
+        
+        <li><a href="string.html#sentenceCase">sentenceCase()</a></li>
+        
+        <li><a href="string.html#stripHtmlTags">stripHtmlTags()</a></li>
+        
+        <li><a href="string.html#toSlug">toSlug()</a></li>
+        
+        <li><a href="string.html#trim">trim()</a></li>
+        
+        <li><a href="string.html#truncate">truncate()</a></li>
+        
+        <li><a href="string.html#typecast">typecast()</a></li>
+        
+        <li><a href="string.html#unCamelCase">unCamelCase()</a></li>
+        
+        <li><a href="string.html#unHyphenate">unHyphenate()</a></li>
+        
+        <li><a href="string.html#upperCase">upperCase()</a></li>
+        
+    </ul>
+</div>
+
+<div class="mod">
+    <h3><a href="time.html">time</a></h3>
+    <ul>
+        
+        <li><a href="time.html#split">split()</a></li>
+        
+        <li><a href="time.html#toTimeString">toTimeString()</a></li>
+        
+    </ul>
+</div>
+
+            </div>
+        </div>
+        <script src="assets_/js/lib/jquery.js"></script>
+        <script src="assets_/js/lib/syntax-highlighter/shCore.js"></script>
+        <script src="assets_/js/lib/syntax-highlighter/shAutoloader.js"></script>
+        <script src="assets_/js/main.js"></script>
+    </body>
+</html>
+

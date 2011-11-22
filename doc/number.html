@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>amd-utils / number : AMD Utils</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets_/css/shCore.css">
+        <link rel="stylesheet" href="assets_/css/shThemeDefault.css">
+        <link rel="stylesheet" href="assets_/css/main.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="content">
+
+<ul id="topnav">
+    <li><a href="index.html">Index</a></li>
+    <li><a href="#toc">TOC</a></li>
+</ul>
+<h1>amd-utils / number</h1>
+
+<p>Number utilities.</p>
+
+<h2><a href="#toc" name="toc">Table of Contents</a></h2>
+
+<ul>
+<li><a href="#enforcePrecision"><code>enforcePrecision()</code></a></li>
+<li><a href="#MAX_INT"><code>MAX_INT</code></a></li>
+<li><a href="#MIN_INT"><code>MIN_INT</code></a></li>
+<li><a href="#pad"><code>pad()</code></a></li>
+<li><a href="#rol"><code>rol()</code></a></li>
+<li><a href="#ror"><code>ror()</code></a></li>
+<li><a href="#toInt"><code>toInt()</code></a></li>
+<li><a href="#toUInt"><code>toUInt()</code></a></li>
+</ul>
+
+<h2><a href="#enforcePrecision" name="enforcePrecision">enforcePrecision(val, nDecimalDigits):Number</a></h2>
+
+<p>Enforce a specific amount of decimal digits and also fix floating point
+rounding issues.</p>
+
+<h3>Example:</h3>
+
+<pre class="brush:js">
+enforcePrecision(0.615, 2); // 0.62
+enforcePrecision(0.625, 2); // 0.63
+//floating point rounding "error" (rounds to odd number)
++(0.615).toFixed(2);        // 0.61
++(0.625).toFixed(2);        // 0.63
+</pre>
+
+<h2><a href="#MAX_INT" name="MAX_INT">MAX_INT:Number</a></h2>
+
+<p>Maximum 32-bit signed integer value. <code>Math.pow(2, 31) - 1</code></p>
+
+<h3>Example:</h3>
+
+<pre class="brush:js">
+console.log( MAX_INT ); // 2147483647
+</pre>
+
+<h2><a href="#MIN_INT" name="MIN_INT">MIN_INT:Number</a></h2>
+
+<p>Minimum 32-bit signed integer value. <code>Math.pow(2, 31) * -1</code>.</p>
+
+<h3>Example:</h3>
+
+<pre class="brush:js">
+console.log( MIN_INT ); // -2147483648
+</pre>
+
+<h2><a href="#pad" name="pad">pad(n, minLength):String</a></h2>
+
+<p>Add padding zeros if <code>n.length</code> &lt; <code>minLength</code>.</p>
+
+<h3>Example:</h3>
+
+<pre class="brush:js">
+pad(1, 5);      // 00001
+pad(12, 5);     // 00012
+pad(123, 5);    // 00123
+pad(1234, 5);   // 01234
+pad(12345, 5);  // 12345
+pad(123456, 5); // 123456
+</pre>
+
+<h2><a href="#rol" name="rol">rol(val, shift):Number</a></h2>
+
+<p>Bitwise circular shift left.</p>
+
+<p>More info at <a href="http://en.wikipedia.org/wiki/Circular_shift">Wikipedia#Circular_shift</a></p>
+
+<h2><a href="#ror" name="ror">ror(val, shift):Number</a></h2>
+
+<p>Bitwise circular shift right.</p>
+
+<p>More info at <a href="http://en.wikipedia.org/wiki/Circular_shift">Wikipedia#Circular_shift</a></p>
+
+<h2><a href="#toInt" name="toInt">toInt(val):Number</a></h2>
+
+<p>"Convert" value into an 32-bit integer.  Works like <code>Math.floor</code> if <code>val &gt; 0</code> and
+<code>Math.ceil</code> if <code>val &lt; 0</code>.</p>
+
+<p><strong>IMPORTANT:</strong> val should be inside range
+<a href="#MIN_INT">number/MIN_INT</a>...<a href="#MAX_INT">number/MAX_INT</a>.</p>
+
+<p>Created because most people don't know bitwise operations and also because this
+feature is commonly needed.</p>
+
+<p><a href="http://jsperf.com/vs-vs-parseint-bitwise-operators/7">Perf tests</a></p>
+
+<h3>Example:</h3>
+
+<pre class="brush:js">
+toInt(1.25);   // 1
+toInt(0.75);   // 0
+toInt(-0.55);  // 0
+toInt(-5.0001) // -5
+</pre>
+
+<h2><a href="#toUInt" name="toUInt">toUInt(val):Number</a></h2>
+
+<p>"Convert" value into an 31-bit unsigned integer (since 1 bit is used for sign).</p>
+
+<p><strong>IMPORTANT:</strong> val should be inside range
+<a href="#MIN_INT">number/MIN_INT</a>...<a href="#MAX_INT">number/MAX_INT</a>.</p>
+
+<h3>Example:</h3>
+
+<pre class="brush:js">
+toUInt(1.25);   // 1
+toUInt(0.75);   // 0
+toUInt(-0.55);  // 0
+toUInt(-5.0001) // 0
+</pre>
+
+<hr />
+
+<p>For more usage examples check specs inside <code>/tests</code> folder. Unit tests are the
+best documentation you can get...</p>
+            </div>
+        </div>
+        <script src="assets_/js/lib/jquery.js"></script>
+        <script src="assets_/js/lib/syntax-highlighter/shCore.js"></script>
+        <script src="assets_/js/lib/syntax-highlighter/shAutoloader.js"></script>
+        <script src="assets_/js/main.js"></script>
+    </body>
+</html>
+

@@ -1,0 +1,14 @@
+{{> header}}
+{{{content}}}
+<h2>Modules</h2>
+{{#modules}}
+<div class="mod">
+    <h3><a href="{{file}}">{{module}}</a></h3>
+    <ul>
+        {{#toc}}
+        <li><a href="{{../file}}#{{href}}">{{name}}</a></li>
+        {{/toc}}
+    </ul>
+</div>
+{{/modules}}
+{{> footer}}

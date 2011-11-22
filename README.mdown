@@ -1,5 +1,7 @@
 # amd-utils #
 
+http://millermedeiros.github.com/amd-utils
+
 modular JavaScript utilities written in the
 [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) format.
 
@@ -37,31 +39,10 @@ problems that aren't solved by most of them.
 
 ## Notes ##
 
-Since each function is a separate module they should have a separate version
-number and last edit date.
-
-Still unsure how this library will be distributed (how versioning will work,
-etc) and if it will ever be used by more people / other libraries. Most of the
-code so far is originated from [Miller Medeiros personal JS
-library](https://github.com/millermedeiros/MM_js_lib/).
+Since each function is a separate module they have independent version numbers.
 
 This library is on an early stage and features will be added as needed, some
-modules still need to be broken and some stuff still needed to be ported from
-legacy code.
-
-For more utilities check [uber.js](https://github.com/phiggins42/uber.js),
-which have a slightly different goal/approach.
-
-
-
-## Documentation ##
-
-Check `README.mdown` files inside each folder, Github displays them nicelly and
-will show them automatically while browsing shource code. Also check the specs
-inside the `tests/` folder for more usage examples.
-
-So far we don't have an HTML version of the docs. See [issue
-3](https://github.com/millermedeiros/amd-utils/issues/3) for more details.
+stuff still needed to be ported from legacy code.
 
 
 
@@ -77,6 +58,8 @@ more info.
 
 
 ## Contributing ##
+
+Fork the project on Github: https://github.com/millermedeiros/amd-utils
 
  > "Write clearly, don't be too clever" - The Elements of Programming Style
 
@@ -115,7 +98,7 @@ Your mileage may vary...
 
 
 
-## Contributors ##
+## Author ##
 
  - [Miller Medeiros](http://blog.millermedeiros.com/)
 
@@ -124,3 +107,21 @@ Your mileage may vary...
 ## License ##
 
 Released under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
+
+
+
+## Building The Documentation ##
+
+The documentation is generated based on the `README.mdown` files inside each
+`src` folder. To compile the docs run:
+
+    npm install handlebars
+    npm install wrench
+    node build.js
+
+It will replace all the files inside the `doc/` folder.
+
+Documentation files should be always up-to-date since modules are only
+committed to the `master` branch after they get proper tests and documentation.
+
+Online documentation can be found at http://millermedeiros.github.com/amd-utils

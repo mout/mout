@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>amd-utils / queryString : AMD Utils</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets_/css/shCore.css">
+        <link rel="stylesheet" href="assets_/css/shThemeDefault.css">
+        <link rel="stylesheet" href="assets_/css/main.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="content">
+
+<ul id="topnav">
+    <li><a href="index.html">Index</a></li>
+    <li><a href="#toc">TOC</a></li>
+</ul>
+<h1>amd-utils / queryString</h1>
+
+<p>Utilities for query string manipulation.</p>
+
+<h2><a href="#toc" name="toc">Table of Contents</a></h2>
+
+<ul>
+<li><a href="#decodeQuery"><code>decodeQuery()</code></a></li>
+<li><a href="#encodeQuery"><code>encodeQuery()</code></a></li>
+<li><a href="#getParam"><code>getParam()</code></a></li>
+<li><a href="#getQueryObject"><code>getQueryObject()</code></a></li>
+<li><a href="#getQueryString"><code>getQueryString()</code></a></li>
+<li><a href="#hasParam"><code>hasParam()</code></a></li>
+</ul>
+
+<h2><a href="#decodeQuery" name="decodeQuery">decodeQuery(str):Object</a></h2>
+
+<p>Parses query string and creates an object of keys => vals. Will typecast value
+with <code>string/typecast</code> and decode string parameters using
+<code>decodeURIComponent()</code>.</p>
+
+<pre class="brush:js">
+decodeQuery('?foo=bar&lorem=123'); // {foo: "bar", lorem: 123}
+</pre>
+
+<h2><a href="#encodeQuery" name="encodeQuery">encodeQuery(obj):String</a></h2>
+
+<p>Encode object into a query string. Will encode parameters with
+<code>encodeURIComponent()</code>.</p>
+
+<pre class="brush:js">
+encodeQuery({foo: "bar", lorem: 123}); // "?foo=bar&lorem=123"
+</pre>
+
+<h2><a href="#getParam" name="getParam">getParam(param, url):*</a></h2>
+
+<p>Get query parameter value. Will typecast value with <code>string/typecast</code>.
+Allow parsing a custom URL or uses <code>location.href</code> by default.</p>
+
+<h3>Arguments:</h3>
+
+<ol>
+<li><code>param</code> (String) : Parameter name.</li>
+<li><code>[url]</code> (String) : Url. Will use <code>location.href</code> by default.</li>
+</ol>
+
+<h3>Example:</h3>
+
+<pre class="brush:js">
+//if current URI = <a href='http://example.com/?foo=bar&lorem=123&ipsum=false'>http://example.com/?foo=bar&lorem=123&ipsum=false</a>
+getParam('foo');   // "bar"
+getParam('lorem'); // 123
+getPram('ipsum');  // false
+
+//allow custom URL
+getParam('dolor', '<a href='http://example.com/?dolor=amet'>http://example.com/?dolor=amet</a>'); // "amet"
+</pre>
+
+<h2><a href="#getQueryObject" name="getQueryObject">getQueryObject(url):Object</a></h2>
+
+<p>Parses URL, extracts query string and decodes it. Will use <code>location.href</code> by default.</p>
+
+<p>Alias to: <code>decodeQuery(getQueryString(url))</code>.</p>
+
+<pre class="brush:js">
+//if current URI = <a href='http://example.com/?foo=bar&lorem=123&ipsum=false'>http://example.com/?foo=bar&lorem=123&ipsum=false</a>
+getQueryObject(); // {foo: "bar", lorem: 123, ipsum: false}
+
+//allow custom URL
+getQueryObject('<a href='http://example.com/?lorem=ipsum'>http://example.com/?lorem=ipsum</a>'); // {lorem: "ipsum"}
+</pre>
+
+<h2><a href="#getQueryString" name="getQueryString">getQueryString(url):String</a></h2>
+
+<p>Gets full query as string with all special chars decoded. It avoid issues with
+query string inside <code>location.hash</code> (e.g. "index.html?dolor=1#/lorem/?foo=bar").
+Will use <code>location.href</code> by default.</p>
+
+<pre class="brush:js">
+//if current URI = <a href='http://example.com/?foo=bar&lorem=123&ipsum=false'>http://example.com/?foo=bar&lorem=123&ipsum=false</a>
+getQueryString(); // "?foo=bar&lorem=123&ipsum=false"
+
+//allow custom URL
+getQueryString('<a href='http://example.com/?lorem=ipsum'>http://example.com/?lorem=ipsum</a>'); // "?lorem=ipsum"
+</pre>
+
+<h2><a href="#hasParam" name="hasParam">hasParam(paramName, url):Boolen</a></h2>
+
+<p>Checks if query string contains parameter.</p>
+
+<h3>Arguments:</h3>
+
+<ol>
+<li><code>paramName</code> (String) : Parameter name.</li>
+<li><code>[url]</code> (String)     : Custom URL. Will use <code>location.href</code> by default.</li>
+</ol>
+
+<h3>Example:</h3>
+
+<pre class="brush:js">
+//if current URI = <a href='http://example.com/?foo=bar&lorem=123&ipsum=false'>http://example.com/?foo=bar&lorem=123&ipsum=false</a>
+hasParam('foo');   // true
+hasParam('dolor'); // false
+
+//allow custom URL
+hasParam('lorem', '<a href='http://example.com/?lorem=ipsum'>http://example.com/?lorem=ipsum</a>'); // true
+hasParam('foo', '<a href='http://example.com/?lorem=ipsum'>http://example.com/?lorem=ipsum</a>');   //false
+</pre>
+
+<hr />
+
+<p>For more usage examples check specs inside <code>/tests</code> folder. Unit tests are the
+best documentation you can get...</p>
+            </div>
+        </div>
+        <script src="assets_/js/lib/jquery.js"></script>
+        <script src="assets_/js/lib/syntax-highlighter/shCore.js"></script>
+        <script src="assets_/js/lib/syntax-highlighter/shAutoloader.js"></script>
+        <script src="assets_/js/main.js"></script>
+    </body>
+</html>
+
