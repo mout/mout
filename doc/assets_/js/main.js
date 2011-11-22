@@ -60,7 +60,10 @@
                 rTerm;
 
             $_tocItems.toggleClass('hidden', !!term);
-            $_toc.find('.toc-mod-title').toggleClass('hidden', !!term);
+            $_toc
+                .find('.toc-mod-title')
+                .toggleClass('hidden', !!term)
+                .removeClass('opened');
 
             if(term){
                 rTerm = new RegExp(term, 'gi');

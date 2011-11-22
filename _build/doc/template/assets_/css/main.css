@@ -535,7 +535,7 @@ hr {
     top:0;
     bottom:0;
     left:0;
-    padding-bottom:3em;
+    padding-bottom:5em;
     position:fixed;
 }
 
@@ -619,7 +619,7 @@ hr {
 #content {
     max-width:700px;
     margin:0 auto;
-    padding:1em 2em 1em 280px;
+    padding:1em 2em 5em 280px;
 }
 
 .h2-mod {
@@ -651,7 +651,6 @@ hr {
     padding:0.2em 0.5em;
     font-weight:normal;
 }
-
 
 .syntaxhighlighter {
     border: 1px solid #ddd;
