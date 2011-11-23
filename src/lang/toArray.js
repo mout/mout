@@ -5,19 +5,21 @@ define(['./isArray', './isObject', './isArguments'], function (isArray, isObject
     /**
      * Convert array-like object into array
      * @author Miller Medeiros
-     * @version 0.1.0 (2011/10/31)
+     * @version 0.1.1 (2011/11/23)
      */
     function toArray(val){
         var ret, key;
 
-        if (!val) {
+        if (val == null) {
             ret = [];
-        } else if ( isArray(val) || isArguments(val) || (isObject(val) && 'length' in val) ) {
+        } else if ( val && (isArray(val) || isArguments(val) || (isObject(val) && 'length' in val)) ) {
             ret = _arrSlice.call(val);
-        } else if ( isObject(val) ) {
+        } else if ( val && isObject(val) ) {
             ret = [];
             for(key in val){
-                ret.push( val[key] );
+                if (val.hasOwnProperty(key)){
+                    ret.push( val[key] );
+                }
             }
         } else {
             //string, regexp, function have .length but user probably just want
