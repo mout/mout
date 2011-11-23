@@ -25,12 +25,14 @@
 <ul>
 <li><a href="#enforcePrecision"><code>enforcePrecision()</code></a></li>
 <li><a href="#MAX_INT"><code>MAX_INT</code></a></li>
+<li><a href="#MAX_UINT"><code>MAX_UINT</code></a></li>
 <li><a href="#MIN_INT"><code>MIN_INT</code></a></li>
 <li><a href="#pad"><code>pad()</code></a></li>
 <li><a href="#rol"><code>rol()</code></a></li>
 <li><a href="#ror"><code>ror()</code></a></li>
 <li><a href="#toInt"><code>toInt()</code></a></li>
 <li><a href="#toUInt"><code>toUInt()</code></a></li>
+<li><a href="#toUInt32"><code>toUInt32()</code></a></li>
 </ul>
 
 <h2><a href="#enforcePrecision" name="enforcePrecision">enforcePrecision(val, nDecimalDigits):Number</a></h2>
@@ -56,6 +58,16 @@ enforcePrecision(0.625, 2); // 0.63
 
 <pre class="brush:js">
 console.log( MAX_INT ); // 2147483647
+</pre>
+
+<h2><a href="#MAX_UINT" name="MAX_UINT">MAX_UINT:Number</a></h2>
+
+<p>Maximum 32-bit unsigned integer value. <code>Math.pow(2, 32) - 1</code></p>
+
+<h3>Example:</h3>
+
+<pre class="brush:js">
+console.log( MAX_UINT ); // 4294967295
 </pre>
 
 <h2><a href="#MIN_INT" name="MIN_INT">MIN_INT:Number</a></h2>
@@ -100,8 +112,8 @@ pad(123456, 5); // 123456
 <p>"Convert" value into an 32-bit integer.  Works like <code>Math.floor</code> if <code>val &gt; 0</code> and
 <code>Math.ceil</code> if <code>val &lt; 0</code>.</p>
 
-<p><strong>IMPORTANT:</strong> val should be inside range
-<a href="#MIN_INT">number/MIN_INT</a>...<a href="#MAX_INT">number/MAX_INT</a>.</p>
+<p><strong>IMPORTANT:</strong> val will wrap at <a href="#MIN_INT">number/MIN_INT</a> and
+<a href="#MAX_INT">number/MAX_INT</a>.</p>
 
 <p>Created because most people don't know bitwise operations and also because this
 feature is commonly needed.</p>
@@ -121,16 +133,37 @@ toInt(-5.0001) // -5
 
 <p>"Convert" value into an 31-bit unsigned integer (since 1 bit is used for sign).</p>
 
-<p><strong>IMPORTANT:</strong> val should be inside range
-<a href="#MIN_INT">number/MIN_INT</a>...<a href="#MAX_INT">number/MAX_INT</a>.</p>
+<p>Useful since all bitwise operators besides <code>&gt;&gt;&gt;</code> treat numbers as signed
+integers.</p>
+
+<p><strong>IMPORTANT:</strong> val will wrap at 2^31.</p>
 
 <h3>Example:</h3>
 
 <pre class="brush:js">
-toUInt(1.25);   // 1
-toUInt(0.75);   // 0
-toUInt(-0.55);  // 0
-toUInt(-5.0001) // 0
+toUInt(1.25);                 // 1
+toUInt(0.75);                 // 0
+toUInt(-0.55);                // 0
+toUInt(-5.0001);              // 0
+toUInt(Math.pow(2,31) - 0.5); // 21474836470
+toUInt(Math.pow(2,31) + 0.5); // 0
+</pre>
+
+<h2><a href="#toUInt32" name="toUInt32">toUInt32(val):Number</a></h2>
+
+<p>"Convert" value into an 32-bit unsigned integer.</p>
+
+<p><strong>IMPORTANT:</strong> val will wrap at 2^32.</p>
+
+<h3>Example:</h3>
+
+<pre class="brush:js">
+toUInt(1.25);                 // 1
+toUInt(0.75);                 // 0
+toUInt(-0.55);                // 0
+toUInt(-5.0001);              // 0
+toUInt(Math.pow(2,32) - 0.5); // 4294967295
+toUInt(Math.pow(2,32) + 0.5); // 0
 </pre>
 
 <hr />
