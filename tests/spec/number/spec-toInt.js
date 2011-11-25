@@ -14,8 +14,8 @@ define(['src/number/toInt'], function (toInt) {
 
         it('should wrap at MAX_INT and MIN_INT', function(){
             expect( toInt( Math.pow(2,31) - 1.5 ) ).toEqual(2147483646);
-            expect( toInt( Math.pow(2,31) + 0.5 ) ).toEqual(0);
-            expect( toInt( Math.pow(-2,31) - 1.5 ) ).toEqual(0);
+            expect( toInt( Math.pow(2,31) + 0.5 ) ).toEqual(-2147483648);
+            expect( toInt( Math.pow(-2,31) - 1.5 ) ).toEqual(2147483647);
             expect( toInt( Math.pow(-2,31) - 0.5 ) ).toEqual(-2147483648);
             expect( toInt( Math.pow(-2,31) + 0.5 ) ).toEqual(-2147483647);
         });
