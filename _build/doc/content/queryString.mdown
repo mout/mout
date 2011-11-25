@@ -48,13 +48,13 @@ Allow parsing a custom URL or uses `location.href` by default.
 ### Example:
 
 ```js
-//if current URI = http://example.com/?foo=bar&lorem=123&ipsum=false
+//if current URI = example.com/?foo=bar&lorem=123&ipsum=false
 getParam('foo');   // "bar"
 getParam('lorem'); // 123
 getPram('ipsum');  // false
 
 //allow custom URL
-getParam('dolor', 'http://example.com/?dolor=amet'); // "amet"
+getParam('dolor', 'example.com/?dolor=amet'); // "amet"
 ```
 
 
@@ -65,11 +65,11 @@ Parses URL, extracts query string and decodes it. Will use `location.href` by de
 Alias to: `decodeQuery(getQueryString(url))`.
 
 ```js
-//if current URI = http://example.com/?foo=bar&lorem=123&ipsum=false
+//if current URI = example.com/?foo=bar&lorem=123&ipsum=false
 getQueryObject(); // {foo: "bar", lorem: 123, ipsum: false}
 
 //allow custom URL
-getQueryObject('http://example.com/?lorem=ipsum'); // {lorem: "ipsum"}
+getQueryObject('example.com/?lorem=ipsum'); // {lorem: "ipsum"}
 ```
 
 
@@ -80,11 +80,11 @@ query string inside `location.hash` (e.g. "index.html?dolor=1#/lorem/?foo=bar").
 Will use `location.href` by default.
 
 ```js
-//if current URI = http://example.com/?foo=bar&lorem=123&ipsum=false
+//if current URI = example.com/?foo=bar&lorem=123&ipsum=false
 getQueryString(); // "?foo=bar&lorem=123&ipsum=false"
 
 //allow custom URL
-getQueryString('http://example.com/?lorem=ipsum'); // "?lorem=ipsum"
+getQueryString('example.com/?lorem=ipsum'); // "?lorem=ipsum"
 ```
 
 
@@ -100,13 +100,13 @@ Checks if query string contains parameter.
 ### Example:
 
 ```js
-//if current URI = http://example.com/?foo=bar&lorem=123&ipsum=false
+//if current URI = example.com/?foo=bar&lorem=123&ipsum=false
 hasParam('foo');   // true
 hasParam('dolor'); // false
 
 //allow custom URL
-hasParam('lorem', 'http://example.com/?lorem=ipsum'); // true
-hasParam('foo', 'http://example.com/?lorem=ipsum');   //false
+hasParam('lorem', 'example.com/?lorem=ipsum'); // true
+hasParam('foo', 'example.com/?lorem=ipsum');   //false
 ```
 
 -------------------------------------------------------------------------------

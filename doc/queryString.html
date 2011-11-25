@@ -65,13 +65,13 @@ Allow parsing a custom URL or uses <code>location.href</code> by default.</p>
 <h3>Example:</h3>
 
 <pre class="brush:js">
-//if current URI = <a href='http://example.com/?foo=bar&lorem=123&ipsum=false'>http://example.com/?foo=bar&lorem=123&ipsum=false</a>
+//if current URI = example.com/?foo=bar&lorem=123&ipsum=false
 getParam('foo');   // "bar"
 getParam('lorem'); // 123
 getPram('ipsum');  // false
 
 //allow custom URL
-getParam('dolor', '<a href='http://example.com/?dolor=amet'>http://example.com/?dolor=amet</a>'); // "amet"
+getParam('dolor', 'example.com/?dolor=amet'); // "amet"
 </pre>
 
 <h2><a href="#getQueryObject" name="getQueryObject">getQueryObject(url):Object</a></h2>
@@ -81,11 +81,11 @@ getParam('dolor', '<a href='http://example.com/?dolor=amet'>http://example.com/?
 <p>Alias to: <code>decodeQuery(getQueryString(url))</code>.</p>
 
 <pre class="brush:js">
-//if current URI = <a href='http://example.com/?foo=bar&lorem=123&ipsum=false'>http://example.com/?foo=bar&lorem=123&ipsum=false</a>
+//if current URI = example.com/?foo=bar&lorem=123&ipsum=false
 getQueryObject(); // {foo: "bar", lorem: 123, ipsum: false}
 
 //allow custom URL
-getQueryObject('<a href='http://example.com/?lorem=ipsum'>http://example.com/?lorem=ipsum</a>'); // {lorem: "ipsum"}
+getQueryObject('example.com/?lorem=ipsum'); // {lorem: "ipsum"}
 </pre>
 
 <h2><a href="#getQueryString" name="getQueryString">getQueryString(url):String</a></h2>
@@ -95,11 +95,11 @@ query string inside <code>location.hash</code> (e.g. "index.html?dolor=1#/lorem/
 Will use <code>location.href</code> by default.</p>
 
 <pre class="brush:js">
-//if current URI = <a href='http://example.com/?foo=bar&lorem=123&ipsum=false'>http://example.com/?foo=bar&lorem=123&ipsum=false</a>
+//if current URI = example.com/?foo=bar&lorem=123&ipsum=false
 getQueryString(); // "?foo=bar&lorem=123&ipsum=false"
 
 //allow custom URL
-getQueryString('<a href='http://example.com/?lorem=ipsum'>http://example.com/?lorem=ipsum</a>'); // "?lorem=ipsum"
+getQueryString('example.com/?lorem=ipsum'); // "?lorem=ipsum"
 </pre>
 
 <h2><a href="#hasParam" name="hasParam">hasParam(paramName, url):Boolen</a></h2>
@@ -116,13 +116,13 @@ getQueryString('<a href='http://example.com/?lorem=ipsum'>http://example.com/?lo
 <h3>Example:</h3>
 
 <pre class="brush:js">
-//if current URI = <a href='http://example.com/?foo=bar&lorem=123&ipsum=false'>http://example.com/?foo=bar&lorem=123&ipsum=false</a>
+//if current URI = example.com/?foo=bar&lorem=123&ipsum=false
 hasParam('foo');   // true
 hasParam('dolor'); // false
 
 //allow custom URL
-hasParam('lorem', '<a href='http://example.com/?lorem=ipsum'>http://example.com/?lorem=ipsum</a>'); // true
-hasParam('foo', '<a href='http://example.com/?lorem=ipsum'>http://example.com/?lorem=ipsum</a>');   //false
+hasParam('lorem', 'example.com/?lorem=ipsum'); // true
+hasParam('foo', 'example.com/?lorem=ipsum');   //false
 </pre>
 
 <hr />

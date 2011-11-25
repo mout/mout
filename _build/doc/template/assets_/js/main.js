@@ -93,7 +93,11 @@
     // ---
 
     var syntax = {
+
         init : function(){
+
+            SyntaxHighlighter.defaults['auto-links'] = false;
+
             SyntaxHighlighter.autoloader(
               'applescript            assets_/js/lib/syntax-highlighter/shBrushAppleScript.js',
               'actionscript3 as3      assets_/js/lib/syntax-highlighter/shBrushAS3.js',
@@ -122,7 +126,9 @@
             );
 
             SyntaxHighlighter.all();
+
         }
+
     };
 
 
