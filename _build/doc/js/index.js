@@ -13,7 +13,7 @@ var writter = require('./writter'),
 
 // ---
 
-var INPUT_DIR = 'src',
+var INPUT_DIR = path.normalize(__dirname +'/../content'),
     OUTPUT_DIR = 'doc',
     INDEX_CONTENT = 'README.mdown';
 
@@ -24,18 +24,6 @@ writter.processFiles({
     baseTitle : 'AMD Utils',
     inputDir : INPUT_DIR,
     outputDir : OUTPUT_DIR,
-    filterFiles : function(fileInfo){
-        //Remove README of the root src folder.
-        return (path.dirname(fileInfo.input) !== INPUT_DIR || path.basename(fileInfo.input) !== 'README.mdown');
-    },
-    include : '*.mdown,*.md,*.markdown',
-    mapTocModule : function(ouputName, toc){
-        //get module name based on file name
-        return ouputName.replace('.html', '');
-    },
-    mapOutName : function(outputName){
-        return outputName.replace('/README', '');
-    },
     indexContent : getMdownContent(INDEX_CONTENT)
 });
 

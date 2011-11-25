@@ -7,6 +7,11 @@ var handlebars = require('handlebars'),
     pathProcessor = require('./pathProcessor');
 
 
+// ---
+
+
+var DEFAULT_INCLUDE = '*.mdown,*.md,*.markdown';
+
 
 // ---
 
@@ -93,7 +98,7 @@ function getFilesInfos(config){
             inputDir : config.inputDir,
             outputDir : config.outputDir,
             outputExt : '.html',
-            include : config.include,
+            include : config.include || DEFAULT_INCLUDE,
             exclude : config.exclude
         });
 
