@@ -11,6 +11,7 @@ Number utilities.
  - [`pad()`](#pad)
  - [`rol()`](#rol)
  - [`ror()`](#ror)
+ - [`sign()`](#sign)
  - [`toInt()`](#toInt)
  - [`toUInt()`](#toUInt)
  - [`toUInt31()`](#toUInt31)
@@ -97,6 +98,18 @@ More info at [Wikipedia#Circular_shift](http://en.wikipedia.org/wiki/Circular_sh
 Bitwise circular shift right.
 
 More info at [Wikipedia#Circular_shift](http://en.wikipedia.org/wiki/Circular_shift)
+
+
+
+## <a href="#sign" name="sign">sign(val):Number</a>
+
+Returns `-1` if value is negative and `1` if value is positive. Useful for
+multiplications.
+
+```js
+sign(-123); // -1
+sign(123);  // 1
+```
 
 
 

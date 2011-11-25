@@ -6,6 +6,7 @@ define([
     'number/spec-pad',
     'number/spec-rol',
     'number/spec-ror',
+    'number/spec-sign',
     'number/spec-toInt',
     'number/spec-toUInt',
     'number/spec-toUInt31'
