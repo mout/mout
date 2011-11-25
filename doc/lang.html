@@ -25,6 +25,7 @@
 <ul>
 <li><a href="#bind"><code>bind()</code></a></li>
 <li><a href="#createObject"><code>createObject()</code></a></li>
+<li><a href="#ctorApply"><code>ctorApply()</code></a></li>
 <li><a href="#inheritPrototype"><code>inheritPrototype()</code></a></li>
 <li><a href="#isArguments"><code>isArguments()</code></a></li>
 <li><a href="#isArray"><code>isArray()</code></a></li>
@@ -84,6 +85,28 @@ var myObj = createObject(base, {
 myObject.trace(); // "Lorem Ipsum"
 </pre>
 
+<h2><a href="#ctorApply" name="ctorApply">ctorApply(constructor, args):Object</a></h2>
+
+<p>Do <code>Function.prototype.apply()</code> on a constructor while maintaining prototype
+chain.</p>
+
+<pre class="brush:js">
+function Person(name, surname) {
+    this.name = name;
+    this.surname = surname;
+}
+
+Person.prototype.walk = function(){
+    console.log(this.name +' is walking');
+};
+
+var args = ['John', 'Doe'];
+
+// "similar" effect as calling `new Person("John", "Doe")`
+var john = ctorApply(Person, args);
+john.walk(); // "John is walking"
+</pre>
+
 <h2><a href="#inheritPrototype" name="inheritPrototype">inheritPrototype(child, parent):void</a></h2>
 
 <p>Inherit prototype from another Object.</p>
@@ -102,7 +125,7 @@ function Bar(name){
     this.name = name;
 }
 //should be called before calling constructor
-lang.inheritPrototype(Bar, Foo);
+inheritPrototype(Bar, Foo);
 
 var myObj = new Bar('lorem ipsum');
 myObj.getName(); // "lorem ipsum"
