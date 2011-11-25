@@ -13,7 +13,7 @@ Number utilities.
  - [`ror()`](#ror)
  - [`toInt()`](#toInt)
  - [`toUInt()`](#toUInt)
- - [`toUInt32()`](#toUInt32)
+ - [`toUInt31()`](#toUInt31)
 
 
 
@@ -123,14 +123,14 @@ toInt(-5.0001) // -5
 ```
 
 
+
 ## <a href="#toUInt" name="toUInt">toUInt(val):Number</a>
 
-"Convert" value into an 31-bit unsigned integer (since 1 bit is used for sign).
+"Convert" value into an 32-bit unsigned integer.
 
-Useful since all bitwise operators besides `>>>` treat numbers as signed
-integers.
+Works like AS3#uint().
 
-**IMPORTANT:** val will wrap at 2^31.
+**IMPORTANT:** val will wrap at 2^32.
 
 ### Example:
 
@@ -138,27 +138,31 @@ integers.
 toUInt(1.25);                 // 1
 toUInt(0.75);                 // 0
 toUInt(-0.55);                // 0
-toUInt(-5.0001);              // 0
-toUInt(Math.pow(2,31) - 0.5); // 21474836470
-toUInt(Math.pow(2,31) + 0.5); // 0
+toUInt(-5.0001);              // 4294967291
+toUInt(Math.pow(2,32) - 0.5); // 4294967295
+toUInt(Math.pow(2,32) + 0.5); // 0
 ```
 
 
-## <a href="#toUInt32" name="toUInt32">toUInt32(val):Number</a>
+## <a href="#toUInt31" name="toUInt31">toUInt31(val):Number</a>
 
-"Convert" value into an 32-bit unsigned integer.
+"Convert" value into an 31-bit unsigned integer (since 1 bit is used for sign).
 
-**IMPORTANT:** val will wrap at 2^32.
+Useful since all bitwise operators besides `>>>` treat numbers as signed
+integers.
+
+**IMPORTANT:** val will wrap at 2^31 and negative numbers will be treated as
+`zero`.
 
 ### Example:
 
 ```js
-toUInt32(1.25);                 // 1
-toUInt32(0.75);                 // 0
-toUInt32(-0.55);                // 0
-toUInt32(-5.0001);              // 0
-toUInt32(Math.pow(2,32) - 0.5); // 4294967295
-toUInt32(Math.pow(2,32) + 0.5); // 0
+toUInt31(1.25);                 // 1
+toUInt31(0.75);                 // 0
+toUInt31(-0.55);                // 0
+toUInt31(-5.0001);              // 0
+toUInt31(Math.pow(2,31) - 0.5); // 21474836470
+toUInt31(Math.pow(2,31) + 0.5); // 0
 ```
 
 

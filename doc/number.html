@@ -32,7 +32,7 @@
 <li><a href="#ror"><code>ror()</code></a></li>
 <li><a href="#toInt"><code>toInt()</code></a></li>
 <li><a href="#toUInt"><code>toUInt()</code></a></li>
-<li><a href="#toUInt32"><code>toUInt32()</code></a></li>
+<li><a href="#toUInt31"><code>toUInt31()</code></a></li>
 </ul>
 
 <h2><a href="#enforcePrecision" name="enforcePrecision">enforcePrecision(val, nDecimalDigits):Number</a></h2>
@@ -131,12 +131,11 @@ toInt(-5.0001) // -5
 
 <h2><a href="#toUInt" name="toUInt">toUInt(val):Number</a></h2>
 
-<p>"Convert" value into an 31-bit unsigned integer (since 1 bit is used for sign).</p>
+<p>"Convert" value into an 32-bit unsigned integer.</p>
 
-<p>Useful since all bitwise operators besides <code>&gt;&gt;&gt;</code> treat numbers as signed
-integers.</p>
+<p>Works like AS3#uint().</p>
 
-<p><strong>IMPORTANT:</strong> val will wrap at 2^31.</p>
+<p><strong>IMPORTANT:</strong> val will wrap at 2^32.</p>
 
 <h3>Example:</h3>
 
@@ -144,26 +143,30 @@ integers.</p>
 toUInt(1.25);                 // 1
 toUInt(0.75);                 // 0
 toUInt(-0.55);                // 0
-toUInt(-5.0001);              // 0
-toUInt(Math.pow(2,31) - 0.5); // 21474836470
-toUInt(Math.pow(2,31) + 0.5); // 0
+toUInt(-5.0001);              // 4294967291
+toUInt(Math.pow(2,32) - 0.5); // 4294967295
+toUInt(Math.pow(2,32) + 0.5); // 0
 </pre>
 
-<h2><a href="#toUInt32" name="toUInt32">toUInt32(val):Number</a></h2>
+<h2><a href="#toUInt31" name="toUInt31">toUInt31(val):Number</a></h2>
 
-<p>"Convert" value into an 32-bit unsigned integer.</p>
+<p>"Convert" value into an 31-bit unsigned integer (since 1 bit is used for sign).</p>
 
-<p><strong>IMPORTANT:</strong> val will wrap at 2^32.</p>
+<p>Useful since all bitwise operators besides <code>&gt;&gt;&gt;</code> treat numbers as signed
+integers.</p>
+
+<p><strong>IMPORTANT:</strong> val will wrap at 2^31 and negative numbers will be treated as
+<code>zero</code>.</p>
 
 <h3>Example:</h3>
 
 <pre class="brush:js">
-toUInt32(1.25);                 // 1
-toUInt32(0.75);                 // 0
-toUInt32(-0.55);                // 0
-toUInt32(-5.0001);              // 0
-toUInt32(Math.pow(2,32) - 0.5); // 4294967295
-toUInt32(Math.pow(2,32) + 0.5); // 0
+toUInt31(1.25);                 // 1
+toUInt31(0.75);                 // 0
+toUInt31(-0.55);                // 0
+toUInt31(-5.0001);              // 0
+toUInt31(Math.pow(2,31) - 0.5); // 21474836470
+toUInt31(Math.pow(2,31) + 0.5); // 0
 </pre>
 
 <hr />

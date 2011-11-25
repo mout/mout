@@ -8,7 +8,7 @@ define([
     'number/spec-ror',
     'number/spec-toInt',
     'number/spec-toUInt',
-    'number/spec-toUInt32'
+    'number/spec-toUInt31'
 ], function(){
     //noop
 });
