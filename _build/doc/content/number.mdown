@@ -2,23 +2,8 @@
 
 Number utilities.
 
-## <a href="#toc" name="toc">Table of Contents</a>
 
- - [`enforcePrecision()`](#enforcePrecision)
- - [`MAX_INT`](#MAX_INT)
- - [`MAX_UINT`](#MAX_UINT)
- - [`MIN_INT`](#MIN_INT)
- - [`pad()`](#pad)
- - [`rol()`](#rol)
- - [`ror()`](#ror)
- - [`sign()`](#sign)
- - [`toInt()`](#toInt)
- - [`toUInt()`](#toUInt)
- - [`toUInt31()`](#toUInt31)
-
-
-
-## <a href="#enforcePrecision" name="enforcePrecision">enforcePrecision(val, nDecimalDigits):Number</a>
+## enforcePrecision(val, nDecimalDigits):Number
 
 Enforce a specific amount of decimal digits and also fix floating point
 rounding issues.
@@ -35,7 +20,7 @@ enforcePrecision(0.625, 2); // 0.63
 
 
 
-## <a href="#MAX_INT" name="MAX_INT">MAX_INT:Number</a>
+## MAX_INT:Number
 
 Maximum 32-bit signed integer value. `Math.pow(2, 31) - 1`
 
@@ -46,7 +31,7 @@ console.log( MAX_INT ); // 2147483647
 ```
 
 
-## <a href="#MAX_UINT" name="MAX_UINT">MAX_UINT:Number</a>
+## MAX_UINT:Number
 
 Maximum 32-bit unsigned integer value. `Math.pow(2, 32) - 1`
 
@@ -57,7 +42,7 @@ console.log( MAX_UINT ); // 4294967295
 ```
 
 
-## <a href="#MIN_INT" name="MIN_INT">MIN_INT:Number</a>
+## MIN_INT:Number
 
 Minimum 32-bit signed integer value. `Math.pow(2, 31) * -1`.
 
@@ -68,7 +53,7 @@ console.log( MIN_INT ); // -2147483648
 ```
 
 
-## <a href="#pad" name="pad">pad(n, minLength):String</a>
+## pad(n, minLength):String
 
 Add padding zeros if `n.length` < `minLength`.
 
@@ -85,7 +70,7 @@ pad(123456, 5); // 123456
 
 
 
-## <a href="#rol" name="rol">rol(val, shift):Number</a>
+## rol(val, shift):Number
 
 Bitwise circular shift left.
 
@@ -93,7 +78,7 @@ More info at [Wikipedia#Circular_shift](http://en.wikipedia.org/wiki/Circular_sh
 
 
 
-## <a href="#ror" name="ror">ror(val, shift):Number</a>
+## ror(val, shift):Number
 
 Bitwise circular shift right.
 
@@ -101,7 +86,7 @@ More info at [Wikipedia#Circular_shift](http://en.wikipedia.org/wiki/Circular_sh
 
 
 
-## <a href="#sign" name="sign">sign(val):Number</a>
+## sign(val):Number
 
 Returns `-1` if value is negative and `1` if value is positive. Useful for
 multiplications.
@@ -113,7 +98,7 @@ sign(123);  // 1
 
 
 
-## <a href="#toInt" name="toInt">toInt(val):Number</a>
+## toInt(val):Number
 
 "Convert" value into an 32-bit integer.  Works like `Math.floor` if `val > 0` and
 `Math.ceil` if `val < 0`.
@@ -137,7 +122,7 @@ toInt(-5.0001) // -5
 
 
 
-## <a href="#toUInt" name="toUInt">toUInt(val):Number</a>
+## toUInt(val):Number
 
 "Convert" value into an 32-bit unsigned integer.
 
@@ -157,7 +142,7 @@ toUInt(Math.pow(2,32) + 0.5); // 0
 ```
 
 
-## <a href="#toUInt31" name="toUInt31">toUInt31(val):Number</a>
+## toUInt31(val):Number
 
 "Convert" value into an 31-bit unsigned integer (since 1 bit is used for sign).
 

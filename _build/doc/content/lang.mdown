@@ -4,31 +4,7 @@ Language Utilities. Easier inheritance, scope handling, type checks.
 
 
 
-## <span id="toc">Table of Contents</span>
-
- - [`bind()`](#bind)
- - [`createObject()`](#createObject)
- - [`ctorApply()`](#ctorApply)
- - [`inheritPrototype()`](#inheritPrototype)
- - [`isArguments()`](#isArguments)
- - [`isArray()`](#isArray)
- - [`isBoolean()`](#isBoolean)
- - [`isDate()`](#isDate)
- - [`isFunction()`](#isFunction)
- - [`isKind()`](#isKind)
- - [`isNull()`](#isNull)
- - [`isNumber()`](#isNumber)
- - [`isObject()`](#isObject)
- - [`isRegExp()`](#isRegExp)
- - [`isString()`](#isString)
- - [`isUndefined()`](#isUndefined)
- - [`kindOf()`](#kindOf)
- - [`mixIn()`](#mixIn)
- - [`toArray()`](#toArray)
-
-
-
-## <a href="#bind" name="bind">bind(fn, context, [...args]):Function</a>
+## bind(fn, context, [...args]):Function
 
 Return a function that will execute in the given context, optionally adding any additional supplied parameters to the beginning of the arguments collection.
 
@@ -40,7 +16,7 @@ Return a function that will execute in the given context, optionally adding any 
 
 
 
-## <a href="#createObject" name="createObject">createObject(parent, [props]):Object</a>
+## createObject(parent, [props]):Object
 
 Create Object using prototypal inheritance and setting custom properties.
 
@@ -69,7 +45,7 @@ myObject.trace(); // "Lorem Ipsum"
 
 
 
-## <a href="#ctorApply" name="ctorApply">ctorApply(constructor, args):Object</a>
+## ctorApply(constructor, args):Object
 
 Do `Function.prototype.apply()` on a constructor while maintaining prototype
 chain.
@@ -93,7 +69,7 @@ john.walk(); // "John is walking"
 
 
 
-## <a href="#inheritPrototype" name="inheritPrototype">inheritPrototype(child, parent):void</a>
+## inheritPrototype(child, parent):void
 
 Inherit prototype from another Object.
 
@@ -119,87 +95,87 @@ myObj.getName(); // "lorem ipsum"
 
 
 
-## <a href="#isArguments" name="isArguments">isArguments(val):Boolean</a>
+## isArguments(val):Boolean
 
 If value is an "Arguments" object.
 
 
 
-## <a href="#isArray" name="isArray">isArray(val):Boolean</a>
+## isArray(val):Boolean
 
 If value is an Array.
 
 
 
-## <a href="#isBoolean" name="isBoolean">isBoolean(val):Boolean</a>
+## isBoolean(val):Boolean
 
 If value is a Boolean.
 
 
 
-## <a href="#isDate" name="isDate">isDate(val):Boolean</a>
+## isDate(val):Boolean
 
 If value is a Date.
 
 
 
-## <a href="#isFunction" name="isFunction">isFunction(val):Boolean</a>
+## isFunction(val):Boolean
 
 If value is a Function.
 
 
 
-## <a href="#isKind" name="isKind">isKind(val, kind):Boolean</a>
+## isKind(val, kind):Boolean
 
 If value is of "kind". (used internally by most of the *isSomething* checks),
 favor the other methods since strings are commonly mistyped.
 
 
 
-## <a href="#isNull" name="isNull">isNull(val):Boolean</a>
+## isNull(val):Boolean
 
 If value is `null`.
 
 
 
-## <a href="#isNumber" name="isNumber">isNumber(val):Boolean</a>
+## isNumber(val):Boolean
 
 If value is a Number.
 
 
 
-## <a href="#isObject" name="isObject">isObject(val):Boolean</a>
+## isObject(val):Boolean
 
 If value is an Object.
 
 
 
-## <a href="#isRegExp" name="isRegExp">isRegExp(val):Boolean</a>
+## isRegExp(val):Boolean
 
 If value is a RegExp.
 
 
 
-## <a href="#isString" name="isString">isString(val):Boolean</a>
+## isString(val):Boolean
 
 If value is a String.
 
 
 
-## <a href="#isUndefined" name="isUndefined">isUndefined(val):Boolean</a>
+## isUndefined(val):Boolean
 
 If value is `undefined`.
 
 
 
-## <a href="#kindOf" name="kindOf">kindOf(val):String</a>
+## kindOf(val):String
 
 Gets kind of value (e.g. "String", "Number", "RegExp", "Null", "Date").
 Used internally by `isKind()` and most of the other *isSomething* checks.
 
 
 
-## <a href="#mixIn" name="mixIn">mixIn(target, ...objects):Object</a>
+## mixIn(target, ...objects):Object
 
 Combine properties from all the objects into first one.
 
@@ -225,7 +201,7 @@ console.log(a);  // {foo: "bar", lorem: 123}
 ```
 
 
-## <a href="#toArray" name="toArray">toArray(val):Array</a>
+## toArray(val):Array
 
 Convert array-like object into Array or wrap value into Array.
 

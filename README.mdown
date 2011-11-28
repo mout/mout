@@ -112,11 +112,11 @@ Released under the [MIT License](http://www.opensource.org/licenses/mit-license.
 
 ## Building The Documentation ##
 
-The documentation is generated based on the `README.mdown` files inside each
-`src` folder. To compile the docs run:
+The documentation is generated based on markdown files inside the
+`_build/doc/content` folder using [mdoc](https://github.com/millermedeiros/mdoc).
+To compile the docs run:
 
-    npm install handlebars
-    npm install wrench
+    npm install mdoc
     node build.js
 
 It will replace all the files inside the `doc/` folder.

@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>amd-utils / string : AMD Utils</title>
+        <title>amd-utils / string : AMD-Utils</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets_/css/shCore.css">
         <link rel="stylesheet" href="assets_/css/shThemeDefault.css">
         <link rel="stylesheet" href="assets_/css/main.css">
     </head>
-    <body>
+    <body data-root-path="">
         <div id="wrapper">
             <div id="content">
 
@@ -20,33 +20,33 @@
 
 <p>String utilities.</p>
 
-<h2><a href="#toc" name="toc">Table of Contents</a></h2>
+<h2>Table of Contents <a href="#toc" name="toc" class="deep-link">#</a></h2>
 
 <ul>
-<li><a href="#camelCase"><code>camelCase()</code></a></li>
-<li><a href="#crop"><code>crop()</code></a></li>
-<li><a href="#hyphenate"><code>hyphenate()</code></a></li>
-<li><a href="#lowerCase"><code>lowerCase()</code></a></li>
-<li><a href="#ltrim"><code>ltrim()</code></a></li>
-<li><a href="#makePath"><code>makePath()</code></a></li>
-<li><a href="#pascalCase"><code>pascalCase()</code></a></li>
-<li><a href="#properCase"><code>properCase()</code></a></li>
-<li><a href="#removeNonASCII"><code>removeNonASCII()</code></a></li>
-<li><a href="#removeNonWord"><code>removeNonWord()</code></a></li>
-<li><a href="#replaceAccents"><code>replaceAccents()</code></a></li>
-<li><a href="#rtrim"><code>rtrim()</code></a></li>
-<li><a href="#sentenceCase"><code>sentenceCase()</code></a></li>
-<li><a href="#stripHtmlTags"><code>stripHtmlTags()</code></a></li>
-<li><a href="#toSlug"><code>toSlug()</code></a></li>
-<li><a href="#trim"><code>trim()</code></a></li>
-<li><a href="#truncate"><code>truncate()</code></a></li>
-<li><a href="#typecast"><code>typecast()</code></a></li>
-<li><a href="#unCamelCase"><code>unCamelCase()</code></a></li>
-<li><a href="#unHyphenate"><code>unHyphenate()</code></a></li>
-<li><a href="#upperCase"><code>upperCase()</code></a></li>
+<li><a href="#camelCase">camelCase()</a></li>
+<li><a href="#crop">crop()</a></li>
+<li><a href="#hyphenate">hyphenate()</a></li>
+<li><a href="#lowerCase">lowerCase()</a></li>
+<li><a href="#ltrim">ltrim()</a></li>
+<li><a href="#makePath">makePath()</a></li>
+<li><a href="#pascalCase">pascalCase()</a></li>
+<li><a href="#properCase">properCase()</a></li>
+<li><a href="#removeNonASCII">removeNonASCII()</a></li>
+<li><a href="#removeNonWord">removeNonWord()</a></li>
+<li><a href="#replaceAccents">replaceAccents()</a></li>
+<li><a href="#rtrim">rtrim()</a></li>
+<li><a href="#sentenceCase">sentenceCase()</a></li>
+<li><a href="#stripHtmlTags">stripHtmlTags()</a></li>
+<li><a href="#toSlug">toSlug()</a></li>
+<li><a href="#trim">trim()</a></li>
+<li><a href="#truncate">truncate()</a></li>
+<li><a href="#typecast">typecast()</a></li>
+<li><a href="#unCamelCase">unCamelCase()</a></li>
+<li><a href="#unHyphenate">unHyphenate()</a></li>
+<li><a href="#upperCase">upperCase()</a></li>
 </ul>
 
-<h2><a href="#camelCase" name="camelCase">camelCase(str):String</a></h2>
+<h2>camelCase(str):String <a href="#camelCase" id="camelCase" class="deep-link">#</a></h2>
 
 <p>Convert string to "camelCase" text.</p>
 
@@ -59,7 +59,7 @@ camelCase('lorem-ipsum-dolor'); // "loremIpsumDolor"
 camelCase('lorem ipsum dolor'); // "loremIpsumDolor"
 </pre>
 
-<h2><a href="#crop" name="crop">crop(str, maxChars, [append]):String</a></h2>
+<h2>crop(str, maxChars, [append]):String <a href="#crop" id="crop" class="deep-link">#</a></h2>
 
 <p>Truncate string at full words. Alias to <code>truncate(str, maxChars, append, true);</code>.</p>
 
@@ -72,7 +72,7 @@ crop('lorem ipsum dolor', 10);      // "lorem..."
 crop('lorem ipsum dolor', 10, '+'); // "lorem+"
 </pre>
 
-<h2><a href="#hyphenate" name="hyphenate">hyphenate(str):String</a></h2>
+<h2>hyphenate(str):String <a href="#hyphenate" id="hyphenate" class="deep-link">#</a></h2>
 
 <p>Replaces spaces with hyphens, split camelCase text, remove non-word chars, remove accents and convert to lower case.</p>
 
@@ -82,7 +82,7 @@ hyphenate('spéçïãl çhârs');               // "special-chars"
 hyphenate('loremIpsum');                  // "lorem-ipsum"
 </pre>
 
-<h2><a href="#lowerCase" name="lowerCase">lowerCase(str):String</a></h2>
+<h2>lowerCase(str):String <a href="#lowerCase" id="lowerCase" class="deep-link">#</a></h2>
 
 <p>"Safer" <code>String.toLowerCase()</code>. (Used internally)</p>
 
@@ -95,7 +95,7 @@ lowerCase(null);           // ""
 lowerCase(undefined);      // ""
 </pre>
 
-<h2><a href="#ltrim" name="ltrim">ltrim(str):String</a></h2>
+<h2>ltrim(str):String <a href="#ltrim" id="ltrim" class="deep-link">#</a></h2>
 
 <p>Remove white-spaces from beginning of string.</p>
 
@@ -107,7 +107,7 @@ lowerCase(undefined);      // ""
 ltrim('   lorem ipsum   ');  // "lorem ipsum   "
 </pre>
 
-<h2><a href="#makePath" name="makePath">makePath(...args):String</a></h2>
+<h2>makePath(...args):String <a href="#makePath" id="makePath" class="deep-link">#</a></h2>
 
 <p>Group arguments as path segments, if any of the args is <code>null</code> or <code>undefined</code>
 it will be ignored from resulting path. It will also remove duplicate "/".</p>
@@ -119,7 +119,7 @@ makePath('lorem', 'ipsum', null, 'dolor'); // "lorem/ipsum/dolor"
 makePath('foo///bar/');                    // "foo/bar/"
 </pre>
 
-<h2><a href="#pascalCase" name="pascalCase">pascalCase(str):String</a></h2>
+<h2>pascalCase(str):String <a href="#pascalCase" id="pascalCase" class="deep-link">#</a></h2>
 
 <p>Convert string to "PascalCase" text.</p>
 
@@ -132,7 +132,7 @@ pascalCase('lorem-ipsum-dolor'); // "LoremIpsumDolor"
 pascalCase('lorem ipsum dolor'); // "LoremIpsumDolor"
 </pre>
 
-<h2><a href="#properCase" name="properCase">properCase(str):String</a></h2>
+<h2>properCase(str):String <a href="#properCase" id="properCase" class="deep-link">#</a></h2>
 
 <p>UPPERCASE first char of each word, lowercase other chars.</p>
 
@@ -142,7 +142,7 @@ pascalCase('lorem ipsum dolor'); // "LoremIpsumDolor"
 properCase('loRem iPSum'); // "Lorem Ipsum"
 </pre>
 
-<h2><a href="#removeNonASCII" name="removeNonASCII">removeNonASCII(str):String</a></h2>
+<h2>removeNonASCII(str):String <a href="#removeNonASCII" id="removeNonASCII" class="deep-link">#</a></h2>
 
 <p>Remove <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">non-printable ASCII
 chars</a>.</p>
@@ -153,7 +153,7 @@ chars</a>.</p>
 removeNonASCII('äÄçÇéÉêlorem-ipsumöÖÐþúÚ'); // "lorem-ipsum"
 </pre>
 
-<h2><a href="#removeNonWord" name="removeNonWord">removeNonWord(str):String</a></h2>
+<h2>removeNonWord(str):String <a href="#removeNonWord" id="removeNonWord" class="deep-link">#</a></h2>
 
 <p>Remove non-word chars.</p>
 
@@ -164,7 +164,7 @@ var str = 'lorem ~!@#$%^&*()_+`-={}[]|\\:";\'/?><., ipsum';
 removeNonWord(str); // "lorem - ipsum"
 </pre>
 
-<h2><a href="#replaceAccents" name="replaceAccents">replaceAccents(str):String</a></h2>
+<h2>replaceAccents(str):String <a href="#replaceAccents" id="replaceAccents" class="deep-link">#</a></h2>
 
 <p>Replaces all accented chars with regular ones.</p>
 
@@ -176,7 +176,7 @@ removeNonWord(str); // "lorem - ipsum"
 replaceAccents('spéçïãl çhârs'); // "special chars"
 </pre>
 
-<h2><a href="#rtrim" name="rtrim">rtrim(str):String</a></h2>
+<h2>rtrim(str):String <a href="#rtrim" id="rtrim" class="deep-link">#</a></h2>
 
 <p>Remove white-spaces from end of string.</p>
 
@@ -188,7 +188,7 @@ replaceAccents('spéçïãl çhârs'); // "special chars"
 rtrim('   lorem ipsum   '); // "   lorem ipsum"
 </pre>
 
-<h2><a href="#sentenceCase" name="sentenceCase">sentenceCase(str):String</a></h2>
+<h2>sentenceCase(str):String <a href="#sentenceCase" id="sentenceCase" class="deep-link">#</a></h2>
 
 <p>UPPERCASE first char of each sentence and lowercase other chars.</p>
 
@@ -198,7 +198,7 @@ rtrim('   lorem ipsum   '); // "   lorem ipsum"
 sentenceCase('Lorem IpSum DoLOr. maeCeNnas Ullamcor.'); // "Lorem ipsum dolor. Maecennas ullamcor."
 </pre>
 
-<h2><a href="#stripHtmlTags" name="stripHtmlTags">stripHtmlTags(str):String</a></h2>
+<h2>stripHtmlTags(str):String <a href="#stripHtmlTags" id="stripHtmlTags" class="deep-link">#</a></h2>
 
 <p>Remove HTML/XML tags from string.</p>
 
@@ -208,7 +208,7 @@ sentenceCase('Lorem IpSum DoLOr. maeCeNnas Ullamcor.'); // "Lorem ipsum dolor. M
 stripHtmlTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // "lorem ipsum"
 </pre>
 
-<h2><a href="#toSlug" name="toSlug">toSlug(str):String</a></h2>
+<h2>toSlug(str):String <a href="#toSlug" id="toSlug" class="deep-link">#</a></h2>
 
 <p>Convert to lower case, remove accents, remove non-word chars and replace spaces
 with hyphens.</p>
@@ -222,7 +222,7 @@ camelCase text.</p>
 toSlug('loremIpsum dolor spéçïãl chârs'); // "loremipsum-dolor-special-chars"
 </pre>
 
-<h2><a href="#trim" name="trim">trim(str):String</a></h2>
+<h2>trim(str):String <a href="#trim" id="trim" class="deep-link">#</a></h2>
 
 <p>Remove white-spaces from beginning and end of string.</p>
 
@@ -234,7 +234,7 @@ toSlug('loremIpsum dolor spéçïãl chârs'); // "loremipsum-dolor-special-char
 trim('   lorem ipsum   '); // "lorem ipsum"
 </pre>
 
-<h2><a href="#truncate" name="truncate">truncate(str, maxChars, [append], [onlyFullWords]):String</a></h2>
+<h2>truncate(str, maxChars, [append], [onlyFullWords]):String <a href="#truncate" id="truncate" class="deep-link">#</a></h2>
 
 <p>Limit number of chars. Returned string <code>length</code> will be <code>&lt;= maxChars</code>.</p>
 
@@ -259,7 +259,7 @@ truncate('lorem ipsum dolor', 11, '+');        // "lorem ipsu+"
 truncate('lorem ipsum dolor', 11, null, true); // "lorem..."
 </pre>
 
-<h2><a href="#typecast" name="typecast">typecast(str):*</a></h2>
+<h2>typecast(str):* <a href="#typecast" id="typecast" class="deep-link">#</a></h2>
 
 <p>Parses string and convert it into a native value.</p>
 
@@ -275,7 +275,7 @@ typecast('null');        // null
 typecast('undefined');   // undefined
 </pre>
 
-<h2><a href="#unCamelCase" name="unCamelCase">unCamelCase(str):String</a></h2>
+<h2>unCamelCase(str):String <a href="#unCamelCase" id="unCamelCase" class="deep-link">#</a></h2>
 
 <p>Add space between camelCase text and convert first char of each word to lower
 case.</p>
@@ -286,7 +286,7 @@ case.</p>
 unCamelCase('loremIpsumDolor'); // "lorem ipsum dolor"
 </pre>
 
-<h2><a href="#unHyphenate" name="unHyphenate">unHyphenate(str):String</a></h2>
+<h2>unHyphenate(str):String <a href="#unHyphenate" id="unHyphenate" class="deep-link">#</a></h2>
 
 <p>Replaces hyphens with spaces. (only hyphens between word chars)</p>
 
@@ -296,7 +296,7 @@ unCamelCase('loremIpsumDolor'); // "lorem ipsum dolor"
 unHyphenate('lorem-ipsum-dolor'); // "lorem ipsum dolor"
 </pre>
 
-<h2><a href="#upperCase" name="upperCase">upperCase(str):String</a></h2>
+<h2>upperCase(str):String <a href="#upperCase" id="upperCase" class="deep-link">#</a></h2>
 
 <p>"Safer" <code>String.toUpperCase()</code>. (Used internally)</p>
 
@@ -313,6 +313,8 @@ upperCase(undefined);      // ""
 
 <p>For more usage examples check specs inside <code>/tests</code> folder. Unit tests are the
 best documentation you can get...</p>
+                <hr />
+                <small>Documentation generated by <a href="https://github.com/millermedeiros/mdoc">mdoc</a>.</small>
             </div>
         </div>
         <script src="assets_/js/lib/jquery.js"></script>

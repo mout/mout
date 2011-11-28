@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>amd-utils / number : AMD Utils</title>
+        <title>amd-utils / number : AMD-Utils</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets_/css/shCore.css">
         <link rel="stylesheet" href="assets_/css/shThemeDefault.css">
         <link rel="stylesheet" href="assets_/css/main.css">
     </head>
-    <body>
+    <body data-root-path="">
         <div id="wrapper">
             <div id="content">
 
@@ -20,23 +20,23 @@
 
 <p>Number utilities.</p>
 
-<h2><a href="#toc" name="toc">Table of Contents</a></h2>
+<h2>Table of Contents <a href="#toc" name="toc" class="deep-link">#</a></h2>
 
 <ul>
-<li><a href="#enforcePrecision"><code>enforcePrecision()</code></a></li>
-<li><a href="#MAX_INT"><code>MAX_INT</code></a></li>
-<li><a href="#MAX_UINT"><code>MAX_UINT</code></a></li>
-<li><a href="#MIN_INT"><code>MIN_INT</code></a></li>
-<li><a href="#pad"><code>pad()</code></a></li>
-<li><a href="#rol"><code>rol()</code></a></li>
-<li><a href="#ror"><code>ror()</code></a></li>
-<li><a href="#sign"><code>sign()</code></a></li>
-<li><a href="#toInt"><code>toInt()</code></a></li>
-<li><a href="#toUInt"><code>toUInt()</code></a></li>
-<li><a href="#toUInt31"><code>toUInt31()</code></a></li>
+<li><a href="#enforcePrecision">enforcePrecision()</a></li>
+<li><a href="#MAX_INT">MAX_INT</a></li>
+<li><a href="#MAX_UINT">MAX_UINT</a></li>
+<li><a href="#MIN_INT">MIN_INT</a></li>
+<li><a href="#pad">pad()</a></li>
+<li><a href="#rol">rol()</a></li>
+<li><a href="#ror">ror()</a></li>
+<li><a href="#sign">sign()</a></li>
+<li><a href="#toInt">toInt()</a></li>
+<li><a href="#toUInt">toUInt()</a></li>
+<li><a href="#toUInt31">toUInt31()</a></li>
 </ul>
 
-<h2><a href="#enforcePrecision" name="enforcePrecision">enforcePrecision(val, nDecimalDigits):Number</a></h2>
+<h2>enforcePrecision(val, nDecimalDigits):Number <a href="#enforcePrecision" id="enforcePrecision" class="deep-link">#</a></h2>
 
 <p>Enforce a specific amount of decimal digits and also fix floating point
 rounding issues.</p>
@@ -51,7 +51,7 @@ enforcePrecision(0.625, 2); // 0.63
 +(0.625).toFixed(2);        // 0.63
 </pre>
 
-<h2><a href="#MAX_INT" name="MAX_INT">MAX_INT:Number</a></h2>
+<h2>MAX_INT:Number <a href="#MAX_INT" id="MAX_INT" class="deep-link">#</a></h2>
 
 <p>Maximum 32-bit signed integer value. <code>Math.pow(2, 31) - 1</code></p>
 
@@ -61,7 +61,7 @@ enforcePrecision(0.625, 2); // 0.63
 console.log( MAX_INT ); // 2147483647
 </pre>
 
-<h2><a href="#MAX_UINT" name="MAX_UINT">MAX_UINT:Number</a></h2>
+<h2>MAX_UINT:Number <a href="#MAX_UINT" id="MAX_UINT" class="deep-link">#</a></h2>
 
 <p>Maximum 32-bit unsigned integer value. <code>Math.pow(2, 32) - 1</code></p>
 
@@ -71,7 +71,7 @@ console.log( MAX_INT ); // 2147483647
 console.log( MAX_UINT ); // 4294967295
 </pre>
 
-<h2><a href="#MIN_INT" name="MIN_INT">MIN_INT:Number</a></h2>
+<h2>MIN_INT:Number <a href="#MIN_INT" id="MIN_INT" class="deep-link">#</a></h2>
 
 <p>Minimum 32-bit signed integer value. <code>Math.pow(2, 31) * -1</code>.</p>
 
@@ -81,7 +81,7 @@ console.log( MAX_UINT ); // 4294967295
 console.log( MIN_INT ); // -2147483648
 </pre>
 
-<h2><a href="#pad" name="pad">pad(n, minLength):String</a></h2>
+<h2>pad(n, minLength):String <a href="#pad" id="pad" class="deep-link">#</a></h2>
 
 <p>Add padding zeros if <code>n.length</code> &lt; <code>minLength</code>.</p>
 
@@ -96,19 +96,19 @@ pad(12345, 5);  // 12345
 pad(123456, 5); // 123456
 </pre>
 
-<h2><a href="#rol" name="rol">rol(val, shift):Number</a></h2>
+<h2>rol(val, shift):Number <a href="#rol" id="rol" class="deep-link">#</a></h2>
 
 <p>Bitwise circular shift left.</p>
 
 <p>More info at <a href="http://en.wikipedia.org/wiki/Circular_shift">Wikipedia#Circular_shift</a></p>
 
-<h2><a href="#ror" name="ror">ror(val, shift):Number</a></h2>
+<h2>ror(val, shift):Number <a href="#ror" id="ror" class="deep-link">#</a></h2>
 
 <p>Bitwise circular shift right.</p>
 
 <p>More info at <a href="http://en.wikipedia.org/wiki/Circular_shift">Wikipedia#Circular_shift</a></p>
 
-<h2><a href="#sign" name="sign">sign(val):Number</a></h2>
+<h2>sign(val):Number <a href="#sign" id="sign" class="deep-link">#</a></h2>
 
 <p>Returns <code>-1</code> if value is negative and <code>1</code> if value is positive. Useful for
 multiplications.</p>
@@ -118,7 +118,7 @@ sign(-123); // -1
 sign(123);  // 1
 </pre>
 
-<h2><a href="#toInt" name="toInt">toInt(val):Number</a></h2>
+<h2>toInt(val):Number <a href="#toInt" id="toInt" class="deep-link">#</a></h2>
 
 <p>"Convert" value into an 32-bit integer.  Works like <code>Math.floor</code> if <code>val &gt; 0</code> and
 <code>Math.ceil</code> if <code>val &lt; 0</code>.</p>
@@ -140,7 +140,7 @@ toInt(-0.55);  // 0
 toInt(-5.0001) // -5
 </pre>
 
-<h2><a href="#toUInt" name="toUInt">toUInt(val):Number</a></h2>
+<h2>toUInt(val):Number <a href="#toUInt" id="toUInt" class="deep-link">#</a></h2>
 
 <p>"Convert" value into an 32-bit unsigned integer.</p>
 
@@ -159,7 +159,7 @@ toUInt(Math.pow(2,32) - 0.5); // 4294967295
 toUInt(Math.pow(2,32) + 0.5); // 0
 </pre>
 
-<h2><a href="#toUInt31" name="toUInt31">toUInt31(val):Number</a></h2>
+<h2>toUInt31(val):Number <a href="#toUInt31" id="toUInt31" class="deep-link">#</a></h2>
 
 <p>"Convert" value into an 31-bit unsigned integer (since 1 bit is used for sign).</p>
 
@@ -184,6 +184,8 @@ toUInt31(Math.pow(2,31) + 0.5); // 0
 
 <p>For more usage examples check specs inside <code>/tests</code> folder. Unit tests are the
 best documentation you can get...</p>
+                <hr />
+                <small>Documentation generated by <a href="https://github.com/millermedeiros/mdoc">mdoc</a>.</small>
             </div>
         </div>
         <script src="assets_/js/lib/jquery.js"></script>

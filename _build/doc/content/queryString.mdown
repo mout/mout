@@ -3,18 +3,8 @@
 Utilities for query string manipulation.
 
 
-## <a href="#toc" name="toc">Table of Contents</a>
 
- - [`decodeQuery()`](#decodeQuery)
- - [`encodeQuery()`](#encodeQuery)
- - [`getParam()`](#getParam)
- - [`getQueryObject()`](#getQueryObject)
- - [`getQueryString()`](#getQueryString)
- - [`hasParam()`](#hasParam)
-
-
-
-## <a href="#decodeQuery" name="decodeQuery">decodeQuery(str):Object</a>
+## decodeQuery(str):Object
 
 Parses query string and creates an object of keys => vals. Will typecast value
 with `string/typecast` and decode string parameters using
@@ -25,7 +15,7 @@ decodeQuery('?foo=bar&lorem=123'); // {foo: "bar", lorem: 123}
 ```
 
 
-## <a href="#encodeQuery" name="encodeQuery">encodeQuery(obj):String</a>
+## encodeQuery(obj):String
 
 Encode object into a query string. Will encode parameters with
 `encodeURIComponent()`.
@@ -35,7 +25,7 @@ encodeQuery({foo: "bar", lorem: 123}); // "?foo=bar&lorem=123"
 ```
 
 
-## <a href="#getParam" name="getParam">getParam(param, url):*</a>
+## getParam(param, url):*
 
 Get query parameter value. Will typecast value with `string/typecast`.
 Allow parsing a custom URL or uses `location.href` by default.
@@ -58,7 +48,7 @@ getParam('dolor', 'example.com/?dolor=amet'); // "amet"
 ```
 
 
-## <a href="#getQueryObject" name="getQueryObject">getQueryObject(url):Object</a>
+## getQueryObject(url):Object
 
 Parses URL, extracts query string and decodes it. Will use `location.href` by default.
 
@@ -73,7 +63,7 @@ getQueryObject('example.com/?lorem=ipsum'); // {lorem: "ipsum"}
 ```
 
 
-## <a href="#getQueryString" name="getQueryString">getQueryString(url):String</a>
+## getQueryString(url):String
 
 Gets full query as string with all special chars decoded. It avoid issues with
 query string inside `location.hash` (e.g. "index.html?dolor=1#/lorem/?foo=bar").
@@ -88,7 +78,7 @@ getQueryString('example.com/?lorem=ipsum'); // "?lorem=ipsum"
 ```
 
 
-## <a href="#hasParam" name="hasParam">hasParam(paramName, url):Boolen</a>
+## hasParam(paramName, url):Boolen
 
 Checks if query string contains parameter.
 

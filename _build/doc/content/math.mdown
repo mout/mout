@@ -4,21 +4,7 @@ Math utilities.
 
 
 
-## <a href="#toc" name="toc">Table of Contents</a>
-
- - [`clamp()`](#clamp)
- - [`countSteps()`](#countSteps)
- - [`inRange()`](#inRange)
- - [`isNear()`](#isNear)
- - [`lerp()`](#lerp)
- - [`loop()`](#loop)
- - [`map()`](#map)
- - [`norm()`](#norm)
- - [`snap()`](#snap)
-
-
-
-## <a href="#clamp" name="clamp">clamp(val, min, max):Number</a>
+## clamp(val, min, max):Number
 
 Clamps value inside range.
 
@@ -32,7 +18,7 @@ clamp(12, 1, 10);  // 10
 
 
 
-## <a href="#countSteps" name="countSteps">countSteps(val, step, [overflow]):Number</a>
+## countSteps(val, step, [overflow]):Number
 
 Count number of full steps.
 
@@ -60,7 +46,7 @@ countSteps(18, 5, 3); // 0
 
 
 
-## <a href="#inRange" name="inRange">inRange(val, min, max, [threshold]):Boolean</a>
+## inRange(val, min, max, [threshold]):Boolean
 
 Checks if value is inside the range.
 
@@ -76,7 +62,7 @@ inRange(13, 1, 10, 2); // false
 
 
 
-## <a href="#isNear" name="isNear">isNear(val, target, threshold):Boolean</a>
+## isNear(val, target, threshold):Boolean
 
 Check if value is close to target.
 
@@ -90,7 +76,7 @@ isNear(10.51, 10, 0.5); // false
 
 
 
-## <a href="#lerp" name="lerp">lerp(ratio, start, end):Number</a>
+## lerp(ratio, start, end):Number
 
 Linear interpolation.
 
@@ -103,7 +89,7 @@ lerp(0.75, 0, 10); // 7.5
 
 
 
-## <a href="#loop" name="loop">loop(val, min, max):Number</a>
+## loop(val, min, max):Number
 
 Loops value inside range. Will return `min` if `val > max` and `max` if `val
 < min`, otherwise it returns `val`.
@@ -119,7 +105,7 @@ loop(-1, 0, 10); // 10
 
 
 
-## <a href="#map" name="map">map(val, min1, max1, min2, max2):Number</a>
+## map(val, min1, max1, min2, max2):Number
 
 Maps a number from one scale to another.
 
@@ -132,7 +118,7 @@ map(3, 0, 10, 0, 100) // 30
 
 
 
-## <a href="#norm" name="norm">norm(val, min, max):Number</a>
+## norm(val, min, max):Number
 
 Gets normalized ratio of value inside range.
 
@@ -145,7 +131,7 @@ norm(75, 0, 100); // 0.75
 
 
 
-## <a href="#snap" name="snap">snap(val, step):Number</a>
+## snap(val, step):Number
 
 Snap value to full steps.
 

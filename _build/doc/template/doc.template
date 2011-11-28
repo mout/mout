@@ -1,6 +1,6 @@
 {{> header}}
 <ul id="topnav">
-    <li><a href="index.html">Index</a></li>
+    <li><a href="{{root_path}}index.html">Index</a></li>
     <li><a href="#toc">TOC</a></li>
 </ul>
 {{{content}}}

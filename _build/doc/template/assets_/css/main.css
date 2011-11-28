@@ -176,6 +176,10 @@ blockquote {
     border-left:5px solid #ddd;
 }
 
+blockquote p {
+    margin:1em 0;
+}
+
 /*
  * Addresses styling not present in S5, Chrome
  */
@@ -624,10 +628,6 @@ hr {
 
 .h2-mod {
     overflow:hidden;
-}
-
-.h2-mod a {
-    float:left;
 }
 
 .nav-src {

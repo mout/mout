@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>amd-utils / array : AMD Utils</title>
+        <title>amd-utils / array : AMD-Utils</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets_/css/shCore.css">
         <link rel="stylesheet" href="assets_/css/shThemeDefault.css">
         <link rel="stylesheet" href="assets_/css/main.css">
     </head>
-    <body>
+    <body data-root-path="">
         <div id="wrapper">
             <div id="content">
 
@@ -20,29 +20,29 @@
 
 <p>Array utilities.</p>
 
-<h2><a href="#toc" name="toc">Table of Contents</a></h2>
+<h2>Table of Contents <a href="#toc" name="toc" class="deep-link">#</a></h2>
 
 <ul>
-<li><a href="#compact"><code>compact()</code></a></li>
-<li><a href="#contains"><code>contains()</code></a></li>
-<li><a href="#every"><code>every()</code></a></li>
-<li><a href="#filter"><code>filter()</code></a></li>
-<li><a href="#forEach"><code>forEach()</code></a></li>
-<li><a href="#indexOf"><code>indexOf()</code></a></li>
-<li><a href="#isSparse"><code>isSparse()</code></a></li>
-<li><a href="#lastIndexOf"><code>lastIndexOf()</code></a></li>
-<li><a href="#map"><code>map()</code></a></li>
-<li><a href="#range"><code>range()</code></a></li>
-<li><a href="#reduce"><code>reduce()</code></a></li>
-<li><a href="#reduceRight"><code>reduceRight()</code></a></li>
-<li><a href="#remove"><code>remove()</code></a></li>
-<li><a href="#removeAll"><code>removeAll()</code></a></li>
-<li><a href="#shuffle"><code>shuffle()</code></a></li>
-<li><a href="#some"><code>some()</code></a></li>
-<li><a href="#unique"><code>unique()</code></a></li>
+<li><a href="#compact">compact()</a></li>
+<li><a href="#contains">contains()</a></li>
+<li><a href="#every">every()</a></li>
+<li><a href="#filter">filter()</a></li>
+<li><a href="#forEach">forEach()</a></li>
+<li><a href="#indexOf">indexOf()</a></li>
+<li><a href="#isSparse">isSparse()</a></li>
+<li><a href="#lastIndexOf">lastIndexOf()</a></li>
+<li><a href="#map">map()</a></li>
+<li><a href="#range">range()</a></li>
+<li><a href="#reduce">reduce()</a></li>
+<li><a href="#reduceRight">reduceRight()</a></li>
+<li><a href="#remove">remove()</a></li>
+<li><a href="#removeAll">removeAll()</a></li>
+<li><a href="#shuffle">shuffle()</a></li>
+<li><a href="#some">some()</a></li>
+<li><a href="#unique">unique()</a></li>
 </ul>
 
-<h2><a href="#compact" name="compact">compact(arr):Array</a></h2>
+<h2>compact(arr):Array <a href="#compact" id="compact" class="deep-link">#</a></h2>
 
 <p>Returns a new Array without any <code>null</code> or <code>undefined</code> values. Note that it will
 keep empty strings and other falsy values (simillar to Ruby Array#compact).</p>
@@ -52,7 +52,7 @@ var arr = [0, 1, null, false, '', 'foo', undefined, 'bar'];
 compact(arr); // [0, 1, false, '', 'foo', 'bar'];
 </pre>
 
-<h2><a href="#contains" name="contains">contains(arr, value):Boolean</a></h2>
+<h2>contains(arr, value):Boolean <a href="#contains" id="contains" class="deep-link">#</a></h2>
 
 <p>Checks if Array contains value. Alias to <code>indexOf(arr, val) !== -1</code>.</p>
 
@@ -62,7 +62,7 @@ contains(arr, 2);      // true
 contains(arr, 'foo');  // false
 </pre>
 
-<h2><a href="#every" name="every">every(arr, callback, [thisObj]):Array</a></h2>
+<h2>every(arr, callback, [thisObj]):Array <a href="#every" id="every" class="deep-link">#</a></h2>
 
 <p>Crossbrowser ES5 <code>Array.every()</code>.</p>
 
@@ -70,7 +70,7 @@ contains(arr, 'foo');  // false
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/every">MDN Array#every</a></p>
 
-<h2><a href="#filter" name="filter">filter(arr, callback, [thisObj]):Array</a></h2>
+<h2>filter(arr, callback, [thisObj]):Array <a href="#filter" id="filter" class="deep-link">#</a></h2>
 
 <p>Crossbrowser ES5 <code>Array.filter()</code>.</p>
 
@@ -78,19 +78,19 @@ contains(arr, 'foo');  // false
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/filter">MDN Array#filter</a></p>
 
-<h2><a href="#forEach" name="forEach">forEach(arr, callback, [thisObj]):void</a></h2>
+<h2>forEach(arr, callback, [thisObj]):void <a href="#forEach" id="forEach" class="deep-link">#</a></h2>
 
 <p>Crossbrowser ES5 <code>Array.forEach()</code>.</p>
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/forEach">MDN Array#forEach</a></p>
 
-<h2><a href="#indexOf" name="indexOf">indexOf(arr, item, [fromIndex]):Number</a></h2>
+<h2>indexOf(arr, item, [fromIndex]):Number <a href="#indexOf" id="indexOf" class="deep-link">#</a></h2>
 
 <p>Crossbrowser ES5 <code>Array.indexOf()</code>.</p>
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf">MDN Array#indexOf</a></p>
 
-<h2><a href="#isSparse" name="isSparse">isSparse(arr):Boolean</a></h2>
+<h2>isSparse(arr):Boolean <a href="#isSparse" id="isSparse" class="deep-link">#</a></h2>
 
 <p>Checks if it is a <em>sparse</em> array.</p>
 
@@ -105,13 +105,13 @@ var arr2 = ['lorem', 'ipsum'];
 isSparse(arr2); // false
 </pre>
 
-<h2><a href="#lastIndexOf" name="lastIndexOf">lastIndexOf(arr, item, [fromIndex]):Number</a></h2>
+<h2>lastIndexOf(arr, item, [fromIndex]):Number <a href="#lastIndexOf" id="lastIndexOf" class="deep-link">#</a></h2>
 
 <p>Crossbrowser ES5 <code>Array.lastIndexOf()</code>.</p>
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/lastIndexOf">MDN Array#lastIndexOf</a></p>
 
-<h2><a href="#map" name="map">map(arr, callback):Array</a></h2>
+<h2>map(arr, callback):Array <a href="#map" id="map" class="deep-link">#</a></h2>
 
 <p>Crossbrowser ES5 <code>Array.map()</code>.</p>
 
@@ -120,7 +120,7 @@ element in this array.</p>
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/map">MDN Array#map</a></p>
 
-<h2><a href="#range" name="range">range([start], stop[, step]):Array</a></h2>
+<h2>range([start], stop[, step]):Array <a href="#range" id="range" class="deep-link">#</a></h2>
 
 <p>Creates a new Array with all the values inside the range. Works similarly to
 Python#range or PHP#range.</p>
@@ -142,7 +142,7 @@ range(0, 5, 2);   // [0, 2, 4]
 range(20, 40, 5); // [20, 25, 30, 35, 40]
 </pre>
 
-<h2><a href="#reduce" name="reduce">reduce(arr, fn):*</a></h2>
+<h2>reduce(arr, fn):* <a href="#reduce" id="reduce" class="deep-link">#</a></h2>
 
 <p>Crossbrowser ES5 <code>Array.reduce()</code>.</p>
 
@@ -151,7 +151,7 @@ left-to-right) as to reduce it to a single value.</p>
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/reduce">MDN Array#reduce</a></p>
 
-<h2><a href="#reduceRight" name="reduceRight">reduceRight(arr, fn):*</a></h2>
+<h2>reduceRight(arr, fn):* <a href="#reduceRight" id="reduceRight" class="deep-link">#</a></h2>
 
 <p>Crossbrowser ES5 <code>Array.reduceRight()</code>.</p>
 
@@ -160,7 +160,7 @@ right-to-left) as to reduce it to a single value.</p>
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/reduceRight">MDN Array#reduceRight</a></p>
 
-<h2><a href="#remove" name="remove">remove(arr, item):void</a></h2>
+<h2>remove(arr, item):void <a href="#remove" id="remove" class="deep-link">#</a></h2>
 
 <p>Remove a single item from the array.</p>
 
@@ -174,7 +174,7 @@ remove(foo, 2);
 console.log(foo); // [1, 3, 4]
 </pre>
 
-<h2><a href="#removeAll" name="removeAll">removeAll(arr, item):void</a></h2>
+<h2>removeAll(arr, item):void <a href="#removeAll" id="removeAll" class="deep-link">#</a></h2>
 
 <p>Remove all instances of an item from the array.</p>
 
@@ -186,7 +186,7 @@ removeAll(foo, 2);
 console.log(foo); // [1, 3, 4];
 </pre>
 
-<h2><a href="#shuffle" name="shuffle">shuffle(arr):Array </a></h2>
+<h2>shuffle(arr):Array <a href="#shuffle" id="shuffle" class="deep-link">#</a></h2>
 
 <p>Returns a new Array with items randomly sorted (shuffled). Similar to Ruby Array#shuffle.</p>
 
@@ -197,7 +197,7 @@ var arr = ['a', 'b', 'c', 'd', 'e'];
 shuffle(arr); // ['b', 'd', 'e', 'c', 'a']
 </pre>
 
-<h2><a href="#some" name="some">some(arr, callback, [thisObj]):Array </a></h2>
+<h2>some(arr, callback, [thisObj]):Array <a href="#some" id="some" class="deep-link">#</a></h2>
 
 <p>Crossbrowser ES5 <code>Array.some()</code>.</p>
 
@@ -205,7 +205,7 @@ shuffle(arr); // ['b', 'd', 'e', 'c', 'a']
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/some">MDN Array#some</a></p>
 
-<h2><a href="#unique" name="unique">unique(arr):Array</a></h2>
+<h2>unique(arr):Array <a href="#unique" id="unique" class="deep-link">#</a></h2>
 
 <p>Return a new Array of unique items.</p>
 
@@ -221,6 +221,8 @@ console.log(foo); // [1, 2, 3, 4];
 
 <p>For more usage examples check specs inside <code>/tests</code> folder. Unit tests are the
 best documentation you can get...</p>
+                <hr />
+                <small>Documentation generated by <a href="https://github.com/millermedeiros/mdoc">mdoc</a>.</small>
             </div>
         </div>
         <script src="assets_/js/lib/jquery.js"></script>

@@ -3,17 +3,8 @@
 Pseudo-random generators.
 
 
-## <a href="#toc" name="toc">Table of Contents</a>
 
- - [`choice()`](#choice)
- - [`rand()`](#rand)
- - [`randBit()`](#randBit)
- - [`randInt()`](#randInt)
- - [`randSign()`](#randSign)
-
-
-
-## <a href="#choice" name="choice">choice(...items):*</a>
+## choice(...items):*
 
 Returns a random element from the supplied arguments or from an array if single
 argument is an array.
@@ -29,7 +20,7 @@ choice(arr); // 'dolor'
 
 
 
-## <a href="#rand" name="rand">rand([min], [max]):Number</a>
+## rand([min], [max]):Number
 
 Gets a random number inside range or snap to min/max values.
 
@@ -50,7 +41,7 @@ rand(0, 10); // 5.987042
 
 
 
-## <a href="#randBit" name="randBit">randBit():Number</a>
+## randBit():Number
 
 Returns a random "bit" (0 or 1). Useful for addition/subtraction.
 
@@ -71,7 +62,7 @@ choice(0, 1);
 
 
 
-## <a href="#randInt" name="randInt">randInt([min], [max]):Number</a>
+## randInt([min], [max]):Number
 
 Gets a random integer inside range or snap to min/max values.
 
@@ -92,7 +83,7 @@ randInt(0, 10); // 5
 
 
 
-## <a href="#randSign" name="randSign">randSign():Number</a>
+## randSign():Number
 
 Returns a random "sign" (-1 or 1). Useful for multiplications.
 

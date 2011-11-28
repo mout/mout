@@ -3,14 +3,7 @@
 Utilities for time manipulation.
 
 
-## <a href="#toc" name="toc">Table of Contents</a>
-
- - [`split()`](#split)
- - [`toTimeString()`](#toTimeString)
-
-
-
-## <a href="#split" name="split">split(ms):Object</a>
+## split(ms):Object
 
 Parse timestamp (milliseconds) into an object `{milliseconds:number,
 seconds:number, minutes:number, hours:number, days:number}`.
@@ -23,7 +16,7 @@ split(2348765454); // {days: 27, hours: 4, minutes: 26, seconds:5, milliseconds:
 
 
 
-## <a href="#toTimeString" name="toTimeString">toTimeString(ms):String</a>
+## toTimeString(ms):String
 
 Convert timestamp (milliseconds) into a time string in the format "HH:MM:SS".
 

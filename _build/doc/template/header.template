@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <title>{{page_title}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets_/css/shCore.css">
-        <link rel="stylesheet" href="assets_/css/shThemeDefault.css">
-        <link rel="stylesheet" href="assets_/css/main.css">
+        <link rel="stylesheet" href="{{root_path}}assets_/css/shCore.css">
+        <link rel="stylesheet" href="{{root_path}}assets_/css/shThemeDefault.css">
+        <link rel="stylesheet" href="{{root_path}}assets_/css/main.css">
     </head>
-    <body>
+    <body data-root-path="{{root_path}}">
         <div id="wrapper">
             <div id="content">

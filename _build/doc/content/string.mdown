@@ -3,33 +3,7 @@
 String utilities.
 
 
-## <a href="#toc" name="toc">Table of Contents</a>
-
- - [`camelCase()`](#camelCase)
- - [`crop()`](#crop)
- - [`hyphenate()`](#hyphenate)
- - [`lowerCase()`](#lowerCase)
- - [`ltrim()`](#ltrim)
- - [`makePath()`](#makePath)
- - [`pascalCase()`](#pascalCase)
- - [`properCase()`](#properCase)
- - [`removeNonASCII()`](#removeNonASCII)
- - [`removeNonWord()`](#removeNonWord)
- - [`replaceAccents()`](#replaceAccents)
- - [`rtrim()`](#rtrim)
- - [`sentenceCase()`](#sentenceCase)
- - [`stripHtmlTags()`](#stripHtmlTags)
- - [`toSlug()`](#toSlug)
- - [`trim()`](#trim)
- - [`truncate()`](#truncate)
- - [`typecast()`](#typecast)
- - [`unCamelCase()`](#unCamelCase)
- - [`unHyphenate()`](#unHyphenate)
- - [`upperCase()`](#upperCase)
-
-
-
-## <a href="#camelCase" name="camelCase">camelCase(str):String</a>
+## camelCase(str):String
 
 Convert string to "camelCase" text.
 
@@ -43,7 +17,7 @@ camelCase('lorem ipsum dolor'); // "loremIpsumDolor"
 ```
 
 
-## <a href="#crop" name="crop">crop(str, maxChars, [append]):String</a>
+## crop(str, maxChars, [append]):String
 
 Truncate string at full words. Alias to `truncate(str, maxChars, append, true);`.
 
@@ -58,7 +32,7 @@ crop('lorem ipsum dolor', 10, '+'); // "lorem+"
 
 
 
-## <a href="#hyphenate" name="hyphenate">hyphenate(str):String</a>
+## hyphenate(str):String
 
 Replaces spaces with hyphens, split camelCase text, remove non-word chars, remove accents and convert to lower case.
 
@@ -70,7 +44,7 @@ hyphenate('loremIpsum');                  // "lorem-ipsum"
 
 
 
-## <a href="#lowerCase" name="lowerCase">lowerCase(str):String</a>
+## lowerCase(str):String
 
 "Safer" `String.toLowerCase()`. (Used internally)
 
@@ -85,7 +59,7 @@ lowerCase(undefined);      // ""
 
 
 
-## <a href="#ltrim" name="ltrim">ltrim(str):String</a>
+## ltrim(str):String
 
 Remove white-spaces from beginning of string.
 
@@ -99,7 +73,7 @@ ltrim('   lorem ipsum   ');  // "lorem ipsum   "
 
 
 
-## <a href="#makePath" name="makePath">makePath(...args):String</a>
+## makePath(...args):String
 
 Group arguments as path segments, if any of the args is `null` or `undefined`
 it will be ignored from resulting path. It will also remove duplicate "/".
@@ -113,7 +87,7 @@ makePath('foo///bar/');                    // "foo/bar/"
 
 
 
-## <a href="#pascalCase" name="pascalCase">pascalCase(str):String</a>
+## pascalCase(str):String
 
 Convert string to "PascalCase" text.
 
@@ -128,7 +102,7 @@ pascalCase('lorem ipsum dolor'); // "LoremIpsumDolor"
 
 
 
-## <a href="#properCase" name="properCase">properCase(str):String</a>
+## properCase(str):String
 
 UPPERCASE first char of each word, lowercase other chars.
 
@@ -140,7 +114,7 @@ properCase('loRem iPSum'); // "Lorem Ipsum"
 
 
 
-## <a href="#removeNonASCII" name="removeNonASCII">removeNonASCII(str):String</a>
+## removeNonASCII(str):String
 
 Remove [non-printable ASCII
 chars](http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters).
@@ -153,7 +127,7 @@ removeNonASCII('äÄçÇéÉêlorem-ipsumöÖÐþúÚ'); // "lorem-ipsum"
 
 
 
-## <a href="#removeNonWord" name="removeNonWord">removeNonWord(str):String</a>
+## removeNonWord(str):String
 
 Remove non-word chars.
 
@@ -166,7 +140,7 @@ removeNonWord(str); // "lorem - ipsum"
 
 
 
-## <a href="#replaceAccents" name="replaceAccents">replaceAccents(str):String</a>
+## replaceAccents(str):String
 
 Replaces all accented chars with regular ones.
 
@@ -180,7 +154,7 @@ replaceAccents('spéçïãl çhârs'); // "special chars"
 
 
 
-## <a href="#rtrim" name="rtrim">rtrim(str):String</a>
+## rtrim(str):String
 
 Remove white-spaces from end of string.
 
@@ -194,7 +168,7 @@ rtrim('   lorem ipsum   '); // "   lorem ipsum"
 
 
 
-## <a href="#sentenceCase" name="sentenceCase">sentenceCase(str):String</a>
+## sentenceCase(str):String
 
 UPPERCASE first char of each sentence and lowercase other chars.
 
@@ -206,7 +180,7 @@ sentenceCase('Lorem IpSum DoLOr. maeCeNnas Ullamcor.'); // "Lorem ipsum dolor. M
 
 
 
-## <a href="#stripHtmlTags" name="stripHtmlTags">stripHtmlTags(str):String</a>
+## stripHtmlTags(str):String
 
 Remove HTML/XML tags from string.
 
@@ -218,7 +192,7 @@ stripHtmlTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // "lorem ipsum"
 
 
 
-## <a href="#toSlug" name="toSlug">toSlug(str):String</a>
+## toSlug(str):String
 
 Convert to lower case, remove accents, remove non-word chars and replace spaces
 with hyphens.
@@ -234,7 +208,7 @@ toSlug('loremIpsum dolor spéçïãl chârs'); // "loremipsum-dolor-special-char
 
 
 
-## <a href="#trim" name="trim">trim(str):String</a>
+## trim(str):String
 
 Remove white-spaces from beginning and end of string.
 
@@ -248,7 +222,7 @@ trim('   lorem ipsum   '); // "lorem ipsum"
 
 
 
-## <a href="#truncate" name="truncate">truncate(str, maxChars, [append], [onlyFullWords]):String</a>
+## truncate(str, maxChars, [append], [onlyFullWords]):String
 
 Limit number of chars. Returned string `length` will be `<= maxChars`.
 
@@ -273,7 +247,7 @@ truncate('lorem ipsum dolor', 11, null, true); // "lorem..."
 
 
 
-## <a href="#typecast" name="typecast">typecast(str):*</a>
+## typecast(str):*
 
 Parses string and convert it into a native value.
 
@@ -291,7 +265,7 @@ typecast('undefined');   // undefined
 
 
 
-## <a href="#unCamelCase" name="unCamelCase">unCamelCase(str):String</a>
+## unCamelCase(str):String
 
 Add space between camelCase text and convert first char of each word to lower
 case.
@@ -303,7 +277,7 @@ unCamelCase('loremIpsumDolor'); // "lorem ipsum dolor"
 ```
 
 
-## <a href="#unHyphenate" name="unHyphenate">unHyphenate(str):String</a>
+## unHyphenate(str):String
 
 Replaces hyphens with spaces. (only hyphens between word chars)
 
@@ -314,7 +288,7 @@ unHyphenate('lorem-ipsum-dolor'); // "lorem ipsum dolor"
 ```
 
 
-## <a href="#upperCase" name="upperCase">upperCase(str):String</a>
+## upperCase(str):String
 
 "Safer" `String.toUpperCase()`. (Used internally)
 

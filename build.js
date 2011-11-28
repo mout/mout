@@ -1,7 +1,13 @@
-/**
- * Command line interface for building amd-utils documentation
- * @author Miller Medeiros
- * @version 0.1.0 (2011/11/18)
- */
+//
+// Build amd-utils documentation
+//
 
-require('./_build/doc/js/');
+var mdoc = require('mdoc');
+
+mdoc.run({
+    inputDir : '_build/doc/content',
+    outputDir : 'doc',
+    baseTitle : 'AMD-Utils',
+    indexContentPath : 'README.mdown',
+    templatePath : '_build/doc/template'
+});

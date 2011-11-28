@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>amd-utils / lang : AMD Utils</title>
+        <title>amd-utils / lang : AMD-Utils</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets_/css/shCore.css">
         <link rel="stylesheet" href="assets_/css/shThemeDefault.css">
         <link rel="stylesheet" href="assets_/css/main.css">
     </head>
-    <body>
+    <body data-root-path="">
         <div id="wrapper">
             <div id="content">
 
@@ -20,31 +20,31 @@
 
 <p>Language Utilities. Easier inheritance, scope handling, type checks.</p>
 
-<h2><span id="toc">Table of Contents</span></h2>
+<h2>Table of Contents <a href="#toc" name="toc" class="deep-link">#</a></h2>
 
 <ul>
-<li><a href="#bind"><code>bind()</code></a></li>
-<li><a href="#createObject"><code>createObject()</code></a></li>
-<li><a href="#ctorApply"><code>ctorApply()</code></a></li>
-<li><a href="#inheritPrototype"><code>inheritPrototype()</code></a></li>
-<li><a href="#isArguments"><code>isArguments()</code></a></li>
-<li><a href="#isArray"><code>isArray()</code></a></li>
-<li><a href="#isBoolean"><code>isBoolean()</code></a></li>
-<li><a href="#isDate"><code>isDate()</code></a></li>
-<li><a href="#isFunction"><code>isFunction()</code></a></li>
-<li><a href="#isKind"><code>isKind()</code></a></li>
-<li><a href="#isNull"><code>isNull()</code></a></li>
-<li><a href="#isNumber"><code>isNumber()</code></a></li>
-<li><a href="#isObject"><code>isObject()</code></a></li>
-<li><a href="#isRegExp"><code>isRegExp()</code></a></li>
-<li><a href="#isString"><code>isString()</code></a></li>
-<li><a href="#isUndefined"><code>isUndefined()</code></a></li>
-<li><a href="#kindOf"><code>kindOf()</code></a></li>
-<li><a href="#mixIn"><code>mixIn()</code></a></li>
-<li><a href="#toArray"><code>toArray()</code></a></li>
+<li><a href="#bind">bind()</a></li>
+<li><a href="#createObject">createObject()</a></li>
+<li><a href="#ctorApply">ctorApply()</a></li>
+<li><a href="#inheritPrototype">inheritPrototype()</a></li>
+<li><a href="#isArguments">isArguments()</a></li>
+<li><a href="#isArray">isArray()</a></li>
+<li><a href="#isBoolean">isBoolean()</a></li>
+<li><a href="#isDate">isDate()</a></li>
+<li><a href="#isFunction">isFunction()</a></li>
+<li><a href="#isKind">isKind()</a></li>
+<li><a href="#isNull">isNull()</a></li>
+<li><a href="#isNumber">isNumber()</a></li>
+<li><a href="#isObject">isObject()</a></li>
+<li><a href="#isRegExp">isRegExp()</a></li>
+<li><a href="#isString">isString()</a></li>
+<li><a href="#isUndefined">isUndefined()</a></li>
+<li><a href="#kindOf">kindOf()</a></li>
+<li><a href="#mixIn">mixIn()</a></li>
+<li><a href="#toArray">toArray()</a></li>
 </ul>
 
-<h2><a href="#bind" name="bind">bind(fn, context, [...args]):Function</a></h2>
+<h2>bind(fn, context, [...args]):Function <a href="#bind" id="bind" class="deep-link">#</a></h2>
 
 <p>Return a function that will execute in the given context, optionally adding any additional supplied parameters to the beginning of the arguments collection.</p>
 
@@ -56,7 +56,7 @@
 <li><code>[...args]</code> (*)    : Arguments (0...n arguments)</li>
 </ol>
 
-<h2><a href="#createObject" name="createObject">createObject(parent, [props]):Object</a></h2>
+<h2>createObject(parent, [props]):Object <a href="#createObject" id="createObject" class="deep-link">#</a></h2>
 
 <p>Create Object using prototypal inheritance and setting custom properties.</p>
 
@@ -85,7 +85,7 @@ var myObj = createObject(base, {
 myObject.trace(); // "Lorem Ipsum"
 </pre>
 
-<h2><a href="#ctorApply" name="ctorApply">ctorApply(constructor, args):Object</a></h2>
+<h2>ctorApply(constructor, args):Object <a href="#ctorApply" id="ctorApply" class="deep-link">#</a></h2>
 
 <p>Do <code>Function.prototype.apply()</code> on a constructor while maintaining prototype
 chain.</p>
@@ -107,7 +107,7 @@ var john = ctorApply(Person, args);
 john.walk(); // "John is walking"
 </pre>
 
-<h2><a href="#inheritPrototype" name="inheritPrototype">inheritPrototype(child, parent):void</a></h2>
+<h2>inheritPrototype(child, parent):void <a href="#inheritPrototype" id="inheritPrototype" class="deep-link">#</a></h2>
 
 <p>Inherit prototype from another Object.</p>
 
@@ -131,61 +131,61 @@ var myObj = new Bar('lorem ipsum');
 myObj.getName(); // "lorem ipsum"
 </pre>
 
-<h2><a href="#isArguments" name="isArguments">isArguments(val):Boolean</a></h2>
+<h2>isArguments(val):Boolean <a href="#isArguments" id="isArguments" class="deep-link">#</a></h2>
 
 <p>If value is an "Arguments" object.</p>
 
-<h2><a href="#isArray" name="isArray">isArray(val):Boolean</a></h2>
+<h2>isArray(val):Boolean <a href="#isArray" id="isArray" class="deep-link">#</a></h2>
 
 <p>If value is an Array.</p>
 
-<h2><a href="#isBoolean" name="isBoolean">isBoolean(val):Boolean</a></h2>
+<h2>isBoolean(val):Boolean <a href="#isBoolean" id="isBoolean" class="deep-link">#</a></h2>
 
 <p>If value is a Boolean.</p>
 
-<h2><a href="#isDate" name="isDate">isDate(val):Boolean</a></h2>
+<h2>isDate(val):Boolean <a href="#isDate" id="isDate" class="deep-link">#</a></h2>
 
 <p>If value is a Date.</p>
 
-<h2><a href="#isFunction" name="isFunction">isFunction(val):Boolean</a></h2>
+<h2>isFunction(val):Boolean <a href="#isFunction" id="isFunction" class="deep-link">#</a></h2>
 
 <p>If value is a Function.</p>
 
-<h2><a href="#isKind" name="isKind">isKind(val, kind):Boolean</a></h2>
+<h2>isKind(val, kind):Boolean <a href="#isKind" id="isKind" class="deep-link">#</a></h2>
 
 <p>If value is of "kind". (used internally by most of the <em>isSomething</em> checks),
 favor the other methods since strings are commonly mistyped.</p>
 
-<h2><a href="#isNull" name="isNull">isNull(val):Boolean</a></h2>
+<h2>isNull(val):Boolean <a href="#isNull" id="isNull" class="deep-link">#</a></h2>
 
 <p>If value is <code>null</code>.</p>
 
-<h2><a href="#isNumber" name="isNumber">isNumber(val):Boolean</a></h2>
+<h2>isNumber(val):Boolean <a href="#isNumber" id="isNumber" class="deep-link">#</a></h2>
 
 <p>If value is a Number.</p>
 
-<h2><a href="#isObject" name="isObject">isObject(val):Boolean</a></h2>
+<h2>isObject(val):Boolean <a href="#isObject" id="isObject" class="deep-link">#</a></h2>
 
 <p>If value is an Object.</p>
 
-<h2><a href="#isRegExp" name="isRegExp">isRegExp(val):Boolean</a></h2>
+<h2>isRegExp(val):Boolean <a href="#isRegExp" id="isRegExp" class="deep-link">#</a></h2>
 
 <p>If value is a RegExp.</p>
 
-<h2><a href="#isString" name="isString">isString(val):Boolean</a></h2>
+<h2>isString(val):Boolean <a href="#isString" id="isString" class="deep-link">#</a></h2>
 
 <p>If value is a String.</p>
 
-<h2><a href="#isUndefined" name="isUndefined">isUndefined(val):Boolean</a></h2>
+<h2>isUndefined(val):Boolean <a href="#isUndefined" id="isUndefined" class="deep-link">#</a></h2>
 
 <p>If value is <code>undefined</code>.</p>
 
-<h2><a href="#kindOf" name="kindOf">kindOf(val):String</a></h2>
+<h2>kindOf(val):String <a href="#kindOf" id="kindOf" class="deep-link">#</a></h2>
 
 <p>Gets kind of value (e.g. "String", "Number", "RegExp", "Null", "Date").
 Used internally by <code>isKind()</code> and most of the other <em>isSomething</em> checks.</p>
 
-<h2><a href="#mixIn" name="mixIn">mixIn(target, ...objects):Object</a></h2>
+<h2>mixIn(target, ...objects):Object <a href="#mixIn" id="mixIn" class="deep-link">#</a></h2>
 
 <p>Combine properties from all the objects into first one.</p>
 
@@ -212,7 +212,7 @@ mixIn(a, b);     // {foo: "bar", lorem: 123}
 console.log(a);  // {foo: "bar", lorem: 123}
 </pre>
 
-<h2><a href="#toArray" name="toArray">toArray(val):Array</a></h2>
+<h2>toArray(val):Array <a href="#toArray" id="toArray" class="deep-link">#</a></h2>
 
 <p>Convert array-like object into Array or wrap value into Array.</p>
 
@@ -237,6 +237,8 @@ toArray({foo:"bar", lorem:123}); // ["bar", 123]
 
 <p>For more usage examples check specs inside <code>/tests</code> folder. Unit tests are the
 best documentation you can get...</p>
+                <hr />
+                <small>Documentation generated by <a href="https://github.com/millermedeiros/mdoc">mdoc</a>.</small>
             </div>
         </div>
         <script src="assets_/js/lib/jquery.js"></script>
