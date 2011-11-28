@@ -102,7 +102,7 @@
 
         init : function(){
 
-            var brushesPath = _rootPath +'assets_/js/lib/syntax-highlighter';
+            var brushesPath = _rootPath +'assets_/js/lib/syntax-highlighter/';
 
             var brushes = [
                     'applescript            {{path}}shBrushAppleScript.js',
