@@ -1,10 +1,12 @@
 define([
    'array/spec-compact',
    'array/spec-contains',
+   'array/spec-difference',
    'array/spec-every',
    'array/spec-filter',
    'array/spec-forEach',
    'array/spec-indexOf',
+   'array/spec-intersection',
    'array/spec-isSparse',
    'array/spec-lastIndexOf',
    'array/spec-map',
@@ -15,7 +17,9 @@ define([
    'array/spec-removeAll',
    'array/spec-some',
    'array/spec-shuffle',
-   'array/spec-unique'
+   'array/spec-union',
+   'array/spec-unique',
+   'array/spec-xor'
 ], function(){
     //noop
 });

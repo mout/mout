@@ -25,10 +25,12 @@
 <ul>
 <li><a href="#compact">compact()</a></li>
 <li><a href="#contains">contains()</a></li>
+<li><a href="#difference">difference()</a></li>
 <li><a href="#every">every()</a></li>
 <li><a href="#filter">filter()</a></li>
 <li><a href="#forEach">forEach()</a></li>
 <li><a href="#indexOf">indexOf()</a></li>
+<li><a href="#intersection">intersection()</a></li>
 <li><a href="#isSparse">isSparse()</a></li>
 <li><a href="#lastIndexOf">lastIndexOf()</a></li>
 <li><a href="#map">map()</a></li>
@@ -39,7 +41,9 @@
 <li><a href="#removeAll">removeAll()</a></li>
 <li><a href="#shuffle">shuffle()</a></li>
 <li><a href="#some">some()</a></li>
+<li><a href="#union">union()</a></li>
 <li><a href="#unique">unique()</a></li>
+<li><a href="#xor">xor()</a></li>
 </ul>
 
 <h2>compact(arr):Array <a href="#compact" id="compact" class="deep-link">#</a></h2>
@@ -60,6 +64,23 @@ compact(arr); // [0, 1, false, '', 'foo', 'bar'];
 var arr = [1, 2, 3];
 contains(arr, 2);      // true
 contains(arr, 'foo');  // false
+</pre>
+
+<h2>difference(...arrs):Array <a href="#difference" id="difference" class="deep-link">#</a></h2>
+
+<p>Return a new Array with elements that aren't present in the other Arrays
+besides the first one.</p>
+
+<p>Works like <a href="http://docs.python.org/library/stdtypes.html#set.difference">Python set#difference</a>.</p>
+
+<p>It will remove duplicates.</p>
+
+<p>See: <a href="#xor"><code>xor()</code></a>, <a href="#intersection"><code>intersection()</code></a></p>
+
+<pre class="brush:js">
+var a = ['a', 'b', 1];
+var b = ['c', 1];
+difference(a, b); // ['a', 'b']
 </pre>
 
 <h2>every(arr, callback, [thisObj]):Array <a href="#every" id="every" class="deep-link">#</a></h2>
@@ -89,6 +110,23 @@ contains(arr, 'foo');  // false
 <p>Crossbrowser ES5 <code>Array.indexOf()</code>.</p>
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf">MDN Array#indexOf</a></p>
+
+<h2>intersection(...arrs):Arrays <a href="#intersection" id="intersection" class="deep-link">#</a></h2>
+
+<p>Return a new Array with elements common to all Arrays.</p>
+
+<p>Similar to Python set#intersection and underscore.js intersection.</p>
+
+<p>It will remove duplicates.</p>
+
+<p>See: <a href="#difference"><code>difference()</code></a>, <a href="#xor"><code>xor()</code></a></p>
+
+<pre class="brush:js">
+var a = ['a', 'b', 1],
+    b = ['c', 1],
+    c = [1, 2, 3];
+intersection(a, b, c); // [1]
+</pre>
 
 <h2>isSparse(arr):Boolean <a href="#isSparse" id="isSparse" class="deep-link">#</a></h2>
 
@@ -205,6 +243,19 @@ shuffle(arr); // ['b', 'd', 'e', 'c', 'a']
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/some">MDN Array#some</a></p>
 
+<h2>union(...arrs):Array <a href="#union" id="union" class="deep-link">#</a></h2>
+
+<p>Concat multiple arrays removing duplicates.</p>
+
+<pre class="brush:js">
+var a = ['a', 'b'],
+    b = ['c', 'a'],
+    c = [1, 'b', 2, 3, 'a'];
+
+//note that unique remove from begin to end
+union(a, b, c); // ['c', 1, 'b', 2, 3, 'a']
+</pre>
+
 <h2>unique(arr):Array <a href="#unique" id="unique" class="deep-link">#</a></h2>
 
 <p>Return a new Array of unique items.</p>
@@ -215,6 +266,22 @@ shuffle(arr); // ['b', 'd', 'e', 'c', 'a']
 var foo = [1, 2, 3, 4, 2, 2, 3, 4];
 var bar = unique(foo);
 console.log(foo); // [1, 2, 3, 4];
+</pre>
+
+<h2>xor(arr1, arr2):Array <a href="#xor" id="xor" class="deep-link">#</a></h2>
+
+<p>Exclusive OR. Returns items that are present in a single array.</p>
+
+<p>Works like <a href="http://docs.python.org/library/stdtypes.html#set.symmetric_difference">Python set#symmetric_difference</a> renamed for brevity.</p>
+
+<p>It will remove duplicates.</p>
+
+<p>See: <a href="#difference"><code>difference()</code></a>, <a href="#intersection"><code>intersection()</code></a></p>
+
+<pre class="brush:js">
+var a = ['a', 'b', 1];
+var b = ['c', 1];
+xor(a, b); // ['a', 'b', 'c']
 </pre>
 
 <hr />

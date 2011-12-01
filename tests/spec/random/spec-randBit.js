@@ -49,10 +49,10 @@ define(['src/random/randBit'], function (randBit) {
                 }
             }
 
-            expect( c0 ).toBeLessThan( 540 );
-            expect( c0 ).toBeGreaterThan( 460 );
-            expect( c1 ).toBeLessThan( 540 );
-            expect( c1 ).toBeGreaterThan( 460 );
+            expect( c0 ).toBeLessThan( 560 );
+            expect( c0 ).toBeGreaterThan( 440 );
+            expect( c1 ).toBeLessThan( 560 );
+            expect( c1 ).toBeGreaterThan( 440 );
 
         });
 

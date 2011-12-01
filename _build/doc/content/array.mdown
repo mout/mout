@@ -29,6 +29,25 @@ contains(arr, 'foo');  // false
 
 
 
+## difference(...arrs):Array
+
+Return a new Array with elements that aren't present in the other Arrays
+besides the first one.
+
+Works like [Python set#difference](http://docs.python.org/library/stdtypes.html#set.difference).
+
+It will remove duplicates.
+
+See: [`xor()`](#xor), [`intersection()`](#intersection)
+
+```js
+var a = ['a', 'b', 1];
+var b = ['c', 1];
+difference(a, b); // ['a', 'b']
+```
+
+
+
 ## every(arr, callback, [thisObj]):Array
 
 Crossbrowser ES5 `Array.every()`.
@@ -62,6 +81,25 @@ more info at [MDN Array#forEach](https://developer.mozilla.org/en/JavaScript/Ref
 Crossbrowser ES5 `Array.indexOf()`.
 
 more info at [MDN Array#indexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf)
+
+
+
+## intersection(...arrs):Arrays
+
+Return a new Array with elements common to all Arrays.
+
+Similar to Python set#intersection and underscore.js intersection.
+
+It will remove duplicates.
+
+See: [`difference()`](#difference), [`xor()`](#xor)
+
+```js
+var a = ['a', 'b', 1],
+    b = ['c', 1],
+    c = [1, 2, 3];
+intersection(a, b, c); // [1]
+```
 
 
 
@@ -198,6 +236,21 @@ more info at [MDN Array#some](https://developer.mozilla.org/en/JavaScript/Refere
 
 
 
+## union(...arrs):Array
+
+Concat multiple arrays removing duplicates.
+
+```js
+var a = ['a', 'b'],
+    b = ['c', 'a'],
+    c = [1, 'b', 2, 3, 'a'];
+
+//note that unique remove from begin to end
+union(a, b, c); // ['c', 1, 'b', 2, 3, 'a']
+```
+
+
+
 ## unique(arr):Array
 
 Return a new Array of unique items.
@@ -208,6 +261,24 @@ Return a new Array of unique items.
 var foo = [1, 2, 3, 4, 2, 2, 3, 4];
 var bar = unique(foo);
 console.log(foo); // [1, 2, 3, 4];
+```
+
+
+
+## xor(arr1, arr2):Array
+
+Exclusive OR. Returns items that are present in a single array.
+
+Works like [Python set#symmetric_difference](http://docs.python.org/library/stdtypes.html#set.symmetric_difference) renamed for brevity.
+
+It will remove duplicates.
+
+See: [`difference()`](#difference), [`intersection()`](#intersection)
+
+```js
+var a = ['a', 'b', 1];
+var b = ['c', 1];
+xor(a, b); // ['a', 'b', 'c']
 ```
 
 
