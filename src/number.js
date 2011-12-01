@@ -1,20 +1,19 @@
 define(function(require){
 
-    /**
-     * Number Utilities.
-     * @exports amd-utils/number
-     * @author Miller Medeiros
-     * @version 0.1.0 (2011/10/21)
-     */
+    //automatically generated, do not edit!
     return {
-        MIN_INT          : require('./number/MIN_INT'),
-        MAX_INT          : require('./number/MAX_INT'),
-        toInt            : require('./number/toInt'),
-        toUInt           : require('./number/toUInt'),
-        enforcePrecision : require('./number/enforcePrecision'),
-        ror              : require('./number/ror'),
-        rol              : require('./number/rol'),
-        pad              : require('./number/pad')
+        '.DS_Store' : require('./number/.DS_Store'),
+        'enforcePrecision' : require('./number/enforcePrecision'),
+        'MAX_INT' : require('./number/MAX_INT'),
+        'MAX_UINT' : require('./number/MAX_UINT'),
+        'MIN_INT' : require('./number/MIN_INT'),
+        'pad' : require('./number/pad'),
+        'rol' : require('./number/rol'),
+        'ror' : require('./number/ror'),
+        'sign' : require('./number/sign'),
+        'toInt' : require('./number/toInt'),
+        'toUInt' : require('./number/toUInt'),
+        'toUInt31' : require('./number/toUInt31')
     };
 
 });
