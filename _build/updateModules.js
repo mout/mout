@@ -1,7 +1,9 @@
 
-// automatically generates package modules
+// automatically generates package modules and specs
 
-var BASE_FOLDER = 'src';
+var SRC_FOLDER = 'src',
+    SPEC_FOLDER = 'tests/spec',
+    SPEC_RUNNER_PATH = 'tests/specRunner.html';
 
 
 var _fs = require('fs'),
@@ -10,9 +12,13 @@ var _fs = require('fs'),
 
 
 exports.run = function(){
-    var structure = getFolderStructure(BASE_FOLDER);
-    purgeFiles(structure.files);
-    makePackages(structure.folders);
+    var srcStructure = getFolderStructure(SRC_FOLDER);
+    purgeFiles(srcStructure.files);
+    makePackages(srcStructure.folders);
+
+    purgeFiles(getFolderStructure(SPEC_FOLDER).files);
+    //make packages based on src... ensure all source files have specs.
+    makeSpecs(srcStructure.folders);
 };
 
 function getFolderStructure(folder){
@@ -27,7 +33,7 @@ function getFolderStructure(folder){
             return _fs.statSync(name).isDirectory();
         }),
         'files' : fileNames.filter(function(name){
-            return _fs.statSync(name).isFile();
+            return hasJsExtension(name) && _fs.statSync(name).isFile();
         })
     };
 
@@ -46,15 +52,30 @@ function purgeFiles(files){
 }
 
 
+// ---
 
-var pkgTemplate = _handlebars.compile( _fs.readFileSync( _path.join(__dirname, 'pkg.hbs'), 'utf-8') );
 
-_handlebars.registerHelper('moduleList', function(items, fn){
+function compileTemplate(name) {
+    return _handlebars.compile( _fs.readFileSync( _path.join(__dirname, name +'.hbs'), 'utf-8') );
+}
+
+
+var pkgTemplate = compileTemplate('pkg');
+
+_handlebars.registerHelper('csv', function(items, fn){
     items = items.map(function(val){
         return fn(val);
     });
-    return items.join(',\n        ');
+    return items.join(', ');
 });
+
+_handlebars.registerHelper('list', function(items, fn){
+    items = items.map(function(val){
+        return fn(val);
+    });
+    return items.join(',\n    ');
+});
+
 
 
 function makePackages(packages){
@@ -71,6 +92,40 @@ function makePackages(packages){
         });
 
         _fs.writeFileSync(name + '.js', pkgTemplate({'modules' : modules}), 'utf-8');
+        console.log('  updating package: ', name +'.js');
     });
 
+}
+
+
+
+
+var specTemplate = compileTemplate('spec'),
+    specRunnerTemplate = compileTemplate('specRunner');
+
+
+function makeSpecs(packages){
+
+    packages.forEach(function(name){
+        var packageFolder = _path.basename(name);
+        var structure = getFolderStructure(name);
+
+        var modules = structure.files.map(function(fileName){
+            return {
+                'name' : _path.basename(fileName, '.js'),
+                'package' : packageFolder
+            };
+        });
+
+        var specFileName = 'spec-'+ packageFolder +'.js';
+        _fs.writeFileSync(_path.join(SPEC_FOLDER, specFileName), specTemplate({'modules' : modules}), 'utf-8');
+        console.log('  updating spec: ', specFileName);
+    });
+
+
+    var packagesNames = packages.map(function(val){
+        return _path.basename(val);
+    });
+    _fs.writeFileSync(SPEC_RUNNER_PATH, specRunnerTemplate({'packages' : packagesNames}), 'utf-8');
+    console.log('  updating spec runner: ', SPEC_RUNNER_PATH);
 }

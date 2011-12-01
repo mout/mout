@@ -1,3 +1,5 @@
+//automatically generated, do not edit!
+//run `node build` instead
 define([
     'math/spec-clamp',
     'math/spec-countSteps',

@@ -31,14 +31,7 @@
         //init
         require(
             [
-                'spec-array',
-    'spec-lang',
-    'spec-math',
-    'spec-number',
-    'spec-queryString',
-    'spec-random',
-    'spec-string',
-    'spec-time'
+                {{#list packages}}'spec-{{this}}'{{/list}}
             ],
             function(){
                 jasmine.getEnv().addReporter(new jasmine.TrivialReporter());

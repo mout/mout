@@ -1,7 +1,10 @@
+//automatically generated, do not edit!
+//run `node build` instead
 define([
     'string/spec-camelCase',
     'string/spec-crop',
     'string/spec-hyphenate',
+    'string/spec-lowerCase',
     'string/spec-ltrim',
     'string/spec-makePath',
     'string/spec-pascalCase',
@@ -17,7 +20,8 @@ define([
     'string/spec-truncate',
     'string/spec-typecast',
     'string/spec-unCamelCase',
-    'string/spec-unHyphenate'
+    'string/spec-unHyphenate',
+    'string/spec-upperCase'
 ], function(){
-    //todo
+    //noop
 });

@@ -1,8 +1,9 @@
 define(function(require){
 
-    //automatically generated, do not edit!
-    return {
-        {{#moduleList modules}}'{{name}}' : require('./{{package}}/{{name}}'){{/moduleList}}
-    };
+//automatically generated, do not edit!
+//run `node build` instead
+return {
+    {{#list modules}}'{{name}}' : require('./{{package}}/{{name}}'){{/list}}
+};
 
 });
