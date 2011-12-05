@@ -18,7 +18,6 @@ define([
     'lang/spec-isString',
     'lang/spec-isUndefined',
     'lang/spec-kindOf',
-    'lang/spec-mixIn',
     'lang/spec-toArray'
 ], function(){
     //noop

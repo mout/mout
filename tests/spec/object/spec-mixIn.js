@@ -1,6 +1,6 @@
-define(['src/lang/mixIn'], function (mixIn) {
+define(['src/object/mixIn'], function (mixIn) {
 
-    describe('lang/mixIn()', function(){
+    describe('object/mixIn()', function(){
 
         var a1, a2, a3, a4,
             a1_4,

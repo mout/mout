@@ -40,7 +40,6 @@
 <li><a href="#isString">isString()</a></li>
 <li><a href="#isUndefined">isUndefined()</a></li>
 <li><a href="#kindOf">kindOf()</a></li>
-<li><a href="#mixIn">mixIn()</a></li>
 <li><a href="#toArray">toArray()</a></li>
 </ul>
 
@@ -185,33 +184,6 @@ favor the other methods since strings are commonly mistyped.</p>
 <p>Gets kind of value (e.g. "String", "Number", "RegExp", "Null", "Date").
 Used internally by <code>isKind()</code> and most of the other <em>isSomething</em> checks.</p>
 
-<h2>mixIn(target, ...objects):Object <a href="#mixIn" id="mixIn" class="deep-link">#</a></h2>
-
-<p>Combine properties from all the objects into first one.</p>
-
-<p>This method affects target object in place, if you want to create a new Object
-pass an empty object as first parameter.</p>
-
-<h3>Arguments</h3>
-
-<ol>
-<li><code>target</code> (Object)        : Target Object.</li>
-<li><code>...objects</code> (...Object) : Objects to be combined (0...n objects).</li>
-</ol>
-
-<h3>Example</h3>
-
-<pre class="brush:js">
-var a = {foo: "bar"};
-var b = {lorem: 123};
-
-mixIn({}, a, b); // {foo: "bar", lorem: 123}
-console.log(a);  // {foo: "bar"}
-
-mixIn(a, b);     // {foo: "bar", lorem: 123}
-console.log(a);  // {foo: "bar", lorem: 123}
-</pre>
-
 <h2>toArray(val):Array <a href="#toArray" id="toArray" class="deep-link">#</a></h2>
 
 <p>Convert array-like object into Array or wrap value into Array.</p>
@@ -230,8 +202,10 @@ foo("lorem", 123);               // ["lorem", 123]
 
 toArray("lorem ipsum");          // ["lorem ipsum"]
 toArray(window);                 // [window]
-toArray({foo:"bar", lorem:123}); // ["bar", 123]
+toArray({foo:"bar", lorem:123}); // [{foo:"bar", lorem:123}]
 </pre>
+
+<p>See: object/values()</p>
 
 <hr />
 

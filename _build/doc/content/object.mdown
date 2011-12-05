@@ -1,0 +1,128 @@
+# amd-utils / object #
+
+Object utilities.
+
+
+## forIn(obj, callback[, thisObj])
+
+Iterate over all properties from an Object, similar to Array/forEach.
+
+It will [fix don't enum bug on IE](https://developer.mozilla.org/en/ECMAScript_DontEnum_attribute#JScript_DontEnum_Bug).
+
+Notice that it won't iterate over properties from the prototype.
+
+See: [`keys()`](#keys)
+
+### Callback arguments
+
+Callback will receive the following arguments:
+
+ 1. Property Value (*)
+ 2. Key name (String)
+ 3. Target object (Object)
+
+### Example
+
+```js
+var obj = {
+    foo : 1,
+    bar : 2,
+    lorem : 3
+};
+
+var result;
+var keys = [];
+
+forIn(obj, function(val, key, o){
+    result += val;
+    keys.push(key);
+});
+
+console.log(result); // 6
+console.log(keys);   // ['foo', 'bar', 'lorem']
+```
+
+
+
+## keys(obj):Array
+
+Returns an array of all own enumerable properties found upon a given object.
+It will use the native `Object.keys` if present.
+
+Notice that it won't return properties from the prototype.
+
+See: [`forIn()`](#forIn)
+
+```js
+var obj = {
+    foo : 1,
+    bar : 2,
+    lorem : 3
+};
+keys(obj); // ['foo', 'bar', 'lorem']
+```
+
+
+
+## mixIn(target, ...objects):Object
+
+Combine properties from all the objects into first one.
+
+This method affects target object in place, if you want to create a new Object
+pass an empty object as first parameter.
+
+### Arguments
+
+ 1. `target` (Object)        : Target Object.
+ 2. `...objects` (...Object) : Objects to be combined (0...n objects).
+
+### Example
+
+```js
+var a = {foo: "bar"};
+var b = {lorem: 123};
+
+mixIn({}, a, b); // {foo: "bar", lorem: 123}
+console.log(a);  // {foo: "bar"}
+
+mixIn(a, b);     // {foo: "bar", lorem: 123}
+console.log(a);  // {foo: "bar", lorem: 123}
+```
+
+
+## keys(obj):Array
+
+Returns an array of all own enumerable properties found upon a given object.
+It will use the native `Object.keys` if present.
+
+Notice that it won't return properties from the prototype.
+
+See: [`forIn()`](#forIn)
+
+```js
+var obj = {
+    foo : 1,
+    bar : 2,
+    lorem : 3
+};
+keys(obj); // ['foo', 'bar', 'lorem']
+```
+
+
+
+## values(obj):Array
+
+Returns an array of all own enumerable properties values found upon a given object.
+
+Notice that it won't return properties from the prototype.
+
+See: [`forIn()`](#forIn)
+
+```js
+var obj = {
+    foo : 1,
+    bar : 2,
+    lorem : 3
+};
+values(obj); // [1, 2, 3]
+```

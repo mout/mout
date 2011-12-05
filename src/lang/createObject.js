@@ -1,4 +1,4 @@
-define(['./mixIn'], function(mixIn){
+define(['../object/mixIn'], function(mixIn){
 
     /**
      * Create Object using prototypal inheritance and setting custom properties.

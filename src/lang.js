@@ -20,7 +20,6 @@ return {
     'isString' : require('./lang/isString'),
     'isUndefined' : require('./lang/isUndefined'),
     'kindOf' : require('./lang/kindOf'),
-    'mixIn' : require('./lang/mixIn'),
     'toArray' : require('./lang/toArray')
 };
 
