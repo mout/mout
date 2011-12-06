@@ -105,7 +105,7 @@ intersection(a, b, c); // [1]
 
 ## isSparse(arr):Boolean
 
-Checks if it is a *sparse* array.
+Checks if it is a *sparse* array (i.e. contain `undefined` items).
 
 ### Example
 

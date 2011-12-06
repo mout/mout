@@ -9,8 +9,13 @@ define(['src/array/isSparse'], function (isSparse) {
         });
 
         it('should not give false positives', function(){
-            var arr = ['foo', false, null, 123, 'bar', undefined, 'dolor'];
+            var arr = ['foo', false, null, 123, 'bar', 'dolor'];
             expect( isSparse(arr) ).toBe( false );
+        });
+
+        it('undefined should be considered as sparse to match IE behavior', function(){
+            var arr = ['foo', false, null, 123, 'bar', undefined, 'dolor'];
+            expect( isSparse(arr) ).toBe( true );
         });
 
     });
