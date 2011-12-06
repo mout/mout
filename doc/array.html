@@ -31,7 +31,6 @@
 <li><a href="#forEach">forEach()</a></li>
 <li><a href="#indexOf">indexOf()</a></li>
 <li><a href="#intersection">intersection()</a></li>
-<li><a href="#isSparse">isSparse()</a></li>
 <li><a href="#lastIndexOf">lastIndexOf()</a></li>
 <li><a href="#map">map()</a></li>
 <li><a href="#range">range()</a></li>
@@ -126,21 +125,6 @@ var a = ['a', 'b', 1],
     b = ['c', 1],
     c = [1, 2, 3];
 intersection(a, b, c); // [1]
-</pre>
-
-<h2>isSparse(arr):Boolean <a href="#isSparse" id="isSparse" class="deep-link">#</a></h2>
-
-<p>Checks if it is a <em>sparse</em> array.</p>
-
-<h3>Example</h3>
-
-<pre class="brush:js">
-var arr = ['foo'];
-arr[6] = 'bar';
-isSparse(arr); // true
-
-var arr2 = ['lorem', 'ipsum'];
-isSparse(arr2); // false
 </pre>
 
 <h2>lastIndexOf(arr, item, [fromIndex]):Number <a href="#lastIndexOf" id="lastIndexOf" class="deep-link">#</a></h2>

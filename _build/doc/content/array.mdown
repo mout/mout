@@ -103,23 +103,6 @@ intersection(a, b, c); // [1]
 
 
 
-## isSparse(arr):Boolean
-
-Checks if it is a *sparse* array (i.e. contain `undefined` items).
-
-### Example
-
-```js
-var arr = ['foo'];
-arr[6] = 'bar';
-isSparse(arr); // true
-
-var arr2 = ['lorem', 'ipsum'];
-isSparse(arr2); // false
-```
-
-
-
 ## lastIndexOf(arr, item, [fromIndex]):Number
 
 Crossbrowser ES5 `Array.lastIndexOf()`.

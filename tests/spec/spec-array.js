@@ -9,7 +9,6 @@ define([
     'array/spec-forEach',
     'array/spec-indexOf',
     'array/spec-intersection',
-    'array/spec-isSparse',
     'array/spec-lastIndexOf',
     'array/spec-map',
     'array/spec-range',
