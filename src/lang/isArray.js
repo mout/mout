@@ -1,10 +1,10 @@
 define(['./isKind'], function (isKind) {
     /**
      * @author Miller Medeiros
-     * @version 0.1.0 (2011/10/31)
+     * @version 0.2.0 (2011/12/06)
      */
-    function isNumber(val) {
+    var isArray = Array.isArray || function (val) {
         return isKind(val, 'Array');
-    }
-    return isNumber;
+    };
+    return isArray;
 });

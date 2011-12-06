@@ -136,7 +136,7 @@ myObj.getName(); // "lorem ipsum"
 
 <h2>isArray(val):Boolean <a href="#isArray" id="isArray" class="deep-link">#</a></h2>
 
-<p>If value is an Array.</p>
+<p>If value is an Array. Uses native ES5 <code>Array.isArray()</code> if available.</p>
 
 <h2>isBoolean(val):Boolean <a href="#isBoolean" id="isBoolean" class="deep-link">#</a></h2>
 
@@ -152,8 +152,11 @@ myObj.getName(); // "lorem ipsum"
 
 <h2>isKind(val, kind):Boolean <a href="#isKind" id="isKind" class="deep-link">#</a></h2>
 
-<p>If value is of "kind". (used internally by most of the <em>isSomething</em> checks),
-favor the other methods since strings are commonly mistyped.</p>
+<p>If value is of "kind". (used internally by some of the <em>isSomething</em> checks).</p>
+
+<p>Favor the other methods since strings are commonly mistyped and also because
+some "kinds" can only be accurately checked by using other methods (e.g.
+<code>Arguments</code>), some of the other checks are also faster.</p>
 
 <h2>isNull(val):Boolean <a href="#isNull" id="isNull" class="deep-link">#</a></h2>
 

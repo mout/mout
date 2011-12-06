@@ -103,7 +103,7 @@ If value is an "Arguments" object.
 
 ## isArray(val):Boolean
 
-If value is an Array.
+If value is an Array. Uses native ES5 `Array.isArray()` if available.
 
 
 
@@ -127,8 +127,11 @@ If value is a Function.
 
 ## isKind(val, kind):Boolean
 
-If value is of "kind". (used internally by most of the *isSomething* checks),
-favor the other methods since strings are commonly mistyped.
+If value is of "kind". (used internally by some of the *isSomething* checks).
+
+Favor the other methods since strings are commonly mistyped and also because
+some "kinds" can only be accurately checked by using other methods (e.g.
+`Arguments`), some of the other checks are also faster.
 
 
 
