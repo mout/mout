@@ -5,13 +5,12 @@ Object utilities.
 
 ## forIn(obj, callback[, thisObj])
 
-Iterate over all properties from an Object, similar to Array/forEach.
+Iterate over all own properties from an Object, similar to Array/forEach.
 
-It will [fix don't enum bug on IE](https://developer.mozilla.org/en/ECMAScript_DontEnum_attribute#JScript_DontEnum_Bug).
-
+It [avoids don't enum bug on IE](https://developer.mozilla.org/en/ECMAScript_DontEnum_attribute#JScript_DontEnum_Bug).
 Notice that it won't iterate over properties from the prototype.
 
-See: [`keys()`](#keys)
+See: [`keys()`](#keys), [`values()`](#values)
 
 ### Callback arguments
 
@@ -49,9 +48,9 @@ console.log(keys);   // ['foo', 'bar', 'lorem']
 Returns an array of all own enumerable properties found upon a given object.
 It will use the native `Object.keys` if present.
 
-Notice that it won't return properties from the prototype.
+PS: it won't return properties from the prototype.
 
-See: [`forIn()`](#forIn)
+See: [`forIn()`](#forIn), [`values()`](#values)
 
 ```js
 var obj = {
@@ -90,33 +89,14 @@ console.log(a);  // {foo: "bar", lorem: 123}
 ```
 
 
-## keys(obj):Array
-
-Returns an array of all own enumerable properties found upon a given object.
-It will use the native `Object.keys` if present.
-
-Notice that it won't return properties from the prototype.
-
-See: [`forIn()`](#forIn)
-
-```js
-var obj = {
-    foo : 1,
-    bar : 2,
-    lorem : 3
-};
-keys(obj); // ['foo', 'bar', 'lorem']
-```
-
-
 
 ## values(obj):Array
 
 Returns an array of all own enumerable properties values found upon a given object.
 
-Notice that it won't return properties from the prototype.
+PS: it won't return properties from the prototype.
 
-See: [`forIn()`](#forIn)
+See: [`forIn()`](#forIn), [`keys()`](#keys)
 
 ```js
 var obj = {

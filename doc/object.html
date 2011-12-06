@@ -26,19 +26,17 @@
 <li><a href="#forIn">forIn()</a></li>
 <li><a href="#keys">keys()</a></li>
 <li><a href="#mixIn">mixIn()</a></li>
-<li><a href="#keys">keys()</a></li>
 <li><a href="#values">values()</a></li>
 </ul>
 
 <h2>forIn(obj, callback[, thisObj]) <a href="#forIn" id="forIn" class="deep-link">#</a></h2>
 
-<p>Iterate over all properties from an Object, similar to Array/forEach.</p>
+<p>Iterate over all own properties from an Object, similar to Array/forEach.</p>
 
-<p>It will <a href="https://developer.mozilla.org/en/ECMAScript_DontEnum_attribute#JScript_DontEnum_Bug">fix don't enum bug on IE</a>.</p>
+<p>It <a href="https://developer.mozilla.org/en/ECMAScript_DontEnum_attribute#JScript_DontEnum_Bug">avoids don't enum bug on IE</a>.
+Notice that it won't iterate over properties from the prototype.</p>
 
-<p>Notice that it won't iterate over properties from the prototype.</p>
-
-<p>See: <a href="#keys"><code>keys()</code></a></p>
+<p>See: <a href="#keys"><code>keys()</code></a>, <a href="#values"><code>values()</code></a></p>
 
 <h3>Callback arguments</h3>
 
@@ -76,9 +74,9 @@ console.log(keys);   // ['foo', 'bar', 'lorem']
 <p>Returns an array of all own enumerable properties found upon a given object.
 It will use the native <code>Object.keys</code> if present.</p>
 
-<p>Notice that it won't return properties from the prototype.</p>
+<p>PS: it won't return properties from the prototype.</p>
 
-<p>See: <a href="#forIn"><code>forIn()</code></a></p>
+<p>See: <a href="#forIn"><code>forIn()</code></a>, <a href="#values"><code>values()</code></a></p>
 
 <pre class="brush:js">
 var obj = {
@@ -116,31 +114,13 @@ mixIn(a, b);     // {foo: "bar", lorem: 123}
 console.log(a);  // {foo: "bar", lorem: 123}
 </pre>
 
-<h2>keys(obj):Array <a href="#keys" id="keys" class="deep-link">#</a></h2>
-
-<p>Returns an array of all own enumerable properties found upon a given object.
-It will use the native <code>Object.keys</code> if present.</p>
-
-<p>Notice that it won't return properties from the prototype.</p>
-
-<p>See: <a href="#forIn"><code>forIn()</code></a></p>
-
-<pre class="brush:js">
-var obj = {
-    foo : 1,
-    bar : 2,
-    lorem : 3
-};
-keys(obj); // ['foo', 'bar', 'lorem']
-</pre>
-
 <h2>values(obj):Array <a href="#values" id="values" class="deep-link">#</a></h2>
 
 <p>Returns an array of all own enumerable properties values found upon a given object.</p>
 
-<p>Notice that it won't return properties from the prototype.</p>
+<p>PS: it won't return properties from the prototype.</p>
 
-<p>See: <a href="#forIn"><code>forIn()</code></a></p>
+<p>See: <a href="#forIn"><code>forIn()</code></a>, <a href="#keys"><code>keys()</code></a></p>
 
 <pre class="brush:js">
 var obj = {
