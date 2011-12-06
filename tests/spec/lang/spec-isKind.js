@@ -4,7 +4,6 @@ define(['src/lang/isKind'], function (isKind) {
 
         it('should check kind of value', function () {
 
-            expect( isKind(arguments, 'Arguments') ).toBe( true );
             expect( isKind([1, 'foo'], 'Array') ).toBe( true );
             expect( isKind(false, 'Boolean') ).toBe( true );
             expect( isKind(true, 'Boolean') ).toBe( true );
