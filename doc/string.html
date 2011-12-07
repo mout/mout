@@ -27,13 +27,16 @@
 <li><a href="#crop">crop()</a></li>
 <li><a href="#hyphenate">hyphenate()</a></li>
 <li><a href="#lowerCase">lowerCase()</a></li>
+<li><a href="#lpad">lpad()</a></li>
 <li><a href="#ltrim">ltrim()</a></li>
 <li><a href="#makePath">makePath()</a></li>
 <li><a href="#pascalCase">pascalCase()</a></li>
 <li><a href="#properCase">properCase()</a></li>
 <li><a href="#removeNonASCII">removeNonASCII()</a></li>
 <li><a href="#removeNonWord">removeNonWord()</a></li>
+<li><a href="#repeat">repeat()</a></li>
 <li><a href="#replaceAccents">replaceAccents()</a></li>
+<li><a href="#rpad">rpad()</a></li>
 <li><a href="#rtrim">rtrim()</a></li>
 <li><a href="#sentenceCase">sentenceCase()</a></li>
 <li><a href="#stripHtmlTags">stripHtmlTags()</a></li>
@@ -93,6 +96,21 @@ hyphenate('loremIpsum');                  // "lorem-ipsum"
 (undefined).toLowerCase(); // Error!
 lowerCase(null);           // ""
 lowerCase(undefined);      // ""
+</pre>
+
+<h2>lpad(str, minLength[, char]):String <a href="#lpad" id="lpad" class="deep-link">#</a></h2>
+
+<p>Pad string from left with <code>char</code> if its' length is smaller than <code>minLen</code>.</p>
+
+<p>See: <a href="#rpad"><code>rpad()</code></a></p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+lpad('a', 5);        // "    a"
+lpad('a', 5, '-');   // "----a"
+lpad('abc', 3, '-'); // "abc"
+lpad('abc', 4, '-'); // "-abc"
 </pre>
 
 <h2>ltrim(str):String <a href="#ltrim" id="ltrim" class="deep-link">#</a></h2>
@@ -164,6 +182,18 @@ var str = 'lorem ~!@#$%^&*()_+`-={}[]|\\:";\'/?><., ipsum';
 removeNonWord(str); // "lorem - ipsum"
 </pre>
 
+<h2>repeat(str, n):String <a href="#repeat" id="repeat" class="deep-link">#</a></h2>
+
+<p>Repeat string n-times.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+repeat('a', 3);  // "aaa"
+repeat('bc', 2); // "bcbc"
+repeat('a', 0);  // ""
+</pre>
+
 <h2>replaceAccents(str):String <a href="#replaceAccents" id="replaceAccents" class="deep-link">#</a></h2>
 
 <p>Replaces all accented chars with regular ones.</p>
@@ -174,6 +204,21 @@ removeNonWord(str); // "lorem - ipsum"
 
 <pre class="brush:js">
 replaceAccents('spéçïãl çhârs'); // "special chars"
+</pre>
+
+<h2>rpad(str, minLength[, char]):String <a href="#rpad" id="rpad" class="deep-link">#</a></h2>
+
+<p>Pad string from right with <code>char</code> if its' length is smaller than <code>minLen</code>.</p>
+
+<p>See: <a href="#lpad"><code>lpad()</code></a></p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+rpad('a', 5);        // "a    "
+rpad('a', 5, '-');   // "a----"
+rpad('abc', 3, '-'); // "abc"
+rpad('abc', 4, '-'); // "abc-"
 </pre>
 
 <h2>rtrim(str):String <a href="#rtrim" id="rtrim" class="deep-link">#</a></h2>

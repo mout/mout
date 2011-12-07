@@ -59,6 +59,23 @@ lowerCase(undefined);      // ""
 
 
 
+## lpad(str, minLength[, char]):String
+
+Pad string from left with `char` if its' length is smaller than `minLen`.
+
+See: [`rpad()`](#rpad)
+
+### Example
+
+```js
+lpad('a', 5);        // "    a"
+lpad('a', 5, '-');   // "----a"
+lpad('abc', 3, '-'); // "abc"
+lpad('abc', 4, '-'); // "-abc"
+```
+
+
+
 ## ltrim(str):String
 
 Remove white-spaces from beginning of string.
@@ -140,6 +157,20 @@ removeNonWord(str); // "lorem - ipsum"
 
 
 
+## repeat(str, n):String
+
+Repeat string n-times.
+
+### Example
+
+```js
+repeat('a', 3);  // "aaa"
+repeat('bc', 2); // "bcbc"
+repeat('a', 0);  // ""
+```
+
+
+
 ## replaceAccents(str):String
 
 Replaces all accented chars with regular ones.
@@ -150,6 +181,23 @@ Replaces all accented chars with regular ones.
 
 ```js
 replaceAccents('spéçïãl çhârs'); // "special chars"
+```
+
+
+
+## rpad(str, minLength[, char]):String
+
+Pad string from right with `char` if its' length is smaller than `minLen`.
+
+See: [`lpad()`](#lpad)
+
+### Example
+
+```js
+rpad('a', 5);        // "a    "
+rpad('a', 5, '-');   // "a----"
+rpad('abc', 3, '-'); // "abc"
+rpad('abc', 4, '-'); // "abc-"
 ```
 
 
