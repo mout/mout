@@ -34,7 +34,10 @@ crop('lorem ipsum dolor', 10, '+'); // "lorem+"
 
 ## hyphenate(str):String
 
-Replaces spaces with hyphens, split camelCase text, remove non-word chars, remove accents and convert to lower case.
+Replaces spaces with hyphens, split camelCase text, remove non-word chars,
+remove accents and convert to lower case.
+
+See: [`toSlug()`](#toSlug)
 
 ```js
 hyphenate(' %# lorem ipsum  ? $  dolor'); // "lorem-ipsum-dolor"
@@ -223,7 +226,8 @@ UPPERCASE first char of each sentence and lowercase other chars.
 ### Example
 
 ```js
-sentenceCase('Lorem IpSum DoLOr. maeCeNnas Ullamcor.'); // "Lorem ipsum dolor. Maecennas ullamcor."
+var str = 'Lorem IpSum DoLOr. maeCeNnas Ullamcor.';
+sentenceCase(str); // "Lorem ipsum dolor. Maecennas ullamcor."
 ```
 
 
@@ -235,7 +239,8 @@ Remove HTML/XML tags from string.
 ### Example
 
 ```js
-stripHtmlTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // "lorem ipsum"
+var str = '<p><em>lorem</em> <strong>ipsum</strong></p>';
+stripHtmlTags(str); // "lorem ipsum"
 ```
 
 
@@ -248,10 +253,13 @@ with hyphens.
 Only difference from [string/hyphenate](#hyphenate) is that it doesn't split
 camelCase text.
 
+See: [`hyphenate()`](#hyphenate)
+
 ### Example
 
 ```js
-toSlug('loremIpsum dolor spéçïãl chârs'); // "loremipsum-dolor-special-chars"
+var str = 'loremIpsum dolor spéçïãl chârs';
+toSlug(str); // "loremipsum-dolor-special-chars"
 ```
 
 

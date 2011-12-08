@@ -77,7 +77,10 @@ crop('lorem ipsum dolor', 10, '+'); // "lorem+"
 
 <h2>hyphenate(str):String <a href="#hyphenate" id="hyphenate" class="deep-link">#</a></h2>
 
-<p>Replaces spaces with hyphens, split camelCase text, remove non-word chars, remove accents and convert to lower case.</p>
+<p>Replaces spaces with hyphens, split camelCase text, remove non-word chars,
+remove accents and convert to lower case.</p>
+
+<p>See: <a href="#toSlug"><code>toSlug()</code></a></p>
 
 <pre class="brush:js">
 hyphenate(' %# lorem ipsum  ? $  dolor'); // "lorem-ipsum-dolor"
@@ -240,7 +243,8 @@ rtrim('   lorem ipsum   '); // "   lorem ipsum"
 <h3>Example</h3>
 
 <pre class="brush:js">
-sentenceCase('Lorem IpSum DoLOr. maeCeNnas Ullamcor.'); // "Lorem ipsum dolor. Maecennas ullamcor."
+var str = 'Lorem IpSum DoLOr. maeCeNnas Ullamcor.';
+sentenceCase(str); // "Lorem ipsum dolor. Maecennas ullamcor."
 </pre>
 
 <h2>stripHtmlTags(str):String <a href="#stripHtmlTags" id="stripHtmlTags" class="deep-link">#</a></h2>
@@ -250,7 +254,8 @@ sentenceCase('Lorem IpSum DoLOr. maeCeNnas Ullamcor.'); // "Lorem ipsum dolor. M
 <h3>Example</h3>
 
 <pre class="brush:js">
-stripHtmlTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // "lorem ipsum"
+var str = '<p><em>lorem</em> <strong>ipsum</strong></p>';
+stripHtmlTags(str); // "lorem ipsum"
 </pre>
 
 <h2>toSlug(str):String <a href="#toSlug" id="toSlug" class="deep-link">#</a></h2>
@@ -261,10 +266,13 @@ with hyphens.</p>
 <p>Only difference from <a href="#hyphenate">string/hyphenate</a> is that it doesn't split
 camelCase text.</p>
 
+<p>See: <a href="#hyphenate"><code>hyphenate()</code></a></p>
+
 <h3>Example</h3>
 
 <pre class="brush:js">
-toSlug('loremIpsum dolor spéçïãl chârs'); // "loremipsum-dolor-special-chars"
+var str = 'loremIpsum dolor spéçïãl chârs';
+toSlug(str); // "loremipsum-dolor-special-chars"
 </pre>
 
 <h2>trim(str):String <a href="#trim" id="trim" class="deep-link">#</a></h2>
