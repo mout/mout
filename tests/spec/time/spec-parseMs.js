@@ -1,10 +1,10 @@
-define(['src/time/split'], function (split) {
+define(['src/time/parseMs'], function (parseMs) {
 
-    describe('time/split()', function(){
+    describe('time/parseMs()', function(){
 
         it('should handle milliseconds to seconds', function(){
 
-            var time = split(999);
+            var time = parseMs(999);
 
             expect(time.milliseconds).toBe(999);
             expect(time.seconds).toBe(0);
@@ -13,7 +13,7 @@ define(['src/time/split'], function (split) {
             expect(time.days).toBe(0);
 
 
-            time = split(1000);
+            time = parseMs(1000);
 
             expect(time.milliseconds).toBe(0);
             expect(time.seconds).toBe(1);
@@ -22,7 +22,7 @@ define(['src/time/split'], function (split) {
             expect(time.days).toBe(0);
 
 
-            time = split(1001);
+            time = parseMs(1001);
 
             expect(time.milliseconds).toBe(1);
             expect(time.seconds).toBe(1);
@@ -35,7 +35,7 @@ define(['src/time/split'], function (split) {
 
         it('should handle seconds to minutes', function(){
 
-            var time = split(59999);
+            var time = parseMs(59999);
 
             expect(time.milliseconds).toBe(999);
             expect(time.seconds).toBe(59);
@@ -44,7 +44,7 @@ define(['src/time/split'], function (split) {
             expect(time.days).toBe(0);
 
 
-            time = split(60000);
+            time = parseMs(60000);
 
             expect(time.milliseconds).toBe(0);
             expect(time.seconds).toBe(0);
@@ -53,7 +53,7 @@ define(['src/time/split'], function (split) {
             expect(time.days).toBe(0);
 
 
-            time = split(61000);
+            time = parseMs(61000);
 
             expect(time.milliseconds).toBe(0);
             expect(time.seconds).toBe(1);
@@ -66,7 +66,7 @@ define(['src/time/split'], function (split) {
 
         it('should handle minutes to hours', function(){
 
-            var time = split(3599999);
+            var time = parseMs(3599999);
 
             expect(time.milliseconds).toBe(999);
             expect(time.seconds).toBe(59);
@@ -75,7 +75,7 @@ define(['src/time/split'], function (split) {
             expect(time.days).toBe(0);
 
 
-            time = split(3600000);
+            time = parseMs(3600000);
 
             expect(time.milliseconds).toBe(0);
             expect(time.seconds).toBe(0);
@@ -84,7 +84,7 @@ define(['src/time/split'], function (split) {
             expect(time.days).toBe(0);
 
 
-            time = split(3660000);
+            time = parseMs(3660000);
 
             expect(time.milliseconds).toBe(0);
             expect(time.seconds).toBe(0);
@@ -97,7 +97,7 @@ define(['src/time/split'], function (split) {
 
         it('should handle hours to days', function(){
 
-            var time = split(86399999);
+            var time = parseMs(86399999);
 
             expect(time.milliseconds).toBe(999);
             expect(time.seconds).toBe(59);
@@ -106,7 +106,7 @@ define(['src/time/split'], function (split) {
             expect(time.days).toBe(0);
 
 
-            time = split(86400000);
+            time = parseMs(86400000);
 
             expect(time.milliseconds).toBe(0);
             expect(time.seconds).toBe(0);
@@ -115,7 +115,7 @@ define(['src/time/split'], function (split) {
             expect(time.days).toBe(1);
 
 
-            time = split(90000000);
+            time = parseMs(90000000);
 
             expect(time.milliseconds).toBe(0);
             expect(time.seconds).toBe(0);

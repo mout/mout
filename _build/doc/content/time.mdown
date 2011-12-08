@@ -3,7 +3,7 @@
 Utilities for time manipulation.
 
 
-## split(ms):Object
+## parseMs(ms):Object
 
 Parse timestamp (milliseconds) into an object `{milliseconds:number,
 seconds:number, minutes:number, hours:number, days:number}`.
@@ -11,7 +11,8 @@ seconds:number, minutes:number, hours:number, days:number}`.
 ### Example
 
 ```js
-split(2348765454); // {days: 27, hours: 4, minutes: 26, seconds:5, milliseconds: 454}
+// {days:27, hours:4, minutes:26, seconds:5, milliseconds:454}
+parseMs(2348765454);
 ```
 
 

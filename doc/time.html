@@ -23,11 +23,11 @@
 <h2>Table of Contents <a href="#toc" name="toc" class="deep-link">#</a></h2>
 
 <ul>
-<li><a href="#split">split()</a></li>
+<li><a href="#parseMs">parseMs()</a></li>
 <li><a href="#toTimeString">toTimeString()</a></li>
 </ul>
 
-<h2>split(ms):Object <a href="#split" id="split" class="deep-link">#</a></h2>
+<h2>parseMs(ms):Object <a href="#parseMs" id="parseMs" class="deep-link">#</a></h2>
 
 <p>Parse timestamp (milliseconds) into an object <code>{milliseconds:number,
 seconds:number, minutes:number, hours:number, days:number}</code>.</p>
@@ -35,7 +35,8 @@ seconds:number, minutes:number, hours:number, days:number}</code>.</p>
 <h3>Example</h3>
 
 <pre class="brush:js">
-split(2348765454); // {days: 27, hours: 4, minutes: 26, seconds:5, milliseconds: 454}
+// {days:27, hours:4, minutes:26, seconds:5, milliseconds:454}
+parseMs(2348765454);
 </pre>
 
 <h2>toTimeString(ms):String <a href="#toTimeString" id="toTimeString" class="deep-link">#</a></h2>

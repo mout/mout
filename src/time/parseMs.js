@@ -2,12 +2,10 @@ define(['../math/countSteps'], function(countSteps){
 
     /**
      * Parse timestamp into an object.
-     * @param {number} ms   Milliseconds
-     * @return {{milliseconds:number, seconds:number, minutes:number, hours:number, days:number)}
      * @author Miller Medeiros
-     * @version 0.2.0 (2011/10/21)
+     * @version 0.1.0 (2011/12/08)
      */
-    function split(ms){
+    function parseMs(ms){
         return {
             milliseconds : countSteps(ms, 1, 1000),
             seconds      : countSteps(ms, 1000, 60),
@@ -17,5 +15,5 @@ define(['../math/countSteps'], function(countSteps){
         };
     }
 
-    return split;
+    return parseMs;
 });
