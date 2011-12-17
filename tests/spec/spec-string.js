@@ -3,6 +3,7 @@
 define([
     'string/spec-camelCase',
     'string/spec-crop',
+    'string/spec-escapeRegExp',
     'string/spec-hyphenate',
     'string/spec-lowerCase',
     'string/spec-lpad',

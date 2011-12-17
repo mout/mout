@@ -32,6 +32,19 @@ crop('lorem ipsum dolor', 10, '+'); // "lorem+"
 
 
 
+## escapeRegExp(str):String
+
+Escape special chars to be used as literals in RegExp constructors.
+
+### Example
+
+```js
+str = escapeRegExp('[lorem.ipsum]'); // "\\[lorem\\.ipsum\\]"
+reg = new RegExp(str);               // /\[lorem\.ipsum\]/
+```
+
+
+
 ## hyphenate(str):String
 
 Replaces spaces with hyphens, split camelCase text, remove non-word chars,

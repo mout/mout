@@ -25,6 +25,7 @@
 <ul>
 <li><a href="#camelCase">camelCase()</a></li>
 <li><a href="#crop">crop()</a></li>
+<li><a href="#escapeRegExp">escapeRegExp()</a></li>
 <li><a href="#hyphenate">hyphenate()</a></li>
 <li><a href="#lowerCase">lowerCase()</a></li>
 <li><a href="#lpad">lpad()</a></li>
@@ -73,6 +74,17 @@ camelCase('lorem ipsum dolor'); // "loremIpsumDolor"
 <pre class="brush:js">
 crop('lorem ipsum dolor', 10);      // "lorem..."
 crop('lorem ipsum dolor', 10, '+'); // "lorem+"
+</pre>
+
+<h2>escapeRegExp(str):String <a href="#escapeRegExp" id="escapeRegExp" class="deep-link">#</a></h2>
+
+<p>Escape special chars to be used as literals in RegExp constructors.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+str = escapeRegExp('[lorem.ipsum]'); // "\\[lorem\\.ipsum\\]"
+reg = new RegExp(str);               // /\[lorem\.ipsum\]/
 </pre>
 
 <h2>hyphenate(str):String <a href="#hyphenate" id="hyphenate" class="deep-link">#</a></h2>
