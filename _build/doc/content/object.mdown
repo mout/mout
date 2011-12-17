@@ -3,7 +3,7 @@
 Object utilities.
 
 
-## forIn(obj, callback[, thisObj])
+## forOwn(obj, callback[, thisObj])
 
 Iterate over all own properties from an Object, similar to Array/forEach.
 
@@ -32,7 +32,7 @@ var obj = {
 var result;
 var keys = [];
 
-forIn(obj, function(val, key, o){
+forOwn(obj, function(val, key, o){
     result += val;
     keys.push(key);
 });
@@ -50,7 +50,7 @@ It will use the native `Object.keys` if present.
 
 PS: it won't return properties from the prototype.
 
-See: [`forIn()`](#forIn), [`values()`](#values)
+See: [`forOwn()`](#forOwn), [`values()`](#values)
 
 ```js
 var obj = {
@@ -96,7 +96,7 @@ Returns an array of all own enumerable properties values found upon a given obje
 
 PS: it won't return properties from the prototype.
 
-See: [`forIn()`](#forIn), [`keys()`](#keys)
+See: [`forOwn()`](#forOwn), [`keys()`](#keys)
 
 ```js
 var obj = {

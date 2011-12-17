@@ -1,6 +1,6 @@
-define(['src/object/forIn'], function (forIn) {
+define(['src/object/forOwn'], function (forOwn) {
 
-    describe('object/forIn()', function () {
+    describe('object/forOwn()', function () {
 
         it('should loop through all properties', function () {
 
@@ -13,7 +13,7 @@ define(['src/object/forIn'], function (forIn) {
             var keys = [],
                 vals = [];
 
-            forIn(obj, function(val, key, o){
+            forOwn(obj, function(val, key, o){
                 expect(o).toBe(obj);
                 keys.push(key);
                 vals.push(val);
@@ -47,7 +47,7 @@ define(['src/object/forIn'], function (forIn) {
             var keys = [],
                 vals = [];
 
-            forIn(obj, function(val, key, o){
+            forOwn(obj, function(val, key, o){
                 expect(o).toBe(obj);
                 keys.push(key);
                 vals.push(val);
@@ -79,13 +79,13 @@ define(['src/object/forIn'], function (forIn) {
 
             var count = 0;
 
-            forIn(obj, function(val, key, o){
+            forOwn(obj, function(val, key, o){
                 expect(o).toBe(obj);
                 expect(this).toBe(window);
                 count++;
             });
 
-            forIn(obj, function(val, key, o){
+            forOwn(obj, function(val, key, o){
                 expect(o).toBe(obj);
                 expect(this).toBe(obj);
                 count++;
@@ -107,7 +107,7 @@ define(['src/object/forIn'], function (forIn) {
             var keys = [],
                 vals = [];
 
-            forIn(obj, function(val, key, o){
+            forOwn(obj, function(val, key, o){
                 expect(o).toBe(obj);
                 keys.push(key);
                 vals.push(val);

@@ -2,8 +2,7 @@ define(['../lang/isObject'], function (isObject) {
 
     var owns = Object.prototype.hasOwnProperty,
         _hasDontEnumBug,
-        _dontEnums,
-        _dontEnumsLength;
+        _dontEnums;
 
     function checkDontEnum(){
         _dontEnums = [
@@ -16,7 +15,6 @@ define(['../lang/isObject'], function (isObject) {
                 'constructor'
             ];
 
-        _dontEnumsLength = _dontEnums.length;
         _hasDontEnumBug = true;
 
         for (var key in {'toString': null}) {
@@ -29,24 +27,25 @@ define(['../lang/isObject'], function (isObject) {
      * Enum bug on IE.
      * based on: http://whattheheadsaid.com/2010/10/a-safer-object-keys-compatibility-implementation
      * @author Miller Medeiros
-     * @version 0.1.0 (2011/12/05)
+     * @version 0.1.0 (2011/12/17)
      */
-    function forIn(obj, fn, thisObj){
+    function forOwn(obj, fn, thisObj){
+        var key, i = 0;
 
         if (!isObject(obj)) {
-            throw new TypeError('forIn called on a non-object');
+            throw new TypeError('forOwn called on a non-object');
         }
 
         //post-pone check till needed
         if (_hasDontEnumBug == null) checkDontEnum();
 
-        for (var key in obj) {
+        for (key in obj) {
             exec(fn, obj, key, thisObj);
         }
 
         if (_hasDontEnumBug) {
-            for (var i = 0; i < _dontEnumsLength; i++) {
-                exec(fn, obj, _dontEnums[i], thisObj);
+            while (key = _dontEnums[i++]) {
+                exec(fn, obj, key, thisObj);
             }
         }
     }
@@ -57,6 +56,6 @@ define(['../lang/isObject'], function (isObject) {
         }
     }
 
-    return forIn;
+    return forOwn;
 
 });

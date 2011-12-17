@@ -23,13 +23,13 @@
 <h2>Table of Contents <a href="#toc" name="toc" class="deep-link">#</a></h2>
 
 <ul>
-<li><a href="#forIn">forIn()</a></li>
+<li><a href="#forOwn">forOwn()</a></li>
 <li><a href="#keys">keys()</a></li>
 <li><a href="#mixIn">mixIn()</a></li>
 <li><a href="#values">values()</a></li>
 </ul>
 
-<h2>forIn(obj, callback[, thisObj]) <a href="#forIn" id="forIn" class="deep-link">#</a></h2>
+<h2>forOwn(obj, callback[, thisObj]) <a href="#forOwn" id="forOwn" class="deep-link">#</a></h2>
 
 <p>Iterate over all own properties from an Object, similar to Array/forEach.</p>
 
@@ -60,7 +60,7 @@ var obj = {
 var result;
 var keys = [];
 
-forIn(obj, function(val, key, o){
+forOwn(obj, function(val, key, o){
     result += val;
     keys.push(key);
 });
@@ -76,7 +76,7 @@ It will use the native <code>Object.keys</code> if present.</p>
 
 <p>PS: it won't return properties from the prototype.</p>
 
-<p>See: <a href="#forIn"><code>forIn()</code></a>, <a href="#values"><code>values()</code></a></p>
+<p>See: <a href="#forOwn"><code>forOwn()</code></a>, <a href="#values"><code>values()</code></a></p>
 
 <pre class="brush:js">
 var obj = {
@@ -120,7 +120,7 @@ console.log(a);  // {foo: "bar", lorem: 123}
 
 <p>PS: it won't return properties from the prototype.</p>
 
-<p>See: <a href="#forIn"><code>forIn()</code></a>, <a href="#keys"><code>keys()</code></a></p>
+<p>See: <a href="#forOwn"><code>forOwn()</code></a>, <a href="#keys"><code>keys()</code></a></p>
 
 <pre class="brush:js">
 var obj = {
