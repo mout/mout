@@ -31,6 +31,7 @@
 <li><a href="#lpad">lpad()</a></li>
 <li><a href="#ltrim">ltrim()</a></li>
 <li><a href="#makePath">makePath()</a></li>
+<li><a href="#normalizeLineBreaks">normalizeLineBreaks()</a></li>
 <li><a href="#pascalCase">pascalCase()</a></li>
 <li><a href="#properCase">properCase()</a></li>
 <li><a href="#removeNonASCII">removeNonASCII()</a></li>
@@ -150,6 +151,25 @@ it will be ignored from resulting path. It will also remove duplicate "/".</p>
 <pre class="brush:js">
 makePath('lorem', 'ipsum', null, 'dolor'); // "lorem/ipsum/dolor"
 makePath('foo///bar/');                    // "foo/bar/"
+</pre>
+
+<h2>normalizeLineBreaks(str, [lineBreak]):String <a href="#normalizeLineBreaks" id="normalizeLineBreaks" class="deep-link">#</a></h2>
+
+<p>Normalize line breaks to a single format. Defaults to Unix <code>\n</code>.</p>
+
+<p>It handles DOS (<code>\r\n</code>), Mac (<code>\r</code>) and Unix (<code>\n</code>) formats.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+// "foo\nbar\nlorem\nipsum"
+normalizeLineBreaks('foo\nbar\r\nlorem\ripsum');
+
+// "foo\rbar\rlorem\ripsum"
+normalizeLineBreaks('foo\nbar\r\nlorem\ripsum', '\r');
+
+// "foo bar lorem ipsum"
+normalizeLineBreaks('foo\nbar\r\nlorem\ripsum', ' ');
 </pre>
 
 <h2>pascalCase(str):String <a href="#pascalCase" id="pascalCase" class="deep-link">#</a></h2>

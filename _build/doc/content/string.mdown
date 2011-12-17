@@ -120,6 +120,27 @@ makePath('foo///bar/');                    // "foo/bar/"
 
 
 
+## normalizeLineBreaks(str, [lineBreak]):String
+
+Normalize line breaks to a single format. Defaults to Unix `\n`.
+
+It handles DOS (`\r\n`), Mac (`\r`) and Unix (`\n`) formats.
+
+### Example
+
+```js
+// "foo\nbar\nlorem\nipsum"
+normalizeLineBreaks('foo\nbar\r\nlorem\ripsum');
+
+// "foo\rbar\rlorem\ripsum"
+normalizeLineBreaks('foo\nbar\r\nlorem\ripsum', '\r');
+
+// "foo bar lorem ipsum"
+normalizeLineBreaks('foo\nbar\r\nlorem\ripsum', ' ');
+```
+
+
+
 ## pascalCase(str):String
 
 Convert string to "PascalCase" text.

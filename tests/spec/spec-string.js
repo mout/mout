@@ -9,6 +9,7 @@ define([
     'string/spec-lpad',
     'string/spec-ltrim',
     'string/spec-makePath',
+    'string/spec-normalizeLineBreaks',
     'string/spec-pascalCase',
     'string/spec-properCase',
     'string/spec-removeNonASCII',

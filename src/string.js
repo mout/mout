@@ -11,6 +11,7 @@ return {
     'lpad' : require('./string/lpad'),
     'ltrim' : require('./string/ltrim'),
     'makePath' : require('./string/makePath'),
+    'normalizeLineBreaks' : require('./string/normalizeLineBreaks'),
     'pascalCase' : require('./string/pascalCase'),
     'properCase' : require('./string/properCase'),
     'removeNonASCII' : require('./string/removeNonASCII'),
