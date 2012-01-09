@@ -3,6 +3,21 @@
 Number utilities.
 
 
+
+## currencyFormat(val, decimalSeparator, thousandsSeparator, nDecimalDigits):String
+
+Format a number as currency.
+
+### Example:
+
+```js
+currencyFormat(1000);              // "1,000.00"
+currencyFormat(1000, ',', '.');    // "1.000,00"
+currencyFormat(1000, ',', '.', 3); // "1.000,000"
+```
+
+
+
 ## enforcePrecision(val, nDecimalDigits):Number
 
 Enforce a specific amount of decimal digits and also fix floating point

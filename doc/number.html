@@ -23,6 +23,7 @@
 <h2>Table of Contents <a href="#toc" name="toc" class="deep-link">#</a></h2>
 
 <ul>
+<li><a href="#currencyFormat">currencyFormat()</a></li>
 <li><a href="#enforcePrecision">enforcePrecision()</a></li>
 <li><a href="#MAX_INT">MAX_INT</a></li>
 <li><a href="#MAX_UINT">MAX_UINT</a></li>
@@ -35,6 +36,18 @@
 <li><a href="#toUInt">toUInt()</a></li>
 <li><a href="#toUInt31">toUInt31()</a></li>
 </ul>
+
+<h2>currencyFormat(val, decimalSeparator, thousandsSeparator, nDecimalDigits):String <a href="#currencyFormat" id="currencyFormat" class="deep-link">#</a></h2>
+
+<p>Format a number as currency.</p>
+
+<h3>Example:</h3>
+
+<pre class="brush:js">
+currencyFormat(1000);              // "1,000.00"
+currencyFormat(1000, ',', '.');    // "1.000,00"
+currencyFormat(1000, ',', '.', 3); // "1.000,000"
+</pre>
 
 <h2>enforcePrecision(val, nDecimalDigits):Number <a href="#enforcePrecision" id="enforcePrecision" class="deep-link">#</a></h2>
 
