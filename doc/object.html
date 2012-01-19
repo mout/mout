@@ -24,6 +24,7 @@
 
 <ul>
 <li><a href="#forOwn">forOwn()</a></li>
+<li><a href="#hasOwn">hasOwn()</a></li>
 <li><a href="#keys">keys()</a></li>
 <li><a href="#mixIn">mixIn()</a></li>
 <li><a href="#values">values()</a></li>
@@ -57,7 +58,7 @@ var obj = {
     lorem : 3
 };
 
-var result;
+var result = 0;
 var keys = [];
 
 forOwn(obj, function(val, key, o){
@@ -67,6 +68,24 @@ forOwn(obj, function(val, key, o){
 
 console.log(result); // 6
 console.log(keys);   // ['foo', 'bar', 'lorem']
+</pre>
+
+<h2>hasOwn(obj, propName):Boolean <a href="#hasOwn" id="hasOwn" class="deep-link">#</a></h2>
+
+<p>Safer <code>Object.hasOwnProperty</code>. Returns a boolean indicating whether the object
+has the specified property.</p>
+
+<pre class="brush:js">
+var obj = {
+    foo: 1,
+    hasOwnProperty : 'bar'
+};
+
+obj.hasOwnProperty('foo'); // ERROR! hasOwnProperty is not a function
+
+hasOwn(obj, 'foo');            // true
+hasOwn(obj, 'hasOwnProperty'); // true
+hasOwn(obj, 'toString');       // false
 </pre>
 
 <h2>keys(obj):Array <a href="#keys" id="keys" class="deep-link">#</a></h2>

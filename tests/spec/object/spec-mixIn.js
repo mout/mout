@@ -32,5 +32,22 @@ define(['src/object/mixIn'], function (mixIn) {
             expect( mixIn({}, b1, b2, {}) ).toEqual(b1_2);
         });
 
+        it('should work even if property is named hasOwnProperty', function(){
+            expect( mixIn(
+                {
+                    hasOwnProperty: 'foo'
+                },
+                {
+                    a:1,
+                    b:2,
+                    hasOwnProperty: 'bar'
+                }
+            ) ).toEqual({
+                hasOwnProperty: 'bar',
+                a: 1,
+                b: 2
+            });
+        });
+
     });
 });

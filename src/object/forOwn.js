@@ -1,7 +1,6 @@
-define(['../lang/isObject'], function (isObject) {
+define(['../lang/isObject', './hasOwn'], function (isObject, hasOwn) {
 
-    var owns = Object.prototype.hasOwnProperty,
-        _hasDontEnumBug,
+    var _hasDontEnumBug,
         _dontEnums;
 
     function checkDontEnum(){
@@ -27,7 +26,7 @@ define(['../lang/isObject'], function (isObject) {
      * Enum bug on IE.
      * based on: http://whattheheadsaid.com/2010/10/a-safer-object-keys-compatibility-implementation
      * @author Miller Medeiros
-     * @version 0.1.0 (2011/12/17)
+     * @version 0.1.1 (2012/01/19)
      */
     function forOwn(obj, fn, thisObj){
         var key, i = 0;
@@ -51,7 +50,7 @@ define(['../lang/isObject'], function (isObject) {
     }
 
     function exec(fn, obj, key, thisObj){
-        if (owns.call(obj, key)) {
+        if (hasOwn(obj, key)) {
             fn.call(thisObj, obj[key], key, obj);
         }
     }

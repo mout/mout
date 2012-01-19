@@ -29,7 +29,7 @@ var obj = {
     lorem : 3
 };
 
-var result;
+var result = 0;
 var keys = [];
 
 forOwn(obj, function(val, key, o){
@@ -39,6 +39,26 @@ forOwn(obj, function(val, key, o){
 
 console.log(result); // 6
 console.log(keys);   // ['foo', 'bar', 'lorem']
+```
+
+
+
+## hasOwn(obj, propName):Boolean
+
+Safer `Object.hasOwnProperty`. Returns a boolean indicating whether the object
+has the specified property.
+
+```js
+var obj = {
+    foo: 1,
+    hasOwnProperty : 'bar'
+};
+
+obj.hasOwnProperty('foo'); // ERROR! hasOwnProperty is not a function
+
+hasOwn(obj, 'foo');            // true
+hasOwn(obj, 'hasOwnProperty'); // true
+hasOwn(obj, 'toString');       // false
 ```
 
 
