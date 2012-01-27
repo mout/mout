@@ -126,3 +126,22 @@ var obj = {
 };
 values(obj); // [1, 2, 3]
 ```
+
+
+
+## size(obj):Number
+
+Returns the count of own enumerable properties found upon a given object.
+
+PS: it won't return properties from the prototype.
+
+See: [`forOwn()`](#forOwn), [`keys()`](#keys)
+
+```js
+var obj = {
+    foo : 1,
+    bar : 2,
+    lorem : 3
+};
+size(obj); // 3
+```
