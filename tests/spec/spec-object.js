@@ -5,6 +5,7 @@ define([
     'object/spec-hasOwn',
     'object/spec-keys',
     'object/spec-mixIn',
+    'object/spec-size',
     'object/spec-values'
 ], function(){
     //noop
