@@ -7,6 +7,7 @@ return {
     'hasOwn' : require('./object/hasOwn'),
     'keys' : require('./object/keys'),
     'mixIn' : require('./object/mixIn'),
+    'size' : require('./object/size'),
     'values' : require('./object/values')
 };
 
