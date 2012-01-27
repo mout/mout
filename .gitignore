@@ -2,7 +2,6 @@
 .project
 .settings/
 
-node_modules/
 .livereload
 
 .DS_Store?
