@@ -5,7 +5,7 @@ define(['./indexOf'], function (indexOf) {
      * @author André Cruz
      * @version 0.1.0 (2012/01/28)
      */
-    function include(arr, val) {
+    function insert(arr, val) {
         if (indexOf(arr, val) === -1) {
             arr.push(val);
             return true;
@@ -13,5 +13,5 @@ define(['./indexOf'], function (indexOf) {
             return false;
         }
     }
-    return include;
+    return insert;
 });

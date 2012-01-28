@@ -266,17 +266,17 @@ xor(a, b); // ['a', 'b', 'c']
 
 
 
-## include(arr, value):Boolean
+## insert(arr, value):Boolean
 
-Push a value into the array if it doesn't exist.
+Push a value into the array only if it doesn't exist.
 Return true if it was pushed, false otherwise.
 
 See: [`remove()`](#remove), [`removeAll()`](#removeAll)
 
 ```js
 var a = ['a', 'b'];
-include(a, 'a'); // false, it wasn't pushed
-include(a, 'c'); // true, it was pushed
+insert(a, 'a'); // false, it wasn't pushed
+insert(a, 'c'); // true, it was pushed
 ```
 
 
