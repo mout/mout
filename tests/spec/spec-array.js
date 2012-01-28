@@ -7,6 +7,7 @@ define([
     'array/spec-every',
     'array/spec-filter',
     'array/spec-forEach',
+    'array/spec-include',
     'array/spec-indexOf',
     'array/spec-intersection',
     'array/spec-lastIndexOf',

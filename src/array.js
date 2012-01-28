@@ -9,6 +9,7 @@ return {
     'every' : require('./array/every'),
     'filter' : require('./array/filter'),
     'forEach' : require('./array/forEach'),
+    'include' : require('./array/include'),
     'indexOf' : require('./array/indexOf'),
     'intersection' : require('./array/intersection'),
     'lastIndexOf' : require('./array/lastIndexOf'),
