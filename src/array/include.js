@@ -1,7 +1,7 @@
 define(['./indexOf'], function (indexOf) {
 
     /**
-     * Inserts item to array if not already present.
+     * Insert item into array if not already present.
      * @author André Cruz
      * @version 0.1.0 (2012/01/28)
      */
