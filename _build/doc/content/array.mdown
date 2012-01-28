@@ -84,6 +84,24 @@ more info at [MDN Array#indexOf](https://developer.mozilla.org/en/JavaScript/Ref
 
 
 
+
+## insert(arr, ...items):Number
+
+Push items into array only if they aren't contained by it. Returns the new
+`length` of the array.
+
+See: [`remove()`](#remove), [`removeAll()`](#removeAll),
+[`contains()`](#contains)
+
+```js
+var arr = ['a', 'b'];
+insert(arr, 'a');       // 2 : ['a', 'b']
+insert(arr, 'c');       // 3 : ['a', 'b', 'c']
+insert(arr, 1, 2, 'b'); // 5 : ['a', 'b', 'c', 1, 2]
+```
+
+
+
 ## intersection(...arrs):Arrays
 
 Return a new Array with elements common to all Arrays.
@@ -262,21 +280,6 @@ See: [`difference()`](#difference), [`intersection()`](#intersection)
 var a = ['a', 'b', 1];
 var b = ['c', 1];
 xor(a, b); // ['a', 'b', 'c']
-```
-
-
-
-## insert(arr, value):Boolean
-
-Push a value into the array only if it doesn't exist.
-Return true if it was pushed, false otherwise.
-
-See: [`remove()`](#remove), [`removeAll()`](#removeAll)
-
-```js
-var a = ['a', 'b'];
-insert(a, 'a'); // false, it wasn't pushed
-insert(a, 'c'); // true, it was pushed
 ```
 
 

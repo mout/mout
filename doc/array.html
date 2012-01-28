@@ -30,6 +30,7 @@
 <li><a href="#filter">filter()</a></li>
 <li><a href="#forEach">forEach()</a></li>
 <li><a href="#indexOf">indexOf()</a></li>
+<li><a href="#insert">insert()</a></li>
 <li><a href="#intersection">intersection()</a></li>
 <li><a href="#lastIndexOf">lastIndexOf()</a></li>
 <li><a href="#map">map()</a></li>
@@ -109,6 +110,21 @@ difference(a, b); // ['a', 'b']
 <p>Crossbrowser ES5 <code>Array.indexOf()</code>.</p>
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf">MDN Array#indexOf</a></p>
+
+<h2>insert(arr, ...items):Number <a href="#insert" id="insert" class="deep-link">#</a></h2>
+
+<p>Push items into array only if they aren't contained by it. Returns the new
+<code>length</code> of the array.</p>
+
+<p>See: <a href="#remove"><code>remove()</code></a>, <a href="#removeAll"><code>removeAll()</code></a>,
+<a href="#contains"><code>contains()</code></a></p>
+
+<pre class="brush:js">
+var arr = ['a', 'b'];
+insert(arr, 'a');       // 2 : ['a', 'b']
+insert(arr, 'c');       // 3 : ['a', 'b', 'c']
+insert(arr, 1, 2, 'b'); // 5 : ['a', 'b', 'c', 1, 2]
+</pre>
 
 <h2>intersection(...arrs):Arrays <a href="#intersection" id="intersection" class="deep-link">#</a></h2>
 
