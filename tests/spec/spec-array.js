@@ -8,6 +8,7 @@ define([
     'array/spec-filter',
     'array/spec-forEach',
     'array/spec-indexOf',
+    'array/spec-insert',
     'array/spec-intersection',
     'array/spec-lastIndexOf',
     'array/spec-map',

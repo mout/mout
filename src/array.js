@@ -10,6 +10,7 @@ return {
     'filter' : require('./array/filter'),
     'forEach' : require('./array/forEach'),
     'indexOf' : require('./array/indexOf'),
+    'insert' : require('./array/insert'),
     'intersection' : require('./array/intersection'),
     'lastIndexOf' : require('./array/lastIndexOf'),
     'map' : require('./array/map'),

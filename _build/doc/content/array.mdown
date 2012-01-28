@@ -266,6 +266,21 @@ xor(a, b); // ['a', 'b', 'c']
 
 
 
+## insert(arr, value):Boolean
+
+Push a value into the array only if it doesn't exist.
+Return true if it was pushed, false otherwise.
+
+See: [`remove()`](#remove), [`removeAll()`](#removeAll)
+
+```js
+var a = ['a', 'b'];
+insert(a, 'a'); // false, it wasn't pushed
+insert(a, 'c'); // true, it was pushed
+```
+
+
+
 -------------------------------------------------------------------------------
 
 For more usage examples check specs inside `/tests` folder. Unit tests are the
