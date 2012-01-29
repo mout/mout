@@ -3,14 +3,14 @@ define(['./forOwn'], function (forOwn) {
     /**
      * Get object size
      * @author André Cruz
-     * @version 0.1.0 (2012/01/19)
+     * @version 0.1.1 (2012/01/28)
      */
     function size(obj) {
-        var size = 0;
+        var count = 0;
         forOwn(obj, function(){
-            size++;
+            count++;
         });
-        return size;
+        return count;
     }
 
     return size;
