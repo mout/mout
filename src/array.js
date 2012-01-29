@@ -14,6 +14,8 @@ return {
     'intersection' : require('./array/intersection'),
     'lastIndexOf' : require('./array/lastIndexOf'),
     'map' : require('./array/map'),
+    'max' : require('./array/max'),
+    'min' : require('./array/min'),
     'range' : require('./array/range'),
     'reduce' : require('./array/reduce'),
     'reduceRight' : require('./array/reduceRight'),

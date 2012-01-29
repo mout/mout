@@ -12,6 +12,8 @@ define([
     'array/spec-intersection',
     'array/spec-lastIndexOf',
     'array/spec-map',
+    'array/spec-max',
+    'array/spec-min',
     'array/spec-range',
     'array/spec-reduce',
     'array/spec-reduceRight',

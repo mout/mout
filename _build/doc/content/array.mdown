@@ -140,6 +140,39 @@ more info at [MDN Array#map](https://developer.mozilla.org/en/JavaScript/Referen
 
 
 
+## max(arr[, iterator]):*
+
+Returns maximum value inside array or use a custom iterator to define how items
+should be compared.
+
+See: [`min()`](#min)
+
+```js
+max([10, 2, 7]); // 10
+max(['foo', 'lorem', 'amet'], function(val){
+    return val.length;
+}); // 'lorem'
+```
+
+
+
+## min(arr[, iterator]):*
+
+Returns minimum value inside array or use a custom iterator to define how items
+should be compared.
+
+See: [`max()`](#max)
+
+```js
+min([10, 2, 7]); // 2
+min(['foo', 'lorem', 'amet'], function(val){
+    return val.length;
+}); // 'foo'
+```
+
+
+
+
 ## range([start], stop[, step]):Array
 
 Creates a new Array with all the values inside the range. Works similarly to

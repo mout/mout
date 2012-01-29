@@ -34,6 +34,8 @@
 <li><a href="#intersection">intersection()</a></li>
 <li><a href="#lastIndexOf">lastIndexOf()</a></li>
 <li><a href="#map">map()</a></li>
+<li><a href="#max">max()</a></li>
+<li><a href="#min">min()</a></li>
 <li><a href="#range">range()</a></li>
 <li><a href="#reduce">reduce()</a></li>
 <li><a href="#reduceRight">reduceRight()</a></li>
@@ -157,6 +159,34 @@ intersection(a, b, c); // [1]
 element in this array.</p>
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/map">MDN Array#map</a></p>
+
+<h2>max(arr[, iterator]):* <a href="#max" id="max" class="deep-link">#</a></h2>
+
+<p>Returns maximum value inside array or use a custom iterator to define how items
+should be compared.</p>
+
+<p>See: <a href="#min"><code>min()</code></a></p>
+
+<pre class="brush:js">
+max([10, 2, 7]); // 10
+max(['foo', 'lorem', 'amet'], function(val){
+    return val.length;
+}); // 'lorem'
+</pre>
+
+<h2>min(arr[, iterator]):* <a href="#min" id="min" class="deep-link">#</a></h2>
+
+<p>Returns minimum value inside array or use a custom iterator to define how items
+should be compared.</p>
+
+<p>See: <a href="#max"><code>max()</code></a></p>
+
+<pre class="brush:js">
+min([10, 2, 7]); // 2
+min(['foo', 'lorem', 'amet'], function(val){
+    return val.length;
+}); // 'foo'
+</pre>
 
 <h2>range([start], stop[, step]):Array <a href="#range" id="range" class="deep-link">#</a></h2>
 
