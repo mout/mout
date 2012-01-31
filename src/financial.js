@@ -4,7 +4,9 @@ define(function(require){
 //run `node build` instead
 return {
     'compoundInterest' : require('./financial/compoundInterest'),
-    'npv' : require('./financial/npv')
+    'futureValue' : require('./financial/futureValue'),
+    'npv' : require('./financial/npv'),
+    'presentValue' : require('./financial/presentValue')
 };
 
 });

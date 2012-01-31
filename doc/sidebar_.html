@@ -43,6 +43,11 @@
                     <span class="desc">Crossbrowser ES5 <code>Array.indexOf()</code>.</span>
                 </a>
                 
+                <a class="toc-item" href="array.html#insert">
+                    <h4>insert(arr, ...items):Number</h4>
+                    <span class="desc">Push items into array only if they aren't contained by it. Returns the new <code>length</code> of the array.</span>
+                </a>
+                
                 <a class="toc-item" href="array.html#intersection">
                     <h4>intersection(...arrs):Arrays</h4>
                     <span class="desc">Return a new Array with elements common to all Arrays.</span>
@@ -56,6 +61,16 @@
                 <a class="toc-item" href="array.html#map">
                     <h4>map(arr, callback):Array</h4>
                     <span class="desc">Crossbrowser ES5 <code>Array.map()</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#max">
+                    <h4>max(arr[, iterator]):*</h4>
+                    <span class="desc">Returns maximum value inside array or use a custom iterator to define how items should be compared.</span>
+                </a>
+                
+                <a class="toc-item" href="array.html#min">
+                    <h4>min(arr[, iterator]):*</h4>
+                    <span class="desc">Returns minimum value inside array or use a custom iterator to define how items should be compared.</span>
                 </a>
                 
                 <a class="toc-item" href="array.html#range">
@@ -115,12 +130,25 @@
                 
                 <a class="toc-item" href="financial.html#compoundInterest">
                     <h4>compoundInterest(presentValue, interestRate, nPeriods):Number</h4>
-                    <span class="desc">Calculates compount interest over a period.</span>
+                    <span class="desc">Calculates compount interest over
+a period.</span>
+                </a>
+                
+                <a class="toc-item" href="financial.html#futureValue">
+                    <h4>futureValue(rate, nPeriods, payment[, isDue]):Number</h4>
+                    <span class="desc">Calculate the future value of an investment based on periodic, constant payments at a constant interest rate. (aka.
+annuity)</span>
                 </a>
                 
                 <a class="toc-item" href="financial.html#npv">
                     <h4>npv(discountRate, values):Number</h4>
                     <span class="desc">Calculates the net present value.</span>
+                </a>
+                
+                <a class="toc-item" href="financial.html#presentValue">
+                    <h4>presentValue(rate, nPeriods, payment[, isDue]):Number</h4>
+                    <span class="desc">Returns the present value of an investment. The present value is the total amount that a series of future payments is worth now  (aka.
+annuity).</span>
                 </a>
                 
             </div>
@@ -343,6 +371,17 @@
                     <span class="desc">Iterate over all own properties from an Object, similar to Array/forEach.</span>
                 </a>
                 
+                <a class="toc-item" href="object.html#get">
+                    <h4>get(obj, propName):*</h4>
+                    <span class="desc">Returns nested property value. Will return <code>undefined</code> if property doesn't exist.</span>
+                </a>
+                
+                <a class="toc-item" href="object.html#has">
+                    <h4>has(obj, propName):Boolean</h4>
+                    <span class="desc">Checks if object contains a child property. Useful for cases where you need to check if an object contain a <em>nested</em> property. It will get properties
+inherited by the prototype.</span>
+                </a>
+                
                 <a class="toc-item" href="object.html#hasOwn">
                     <h4>hasOwn(obj, propName):Boolean</h4>
                     <span class="desc">Safer <code>Object.hasOwnProperty</code>. Returns a boolean indicating whether the object has the specified property.</span>
@@ -358,9 +397,29 @@
                     <span class="desc">Combine properties from all the objects into first one.</span>
                 </a>
                 
+                <a class="toc-item" href="object.html#namespace">
+                    <h4>namespace(obj, propName):Object</h4>
+                    <span class="desc">Creates an empty object inside namespace if not existent. Will return created object or existing object.</span>
+                </a>
+                
                 <a class="toc-item" href="object.html#values">
                     <h4>values(obj):Array</h4>
                     <span class="desc">Returns an array of all own enumerable properties values found upon a given object.</span>
+                </a>
+                
+                <a class="toc-item" href="object.html#set">
+                    <h4>set(obj, propName, value)</h4>
+                    <span class="desc">Sets a nested property value.</span>
+                </a>
+                
+                <a class="toc-item" href="object.html#size">
+                    <h4>size(obj):Number</h4>
+                    <span class="desc">Returns the count of own enumerable properties found upon a given object.</span>
+                </a>
+                
+                <a class="toc-item" href="object.html#unset">
+                    <h4>unset(obj, propName):Boolean</h4>
+                    <span class="desc">Delete object property if existent and returns a boolean indicating succes. It will also return <code>true</code> if property doesn't exist.</span>
                 </a>
                 
             </div>

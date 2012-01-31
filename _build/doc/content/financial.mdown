@@ -6,10 +6,30 @@ Financial math helpers.
 
 ## compoundInterest(presentValue, interestRate, nPeriods):Number
 
-Calculates compount interest over a period.
+Calculates [compount
+interest](http://en.wikipedia.org/wiki/Future_value#Compound_interest) over
+a period.
 
 ```js
 compoundInterest(100, 0.1, 3); // 133.1
+```
+
+
+
+## futureValue(rate, nPeriods, payment[, isDue]):Number
+
+Calculate the future value of an investment based on periodic, constant
+payments at a constant interest rate. (aka.
+[annuity](http://en.wikipedia.org/wiki/Annuity_%28finance_theory%29))
+
+Payments are made at the end of each period by default, set `isDue` to `true`
+if payments should be made at the beginning of each period.
+
+See: [`presentValue()`](#presentValue)
+
+```js
+futureValue(0.12, 12, 1000);       // 24133.13
+futureValue(0.12, 12, 1000, true); // 27029.11
 ```
 
 
@@ -22,3 +42,22 @@ Calculates the [net present value](http://en.wikipedia.org/wiki/Net_present_valu
 npv(0.1, [-100, 30, 35, 28, 46]); // 7.867073163159489
 npv(0.1, [30, 35, 28, 46]) - 100; // 8.653780479475415
 ```
+
+
+
+## presentValue(rate, nPeriods, payment[, isDue]):Number
+
+Returns the present value of an investment. The present value is the total
+amount that a series of future payments is worth now  (aka.
+[annuity](http://en.wikipedia.org/wiki/Annuity_%28finance_theory%29)).
+
+Payments are made at the end of each period by default, set `isDue` to `true`
+if payments should be made at the beginning of each period.
+
+See: [`futureValue()`](#futureValue)
+
+```js
+presentValue(0.12, 12, 1000);       // 6194.37
+presentValue(0.12, 12, 1000, true); // 6937.70
+```
+

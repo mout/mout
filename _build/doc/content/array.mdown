@@ -84,6 +84,24 @@ more info at [MDN Array#indexOf](https://developer.mozilla.org/en/JavaScript/Ref
 
 
 
+
+## insert(arr, ...items):Number
+
+Push items into array only if they aren't contained by it. Returns the new
+`length` of the array.
+
+See: [`remove()`](#remove), [`removeAll()`](#removeAll),
+[`contains()`](#contains)
+
+```js
+var arr = ['a', 'b'];
+insert(arr, 'a');       // 2 : ['a', 'b']
+insert(arr, 'c');       // 3 : ['a', 'b', 'c']
+insert(arr, 1, 2, 'b'); // 5 : ['a', 'b', 'c', 1, 2]
+```
+
+
+
 ## intersection(...arrs):Arrays
 
 Return a new Array with elements common to all Arrays.
@@ -119,6 +137,39 @@ Creates a new array with the results of calling a provided function on every
 element in this array.
 
 more info at [MDN Array#map](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/map)
+
+
+
+## max(arr[, iterator]):*
+
+Returns maximum value inside array or use a custom iterator to define how items
+should be compared.
+
+See: [`min()`](#min)
+
+```js
+max([10, 2, 7]); // 10
+max(['foo', 'lorem', 'amet'], function(val){
+    return val.length;
+}); // 'lorem'
+```
+
+
+
+## min(arr[, iterator]):*
+
+Returns minimum value inside array or use a custom iterator to define how items
+should be compared.
+
+See: [`max()`](#max)
+
+```js
+min([10, 2, 7]); // 2
+min(['foo', 'lorem', 'amet'], function(val){
+    return val.length;
+}); // 'foo'
+```
+
 
 
 
@@ -219,6 +270,38 @@ more info at [MDN Array#some](https://developer.mozilla.org/en/JavaScript/Refere
 
 
 
+## append(arr1, arr2):Array
+
+Appends an array to the end of the other.
+The first array will be modified and will contain the appended items.
+
+See: [`union()`](#union), [`combine()`](#combine)
+
+```js
+var foo = ['a', 'b'],
+    bar = ['b', 'd'];
+
+append(foo, bar); // ['a', 'b', 'b', 'd']
+```
+
+
+
+## combine(arr1, arr2):Array
+
+Combines an array with all the items of another.
+Does not allow duplicates and is case and type sensitive.
+
+See: [`union()`](#union), [`append()`](#append)
+
+```js
+var foo = ['a', 'b'],
+    bar = ['b', 'd'];
+
+combine(foo, bar); // ['a', 'b', 'd']
+```
+
+
+
 ## union(...arrs):Array
 
 Concat multiple arrays removing duplicates.
@@ -266,50 +349,6 @@ xor(a, b); // ['a', 'b', 'c']
 
 
 
-## insert(arr, value):Boolean
-
-Push a value into the array only if it doesn't exist.
-Return true if it was pushed, false otherwise.
-
-See: [`remove()`](#remove), [`removeAll()`](#removeAll)
-
-```js
-var a = ['a', 'b'];
-insert(a, 'a'); // false, it wasn't pushed
-insert(a, 'c'); // true, it was pushed
-```
-
-
-
-## append(arr1, arr2):Array
-
-Appends an array to the end of the other.
-The first array will be modified and will contain the appended items.
-
-See: [`union()`](#union), [`combine()`](#combine)
-
-```js
-var foo = ['a', 'b'],
-    bar = ['b', 'd'];
-
-append(foo, bar); // ['a', 'b', 'b', 'd']
-```
-
-
-
-## combine(arr1, arr2):Array
-
-Combines an array with all the items of another.
-Does not allow duplicates and is case and type sensitive.
-
-See: [`union()`](#union), [`append()`](#append)
-
-```js
-var foo = ['a', 'b'],
-    bar = ['b', 'd'];
-
-combine(foo, bar); // ['a', 'b', 'd']
-```
 
 -------------------------------------------------------------------------------
 

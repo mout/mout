@@ -2,7 +2,9 @@
 //run `node build` instead
 define([
     'financial/spec-compoundInterest',
-    'financial/spec-npv'
+    'financial/spec-futureValue',
+    'financial/spec-npv',
+    'financial/spec-presentValue'
 ], function(){
     //noop
 });

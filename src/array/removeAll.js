@@ -3,12 +3,13 @@ define(['./indexOf'], function(indexOf){
     /**
      * Remove all instances of an item from array.
      * @author Miller Medeiros
-     * @version 0.1.0 (2010/10/20)
+     * @version 0.1.1 (2012/01/28)
      */
     function removeAll(arr, item){
-        var idx = 0;
-        while (idx = indexOf(arr, item, idx), idx !== -1) {
+        var idx = indexOf(arr, item);
+        while (idx !== -1) {
             arr.splice(idx, 1);
+            idx = indexOf(arr, item, idx);
         }
     }
 

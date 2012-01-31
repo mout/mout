@@ -43,10 +43,67 @@ console.log(keys);   // ['foo', 'bar', 'lorem']
 
 
 
+## get(obj, propName):*
+
+Returns nested property value. Will return `undefined` if property doesn't
+exist.
+
+See: [`set()`](#set), [`namespace()`](#namespace), [`has()`](#has)
+
+```js
+var lorem = {
+        ipsum : {
+            dolor : {
+                sit : 'amet'
+            }
+        }
+    };
+
+get(lorem, 'ipsum.dolor.sit'); // "amet"
+get(lorem, 'foo.bar');         // undefined
+```
+
+
+
+## has(obj, propName):Boolean
+
+Checks if object contains a child property. Useful for cases where you need to
+check if an object contain a *nested* property. It will get properties
+inherited by the prototype.
+
+see: [`hasOwn()`](#hasOwn), [`get()`](#get)
+
+```js
+var a = {
+        b : {
+            c : 123
+        }
+    };
+
+has(a, 'b.c');   // true
+has(a, 'foo.c'); // false
+```
+
+### Common use case
+
+```js
+if( has(a, 'foo.c') ){ // false
+    // ...
+}
+
+if( a.foo.c ){ // ReferenceError: `foo` is not defined
+    // ...
+}
+```
+
+
+
 ## hasOwn(obj, propName):Boolean
 
 Safer `Object.hasOwnProperty`. Returns a boolean indicating whether the object
 has the specified property.
+
+see: [`has()`](#has)
 
 ```js
 var obj = {
@@ -110,6 +167,21 @@ console.log(a);  // {foo: "bar", lorem: 123}
 
 
 
+## namespace(obj, propName):Object
+
+Creates an empty object inside namespace if not existent. Will return created
+object or existing object.
+
+See: [`get()`](#get), [`set()`](#set)
+
+```js
+var obj = {};
+namespace(obj, 'foo.bar'); // {}
+console.log(obj);          // {foo:{bar:{}}}
+```
+
+
+
 ## values(obj):Array
 
 Returns an array of all own enumerable properties values found upon a given object.
@@ -129,6 +201,21 @@ values(obj); // [1, 2, 3]
 
 
 
+## set(obj, propName, value)
+
+Sets a nested property value.
+
+See: [`get()`](#get), [`namespace()`](#namespace)
+
+```js
+var obj = {};
+set(obj, 'foo.bar', 123);
+console.log(obj.foo.bar); // 123
+console.log(obj);         // {foo:{bar:123}}
+```
+
+
+
 ## size(obj):Number
 
 Returns the count of own enumerable properties found upon a given object.
@@ -144,4 +231,30 @@ var obj = {
     lorem : 3
 };
 size(obj); // 3
+```
+
+
+
+## unset(obj, propName):Boolean
+
+Delete object property if existent and returns a boolean indicating succes. It
+will also return `true` if property doesn't exist.
+
+Some properties can't be deleted, to understand why [check this
+article](http://perfectionkills.com/understanding-delete/).
+
+See: [`set()`](#set)
+
+```js
+var lorem = {
+        ipsum : {
+            dolor : {
+                sit : 'amet'
+            }
+        }
+    };
+
+unset(lorem, 'ipsum.dolor.sit'); // true
+console.log(lorem.ipsum.dolor);  // {}
+unset(lorem, 'foo.bar');         // true
 ```

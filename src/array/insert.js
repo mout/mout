@@ -1,17 +1,16 @@
-define(['./indexOf'], function (indexOf) {
+define(['./difference', '../lang/toArray'], function (difference, toArray) {
 
     /**
      * Insert item into array if not already present.
-     * @author André Cruz
-     * @version 0.1.0 (2012/01/28)
+     * @author André Cruz, Miller Medeiros
+     * @version 0.2.0 (2012/01/28)
      */
-    function insert(arr, val) {
-        if (indexOf(arr, val) === -1) {
-            arr.push(val);
-            return true;
-        } else {
-            return false;
+    function insert(arr, rest_items) {
+        var diff = difference(toArray(arguments).slice(1), arr);
+        if (diff.length) {
+            Array.prototype.push.apply(arr, diff);
         }
+        return arr.length;
     }
     return insert;
 });
