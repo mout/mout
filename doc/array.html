@@ -43,6 +43,8 @@
 <li><a href="#removeAll">removeAll()</a></li>
 <li><a href="#shuffle">shuffle()</a></li>
 <li><a href="#some">some()</a></li>
+<li><a href="#append">append()</a></li>
+<li><a href="#combine">combine()</a></li>
 <li><a href="#union">union()</a></li>
 <li><a href="#unique">unique()</a></li>
 <li><a href="#xor">xor()</a></li>
@@ -272,6 +274,34 @@ shuffle(arr); // ['b', 'd', 'e', 'c', 'a']
 <p>Tests whether some element in the array passes the test implemented by the provided function.</p>
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/some">MDN Array#some</a></p>
+
+<h2>append(arr1, arr2):Array <a href="#append" id="append" class="deep-link">#</a></h2>
+
+<p>Appends an array to the end of the other.
+The first array will be modified and will contain the appended items.</p>
+
+<p>See: <a href="#union"><code>union()</code></a>, <a href="#combine"><code>combine()</code></a></p>
+
+<pre class="brush:js">
+var foo = ['a', 'b'],
+    bar = ['b', 'd'];
+
+append(foo, bar); // ['a', 'b', 'b', 'd']
+</pre>
+
+<h2>combine(arr1, arr2):Array <a href="#combine" id="combine" class="deep-link">#</a></h2>
+
+<p>Combines an array with all the items of another.
+Does not allow duplicates and is case and type sensitive.</p>
+
+<p>See: <a href="#union"><code>union()</code></a>, <a href="#append"><code>append()</code></a></p>
+
+<pre class="brush:js">
+var foo = ['a', 'b'],
+    bar = ['b', 'd'];
+
+combine(foo, bar); // ['a', 'b', 'd']
+</pre>
 
 <h2>union(...arrs):Array <a href="#union" id="union" class="deep-link">#</a></h2>
 
