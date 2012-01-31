@@ -24,10 +24,13 @@
 
 <ul>
 <li><a href="#forOwn">forOwn()</a></li>
+<li><a href="#get">get()</a></li>
 <li><a href="#hasOwn">hasOwn()</a></li>
 <li><a href="#keys">keys()</a></li>
 <li><a href="#mixIn">mixIn()</a></li>
+<li><a href="#namespace">namespace()</a></li>
 <li><a href="#values">values()</a></li>
+<li><a href="#set">set()</a></li>
 <li><a href="#size">size()</a></li>
 </ul>
 
@@ -69,6 +72,26 @@ forOwn(obj, function(val, key, o){
 
 console.log(result); // 6
 console.log(keys);   // ['foo', 'bar', 'lorem']
+</pre>
+
+<h2>get(obj, propName):* <a href="#get" id="get" class="deep-link">#</a></h2>
+
+<p>Returns nested property value. Will return <code>undefined</code> if property doesn't
+exist.</p>
+
+<p>See: <a href="#set"><code>set()</code></a>, <a href="#namespace"><code>namespace()</code></a></p>
+
+<pre class="brush:js">
+var lorem = {
+        ipsum : {
+            dolor : {
+                sit : 'amet'
+            }
+        }
+    };
+
+get(lorem, 'ipsum.dolor.sit'); // "amet"
+get(lorem, 'foo.bar');         // undefined
 </pre>
 
 <h2>hasOwn(obj, propName):Boolean <a href="#hasOwn" id="hasOwn" class="deep-link">#</a></h2>
@@ -134,6 +157,19 @@ mixIn(a, b);     // {foo: "bar", lorem: 123}
 console.log(a);  // {foo: "bar", lorem: 123}
 </pre>
 
+<h2>namespace(obj, propName):Object <a href="#namespace" id="namespace" class="deep-link">#</a></h2>
+
+<p>Creates an empty object inside namespace if not existent. Will return created
+object or existing object.</p>
+
+<p>See: <a href="#get"><code>get()</code></a>, <a href="#set"><code>set()</code></a></p>
+
+<pre class="brush:js">
+var obj = {};
+namespace(obj, 'foo.bar'); // {}
+console.log(obj);          // {foo:{bar:{}}}
+</pre>
+
 <h2>values(obj):Array <a href="#values" id="values" class="deep-link">#</a></h2>
 
 <p>Returns an array of all own enumerable properties values found upon a given object.</p>
@@ -149,6 +185,19 @@ var obj = {
     lorem : 3
 };
 values(obj); // [1, 2, 3]
+</pre>
+
+<h2>set(obj, propName, value) <a href="#set" id="set" class="deep-link">#</a></h2>
+
+<p>Sets a nested property value.</p>
+
+<p>See: <a href="#get"><code>get()</code></a>, <a href="#namespace"><code>namespace()</code></a></p>
+
+<pre class="brush:js">
+var obj = {};
+set(obj, 'foo.bar', 123);
+console.log(obj.foo.bar); // 123
+console.log(obj);         // {foo:{bar:123}}
 </pre>
 
 <h2>size(obj):Number <a href="#size" id="size" class="deep-link">#</a></h2>

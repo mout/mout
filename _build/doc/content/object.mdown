@@ -43,6 +43,28 @@ console.log(keys);   // ['foo', 'bar', 'lorem']
 
 
 
+## get(obj, propName):*
+
+Returns nested property value. Will return `undefined` if property doesn't
+exist.
+
+See: [`set()`](#set), [`namespace()`](#namespace)
+
+```js
+var lorem = {
+        ipsum : {
+            dolor : {
+                sit : 'amet'
+            }
+        }
+    };
+
+get(lorem, 'ipsum.dolor.sit'); // "amet"
+get(lorem, 'foo.bar');         // undefined
+```
+
+
+
 ## hasOwn(obj, propName):Boolean
 
 Safer `Object.hasOwnProperty`. Returns a boolean indicating whether the object
@@ -110,6 +132,21 @@ console.log(a);  // {foo: "bar", lorem: 123}
 
 
 
+## namespace(obj, propName):Object
+
+Creates an empty object inside namespace if not existent. Will return created
+object or existing object.
+
+See: [`get()`](#get), [`set()`](#set)
+
+```js
+var obj = {};
+namespace(obj, 'foo.bar'); // {}
+console.log(obj);          // {foo:{bar:{}}}
+```
+
+
+
 ## values(obj):Array
 
 Returns an array of all own enumerable properties values found upon a given object.
@@ -125,6 +162,21 @@ var obj = {
     lorem : 3
 };
 values(obj); // [1, 2, 3]
+```
+
+
+
+## set(obj, propName, value)
+
+Sets a nested property value.
+
+See: [`get()`](#get), [`namespace()`](#namespace)
+
+```js
+var obj = {};
+set(obj, 'foo.bar', 123);
+console.log(obj.foo.bar); // 123
+console.log(obj);         // {foo:{bar:123}}
 ```
 
 
