@@ -25,6 +25,7 @@
 <ul>
 <li><a href="#forOwn">forOwn()</a></li>
 <li><a href="#get">get()</a></li>
+<li><a href="#has">has()</a></li>
 <li><a href="#hasOwn">hasOwn()</a></li>
 <li><a href="#keys">keys()</a></li>
 <li><a href="#mixIn">mixIn()</a></li>
@@ -79,7 +80,7 @@ console.log(keys);   // ['foo', 'bar', 'lorem']
 <p>Returns nested property value. Will return <code>undefined</code> if property doesn't
 exist.</p>
 
-<p>See: <a href="#set"><code>set()</code></a>, <a href="#namespace"><code>namespace()</code></a></p>
+<p>See: <a href="#set"><code>set()</code></a>, <a href="#namespace"><code>namespace()</code></a>, <a href="#has"><code>has()</code></a></p>
 
 <pre class="brush:js">
 var lorem = {
@@ -94,10 +95,43 @@ get(lorem, 'ipsum.dolor.sit'); // "amet"
 get(lorem, 'foo.bar');         // undefined
 </pre>
 
+<h2>has(obj, propName):Boolean <a href="#has" id="has" class="deep-link">#</a></h2>
+
+<p>Checks if object contains a child property. Useful for cases where you need to
+check if an object contain a <em>nested</em> property. It will get properties
+inherited by the prototype.</p>
+
+<p>see: <a href="#hasOwn"><code>hasOwn()</code></a>, <a href="#get"><code>get()</code></a></p>
+
+<pre class="brush:js">
+var a = {
+        b : {
+            c : 123
+        }
+    };
+
+has(a, 'b.c');   // true
+has(a, 'foo.c'); // false
+</pre>
+
+<h3>Common use case</h3>
+
+<pre class="brush:js">
+if( has(a, 'foo.c') ){ // false
+    // ...
+}
+
+if( a.foo.c ){ // ReferenceError: `foo` is not defined
+    // ...
+}
+</pre>
+
 <h2>hasOwn(obj, propName):Boolean <a href="#hasOwn" id="hasOwn" class="deep-link">#</a></h2>
 
 <p>Safer <code>Object.hasOwnProperty</code>. Returns a boolean indicating whether the object
 has the specified property.</p>
+
+<p>see: <a href="#has"><code>has()</code></a></p>
 
 <pre class="brush:js">
 var obj = {

@@ -6,10 +6,10 @@ define(function () {
      * @version 0.1.0 (2012/01/30)
      */
     function get(obj, prop){
-        var split = prop.split('.'),
-            last = split.pop();
+        var parts = prop.split('.'),
+            last = parts.pop();
 
-        while (prop = split.shift()) {
+        while (prop = parts.shift()) {
             obj = obj[prop];
             if (typeof obj !== 'object') return;
         }
