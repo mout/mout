@@ -5,6 +5,39 @@ Array utilities.
 
 
 
+## append(arr1, arr2):Array
+
+Appends an array to the end of the other.
+The first array will be modified and will contain the appended items.
+
+See: [`union()`](#union), [`combine()`](#combine)
+
+```js
+var foo = ['a', 'b'],
+    bar = ['b', 'd'];
+
+append(foo, bar); // ['a', 'b', 'b', 'd']
+```
+
+
+
+## combine(arr1, arr2):Array
+
+Combines an array with all the items of another.
+The first array will be modified and will contain the combined items.
+Does not allow duplicates and is case and type sensitive.
+
+See: [`union()`](#union), [`append()`](#append)
+
+```js
+var foo = ['a', 'b'],
+    bar = ['b', 'd'];
+
+combine(foo, bar); // ['a', 'b', 'd']
+```
+
+
+
 ## compact(arr):Array
 
 Returns a new Array without any `null` or `undefined` values. Note that it will
@@ -267,39 +300,6 @@ Crossbrowser ES5 `Array.some()`.
 Tests whether some element in the array passes the test implemented by the provided function.
 
 more info at [MDN Array#some](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/some)
-
-
-
-## append(arr1, arr2):Array
-
-Appends an array to the end of the other.
-The first array will be modified and will contain the appended items.
-
-See: [`union()`](#union), [`combine()`](#combine)
-
-```js
-var foo = ['a', 'b'],
-    bar = ['b', 'd'];
-
-append(foo, bar); // ['a', 'b', 'b', 'd']
-```
-
-
-
-## combine(arr1, arr2):Array
-
-Combines an array with all the items of another.
-The first array will be modified and will contain the combined items.
-Does not allow duplicates and is case and type sensitive.
-
-See: [`union()`](#union), [`append()`](#append)
-
-```js
-var foo = ['a', 'b'],
-    bar = ['b', 'd'];
-
-combine(foo, bar); // ['a', 'b', 'd']
-```
 
 
 
