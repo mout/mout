@@ -1,6 +1,8 @@
 //automatically generated, do not edit!
 //run `node build` instead
 define([
+    'array/spec-append',
+    'array/spec-combine',
     'array/spec-compact',
     'array/spec-contains',
     'array/spec-difference',

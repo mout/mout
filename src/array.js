@@ -3,6 +3,8 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
+    'append' : require('./array/append'),
+    'combine' : require('./array/combine'),
     'compact' : require('./array/compact'),
     'contains' : require('./array/contains'),
     'difference' : require('./array/difference'),

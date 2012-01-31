@@ -281,6 +281,36 @@ insert(a, 'c'); // true, it was pushed
 
 
 
+## append(arr1, arr2):Array
+
+Appends an array to the end of the other.
+The first array will be modified and will contain the appended items.
+
+See: [`union()`](#union), [`combine()`](#combine)
+
+```js
+var foo = ['a', 'b'],
+    bar = ['b', 'd'];
+
+append(foo, bar); // ['a', 'b', 'b', 'd']
+```
+
+
+
+## combine(arr1, arr2):Array
+
+Combines an array with all the items of another.
+Does not allow duplicates and is case and type sensitive.
+
+See: [`union()`](#union), [`append()`](#append)
+
+```js
+var foo = ['a', 'b'],
+    bar = ['b', 'd'];
+
+combine(foo, bar); // ['a', 'b', 'd']
+```
+
 -------------------------------------------------------------------------------
 
 For more usage examples check specs inside `/tests` folder. Unit tests are the
