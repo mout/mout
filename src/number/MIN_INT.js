@@ -1,6 +1,8 @@
 /**
  * @constant Minimum 32-bit signed integer value (-2^31).
- * @version 0.1.0 (2011/10/21)
+ * @version 0.1.1 (2012/02/17)
  * @author Miller Medeiros
  */
-define(-2147483648);
+define(function(){
+    return -2147483648;
+});
