@@ -3,7 +3,6 @@ define(['../math/countSteps', '../number/pad'], function(countSteps, pad){
      * Format timestamp into a time string.
      * @param {number} ms Milliseconds
      * @return {string} Time string on the format 'HH:MM:SS'.
-     * @author Miller Medeiros
      * @version 0.2.0 (2011/10/21)
      */
     function toTimeString(ms){

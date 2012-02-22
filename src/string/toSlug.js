@@ -9,7 +9,6 @@ define(['./replaceAccents', './removeNonWord', './trim'], function(replaceAccent
      * @see amd-utils/string/hyphenate
      * @param {string} str
      * @return {string}
-     * @author Miller Medeiros
      * @version 0.1.0 (2011/08/09)
      */
      function toSlug(str){

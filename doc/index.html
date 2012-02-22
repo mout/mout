@@ -52,14 +52,9 @@ problems that aren't solved by most of them.</p>
 <li>Anything that could be a separate library and/or isn't a modular utility...</li>
 </ul>
 
-<h2>Notes</h2>
+<h2>Important</h2>
 
 <p>Since each function is a separate module they have independent version numbers.</p>
-
-<p>This library is on an early stage and features will be added as needed, some
-stuff still needed to be ported from legacy code.</p>
-
-<h2>Important</h2>
 
 <p>Since code is very modular (broken into multiple files) it is really important
 that you run an optimizer before deploying the code to a server, otherwise you
@@ -97,8 +92,7 @@ merged if they contain proper tests and documentation.</p>
 <p>We should do a code review before merging to make sure names makes sense and
 implementation is as good as possible.</p>
 
-<p>Add your name to the list of contributors and also your name to the <code>@author</code>
-JSdoc tag.</p>
+<p>Check the <a href="https://github.com/millermedeiros/amd-utils/contributors">contributors list at github</a>.</p>
 
 <h2>Why AMD?</h2>
 
@@ -113,12 +107,6 @@ JSdoc tag.</p>
 
 <p>Your mileage may vary...</p>
 
-<h2>Author</h2>
-
-<ul>
-<li><a href="http://blog.millermedeiros.com/">Miller Medeiros</a></li>
-</ul>
-
 <h2>License</h2>
 
 <p>Released under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.</p>
@@ -129,11 +117,12 @@ JSdoc tag.</p>
 <code>_build/doc/content</code> folder using <a href="https://github.com/millermedeiros/mdoc">mdoc</a>.
 To compile the docs run:</p>
 
-<pre><code>npm install mdoc
+<pre><code>npm install .
 node build.js
 </code></pre>
 
-<p>It will replace all the files inside the <code>doc/</code> folder.</p>
+<p>It will replace all the files inside the <code>doc/</code> folder and update packages and
+specs runners, this way we avoid human mistakes.</p>
 
 <p>Documentation files should be always up-to-date since modules are only
 committed to the <code>master</code> branch after they get proper tests and documentation.</p>

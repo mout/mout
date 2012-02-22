@@ -2,7 +2,6 @@ define(['../string/typecast', '../lang/isString'], function (typecast, isString)
 
     /**
      * Decode query string into an object of keys => vals.
-     * @author Miller Medeiros
      * @version 0.2.0 (2011/10/31)
      */
     function decodeQuery(str) {

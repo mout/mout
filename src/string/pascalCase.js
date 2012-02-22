@@ -1,7 +1,6 @@
 define(['./camelCase', './upperCase'], function(camelCase, upperCase){
     /**
      * camelCase + uppercase first char
-     * @author Miller Medeiros
      * @version 0.1.0 (2011/10/26)
      */
     function pascalCase(str){

@@ -2,7 +2,6 @@ define(['./forOwn'], function (forOwn) {
 
     /**
      * Get object values
-     * @author Miller Medeiros
      * @version 0.2.0 (2011/12/17)
      */
     function values(obj) {

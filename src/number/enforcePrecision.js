@@ -4,7 +4,6 @@ define(function(){
      * point rounding issues.
      * @example `enforcePrecision(0.615, 2) -> 0.62`, `(0.615).toFixed(2) ->
      * 0.61`
-     * @author Miller Medeiros
      * @version 0.1.0 (2011/10/21)
      */
     function enforcePrecision(val, nDecimalDigits){

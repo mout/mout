@@ -5,7 +5,6 @@ define(['./lowerCase', './upperCase'], function(lowerCase, upperCase){
      * @example properCase('loRem iPSum') -> 'Lorem Ipsum'
      * @param {string} str
      * @return {string}
-     * @author Miller Medeiros
      * @version 0.1.0 (2011/07/20)
      */
     function properCase(str){

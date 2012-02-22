@@ -2,7 +2,6 @@ define(['./forEach'], function (forEach) {
 
     /**
      * ES5 Array.map
-     * @author Miller Medeiros
      * @version 0.2.0 (2011/11/15)
      */
     var map = Array.prototype.map?

@@ -6,7 +6,6 @@ define(['./createObject'], function(createObject){
     * @param {object} child Child object
     * @param {object} parent    Parent Object
     * @version 0.1.0 (2011/02/18)
-    * @author Miller Medeiros
     */
     function inheritPrototype(child, parent){
         var p = createObject(parent.prototype);

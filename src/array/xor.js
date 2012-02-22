@@ -4,7 +4,6 @@ define(['./unique', './filter', './contains'], function (unique, filter, contain
     /**
      * Exclusive OR. Returns items that are present in a single array.
      * - like ptyhon's `symmetric_difference`
-     * @author Miller Medeiros
      * @version 0.1.0 (2011/01/12)
      */
     function xor(arr1, arr2) {

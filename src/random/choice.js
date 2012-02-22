@@ -3,7 +3,6 @@ define(['./randInt', '../lang/isArray'], function (randInt, isArray) {
     /**
      * Returns a random element from the supplied arguments
      * or from the array (if single argument is an array).
-     * @author Miller Medeiros
      * @version 0.1.1 (2011/12/08)
      */
     function choice(items) {

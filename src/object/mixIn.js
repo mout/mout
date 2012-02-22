@@ -7,7 +7,6 @@ define(['./hasOwn'], function(hasOwn){
     * @param {...object} objects    Objects to be combined (0...n objects).
     * @return {object} Target Object.
     * @version 0.1.1 (2012/01/19)
-    * @author Miller Medeiros
     */
     function mixIn(target, objects){
         var i = 1,

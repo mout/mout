@@ -4,7 +4,6 @@ define(function () {
     /**
      * Net present value
      * http://en.wikipedia.org/wiki/Net_present_value
-     * @author Miller Medeiros
      * @version 0.1.0 (2011/12/30)
      */
     function npv(discountRate, values) {

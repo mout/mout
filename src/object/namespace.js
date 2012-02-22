@@ -2,7 +2,6 @@ define(['../array/forEach'], function (forEach) {
 
     /**
      * Create nested object if non-existent
-     * @author Miller Medeiros
      * @version 0.1.0 (2012/01/30)
      */
     function namespace(obj, path){

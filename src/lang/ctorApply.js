@@ -4,7 +4,6 @@ define(function () {
 
     /**
      * Do fn.apply on a constructor.
-     * @author Miller Medeiros
      * @version 0.1.0 (2011/11/24)
      */
     function ctorApply(ctor, args) {

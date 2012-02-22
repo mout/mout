@@ -3,7 +3,6 @@ define(['./indexOf'], function(indexOf){
     /**
      * Remove a single item from the array.
      * (it won't remove duplicates, just a single item)
-     * @author Miller Medeiros
      * @version 0.1.0 (2011/10/18)
      */
     function remove(arr, item){

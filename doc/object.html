@@ -58,6 +58,7 @@ Notice that it won't iterate over properties from the prototype.</p>
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 var obj = {
     foo : 1,
     bar : 2,
@@ -84,6 +85,7 @@ exist.</p>
 <p>See: <a href="#set"><code>set()</code></a>, <a href="#namespace"><code>namespace()</code></a>, <a href="#has"><code>has()</code></a></p>
 
 <pre class="brush:js">
+
 var lorem = {
         ipsum : {
             dolor : {
@@ -105,6 +107,7 @@ inherited by the prototype.</p>
 <p>see: <a href="#hasOwn"><code>hasOwn()</code></a>, <a href="#get"><code>get()</code></a></p>
 
 <pre class="brush:js">
+
 var a = {
         b : {
             c : 123
@@ -118,6 +121,7 @@ has(a, 'foo.c'); // false
 <h3>Common use case</h3>
 
 <pre class="brush:js">
+
 if( has(a, 'foo.c') ){ // false
     // ...
 }
@@ -135,6 +139,7 @@ has the specified property.</p>
 <p>see: <a href="#has"><code>has()</code></a></p>
 
 <pre class="brush:js">
+
 var obj = {
     foo: 1,
     hasOwnProperty : 'bar'
@@ -157,6 +162,7 @@ It will use the native <code>Object.keys</code> if present.</p>
 <p>See: <a href="#forOwn"><code>forOwn()</code></a>, <a href="#values"><code>values()</code></a></p>
 
 <pre class="brush:js">
+
 var obj = {
     foo : 1,
     bar : 2,
@@ -182,6 +188,7 @@ pass an empty object as first parameter.</p>
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 var a = {foo: "bar"};
 var b = {lorem: 123};
 
@@ -200,6 +207,7 @@ object or existing object.</p>
 <p>See: <a href="#get"><code>get()</code></a>, <a href="#set"><code>set()</code></a></p>
 
 <pre class="brush:js">
+
 var obj = {};
 namespace(obj, 'foo.bar'); // {}
 console.log(obj);          // {foo:{bar:{}}}
@@ -214,6 +222,7 @@ console.log(obj);          // {foo:{bar:{}}}
 <p>See: <a href="#forOwn"><code>forOwn()</code></a>, <a href="#keys"><code>keys()</code></a></p>
 
 <pre class="brush:js">
+
 var obj = {
     foo : 1,
     bar : 2,
@@ -229,6 +238,7 @@ values(obj); // [1, 2, 3]
 <p>See: <a href="#get"><code>get()</code></a>, <a href="#namespace"><code>namespace()</code></a></p>
 
 <pre class="brush:js">
+
 var obj = {};
 set(obj, 'foo.bar', 123);
 console.log(obj.foo.bar); // 123
@@ -244,6 +254,7 @@ console.log(obj);         // {foo:{bar:123}}
 <p>See: <a href="#forOwn"><code>forOwn()</code></a>, <a href="#keys"><code>keys()</code></a></p>
 
 <pre class="brush:js">
+
 var obj = {
     foo : 1,
     bar : 2,
@@ -263,6 +274,7 @@ article</a>.</p>
 <p>See: <a href="#set"><code>set()</code></a></p>
 
 <pre class="brush:js">
+
 var lorem = {
         ipsum : {
             dolor : {

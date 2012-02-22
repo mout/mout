@@ -2,7 +2,6 @@ define(['./forEach'], function (forEach) {
 
     /**
      * ES5 Array.reduce
-     * @author Miller Medeiros
      * @version 0.2.0 (2011/11/15)
      */
     var reduce = Array.prototype.reduce?

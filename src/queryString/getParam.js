@@ -2,7 +2,6 @@ define(['../string/typecast', './getQueryString'], function (typecast, getQueryS
 
     /**
      * Get query parameter value.
-     * @author Miller Medeiros
      * @version 0.1.0 (2011/10/29)
      */
     function getParam(param, url){

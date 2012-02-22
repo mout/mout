@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * ES5 Array.every
-     * @author Miller Medeiros
      * @version 0.2.1 (2011/11/25)
      */
     var every = Array.prototype.every?

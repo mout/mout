@@ -37,16 +37,9 @@ problems that aren't solved by most of them.
 
 
 
-## Notes ##
+## Important ##
 
 Since each function is a separate module they have independent version numbers.
-
-This library is on an early stage and features will be added as needed, some
-stuff still needed to be ported from legacy code.
-
-
-
-## Important ##
 
 Since code is very modular (broken into multiple files) it is really important
 that you run an optimizer before deploying the code to a server, otherwise you
@@ -80,8 +73,7 @@ merged if they contain proper tests and documentation.
 We should do a code review before merging to make sure names makes sense and
 implementation is as good as possible.
 
-Add your name to the list of contributors and also your name to the `@author`
-JSdoc tag.
+Check the [contributors list at github](https://github.com/millermedeiros/amd-utils/contributors).
 
 
 
@@ -98,12 +90,6 @@ Your mileage may vary...
 
 
 
-## Author ##
-
- - [Miller Medeiros](http://blog.millermedeiros.com/)
-
-
-
 ## License ##
 
 Released under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
@@ -116,10 +102,11 @@ The documentation is generated based on markdown files inside the
 `_build/doc/content` folder using [mdoc](https://github.com/millermedeiros/mdoc).
 To compile the docs run:
 
-    npm install mdoc
+    npm install .
     node build.js
 
-It will replace all the files inside the `doc/` folder.
+It will replace all the files inside the `doc/` folder and update packages and
+specs runners, this way we avoid human mistakes.
 
 Documentation files should be always up-to-date since modules are only
 committed to the `master` branch after they get proper tests and documentation.

@@ -2,7 +2,6 @@ define(['./namespace'], function (namespace) {
 
     /**
      * set "nested" object property
-     * @author Miller Medeiros
      * @version 0.1.0 (2012/01/30)
      */
     function set(obj, prop, val){

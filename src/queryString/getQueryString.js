@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Gets full query as string with all special chars decoded.
-     * @author Miller Medeiros
      * @version 0.1.0 (2011/10/29)
      */
     function getQueryString(url) {

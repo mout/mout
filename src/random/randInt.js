@@ -3,7 +3,6 @@ define(['../number/MIN_INT', '../number/MAX_INT', '../number/toInt', './rand'], 
     /**
      * Gets random integer inside range or snap to min/max values.
      * @version 0.5.0 (2011/11/17)
-     * @author Miller Medeiros / Fabio Caccamo
      */
     function randInt(min, max){
         min = min == null? MIN_INT : toInt(min);

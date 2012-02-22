@@ -2,7 +2,6 @@ define(function(){
     /**
      * Bitwise circular shift left
      * http://en.wikipedia.org/wiki/Circular_shift
-     * @author Miller Medeiros
      * @version 0.1.0 (2011/10/21)
      */
     function rol(val, shift){

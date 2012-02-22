@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Basic compound interest
-     * @author Miller Medeiros
      * @version 0.1.0 (2011/12/30)
      */
     function compoundInterest(presentValue, interestRate, nPeriods) {

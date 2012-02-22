@@ -4,7 +4,6 @@ define(['./isArray', './isObject', './isArguments'], function (isArray, isObject
 
     /**
      * Convert array-like object into array
-     * @author Miller Medeiros
      * @version 0.2.0 (2011/12/05)
      */
     function toArray(val){

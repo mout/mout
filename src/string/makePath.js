@@ -5,7 +5,6 @@ define(function(){
      * @example makePath('lorem', 'ipsum', null, 'dolor') -> 'lorem/ipsum/dolor'
      * @param {...string} args
      * @return {string}
-     * @author Miller Medeiros
      * @version 0.1.0 (2011/07/28)
      */
     function makePath(args){

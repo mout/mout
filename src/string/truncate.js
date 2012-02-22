@@ -2,7 +2,6 @@ define(['./trim'], function(trim){
     /**
     * Limit number of chars.
     * @version 0.3.0 (2011/10/31)
-    * @author Miller Medeiros
     */
     function truncate(str, maxChars, append, onlyFullWords){
         append = append || '...';

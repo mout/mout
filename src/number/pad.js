@@ -2,7 +2,6 @@ define(['../string/lpad'], function(lpad){
 
     /**
      * Add padding zeros if n.length < minLength.
-     * @author Miller Medeiros
      * @version 0.2.0 (2011/11/1)
      */
     function pad(n, minLength){

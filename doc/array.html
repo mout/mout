@@ -58,6 +58,7 @@ The first array will be modified and will contain the appended items.</p>
 <p>See: <a href="#union"><code>union()</code></a>, <a href="#combine"><code>combine()</code></a></p>
 
 <pre class="brush:js">
+
 var foo = ['a', 'b'],
     bar = ['b', 'd'];
 
@@ -73,6 +74,7 @@ Does not allow duplicates and is case and type sensitive.</p>
 <p>See: <a href="#union"><code>union()</code></a>, <a href="#append"><code>append()</code></a></p>
 
 <pre class="brush:js">
+
 var foo = ['a', 'b'],
     bar = ['b', 'd'];
 
@@ -85,6 +87,7 @@ combine(foo, bar); // ['a', 'b', 'd']
 keep empty strings and other falsy values (simillar to Ruby Array#compact).</p>
 
 <pre class="brush:js">
+
 var arr = [0, 1, null, false, '', 'foo', undefined, 'bar'];
 compact(arr); // [0, 1, false, '', 'foo', 'bar'];
 </pre>
@@ -94,6 +97,7 @@ compact(arr); // [0, 1, false, '', 'foo', 'bar'];
 <p>Checks if Array contains value. Alias to <code>indexOf(arr, val) !== -1</code>.</p>
 
 <pre class="brush:js">
+
 var arr = [1, 2, 3];
 contains(arr, 2);      // true
 contains(arr, 'foo');  // false
@@ -111,6 +115,7 @@ besides the first one.</p>
 <p>See: <a href="#xor"><code>xor()</code></a>, <a href="#intersection"><code>intersection()</code></a></p>
 
 <pre class="brush:js">
+
 var a = ['a', 'b', 1];
 var b = ['c', 1];
 difference(a, b); // ['a', 'b']
@@ -153,6 +158,7 @@ difference(a, b); // ['a', 'b']
 <a href="#contains"><code>contains()</code></a></p>
 
 <pre class="brush:js">
+
 var arr = ['a', 'b'];
 insert(arr, 'a');       // 2 : ['a', 'b']
 insert(arr, 'c');       // 3 : ['a', 'b', 'c']
@@ -170,6 +176,7 @@ insert(arr, 1, 2, 'b'); // 5 : ['a', 'b', 'c', 1, 2]
 <p>See: <a href="#difference"><code>difference()</code></a>, <a href="#xor"><code>xor()</code></a></p>
 
 <pre class="brush:js">
+
 var a = ['a', 'b', 1],
     b = ['c', 1],
     c = [1, 2, 3];
@@ -199,6 +206,7 @@ should be compared.</p>
 <p>See: <a href="#min"><code>min()</code></a></p>
 
 <pre class="brush:js">
+
 max([10, 2, 7]); // 10
 max(['foo', 'lorem', 'amet'], function(val){
     return val.length;
@@ -213,6 +221,7 @@ should be compared.</p>
 <p>See: <a href="#max"><code>max()</code></a></p>
 
 <pre class="brush:js">
+
 min([10, 2, 7]); // 2
 min(['foo', 'lorem', 'amet'], function(val){
     return val.length;
@@ -235,6 +244,7 @@ Python#range or PHP#range.</p>
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 range(5);         // [0, 1, 2, 3, 4, 5]
 range(0, 5);      // [0, 1, 2, 3, 4, 5]
 range(0, 5, 2);   // [0, 2, 4]
@@ -268,6 +278,7 @@ right-to-left) as to reduce it to a single value.</p>
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 var foo = [1, 2, 3, 4];
 remove(foo, 2);
 console.log(foo); // [1, 3, 4]
@@ -280,6 +291,7 @@ console.log(foo); // [1, 3, 4]
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 var foo = [1, 2, 3, 4, 2, 2];
 removeAll(foo, 2);
 console.log(foo); // [1, 3, 4];
@@ -292,6 +304,7 @@ console.log(foo); // [1, 3, 4];
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 var arr = ['a', 'b', 'c', 'd', 'e'];
 shuffle(arr); // ['b', 'd', 'e', 'c', 'a']
 </pre>
@@ -309,6 +322,7 @@ shuffle(arr); // ['b', 'd', 'e', 'c', 'a']
 <p>Concat multiple arrays removing duplicates.</p>
 
 <pre class="brush:js">
+
 var a = ['a', 'b'],
     b = ['c', 'a'],
     c = [1, 'b', 2, 3, 'a'];
@@ -324,6 +338,7 @@ union(a, b, c); // ['c', 1, 'b', 2, 3, 'a']
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 var foo = [1, 2, 3, 4, 2, 2, 3, 4];
 var bar = unique(foo);
 console.log(foo); // [1, 2, 3, 4];
@@ -340,6 +355,7 @@ console.log(foo); // [1, 2, 3, 4];
 <p>See: <a href="#difference"><code>difference()</code></a>, <a href="#intersection"><code>intersection()</code></a></p>
 
 <pre class="brush:js">
+
 var a = ['a', 'b', 1];
 var b = ['c', 1];
 xor(a, b); // ['a', 'b', 'c']

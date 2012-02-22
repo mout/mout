@@ -4,7 +4,6 @@ define(function () {
 
     /**
      * Parses string and convert it into a native value.
-     * @author Miller Medeiros
      * @version 0.2.0 (2011/10/30)
      */
     function typecast(val) {

@@ -44,6 +44,7 @@
 <h3>Example:</h3>
 
 <pre class="brush:js">
+
 currencyFormat(1000);              // "1,000.00"
 currencyFormat(1000, ',', '.');    // "1.000,00"
 currencyFormat(1000, ',', '.', 3); // "1.000,000"
@@ -57,6 +58,7 @@ rounding issues.</p>
 <h3>Example:</h3>
 
 <pre class="brush:js">
+
 enforcePrecision(0.615, 2); // 0.62
 enforcePrecision(0.625, 2); // 0.63
 //floating point rounding "error" (rounds to odd number)
@@ -71,6 +73,7 @@ enforcePrecision(0.625, 2); // 0.63
 <h3>Example:</h3>
 
 <pre class="brush:js">
+
 console.log( MAX_INT ); // 2147483647
 </pre>
 
@@ -81,6 +84,7 @@ console.log( MAX_INT ); // 2147483647
 <h3>Example:</h3>
 
 <pre class="brush:js">
+
 console.log( MAX_UINT ); // 4294967295
 </pre>
 
@@ -91,6 +95,7 @@ console.log( MAX_UINT ); // 4294967295
 <h3>Example:</h3>
 
 <pre class="brush:js">
+
 console.log( MIN_INT ); // -2147483648
 </pre>
 
@@ -101,6 +106,7 @@ console.log( MIN_INT ); // -2147483648
 <h3>Example:</h3>
 
 <pre class="brush:js">
+
 pad(1, 5);      // 00001
 pad(12, 5);     // 00012
 pad(123, 5);    // 00123
@@ -127,6 +133,7 @@ pad(123456, 5); // 123456
 multiplications.</p>
 
 <pre class="brush:js">
+
 sign(-123); // -1
 sign(123);  // 1
 </pre>
@@ -147,6 +154,7 @@ feature is commonly needed.</p>
 <h3>Example:</h3>
 
 <pre class="brush:js">
+
 toInt(1.25);   // 1
 toInt(0.75);   // 0
 toInt(-0.55);  // 0
@@ -164,6 +172,7 @@ toInt(-5.0001) // -5
 <h3>Example:</h3>
 
 <pre class="brush:js">
+
 toUInt(1.25);                 // 1
 toUInt(0.75);                 // 0
 toUInt(-0.55);                // 0
@@ -185,6 +194,7 @@ integers.</p>
 <h3>Example:</h3>
 
 <pre class="brush:js">
+
 toUInt31(1.25);                 // 1
 toUInt31(0.75);                 // 0
 toUInt31(-0.55);                // 0

@@ -38,6 +38,7 @@ with <code>string/typecast</code> and decode string parameters using
 <code>decodeURIComponent()</code>.</p>
 
 <pre class="brush:js">
+
 decodeQuery('?foo=bar&lorem=123'); // {foo: "bar", lorem: 123}
 </pre>
 
@@ -47,6 +48,7 @@ decodeQuery('?foo=bar&lorem=123'); // {foo: "bar", lorem: 123}
 <code>encodeURIComponent()</code>.</p>
 
 <pre class="brush:js">
+
 encodeQuery({foo: "bar", lorem: 123}); // "?foo=bar&lorem=123"
 </pre>
 
@@ -65,6 +67,7 @@ Allow parsing a custom URL or uses <code>location.href</code> by default.</p>
 <h3>Example:</h3>
 
 <pre class="brush:js">
+
 //if current URI = example.com/?foo=bar&lorem=123&ipsum=false
 getParam('foo');   // "bar"
 getParam('lorem'); // 123
@@ -81,6 +84,7 @@ getParam('dolor', 'example.com/?dolor=amet'); // "amet"
 <p>Alias to: <code>decodeQuery(getQueryString(url))</code>.</p>
 
 <pre class="brush:js">
+
 //if current URI = example.com/?foo=bar&lorem=123&ipsum=false
 getQueryObject(); // {foo: "bar", lorem: 123, ipsum: false}
 
@@ -95,6 +99,7 @@ query string inside <code>location.hash</code> (e.g. "index.html?dolor=1#/lorem/
 Will use <code>location.href</code> by default.</p>
 
 <pre class="brush:js">
+
 //if current URI = example.com/?foo=bar&lorem=123&ipsum=false
 getQueryString(); // "?foo=bar&lorem=123&ipsum=false"
 
@@ -116,6 +121,7 @@ getQueryString('example.com/?lorem=ipsum'); // "?lorem=ipsum"
 <h3>Example:</h3>
 
 <pre class="brush:js">
+
 //if current URI = example.com/?foo=bar&lorem=123&ipsum=false
 hasParam('foo');   // true
 hasParam('dolor'); // false

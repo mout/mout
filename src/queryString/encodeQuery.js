@@ -3,7 +3,6 @@ define(function () {
     /**
      * Encode object into a query string.
      * @version 0.2.0 (2011/10/31)
-     * @author Miller Medeiros
      */
     function encodeQuery(obj){
         var query = [],

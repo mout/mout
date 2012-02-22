@@ -2,7 +2,6 @@ define(['./forEach'], function (forEach) {
 
     /**
      * Return minimum value inside array
-     * @author Miller Medeiros
      * @version 0.1.0 (2012/01/29)
      */
     function min(arr, iterator){

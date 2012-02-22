@@ -2,7 +2,6 @@ define(function (forEach) {
 
     /**
      * ES5 Array.some
-     * @author Miller Medeiros
      * @version 0.2.1 (2011/11/25)
      */
     var some = Array.prototype.some?

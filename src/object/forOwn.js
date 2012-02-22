@@ -25,7 +25,6 @@ define(['../lang/isObject', './hasOwn'], function (isObject, hasOwn) {
      * Similar to Array/forEach but works over object properties and fixes Don't
      * Enum bug on IE.
      * based on: http://whattheheadsaid.com/2010/10/a-safer-object-keys-compatibility-implementation
-     * @author Miller Medeiros
      * @version 0.1.1 (2012/01/19)
      */
     function forOwn(obj, fn, thisObj){

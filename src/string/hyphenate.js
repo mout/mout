@@ -6,7 +6,6 @@ define(['./toSlug', './unCamelCase'], function(toSlug, unCamelCase){
     * @param {string} str
     * @return {string}
     * @version 0.1.0 (2011/08/09)
-    * @author Miller Medeiros
     */
     function hyphenate(str){
         return toSlug( unCamelCase(str) );

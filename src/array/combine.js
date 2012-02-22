@@ -3,7 +3,6 @@ define(['./indexOf'], function (indexOf) {
     /**
      * Combines an array with all the items of another.
      * Does not allow duplicates and is case and type sensitive.
-     * @author André Cruz
      * @version 0.1.0 (2012/01/28)
      */
     function combine(arr1, arr2) {

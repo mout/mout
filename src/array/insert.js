@@ -2,7 +2,6 @@ define(['./difference', '../lang/toArray'], function (difference, toArray) {
 
     /**
      * Insert item into array if not already present.
-     * @author André Cruz, Miller Medeiros
      * @version 0.2.0 (2012/01/28)
      */
     function insert(arr, rest_items) {

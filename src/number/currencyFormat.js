@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Converts number into currency format
-     * @author Miller Medeiros
      * @version 0.2.0 (2012/01/09)
      */
     function currencyFormat(val, decimalSeparator, thousandsSeparator, nDecimalDigits){

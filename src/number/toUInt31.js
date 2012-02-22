@@ -3,7 +3,6 @@ define(['./MAX_INT'], function(MAX_INT){
     /**
      * "Convert" value into an 31-bit unsigned integer (since 1 bit is used for sign).
      * IMPORTANT: value wil wrap at 2^31, if negative will return 0.
-     * @author Miller Medeiros
      * @version 0.3.0 (2011/11/25)
      */
     function toUInt31(val){

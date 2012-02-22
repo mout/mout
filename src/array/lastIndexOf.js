@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * ES5 Array.lastIndexOf
-     * @author Miller Medeiros
      * @version 0.2.1 (2011/11/25)
      */
     var lastIndexOf = Array.prototype.lastIndexOf?

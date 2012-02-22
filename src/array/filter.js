@@ -2,7 +2,6 @@ define(['./forEach'], function (forEach) {
 
     /**
      * ES5 Array.filter
-     * @author Miller Medeiros
      * @version 0.3.0 (2011/11/15)
      */
     var filter = Array.prototype.filter?

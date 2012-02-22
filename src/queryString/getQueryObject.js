@@ -2,7 +2,6 @@ define(['./decodeQuery', './getQueryString'], function (decodeQuery, getQueryStr
 
     /**
      * Get query string, parses and decodes it.
-     * @author Miller Medeiros
      * @version 0.1.0 (2011/10/29)
      */
     function getQueryObject(url) {

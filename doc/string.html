@@ -60,6 +60,7 @@
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 camelCase('lorem-ipsum-dolor'); // "loremIpsumDolor"
 camelCase('lorem ipsum dolor'); // "loremIpsumDolor"
 </pre>
@@ -73,6 +74,7 @@ camelCase('lorem ipsum dolor'); // "loremIpsumDolor"
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 crop('lorem ipsum dolor', 10);      // "lorem..."
 crop('lorem ipsum dolor', 10, '+'); // "lorem+"
 </pre>
@@ -84,6 +86,7 @@ crop('lorem ipsum dolor', 10, '+'); // "lorem+"
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 str = escapeRegExp('[lorem.ipsum]'); // "\\[lorem\\.ipsum\\]"
 reg = new RegExp(str);               // /\[lorem\.ipsum\]/
 </pre>
@@ -96,6 +99,7 @@ remove accents and convert to lower case.</p>
 <p>See: <a href="#toSlug"><code>toSlug()</code></a></p>
 
 <pre class="brush:js">
+
 hyphenate(' %# lorem ipsum  ? $  dolor'); // "lorem-ipsum-dolor"
 hyphenate('spéçïãl çhârs');               // "special-chars"
 hyphenate('loremIpsum');                  // "lorem-ipsum"
@@ -108,6 +112,7 @@ hyphenate('loremIpsum');                  // "lorem-ipsum"
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 (null).toLowerCase();      // Error!
 (undefined).toLowerCase(); // Error!
 lowerCase(null);           // ""
@@ -123,6 +128,7 @@ lowerCase(undefined);      // ""
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 lpad('a', 5);        // "    a"
 lpad('a', 5, '-');   // "----a"
 lpad('abc', 3, '-'); // "abc"
@@ -138,6 +144,7 @@ lpad('abc', 4, '-'); // "-abc"
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 ltrim('   lorem ipsum   ');  // "lorem ipsum   "
 </pre>
 
@@ -149,6 +156,7 @@ it will be ignored from resulting path. It will also remove duplicate "/".</p>
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 makePath('lorem', 'ipsum', null, 'dolor'); // "lorem/ipsum/dolor"
 makePath('foo///bar/');                    // "foo/bar/"
 </pre>
@@ -162,6 +170,7 @@ makePath('foo///bar/');                    // "foo/bar/"
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 // "foo\nbar\nlorem\nipsum"
 normalizeLineBreaks('foo\nbar\r\nlorem\ripsum');
 
@@ -181,6 +190,7 @@ normalizeLineBreaks('foo\nbar\r\nlorem\ripsum', ' ');
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 pascalCase('lorem-ipsum-dolor'); // "LoremIpsumDolor"
 pascalCase('lorem ipsum dolor'); // "LoremIpsumDolor"
 </pre>
@@ -192,6 +202,7 @@ pascalCase('lorem ipsum dolor'); // "LoremIpsumDolor"
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 properCase('loRem iPSum'); // "Lorem Ipsum"
 </pre>
 
@@ -203,6 +214,7 @@ chars</a>.</p>
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 removeNonASCII('äÄçÇéÉêlorem-ipsumöÖÐþúÚ'); // "lorem-ipsum"
 </pre>
 
@@ -213,6 +225,7 @@ removeNonASCII('äÄçÇéÉêlorem-ipsumöÖÐþúÚ'); // "lorem-ipsum"
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 var str = 'lorem ~!@#$%^&*()_+`-={}[]|\\:";\'/?><., ipsum';
 removeNonWord(str); // "lorem - ipsum"
 </pre>
@@ -224,6 +237,7 @@ removeNonWord(str); // "lorem - ipsum"
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 repeat('a', 3);  // "aaa"
 repeat('bc', 2); // "bcbc"
 repeat('a', 0);  // ""
@@ -238,6 +252,7 @@ repeat('a', 0);  // ""
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 replaceAccents('spéçïãl çhârs'); // "special chars"
 </pre>
 
@@ -250,6 +265,7 @@ replaceAccents('spéçïãl çhârs'); // "special chars"
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 rpad('a', 5);        // "a    "
 rpad('a', 5, '-');   // "a----"
 rpad('abc', 3, '-'); // "abc"
@@ -265,6 +281,7 @@ rpad('abc', 4, '-'); // "abc-"
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 rtrim('   lorem ipsum   '); // "   lorem ipsum"
 </pre>
 
@@ -275,6 +292,7 @@ rtrim('   lorem ipsum   '); // "   lorem ipsum"
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 var str = 'Lorem IpSum DoLOr. maeCeNnas Ullamcor.';
 sentenceCase(str); // "Lorem ipsum dolor. Maecennas ullamcor."
 </pre>
@@ -286,6 +304,7 @@ sentenceCase(str); // "Lorem ipsum dolor. Maecennas ullamcor."
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 var str = '<p><em>lorem</em> <strong>ipsum</strong></p>';
 stripHtmlTags(str); // "lorem ipsum"
 </pre>
@@ -303,6 +322,7 @@ camelCase text.</p>
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 var str = 'loremIpsum dolor spéçïãl chârs';
 toSlug(str); // "loremipsum-dolor-special-chars"
 </pre>
@@ -316,6 +336,7 @@ toSlug(str); // "loremipsum-dolor-special-chars"
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 trim('   lorem ipsum   '); // "lorem ipsum"
 </pre>
 
@@ -339,6 +360,7 @@ Defaults to "...".</li>
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 truncate('lorem ipsum dolor', 11);             // "lorem ip..."
 truncate('lorem ipsum dolor', 11, '+');        // "lorem ipsu+"
 truncate('lorem ipsum dolor', 11, null, true); // "lorem..."
@@ -351,6 +373,7 @@ truncate('lorem ipsum dolor', 11, null, true); // "lorem..."
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 typecast('lorem ipsum'); // "lorem ipsum"
 typecast('123');         // 123
 typecast('123.45');      // 123.45
@@ -368,6 +391,7 @@ case.</p>
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 unCamelCase('loremIpsumDolor'); // "lorem ipsum dolor"
 </pre>
 
@@ -378,6 +402,7 @@ unCamelCase('loremIpsumDolor'); // "lorem ipsum dolor"
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 unHyphenate('lorem-ipsum-dolor'); // "lorem ipsum dolor"
 </pre>
 
@@ -388,6 +413,7 @@ unHyphenate('lorem-ipsum-dolor'); // "lorem ipsum dolor"
 <h3>Example</h3>
 
 <pre class="brush:js">
+
 (null).toUpperCase();      // Error!
 (undefined).toUpperCase(); // Error!
 upperCase(null);           // ""

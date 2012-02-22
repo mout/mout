@@ -11,7 +11,6 @@ define(function(){
      * @param {rest} args    Arguments (0...n arguments).
      * @return {Function} Wrapped Function.
      * @version 0.1.0 (2011/02/18)
-     * @author Miller Medeiros
      */
     function bind(fn, context, args){
         var argsArr = slice(arguments, 2); //curried args
