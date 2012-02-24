@@ -13,7 +13,16 @@ define(['src/financial/presentValue', 'src/number/enforcePrecision'], function (
             expect( enforcePrecision(presentValue(0.06, 25, 2400), 2) ).toEqual( 30680.05 );
             expect( enforcePrecision(presentValue(0.06, 25, 2400, true), 2) ).toEqual( 32520.86 );
 
+        });
 
+        it('should return sum of payments if rate is zero', function () {
+            expect( enforcePrecision(presentValue(0, 25, 2400), 2) ).toEqual( 60000 );
+            expect( enforcePrecision(presentValue(0, 25, 2400, true), 2) ).toEqual( 60000 );
+        });
+
+        it('should return more money if rate is negative', function () {
+            expect( enforcePrecision(presentValue(-0.06, 25, 2400), 2) ).toEqual( 147872.69 );
+            expect( enforcePrecision(presentValue(-0.06, 25, 2400, true), 2) ).toEqual( 139000.33 );
         });
 
     });

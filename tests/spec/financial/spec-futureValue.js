@@ -15,6 +15,16 @@ define(['src/financial/futureValue', 'src/number/enforcePrecision'], function (f
 
         });
 
+        it('should return sum of payments if rate is zero', function () {
+            expect( enforcePrecision(futureValue(0.0, 25, 2400), 2) ).toEqual( 60000 );
+            expect( enforcePrecision(futureValue(0.0, 25, 2400, true), 2) ).toEqual( 60000 );
+        });
+
+        it('should decrement the value if rate is negative (deflation)', function () {
+            expect( enforcePrecision(futureValue(-0.06, 25, 2400), 2) ).toEqual( 31483.59  );
+            expect( enforcePrecision(futureValue(-0.06, 25, 2400, true), 2) ).toEqual( 29594.58  );
+        });
+
     });
 
 
