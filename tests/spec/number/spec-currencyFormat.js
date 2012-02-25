@@ -1,17 +1,6 @@
 define(['src/number/currencyFormat'], function (currencyFormat) {
 
-    //backup defaults
-    var _nDecimalDigits = currencyFormat.nDecimalDigits,
-        _decimalSeparator = currencyFormat.decimalSeparator,
-        _thousandsSeparator = currencyFormat.thousandsSeparator;
-
     describe('number/currencyFormat()', function () {
-
-        beforeEach(function(){
-            currencyFormat.nDecimalDigits = _nDecimalDigits;
-            currencyFormat.decimalSeparator = _decimalSeparator;
-            currencyFormat.thousandsSeparator = _thousandsSeparator;
-        });
 
         it('should format numbers into a currency-like format', function () {
             expect( currencyFormat(0) ).toEqual( '0.00' );
@@ -45,14 +34,21 @@ define(['src/number/currencyFormat'], function (currencyFormat) {
             expect( currencyFormat(1000, 0) ).toEqual( '1,000' );
         });
 
-        it('should allow setting the default values', function () {
-            currencyFormat.nDecimalDigits = 1;
-            currencyFormat.decimalSeparator = ',';
-            currencyFormat.thousandsSeparator = '.';
+    });
 
-            expect( currencyFormat(1) ).toEqual( '1,0' );
-            expect( currencyFormat(999) ).toEqual( '999,0' );
-            expect( currencyFormat(1000) ).toEqual( '1.000,0' );
+    describe('number/currencyFormat.create()', function(){
+
+        it('should create a new instance with default arguments and they shouldn\'t interfer with each other', function () {
+            var brl = currencyFormat.create(2, ',', '.');
+            var cur = currencyFormat.create(0, '.', ',');
+
+            expect( brl(1.4) ).toEqual( '1,40' );
+            expect( brl(999.99) ).toEqual( '999,99' );
+            expect( brl(1234.56) ).toEqual( '1.234,56' );
+
+            expect( cur(1.4) ).toEqual( '1' );
+            expect( cur(999.99) ).toEqual( '1,000' );
+            expect( cur(1234.56) ).toEqual( '1,235' );
         });
 
     });

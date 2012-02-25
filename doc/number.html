@@ -48,13 +48,15 @@ currencyFormat(1000, 1);           // "1,000.0"
 currencyFormat(1000, 2, ',', '.'); // "1.000,00"
 </code></pre>
 
-<p>You can also set the default formatting:</p>
+<p>You can also create a new instance that will have different defaults.</p>
 
-<pre><code>currencyFormat.nDecimalDigits = 1;
-currencyFormat.decimalSeparator = ',';
-currencyFormat.thousandsSeparator = '.';
-currencyFormat(1000); // "1.000,0"
+<pre><code>var cur = currencyFormat.create(0, ',', '.');
+cur(1000);    // "1.000"
+cur(1000, 1); // "1.000,0"
+cur(1000, 2); // "1.000,00"
 </code></pre>
+
+<p>PS: All arguments are required on the <code>currencyFormat.create()</code> method.</p>
 
 <h2>enforcePrecision(val, nDecimalDigits):Number <a href="#enforcePrecision" id="enforcePrecision" class="deep-link">#</a></h2>
 
