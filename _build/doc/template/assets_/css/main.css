@@ -147,6 +147,17 @@ h3 {
     margin: 2em 0 1.5em;
 }
 
+h4 {
+    font-size: 0.9em;
+    margin: 2em 0 1.5em;
+}
+
+h5 {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin: 2em 0 1.5em;
+}
+
 p {
     line-height:1.5em;
     margin: 1em 0 1.5em;

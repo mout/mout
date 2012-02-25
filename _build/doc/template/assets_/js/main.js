@@ -1,13 +1,14 @@
 // Based on mdoc default template
 // author: Miller Medeiros
 // license: MIT
-// version : 0.1.1 (2011/11/27)
+// version : 0.1.2 (2012/02/25)
 
 
 (function ($) {
 
 
-    var _srcUrl = 'https://github.com/millermedeiros/amd-utils/blob/master/src/',
+    var DEFAULT_BRUSH = 'js',
+        _srcUrl = 'https://github.com/millermedeiros/amd-utils/blob/master/src/',
         _specsUrl = 'https://github.com/millermedeiros/amd-utils/blob/master/tests/spec/',
         _curPath = document.location.pathname.split('/'),
         _curFile = _curPath[_curPath.length - 1],
@@ -134,6 +135,13 @@
             brushes = $.map(brushes, function(val){
                 return val.replace('{{path}}', brushesPath);
             });
+
+            $('pre:has(code)')
+                .addClass('brush:'+ DEFAULT_BRUSH)
+                .find('code')
+                .replaceWith(function(){
+                    return $(this).text();
+                });
 
             SyntaxHighlighter.defaults['auto-links'] = false;
             SyntaxHighlighter.autoloader.apply(SyntaxHighlighter.autoloader, brushes);

@@ -38,16 +38,29 @@
 
 <p>Clamps value inside range.</p>
 
-<h3>Example:</h3>
+<p><code>clamp()</code> is extremely useful in cases where you need to limit a value inside
+a certain range. So instead of doing a complex <code>if/else</code> to filter/process the
+value you can restrict it to always be inside the desired range:</p>
 
-<pre class="brush:js">
+<pre><code>clamp(-5, 0, 10); // 0
+clamp(7, 1, 10);  // 7
+clamp(8, 1, 10);  // 8
+clamp(10, 1, 10); // 10
+clamp(11, 1, 10); // 10
+</code></pre>
 
-clamp(-50, 1, 10); // 1
-clamp(7, 1, 10);   // 7
-clamp(12, 1, 10);  // 10
-</pre>
+<p>If the value is smaller than <code>min</code> it returns the <code>min</code>, if <code>val</code> is higher
+than <code>max</code> it returns <code>max</code>.</p>
 
-<h2>countSteps(val, step, [overflow]):Number <a href="#countSteps" id="countSteps" class="deep-link">#</a></h2>
+<h3>Common use cases</h3>
+
+<p>Any situation where you need to limit a number inside a range like: slider
+position, image galleries <small>(so user can't skip to an image that doesn't
+exist)</small>, drag and drop, scroll boundaries, etc.</p>
+
+<p>See: <a href="#loop"><code>loop()</code></a></p>
+
+<h2>countSteps(val, step[, overflow]):Number <a href="#countSteps" id="countSteps" class="deep-link">#</a></h2>
 
 <p>Count number of full steps.</p>
 
@@ -60,117 +73,201 @@ clamp(12, 1, 10);  // 10
 <code>&gt;=</code> than overflow.</li>
 </ol>
 
-<h3>Example:</h3>
+<p>Count steps is very useful for cases where you need to know how many "full
+steps" the number <em>completed</em>. Think of it as a division that only returns
+integers and ignore remainders.</p>
 
-<pre class="brush:js">
-
-countSteps(3,  5);    // 0
+<pre><code>countSteps(3,  5);    // 0
 countSteps(6,  5);    // 1
 countSteps(12, 5);    // 2
 countSteps(18, 5);    // 3
+countSteps(21, 5);    // 4
+</code></pre>
 
-countSteps(3, 5, 3);  // 0
+<p>You can also set an <code>overflow</code> which will reset the <em>counter</em> before reaching
+this number.</p>
+
+<pre><code>countSteps(3, 5, 3);  // 0
 countSteps(6, 5, 3);  // 1
 countSteps(12, 5, 3); // 2
 countSteps(18, 5, 3); // 0
-</pre>
+countSteps(21, 5, 3); // 1
+</code></pre>
 
-<h2>inRange(val, min, max, [threshold]):Boolean <a href="#inRange" id="inRange" class="deep-link">#</a></h2>
+<h3>Common use cases</h3>
+
+<h4>How many items fit inside an area:</h4>
+
+<pre><code>var containerWidth = 100;
+var itemWidth = 8;
+var howManyFit = countSteps(containerWidth, itemWidth); // 12
+</code></pre>
+
+<h4>Split value into different scales or convert value from one scale to another</h4>
+
+<p>From <a href="time.html#parseMs">amd-utils/time/parseMs</a>:</p>
+
+<pre><code>function parseMs(ms){
+    return {
+        milliseconds : countSteps(ms, 1, 1000),
+        seconds      : countSteps(ms, 1000, 60),
+        minutes      : countSteps(ms, 60000, 60),
+        hours        : countSteps(ms, 3600000, 24),
+        days         : countSteps(ms, 86400000)
+    };
+}
+
+// {days:27, hours:4, minutes:26, seconds:5, milliseconds:454}
+parseMs(2348765454);
+</code></pre>
+
+<h2>inRange(val, min, max[, threshold]):Boolean <a href="#inRange" id="inRange" class="deep-link">#</a></h2>
 
 <p>Checks if value is inside the range.</p>
 
-<h3>Example:</h3>
-
-<pre class="brush:js">
-
-inRange(-6, 1, 10);    // false
+<pre><code>inRange(-6, 1, 10);    // false
 inRange( 5, 1, 10);    // true
 inRange(12, 1, 10);    // false
-inRange(12, 1, 10, 2); // true
+</code></pre>
+
+<p>The threshold can be useful when you want granular control of what should match
+and/or the precision could change at runtime or by some configuration option,
+avoids the clutter of adding/subtracting the <code>threshold</code> from <code>mix</code> and <code>max</code>.</p>
+
+<pre><code>inRange(12, 1, 10, 2); // true
 inRange(13, 1, 10, 2); // false
-</pre>
+</code></pre>
+
+<h3>Common use cases</h3>
+
+<p>Anything that needs to check if value is inside a range, be it collision
+detection, limiting interaction by mouse position, ignoring parts of the logic
+that shouldn't happen if value isn't valid, simplify <code>if/else</code> conditions,
+making code more readable, etc...</p>
 
 <h2>isNear(val, target, threshold):Boolean <a href="#isNear" id="isNear" class="deep-link">#</a></h2>
 
 <p>Check if value is close to target.</p>
 
-<h3>Example:</h3>
+<p>Similar to <code>inRange()</code> but used to check if value is close to a certain value
+or match the desired value. Basically to simplify <code>if/else</code> conditions and to
+make code clearer.</p>
 
-<pre class="brush:js">
-
-isNear( 10.2, 10, 0.5); // true
+<pre><code>isNear( 10.2, 10, 0.5); // true
 isNear( 10.5, 10, 0.5); // true
 isNear(10.51, 10, 0.5); // false
-</pre>
+</code></pre>
+
+<h3>Common use cases</h3>
+
+<p>Games where a certain action should happen if an <em>actor</em> is close to a target,
+gravity fields, any numeric check that has some tolerance.</p>
 
 <h2>lerp(ratio, start, end):Number <a href="#lerp" id="lerp" class="deep-link">#</a></h2>
 
 <p>Linear interpolation.</p>
 
-<h3>Example:</h3>
-
-<pre class="brush:js">
-
-lerp(0.5, 0, 10);  // 5
+<pre><code>lerp(0.5, 0, 10);  // 5
 lerp(0.75, 0, 10); // 7.5
-</pre>
+</code></pre>
+
+<h3>Common use cases</h3>
+
+<p>Linear interpolation is commonly used to create animations of elements moving
+from one point to another, where you simply update the current ratio (which in
+this case represents time) and get back the position of the element at that
+"frame".</p>
+
+<p>The core idea of <code>lerp</code> is that you are using a number that goes from <code>0</code> to
+<code>1</code> to specify a ratio inside that scale. This concept can be applied to
+convert numbers from different scales easily.</p>
+
+<p>See: <a href="#map"><code>map()</code></a>, <a href="#norm"><code>norm()</code></a></p>
 
 <h2>loop(val, min, max):Number <a href="#loop" id="loop" class="deep-link">#</a></h2>
 
 <p>Loops value inside range. Will return <code>min</code> if <code>val &gt; max</code> and <code>max</code> if <code>val
 &lt; min</code>, otherwise it returns <code>val</code>.</p>
 
-<h3>Example:</h3>
-
-<pre class="brush:js">
-
+<pre><code>loop(-1, 0, 10); // 10
+loop( 1, 0, 10); // 1
+loop( 5, 0, 10); // 5
 loop( 9, 0, 10); // 9
 loop(10, 0, 10); // 10
 loop(11, 0, 10); // 0
-loop(-1, 0, 10); // 10
-</pre>
+</code></pre>
+
+<p>Similar to <a href="#clamp"><code>clamp()</code></a> but <em>loops</em> the value inside the range when an
+overflow occurs.</p>
+
+<h3>Common use cases</h3>
+
+<p>Image galleries, infinite scroll, any kind of logic that requires that the
+first item should be displayed after the last one or the last one should be
+displayed after first if going on the opposite direction.</p>
+
+<p>See: <a href="#clamp"><code>clamp()</code></a></p>
 
 <h2>map(val, min1, max1, min2, max2):Number <a href="#map" id="map" class="deep-link">#</a></h2>
 
 <p>Maps a number from one scale to another.</p>
 
-<h3>Example:</h3>
-
-<pre class="brush:js">
-
-map(3, 0, 4, -1, 1)   // 0.5
+<pre><code>map(3, 0, 4, -1, 1)   // 0.5
 map(3, 0, 10, 0, 100) // 30
-</pre>
+</code></pre>
+
+<h3>Common use cases</h3>
+
+<p>Very useful to convert values from/to multiple scales.</p>
+
+<p>Let's suppose we have a slider that needs to go from <code>2000</code> to <code>5000</code> and that slider
+has <code>300px</code> of width, here is how we would translate the knob position into the
+current value:</p>
+
+<pre><code>var knobX = 123;
+var sliderWid = 300;
+var minVal = 2000;
+var maxVal = 5000;
+
+var curVal = map(knobX, 0, sliderWid, minVal, maxVal); // 3230
+</code></pre>
+
+<p>See: <a href="#lerp"><code>lerp()</code></a>, <a href="#norm"><code>norm()</code></a></p>
 
 <h2>norm(val, min, max):Number <a href="#norm" id="norm" class="deep-link">#</a></h2>
 
 <p>Gets normalized ratio of value inside range.</p>
 
-<h3>Example:</h3>
-
-<pre class="brush:js">
-
-norm(50, 0, 100); // 0.5
+<pre><code>norm(50, 0, 100); // 0.5
 norm(75, 0, 100); // 0.75
-</pre>
+</code></pre>
+
+<h3>Common use cases</h3>
+
+<p>Convert values between scales, used by <a href="#map"><code>map()</code></a> internally. Direct
+opposite of <a href="#lerp"><code>lerp()</code></a>.</p>
+
+<p>See: <a href="#lerp"><code>lerp()</code></a>, <a href="#map"><code>map()</code></a></p>
 
 <h2>snap(val, step):Number <a href="#snap" id="snap" class="deep-link">#</a></h2>
 
-<p>Snap value to full steps.</p>
+<p>Snap value to full steps. Similar to <code>Math.floor()</code> but can round value to
+an arbitrary <em>radix</em>.</p>
 
-<h3>Example:</h3>
-
-<pre class="brush:js">
-
-snap(7, 5);  // 5
+<pre><code>snap(7, 5);  // 5
 snap(11, 5); // 10
 snap(15, 5); // 15
-</pre>
+</code></pre>
+
+<h3>Common use cases</h3>
+
+<p>Round values by increments of 5/10/1000/etc.</p>
+
+<p>See: <a href="#countSteps"><code>countSteps()</code></a></p>
 
 <hr />
 
-<p>For more usage examples check specs inside <code>/tests</code> folder. Unit tests are the
-best documentation you can get...</p>
+<p>For more usage more info check the specs and source code.</p>
                 <hr />
                 <small>Documentation generated by <a href="https://github.com/millermedeiros/mdoc">mdoc</a>.</small>
             </div>
