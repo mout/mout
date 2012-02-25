@@ -37,18 +37,24 @@
 <li><a href="#toUInt31">toUInt31()</a></li>
 </ul>
 
-<h2>currencyFormat(val, decimalSeparator, thousandsSeparator, nDecimalDigits):String <a href="#currencyFormat" id="currencyFormat" class="deep-link">#</a></h2>
+<h2>currencyFormat(val[, nDecimalDigits, decimalSeparator, thousandsSeparator]):String <a href="#currencyFormat" id="currencyFormat" class="deep-link">#</a></h2>
 
 <p>Format a number as currency.</p>
 
 <h3>Example:</h3>
 
-<pre class="brush:js">
+<pre><code>currencyFormat(1000);              // "1,000.00"
+currencyFormat(1000, 1);           // "1,000.0"
+currencyFormat(1000, 2, ',', '.'); // "1.000,00"
+</code></pre>
 
-currencyFormat(1000);              // "1,000.00"
-currencyFormat(1000, ',', '.');    // "1.000,00"
-currencyFormat(1000, ',', '.', 3); // "1.000,000"
-</pre>
+<p>You can also set the default formatting:</p>
+
+<pre><code>currencyFormat.nDecimalDigits = 1;
+currencyFormat.decimalSeparator = ',';
+currencyFormat.thousandsSeparator = '.';
+currencyFormat(1000); // "1.000,0"
+</code></pre>
 
 <h2>enforcePrecision(val, nDecimalDigits):Number <a href="#enforcePrecision" id="enforcePrecision" class="deep-link">#</a></h2>
 

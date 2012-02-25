@@ -4,17 +4,22 @@ Number utilities.
 
 
 
-## currencyFormat(val, decimalSeparator, thousandsSeparator, nDecimalDigits):String
+## currencyFormat(val[, nDecimalDigits, decimalSeparator, thousandsSeparator]):String
 
 Format a number as currency.
 
 ### Example:
 
-```js
-currencyFormat(1000);              // "1,000.00"
-currencyFormat(1000, ',', '.');    // "1.000,00"
-currencyFormat(1000, ',', '.', 3); // "1.000,000"
-```
+    currencyFormat(1000);              // "1,000.00"
+    currencyFormat(1000, 1);           // "1,000.0"
+    currencyFormat(1000, 2, ',', '.'); // "1.000,00"
+
+You can also set the default formatting:
+
+    currencyFormat.nDecimalDigits = 1;
+    currencyFormat.decimalSeparator = ',';
+    currencyFormat.thousandsSeparator = '.';
+    currencyFormat(1000); // "1.000,0"
 
 
 

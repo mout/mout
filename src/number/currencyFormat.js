@@ -2,14 +2,16 @@ define(function () {
 
     /**
      * Converts number into currency format
-     * @version 0.2.0 (2012/01/09)
+     * @version 0.3.0 (2012/01/09)
      */
-    function currencyFormat(val, decimalSeparator, thousandsSeparator, nDecimalDigits){
+    function currencyFormat(val, nDecimalDigits, decimalSeparator, thousandsSeparator){
         //default values
-        decimalSeparator = decimalSeparator || '.';
-        thousandsSeparator = thousandsSeparator || ',';
-        nDecimalDigits = nDecimalDigits == null? 2 : nDecimalDigits;
+        nDecimalDigits = nDecimalDigits == null? currencyFormat.nDecimalDigits : nDecimalDigits;
+        decimalSeparator = decimalSeparator || currencyFormat.decimalSeparator;
+        thousandsSeparator = thousandsSeparator || currencyFormat.thousandsSeparator;
 
+        //can't use enforce precision since it returns a number and we are
+        //doing a RegExp over the string
         var fixed = val.toFixed(nDecimalDigits),
             parts = new RegExp('^(-?\\d{1,3})((?:\\d{3})+)(\\.(\\d{'+ nDecimalDigits +'}))?$').exec( fixed ); //separate begin [$1], middle [$2] and decimal digits [$4]
 
@@ -19,6 +21,12 @@ define(function () {
             return fixed.replace('.', decimalSeparator);
         }
     }
+
+    //so user can set their own defaults
+    //(functions beeing 1st class objects rocks..)
+    currencyFormat.nDecimalDigits = 2;
+    currencyFormat.decimalSeparator = '.';
+    currencyFormat.thousandsSeparator = ',';
 
     return currencyFormat;
 
