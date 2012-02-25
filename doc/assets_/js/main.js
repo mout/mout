@@ -144,6 +144,7 @@
                 });
 
             SyntaxHighlighter.defaults['auto-links'] = false;
+            SyntaxHighlighter.defaults.gutter = false;
             SyntaxHighlighter.autoloader.apply(SyntaxHighlighter.autoloader, brushes);
             SyntaxHighlighter.all();
 

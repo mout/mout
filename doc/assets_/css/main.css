@@ -664,7 +664,8 @@ hr {
 }
 
 .syntaxhighlighter {
-    border: 1px solid #ddd;
+    outline: 1px solid #ddd;
+    margin-bottom: 1.8em !important;
 }
 
 .syntaxhighlighter .line.alt1 {
@@ -673,6 +674,11 @@ hr {
 
 .syntaxhighlighter .gutter .line {
     border-right: 1px solid #eee !important;
+}
+
+.syntaxhighlighter.nogutter td.code .container textarea,
+.syntaxhighlighter.nogutter td.code .line {
+    padding: 2px 5px !important;
 }
 
 @media screen and (max-width:750px) {
