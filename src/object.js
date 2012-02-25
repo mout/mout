@@ -3,6 +3,7 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
+    'defaults' : require('./object/defaults'),
     'forOwn' : require('./object/forOwn'),
     'get' : require('./object/get'),
     'has' : require('./object/has'),

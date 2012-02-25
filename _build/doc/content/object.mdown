@@ -3,6 +3,20 @@
 Object utilities.
 
 
+
+## defaults(obj, ...default):Object
+
+Fill in missing properties in object with values from the *defaults* objects.
+
+    var base = {
+        foo : 'bar',
+        num : 123
+    };
+
+    defaults({foo:'ipsum'}, base); // {foo:'ipsum', num:123}
+
+
+
 ## forOwn(obj, callback[, thisObj])
 
 Iterate over all own properties from an Object, similar to Array/forEach.

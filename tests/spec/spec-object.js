@@ -1,6 +1,7 @@
 //automatically generated, do not edit!
 //run `node build` instead
 define([
+    'object/spec-defaults',
     'object/spec-forOwn',
     'object/spec-get',
     'object/spec-has',
