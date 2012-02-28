@@ -10,6 +10,7 @@ return {
     'difference' : require('./array/difference'),
     'every' : require('./array/every'),
     'filter' : require('./array/filter'),
+    'find' : require('./array/find'),
     'forEach' : require('./array/forEach'),
     'indexOf' : require('./array/indexOf'),
     'insert' : require('./array/insert'),

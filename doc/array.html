@@ -30,6 +30,7 @@
 <li><a href="#difference">difference()</a></li>
 <li><a href="#every">every()</a></li>
 <li><a href="#filter">filter()</a></li>
+<li><a href="#find">find()</a></li>
 <li><a href="#forEach">forEach()</a></li>
 <li><a href="#indexOf">indexOf()</a></li>
 <li><a href="#insert">insert()</a></li>
@@ -136,6 +137,17 @@ difference(a, b); // ['a', 'b']
 <p>Creates a new array with all elements that pass the callback test.</p>
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/filter">MDN Array#filter</a></p>
+
+<h2>find(arr, callback, [thisObj]):void <a href="#find" id="find" class="deep-link">#</a></h2>
+
+<p>Loops through all the items in the Array and returns the first one that passes
+a truth test (callback).</p>
+
+<pre><code>var arr = [123, {a:'b'}, 'foo', 'bar'];
+find(arr, isString); // "foo"
+find(arr, isNumber); // 123
+find(arr, isObject); // {a:'b'}
+</code></pre>
 
 <h2>forEach(arr, callback, [thisObj]):void <a href="#forEach" id="forEach" class="deep-link">#</a></h2>
 

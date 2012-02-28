@@ -1,6 +1,6 @@
-define(['src/object/defaults'], function (defaults) {
+define(['src/object/fillIn'], function (fillIn) {
 
-    describe('object/defaults', function () {
+    describe('object/fillIn', function () {
 
         it('should copy missing properties', function () {
 
@@ -12,7 +12,7 @@ define(['src/object/defaults'], function (defaults) {
                 }
             };
 
-            var obj = defaults({lorem : 'ipsum'}, a);
+            var obj = fillIn({lorem : 'ipsum'}, a);
 
             expect( obj.foo ).toEqual( 'bar' );
             expect( obj.lorem ).toEqual( 'ipsum' );
@@ -23,7 +23,7 @@ define(['src/object/defaults'], function (defaults) {
 
         it('should allow copying properties from multiple objects', function () {
 
-            var obj = defaults({lorem : 'ipsum'},
+            var obj = fillIn({lorem : 'ipsum'},
                                {foo : 'bar', lorem : 'dolor'},
                                {num : 123});
 

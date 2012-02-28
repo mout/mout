@@ -8,6 +8,7 @@ define([
     'array/spec-difference',
     'array/spec-every',
     'array/spec-filter',
+    'array/spec-find',
     'array/spec-forEach',
     'array/spec-indexOf',
     'array/spec-insert',

@@ -69,6 +69,19 @@ john.walk(); // "John is walking"
 
 
 
+## defaults(val, ...defaults):void
+
+Return first value that isn't `null` or `undefined`.
+
+    function doSomethingAwesome(foo, bar) {
+        // default arguments
+        foo = defaults(foo, 'lorem');
+        bar = defaults(bar, 123);
+        // ...
+    }
+
+
+
 ## inheritPrototype(child, parent):void
 
 Inherit prototype from another Object.

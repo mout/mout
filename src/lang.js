@@ -6,6 +6,7 @@ return {
     'bind' : require('./lang/bind'),
     'createObject' : require('./lang/createObject'),
     'ctorApply' : require('./lang/ctorApply'),
+    'defaults' : require('./lang/defaults'),
     'inheritPrototype' : require('./lang/inheritPrototype'),
     'isArguments' : require('./lang/isArguments'),
     'isArray' : require('./lang/isArray'),

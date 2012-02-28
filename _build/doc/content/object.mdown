@@ -4,7 +4,7 @@ Object utilities.
 
 
 
-## defaults(obj, ...default):Object
+## fillIn(obj, ...default):Object
 
 Fill in missing properties in object with values from the *defaults* objects.
 
@@ -13,7 +13,10 @@ Fill in missing properties in object with values from the *defaults* objects.
         num : 123
     };
 
-    defaults({foo:'ipsum'}, base); // {foo:'ipsum', num:123}
+    fillIn({foo:'ipsum'}, base); // {foo:'ipsum', num:123}
+
+PS: it allows merging multiple objects at once, the first ones will take
+precedence.
 
 
 

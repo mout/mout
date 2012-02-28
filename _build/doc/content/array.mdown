@@ -101,6 +101,18 @@ more info at [MDN Array#filter](https://developer.mozilla.org/en/JavaScript/Refe
 
 
 
+## find(arr, callback, [thisObj]):void
+
+Loops through all the items in the Array and returns the first one that passes
+a truth test (callback).
+
+    var arr = [123, {a:'b'}, 'foo', 'bar'];
+    find(arr, isString); // "foo"
+    find(arr, isNumber); // 123
+    find(arr, isObject); // {a:'b'}
+
+
+
 ## forEach(arr, callback, [thisObj]):void
 
 Crossbrowser ES5 `Array.forEach()`.

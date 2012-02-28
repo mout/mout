@@ -23,7 +23,7 @@
 <h2>Table of Contents <a href="#toc" name="toc" class="deep-link">#</a></h2>
 
 <ul>
-<li><a href="#defaults">defaults()</a></li>
+<li><a href="#fillIn">fillIn()</a></li>
 <li><a href="#forOwn">forOwn()</a></li>
 <li><a href="#get">get()</a></li>
 <li><a href="#has">has()</a></li>
@@ -37,7 +37,7 @@
 <li><a href="#unset">unset()</a></li>
 </ul>
 
-<h2>defaults(obj, ...default):Object <a href="#defaults" id="defaults" class="deep-link">#</a></h2>
+<h2>fillIn(obj, ...default):Object <a href="#fillIn" id="fillIn" class="deep-link">#</a></h2>
 
 <p>Fill in missing properties in object with values from the <em>defaults</em> objects.</p>
 
@@ -46,8 +46,11 @@
     num : 123
 };
 
-defaults({foo:'ipsum'}, base); // {foo:'ipsum', num:123}
+fillIn({foo:'ipsum'}, base); // {foo:'ipsum', num:123}
 </code></pre>
+
+<p>PS: it allows merging multiple objects at once, the first ones will take
+precedence.</p>
 
 <h2>forOwn(obj, callback[, thisObj]) <a href="#forOwn" id="forOwn" class="deep-link">#</a></h2>
 

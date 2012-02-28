@@ -4,6 +4,7 @@ define([
     'lang/spec-bind',
     'lang/spec-createObject',
     'lang/spec-ctorApply',
+    'lang/spec-defaults',
     'lang/spec-inheritPrototype',
     'lang/spec-isArguments',
     'lang/spec-isArray',

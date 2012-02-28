@@ -26,6 +26,7 @@
 <li><a href="#bind">bind()</a></li>
 <li><a href="#createObject">createObject()</a></li>
 <li><a href="#ctorApply">ctorApply()</a></li>
+<li><a href="#defaults">defaults()</a></li>
 <li><a href="#inheritPrototype">inheritPrototype()</a></li>
 <li><a href="#isArguments">isArguments()</a></li>
 <li><a href="#isArray">isArray()</a></li>
@@ -107,6 +108,18 @@ var args = ['John', 'Doe'];
 var john = ctorApply(Person, args);
 john.walk(); // "John is walking"
 </pre>
+
+<h2>defaults(val, ...defaults):void <a href="#defaults" id="defaults" class="deep-link">#</a></h2>
+
+<p>Return first value that isn't <code>null</code> or <code>undefined</code>.</p>
+
+<pre><code>function doSomethingAwesome(foo, bar) {
+    // default arguments
+    foo = defaults(foo, 'lorem');
+    bar = defaults(bar, 123);
+    // ...
+}
+</code></pre>
 
 <h2>inheritPrototype(child, parent):void <a href="#inheritPrototype" id="inheritPrototype" class="deep-link">#</a></h2>
 
