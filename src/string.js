@@ -5,6 +5,7 @@ define(function(require){
 return {
     'camelCase' : require('./string/camelCase'),
     'crop' : require('./string/crop'),
+    'endsWith' : require('./string/endsWith'),
     'escapeRegExp' : require('./string/escapeRegExp'),
     'hyphenate' : require('./string/hyphenate'),
     'lowerCase' : require('./string/lowerCase'),
@@ -21,6 +22,7 @@ return {
     'rpad' : require('./string/rpad'),
     'rtrim' : require('./string/rtrim'),
     'sentenceCase' : require('./string/sentenceCase'),
+    'startsWith' : require('./string/startsWith'),
     'stripHtmlTags' : require('./string/stripHtmlTags'),
     'toSlug' : require('./string/toSlug'),
     'trim' : require('./string/trim'),

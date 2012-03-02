@@ -32,6 +32,21 @@ crop('lorem ipsum dolor', 10, '+'); // "lorem+"
 
 
 
+## endsWith(str, suffix):String
+
+Checks if string ends with specified suffix.
+
+See: [`startsWith()`](#startsWith)
+
+### Example
+
+```js
+endsWith('lorem ipsum', 'lorem'); // false
+endsWith('lorem ipsum', 'ipsum'); // true
+```
+
+
+
 ## escapeRegExp(str):String
 
 Escape special chars to be used as literals in RegExp constructors.
@@ -275,6 +290,21 @@ Remove HTML/XML tags from string.
 ```js
 var str = '<p><em>lorem</em> <strong>ipsum</strong></p>';
 stripHtmlTags(str); // "lorem ipsum"
+```
+
+
+
+## startsWith(str, prefix):String
+
+Checks if string starts with specified prefix.
+
+See: [`endsWith()`](#endsWith)
+
+### Example
+
+```js
+startsWith('lorem ipsum', 'lorem'); // true
+startsWith('lorem ipsum', 'ipsum'); // false
 ```
 
 

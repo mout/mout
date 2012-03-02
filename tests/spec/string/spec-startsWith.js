@@ -7,7 +7,7 @@ define(['src/string/startsWith'], function (startsWith) {
         });
 
         it('should return false if string does not start with prefix', function(){
-        	expect( startsWith('lorem-ipsum', 'ipsum')).toBeFalsy();
+            expect( startsWith('lorem-ipsum', 'ipsum')).toBeFalsy();
         });
 
         it('should treat undefined as empty string', function () {
@@ -16,7 +16,7 @@ define(['src/string/startsWith'], function (startsWith) {
         });
 
         it('should treat null as empty string', function(){
-        	expect( startsWith(null, '') ).toBeTruthy();
+            expect( startsWith(null, '') ).toBeTruthy();
         });
 
         it('should return true if prefix undefined', function(){
@@ -25,7 +25,7 @@ define(['src/string/startsWith'], function (startsWith) {
         });
 
         it('should return true if prefix null', function () {
-        	expect( startsWith('lorem-ipsum', null) ).toBeTruthy();
+            expect( startsWith('lorem-ipsum', null) ).toBeTruthy();
         });
 
     });

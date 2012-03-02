@@ -25,6 +25,7 @@
 <ul>
 <li><a href="#camelCase">camelCase()</a></li>
 <li><a href="#crop">crop()</a></li>
+<li><a href="#endsWith">endsWith()</a></li>
 <li><a href="#escapeRegExp">escapeRegExp()</a></li>
 <li><a href="#hyphenate">hyphenate()</a></li>
 <li><a href="#lowerCase">lowerCase()</a></li>
@@ -42,6 +43,7 @@
 <li><a href="#rtrim">rtrim()</a></li>
 <li><a href="#sentenceCase">sentenceCase()</a></li>
 <li><a href="#stripHtmlTags">stripHtmlTags()</a></li>
+<li><a href="#startsWith">startsWith()</a></li>
 <li><a href="#toSlug">toSlug()</a></li>
 <li><a href="#trim">trim()</a></li>
 <li><a href="#truncate">truncate()</a></li>
@@ -77,6 +79,20 @@ camelCase('lorem ipsum dolor'); // "loremIpsumDolor"
 
 crop('lorem ipsum dolor', 10);      // "lorem..."
 crop('lorem ipsum dolor', 10, '+'); // "lorem+"
+</pre>
+
+<h2>endsWith(str, suffix):String <a href="#endsWith" id="endsWith" class="deep-link">#</a></h2>
+
+<p>Checks if string ends with specified suffix.</p>
+
+<p>See: <a href="#startsWith"><code>startsWith()</code></a></p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+
+endsWith('lorem ipsum', 'lorem'); // false
+endsWith('lorem ipsum', 'ipsum'); // true
 </pre>
 
 <h2>escapeRegExp(str):String <a href="#escapeRegExp" id="escapeRegExp" class="deep-link">#</a></h2>
@@ -307,6 +323,20 @@ sentenceCase(str); // "Lorem ipsum dolor. Maecennas ullamcor."
 
 var str = '<p><em>lorem</em> <strong>ipsum</strong></p>';
 stripHtmlTags(str); // "lorem ipsum"
+</pre>
+
+<h2>startsWith(str, prefix):String <a href="#startsWith" id="startsWith" class="deep-link">#</a></h2>
+
+<p>Checks if string starts with specified prefix.</p>
+
+<p>See: <a href="#endsWith"><code>endsWith()</code></a></p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+
+startsWith('lorem ipsum', 'lorem'); // true
+startsWith('lorem ipsum', 'ipsum'); // false
 </pre>
 
 <h2>toSlug(str):String <a href="#toSlug" id="toSlug" class="deep-link">#</a></h2>

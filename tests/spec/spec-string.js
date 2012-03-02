@@ -3,6 +3,7 @@
 define([
     'string/spec-camelCase',
     'string/spec-crop',
+    'string/spec-endsWith',
     'string/spec-escapeRegExp',
     'string/spec-hyphenate',
     'string/spec-lowerCase',
@@ -19,6 +20,7 @@ define([
     'string/spec-rpad',
     'string/spec-rtrim',
     'string/spec-sentenceCase',
+    'string/spec-startsWith',
     'string/spec-stripHtmlTags',
     'string/spec-toSlug',
     'string/spec-trim',
