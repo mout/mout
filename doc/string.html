@@ -28,6 +28,7 @@
 <li><a href="#endsWith">endsWith()</a></li>
 <li><a href="#escapeRegExp">escapeRegExp()</a></li>
 <li><a href="#hyphenate">hyphenate()</a></li>
+<li><a href="#interpolate">interpolate()</a></li>
 <li><a href="#lowerCase">lowerCase()</a></li>
 <li><a href="#lpad">lpad()</a></li>
 <li><a href="#ltrim">ltrim()</a></li>
@@ -119,6 +120,29 @@ remove accents and convert to lower case.</p>
 hyphenate(' %# lorem ipsum  ? $  dolor'); // "lorem-ipsum-dolor"
 hyphenate('spéçïãl çhârs');               // "special-chars"
 hyphenate('loremIpsum');                  // "lorem-ipsum"
+</pre>
+
+<h2>interpolate(str, replacements[, syntax]):String <a href="#interpolate" id="interpolate" class="deep-link">#</a></h2>
+
+<p>String interpolation. Format/replace tokens with object properties.</p>
+
+<pre class="brush:js">
+
+var tmpl = 'Hello {{name}}!';
+interpolate(tmpl, {name: 'World'});       // "Hello World!"
+interpolate(tmpl, {name: 'Lorem Ipsum'}); // "Hello Lorem Ipsum!"
+</pre>
+
+<p>It uses a mustache-like syntax by default but you can set your own format if
+needed. You can also use Arrays for the replacements (since Arrays are
+objects as well):</p>
+
+<pre class="brush:js">
+
+// matches everything inside "${}"
+var syntax = /\$\{([^}]+)\}/g;
+var tmpl = "Hello ${0}!";
+interpolate(tmpl, ['Foo Bar'], syntax); // "Hello Foo Bar!"
 </pre>
 
 <h2>lowerCase(str):String <a href="#lowerCase" id="lowerCase" class="deep-link">#</a></h2>

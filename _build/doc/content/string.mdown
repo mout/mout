@@ -75,6 +75,29 @@ hyphenate('loremIpsum');                  // "lorem-ipsum"
 
 
 
+## interpolate(str, replacements[, syntax]):String
+
+String interpolation. Format/replace tokens with object properties.
+
+```js
+var tmpl = 'Hello {{name}}!';
+interpolate(tmpl, {name: 'World'});       // "Hello World!"
+interpolate(tmpl, {name: 'Lorem Ipsum'}); // "Hello Lorem Ipsum!"
+```
+
+It uses a mustache-like syntax by default but you can set your own format if
+needed. You can also use Arrays for the replacements (since Arrays are
+objects as well):
+
+```js
+// matches everything inside "${}"
+var syntax = /\$\{([^}]+)\}/g;
+var tmpl = "Hello ${0}!";
+interpolate(tmpl, ['Foo Bar'], syntax); // "Hello Foo Bar!"
+```
+
+
+
 ## lowerCase(str):String
 
 "Safer" `String.toLowerCase()`. (Used internally)

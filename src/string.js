@@ -8,6 +8,7 @@ return {
     'endsWith' : require('./string/endsWith'),
     'escapeRegExp' : require('./string/escapeRegExp'),
     'hyphenate' : require('./string/hyphenate'),
+    'interpolate' : require('./string/interpolate'),
     'lowerCase' : require('./string/lowerCase'),
     'lpad' : require('./string/lpad'),
     'ltrim' : require('./string/ltrim'),
