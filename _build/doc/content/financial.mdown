@@ -4,14 +4,14 @@ Financial math helpers.
 
 
 
-## compoundInterest(presentValue, interestRate, nPeriods):Number
+## compoundInterest(interestRate, nPeriods, presentValue):Number
 
 Calculates [compount
 interest](http://en.wikipedia.org/wiki/Future_value#Compound_interest) over
 a period.
 
 ```js
-compoundInterest(100, 0.1, 3); // 133.1
+compoundInterest(0.1, 3, 100); // 133.1
 ```
 
 

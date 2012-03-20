@@ -2,10 +2,19 @@ define(['src/financial/compoundInterest', 'src/number/enforcePrecision'], functi
 
     describe('financial/compoundInterest()', function () {
 
+        beforeEach(function(){
+            this.addMatchers({
+                toFinanciallyEqual : function(val){
+                    return (enforcePrecision(this.actual, 2) === val);
+                }
+            });
+        });
+
+
         it('should calculate the compound interest', function () {
 
-            expect( enforcePrecision(compoundInterest(100, 0.1, 20), 2) ).toEqual( 672.75 );
-            expect( enforcePrecision(compoundInterest(100, 0.1, 3), 2) ).toEqual( 133.1 );
+            expect( compoundInterest(0.1, 20, 100) ).toFinanciallyEqual( 672.75 );
+            expect( compoundInterest(0.1, 3, 100) ).toFinanciallyEqual( 133.1 );
 
         });
 

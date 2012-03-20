@@ -2,9 +2,9 @@ define(function () {
 
     /**
      * Basic compound interest
-     * @version 0.1.0 (2011/12/30)
+     * @version 0.2.0 (2012/03/20)
      */
-    function compoundInterest(presentValue, interestRate, nPeriods) {
+    function compoundInterest(interestRate, nPeriods, presentValue) {
         return presentValue * Math.pow(1 + interestRate, nPeriods);
     }
 
