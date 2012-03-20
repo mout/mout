@@ -42,6 +42,11 @@ define(['src/financial/payment', 'src/number/enforcePrecision'], function (payme
             expect( payment(-0.05, 10, 0, 500, true) ).toFinanciallyEqual( 65.58 );
         });
 
+        it('should work with zero rate', function () {
+            expect( payment(0, 10, 1000) ).toFinanciallyEqual( 100 );
+            expect( payment(0, 10, 1000, 500) ).toFinanciallyEqual( 150 );
+        });
+
     });
 
 });
