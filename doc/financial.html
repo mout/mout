@@ -26,6 +26,7 @@
 <li><a href="#compoundInterest">compoundInterest()</a></li>
 <li><a href="#futureValue">futureValue()</a></li>
 <li><a href="#npv">npv()</a></li>
+<li><a href="#payment">payment()</a></li>
 <li><a href="#presentValue">presentValue()</a></li>
 </ul>
 
@@ -65,6 +66,18 @@ futureValue(0.12, 12, 1000, true); // 27029.11
 
 npv(0.1, [-100, 30, 35, 28, 46]); // 7.867073163159489
 npv(0.1, [30, 35, 28, 46]) - 100; // 8.653780479475415
+</pre>
+
+<h2>payment(rate, nPeriods, presentValue, futureValue, isDue):Number <a href="#payment" id="payment" class="deep-link">#</a></h2>
+
+<p>Calculates the payment for a loan based on constant payments and a constant
+interest rate. Similar to Microsoft Excel <code>PMT()</code> function. (aka. mortgage or
+<a href="http://en.wikipedia.org/wiki/Annuity_%28finance_theory%29">annuity</a>)</p>
+
+<pre class="brush:js">
+
+payment(0.05, 10, 1000);    // 129.50457496545667
+payment(0.05, 10, 0, 1000); // 79.50457496545668
 </pre>
 
 <h2>presentValue(rate, nPeriods, payment[, isDue]):Number <a href="#presentValue" id="presentValue" class="deep-link">#</a></h2>

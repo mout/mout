@@ -45,6 +45,19 @@ npv(0.1, [30, 35, 28, 46]) - 100; // 8.653780479475415
 
 
 
+## payment(rate, nPeriods, presentValue, futureValue, isDue):Number
+
+Calculates the payment for a loan based on constant payments and a constant
+interest rate. Similar to Microsoft Excel `PMT()` function. (aka. mortgage or
+[annuity](http://en.wikipedia.org/wiki/Annuity_%28finance_theory%29))
+
+```js
+payment(0.05, 10, 1000);    // 129.50457496545667
+payment(0.05, 10, 0, 1000); // 79.50457496545668
+```
+
+
+
 ## presentValue(rate, nPeriods, payment[, isDue]):Number
 
 Returns the present value of an investment. The present value is the total

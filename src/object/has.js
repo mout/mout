@@ -1,11 +1,13 @@
-define(['./get', '../lang/isUndefined'], function (get, isUndefined) {
+define(['./get'], function (get) {
+
+    var UNDEF;
 
     /**
      * Check if object has nested property.
-     * @version 0.1.0 (2012/01/31)
+     * @version 0.2.0 (2012/03/14)
      */
     function has(obj, prop){
-        return !isUndefined(get(obj, prop));
+        return get(obj, prop) !== UNDEF;
     }
 
     return has;

@@ -4,6 +4,7 @@ define([
     'financial/spec-compoundInterest',
     'financial/spec-futureValue',
     'financial/spec-npv',
+    'financial/spec-payment',
     'financial/spec-presentValue'
 ], function(){
     //noop
