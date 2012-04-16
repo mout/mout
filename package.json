@@ -1,6 +1,13 @@
 {
     "name" : "amd-utils",
+    "description" : "Utility methods written in the AMD format",
+    "homepage" : "http://millermedeiros.github.com/amd-utils/",
+    "keywords" : ["utilities", "functional"],
     "version" : "0.0.1",
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/millermedeiros/amd-utils.git"
+    },
     "devDependencies" : {
         "mdoc" : ">= 0.3.1",
         "handlebars" : ">= 1.0.1"
