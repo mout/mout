@@ -4,6 +4,7 @@ define(function(require){
 //run `node build` instead
 return {
     'choice' : require('./random/choice'),
+    'pick' : require('./random/pick'),
     'rand' : require('./random/rand'),
     'randBit' : require('./random/randBit'),
     'randInt' : require('./random/randInt'),
