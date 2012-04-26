@@ -3,6 +3,19 @@
 Utilities for time manipulation.
 
 
+## now():Number
+
+Returns the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC.
+Uses `Date.now()` if available.
+
+### Example
+
+```js
+now(); // 1335449614650
+```
+
+
+
 ## parseMs(ms):Object
 
 Parse timestamp (milliseconds) into an object `{milliseconds:number,
