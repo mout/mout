@@ -23,8 +23,27 @@
 <h2>Table of Contents <a href="#toc" name="toc" class="deep-link">#</a></h2>
 
 <ul>
+<li><a href="#compose">compose()</a></li>
 <li><a href="#series">series()</a></li>
 </ul>
+
+<h2>compose(...fn):Function <a href="#compose" id="compose" class="deep-link">#</a></h2>
+
+<p>Returns the composition of a list of functions, where each function consumes
+the return value of the function that follows. In math terms, composing the
+functions <code>f()</code>, <code>g()</code>, and <code>h()</code> produces <code>f(g(h()))</code>.</p>
+
+<pre class="brush:js">
+
+function add2(x) { return x + 2 }
+function multi2(x) { return x * 2 }
+map([1, 2, 3], compose(add2, multi2)); // [4, 6, 8]
+
+//same as
+map([1, 2, 3], function(x){
+    return add2( multi2(x) );
+});
+</pre>
 
 <h2>series(...fn):Function <a href="#series" id="series" class="deep-link">#</a></h2>
 

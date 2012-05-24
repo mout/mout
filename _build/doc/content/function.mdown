@@ -4,6 +4,25 @@ Function*(al)* utilities.
 
 
 
+## compose(...fn):Function
+
+Returns the composition of a list of functions, where each function consumes
+the return value of the function that follows. In math terms, composing the
+functions `f()`, `g()`, and `h()` produces `f(g(h()))`.
+
+```js
+function add2(x) { return x + 2 }
+function multi2(x) { return x * 2 }
+map([1, 2, 3], compose(add2, multi2)); // [4, 6, 8]
+
+//same as
+map([1, 2, 3], function(x){
+    return add2( multi2(x) );
+});
+```
+
+
+
 ## series(...fn):Function
 
 Returns a function that will execute all the supplied functions in order and
