@@ -6,6 +6,7 @@ return {
     'camelCase' : require('./string/camelCase'),
     'crop' : require('./string/crop'),
     'endsWith' : require('./string/endsWith'),
+    'escapeHtml' : require('./string/escapeHtml'),
     'escapeRegExp' : require('./string/escapeRegExp'),
     'hyphenate' : require('./string/hyphenate'),
     'interpolate' : require('./string/interpolate'),
@@ -30,6 +31,7 @@ return {
     'truncate' : require('./string/truncate'),
     'typecast' : require('./string/typecast'),
     'unCamelCase' : require('./string/unCamelCase'),
+    'unescapeHtml' : require('./string/unescapeHtml'),
     'unHyphenate' : require('./string/unHyphenate'),
     'upperCase' : require('./string/upperCase')
 };

@@ -47,6 +47,20 @@ endsWith('lorem ipsum', 'ipsum'); // true
 
 
 
+## escapeHtml(str):String
+
+Escapes HTML special chars (`>`, `<`, `&`, `"`, `'`).
+
+See: [`unescapeHtml()`](#unescapeHtml)
+
+### Example
+
+```js
+escapeHtml('lorem & "ipsum"'); // "lorem &amp;amp; &amp;quot;ipsum&amp;quot;"
+```
+
+
+
 ## escapeRegExp(str):String
 
 Escape special chars to be used as literals in RegExp constructors.
@@ -417,6 +431,20 @@ case.
 
 ```js
 unCamelCase('loremIpsumDolor'); // "lorem ipsum dolor"
+```
+
+
+
+## unescapeHtml(str):String
+
+Unescapes HTML special chars (`>`, `<`, `&`, `"`, `'`).
+
+See: [`escapeHtml()`](#escapeHtml)
+
+### Example
+
+```js
+unescapeHtml('lorem &amp;amp; &amp;quot;ipsum&amp;quot;'); // 'lorem & "ipsum"'
 ```
 
 

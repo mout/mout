@@ -4,6 +4,7 @@ define([
     'string/spec-camelCase',
     'string/spec-crop',
     'string/spec-endsWith',
+    'string/spec-escapeHtml',
     'string/spec-escapeRegExp',
     'string/spec-hyphenate',
     'string/spec-interpolate',
@@ -28,6 +29,7 @@ define([
     'string/spec-truncate',
     'string/spec-typecast',
     'string/spec-unCamelCase',
+    'string/spec-unescapeHtml',
     'string/spec-unHyphenate',
     'string/spec-upperCase'
 ], function(){
