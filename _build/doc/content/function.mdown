@@ -1,0 +1,26 @@
+# amd-utils / function
+
+Function*(al)* utilities.
+
+
+
+## series(...fn):Function
+
+Returns a function that will execute all the supplied functions in order and
+passing the same parameters to all of them. Useful for combining multiple
+`array/forEach` into a single one and/or for debugging.
+
+
+```js
+// call `console.log()` and `doStuff()` for each item item in the array
+forEach(arr, series(console.log, doStuff));
+```
+
+
+
+
+-------------------------------------------------------------------------------
+
+For more usage examples check specs inside `/tests` folder. Unit tests are the
+best documentation you can get...
+
