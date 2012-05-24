@@ -315,6 +315,49 @@ more info at [MDN Array#some](https://developer.mozilla.org/en/JavaScript/Refere
 
 
 
+
+## sort(arr, [compareFn]):Array
+
+Returns a sorted Array using the [Merge Sort](http://en.wikipedia.org/wiki/Merge_sort) algorithm (stable sort).
+
+The `Array.prototype.sort` browser implementations differ since the sorting algorithm isn't described in the ES spec - [in V8 it isn't stable](http://code.google.com/p/v8/issues/detail?id=90) and [on Firefox it is stable](https://bugzilla.mozilla.org/show_bug.cgi?id=224128) - so this function doesn't use the browser native implementation and is recommended in cases where a stable sort is required (items should preserve same order if already sorted).
+
+**Important:** It does logical comparisson by default (greater/less than) and
+not a string comparisson like the native `Array#sort`.
+
+### compareFn
+
+If `compareFn` is supplied elements are sorted based on the value returned by
+the `compareFn`.
+
+ - If `compareFn(a, b)` is less than `0`, sort `a` to a lower index than `b`.
+ - If `compareFn(a, b)` returns `0`, leave `a` and `b` unchanged with respect
+   to each other, but sorted with respect to all different elements.
+ - If `compareFn(a, b)` is greater than `0`, sort `b` to a lower index than
+   `a`.
+
+### Example
+
+```js
+sort([187, 23, 47, 987, 12, 59, 0]); // [0, 12, 23, 47, 59, 187, 987]
+sort(['a', 'z', 'c', 'beta', 'b']); // ['a', 'b', 'beta', 'c', 'z']
+
+// ['sit', 'amet', 'lorem', 'ipsum']
+sort(['lorem', 'ipsum', 'sit', 'amet'], function(a, b){
+    // sort by length, items with same length
+    // will keep the relative order (stable)
+    return a.length - b.length;
+});
+
+// [4, 3, 2, 1]
+sort([2, 3, 1, 4], function(a, b){
+    // reverse sort
+    return b - a;
+});
+```
+
+
+
 ## union(...arrs):Array
 
 Concat multiple arrays removing duplicates.

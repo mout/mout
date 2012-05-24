@@ -46,6 +46,7 @@
 <li><a href="#removeAll">removeAll()</a></li>
 <li><a href="#shuffle">shuffle()</a></li>
 <li><a href="#some">some()</a></li>
+<li><a href="#sort">sort()</a></li>
 <li><a href="#union">union()</a></li>
 <li><a href="#unique">unique()</a></li>
 <li><a href="#xor">xor()</a></li>
@@ -328,6 +329,49 @@ shuffle(arr); // ['b', 'd', 'e', 'c', 'a']
 <p>Tests whether some element in the array passes the test implemented by the provided function.</p>
 
 <p>more info at <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/some">MDN Array#some</a></p>
+
+<h2>sort(arr, [compareFn]):Array <a href="#sort" id="sort" class="deep-link">#</a></h2>
+
+<p>Returns a sorted Array using the <a href="http://en.wikipedia.org/wiki/Merge_sort">Merge Sort</a> algorithm (stable sort).</p>
+
+<p>The <code>Array.prototype.sort</code> browser implementations differ since the sorting algorithm isn't described in the ES spec - <a href="http://code.google.com/p/v8/issues/detail?id=90">in V8 it isn't stable</a> and <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=224128">on Firefox it is stable</a> - so this function doesn't use the browser native implementation and is recommended in cases where a stable sort is required (items should preserve same order if already sorted).</p>
+
+<p><strong>Important:</strong> It does logical comparisson by default (greater/less than) and
+not a string comparisson like the native <code>Array#sort</code>.</p>
+
+<h3>compareFn</h3>
+
+<p>If <code>compareFn</code> is supplied elements are sorted based on the value returned by
+the <code>compareFn</code>.</p>
+
+<ul>
+<li>If <code>compareFn(a, b)</code> is less than <code>0</code>, sort <code>a</code> to a lower index than <code>b</code>.</li>
+<li>If <code>compareFn(a, b)</code> returns <code>0</code>, leave <code>a</code> and <code>b</code> unchanged with respect
+to each other, but sorted with respect to all different elements.</li>
+<li>If <code>compareFn(a, b)</code> is greater than <code>0</code>, sort <code>b</code> to a lower index than
+<code>a</code>.</li>
+</ul>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+
+sort([187, 23, 47, 987, 12, 59, 0]); // [0, 12, 23, 47, 59, 187, 987]
+sort(['a', 'z', 'c', 'beta', 'b']); // ['a', 'b', 'beta', 'c', 'z']
+
+// ['sit', 'amet', 'lorem', 'ipsum']
+sort(['lorem', 'ipsum', 'sit', 'amet'], function(a, b){
+    // sort by length, items with same length
+    // will keep the relative order (stable)
+    return a.length - b.length;
+});
+
+// [4, 3, 2, 1]
+sort([2, 3, 1, 4], function(a, b){
+    // reverse sort
+    return b - a;
+});
+</pre>
 
 <h2>union(...arrs):Array <a href="#union" id="union" class="deep-link">#</a></h2>
 

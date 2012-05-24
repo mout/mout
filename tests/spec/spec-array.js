@@ -24,6 +24,7 @@ define([
     'array/spec-removeAll',
     'array/spec-shuffle',
     'array/spec-some',
+    'array/spec-sort',
     'array/spec-union',
     'array/spec-unique',
     'array/spec-xor'
