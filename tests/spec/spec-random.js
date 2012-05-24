@@ -2,7 +2,6 @@
 //run `node build` instead
 define([
     'random/spec-choice',
-    'random/spec-pick',
     'random/spec-rand',
     'random/spec-randBit',
     'random/spec-randInt',

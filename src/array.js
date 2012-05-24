@@ -19,6 +19,7 @@ return {
     'map' : require('./array/map'),
     'max' : require('./array/max'),
     'min' : require('./array/min'),
+    'pick' : require('./array/pick'),
     'range' : require('./array/range'),
     'reduce' : require('./array/reduce'),
     'reduceRight' : require('./array/reduceRight'),

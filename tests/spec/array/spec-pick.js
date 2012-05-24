@@ -1,6 +1,6 @@
-define(['src/random/pick'], function (pick) {
+define(['src/array/pick'], function (pick) {
 
-    describe('random/pick()', function () {
+    describe('array/pick()', function () {
 
         it('should remove a random item from the array and return it', function () {
             var arr = [1, 2, 3, 4, 5, 6],

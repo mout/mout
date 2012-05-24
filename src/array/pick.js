@@ -1,4 +1,4 @@
-define(['./randInt'], function (randInt) {
+define(['../random/randInt'], function (randInt) {
 
     /**
      * Remove a random item from the Array and return it

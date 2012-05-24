@@ -217,6 +217,18 @@ min(['foo', 'lorem', 'amet'], function(val){
 
 
 
+## pick(arr):*
+
+Gets a random item and remove it from the array.
+
+### Example:
+
+    var arr = [1, 2, 3, 4, 5, 6];
+    var item_1 = pick(arr); // 4
+    var item_2 = pick(arr); // 1
+    console.log(arr); // [2, 3, 5, 6]
+
+
 
 ## range([start], stop[, step]):Array
 
