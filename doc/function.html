@@ -24,6 +24,8 @@
 
 <ul>
 <li><a href="#compose">compose()</a></li>
+<li><a href="#func">func()</a></li>
+<li><a href="#prop">prop()</a></li>
 <li><a href="#series">series()</a></li>
 </ul>
 
@@ -43,6 +45,33 @@ map([1, 2, 3], compose(add2, multi2)); // [4, 6, 8]
 map([1, 2, 3], function(x){
     return add2( multi2(x) );
 });
+</pre>
+
+<h2>func(name):Function <a href="#func" id="func" class="deep-link">#</a></h2>
+
+<p>Returns a function that calls a method with given <code>name</code> on supplied object.
+Useful for iteration methods like <code>array/map</code> and <code>array/forEach</code>.</p>
+
+<p>See: <a href="#prop"><code>prop()</code></a></p>
+
+<pre class="brush:js">
+
+// will call the method `getName()` for each `user`
+var names = map(users, func('getName'));
+</pre>
+
+<h2>prop(name):Function <a href="#prop" id="prop" class="deep-link">#</a></h2>
+
+<p>Returns a function that gets a property with given <code>name</code> from supplied object.
+Useful for using in conjunction with <code>array/map</code> and/or for creating getters.</p>
+
+<p>See: <a href="array.html#pluck"><code>array/pluck()</code></a></p>
+
+<pre class="brush:js">
+
+var users = [{name:"John", age:21}, {name:"Jane", age:25}];
+// ["John", "Jane"]
+var names = map(users, prop('name'));
 </pre>
 
 <h2>series(...fn):Function <a href="#series" id="series" class="deep-link">#</a></h2>

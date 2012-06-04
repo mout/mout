@@ -230,6 +230,20 @@ Gets a random item and remove it from the array.
 
 
 
+## pluck(arr, propName):Array
+
+Extract a list of property values.
+
+See: [`function/prop()`](function.html#prop)
+
+```js
+var users = [{name : 'John', age: 21}, {name: 'Jane', age : 27}];
+var names = pluck(users, 'name'); // ["John", "Jane"]
+var ages = pluck(users, 'age'); // [21, 27]
+```
+
+
+
 ## range([start], stop[, step]):Array
 
 Creates a new Array with all the values inside the range. Works similarly to

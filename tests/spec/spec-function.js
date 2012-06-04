@@ -2,6 +2,8 @@
 //run `node build` instead
 define([
     'function/spec-compose',
+    'function/spec-func',
+    'function/spec-prop',
     'function/spec-series'
 ], function(){
     //noop

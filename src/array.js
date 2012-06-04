@@ -20,6 +20,7 @@ return {
     'max' : require('./array/max'),
     'min' : require('./array/min'),
     'pick' : require('./array/pick'),
+    'pluck' : require('./array/pluck'),
     'range' : require('./array/range'),
     'reduce' : require('./array/reduce'),
     'reduceRight' : require('./array/reduceRight'),

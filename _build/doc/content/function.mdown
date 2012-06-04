@@ -23,6 +23,35 @@ map([1, 2, 3], function(x){
 
 
 
+## func(name):Function
+
+Returns a function that calls a method with given `name` on supplied object.
+Useful for iteration methods like `array/map` and `array/forEach`.
+
+See: [`prop()`](#prop)
+
+```js
+// will call the method `getName()` for each `user`
+var names = map(users, func('getName'));
+```
+
+
+
+## prop(name):Function
+
+Returns a function that gets a property with given `name` from supplied object.
+Useful for using in conjunction with `array/map` and/or for creating getters.
+
+See: [`array/pluck()`](array.html#pluck)
+
+```js
+var users = [{name:"John", age:21}, {name:"Jane", age:25}];
+// ["John", "Jane"]
+var names = map(users, prop('name'));
+```
+
+
+
 ## series(...fn):Function
 
 Returns a function that will execute all the supplied functions in order and

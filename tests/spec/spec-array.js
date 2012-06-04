@@ -18,6 +18,7 @@ define([
     'array/spec-max',
     'array/spec-min',
     'array/spec-pick',
+    'array/spec-pluck',
     'array/spec-range',
     'array/spec-reduce',
     'array/spec-reduceRight',

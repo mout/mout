@@ -40,6 +40,7 @@
 <li><a href="#max">max()</a></li>
 <li><a href="#min">min()</a></li>
 <li><a href="#pick">pick()</a></li>
+<li><a href="#pluck">pluck()</a></li>
 <li><a href="#range">range()</a></li>
 <li><a href="#reduce">reduce()</a></li>
 <li><a href="#reduceRight">reduceRight()</a></li>
@@ -253,6 +254,19 @@ var item_1 = pick(arr); // 4
 var item_2 = pick(arr); // 1
 console.log(arr); // [2, 3, 5, 6]
 </code></pre>
+
+<h2>pluck(arr, propName):Array <a href="#pluck" id="pluck" class="deep-link">#</a></h2>
+
+<p>Extract a list of property values.</p>
+
+<p>See: <a href="function.html#prop"><code>function/prop()</code></a></p>
+
+<pre class="brush:js">
+
+var users = [{name : 'John', age: 21}, {name: 'Jane', age : 27}];
+var names = pluck(users, 'name'); // ["John", "Jane"]
+var ages = pluck(users, 'age'); // [21, 27]
+</pre>
 
 <h2>range([start], stop[, step]):Array <a href="#range" id="range" class="deep-link">#</a></h2>
 

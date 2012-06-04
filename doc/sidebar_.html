@@ -94,6 +94,11 @@ Does not allow duplicates and is case and type sensitive.</span>
                     <span class="desc">Gets a random item and remove it from the array.</span>
                 </a>
                 
+                <a class="toc-item" href="array.html#pluck">
+                    <h4>pluck(arr, propName):Array</h4>
+                    <span class="desc">Extract a list of property values.</span>
+                </a>
+                
                 <a class="toc-item" href="array.html#range">
                     <h4>range([start], stop[, step]):Array</h4>
                     <span class="desc">Creates a new Array with all the values inside the range. Works similarly to Python#range or PHP#range.</span>
@@ -194,6 +199,16 @@ similarly to Microsoft Excel <code>PV()</code> function.</span>
                     <h4>compose(...fn):Function</h4>
                     <span class="desc">Returns the composition of a list of functions, where each function consumes the return value of the function that follows. In math terms, composing the
 functions <code>f()</code>, <code>g()</code>, and <code>h()</code> produces <code>f(g(h()))</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="function.html#func">
+                    <h4>func(name):Function</h4>
+                    <span class="desc">Returns a function that calls a method with given <code>name</code> on supplied object. Useful for iteration methods like <code>array/map</code> and <code>array/forEach</code>.</span>
+                </a>
+                
+                <a class="toc-item" href="function.html#prop">
+                    <h4>prop(name):Function</h4>
+                    <span class="desc">Returns a function that gets a property with given <code>name</code> from supplied object. Useful for using in conjunction with <code>array/map</code> and/or for creating getters.</span>
                 </a>
                 
                 <a class="toc-item" href="function.html#series">
