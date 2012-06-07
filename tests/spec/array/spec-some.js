@@ -33,5 +33,15 @@ define(['src/array/some'], function (some) {
             expect( some([], isEven) ).toBe( false );
         });
 
+        it('should be incremental', function () {
+            var a = [1, 2, 3];
+            var compare = [];
+            expect( some(a, function(val){
+                compare.push(val);
+                return val === 3;
+            }) ).toBe( true );
+            expect( a ).toEqual( compare );
+        });
+
     });
 });

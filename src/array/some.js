@@ -2,7 +2,7 @@ define(function (forEach) {
 
     /**
      * ES5 Array.some
-     * @version 0.2.1 (2011/11/25)
+     * @version 0.2.2 (2012/06/07)
      */
     var some = Array.prototype.some?
                 function (arr, callback, thisObj) {
@@ -10,14 +10,16 @@ define(function (forEach) {
                 } :
                 function (arr, callback, thisObj) {
                     var result = false,
-                        n = arr.length >>> 0;
-                    while (n--) {
+                        n = arr.length,
+                        i = 0;
+                    while (i < n) {
                         //according to spec callback should only be called for
                         //existing items
-                        if ( n in arr && callback.call(thisObj, arr[n], n, arr) ) {
+                        if ( i in arr && callback.call(thisObj, arr[i], i, arr) ) {
                             result = true;
                             break;
                         }
+                        i += 1;
                     }
                     return result;
                 };
