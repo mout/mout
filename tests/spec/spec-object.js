@@ -7,6 +7,7 @@ define([
     'object/spec-has',
     'object/spec-hasOwn',
     'object/spec-keys',
+    'object/spec-merge',
     'object/spec-mixIn',
     'object/spec-namespace',
     'object/spec-set',

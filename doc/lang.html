@@ -24,6 +24,7 @@
 
 <ul>
 <li><a href="#bind">bind()</a></li>
+<li><a href="#clone">clone()</a></li>
 <li><a href="#createObject">createObject()</a></li>
 <li><a href="#ctorApply">ctorApply()</a></li>
 <li><a href="#defaults">defaults()</a></li>
@@ -55,6 +56,28 @@
 <li><code>context</code> (Object) : Execution context (object used as <code>this</code>)</li>
 <li><code>[...args]</code> (*)    : Arguments (0...n arguments)</li>
 </ol>
+
+<h2>clone(val):* <a href="#clone" id="clone" class="deep-link">#</a></h2>
+
+<p>Deep clone native types like Object, Array, RegExp, Date and primitives.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+
+var a = {foo:'bar', obj: {a:1, b:2}};
+var b = clone(a); // {foo:'bar', obj: {a:1, b:2}}
+console.log( a === b ); // false
+console.log( a.obj === b.obj ); // false
+
+var c = [1, 2, [3, 4]];
+var d = clone(c); // [1, 2, [3, 4]]
+var e = c.concat(); // [1, 2, [3, 4]]
+
+console.log( c[2] === d[2] ); // false
+// concat doesn't do a deep clone, arrays are passed by reference
+console.log( e[2] === d[2] ); // true
+</pre>
 
 <h2>createObject(parent, [props]):Object <a href="#createObject" id="createObject" class="deep-link">#</a></h2>
 

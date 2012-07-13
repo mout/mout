@@ -16,6 +16,29 @@ Return a function that will execute in the given context, optionally adding any 
 
 
 
+## clone(val):*
+
+Deep clone native types like Object, Array, RegExp, Date and primitives.
+
+### Example
+
+```js
+var a = {foo:'bar', obj: {a:1, b:2}};
+var b = clone(a); // {foo:'bar', obj: {a:1, b:2}}
+console.log( a === b ); // false
+console.log( a.obj === b.obj ); // false
+
+var c = [1, 2, [3, 4]];
+var d = clone(c); // [1, 2, [3, 4]]
+var e = c.concat(); // [1, 2, [3, 4]]
+
+console.log( c[2] === d[2] ); // false
+// concat doesn't do a deep clone, arrays are passed by reference
+console.log( e[2] === d[2] ); // true
+```
+
+
+
 ## createObject(parent, [props]):Object
 
 Create Object using prototypal inheritance and setting custom properties.

@@ -29,6 +29,7 @@
 <li><a href="#has">has()</a></li>
 <li><a href="#hasOwn">hasOwn()</a></li>
 <li><a href="#keys">keys()</a></li>
+<li><a href="#merge">merge()</a></li>
 <li><a href="#mixIn">mixIn()</a></li>
 <li><a href="#namespace">namespace()</a></li>
 <li><a href="#values">values()</a></li>
@@ -51,6 +52,8 @@ fillIn({foo:'ipsum'}, base); // {foo:'ipsum', num:123}
 
 <p>PS: it allows merging multiple objects at once, the first ones will take
 precedence.</p>
+
+<p>See: <a href="#mixIn"><code>mixIn()</code></a>, <a href="#merge"><code>merge()</code></a></p>
 
 <h2>forOwn(obj, callback[, thisObj]) <a href="#forOwn" id="forOwn" class="deep-link">#</a></h2>
 
@@ -187,6 +190,22 @@ var obj = {
 keys(obj); // ['foo', 'bar', 'lorem']
 </pre>
 
+<h2>merge(...objects):Object <a href="#merge" id="merge" class="deep-link">#</a></h2>
+
+<p>Deep merges objects. Note that objects and properties will be cloned during the
+process to avoid undesired side effects. It return a new object and won't
+affect source objects.</p>
+
+<pre class="brush:js">
+
+var obj1 = {a: {b: 1, c: 1, d: {e: 1, f: 1}}};
+var obj2 = {a: {b: 2, d : {f : 'yeah'} }};
+
+merge(obj1, obj2); // {a: {b : 2, c : 1, d : {e : 1, f : 'yeah'}}}
+</pre>
+
+<p>See: <a href="#fillIn"><code>fillIn()</code></a>, <a href="#mixIn"><code>mixIn()</code></a></p>
+
 <h2>mixIn(target, ...objects):Object <a href="#mixIn" id="mixIn" class="deep-link">#</a></h2>
 
 <p>Combine properties from all the objects into first one.</p>
@@ -214,6 +233,8 @@ console.log(a);  // {foo: "bar"}
 mixIn(a, b);     // {foo: "bar", lorem: 123}
 console.log(a);  // {foo: "bar", lorem: 123}
 </pre>
+
+<p>See: <a href="#fillIn"><code>fillIn()</code></a>, <a href="#merge"><code>merge()</code></a></p>
 
 <h2>namespace(obj, propName):Object <a href="#namespace" id="namespace" class="deep-link">#</a></h2>
 

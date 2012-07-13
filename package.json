@@ -9,7 +9,7 @@
         "url" : "git://github.com/millermedeiros/amd-utils.git"
     },
     "devDependencies" : {
-        "mdoc" : ">= 0.3.1",
+        "mdoc" : ">= 0.3.2",
         "handlebars" : ">= 1.0.1"
     }
 }

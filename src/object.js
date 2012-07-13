@@ -9,6 +9,7 @@ return {
     'has' : require('./object/has'),
     'hasOwn' : require('./object/hasOwn'),
     'keys' : require('./object/keys'),
+    'merge' : require('./object/merge'),
     'mixIn' : require('./object/mixIn'),
     'namespace' : require('./object/namespace'),
     'set' : require('./object/set'),
