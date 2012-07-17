@@ -1,6 +1,7 @@
 //automatically generated, do not edit!
 //run `node build` instead
 define([
+    'number/spec-abbreviate',
     'number/spec-currencyFormat',
     'number/spec-enforcePrecision',
     'number/spec-MAX_INT',

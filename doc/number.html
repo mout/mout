@@ -23,6 +23,7 @@
 <h2>Table of Contents <a href="#toc" name="toc" class="deep-link">#</a></h2>
 
 <ul>
+<li><a href="#abbreviate">abbreviate()</a></li>
 <li><a href="#currencyFormat">currencyFormat()</a></li>
 <li><a href="#enforcePrecision">enforcePrecision()</a></li>
 <li><a href="#MAX_INT">MAX_INT</a></li>
@@ -36,6 +37,43 @@
 <li><a href="#toUInt">toUInt()</a></li>
 <li><a href="#toUInt31">toUInt31()</a></li>
 </ul>
+
+<h2>abbreviate(val[, nDecimalDigits, dictionary]):String <a href="#abbreviate" id="abbreviate" class="deep-link">#</a></h2>
+
+<p>Abbreviate number to thousands (K), millions (M) or billions (B).</p>
+
+<p>The default value for <code>nDecimalDigits</code> is <code>1</code>.</p>
+
+<h3>Example</h3>
+
+<pre><code>abbreviate(123456);     // "123.5K"
+abbreviate(12345678);   // "12.3M"
+abbreviate(1234567890); // "1.2B"
+</code></pre>
+
+<p>You can set the amount of decimal digits (default is <code>1</code>):</p>
+
+<pre><code>abbreviate(543);    // "0.5K"
+abbreviate(543, 1); // "0.5K"
+abbreviate(543, 2); // "0.54K"
+abbreviate(543, 3); // "0.543K"
+</code></pre>
+
+<p>You can customize the abbreviation by passing a custom "dictionary":</p>
+
+<pre><code>var _ptbrDict = {
+    thousands : ' mil',
+    millions : ' Mi',
+    billions : ' Bi'
+};
+function customAbbr(val) {
+    return abbreviate(val, 1, _ptbrDict);
+}
+
+customAbbr(123456); // "123.5 mil"
+customAbbr(12345678); // "12.3 Mi"
+customAbbr(1234567890); // "1.2 Bi"
+</code></pre>
 
 <h2>currencyFormat(val[, nDecimalDigits, decimalSeparator, thousandsSeparator]):String <a href="#currencyFormat" id="currencyFormat" class="deep-link">#</a></h2>
 

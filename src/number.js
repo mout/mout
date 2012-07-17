@@ -3,6 +3,7 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
+    'abbreviate' : require('./number/abbreviate'),
     'currencyFormat' : require('./number/currencyFormat'),
     'enforcePrecision' : require('./number/enforcePrecision'),
     'MAX_INT' : require('./number/MAX_INT'),
