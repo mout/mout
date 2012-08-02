@@ -31,6 +31,7 @@
 <li><a href="#every">every()</a></li>
 <li><a href="#filter">filter()</a></li>
 <li><a href="#find">find()</a></li>
+<li><a href="#flatten">flatten()</a></li>
 <li><a href="#forEach">forEach()</a></li>
 <li><a href="#indexOf">indexOf()</a></li>
 <li><a href="#insert">insert()</a></li>
@@ -151,6 +152,20 @@ find(arr, isString); // "foo"
 find(arr, isNumber); // 123
 find(arr, isObject); // {a:'b'}
 </code></pre>
+
+<h2>flatten(arr, [shallow]):Array <a href="#flatten" id="flatten" class="deep-link">#</a></h2>
+
+<p>Recursively flattens an array. A new array containing all the elements is returned. If <code>shallow</code> is true, it will only flatten one level.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+
+// [1, 2, 3, 4, 5]
+flatten([1, [2], [3, [4, 5]]]);
+// [1, 2, 3, [4, 5]]
+flatten([1, [2], [3, [4, 5]]], true);
+</pre>
 
 <h2>forEach(arr, callback, [thisObj]):void <a href="#forEach" id="forEach" class="deep-link">#</a></h2>
 
