@@ -384,6 +384,22 @@ sort([2, 3, 1, 4], function(a, b){
 
 
 
+## toLookup(arr, key):Object
+
+Create an object that indexes the items in the array by a key. If `key` is a function, the key for each value in the resulting object will be the result of calling the function with the value as an argument. Otherwise `key` specifies the property on each value to use as the key.
+
+### Example
+
+```js
+var foo = [{ name: 'a', thing: 1 }, { name: 'b', thing: 2 }];
+// { a: { name: 'a', thing: 1 }, b: { name: 'b', thing: 2 } }
+toLookup(foo, 'name');
+// same as above
+toLookup(foo, function (value) { return value.name; });
+```
+
+
+
 ## union(...arrs):Array
 
 Concat multiple arrays removing duplicates.
