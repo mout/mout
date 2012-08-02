@@ -113,6 +113,21 @@ a truth test (callback).
 
 
 
+## flatten(arr, [shallow]):Array
+
+Recursively flattens an array. A new array containing all the elements is returned. If `shallow` is true, it will only flatten one level.
+
+### Example
+
+```js
+// [1, 2, 3, 4, 5]
+flatten([1, [2], [3, [4, 5]]]);
+// [1, 2, 3, [4, 5]]
+flatten([1, [2], [3, [4, 5]]], true);
+```
+
+
+
 ## forEach(arr, callback, [thisObj]):void
 
 Crossbrowser ES5 `Array.forEach()`.
