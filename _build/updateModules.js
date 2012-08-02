@@ -62,16 +62,16 @@ function compileTemplate(name) {
 
 var pkgTemplate = compileTemplate('pkg');
 
-_handlebars.registerHelper('csv', function(items, fn){
+_handlebars.registerHelper('csv', function(items, options){
     items = items.map(function(val){
-        return fn(val);
+        return options.fn(val);
     });
     return items.join(', ');
 });
 
-_handlebars.registerHelper('list', function(items, fn){
+_handlebars.registerHelper('list', function(items, options){
     items = items.map(function(val){
-        return fn(val);
+        return options.fn(val);
     });
     return items.join(',\n    ');
 });

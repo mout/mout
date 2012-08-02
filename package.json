@@ -3,13 +3,13 @@
     "description" : "Utility methods written in the AMD format",
     "homepage" : "http://millermedeiros.github.com/amd-utils/",
     "keywords" : ["utilities", "functional"],
-    "version" : "0.0.1",
+    "version" : "0.0.2",
     "repository" : {
         "type" : "git",
         "url" : "git://github.com/millermedeiros/amd-utils.git"
     },
     "devDependencies" : {
-        "mdoc" : ">= 0.3.2",
-        "handlebars" : ">= 1.0.1"
+        "mdoc" : "~0.3.2",
+        "handlebars" : "~1.0.6"
     }
 }
