@@ -30,6 +30,7 @@ return {
     'shuffle' : require('./array/shuffle'),
     'some' : require('./array/some'),
     'sort' : require('./array/sort'),
+    'toLookup' : require('./array/toLookup'),
     'union' : require('./array/union'),
     'unique' : require('./array/unique'),
     'xor' : require('./array/xor')

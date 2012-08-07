@@ -50,6 +50,7 @@
 <li><a href="#shuffle">shuffle()</a></li>
 <li><a href="#some">some()</a></li>
 <li><a href="#sort">sort()</a></li>
+<li><a href="#toLookup">toLookup()</a></li>
 <li><a href="#union">union()</a></li>
 <li><a href="#unique">unique()</a></li>
 <li><a href="#xor">xor()</a></li>
@@ -413,6 +414,21 @@ sort([2, 3, 1, 4], function(a, b){
     // reverse sort
     return b - a;
 });
+</pre>
+
+<h2>toLookup(arr, key):Object <a href="#toLookup" id="toLookup" class="deep-link">#</a></h2>
+
+<p>Create an object that indexes the items in the array by a key. If <code>key</code> is a function, the key for each value in the resulting object will be the result of calling the function with the value as an argument. Otherwise <code>key</code> specifies the property on each value to use as the key.</p>
+
+<h3>Example</h3>
+
+<pre class="brush:js">
+
+var foo = [{ name: 'a', thing: 1 }, { name: 'b', thing: 2 }];
+// { a: { name: 'a', thing: 1 }, b: { name: 'b', thing: 2 } }
+toLookup(foo, 'name');
+// same as above
+toLookup(foo, function (value) { return value.name; });
 </pre>
 
 <h2>union(...arrs):Array <a href="#union" id="union" class="deep-link">#</a></h2>
