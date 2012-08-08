@@ -32,12 +32,12 @@ parseMs(2348765454);
 
 ## toTimeString(ms):String
 
-Convert timestamp (milliseconds) into a time string in the format "HH:MM:SS".
+Convert timestamp (milliseconds) into a time string in the format "[H:]MM:SS".
 
 ### Example
 
 ```js
-toTimeString(12513);   // "00:00:12"
-toTimeString(951233);  // "00:15:51"
-toTimeString(8765235); // "02:26:05"
+toTimeString(12513);   // "00:12"
+toTimeString(951233);  // "15:51"
+toTimeString(8765235); // "2:26:05"
 ```

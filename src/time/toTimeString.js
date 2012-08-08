@@ -1,12 +1,24 @@
 define(['../math/countSteps', '../number/pad'], function(countSteps, pad){
+
+    var HOUR = 3600000,
+        MINUTE = 60000,
+        SECOND = 1000;
+
     /**
      * Format timestamp into a time string.
-     * @param {number} ms Milliseconds
-     * @return {string} Time string on the format 'HH:MM:SS'.
-     * @version 0.2.0 (2011/10/21)
+     * @version 0.3.0 (2012/08/08)
      */
     function toTimeString(ms){
-        return pad(countSteps(ms, 3600000), 2) +':'+ pad(countSteps(ms, 60000, 60), 2) +':'+ pad(countSteps(ms, 1000, 60), 2);
+        var h = ms < HOUR   ? 0 : countSteps(ms, HOUR),
+            m = ms < MINUTE ? 0 : countSteps(ms, MINUTE, 60),
+            s = ms < SECOND ? 0 : countSteps(ms, SECOND, 60),
+            str = '';
+
+        str += h? h + ':' : '';
+        str += pad(m, 2) + ':';
+        str += pad(s, 2);
+
+        return str;
     }
     return toTimeString;
 });
