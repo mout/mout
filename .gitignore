@@ -2,6 +2,7 @@
 .project
 .settings/
 node_modules/
+pkg/
 
 .livereload
 

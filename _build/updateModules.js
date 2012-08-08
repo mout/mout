@@ -6,6 +6,9 @@ var SRC_FOLDER = 'src',
     SPEC_RUNNER_PATH = 'tests/specRunner.html';
 
 
+// ---
+
+
 var _fs = require('fs'),
     _path = require('path'),
     _handlebars = require('Handlebars');
@@ -22,12 +25,10 @@ exports.run = function(){
 };
 
 function getFolderStructure(folder){
-
     var fileNames = _fs.readdirSync( _path.normalize(folder) );
     fileNames = fileNames.map(function(val){
         return _path.join(folder, val);
     });
-
     return {
         'folders' : fileNames.filter(function(name){
             return _fs.statSync(name).isDirectory();
@@ -36,7 +37,6 @@ function getFolderStructure(folder){
             return hasJsExtension(name) && _fs.statSync(name).isFile();
         })
     };
-
 }
 
 function hasJsExtension(name) {
@@ -61,6 +61,7 @@ function compileTemplate(name) {
 
 
 var pkgTemplate = compileTemplate('pkg');
+var indexTemplate = compileTemplate('index');
 
 _handlebars.registerHelper('csv', function(items, options){
     items = items.map(function(val){
@@ -95,8 +96,19 @@ function makePackages(packages){
         console.log('  updating package: ', name +'.js');
     });
 
+    var modules = packages.map(function(fileName){
+        return {
+            name : _path.basename(fileName)
+        };
+    });
+    _fs.writeFileSync('src/index.js', indexTemplate({'modules' : modules}), 'utf-8');
+    console.log('  updating package: src/index.js');
+
 }
 
+
+
+// ---
 
 
 
@@ -129,3 +141,6 @@ function makeSpecs(packages){
     _fs.writeFileSync(SPEC_RUNNER_PATH, specRunnerTemplate({'packages' : packagesNames}), 'utf-8');
     console.log('  updating spec runner: ', SPEC_RUNNER_PATH);
 }
+
+
+
