@@ -20,7 +20,7 @@
         "url" : "https://github.com/millermedeiros/amd-utils/issues/"
     },
     "main" : "./pkg/index.js",
-    "dependencies " : {
+    "dependencies" : {
         "amdefine" : ">= 0.0.2"
     },
     "scripts" : {
