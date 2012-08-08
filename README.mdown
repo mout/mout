@@ -99,14 +99,14 @@ Released under the [MIT License](http://www.opensource.org/licenses/mit-license.
 ## Building The Documentation ##
 
 The documentation is generated based on markdown files inside the
-`_build/doc/content` folder using [mdoc](https://github.com/millermedeiros/mdoc).
+`doc/mdown` folder using [mdoc](https://github.com/millermedeiros/mdoc).
 To compile the docs run:
 
     npm install .
-    node build.js
+    node build
 
-It will replace all the files inside the `doc/` folder and update packages and
-specs runners, this way we avoid human mistakes.
+It will replace all the files inside the `doc/html` folder and update packages
+and specs runners, this way we avoid human mistakes.
 
 Documentation files should be always up-to-date since modules are only
 committed to the `master` branch after they get proper tests and documentation.

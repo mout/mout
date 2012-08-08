@@ -5,11 +5,11 @@
 var mdoc = require('mdoc');
 
 mdoc.run({
-    inputDir : '_build/doc/content',
-    outputDir : 'doc',
+    inputDir : 'doc/mdown',
+    outputDir : 'doc/html',
     baseTitle : 'AMD-Utils',
     indexContentPath : 'README.mdown',
-    templatePath : '_build/doc/template'
+    templatePath : '_build/doc_template'
 });
 
 
