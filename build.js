@@ -8,7 +8,7 @@ mdoc.run({
     inputDir : 'doc/mdown',
     outputDir : 'doc/html',
     baseTitle : 'AMD-Utils',
-    indexContentPath : 'README.mdown',
+    indexContentPath : 'README.md',
     templatePath : '_build/doc_template'
 });
 
