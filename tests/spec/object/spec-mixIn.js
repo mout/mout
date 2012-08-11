@@ -32,21 +32,22 @@ define(['src/object/mixIn'], function (mixIn) {
             expect( mixIn({}, b1, b2, {}) ).toEqual(b1_2);
         });
 
-        it('should work even if property is named hasOwnProperty', function(){
-            expect( mixIn(
+        it('should fix dont enum bug on IE', function(){
+            var r =  mixIn(
                 {
                     hasOwnProperty: 'foo'
                 },
                 {
                     a:1,
                     b:2,
+                    toString : 'dolor',
                     hasOwnProperty: 'bar'
                 }
-            ) ).toEqual({
-                hasOwnProperty: 'bar',
-                a: 1,
-                b: 2
-            });
+            );
+            expect( r.hasOwnProperty ).toEqual( 'bar' );
+            expect( r.toString ).toEqual( 'dolor' );
+            expect( r.a ).toEqual( 1 );
+            expect( r.b ).toEqual( 2 );
         });
 
     });

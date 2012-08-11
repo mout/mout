@@ -1,4 +1,4 @@
-define(['./hasOwn'], function(hasOwn){
+define(['./forOwn'], function(forOwn){
 
     /**
     * Combine properties from all the objects into first one.
@@ -6,19 +6,19 @@ define(['./hasOwn'], function(hasOwn){
     * @param {object} target    Target Object
     * @param {...object} objects    Objects to be combined (0...n objects).
     * @return {object} Target Object.
-    * @version 0.1.2 (2012/04/30)
+    * @version 0.1.3 (2012/08/11)
     */
     function mixIn(target, objects){
         var i = 1,
-            key, cur;
-        while(cur = arguments[i++]){
-            for(key in cur){
-                if(hasOwn(cur, key)){
-                    target[key] = cur[key];
-                }
-            }
+            obj;
+        while(obj = arguments[i++]){
+            forOwn(obj, copyProp, target);
         }
         return target;
+    }
+
+    function copyProp(val, key){
+        this[key] = val;
     }
 
     return mixIn;
