@@ -19,6 +19,7 @@ define(['src/array/lastIndexOf'], function (lastIndexOf) {
             var arr = [];
             arr[1] = 1;
             arr[3] = 'a';
+            arr[4] = undefined; // it's a trap!
             arr[6] = 2;
             arr[8] = 'b';
 
@@ -26,6 +27,7 @@ define(['src/array/lastIndexOf'], function (lastIndexOf) {
             expect( lastIdx(arr, 'a') ).toEqual( 3 );
             expect( lastIdx(arr, 2) ).toEqual( 6 );
             expect( lastIdx(arr, 'b') ).toEqual( 8 );
+            expect( lastIdx(arr, undefined) ).toEqual( 4 );
 
             expect( lastIdx(arr, 'foo') ).toEqual( -1 );
         });

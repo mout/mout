@@ -21,11 +21,13 @@ define(['src/array/indexOf'], function(indexOf){
             arr[3] = 'a';
             arr[6] = 2;
             arr[8] = 'b';
+            arr[10] = undefined;
 
             expect( idx(arr, 1) ).toEqual( 1 );
             expect( idx(arr, 'a') ).toEqual( 3 );
             expect( idx(arr, 2) ).toEqual( 6 );
             expect( idx(arr, 'b') ).toEqual( 8 );
+            expect( idx(arr, undefined) ).toEqual( 10 );
 
             expect( idx(arr, 'foo') ).toEqual( -1 );
         });

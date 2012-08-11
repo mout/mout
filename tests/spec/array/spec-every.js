@@ -30,8 +30,21 @@ define(['src/array/every'], function (every) {
         });
 
         it('should work on empty arrays', function () {
-            //t is vacuously true that all elements of the empty set satisfy any given condition.
+            //it is vacuously true that all elements of the empty set satisfy any given condition.
             expect( every([], isEven) ).toBe( true );
+        });
+
+        it('should loop forwards to avoid undesired behavior', function () {
+            // not that the loop order should matter on a truth check over all
+            // elements
+            var a1 = [1, 3, 7];
+            var result = [];
+            expect( every(a1, function(val, i, arr){
+                result.push(val);
+                return val !== 8;
+            }) ).toEqual( true );
+            expect( result ).toEqual( [1, 3, 7] );
+
         });
 
     });

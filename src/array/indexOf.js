@@ -1,24 +1,22 @@
 define(function () {
 
     /**
-     * ES5 Array.indexOf
-     * @version 0.2.1 (2011/11/25)
+     * Array.indexOf
+     * @version 0.3.0 (2012/07/26)
      */
-    var indexOf = Array.prototype.indexOf?
-                    function (arr, item, fromIndex) {
-                        return arr.indexOf(item, fromIndex);
-                    } :
-                    function (arr, item, fromIndex) {
-                        fromIndex = fromIndex || 0;
-                        var n = arr.length >>> 0,
-                            i = fromIndex < 0? n + fromIndex : fromIndex;
-                        for (; i < n; i++) {
-                            if (arr[i] === item) {
-                                return i;
-                            }
-                        }
-                        return -1;
-                    };
+    function indexOf(arr, item, fromIndex) {
+        fromIndex = fromIndex || 0;
+        var n = arr.length >>> 0,
+            i = fromIndex < 0? n + fromIndex : fromIndex;
+        while (i < n) {
+            //it should skip sparse items
+            if (i in arr && arr[i] === item) {
+                return i;
+            }
+            i += 1;
+        }
+        return -1;
+    }
 
     return indexOf;
 });

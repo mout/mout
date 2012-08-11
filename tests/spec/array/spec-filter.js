@@ -8,12 +8,33 @@ define(['src/array/filter'], function (filter) {
                 return (val % 2) !== 0;
             });
 
-            expect( result.length ).toEqual( 3 );
             expect( items.length ).toEqual( 5 ); //make sure it doesn't replace original array
+            expect( result ).toEqual( [1, 3, 5] );
+        });
 
-            expect( result[0] ).toEqual( 1 );
-            expect( result[1] ).toEqual( 3 );
-            expect( result[2] ).toEqual( 5 );
+        it('should support sparse arrays', function () {
+            var items = new Array(6);
+            items[2] = 3;
+            items[5] = 8;
+
+            var result = filter(items, function(val, i, arr){
+                expect( arr ).toBe( items );
+                expect( val ).toBe( items[i] );
+                expect( i ).not.toBe( 4 ); // make sure it skips sparse items
+                return val % 2 === 0;
+            });
+
+            expect( result ).toEqual( [8] );
+
+        });
+
+        it('should return empty array if no items match', function () {
+            var items = [1,2,3,4,5];
+            var result = filter(items, function(val, i, arr){
+                return false;
+            });
+
+            expect( result ).toEqual( [] );
         });
 
     });

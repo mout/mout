@@ -8,11 +8,21 @@ define(['src/array/map'], function (map) {
                 return val + i;
             });
 
-            expect( r[0] ).toBe( 1 );
-            expect( r[1] ).toBe( 3 );
-            expect( r[2] ).toBe( 5 );
-            expect( r[3] ).toBe( 7 );
-            expect( r[4] ).toBe( 9 );
+            expect( r ).toEqual( [1, 3, 5, 7, 9] );
+        });
+
+        it('should handle sparse arrays', function () {
+            function toOne(val, i){ return 1; }
+
+            var base = new Array(3);
+            var r = map(base, toOne);
+            // it looks weird but that is the correct behavior!!
+            expect( r ).toEqual( [undefined, undefined, undefined] );
+
+            base[5] = 'foo';
+
+            r = map(base, toOne);
+            expect( r ).toEqual( [undefined, undefined, undefined, undefined, undefined, 1] );
         });
 
     });

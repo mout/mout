@@ -1,20 +1,17 @@
 define(['./forEach'], function (forEach) {
 
     /**
-     * ES5 Array.map
-     * @version 0.2.0 (2011/11/15)
+     * Array map
+     * @version 0.3.0 (2012/07/26)
      */
-    var map = Array.prototype.map?
-                function (arr, callback, thisObj) {
-                    return arr.map(callback, thisObj);
-                } :
-                function (arr, callback, thisObj) {
-                    var results = [];
-                    forEach(arr, function (val, i, arr) {
-                        results[results.length] = callback.call(thisObj, val, i, arr);
-                    });
-                    return results;
-                };
+    function map(arr, callback, thisObj) {
+        // need to copy arr.length because of sparse arrays
+        var results = new Array(arr.length);
+        forEach(arr, function (val, i, arr) {
+            results[i] = callback.call(thisObj, val, i, arr);
+        });
+        return results;
+    }
 
      return map;
 });
