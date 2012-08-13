@@ -7,7 +7,7 @@ String utilities.
 
 Convert string to "camelCase" text.
 
-See: [`pascalCase()`](#pascalCase)
+See: [`pascalCase()`](#pascalCase), [`unCamelCase()`](#unCamelCase)
 
 ### Example
 
@@ -32,7 +32,7 @@ crop('lorem ipsum dolor', 10, '+'); // "lorem+"
 
 
 
-## endsWith(str, suffix):String
+## endsWith(str, suffix):Boolean
 
 Checks if string ends with specified suffix.
 
@@ -79,7 +79,7 @@ reg = new RegExp(str);               // /\[lorem\.ipsum\]/
 Replaces spaces with hyphens, split camelCase text, remove non-word chars,
 remove accents and convert to lower case.
 
-See: [`toSlug()`](#toSlug)
+See: [`toSlug()`](#toSlug), [`unHyphenate`](#unHyphenate)
 
 ```js
 hyphenate(' %# lorem ipsum  ? $  dolor'); // "lorem-ipsum-dolor"
@@ -331,7 +331,7 @@ stripHtmlTags(str); // "lorem ipsum"
 
 
 
-## startsWith(str, prefix):String
+## startsWith(str, prefix):Boolean
 
 Checks if string starts with specified prefix.
 
@@ -427,6 +427,8 @@ typecast('undefined');   // undefined
 Add space between camelCase text and convert first char of each word to lower
 case.
 
+See: [`camelCase()`][#camelCase]
+
 ### Example
 
 ```js
@@ -451,6 +453,8 @@ unescapeHtml('lorem &amp;amp; &amp;quot;ipsum&amp;quot;'); // 'lorem & "ipsum"'
 ## unHyphenate(str):String
 
 Replaces hyphens with spaces. (only hyphens between word chars)
+
+See : [`hyphenate()`](#hyphenate)
 
 ### Example
 
