@@ -1,21 +1,23 @@
 define(['./replaceAccents', './removeNonWord', './trim'], function(replaceAccents, removeNonWord, trim){
     /**
      * Convert to lower case, remove accents, remove non-word chars and
-     * replace spaces with hyphens.
-     * Only difference from `string/hyphenate`  is that it doesn't
-     * split camelCase text.
+     * replace spaces with the specified delimeter.
+     * Does not split camelCase text.
      * - ported from Miller Medeiros Eclipse Monkey Scripts
-     * @example toSlug('loremIpsum dolor spéçïãl chârs') -> 'loremipsum-dolor-special-chars'
-     * @see amd-utils/string/hyphenate
+     * @example toSlug('loremIpsum dolor spéçïãl chârs', '_') -> 'loremipsum_dolor_special_chars'
      * @param {string} str
+     * @param {string} [delimeter="-"]
      * @return {string}
-     * @version 0.1.0 (2011/08/09)
+     * @version 0.2.0 (2012/08/17)
      */
-     function toSlug(str){
+    function toSlug(str, delimeter){
+        if (delimeter == null) {
+            delimeter = "-";
+        }
         str = replaceAccents(str);
         str = removeNonWord(str);
         str = trim(str) //should come after removeNonWord
-                .replace(/ +/g, '-') //replace spaces with hyphen
+                .replace(/ +/g, delimeter) //replace spaces with delimeter
                 .toLowerCase();
         return str;
     }

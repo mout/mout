@@ -5,10 +5,11 @@ define(['./toSlug', './unCamelCase'], function(toSlug, unCamelCase){
     * @see amd-utils/string/toSlug
     * @param {string} str
     * @return {string}
-    * @version 0.1.0 (2011/08/09)
+    * @version 0.1.1 (2012/08/17)
     */
     function hyphenate(str){
-        return toSlug( unCamelCase(str) );
+        str = unCamelCase(str);
+        return toSlug(str, "-");
     }
     return hyphenate;
 });

@@ -7,8 +7,13 @@ define(['src/string/toSlug'], function (toSlug) {
             expect( toSlug(str) ).toEqual('loremipsum');
         });
 
-        it('should replace spaces with hyphens', function(){
+        it('should replace spaces with delimeter', function(){
             var str = '  lorem ipsum    dolor';
+            expect( toSlug(str, '_') ).toEqual('lorem_ipsum_dolor');
+        });
+
+        it('should use hyphen as delimeter by default', function(){
+            var str = 'lorem ipsum dolor';
             expect( toSlug(str) ).toEqual('lorem-ipsum-dolor');
         });
 

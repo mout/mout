@@ -79,7 +79,8 @@ reg = new RegExp(str);               // /\[lorem\.ipsum\]/
 Replaces spaces with hyphens, split camelCase text, remove non-word chars,
 remove accents and convert to lower case.
 
-See: [`toSlug()`](#toSlug), [`unHyphenate`](#unHyphenate)
+See: [`toSlug()`](#toSlug), [`underscore()`](#underscore),
+[`unHyphenate`](#unHyphenate)
 
 ```js
 hyphenate(' %# lorem ipsum  ? $  dolor'); // "lorem-ipsum-dolor"
@@ -346,21 +347,21 @@ startsWith('lorem ipsum', 'ipsum'); // false
 
 
 
-## toSlug(str):String
+## toSlug(str[, delimeter]):String
 
 Convert to lower case, remove accents, remove non-word chars and replace spaces
-with hyphens.
+with the delimeter. The default delimeter is a hyphen.
 
-Only difference from [string/hyphenate](#hyphenate) is that it doesn't split
-camelCase text.
+Note that this does not split camelCase text.
 
-See: [`hyphenate()`](#hyphenate)
+See: [`hyphenate()`](#hyphenate) and [`underscore()`](#underscore)
 
 ### Example
 
 ```js
 var str = 'loremIpsum dolor spéçïãl chârs';
 toSlug(str); // "loremipsum-dolor-special-chars"
+toSlug(str, '_'); // "loremipsum_dolor_special_chars"
 ```
 
 
@@ -433,6 +434,20 @@ See: [`camelCase()`][#camelCase]
 
 ```js
 unCamelCase('loremIpsumDolor'); // "lorem ipsum dolor"
+```
+
+
+## underscore(str):String
+
+Replaces spaces with underscores, split camelCase text, remove non-word chars,
+remove accents and convert to lower case.
+
+See: [`toSlug()`](#toSlug), [`hyphenate()`](#hyphenate)
+
+```js
+underscore(' %# lorem ipsum  ? $  dolor'); // "lorem_ipsum_dolor"
+underscore('spéçïãl çhârs');               // "special_chars"
+underscore('loremIpsum');                  // "lorem_ipsum"
 ```
 
 

@@ -29,6 +29,7 @@ define([
     'string/spec-truncate',
     'string/spec-typecast',
     'string/spec-unCamelCase',
+    'string/spec-underscore',
     'string/spec-unescapeHtml',
     'string/spec-unHyphenate',
     'string/spec-upperCase'

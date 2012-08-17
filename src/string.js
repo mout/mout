@@ -31,6 +31,7 @@ return {
     'truncate' : require('./string/truncate'),
     'typecast' : require('./string/typecast'),
     'unCamelCase' : require('./string/unCamelCase'),
+    'underscore' : require('./string/underscore'),
     'unescapeHtml' : require('./string/unescapeHtml'),
     'unHyphenate' : require('./string/unHyphenate'),
     'upperCase' : require('./string/upperCase')
