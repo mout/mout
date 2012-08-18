@@ -79,8 +79,8 @@ reg = new RegExp(str);               // /\[lorem\.ipsum\]/
 Replaces spaces with hyphens, split camelCase text, remove non-word chars,
 remove accents and convert to lower case.
 
-See: [`toSlug()`](#toSlug), [`underscore()`](#underscore),
-[`unHyphenate`](#unHyphenate)
+See: [`slugify()`](#slugify), [`underscore()`](#underscore),
+[`unhyphenate`](#unhyphenate)
 
 ```js
 hyphenate(' %# lorem ipsum  ? $  dolor'); // "lorem-ipsum-dolor"
@@ -347,7 +347,7 @@ startsWith('lorem ipsum', 'ipsum'); // false
 
 
 
-## toSlug(str[, delimeter]):String
+## slugify(str[, delimeter]):String
 
 Convert to lower case, remove accents, remove non-word chars and replace spaces
 with the delimeter. The default delimeter is a hyphen.
@@ -360,8 +360,8 @@ See: [`hyphenate()`](#hyphenate) and [`underscore()`](#underscore)
 
 ```js
 var str = 'loremIpsum dolor spéçïãl chârs';
-toSlug(str); // "loremipsum-dolor-special-chars"
-toSlug(str, '_'); // "loremipsum_dolor_special_chars"
+slugify(str); // "loremipsum-dolor-special-chars"
+slugify(str, '_'); // "loremipsum_dolor_special_chars"
 ```
 
 
@@ -442,7 +442,7 @@ unCamelCase('loremIpsumDolor'); // "lorem ipsum dolor"
 Replaces spaces with underscores, split camelCase text, remove non-word chars,
 remove accents and convert to lower case.
 
-See: [`toSlug()`](#toSlug), [`hyphenate()`](#hyphenate)
+See: [`slugify()`](#slugify), [`hyphenate()`](#hyphenate)
 
 ```js
 underscore(' %# lorem ipsum  ? $  dolor'); // "lorem_ipsum_dolor"
@@ -465,7 +465,7 @@ unescapeHtml('lorem &amp;amp; &amp;quot;ipsum&amp;quot;'); // 'lorem & "ipsum"'
 ```
 
 
-## unHyphenate(str):String
+## unhyphenate(str):String
 
 Replaces hyphens with spaces. (only hyphens between word chars)
 
@@ -474,7 +474,7 @@ See : [`hyphenate()`](#hyphenate)
 ### Example
 
 ```js
-unHyphenate('lorem-ipsum-dolor'); // "lorem ipsum dolor"
+unhyphenate('lorem-ipsum-dolor'); // "lorem ipsum dolor"
 ```
 
 

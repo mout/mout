@@ -24,16 +24,16 @@ return {
     'rpad' : require('./string/rpad'),
     'rtrim' : require('./string/rtrim'),
     'sentenceCase' : require('./string/sentenceCase'),
+    'slugify' : require('./string/slugify'),
     'startsWith' : require('./string/startsWith'),
     'stripHtmlTags' : require('./string/stripHtmlTags'),
-    'toSlug' : require('./string/toSlug'),
     'trim' : require('./string/trim'),
     'truncate' : require('./string/truncate'),
     'typecast' : require('./string/typecast'),
     'unCamelCase' : require('./string/unCamelCase'),
     'underscore' : require('./string/underscore'),
     'unescapeHtml' : require('./string/unescapeHtml'),
-    'unHyphenate' : require('./string/unHyphenate'),
+    'unhyphenate' : require('./string/unhyphenate'),
     'upperCase' : require('./string/upperCase')
 };
 

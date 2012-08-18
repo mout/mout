@@ -14,7 +14,7 @@ define(['src/string/underscore'], function(underscore) {
         it('should remove non-word chars', function(){
             var str = ' %# lorem ipsum  ? $  dolor';
             expect( underscore(str) ).toEqual('lorem_ipsum_dolor');
-        });https://github.com/jelera/vim-javascript-syntax.git
+        });
 
         it('should replace accents', function(){
             var str = 'spéçïãl chârs';

@@ -22,16 +22,16 @@ define([
     'string/spec-rpad',
     'string/spec-rtrim',
     'string/spec-sentenceCase',
+    'string/spec-slugify',
     'string/spec-startsWith',
     'string/spec-stripHtmlTags',
-    'string/spec-toSlug',
     'string/spec-trim',
     'string/spec-truncate',
     'string/spec-typecast',
     'string/spec-unCamelCase',
     'string/spec-underscore',
     'string/spec-unescapeHtml',
-    'string/spec-unHyphenate',
+    'string/spec-unhyphenate',
     'string/spec-upperCase'
 ], function(){
     //noop

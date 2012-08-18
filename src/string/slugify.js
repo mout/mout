@@ -4,13 +4,13 @@ define(['./replaceAccents', './removeNonWord', './trim'], function(replaceAccent
      * replace spaces with the specified delimeter.
      * Does not split camelCase text.
      * - ported from Miller Medeiros Eclipse Monkey Scripts
-     * @example toSlug('loremIpsum dolor spéçïãl chârs', '_') -> 'loremipsum_dolor_special_chars'
+     * @example slugify('loremIpsum dolor spéçïãl chârs', '_') -> 'loremipsum_dolor_special_chars'
      * @param {string} str
      * @param {string} [delimeter="-"]
      * @return {string}
      * @version 0.2.0 (2012/08/17)
      */
-    function toSlug(str, delimeter){
+    function slugify(str, delimeter){
         if (delimeter == null) {
             delimeter = "-";
         }
@@ -21,5 +21,5 @@ define(['./replaceAccents', './removeNonWord', './trim'], function(replaceAccent
                 .toLowerCase();
         return str;
     }
-    return toSlug;
+    return slugify;
 });
