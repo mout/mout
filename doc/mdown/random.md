@@ -20,6 +20,19 @@ choice(arr); // 'dolor'
 
 
 
+## guid():String
+
+Generates as best a guid that JavaScript can generate, see [Globally Unique Identifier](http://en.wikipedia.org/wiki/Globally_unique_identifier)
+
+### Example:
+
+```js
+guid();      // 830e9f50-ac7f-f369-a14f-ed0e62b2fa0b
+guid();      // 5de3d09b-e79c-1727-d32b-48c49228d508
+```
+
+
+
 ## rand([min], [max]):Number
 
 Gets a random number inside range or snap to min/max values.
@@ -60,6 +73,18 @@ randBit(); // 0
 choice(0, 1);
 ```
 
+
+
+## randByte():String
+
+Returns a random "byte" (00 - FF). Used by guid(), useful for random hex strings (eg #000000 format colors).
+
+### Example:
+
+```js
+randByte(); // 74
+randByte(); // 9f
+```
 
 
 ## randInt([min], [max]):Number
