@@ -24,11 +24,13 @@ choice(arr); // 'dolor'
 
 Generates as best a guid that JavaScript can generate, see [Globally Unique Identifier](http://en.wikipedia.org/wiki/Globally_unique_identifier)
 
+See: [`randHex()`](#randHex)
+
 ### Example:
 
 ```js
-guid();      // 830e9f50-ac7f-f369-a14f-ed0e62b2fa0b
-guid();      // 5de3d09b-e79c-1727-d32b-48c49228d508
+guid();      // 830e9f50-ac7f-4369-a14f-ed0e62b2fa0b
+guid();      // 5de3d09b-e79c-4727-d32b-48c49228d508
 ```
 
 
