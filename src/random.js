@@ -7,7 +7,7 @@ return {
     'guid' : require('./random/guid'),
     'rand' : require('./random/rand'),
     'randBit' : require('./random/randBit'),
-    'randByte' : require('./random/randByte'),
+    'randHex' : require('./random/randHex'),
     'randInt' : require('./random/randInt'),
     'randSign' : require('./random/randSign')
 };

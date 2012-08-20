@@ -1,4 +1,4 @@
-define(['./randByte'], function (byte) {
+define(['./randHex'], function (randHex) {
 
   /**
    * Returns pseudo-guid (0 or 1)
@@ -7,11 +7,11 @@ define(['./randByte'], function (byte) {
 
   function guid() {
     return (
-        byte()+byte()+byte()+byte()+"-"+
-        byte()+byte()+"-"+
-        byte()+byte()+"-"+
-        byte()+byte()+"-"+
-        byte()+byte()+byte()+byte()+byte()+byte()
+        randHex(8)+"-"+
+        randHex(4)+"-"+
+        "4" + randHex(3) +"-"+
+        randHex(4)+"-"+
+        randHex(12)
     );
   }
   return guid;

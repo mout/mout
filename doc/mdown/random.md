@@ -75,16 +75,21 @@ choice(0, 1);
 
 
 
-## randByte():String
+## randHex([size]):String
 
-Returns a random "byte" (00 - FF). Used by guid(), useful for random hex strings (eg #000000 format colors).
+Returns a random hexadecimal string.
+
+The default `size` is `6`.
 
 ### Example:
 
 ```js
-randByte(); // 74
-randByte(); // 9f
+randHex();   // "dd8575"
+randHex();   // "e6baeb"
+randHex(2);  // "a2"
+randHex(30); // "effd7e2ad9a4a3067e30525fab983a"
 ```
+
 
 
 ## randInt([min], [max]):Number
