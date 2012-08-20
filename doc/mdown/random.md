@@ -62,6 +62,23 @@ choice(0, 1);
 
 
 
+## randHex([size]):String
+
+Returns a random hexadecimal string.
+
+The default `size` is `6`.
+
+### Example:
+
+```js
+randHex();   // "dd8575"
+randHex();   // "e6baeb"
+randHex(2);  // "a2"
+randHex(30); // "effd7e2ad9a4a3067e30525fab983a"
+```
+
+
+
 ## randInt([min], [max]):Number
 
 Gets a random integer inside range or snap to min/max values.

@@ -6,6 +6,7 @@ return {
     'choice' : require('./random/choice'),
     'rand' : require('./random/rand'),
     'randBit' : require('./random/randBit'),
+    'randHex' : require('./random/randHex'),
     'randInt' : require('./random/randInt'),
     'randSign' : require('./random/randSign')
 };
