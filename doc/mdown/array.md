@@ -401,11 +401,13 @@ sort([2, 3, 1, 4], function(a, b){
 
 ## split(arr, [segments]):Array
 
-Splits an array into a fixed number of segments. The number of segments is
-specified by `segments` and defaults to 2. If the array cannot be evenly split,
-the first segments will contain the extra items. If `arr` is empty, an empty
-array is returned. If `arr.length` is less than `segments`, then the resulting
-array will have `arr.length` number of single-element arrays.
+Splits an array into a fixed number of segments.
+
+The number of segments is specified by `segments` and defaults to 2. If the
+array cannot be evenly split, the first segments will contain the extra items.
+If `arr` is empty, an empty array is returned. If `arr.length` is less than
+`segments`, then the resulting array will have `arr.length` number of
+single-element arrays.
 
 ### Example
 ```js
