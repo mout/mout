@@ -22,7 +22,10 @@ choice(arr); // 'dolor'
 
 ## guid():String
 
-Generates as best a guid that JavaScript can generate, see [Globally Unique Identifier](http://en.wikipedia.org/wiki/Globally_unique_identifier)
+Generates a pseudo-random [Globally Unique Identifier](http://en.wikipedia.org/wiki/Globally_unique_identifier) (v4).
+
+Since the total number of GUIDs is 2<sup>122</sup> the chance of generating the
+same value twice is negligible.
 
 See: [`randHex()`](#randHex)
 
