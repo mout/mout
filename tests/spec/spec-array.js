@@ -28,6 +28,7 @@ define([
     'array/spec-shuffle',
     'array/spec-some',
     'array/spec-sort',
+    'array/spec-split',
     'array/spec-toLookup',
     'array/spec-union',
     'array/spec-unique',

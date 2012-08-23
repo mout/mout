@@ -399,6 +399,24 @@ sort([2, 3, 1, 4], function(a, b){
 
 
 
+## split(arr, [segments]):Array
+
+Splits an array into a fixed number of segments. The number of segments is
+specified by `segments` and defaults to 2. If the array cannot be evenly split,
+the first segments will contain the extra items. If `arr` is empty, an empty
+array is returned. If `arr.length` is less than `segments`, then the resulting
+array will have `arr.length` number of single-element arrays.
+
+### Example
+```js
+split([1, 2, 3, 4, 5], 3) // [ [1, 2], [3, 4], [5] ]
+split([1, 2, 3, 4, 5]) // [ [1, 2, 3], [4, 5] ]
+split([]) // []
+split([1, 2], 3) // [ [1], [2] ]
+```
+
+
+
 ## toLookup(arr, key):Object
 
 Create an object that indexes the items in the array by a key. If `key` is a function, the key for each value in the resulting object will be the result of calling the function with the value as an argument. Otherwise `key` specifies the property on each value to use as the key.
