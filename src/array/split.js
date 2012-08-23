@@ -12,10 +12,11 @@ define(function() {
             remainder = array.length % segments,
             start = 0,
             i = 0,
-            n = array.length;
+            n = array.length,
+            len;
 
-        for (var i = 0; start < n; i++) {
-            var len = i < remainder ? segmentLength + 1 : segmentLength;
+        while (start < n) {
+            len = i++ < remainder ? segmentLength + 1 : segmentLength;
             output.push(array.slice(start, start + len));
             start += len;
         }
