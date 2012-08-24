@@ -186,9 +186,10 @@ intersection(a, b, c); // [1]
 Joins the strings in `arr`, inserting `separator` between each value.
 
 This ignores null values and empty strings that are in the array. `separator`
-defaults to an empty string.
+defaults to an empty string. This will convert all non-string objects in the
+array to a string.
 
-### Examples
+### Example
 
 ```js
 join(['a', 'b', 'c']); // 'abc'

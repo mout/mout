@@ -1,7 +1,7 @@
 define(['./filter'], function(filter) {
 
     function isValidString(val) {
-        return (typeof val === 'string' && val !== '');
+        return (val != null && val !== '');
     }
 
     /**
@@ -10,6 +10,9 @@ define(['./filter'], function(filter) {
      * @version 0.1.0 (2012/08/24)
      */
     function join(items, separator) {
+        separator = separator || '';
         return filter(items, isValidString).join(separator);
     }
+
+    return join;
 });

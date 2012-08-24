@@ -6,7 +6,7 @@ define(['../array/join'], function(join){
      * @version 0.3.0 (2012/08/24)
      */
     function makePath(var_args){
-        var result = join(Array.prototype.slice.call(arguments));
+        var result = join(Array.prototype.slice.call(arguments), '/');
         return result.replace(/\/{2,}/g, '/');
     }
 
