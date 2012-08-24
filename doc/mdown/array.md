@@ -181,6 +181,23 @@ intersection(a, b, c); // [1]
 
 
 
+## join(arr, [separator]):String
+
+Joins the strings in `arr`, inserting `separator` between each value.
+
+This ignores null values and empty strings that are in the array. `separator`
+defaults to an empty string.
+
+### Examples
+
+```js
+join(['a', 'b', 'c']); // 'abc'
+join(['foo', 'bar'], ', '); // 'foo, bar'
+join([null, 'foo', '', 'bar', undefined], ':'); // 'foo:bar'
+```
+
+
+
 ## lastIndexOf(arr, item, [fromIndex]):Number
 
 Crossbrowser ES5 `Array.lastIndexOf()`.

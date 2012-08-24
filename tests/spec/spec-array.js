@@ -14,6 +14,7 @@ define([
     'array/spec-indexOf',
     'array/spec-insert',
     'array/spec-intersection',
+    'array/spec-join',
     'array/spec-lastIndexOf',
     'array/spec-map',
     'array/spec-max',

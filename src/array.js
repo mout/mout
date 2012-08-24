@@ -16,6 +16,7 @@ return {
     'indexOf' : require('./array/indexOf'),
     'insert' : require('./array/insert'),
     'intersection' : require('./array/intersection'),
+    'join' : require('./array/join'),
     'lastIndexOf' : require('./array/lastIndexOf'),
     'map' : require('./array/map'),
     'max' : require('./array/max'),

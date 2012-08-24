@@ -164,6 +164,8 @@ ltrim('   lorem ipsum   ');  // "lorem ipsum   "
 Group arguments as path segments, if any of the args is `null` or `undefined`
 it will be ignored from resulting path. It will also remove duplicate "/".
 
+See: [`array/join()`](array.html#join)
+
 ### Example
 
 ```js
