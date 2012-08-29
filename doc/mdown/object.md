@@ -22,7 +22,7 @@ See: [`mixIn()`](#mixIn), [`merge()`](#merge)
 
 
 
-## filterValues(obj, callback, [thisObj])
+## filter(obj, callback, [thisObj])
 
 Returns a new object containing all properties where `callback` returns true,
 similar to Array/filter. It does not use properties from the object's
@@ -35,10 +35,10 @@ var obj = {
 };
 
 // returns { bar: 'bar value' }
-filterValues(obj, function(v) { return value.length > 5; });
+filter(obj, function(v) { return value.length > 5; });
 
 // returns { foo: 'value' }
-filterValues(obj, function(v, k) { return k === 'foo'; });
+filter(obj, function(v, k) { return k === 'foo'; });
 ```
 
 
@@ -180,7 +180,7 @@ keys(obj); // ['foo', 'bar', 'lorem']
 
 
 
-## mapValues(obj, callback, [thisObj]):Object
+## map(obj, callback, [thisObj]):Object
 
 Returns a new object where the property values are the result of calling the
 callback for each property in the original object, similar to Array/map.
@@ -189,9 +189,9 @@ callback for each property in the original object, similar to Array/map.
 var obj = { foo: 1, bar: 2 },
     data = { foo: 0, bar: 1 };
 
-mapValues(obj, function(v) { return v + 1; }); // { foo: 2, bar: 3 }
-mapValues(obj, function(v, k) { return k; }); // { foo: "foo", bar: "bar" }
-mapValues(obj, function(v, k) { return this[k]; }, data); // { foo: 0, bar: 1 }
+map(obj, function(v) { return v + 1; }); // { foo: 2, bar: 3 }
+map(obj, function(v, k) { return k; }); // { foo: "foo", bar: "bar" }
+map(obj, function(v, k) { return this[k]; }, data); // { foo: 0, bar: 1 }
 ```
 
 

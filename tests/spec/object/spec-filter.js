@@ -1,6 +1,6 @@
-define(['src/object/filterValues'], function(filterValues) {
+define(['src/object/filter'], function(filter) {
 
-    describe('object/filterValues()', function() {
+    describe('object/filter()', function() {
 
         it('should include values where callback returns true', function() {
             var obj = {
@@ -8,21 +8,21 @@ define(['src/object/filterValues'], function(filterValues) {
                 bar: false
             };
 
-            var result = filterValues(obj, function(v) { return v; });
+            var result = filter(obj, function(v) { return v; });
             expect(result).toEqual({ foo: true });
         });
 
         it('should include values where return value is truthy', function() {
             var obj = { foo: 'value' };
 
-            var result = filterValues(obj, function(v) { return 1; });
+            var result = filter(obj, function(v) { return 1; });
             expect(result).toEqual(obj);
         });
 
         it('should exclude values where return value is falsy', function() {
             var obj = { foo: 'value' };
 
-            var result = filterValues(obj, function(v) { return 0; });
+            var result = filter(obj, function(v) { return 0; });
             expect(result).toEqual({});
         });
 
@@ -32,16 +32,14 @@ define(['src/object/filterValues'], function(filterValues) {
                 bar: null
             };
 
-            var result = filterValues(obj, function(v, k) {
-                return k === 'foo';
-            });
+            var result = filter(obj, function(v, k) { return k === 'foo'; });
             expect(result).toEqual({ foo: null });
         });
 
         it('should pass original object as third parameter', function() {
             var obj = { foo: null };
 
-            var result = filterValues(obj, function(v, k, data) {
+            var result = filter(obj, function(v, k, data) {
                 expect(data).toBe(obj);
                 return true;
             });
@@ -52,7 +50,7 @@ define(['src/object/filterValues'], function(filterValues) {
             var obj = { foo: null },
                 thisObj = {};
 
-            var result = filterValues(obj, function() {
+            var result = filter(obj, function() {
                 expect(this).toBe(thisObj);
                 return true;
             }, thisObj);

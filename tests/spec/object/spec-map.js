@@ -1,6 +1,6 @@
-define(['src/object/mapValues'], function(mapValues) {
+define(['src/object/map'], function(map) {
 
-    describe('object/mapValues()', function() {
+    describe('object/map()', function() {
 
         it('should map the values', function() {
             var obj = {
@@ -8,7 +8,7 @@ define(['src/object/mapValues'], function(mapValues) {
                 b: 2
             };
 
-            var result = mapValues(obj, function(x) { return x + 1; });
+            var result = map(obj, function(x) { return x + 1; });
             expect(result.a).toEqual(2);
             expect(result.b).toEqual(3);
         });
@@ -19,7 +19,7 @@ define(['src/object/mapValues'], function(mapValues) {
                 b: null
             };
 
-            var result = mapValues(obj, function(val, key) { return key; });
+            var result = map(obj, function(val, key) { return key; });
             expect(result.a).toEqual('a');
             expect(result.b).toEqual('b');
         });
@@ -30,7 +30,7 @@ define(['src/object/mapValues'], function(mapValues) {
                 b: null
             };
 
-            var result = mapValues(obj, function(v, k, obj) { return obj; });
+            var result = map(obj, function(v, k, obj) { return obj; });
             expect(result.a).toBe(obj);
             expect(result.b).toBe(obj);
         });
@@ -41,7 +41,7 @@ define(['src/object/mapValues'], function(mapValues) {
                 n: null
             };
 
-            var result = mapValues(obj, function(v) { return v; });
+            var result = map(obj, function(v) { return v; });
             expect('u' in obj).toBe(true);
             expect(obj.u).toBeUndefined();
             expect(obj.n).toBeNull();
@@ -51,7 +51,7 @@ define(['src/object/mapValues'], function(mapValues) {
             var obj = { foo: null },
                 thisObj = {};
 
-            var result = mapValues(obj, function() { return this }, thisObj);
+            var result = map(obj, function() { return this }, thisObj);
             expect(result.foo).toBe(thisObj);
         });
 

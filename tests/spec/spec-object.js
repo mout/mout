@@ -2,13 +2,13 @@
 //run `node build` instead
 define([
     'object/spec-fillIn',
-    'object/spec-filterValues',
+    'object/spec-filter',
     'object/spec-forOwn',
     'object/spec-get',
     'object/spec-has',
     'object/spec-hasOwn',
     'object/spec-keys',
-    'object/spec-mapValues',
+    'object/spec-map',
     'object/spec-merge',
     'object/spec-mixIn',
     'object/spec-namespace',
