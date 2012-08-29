@@ -22,6 +22,27 @@ See: [`mixIn()`](#mixIn), [`merge()`](#merge)
 
 
 
+## filterValues(obj, callback, [thisObj])
+
+Returns a new object containing all properties where `callback` returns true,
+similar to Array/filter. It does not use properties from the object's
+prototype.
+
+```js
+var obj = {
+    foo: 'value',
+    bar: 'bar value'
+};
+
+// returns { bar: 'bar value' }
+filterValues(obj, function(v) { return value.length > 5; });
+
+// returns { foo: 'value' }
+filterValues(obj, function(v, k) { return k === 'foo'; });
+```
+
+
+
 ## forOwn(obj, callback[, thisObj])
 
 Iterate over all own properties from an Object, similar to Array/forEach.

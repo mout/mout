@@ -2,6 +2,7 @@
 //run `node build` instead
 define([
     'object/spec-fillIn',
+    'object/spec-filterValues',
     'object/spec-forOwn',
     'object/spec-get',
     'object/spec-has',

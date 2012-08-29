@@ -4,6 +4,7 @@ define(function(require){
 //run `node build` instead
 return {
     'fillIn' : require('./object/fillIn'),
+    'filterValues' : require('./object/filterValues'),
     'forOwn' : require('./object/forOwn'),
     'get' : require('./object/get'),
     'has' : require('./object/has'),
