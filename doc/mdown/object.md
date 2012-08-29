@@ -28,6 +28,10 @@ Returns a new object containing all properties where `callback` returns true,
 similar to Array/filter. It does not use properties from the object's
 prototype.
 
+Callback receives the same arguments as `forOwn()`.
+
+See: [`forOwn()`](#forOwn)
+
 ```js
 var obj = {
     foo: 'value',
@@ -184,6 +188,10 @@ keys(obj); // ['foo', 'bar', 'lorem']
 
 Returns a new object where the property values are the result of calling the
 callback for each property in the original object, similar to Array/map.
+
+The callback function receives the same arguments as in `forOwn()`.
+
+See: [`forOwn()`](#forOwn)
 
 ```js
 var obj = { foo: 1, bar: 2 },
