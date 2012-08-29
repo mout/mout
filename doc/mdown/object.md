@@ -180,7 +180,7 @@ keys(obj); // ['foo', 'bar', 'lorem']
 
 
 
-## mapValues(obj, callback):Object
+## mapValues(obj, callback, [thisObj]):Object
 
 Returns a new object where the property values are the result of calling the
 callback for each property in the original object, similar to Array/map.
