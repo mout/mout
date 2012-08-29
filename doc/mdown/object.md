@@ -159,6 +159,22 @@ keys(obj); // ['foo', 'bar', 'lorem']
 
 
 
+## mapValues(obj, callback):Object
+
+Returns a new object where the property values are the result of calling the
+callback for each property in the original object, similar to Array/map.
+
+```js
+var obj = { foo: 1, bar: 2 },
+    data = { foo: 0, bar: 1 };
+
+mapValues(obj, function(v) { return v + 1; }); // { foo: 2, bar: 3 }
+mapValues(obj, function(v, k) { return k; }); // { foo: "foo", bar: "bar" }
+mapValues(obj, function(v, k) { return this[k]; }, data); // { foo: 0, bar: 1 }
+```
+
+
+
 ## merge(...objects):Object
 
 Deep merges objects. Note that objects and properties will be cloned during the
