@@ -4,6 +4,7 @@ define(function(require){
 //run `node build` instead
 return {
     'camelCase' : require('./string/camelCase'),
+    'contains' : require('./string/contains'),
     'crop' : require('./string/crop'),
     'endsWith' : require('./string/endsWith'),
     'escapeHtml' : require('./string/escapeHtml'),

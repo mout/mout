@@ -2,6 +2,7 @@
 //run `node build` instead
 define([
     'string/spec-camelCase',
+    'string/spec-contains',
     'string/spec-crop',
     'string/spec-endsWith',
     'string/spec-escapeHtml',

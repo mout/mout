@@ -17,6 +17,22 @@ camelCase('lorem ipsum dolor'); // "loremIpsumDolor"
 ```
 
 
+
+## contains(str, substring):Boolean
+
+Checks if string contains the given substring.
+
+See: [`startsWith()`](#startsWith), [`endsWith()`](#endsWith)
+
+### Example
+
+```js
+contains('lorem', 'or');  // true
+contains('lorem', 'bar'); // false
+```
+
+
+
 ## crop(str, maxChars, [append]):String
 
 Truncate string at full words. Alias to `truncate(str, maxChars, append, true);`.
@@ -36,7 +52,7 @@ crop('lorem ipsum dolor', 10, '+'); // "lorem+"
 
 Checks if string ends with specified suffix.
 
-See: [`startsWith()`](#startsWith)
+See: [`startsWith()`](#startsWith), [`contains()`](#contains)
 
 ### Example
 
@@ -338,7 +354,7 @@ stripHtmlTags(str); // "lorem ipsum"
 
 Checks if string starts with specified prefix.
 
-See: [`endsWith()`](#endsWith)
+See: [`endsWith()`](#endsWith), [`contains()`](#contains)
 
 ### Example
 
