@@ -1,7 +1,6 @@
 //automatically generated, do not edit!
 //run `node build` instead
 define([
-    'lang/spec-bind',
     'lang/spec-clone',
     'lang/spec-createObject',
     'lang/spec-ctorApply',

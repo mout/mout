@@ -1,6 +1,6 @@
-define(['src/lang/bind'], function (bind) {
+define(['src/function/bind'], function (bind) {
 
-    describe('lang/bind()', function(){
+    describe('function/bind()', function(){
 
         var o1 = {val : 'bar'};
         var o2 = {val : 123};

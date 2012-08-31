@@ -4,18 +4,6 @@ Language Utilities. Easier inheritance, scope handling, type checks.
 
 
 
-## bind(fn, context, [...args]):Function
-
-Return a function that will execute in the given context, optionally adding any additional supplied parameters to the beginning of the arguments collection.
-
-### Arguments
-
- 1. `fn` (Function)    : Target Function
- 2. `context` (Object) : Execution context (object used as `this`)
- 3. `[...args]` (*)    : Arguments (0...n arguments)
-
-
-
 ## clone(val):*
 
 Deep clone native types like Object, Array, RegExp, Date and primitives.

@@ -3,7 +3,6 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
-    'bind' : require('./lang/bind'),
     'clone' : require('./lang/clone'),
     'createObject' : require('./lang/createObject'),
     'ctorApply' : require('./lang/ctorApply'),

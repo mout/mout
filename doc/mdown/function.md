@@ -4,6 +4,18 @@ Function*(al)* utilities.
 
 
 
+## bind(fn, context, [...args]):Function
+
+Return a function that will execute in the given context, optionally adding any additional supplied parameters to the beginning of the arguments collection.
+
+### Arguments
+
+ 1. `fn` (Function)    : Target Function
+ 2. `context` (Object) : Execution context (object used as `this`)
+ 3. `[...args]` (*)    : Arguments (0...n arguments)
+
+
+
 ## compose(...fn):Function
 
 Returns the composition of a list of functions, where each function consumes
