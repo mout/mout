@@ -36,8 +36,8 @@ define(['src/lang/toArray'], function (toArray) {
             // avoid string objects it isn't reliable
             // IE 7-8 can't access chars by index
             // considered as edge-case and ignored for now
-            // expect( toArray( new String('foo') ) ).toEqual( ['foo'] );
-            // expect( toArray( new String('') ) ).toEqual( [] );
+            expect( toArray( new String('foo') ) ).toEqual( ['foo'] );
+            expect( toArray( new String('') ) ).toEqual( [''] );
 
             expect( toArray(123) ).toEqual( [123] );
             expect( toArray(0) ).toEqual( [0] );
@@ -61,7 +61,7 @@ define(['src/lang/toArray'], function (toArray) {
             expect( toArray() ).toEqual( [] );
         });
 
-        it('should convert HTMLCollection to real array', function () {
+        it('should convert HTMLCollection to real array - #58', function () {
             var els = document.getElementsByTagName('*');
             var arr = toArray( els );
             expect( Object.prototype.toString.call(arr) ).toBe( '[object Array]' );
