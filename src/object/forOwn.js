@@ -25,16 +25,12 @@ define(['./hasOwn'], function (hasOwn) {
      * Similar to Array/forEach but works over object properties and fixes Don't
      * Enum bug on IE.
      * based on: http://whattheheadsaid.com/2010/10/a-safer-object-keys-compatibility-implementation
-     * @version 0.1.2 (2012/08/08)
+     * @version 0.2.0 (2012/08/30)
      */
     function forOwn(obj, fn, thisObj){
         var key, i = 0;
-
-        if (typeof obj !== 'object') {
-            // any object will be good (Array, Date, etc..) that way it can
-            // be used in other things besides plain objects
-            throw new TypeError('forOwn called on a non-object');
-        }
+        // no need to check if argument is a real object that way we can use
+        // it for arrays, functions, date, etc.
 
         //post-pone check till needed
         if (_hasDontEnumBug == null) checkDontEnum();

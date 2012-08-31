@@ -12,6 +12,7 @@ return {
     'isArray' : require('./lang/isArray'),
     'isBoolean' : require('./lang/isBoolean'),
     'isDate' : require('./lang/isDate'),
+    'isEmpty' : require('./lang/isEmpty'),
     'isFunction' : require('./lang/isFunction'),
     'isKind' : require('./lang/isKind'),
     'isNull' : require('./lang/isNull'),

@@ -143,6 +143,22 @@ If value is a Date.
 
 
 
+## isEmpty(val):Boolean
+
+Checks if Array/Object/String is empty.
+
+
+```js
+isEmpty('');         // true
+isEmpty('bar');      // false
+isEmpty([]);         // true
+isEmpty([1, 2]);     // false
+isEmpty({});         // true
+isEmpty({a:1, b:2}); // false
+```
+
+
+
 ## isFunction(val):Boolean
 
 If value is a Function.

@@ -118,12 +118,6 @@ define(['src/object/forOwn'], function (forOwn) {
 
         });
 
-        it('should throw error if called on non-objects', function () {
-            expect( function(){
-                forOwn(123, function(){});
-            } ).toThrow();
-        });
-
     });
 
 });

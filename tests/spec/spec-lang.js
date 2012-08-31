@@ -10,6 +10,7 @@ define([
     'lang/spec-isArray',
     'lang/spec-isBoolean',
     'lang/spec-isDate',
+    'lang/spec-isEmpty',
     'lang/spec-isFunction',
     'lang/spec-isKind',
     'lang/spec-isNull',
