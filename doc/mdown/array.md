@@ -99,6 +99,8 @@ Creates a new array with all elements that pass the callback test.
 
 more info at [MDN Array#filter](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/filter)
 
+See [`reject()`](#reject)
+
 
 
 ## find(arr, callback, [thisObj]):void
@@ -318,6 +320,15 @@ Apply a function simultaneously against two values of the array (from
 right-to-left) as to reduce it to a single value.
 
 more info at [MDN Array#reduceRight](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/reduceRight)
+
+
+
+## reject(arr, fn, thisObj):Array
+
+Creates a new array with all the elements that do **not** pass the truth test.
+Opposite of [`filter()`](#filter).
+
+See [`filter()`](#filter)
 
 
 

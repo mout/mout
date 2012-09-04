@@ -24,6 +24,7 @@ define([
     'array/spec-range',
     'array/spec-reduce',
     'array/spec-reduceRight',
+    'array/spec-reject',
     'array/spec-remove',
     'array/spec-removeAll',
     'array/spec-shuffle',
