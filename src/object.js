@@ -14,6 +14,7 @@ return {
     'merge' : require('./object/merge'),
     'mixIn' : require('./object/mixIn'),
     'namespace' : require('./object/namespace'),
+    'pick' : require('./object/pick'),
     'set' : require('./object/set'),
     'size' : require('./object/size'),
     'unset' : require('./object/unset'),

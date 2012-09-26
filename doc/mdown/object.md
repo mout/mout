@@ -30,7 +30,7 @@ prototype.
 
 Callback receives the same arguments as `forOwn()`.
 
-See: [`forOwn()`](#forOwn)
+See: [`forOwn()`](#forOwn), [`pick()`](#pick)
 
 ```js
 var obj = {
@@ -263,6 +263,30 @@ See: [`get()`](#get), [`set()`](#set)
 var obj = {};
 namespace(obj, 'foo.bar'); // {}
 console.log(obj);          // {foo:{bar:{}}}
+```
+
+
+
+## pick(obj, ...keys):Object
+
+Return a copy of the object that contains only the whitelisted keys.
+
+See: [`filter()`](#filter)
+
+```js
+var user = {
+    firstName : 'John',
+    lastName : 'Doe',
+    dob : '1985/07/23',
+    gender : 'male'
+};
+
+// can pass an array of keys as second argument
+var keys = ['firstName', 'dob']
+pick(user, keys); // {firstName:"John", dob: "1985/07/23"}
+
+// or multiple arguments
+pick(user, 'firstName', 'lastName'); // {firstName:"John", lastName: "Doe"}
 ```
 
 

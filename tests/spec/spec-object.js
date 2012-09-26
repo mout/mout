@@ -12,6 +12,7 @@ define([
     'object/spec-merge',
     'object/spec-mixIn',
     'object/spec-namespace',
+    'object/spec-pick',
     'object/spec-set',
     'object/spec-size',
     'object/spec-unset',
