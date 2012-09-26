@@ -26,6 +26,7 @@ return {
     'range' : require('./array/range'),
     'reduce' : require('./array/reduce'),
     'reduceRight' : require('./array/reduceRight'),
+    'reject' : require('./array/reject'),
     'remove' : require('./array/remove'),
     'removeAll' : require('./array/removeAll'),
     'shuffle' : require('./array/shuffle'),
