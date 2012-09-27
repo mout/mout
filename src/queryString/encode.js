@@ -2,9 +2,9 @@ define(['../object/forOwn'], function (forOwn) {
 
     /**
      * Encode object into a query string.
-     * @version 0.2.1 (2012/09/19)
+     * @version 0.3.0 (2012/09/26)
      */
-    function encodeQuery(obj){
+    function encode(obj){
         var query = [];
         forOwn(obj, function(val, key){
             query.push( key +'='+ encodeURIComponent(val) );
@@ -12,5 +12,5 @@ define(['../object/forOwn'], function (forOwn) {
         return (query.length)? '?'+ query.join('&') : '';
     }
 
-    return encodeQuery;
+    return encode;
 });

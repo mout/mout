@@ -4,99 +4,93 @@ Utilities for query string manipulation.
 
 
 
-## decodeQuery(str):Object
+## decode(queryStr[, shouldTypecast]):Object
 
-Parses query string and creates an object of keys => vals. Will typecast value
-with `string/typecast` and decode string parameters using
-`decodeURIComponent()`.
+Parses query string and creates an object of keys => vals.
+
+Will typecast value with [`string/typecast`](string.html#typecast) by default
+and decode string parameters using `decodeURIComponent()`.
 
 ```js
-decodeQuery('?foo=bar&lorem=123'); // {foo: "bar", lorem: 123}
+var query = '?foo=bar&lorem=123';
+decode(query);        // {foo: "bar", lorem: 123}
+decode(query, false); // {foo: "bar", lorem: "123"}
 ```
 
 
 ## encodeQuery(obj):String
 
-Encode object into a query string. Will encode parameters with
-`encodeURIComponent()`.
+Encode object into a query string.
+
+Will encode parameters with `encodeURIComponent()`.
 
 ```js
 encodeQuery({foo: "bar", lorem: 123}); // "?foo=bar&lorem=123"
 ```
 
 
-## getParam(param, url):*
+## getParam(url, param[, shouldTypecast]):*
 
-Get query parameter value. Will typecast value with `string/typecast`.
-Allow parsing a custom URL or uses `location.href` by default.
+Get query parameter value.
+
+Will typecast value with [`string/typecast`](string.html#typecast) by default.
 
 ### Arguments:
 
- 1. `param` (String) : Parameter name.
- 2. `[url]` (String) : Url. Will use `location.href` by default.
+ 1. `url` (String) : Url.
+ 2. `param` (String) : Parameter name.
+ 3. `[shouldTypecast]` (Boolean) : If it should typecast value.
 
 ### Example:
 
 ```js
-//if current URI = example.com/?foo=bar&lorem=123&ipsum=false
-getParam('foo');   // "bar"
-getParam('lorem'); // 123
-getPram('ipsum');  // false
-
-//allow custom URL
-getParam('dolor', 'example.com/?dolor=amet'); // "amet"
+var url = 'example.com/?foo=bar&lorem=123&ipsum=false';
+getParam(url, 'dolor');        // "amet"
+getParam(url, 'lorem');        // 123
+getParam(url, 'lorem', false); // "123"
 ```
 
 
-## getQueryObject(url):Object
+## parse(url[, shouldTypecast]):Object
 
-Parses URL, extracts query string and decodes it. Will use `location.href` by default.
+Parses URL, extracts query string and decodes it.
 
-Alias to: `decodeQuery(getQueryString(url))`.
+It will typecast all properties of the query object unless second argument is
+`false`.
+
+Alias to: `decode(getQuery(url))`.
 
 ```js
-//if current URI = example.com/?foo=bar&lorem=123&ipsum=false
-getQueryObject(); // {foo: "bar", lorem: 123, ipsum: false}
-
-//allow custom URL
-getQueryObject('example.com/?lorem=ipsum'); // {lorem: "ipsum"}
+var url = 'example.com/?lorem=ipsum&a=123';
+parse(url);        // {lorem: "ipsum", a: 123}
+parse(url, false); // {lorem: "ipsum", a: "123"}
 ```
 
 
-## getQueryString(url):String
+## getQuery(url):String
 
-Gets full query as string with all special chars decoded. It avoid issues with
-query string inside `location.hash` (e.g. "index.html?dolor=1#/lorem/?foo=bar").
-Will use `location.href` by default.
+Gets full query as string with all special chars decoded.
 
 ```js
-//if current URI = example.com/?foo=bar&lorem=123&ipsum=false
-getQueryString(); // "?foo=bar&lorem=123&ipsum=false"
-
-//allow custom URL
-getQueryString('example.com/?lorem=ipsum'); // "?lorem=ipsum"
+getQuery('example.com/?lorem=ipsum'); // "?lorem=ipsum"
 ```
 
 
-## hasParam(paramName, url):Boolen
+## contains(url, paramName):Boolen
 
 Checks if query string contains parameter.
 
 ### Arguments:
 
- 1. `paramName` (String) : Parameter name.
- 2. `[url]` (String)     : Custom URL. Will use `location.href` by default.
+ 1. `url` (String)     : URL or query string.
+ 2. `paramName` (String) : Parameter name.
 
 ### Example:
 
 ```js
-//if current URI = example.com/?foo=bar&lorem=123&ipsum=false
-hasParam('foo');   // true
-hasParam('dolor'); // false
-
-//allow custom URL
-hasParam('lorem', 'example.com/?lorem=ipsum'); // true
-hasParam('foo', 'example.com/?lorem=ipsum');   //false
+var url = 'example.com/?lorem=ipsum';
+contains(url, 'lorem'); // true
+contains(url, 'foo');   //false
 ```
 
 -------------------------------------------------------------------------------

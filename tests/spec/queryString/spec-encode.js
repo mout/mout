@@ -1,6 +1,6 @@
-define(['src/queryString/encodeQuery'], function (encodeQuery) {
+define(['src/queryString/encode'], function (encode) {
 
-    describe('queryString/encodeQuery()', function () {
+    describe('queryString/encode()', function () {
 
         it('should convert simple object into query string.', function () {
             var q = {
@@ -9,7 +9,7 @@ define(['src/queryString/encodeQuery'], function (encodeQuery) {
                 c : null,
                 d : 'bar'
             };
-            expect( encodeQuery(q) ).toBe( '?a=123&b=false&c=null&d=bar' );
+            expect( encode(q) ).toBe( '?a=123&b=false&c=null&d=bar' );
         });
 
         it('should encode special chars', function () {
@@ -18,7 +18,7 @@ define(['src/queryString/encodeQuery'], function (encodeQuery) {
                 b : 'lorem ipsum',
                 c : 'spéçîãl çhârs'
             };
-            expect( encodeQuery(q) ).toBe( '?a=bar&b=lorem%20ipsum&c=sp%C3%A9%C3%A7%C3%AE%C3%A3l%20%C3%A7h%C3%A2rs' );
+            expect( encode(q) ).toBe( '?a=bar&b=lorem%20ipsum&c=sp%C3%A9%C3%A7%C3%AE%C3%A3l%20%C3%A7h%C3%A2rs' );
         });
     });
 
