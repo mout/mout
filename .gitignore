@@ -13,8 +13,6 @@ Thumbs.db
 
 # ignore files added by `npm install`
 
-pkg/
-
 array.js
 array/
 financial.js
