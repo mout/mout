@@ -1,7 +1,7 @@
 // convert AMD modules into node.js compatible
 
 var SRC_FOLDER = 'src',
-    NODE_FOLDER = 'pkg';
+    ROOT_FOLDER = '.';
 
 
 // ---
@@ -12,19 +12,27 @@ var _fs = require('fs'),
 
 // ---
 
+// Remove all files from the root expect some
+var files = _fs.readdirSync(ROOT_FOLDER);
+var ignore = ['_build', 'package.json', '.jshintrc', 'pkg', 'doc', 'src', 'node_modules', 'README.md', '.git'];
+files.forEach(function(name){
+    var path = _path.join(ROOT_FOLDER, name);
 
-if ( _fs.existsSync(NODE_FOLDER) ) {
-    _wrench.rmdirSyncRecursive(NODE_FOLDER);
-}
+    if (ignore.indexOf(name) === -1) {
+        if ( _fs.statSync(path).isFile() ) {
+            _fs.unlinkSync(path);
+        } else {
+            _wrench.rmdirSyncRecursive(path);
+        }
+    }
 
-_fs.mkdirSync( NODE_FOLDER );
+});
 
-
+// Transform all the src folder files and put them in the node folder
 var files = _wrench.readdirSyncRecursive(SRC_FOLDER);
-
 files.forEach(function(name){
     var pathSrc = _path.join(SRC_FOLDER, name);
-    var pathDist = _path.join(NODE_FOLDER, name);
+    var pathDist = _path.join(ROOT_FOLDER, name);
 
     if ( _fs.statSync(pathSrc).isFile() ) {
         // prepend amdefine
@@ -36,5 +44,3 @@ files.forEach(function(name){
     }
 
 });
-
-
