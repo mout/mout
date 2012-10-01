@@ -19,7 +19,7 @@
     "bugs" : {
         "url" : "https://github.com/millermedeiros/amd-utils/issues/"
     },
-    "main" : "./pkg/index.js",
+    "main" : "./index.js",
     "dependencies" : {
         "wrench" : "~1.3.9",
         "amdefine" : ">= 0.0.2"
@@ -29,7 +29,7 @@
     },
     "directories" : {
         "doc" : "./doc/mdown",
-        "lib" : "./pkg"
+        "lib" : "./"
     },
     "devDependencies" : {
         "mdoc" : "~0.3.2",
