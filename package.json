@@ -1,7 +1,7 @@
 {
     "name" : "amd-utils",
     "description" : "Utility methods written in the AMD format",
-    "version" : "0.4.0",
+    "version" : "0.5.0",
     "homepage" : "http://millermedeiros.github.com/amd-utils/",
     "author" : {
         "name" : "Miller Medeiros",
@@ -25,8 +25,7 @@
         "amdefine" : ">= 0.0.2"
     },
     "scripts" : {
-        "install" : "node ./_build/convert.js",
-        "update" : "node ./_build/convert.js"
+        "install" : "node ./_build/convert.js"
     },
     "directories" : {
         "doc" : "./doc/mdown",

@@ -103,8 +103,17 @@ AMD-utils also works on [node.js](http://nodejs.org), just run:
    npm install amd-utils
 
 It will download amd-utils from the NPM repository and convert the AMD modules
-into a node.js compatible module.
+into a node.js compatible format.
 
+    // you can load individual methods
+    var map = require('amd-utils/array/map');
+    map([1, 2], function(v){ return val * val; }); // [1, 4]
+
+    // a single package
+    var stringUtils = require('amd-utils/string');
+    stringUtils.camelCase('Foo Bar'); // "fooBar"
+
+    // or the whole lib
     var utils = require('amd-utils');
     console.log( utils.math.clamp(100, 0, 50) ); // 50
 

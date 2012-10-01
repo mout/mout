@@ -2,7 +2,6 @@
 .project
 .settings/
 node_modules/
-pkg/
 
 .livereload
 
@@ -10,3 +9,32 @@ pkg/
 ehthumbs.db
 Icon?
 Thumbs.db
+
+
+# ignore files added by `npm install`
+
+pkg/
+
+array.js
+array/
+financial.js
+financial/
+function.js
+function/
+index.js
+lang.js
+lang/
+math.js
+math/
+number.js
+number/
+object.js
+object/
+queryString.js
+queryString/
+random.js
+random/
+string.js
+string/
+time.js
+time/
