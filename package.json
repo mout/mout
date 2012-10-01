@@ -25,7 +25,8 @@
         "amdefine" : ">= 0.0.2"
     },
     "scripts" : {
-        "install" : "node ./_build/convert.js"
+        "install" : "node ./_build/convert.js",
+        "update" : "node ./_build/convert.js"
     },
     "directories" : {
         "doc" : "./doc/mdown",
