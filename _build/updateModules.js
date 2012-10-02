@@ -113,6 +113,7 @@ function makePackages(packages){
 
 
 var specTemplate = compileTemplate('spec'),
+    specPackageTemplate = compileTemplate('specPackage'),
     specRunnerTemplate = compileTemplate('specRunner');
 
 
@@ -130,8 +131,16 @@ function makeSpecs(packages){
         });
 
         var specFileName = 'spec-'+ packageFolder +'.js';
-        _fs.writeFileSync(_path.join(SPEC_FOLDER, specFileName), specTemplate({'modules' : modules}), 'utf-8');
+        _fs.writeFileSync(_path.join(SPEC_FOLDER, specFileName), specPackageTemplate({'modules' : modules}), 'utf-8');
         console.log('  updating spec: ', specFileName);
+
+        modules.forEach(function(mod){
+            var specPath = _path.join(SPEC_FOLDER, mod['package'], 'spec-'+ mod.name +'.js');
+            if (! _fs.existsSync(specPath) ) {
+                _fs.writeFileSync(specPath, specTemplate(mod), 'utf-8');
+                console.log('  created spec: ', specPath);
+            }
+        });
     });
 
 

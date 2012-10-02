@@ -1,7 +1,11 @@
-//automatically generated, do not edit!
-//run `node build` instead
-define([
-    {{#list modules}}'{{package}}/spec-{{name}}'{{/list}}
-], function(){
-    //noop
+define(['src/{{package}}/{{name}}'], function({{name}}){
+
+    describe('{{package}}/{{name}}', function(){
+
+        it('', function(){
+            expect( {{name}}() ).toBe({});
+        });
+
+    });
+
 });
