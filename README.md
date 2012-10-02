@@ -100,7 +100,7 @@ Released under the [MIT License](http://www.opensource.org/licenses/mit-license.
 
 AMD-utils also works on [node.js](http://nodejs.org), just run:
 
-   npm install amd-utils
+    npm install amd-utils
 
 It will download amd-utils from the NPM repository and convert the AMD modules
 into a node.js compatible format.

@@ -164,7 +164,7 @@ insert(arr, 1, 2, 'b'); // 5 : ['a', 'b', 'c', 1, 2]
 
 
 
-## intersection(...arrs):Arrays
+## intersection(...arrs):Array
 
 Return a new Array with elements common to all Arrays.
 
@@ -179,6 +179,16 @@ var a = ['a', 'b', 1],
     b = ['c', 1],
     c = [1, 2, 3];
 intersection(a, b, c); // [1]
+```
+
+
+
+## invoke(arr, methodName[, ...args]):Array
+
+Call `methodName` on each item of the array passing custom arguments if needed.
+
+```js
+invoke([[3,2,1], [9,5,2]], 'sort'); // [[1,2,3], [2,5,9]]
 ```
 
 
