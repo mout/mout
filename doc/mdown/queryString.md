@@ -18,14 +18,14 @@ decode(query, false); // {foo: "bar", lorem: "123"}
 ```
 
 
-## encodeQuery(obj):String
+## encode(obj):String
 
 Encode object into a query string.
 
 Will encode parameters with `encodeURIComponent()`.
 
 ```js
-encodeQuery({foo: "bar", lorem: 123}); // "?foo=bar&lorem=123"
+encode({foo: "bar", lorem: 123}); // "?foo=bar&lorem=123"
 ```
 
 
