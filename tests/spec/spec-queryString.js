@@ -6,7 +6,8 @@ define([
     'queryString/spec-encode',
     'queryString/spec-getParam',
     'queryString/spec-getQuery',
-    'queryString/spec-parse'
+    'queryString/spec-parse',
+    'queryString/spec-setParam'
 ], function(){
     //noop
 });

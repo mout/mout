@@ -4,6 +4,25 @@ Utilities for query string manipulation.
 
 
 
+## contains(url, paramName):Boolen
+
+Checks if query string contains parameter.
+
+### Arguments:
+
+ 1. `url` (String)     : URL or query string.
+ 2. `paramName` (String) : Parameter name.
+
+### Example:
+
+```js
+var url = 'example.com/?lorem=ipsum';
+contains(url, 'lorem'); // true
+contains(url, 'foo');   //false
+```
+
+
+
 ## decode(queryStr[, shouldTypecast]):Object
 
 Parses query string and creates an object of keys => vals.
@@ -34,6 +53,8 @@ encode({foo: "bar", lorem: 123}); // "?foo=bar&lorem=123"
 Get query parameter value.
 
 Will typecast value with [`string/typecast`](string.html#typecast) by default.
+
+See: [`setParam()`](#setParam)
 
 ### Arguments:
 
@@ -76,22 +97,17 @@ getQuery('example.com/?lorem=ipsum'); // "?lorem=ipsum"
 ```
 
 
-## contains(url, paramName):Boolen
+## setParam(url, paramName, value):String
 
-Checks if query string contains parameter.
+Add new query string parameter to URL or update existing value.
 
-### Arguments:
-
- 1. `url` (String)     : URL or query string.
- 2. `paramName` (String) : Parameter name.
-
-### Example:
+See: [`getParam()`](#getParam)
 
 ```js
-var url = 'example.com/?lorem=ipsum';
-contains(url, 'lorem'); // true
-contains(url, 'foo');   //false
+setParam('?foo=bar&lorem=0', 'lorem', 'ipsum'); // '?foo=bar&lorem=ipsum'
+setParam('?lorem=1', 'foo', 123); // '?lorem=1&foo=123'
 ```
+
 
 -------------------------------------------------------------------------------
 

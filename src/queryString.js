@@ -8,7 +8,8 @@ return {
     'encode' : require('./queryString/encode'),
     'getParam' : require('./queryString/getParam'),
     'getQuery' : require('./queryString/getQuery'),
-    'parse' : require('./queryString/parse')
+    'parse' : require('./queryString/parse'),
+    'setParam' : require('./queryString/setParam')
 };
 
 });
