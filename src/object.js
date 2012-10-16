@@ -5,6 +5,7 @@ define(function(require){
 return {
     'fillIn' : require('./object/fillIn'),
     'filter' : require('./object/filter'),
+    'forIn' : require('./object/forIn'),
     'forOwn' : require('./object/forOwn'),
     'get' : require('./object/get'),
     'has' : require('./object/has'),

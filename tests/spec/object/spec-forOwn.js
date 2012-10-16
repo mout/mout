@@ -21,6 +21,7 @@ define(['src/object/forOwn'], function (forOwn) {
 
             expect(keys.length).toBe(3);
 
+            // loop order isn't guaranteed to be always the same
             var haystack = ['foo', 'bar', 'lorem'];
             expect( keys[0] !== keys[1] && keys[0] !== keys[2] ).toBe(true);
             expect( haystack ).toContain( keys[0] );

@@ -30,7 +30,7 @@ prototype.
 
 Callback receives the same arguments as `forOwn()`.
 
-See: [`forOwn()`](#forOwn), [`pick()`](#pick)
+See: [`forOwn()`](#forOwn), [`forIn()`](#forIn), [`pick()`](#pick)
 
 ```js
 var obj = {
@@ -47,14 +47,15 @@ filter(obj, function(v, k) { return k === 'foo'; });
 
 
 
-## forOwn(obj, callback[, thisObj])
+## forIn(obj, callback[, thisObj])
 
-Iterate over all own properties from an Object, similar to Array/forEach.
+Iterate over all properties of an Object, similar to
+[Array/forEach](array.html#forEach).
 
 It [avoids don't enum bug on IE](https://developer.mozilla.org/en/ECMAScript_DontEnum_attribute#JScript_DontEnum_Bug).
-Notice that it won't iterate over properties from the prototype.
+It **will** iterate over inherited (enumerable) properties from the prototype.
 
-See: [`keys()`](#keys), [`values()`](#values)
+See: [`forOwn()`](#forOwn), [`keys()`](#keys), [`values()`](#values)
 
 ### Callback arguments
 
@@ -67,11 +68,14 @@ Callback will receive the following arguments:
 ### Example
 
 ```js
-var obj = {
-    foo : 1,
-    bar : 2,
-    lorem : 3
-};
+function Foo(){
+    this.foo = 1;
+    this.bar = 2;
+}
+
+Foo.prototype.lorem = 4;
+
+var obj = new Foo();
 
 var result = 0;
 var keys = [];
@@ -81,8 +85,53 @@ forOwn(obj, function(val, key, o){
     keys.push(key);
 });
 
-console.log(result); // 6
+console.log(result); // 7
 console.log(keys);   // ['foo', 'bar', 'lorem']
+```
+
+
+
+## forOwn(obj, callback[, thisObj])
+
+Iterate over all own properties from an Object, similar to
+[Array/forEach](array.html#forEach).
+
+It [avoids don't enum bug on IE](https://developer.mozilla.org/en/ECMAScript_DontEnum_attribute#JScript_DontEnum_Bug).
+Notice that it **won't** iterate over properties from the prototype.
+
+See: [`forIn()`](#forIn), [`keys()`](#keys), [`values()`](#values)
+
+### Callback arguments
+
+Callback will receive the following arguments:
+
+ 1. Property Value (*)
+ 2. Key name (String)
+ 3. Target object (Object)
+
+### Example
+
+```js
+function Foo(){
+    this.foo = 1;
+    this.bar = 2;
+}
+
+// will be ignored
+Foo.prototype.lorem = 4;
+
+var obj = new Foo();
+
+var result = 0;
+var keys = [];
+
+forOwn(obj, function(val, key, o){
+    result += val;
+    keys.push(key);
+});
+
+console.log(result); // 3
+console.log(keys);   // ['foo', 'bar']
 ```
 
 

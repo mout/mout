@@ -3,6 +3,7 @@
 define([
     'object/spec-fillIn',
     'object/spec-filter',
+    'object/spec-forIn',
     'object/spec-forOwn',
     'object/spec-get',
     'object/spec-has',
