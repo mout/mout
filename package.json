@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "mdoc": "~0.3.2",
-    "handlebars": "~1.0.6"
+    "handlebars": "~1.0.6",
+    "commander" : "~1.0.5"
   }
 }

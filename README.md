@@ -125,8 +125,8 @@ The documentation is generated based on markdown files inside the
 `doc/mdown` folder using [mdoc](https://github.com/millermedeiros/mdoc).
 To compile the docs run:
 
-    npm install .
-    node build
+    npm install --dev
+    node build doc
 
 It will replace all the files inside the `doc/html` folder and update packages
 and specs runners, this way we avoid human mistakes.
@@ -134,4 +134,23 @@ and specs runners, this way we avoid human mistakes.
 Documentation files should be always up-to-date since modules are only
 committed to the `master` branch after they get proper tests and documentation.
 
+
+
+## Keeping packages and specs in sync ##
+
+The build script can be used to update packages and specs files:
+
+    node build pkg
+
+You can also add new modules with the command `node build add
+package/moduleName`, this will create a new module `moduleName` inside the
+folder `src/package` and also a failing spec inside the `tests` folder.
+
+For other available options see `node build -h`.
+
+
+
+## Documentation ##
+
 Online documentation can be found at http://millermedeiros.github.com/amd-utils
+or inside the `doc` folder.

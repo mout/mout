@@ -1,8 +1,11 @@
-// convert AMD modules into node.js compatible
 
-var SRC_FOLDER = 'src',
-    ROOT_FOLDER = '.',
-    ENCODING = 'utf-8';
+// convert AMD modules into node.js compatible modules
+
+var _options = require('./options');
+
+var SRC_FOLDER = _options.SRC_FOLDER,
+    ROOT_FOLDER = _options.ROOT_FOLDER,
+    ENCODING = _options.ENCODING;
 
 
 // ---
@@ -15,7 +18,10 @@ var _fs = require('fs'),
 
 
 // Transform all the src folder files to node.js and put them in the root folder
+// so user can require a specific amd-utils module
+
 var files = _wrench.readdirSyncRecursive(SRC_FOLDER);
+
 files.forEach(function(name){
     var pathSrc = _path.join(SRC_FOLDER, name);
     var pathDist = _path.join(ROOT_FOLDER, name);
