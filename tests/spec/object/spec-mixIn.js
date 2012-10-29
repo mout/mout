@@ -32,6 +32,10 @@ define(['src/object/mixIn'], function (mixIn) {
             expect( mixIn({}, b1, b2, {}) ).toEqual(b1_2);
         });
 
+        it('should ignore null/undefined values', function () {
+            expect( mixIn(b1, null, undefined, b2) ).toEqual( b1_2 );
+        });
+
         it('should fix dont enum bug on IE', function(){
             var r =  mixIn(
                 {

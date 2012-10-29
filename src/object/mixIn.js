@@ -6,13 +6,17 @@ define(['./forOwn'], function(forOwn){
     * @param {object} target    Target Object
     * @param {...object} objects    Objects to be combined (0...n objects).
     * @return {object} Target Object.
-    * @version 0.1.3 (2012/08/11)
+    * @version 0.1.4 (2012/10/29)
     */
     function mixIn(target, objects){
-        var i = 1,
+        var i = 0,
+            n = arguments.length,
             obj;
-        while(obj = arguments[i++]){
-            forOwn(obj, copyProp, target);
+        while(++i < n){
+            obj = arguments[i];
+            if (obj != null) {
+                forOwn(obj, copyProp, target);
+            }
         }
         return target;
     }
