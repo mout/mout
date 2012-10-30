@@ -30,7 +30,7 @@
     "amdefine": ">= 0.0.2"
   },
   "scripts": {
-    "install": "node ./_build/convert.js"
+    "install": "node build cjs ."
   },
   "directories": {
     "doc": "./doc/mdown",

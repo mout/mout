@@ -46,18 +46,15 @@ exports.updateAllPackages = function(){
 
 
 exports.updatePackage = function(packageName){
-    purgeFiles([ srcPath(packageName + '.js') ]);
     echo('updating packages:');
     makePackage( srcPath(packageName) );
     makeIndex();
 };
 
 
-exports.updateSpec = function(packageName){
-    purgeFiles([ specPath(packageName + '.js') ]);
+exports.updateSpecGroup = function(packageName){
     echo('updating specs:');
     makeSpecGroup( srcPath(packageName) );
-    // in case it creates a new spec group
     makeSpecRunner();
 };
 
@@ -65,10 +62,9 @@ exports.updateSpec = function(packageName){
 // ---
 
 
-var compileTemplate = _helpers.compileTemplate;
 
-var pkgTemplate = compileTemplate('pkg');
-var indexTemplate = compileTemplate('index');
+var pkgTemplate = _helpers.compileModuleTemplate('pkg');
+var indexTemplate = _helpers.compileModuleTemplate('index');
 
 
 function makePackage(name){
@@ -107,9 +103,9 @@ function makeIndex(){
 
 
 
-var specTemplate = compileTemplate('spec'),
-    specPackageTemplate = compileTemplate('specPackage'),
-    specRunnerTemplate = compileTemplate('specRunner');
+var specTemplate = _helpers.compileSpecTemplate('default'),
+    specPackageTemplate = _helpers.compileSpecTemplate('package'),
+    specRunnerTemplate = _helpers.compileSpecTemplate('runner');
 
 
 function makeSpecGroup(name){
@@ -125,6 +121,7 @@ function makeSpecGroup(name){
         };
     });
 
+    purgeFiles( [specFilePath] );
     _fs.writeFileSync(specFilePath, specPackageTemplate({'modules' : modules}), 'utf-8');
     echoList( specFilePath );
 

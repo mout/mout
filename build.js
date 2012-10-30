@@ -2,39 +2,63 @@
 // node.js based build script
 // run `node build -h` for usage information
 
-
+var _helpers = require('./_build/helpers');
 var _cli = require('commander');
+
+
+_cli
+    .option('-s, --silent', 'suppress log messages.');
 
 _cli
     .command('doc')
     .description('build documentation.')
-    .action(buildDocs);
+    .action( cmd(buildDocs) );
 
 _cli
     .command('pkg')
     .description('update packages and specs')
-    .action(updatePackages);
+    .action( cmd(updatePackages) );
 
 _cli
     .command('deploy')
     .description('build documentation and update packages.')
-    .action(function(){
-        buildDocs();
-        updatePackages();
-    });
+    .action( cmd(buildDocs, updatePackages) );
 
 _cli
-    .command('add <moduleName>')
-    .option('-c, --collection', 'Use the collection template.')
+    .command('add <moduleName> [templateName]')
     .description('add a new module.')
-    .action(addModule);
+    .action( cmd(addModule) );
+
+_cli
+    .command('cjs <destinationPath>')
+    .description('convert amd-utils into a node.js compatible package.')
+    .action( cmd(convert) );
+
 
 _cli.parse(process.argv);
+
+
 
 // show help by default
 if (!_cli.args.length) {
     _cli.outputHelp();
     process.exit(0);
+}
+
+
+// just a helper to run multiple commands in sequence and process global
+// options before executing them.
+function cmd(var_args){
+    var fns = Array.prototype.slice.call(arguments);
+    return function(){
+        if (_cli.silent) {
+            _helpers.isSilent = true;
+        }
+        var args = Array.prototype.slice.call(arguments);
+        fns.forEach(function(fn){
+            fn.apply(null, args);
+        });
+    };
 }
 
 
@@ -59,11 +83,14 @@ function updatePackages(){
 }
 
 
-function addModule(moduleName, cmd){
+function addModule(moduleName, templateName){
     var add = require('./_build/add');
-    var type = cmd.collection? 'collection' : '';
-    add.createSource(moduleName, type);
+    add.createSource(moduleName, templateName);
     add.createSpec(moduleName);
 }
 
+
+function convert(destinationPath){
+    require('./_build/convert').toNode(destinationPath);
+}
 

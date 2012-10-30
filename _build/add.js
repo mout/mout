@@ -19,17 +19,10 @@ var echo = _helpers.echo;
 // --
 
 
-// var sourceTemplate = _helpers.compileTemplate('module');
-var specTemplate = _helpers.compileTemplate('spec');
-
-
-// --
-
-
 exports.createSource = function(name, template){
     var sourcePath = toSourcePath(name);
     var packageName = _path.dirname(name);
-    var sourceTemplate = _helpers.compileTemplate('modules/'+ (template || 'default'));
+    var sourceTemplate = _helpers.compileModuleTemplate(template || 'default');
     var fnName = _path.basename(name);
 
     createDir(sourcePath);
@@ -48,8 +41,9 @@ exports.createSource = function(name, template){
 };
 
 
-exports.createSpec = function (name){
+exports.createSpec = function (name, template){
     var specPath = toSpecPath(name);
+    var specTemplate = _helpers.compileSpecTemplate(template || 'default');
 
     createDir(specPath);
 
@@ -62,7 +56,7 @@ exports.createSpec = function (name){
     echo('created spec: ', specPath);
 
     // need to update spec group
-    _package.updateSpec( mod['package'] );
+    _package.updateSpecGroup( mod['package'] );
 };
 
 
@@ -107,7 +101,8 @@ function normalizePath(path){
     path += (_path.extname(path)? '' : '.js');
     path = _path.normalize(path);
     if ( _fs.existsSync(path) ){
-        throw new Error('file "'+ path +'" already exists and can\'t be overwritten.');
+        console.error('file "'+ path +'" already exists and can\'t be overwritten.');
+        process.exit(1);
     }
     return path;
 }
