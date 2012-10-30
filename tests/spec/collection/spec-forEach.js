@@ -10,9 +10,17 @@ define(['src/collection/forEach'], function(forEach){
             expect( result ).toEqual( [1,2,3,4] );
         });
 
-        it('should loop over objects', function(){
+        it('should loop over object own properties', function(){
             var result = {};
-            forEach({a:'lorem', b:123, c:'bar'}, function(val, i){
+            var Foo = function(){
+                this.a = 'lorem';
+                this.b = 123;
+                this.c = 'bar';
+            };
+            Foo.prototype.d = 'ipsum';
+
+            var src = new Foo();
+            forEach(src, function(val, i){
                 result[i] = val;
             });
             expect( result ).toEqual( {a:'lorem', b:123, c:'bar'} );

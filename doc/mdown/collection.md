@@ -15,7 +15,7 @@ See: [array/filter](array.html#filter), [object/filter](object.html#filter)
 
 Loop through all values of the collection.
 
-See: [array/forEach](array.html#forEach), [object/forIn](object.html#forIn)
+See: [array/forEach](array.html#forEach), [object/forOwn](object.html#forOwn)
 
 
 
