@@ -13,6 +13,7 @@ return {
     'isBoolean' : require('./lang/isBoolean'),
     'isDate' : require('./lang/isDate'),
     'isEmpty' : require('./lang/isEmpty'),
+    'isFinite' : require('./lang/isFinite'),
     'isFunction' : require('./lang/isFunction'),
     'isKind' : require('./lang/isKind'),
     'isNaN' : require('./lang/isNaN'),

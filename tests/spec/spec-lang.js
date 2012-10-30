@@ -11,6 +11,7 @@ define([
     'lang/spec-isBoolean',
     'lang/spec-isDate',
     'lang/spec-isEmpty',
+    'lang/spec-isFinite',
     'lang/spec-isFunction',
     'lang/spec-isKind',
     'lang/spec-isNaN',
