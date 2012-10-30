@@ -37,7 +37,8 @@ return {
     'toLookup' : require('./array/toLookup'),
     'union' : require('./array/union'),
     'unique' : require('./array/unique'),
-    'xor' : require('./array/xor')
+    'xor' : require('./array/xor'),
+    'zip' : require('./array/zip')
 };
 
 });

@@ -35,7 +35,8 @@ define([
     'array/spec-toLookup',
     'array/spec-union',
     'array/spec-unique',
-    'array/spec-xor'
+    'array/spec-xor',
+    'array/spec-zip'
 ], function(){
     //noop
 });

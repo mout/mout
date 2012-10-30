@@ -530,6 +530,21 @@ xor(a, b); // ['a', 'b', 'c']
 
 
 
+## zip(...arrs):Array
+
+Groups the elements of each array at their corresponding indexes.
+
+Useful for separate data sources that are coordinated through matching array
+indexes. For a matrix of nested arrays, `zip.apply(...)` can transpose the
+matrix in a similar fashion.
+
+```js
+// [['moe', 30, true], ['larry', 40, false], ['curly', 50, false]]
+zip(['moe', 'larry', 'curly'], [30, 40, 50], [true, false, false]);
+```
+
+
+
 
 -------------------------------------------------------------------------------
 
