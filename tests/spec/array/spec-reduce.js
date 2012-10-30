@@ -72,7 +72,7 @@ define(['src/array/reduce'], function (reduce) {
         });
 
 
-        it('should work over sparse arrays', function () {
+        it('should loop over sparse items. see #64', function () {
             function specialSum(prev, cur, i, arr){
                 var a = prev == null? 1 : prev;
                 var b = cur == null? 1: cur;
@@ -83,8 +83,12 @@ define(['src/array/reduce'], function (reduce) {
             base[7] = 4;
             base[10] = undefined;
 
-            expect( reduce(base, specialSum) ).toEqual( 11 );
-            expect( reduce(base, specialSum, 2) ).toEqual( 13 );
+            // IMPORTANT
+            // ---------
+            // this behavior is different than ES5 Array#reduce since
+            // it doesn't skip sparse items
+            expect( reduce(base, specialSum) ).toEqual( 18 );
+            expect( reduce(base, specialSum, 2) ).toEqual( 20 );
         });
 
 

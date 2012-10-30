@@ -16,7 +16,7 @@ define(['src/array/every'], function (every) {
             expect( every(a3, isEven) ).toBe( true );
         });
 
-        it('should work on sparse array', function () {
+        it('should iterate over sparse items. see #64', function () {
             var a1 = [1, 2, 3];
             a1[10] = 8;
             var a2 = [1, 3, 5];
@@ -24,9 +24,15 @@ define(['src/array/every'], function (every) {
             var a3 = [2, 4, 6];
             a3[10] = 10;
 
+            // IMPORTANT
+            // ---------
+            // this behavior is different than ES5 Array#every
             expect( every(a1, isEven) ).toBe( false );
             expect( every(a2, isEven) ).toBe( false );
-            expect( every(a3, isEven) ).toBe( true );
+            expect( every(a3, isEven) ).toBe( false );
+            expect( every(a3, function(val){
+                return val == null || (val % 2 === 0);
+            }) ).toBe( true );
         });
 
         it('should work on empty arrays', function () {

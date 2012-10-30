@@ -16,7 +16,7 @@ define(['src/array/some'], function (some) {
             expect( some(a3, isEven) ).toBe( true );
         });
 
-        it('should work on sparse array', function () {
+        it('should iterate over sparse items. see #64', function () {
             var a1 = [1, 2, 3];
             a1[10] = 8;
             var a2 = [1, 3, 5];
@@ -27,6 +27,12 @@ define(['src/array/some'], function (some) {
             expect( some(a1, isEven) ).toBe( true );
             expect( some(a2, isEven) ).toBe( false );
             expect( some(a3, isEven) ).toBe( true );
+            // IMPORTANT
+            // ---------
+            // this behavior is different than ES5 Array#some
+            expect( some(a1, function(val){
+                return val == null;
+            }) ).toBe( true );
         });
 
         it('should work on empty arrays', function () {

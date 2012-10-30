@@ -15,19 +15,23 @@ define(['src/array/indexOf'], function(indexOf){
             expect( idx(arr, 'foo') ).toEqual( -1 );
         });
 
-        it('should work in sparse arrays', function(){
+        it('should loop all items, even if sparse. see #64', function(){
             var arr = [];
+            arr[0] = 'bar';
             arr[1] = 1;
             arr[3] = 'a';
             arr[6] = 2;
             arr[8] = 'b';
             arr[10] = undefined;
 
+            // IMPORTANT!!
+            // -----------
+            // this behavior is different than ES5 Array#indexOf()
             expect( idx(arr, 1) ).toEqual( 1 );
             expect( idx(arr, 'a') ).toEqual( 3 );
             expect( idx(arr, 2) ).toEqual( 6 );
             expect( idx(arr, 'b') ).toEqual( 8 );
-            expect( idx(arr, undefined) ).toEqual( 10 );
+            expect( idx(arr, undefined) ).toEqual( 2 );
 
             expect( idx(arr, 'foo') ).toEqual( -1 );
         });
@@ -43,7 +47,7 @@ define(['src/array/indexOf'], function(indexOf){
             expect( idx(arr, 'foo', 2) ).toEqual( -1 );
         });
 
-        it('should handle fromIndex in sparse arrays', function(){
+        it('should handle fromIndex in sparse arrays. see #64', function(){
             var arr = [];
             arr[1] = 1;
             arr[3] = 'a';

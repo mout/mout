@@ -2,7 +2,7 @@ define(function () {
 
     /**
      * Array reduceRight
-     * @version 0.3.0 (2012/07/26)
+     * @version 0.4.0 (2012/10/30)
      */
     function reduceRight(arr, fn, initVal) {
         // check for args.length since initVal might be "undefined" see #gh-57
@@ -16,15 +16,14 @@ define(function () {
         }
 
         while (--i >= 0) {
-            // skip sparse items but keep "undefined" items
-            if (i in arr) {
-                val = arr[i];
-                if (! hasInit) {
-                    result = val;
-                    hasInit = true;
-                } else {
-                    result = fn(result, val, i, arr);
-                }
+            // we iterate over sparse items since there is no way to make it
+            // work properly on IE 7-8. see #64
+            val = arr[i];
+            if (! hasInit) {
+                result = val;
+                hasInit = true;
+            } else {
+                result = fn(result, val, i, arr);
             }
         }
         return result;

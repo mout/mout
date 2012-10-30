@@ -9,7 +9,7 @@ define(['./forEach'], function (forEach) {
         if (arr == null){
             return results;
         }
-        // need to copy arr.length because of sparse arrays
+        // need to copy arr.length because of sparse arrays (#64)
         results.length = arr.length;
         forEach(arr, function (val, i, arr) {
             results[i] = callback.call(thisObj, val, i, arr);

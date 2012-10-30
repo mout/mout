@@ -83,9 +83,12 @@ difference(a, b); // ['a', 'b']
 
 ## every(arr, callback, [thisObj]):Array
 
-Crossbrowser ES5 `Array.every()`.
+Crossbrowser `Array.every()`.
 
 Tests whether all elements in the array pass the test implemented by the provided function.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
 
 more info at [MDN Array#every](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/every)
 
@@ -93,9 +96,12 @@ more info at [MDN Array#every](https://developer.mozilla.org/en/JavaScript/Refer
 
 ## filter(arr, callback, [thisObj]):Array
 
-Crossbrowser ES5 `Array.filter()`.
+Crossbrowser `Array.filter()`.
 
 Creates a new array with all elements that pass the callback test.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
 
 more info at [MDN Array#filter](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/filter)
 
@@ -136,13 +142,19 @@ Crossbrowser `Array.forEach()`.
 
 It allows exiting the iteration early by returning `false` on the callback.
 
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+
 more info at [MDN Array#forEach](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/forEach)
 
 
 
 ## indexOf(arr, item, [fromIndex]):Number
 
-Crossbrowser ES5 `Array.indexOf()`.
+Crossbrowser `Array.indexOf()`.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
 
 more info at [MDN Array#indexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf)
 
@@ -215,7 +227,10 @@ join([null, 'foo', '', 'bar', undefined], ':'); // 'foo:bar'
 
 ## lastIndexOf(arr, item, [fromIndex]):Number
 
-Crossbrowser ES5 `Array.lastIndexOf()`.
+Crossbrowser `Array.lastIndexOf()`.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
 
 more info at [MDN Array#lastIndexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
 
@@ -223,10 +238,13 @@ more info at [MDN Array#lastIndexOf](https://developer.mozilla.org/en/JavaScript
 
 ## map(arr, callback):Array
 
-Crossbrowser ES5 `Array.map()`.
+Crossbrowser `Array.map()`.
 
 Creates a new array with the results of calling a provided function on every
 element in this array.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
 
 more info at [MDN Array#map](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/map)
 
@@ -315,10 +333,13 @@ range(20, 40, 5); // [20, 25, 30, 35, 40]
 
 ## reduce(arr, fn):*
 
-Crossbrowser ES5 `Array.reduce()`.
+Crossbrowser `Array.reduce()`.
 
 Apply a function against an accumulator and each value of the array (from
 left-to-right) as to reduce it to a single value.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
 
 more info at [MDN Array#reduce](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/reduce)
 
@@ -326,10 +347,13 @@ more info at [MDN Array#reduce](https://developer.mozilla.org/en/JavaScript/Refe
 
 ## reduceRight(arr, fn):*
 
-Crossbrowser ES5 `Array.reduceRight()`.
+Crossbrowser `Array.reduceRight()`.
 
 Apply a function simultaneously against two values of the array (from
 right-to-left) as to reduce it to a single value.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
 
 more info at [MDN Array#reduceRight](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/reduceRight)
 
@@ -396,9 +420,12 @@ shuffle(arr); // ['b', 'd', 'e', 'c', 'a']
 
 ## some(arr, callback, [thisObj]):Array
 
-Crossbrowser ES5 `Array.some()`.
+Crossbrowser `Array.some()`.
 
 Tests whether some element in the array passes the test implemented by the provided function.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
 
 more info at [MDN Array#some](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/some)
 

@@ -2,7 +2,7 @@ define(function () {
 
     /**
      * Array forEach
-     * @version 0.6.0 (2012/10/30)
+     * @version 0.7.0 (2012/10/30)
      */
     function forEach(arr, callback, thisObj) {
         if (arr == null) {
@@ -11,12 +11,10 @@ define(function () {
         var i = -1,
             n = arr.length >>> 0;
         while (++i < n) {
-            //according to spec callback should only be called for
-            //existing items
-            if (i in arr) {
-                if ( callback.call(thisObj, arr[i], i, arr) === false ) {
-                    break;
-                }
+            // we iterate over sparse items since there is no way to make it
+            // work properly on IE 7-8. see #64
+            if ( callback.call(thisObj, arr[i], i, arr) === false ) {
+                break;
             }
         }
     }
