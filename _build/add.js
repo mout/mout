@@ -19,21 +19,24 @@ var echo = _helpers.echo;
 // --
 
 
-var sourceTemplate = _helpers.compileTemplate('module');
+// var sourceTemplate = _helpers.compileTemplate('module');
 var specTemplate = _helpers.compileTemplate('spec');
 
 
 // --
 
 
-exports.createSource = function(name){
+exports.createSource = function(name, template){
     var sourcePath = toSourcePath(name);
     var packageName = _path.dirname(name);
+    var sourceTemplate = _helpers.compileTemplate('modules/'+ (template || 'default'));
+    var fnName = _path.basename(name);
 
     createDir(sourcePath);
 
     var mod = {
-        'name' : _path.basename(name),
+        'name' : fnName,
+        'u_name' : fnName.replace(/^\w/, function(c){ return c.toUpperCase(); }),
         'date' : getFormattedDate()
     };
     _fs.writeFileSync(sourcePath, sourceTemplate(mod));

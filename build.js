@@ -25,6 +25,7 @@ _cli
 
 _cli
     .command('add <moduleName>')
+    .option('-c, --collection', 'Use the collection template.')
     .description('add a new module.')
     .action(addModule);
 
@@ -58,9 +59,10 @@ function updatePackages(){
 }
 
 
-function addModule(moduleName){
+function addModule(moduleName, cmd){
     var add = require('./_build/add');
-    add.createSource(moduleName);
+    var type = cmd.collection? 'collection' : '';
+    add.createSource(moduleName, type);
     add.createSpec(moduleName);
 }
 
