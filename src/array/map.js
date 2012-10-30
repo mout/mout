@@ -2,11 +2,15 @@ define(['./forEach'], function (forEach) {
 
     /**
      * Array map
-     * @version 0.3.0 (2012/07/26)
+     * @version 0.4.0 (2012/10/30)
      */
     function map(arr, callback, thisObj) {
+        var results = [];
+        if (arr == null){
+            return results;
+        }
         // need to copy arr.length because of sparse arrays
-        var results = new Array(arr.length);
+        results.length = arr.length;
         forEach(arr, function (val, i, arr) {
             results[i] = callback.call(thisObj, val, i, arr);
         });

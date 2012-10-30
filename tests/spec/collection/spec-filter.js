@@ -15,6 +15,25 @@ define(['src/collection/filter'], function(filter){
             }) ).toEqual( {b: 'bar'} );
         });
 
+        it('should return empty array if target is null', function () {
+            var result = filter(null, function(val){
+                return true;
+            });
+            expect( result ).toEqual( [] );
+        });
+
+        it('should return array if target is array-like', function () {
+            var result = filter({
+                '0' : 'a',
+                '1' : 'b',
+                '2' : 'c',
+                length : 3
+            }, function(val, i){
+                return i !== 1;
+            });
+            expect( result ).toEqual( ['a', 'c'] );
+        });
+
     });
 
 });

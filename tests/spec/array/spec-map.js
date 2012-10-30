@@ -25,6 +25,11 @@ define(['src/array/map'], function (map) {
             expect( r ).toEqual( [undefined, undefined, undefined, undefined, undefined, 1] );
         });
 
+        it('should return empty array if target is undefined', function () {
+            var result = map(null);
+            expect( result ).toEqual( [] );
+        });
+
     });
 
 });

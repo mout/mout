@@ -42,6 +42,37 @@ define(['src/collection/make_'], function(make){
         });
 
 
+        it('should threat array-like objects as arrays', function () {
+            var obj = {
+                '0' : '1',
+                '1' : 'b',
+                '2' : 'c',
+                length : 3
+            };
+
+            var fn = make(function(){
+                return 'array';
+            }, function(){
+                return 'object';
+            });
+
+            expect( fn(obj) ).toBe( 'array' );
+        });
+
+
+        it('`null` and `undefined` should return default value', function () {
+            var fn = make(function(){
+                return 'array';
+            }, function(){
+                return 'object';
+            }, 'default');
+
+            // this is important for cases like forEach(string.match(regexp), callback)
+            // String#match might return `null` or an array
+            expect( fn(null) ).toBe( 'default' );
+            expect( fn() ).toBe( 'default' );
+        });
+
     });
 
 });

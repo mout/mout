@@ -94,6 +94,16 @@ define(['src/array/forEach'], function (forEach) {
 
         });
 
+
+        it('should not execute loop if array is null/undefined. match collection/forEach behavior. see #93', function () {
+            var count = 0;
+            forEach(null, function(){
+                count++;
+            });
+            expect( count ).toBe( 0 );
+        });
+
+
     });
 
 });

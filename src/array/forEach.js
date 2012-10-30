@@ -2,9 +2,12 @@ define(function () {
 
     /**
      * Array forEach
-     * @version 0.5.0 (2012/10/30)
+     * @version 0.6.0 (2012/10/30)
      */
     function forEach(arr, callback, thisObj) {
+        if (arr == null) {
+            return;
+        }
         var i = -1,
             n = arr.length >>> 0;
         while (++i < n) {

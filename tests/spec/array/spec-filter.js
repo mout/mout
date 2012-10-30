@@ -37,6 +37,11 @@ define(['src/array/filter'], function (filter) {
             expect( result ).toEqual( [] );
         });
 
+        it('should return empty array if target is null/undefined', function () {
+            expect( filter() ).toEqual( [] );
+            expect( filter(null) ).toEqual( [] );
+        });
+
     });
 
 });
