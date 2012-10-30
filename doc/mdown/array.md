@@ -132,7 +132,9 @@ flatten([1, [2], [3, [4, 5]]], true);
 
 ## forEach(arr, callback, [thisObj]):void
 
-Crossbrowser ES5 `Array.forEach()`.
+Crossbrowser `Array.forEach()`.
+
+It allows exiting the iteration early by returning `false` on the callback.
 
 more info at [MDN Array#forEach](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/forEach)
 

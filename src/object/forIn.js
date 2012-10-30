@@ -25,7 +25,7 @@ define(function () {
      * Similar to Array/forEach but works over object properties and fixes Don't
      * Enum bug on IE.
      * based on: http://whattheheadsaid.com/2010/10/a-safer-object-keys-compatibility-implementation
-     * @version 0.1.0 (2012/10/16)
+     * @version 0.2.0 (2012/10/30)
      */
     function forIn(obj, fn, thisObj){
         var key, i = 0;
@@ -36,7 +36,9 @@ define(function () {
         if (_hasDontEnumBug == null) checkDontEnum();
 
         for (key in obj) {
-            exec(fn, obj, key, thisObj);
+            if (exec(fn, obj, key, thisObj) === false) {
+                break;
+            }
         }
 
         if (_hasDontEnumBug) {
@@ -44,14 +46,16 @@ define(function () {
                 // since we aren't using hasOwn check we need to make sure the
                 // property was overwritten
                 if (obj[key] !== Object.prototype[key]) {
-                    exec(fn, obj, key, thisObj);
+                    if (exec(fn, obj, key, thisObj) === false) {
+                        break;
+                    }
                 }
             }
         }
     }
 
     function exec(fn, obj, key, thisObj){
-        fn.call(thisObj, obj[key], key, obj);
+        return fn.call(thisObj, obj[key], key, obj);
     }
 
     return forIn;

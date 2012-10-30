@@ -91,6 +91,28 @@ define(['src/object/forIn'], function(forIn){
         });
 
 
+        it('should allow exiting the iteration early. see #94', function () {
+
+            var obj = {
+                'a' : 123,
+                'b' : true,
+                'c' : 'ipsum',
+                'd' : 456
+            };
+
+            var count = 0;
+
+            forIn(obj, function(val, key, o){
+                count++;
+                if (count === 2) {
+                    return false;
+                }
+            });
+
+            expect( count ).toBe( 2 );
+
+        });
+
     });
 
 });

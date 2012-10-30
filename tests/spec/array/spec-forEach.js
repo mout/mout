@@ -77,6 +77,23 @@ define(['src/array/forEach'], function (forEach) {
 
         });
 
+
+        it('should allow exiting the iteration early. see #94', function () {
+
+            var arr = [1,2,3,4,5];
+            var count = 0;
+
+            forEach(arr, function(){
+                count++;
+                if (count === 2) {
+                    return false;
+                }
+            });
+
+            expect( count ).toBe( 2 );
+
+        });
+
     });
 
 });

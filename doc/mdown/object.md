@@ -55,6 +55,8 @@ Iterate over all properties of an Object, similar to
 It [avoids don't enum bug on IE](https://developer.mozilla.org/en/ECMAScript_DontEnum_attribute#JScript_DontEnum_Bug).
 It **will** iterate over inherited (enumerable) properties from the prototype.
 
+It allows exiting the iteration early by returning `false` on the callback.
+
 See: [`forOwn()`](#forOwn), [`keys()`](#keys), [`values()`](#values)
 
 ### Callback arguments
@@ -98,6 +100,8 @@ Iterate over all own properties from an Object, similar to
 
 It [avoids don't enum bug on IE](https://developer.mozilla.org/en/ECMAScript_DontEnum_attribute#JScript_DontEnum_Bug).
 Notice that it **won't** iterate over properties from the prototype.
+
+It allows exiting the iteration early by returning `false` on the callback.
 
 See: [`forIn()`](#forIn), [`keys()`](#keys), [`values()`](#values)
 
