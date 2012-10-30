@@ -175,6 +175,15 @@ some "kinds" can only be accurately checked by using other methods (e.g.
 
 
 
+## isNaN(val):Boolean
+
+Check if value is `NaN`.
+
+Note: This is not the same as native `isNaN`, which will return `true` for
+`undefined` and other values. See [ES5 isNaN](http://es5.github.com/#x15.1.2.4)
+
+
+
 ## isNull(val):Boolean
 
 If value is `null`.

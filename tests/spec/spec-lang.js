@@ -13,6 +13,7 @@ define([
     'lang/spec-isEmpty',
     'lang/spec-isFunction',
     'lang/spec-isKind',
+    'lang/spec-isNaN',
     'lang/spec-isNull',
     'lang/spec-isNumber',
     'lang/spec-isObject',

@@ -15,6 +15,7 @@ return {
     'isEmpty' : require('./lang/isEmpty'),
     'isFunction' : require('./lang/isFunction'),
     'isKind' : require('./lang/isKind'),
+    'isNaN' : require('./lang/isNaN'),
     'isNull' : require('./lang/isNull'),
     'isNumber' : require('./lang/isNumber'),
     'isObject' : require('./lang/isObject'),
