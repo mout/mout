@@ -12,7 +12,7 @@
         _specsUrl = 'https://github.com/millermedeiros/amd-utils/blob/master/tests/spec/',
         _curPath = document.location.pathname.split('/'),
         _curFile = _curPath[_curPath.length - 1],
-        _curMod = _curFile.split('.')[0],
+        _curPackage = _curFile.split('.')[0],
         _rootPath = '';
 
 
@@ -165,8 +165,8 @@
                 mod = ($(el).find('a').attr('href') || '').replace('#', '');
                 if (mod && mod !== 'toc') {
                     $tmp = $ul.clone();
-                    $tmp.find('.a-src').attr('href', _srcUrl + _curMod +'/'+ mod +'.js');
-                    $tmp.find('.a-specs').attr('href', _specsUrl + _curMod +'/spec-'+ mod +'.js');
+                    $tmp.find('.a-src').attr('href', _srcUrl + _curPackage +'/'+ mod +'.js');
+                    $tmp.find('.a-specs').attr('href', _specsUrl + _curPackage +'/spec-'+ mod +'.js');
                     $(this).append($tmp).addClass('h2-mod');
                 }
             });
@@ -177,6 +177,79 @@
         };
     }());
 
+
+
+    // inject module
+    // so the user can test modules on the console
+    var inject = (function(){
+
+        var _didInjected;
+
+        function injectPackageOnClick(evt){
+            evt.preventDefault();
+
+            var packageName = prompt('Module Name:', _curPackage);
+            if (! packageName) return;
+
+            packageName = 'amd-utils/'+ packageName;
+
+            // can only call once
+            if (_didInjected) {
+                require([packageName], function(){
+                    registerLoad(packageName);
+                });
+            } else {
+                injectRequireJs(packageName);
+                _didInjected = true;
+            }
+        }
+
+
+        function registerLoad(packageName){
+            var pkg = require(packageName);
+            window.utils = window.utils || {};
+            if (typeof pkg === 'object') {
+                for (var key in pkg) {
+                    window.utils[key] = pkg[key];
+                }
+            } else {
+                var nameParts = packageName.split('/');
+                window.utils[ nameParts[nameParts.length - 1] ] = pkg;
+            }
+            if (console && console.log) {
+                console.log(' == You can now access "'+ packageName +'" inside the "utils" namespace. == ');
+            }
+        }
+
+
+        function injectRequireJs(packageName){
+            window.requirejs = {
+                paths : {
+                    'amd-utils' : 'https://raw.github.com/millermedeiros/amd-utils/master/src'
+                },
+                deps : [packageName],
+                callback : function() {
+                    registerLoad(packageName);
+                }
+            };
+            var s = document.createElement('script');
+            s.src = $('body').data('rootPath') + 'assets_/js/lib/require.js';
+            var s1 = document.getElementsByTagName('script')[0];
+            s1.parentNode.insertBefore(s, s1);
+        }
+
+
+        function init(){
+            $('#inject-link').click(injectPackageOnClick);
+        }
+
+
+        return {
+            init : init
+        };
+    }());
+
+
     // ----
 
 
@@ -184,8 +257,9 @@
         _rootPath = $('body').data('rootPath'); //fix relative links on nested paths
         sidebar.init();
         syntax.init();
-        if(_curMod !== 'index'){
+        if(_curPackage !== 'index'){
             source.init();
+            inject.init();
         }
     }
 
