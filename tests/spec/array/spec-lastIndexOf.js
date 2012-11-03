@@ -15,7 +15,7 @@ define(['src/array/lastIndexOf'], function (lastIndexOf) {
             expect( lastIdx(arr, 'foo') ).toEqual( -1 );
         });
 
-        it('should work in sparse arrays', function(){
+        it('should iterate over sparse items. see #64', function(){
             var arr = [];
             arr[1] = 1;
             arr[3] = 'a';
@@ -23,11 +23,14 @@ define(['src/array/lastIndexOf'], function (lastIndexOf) {
             arr[6] = 2;
             arr[8] = 'b';
 
+            // IMPORTANT
+            // ---------
+            // this behavior is different than ES5 Array#lastIndexOf
             expect( lastIdx(arr, 1) ).toEqual( 1 );
             expect( lastIdx(arr, 'a') ).toEqual( 3 );
             expect( lastIdx(arr, 2) ).toEqual( 6 );
             expect( lastIdx(arr, 'b') ).toEqual( 8 );
-            expect( lastIdx(arr, undefined) ).toEqual( 4 );
+            expect( lastIdx(arr, undefined) ).toEqual( 7 );
 
             expect( lastIdx(arr, 'foo') ).toEqual( -1 );
         });

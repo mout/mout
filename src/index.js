@@ -4,6 +4,7 @@ define(function(require){
 //run `node build` instead
 return {
     'array' : require('./array'),
+    'collection' : require('./collection'),
     'financial' : require('./financial'),
     'function' : require('./function'),
     'lang' : require('./lang'),

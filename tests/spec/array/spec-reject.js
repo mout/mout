@@ -16,17 +16,19 @@ define(['src/array/reject'], function(reject) {
             expect(result).toEqual([2, 4]);
         });
 
-        it('should support sparse arrays', function() {
+        it('should iterate over sparse arrays. see #64', function() {
             var items = new Array(6);
             items[2] = 13;
             items[5] = 6;
+            var count = 0;
 
             var result = reject(items, function(val, i, arr) {
-                expect(i).not.toBe(4); // Make sure it skips the sparse items
-                return val % 2 === 0;
+                count += 1;
+                return val == null || (val % 2 === 0);
             });
 
             expect(result).toEqual([13]);
+            expect(count).toEqual(6);
         });
 
         it('should return empty array if all items rejected', function() {

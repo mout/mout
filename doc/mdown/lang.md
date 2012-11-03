@@ -158,6 +158,14 @@ isEmpty({a:1, b:2}); // false
 ```
 
 
+## isFinite(val):Boolean
+
+Checks if value is Finite.
+
+Note: This is not the same as native `isFinite`, which will return `true` for
+booleans and empty strings. See http://es5.github.com/#x15.1.2.5.
+
+
 
 ## isFunction(val):Boolean
 
@@ -172,6 +180,15 @@ If value is of "kind". (used internally by some of the *isSomething* checks).
 Favor the other methods since strings are commonly mistyped and also because
 some "kinds" can only be accurately checked by using other methods (e.g.
 `Arguments`), some of the other checks are also faster.
+
+
+
+## isNaN(val):Boolean
+
+Check if value is `NaN`.
+
+Note: This is not the same as native `isNaN`, which will return `true` for
+`undefined` and other values. See [ES5 isNaN](http://es5.github.com/#x15.1.2.4)
 
 
 

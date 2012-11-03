@@ -10,6 +10,7 @@ var _fs = require('fs'),
 
 
 
+
 // Paths
 // --------
 
@@ -26,6 +27,16 @@ exports.compileTemplate = function (name) {
     var path = _path.join(_config.TEMPLATES_FOLDER, name +'.hbs');
     var file = _fs.readFileSync(path);
     return _handlebars.compile( file.toString() );
+};
+
+
+exports.compileSpecTemplate = function(name){
+    return exports.compileTemplate( _path.join('spec', name) );
+};
+
+
+exports.compileModuleTemplate = function(name){
+    return exports.compileTemplate( _path.join('mod', name) );
 };
 
 
@@ -83,14 +94,19 @@ exports.purgeFiles = function(files){
 // -----
 
 // add some indentation to the log message, makes it easier to read during
-// build
+// build. Also so we can toggle the log messages easily.
+
+exports.isSilent = false;
+
 exports.echo = function (var_args){
+    if (exports.isSilent) return;
     var args = Array.prototype.slice.call(arguments);
     args[0] = ' '+ args[0];
     console.log.apply(console, args);
 };
 
 exports.echoList = function(var_args){
+    if (exports.isSilent) return;
     var args = Array.prototype.slice.call(arguments);
     args[0] = '  - '+ args[0];
     console.log.apply(console, args);

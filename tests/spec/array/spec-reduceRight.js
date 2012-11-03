@@ -72,7 +72,7 @@ define(['src/array/reduceRight'], function (reduceRight) {
         });
 
 
-        it('should work over sparse arrays', function () {
+        it('should iterate over sparse items. see #64', function () {
             function specialSum(prev, cur, i, arr){
                 var a = prev == null? 1 : prev;
                 var b = cur == null? 1: cur;
@@ -83,8 +83,11 @@ define(['src/array/reduceRight'], function (reduceRight) {
             base[7] = 4;
             base[10] = undefined;
 
-            expect( reduceRight(base, specialSum) ).toEqual( 11 );
-            expect( reduceRight(base, specialSum, 2) ).toEqual( 13 );
+            // IMPORTANT
+            // ---------
+            // this behavior is different than ES5 Array#reduceRight
+            expect( reduceRight(base, specialSum) ).toEqual( 18 );
+            expect( reduceRight(base, specialSum, 2) ).toEqual( 20 );
         });
 
 

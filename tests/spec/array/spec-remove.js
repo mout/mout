@@ -25,7 +25,7 @@ define(['src/array/remove'], function (remove) {
             expect( arr[3] ).toBeUndefined();
             expect( arr.length ).toEqual( 8 );
         });
-        
+
         it('should not modify the array if the item does not exist', function(){
             var arr = [1, 'a', 2, 'b'];
             remove(arr, 'c');

@@ -1,7 +1,6 @@
 .tmp*
 .project
 .settings/
-node_modules/
 
 .livereload
 
@@ -15,6 +14,8 @@ Thumbs.db
 
 /array.js
 /array/
+/collection.js
+/collection/
 /financial.js
 /financial/
 /function.js
