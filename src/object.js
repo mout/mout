@@ -3,6 +3,7 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
+    'deepMixIn' : require('./object/deepMixIn'),
     'fillIn' : require('./object/fillIn'),
     'filter' : require('./object/filter'),
     'forIn' : require('./object/forIn'),

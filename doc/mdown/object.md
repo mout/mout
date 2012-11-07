@@ -3,6 +3,26 @@
 Object utilities.
 
 
+## deepMixIn(target, ...objects):Object
+
+Mixes objects into the target object, recursively mixing child objects also.
+
+Returns the target object. Like [`merge()`](#merge), but mutates the target
+object.
+
+    var target = {
+        foo: {
+            name: "foo",
+            id: 1
+        }
+    };
+
+    deepMixIn(target, { foo: { id: 2 } });
+    console.log(target); // { foo: { name: "foo", id: 2 } }
+
+See: [`mixIn()`](#mixIn), [`merge()`](#merge)
+
+
 
 ## fillIn(obj, ...default):Object
 

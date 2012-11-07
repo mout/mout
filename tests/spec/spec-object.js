@@ -1,6 +1,7 @@
 //automatically generated, do not edit!
 //run `node build` instead
 define([
+    'object/spec-deepMixIn',
     'object/spec-fillIn',
     'object/spec-filter',
     'object/spec-forIn',
