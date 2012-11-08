@@ -1,8 +1,10 @@
-define(['./forOwn', '../lang/isObject'], function (forOwn, isObject) {
+// use collection/forEach since we also deep merge arrays during the process
+define(['../collection/forEach'], function (forEach) {
 
     /**
-     * Mixes objects into the target object, recursively mixing existing child objects also.
-     * @version 0.1.0 (2012-11-07)
+     * Mixes objects into the target object, recursively mixing existing child
+     * objects and arrays.
+     * @version 0.1.1 (2012/11/08)
      */
     function deepMixIn(target, objects) {
         var i = 0,
@@ -11,8 +13,8 @@ define(['./forOwn', '../lang/isObject'], function (forOwn, isObject) {
 
         while(++i < n){
             obj = arguments[i];
-            if (obj != null) {
-                forOwn(obj, copyProp, target);
+            if (obj) {
+                forEach(obj, copyProp, target);
             }
         }
 
@@ -21,7 +23,10 @@ define(['./forOwn', '../lang/isObject'], function (forOwn, isObject) {
 
     function copyProp(val, key) {
         var existing = this[key];
-        if (isObject(val) && isObject(existing)) {
+        // WTFJS: `typeof null === 'object'` so we check if val is truthy.
+        // need to use `typeof` check instead of lang/isObject since we also
+        // need to deep merge arrays
+        if (val && typeof val === 'object' && typeof existing === 'object') {
             deepMixIn(existing, val);
         } else {
             this[key] = val;

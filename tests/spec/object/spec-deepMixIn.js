@@ -1,5 +1,6 @@
 define(['src/object/deepMixIn'], function(deepMixIn) {
     describe('object/deepMixIn', function() {
+
         it('should mix properties into target', function() {
             var target = {
                 foo: true
@@ -62,14 +63,50 @@ define(['src/object/deepMixIn'], function(deepMixIn) {
             expect(target.foo).toBe(foo);
         });
 
-        it('should overwrite existing values in target', function() {
+        it('should overwrite existing values in target if value is not an object', function() {
             var target = {
-                foo: { a: true }
+                foo: { a: true },
+                bar : [1,2,3]
             };
 
-            deepMixIn(target, { foo: null });
+            // important to test against null
+            deepMixIn(target, { foo: null, bar: 1 });
 
             expect(target.foo).toBeNull();
+            expect(target.bar).toBe( 1 );
         });
+
+        it('should override array keys in place (no clone)', function () {
+            var arr1 = [1,2];
+            var arr2 = [3];
+            var arr3 = [4, 5, 6];
+
+            var target = {a : arr1};
+            var o1 = {c: 'bar'};
+            var o2 = {a : arr2, b : true};
+
+            deepMixIn(target, o1, o2);
+
+            expect( target.a ).toEqual( [3,2] );
+            expect( target.b ).toEqual( true );
+            expect( target.c ).toEqual( 'bar' );
+
+            // it should edit the original array without cloning
+            expect( target.a ).toBe( arr1 );
+
+            var o3 = {a : arr3};
+
+            deepMixIn(target, o3);
+
+            // it should edit the original array without cloning
+            expect( target.a ).toBe( arr1 );
+            expect( target.a ).not.toBe( arr3 );
+            expect( target.a ).toEqual( arr3 );
+
+            // should keep keep old properties
+            expect( target.b ).toEqual( true );
+            expect( target.c ).toEqual( 'bar' );
+        });
+
     });
 });
