@@ -53,14 +53,13 @@ define(['src/object/deepMixIn'], function(deepMixIn) {
             expect(target.foo.bar).toEqual(true);
         });
 
-        it('should clone added child objects', function() {
+        it('should keep added child objects', function() {
             var foo = { foo: true };
             var target = {};
 
             deepMixIn(target, { foo: foo });
 
-            expect(target.foo).toEqual(foo);
-            expect(target.foo).not.toBe(foo);
+            expect(target.foo).toBe(foo);
         });
 
         it('should overwrite existing values in target', function() {

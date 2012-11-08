@@ -1,7 +1,7 @@
-define(['./forOwn', '../lang/clone', '../lang/isObject'], function (forOwn, clone, isObject) {
+define(['./forOwn', '../lang/isObject'], function (forOwn, isObject) {
 
     /**
-     * Merges objects into the target object, recursively merging child objects also.
+     * Mixes objects into the target object, recursively mixing existing child objects also.
      * @version 0.1.0 (2012-11-07)
      */
     function deepMixIn(target, objects) {
@@ -24,8 +24,7 @@ define(['./forOwn', '../lang/clone', '../lang/isObject'], function (forOwn, clon
         if (isObject(val) && isObject(existing)) {
             deepMixIn(existing, val);
         } else {
-            // Clone arrays and other non-object values
-            this[key] = clone(val);
+            this[key] = val;
         }
     }
 

@@ -5,10 +5,11 @@ Object utilities.
 
 ## deepMixIn(target, ...objects):Object
 
-Mixes objects into the target object, recursively mixing child objects also.
+Mixes objects into the target object, recursively mixing existing child objects
+also.
 
 Returns the target object. Like [`merge()`](#merge), but mutates the target
-object.
+object, and does not clone child objects.
 
     var target = {
         foo: {
