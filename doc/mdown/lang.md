@@ -181,6 +181,13 @@ Favor the other methods since strings are commonly mistyped and also because
 some "kinds" can only be accurately checked by using other methods (e.g.
 `Arguments`), some of the other checks are also faster.
 
+```js
+isKind([1,2], 'Array'); // true
+isKind(3, 'Array');     // false
+isKind(3, 'Number');    // true
+```
+
+See: [`kindOf()`](#kindOf)
 
 
 ## isNaN(val):Boolean
@@ -233,7 +240,13 @@ If value is `undefined`.
 Gets kind of value (e.g. "String", "Number", "RegExp", "Null", "Date").
 Used internally by `isKind()` and most of the other *isSomething* checks.
 
+```js
+kindOf([1,2]); // "Array"
+kindOf('foo'); // "String"
+kindOf(3);     // "Number"
+```
 
+See: [`isKind()`](#isKind)
 
 
 ## toArray(val):Array
