@@ -3,9 +3,7 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
-    'namespace' : require('./object/namespace'),
-    'max' : require('./object/max'),
-    'filter' : require('./object/filter'),
+    'deepMixIn' : require('./object/deepMixIn'),
     'fillIn' : require('./object/fillIn'),
     'unset' : require('./object/unset'),
     'hasOwn' : require('./object/hasOwn'),
@@ -19,6 +17,11 @@ return {
     'pluck' : require('./object/pluck'),
     'mixIn' : require('./object/mixIn'),
     'forIn' : require('./object/forIn'),
+    'forOwn' : require('./object/forOwn'),
+    'get' : require('./object/get'),
+    'has' : require('./object/has'),
+    'hasOwn' : require('./object/hasOwn'),
+    'keys' : require('./object/keys'),
     'map' : require('./object/map'),
     'set' : require('./object/set'),
     'find' : require('./object/find'),

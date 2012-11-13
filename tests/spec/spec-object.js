@@ -1,32 +1,24 @@
 //automatically generated, do not edit!
 //run `node build` instead
 define([
-    'object/spec-namespace',
-    'object/spec-max',
-    'object/spec-filter',
+    'object/spec-deepMixIn',
     'object/spec-fillIn',
-    'object/spec-unset',
-    'object/spec-hasOwn',
-    'object/spec-has',
-    'object/spec-values',
-    'object/spec-contains',
-    'object/spec-forOwn',
-    'object/spec-pick',
-    'object/spec-reject',
-    'object/spec-min',
-    'object/spec-pluck',
-    'object/spec-mixIn',
+    'object/spec-filter',
     'object/spec-forIn',
-    'object/spec-map',
-    'object/spec-set',
-    'object/spec-find',
-    'object/spec-merge',
-    'object/spec-some',
-    'object/spec-keys',
+    'object/spec-forOwn',
     'object/spec-get',
-    'object/spec-reduce',
-    'object/spec-every',
-    'object/spec-size'
+    'object/spec-has',
+    'object/spec-hasOwn',
+    'object/spec-keys',
+    'object/spec-map',
+    'object/spec-merge',
+    'object/spec-mixIn',
+    'object/spec-namespace',
+    'object/spec-pick',
+    'object/spec-set',
+    'object/spec-size',
+    'object/spec-unset',
+    'object/spec-values'
 ], function(){
     //noop
 });

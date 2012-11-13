@@ -3,6 +3,29 @@
 Object utilities.
 
 
+## deepMixIn(target, ...objects):Object
+
+Mixes objects into the target object, recursively mixing existing child objects
+and arrays as well.
+
+Returns the target object. Like [`merge()`](#merge), but mutates the target
+object, and does not clone child objects.
+
+    var target = {
+        foo: {
+            name: "foo",
+            id: 1,
+            vals: [1, 2]
+        }
+    };
+
+    deepMixIn(target, { foo: { id: 2, vals: [5] } });
+    // note that arrays are also merged and not replaced
+    console.log(target); // { foo: { name: "foo", id: 2, vals : [5, 2] } }
+
+See: [`mixIn()`](#mixIn), [`merge()`](#merge)
+
+
 
 ## fillIn(obj, ...default):Object
 
