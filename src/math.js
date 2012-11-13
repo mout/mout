@@ -3,15 +3,15 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
-    'clamp' : require('./math/clamp'),
-    'countSteps' : require('./math/countSteps'),
-    'inRange' : require('./math/inRange'),
-    'isNear' : require('./math/isNear'),
-    'lerp' : require('./math/lerp'),
-    'loop' : require('./math/loop'),
-    'map' : require('./math/map'),
     'norm' : require('./math/norm'),
-    'snap' : require('./math/snap')
+    'map' : require('./math/map'),
+    'clamp' : require('./math/clamp'),
+    'inRange' : require('./math/inRange'),
+    'snap' : require('./math/snap'),
+    'lerp' : require('./math/lerp'),
+    'countSteps' : require('./math/countSteps'),
+    'isNear' : require('./math/isNear'),
+    'loop' : require('./math/loop')
 };
 
 });

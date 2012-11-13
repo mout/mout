@@ -1,13 +1,13 @@
 //automatically generated, do not edit!
 //run `node build` instead
 define([
-    'queryString/spec-contains',
-    'queryString/spec-decode',
     'queryString/spec-encode',
     'queryString/spec-getParam',
-    'queryString/spec-getQuery',
+    'queryString/spec-setParam',
+    'queryString/spec-contains',
     'queryString/spec-parse',
-    'queryString/spec-setParam'
+    'queryString/spec-decode',
+    'queryString/spec-getQuery'
 ], function(){
     //noop
 });

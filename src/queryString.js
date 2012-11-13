@@ -3,13 +3,13 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
-    'contains' : require('./queryString/contains'),
-    'decode' : require('./queryString/decode'),
     'encode' : require('./queryString/encode'),
     'getParam' : require('./queryString/getParam'),
-    'getQuery' : require('./queryString/getQuery'),
+    'setParam' : require('./queryString/setParam'),
+    'contains' : require('./queryString/contains'),
     'parse' : require('./queryString/parse'),
-    'setParam' : require('./queryString/setParam')
+    'decode' : require('./queryString/decode'),
+    'getQuery' : require('./queryString/getQuery')
 };
 
 });

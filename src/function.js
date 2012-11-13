@@ -3,11 +3,11 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
-    'bind' : require('./function/bind'),
+    'series' : require('./function/series'),
     'compose' : require('./function/compose'),
-    'func' : require('./function/func'),
     'prop' : require('./function/prop'),
-    'series' : require('./function/series')
+    'bind' : require('./function/bind'),
+    'func' : require('./function/func')
 };
 
 });

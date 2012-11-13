@@ -3,8 +3,8 @@ define(['./map', '../function/prop'], function (map, prop) {
     /**
      * Extract a list of property values.
      */
-    function pluck(arr, propName){
-        return map(arr, prop(propName));
+    function pluck(obj, propName){
+        return map(obj, prop(propName));
     }
 
     return pluck;

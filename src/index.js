@@ -3,18 +3,18 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
-    'array' : require('./array'),
-    'collection' : require('./collection'),
-    'financial' : require('./financial'),
-    'function' : require('./function'),
-    'lang' : require('./lang'),
     'math' : require('./math'),
-    'number' : require('./number'),
-    'object' : require('./object'),
+    'lang' : require('./lang'),
+    'collection' : require('./collection'),
+    'array' : require('./array'),
+    'string' : require('./string'),
     'queryString' : require('./queryString'),
     'random' : require('./random'),
-    'string' : require('./string'),
-    'time' : require('./time')
+    'function' : require('./function'),
+    'financial' : require('./financial'),
+    'time' : require('./time'),
+    'number' : require('./number'),
+    'object' : require('./object')
 };
 
 });

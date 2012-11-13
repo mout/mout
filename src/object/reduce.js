@@ -1,12 +1,23 @@
-define(['./forOwn'], function(forOwn) {
+define(['./forOwn', './size'], function(forOwn, size) {
 
     /**
      * Object reduce
      */
     function reduce(obj, callback, memo, thisObj) {
-        forOwn(obj, function(value, index, list) {
-            memo = memo || value;
-            memo = callback.call(thisObj, memo, value, index, list);
+        var initial = arguments.length > 2;
+
+        if (!size(obj) && !initial) {
+            throw new Error('reduce of empty object with no initial value');
+        }
+
+        forOwn(obj, function(value, key, list) {
+            if (!initial) {
+                memo = value;
+                initial = true;
+            }
+            else {
+                memo = callback.call(thisObj, memo, value, key, list);
+            }
         });
 
         return memo;

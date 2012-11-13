@@ -5,7 +5,7 @@
 
 var _fs = require('fs'),
     _path = require('path'),
-    _handlebars = require('Handlebars'),
+    _handlebars = require('handlebars'),
     _config = require('./config');
 
 
