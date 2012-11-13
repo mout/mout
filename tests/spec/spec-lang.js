@@ -1,28 +1,28 @@
 //automatically generated, do not edit!
 //run `node build` instead
 define([
-    'lang/spec-isDate',
     'lang/spec-isNaN',
-    'lang/spec-ctorApply',
-    'lang/spec-isNumber',
-    'lang/spec-isObject',
-    'lang/spec-kindOf',
-    'lang/spec-clone',
+    'lang/spec-defaults',
+    'lang/spec-isArray',
     'lang/spec-isString',
+    'lang/spec-isFinite',
+    'lang/spec-clone',
     'lang/spec-isFunction',
+    'lang/spec-isArguments',
+    'lang/spec-kindOf',
+    'lang/spec-isNumber',
+    'lang/spec-toArray',
+    'lang/spec-isEmpty',
+    'lang/spec-createObject',
+    'lang/spec-isRegExp',
     'lang/spec-isBoolean',
     'lang/spec-isUndefined',
-    'lang/spec-isArguments',
-    'lang/spec-defaults',
-    'lang/spec-toArray',
-    'lang/spec-isRegExp',
-    'lang/spec-createObject',
-    'lang/spec-isArray',
+    'lang/spec-isObject',
+    'lang/spec-isNull',
+    'lang/spec-ctorApply',
     'lang/spec-inheritPrototype',
-    'lang/spec-isFinite',
     'lang/spec-isKind',
-    'lang/spec-isEmpty',
-    'lang/spec-isNull'
+    'lang/spec-isDate'
 ], function(){
     //noop
 });

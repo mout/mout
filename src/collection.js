@@ -3,12 +3,20 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
-    'map' : require('./collection/map'),
-    'every' : require('./collection/every'),
+    'max' : require('./collection/max'),
     'filter' : require('./collection/filter'),
-    'forEach' : require('./collection/forEach'),
     'make_' : require('./collection/make_'),
-    'size' : require('./collection/size')
+    'contains' : require('./collection/contains'),
+    'reject' : require('./collection/reject'),
+    'min' : require('./collection/min'),
+    'pluck' : require('./collection/pluck'),
+    'map' : require('./collection/map'),
+    'find' : require('./collection/find'),
+    'some' : require('./collection/some'),
+    'reduce' : require('./collection/reduce'),
+    'every' : require('./collection/every'),
+    'size' : require('./collection/size'),
+    'forEach' : require('./collection/forEach')
 };
 
 });

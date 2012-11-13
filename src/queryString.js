@@ -4,12 +4,12 @@ define(function(require){
 //run `node build` instead
 return {
     'encode' : require('./queryString/encode'),
-    'getParam' : require('./queryString/getParam'),
     'setParam' : require('./queryString/setParam'),
     'contains' : require('./queryString/contains'),
     'parse' : require('./queryString/parse'),
+    'getQuery' : require('./queryString/getQuery'),
     'decode' : require('./queryString/decode'),
-    'getQuery' : require('./queryString/getQuery')
+    'getParam' : require('./queryString/getParam')
 };
 
 });

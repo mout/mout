@@ -1,8 +1,18 @@
-define(['./make_', '../array/filter', '../object/filter'], function (make, arrFilter, objFilter) {
+define(['./forEach'], function (forEach) {
 
-    /**
-     * @version 0.1.1 (2012/10/30)
-     */
-    return make(arrFilter, objFilter, []);
+    function filter(list, iterator, context) {
+        list = list || [];
+        var results = [];
+
+        forEach(list, function(value, index, list) {
+            if (iterator.call(context, value, index, list)) {
+                results[results.length] = value;
+            }
+        });
+
+        return results;
+    }
+
+    return filter;
 
 });

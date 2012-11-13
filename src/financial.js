@@ -3,11 +3,11 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
-    'presentValue' : require('./financial/presentValue'),
-    'npv' : require('./financial/npv'),
     'payment' : require('./financial/payment'),
+    'npv' : require('./financial/npv'),
     'futureValue' : require('./financial/futureValue'),
-    'compoundInterest' : require('./financial/compoundInterest')
+    'compoundInterest' : require('./financial/compoundInterest'),
+    'presentValue' : require('./financial/presentValue')
 };
 
 });

@@ -4,14 +4,14 @@ define(function(require){
 //run `node build` instead
 return {
     'norm' : require('./math/norm'),
-    'map' : require('./math/map'),
-    'clamp' : require('./math/clamp'),
-    'inRange' : require('./math/inRange'),
     'snap' : require('./math/snap'),
+    'loop' : require('./math/loop'),
+    'map' : require('./math/map'),
     'lerp' : require('./math/lerp'),
     'countSteps' : require('./math/countSteps'),
+    'inRange' : require('./math/inRange'),
     'isNear' : require('./math/isNear'),
-    'loop' : require('./math/loop')
+    'clamp' : require('./math/clamp')
 };
 
 });
