@@ -3,7 +3,7 @@
 Methods for dealing with collections (Array or Objects).
 
 <div style="background-color:#fdd; padding:2em; border:2px solid #f00"><strong>IMPORTANT:</strong>
-This package isn't <em>stable</em> we are still discussing what is the proper
+This package isn't <em>stable</em>. We are still discussing what is the proper
 behavior. (see <a href="https://github.com/millermedeiros/amd-utils/issues/93">#93</a>)</div>
 
 
