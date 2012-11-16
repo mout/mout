@@ -12,7 +12,7 @@ define(['src/collection/filter'], function(filter){
         it('should filter object', function(){
             expect( filter({a: 123, b : 'bar'}, function(val){
                 return typeof val === 'string';
-            }) ).toEqual( {b: 'bar'} );
+            }) ).toEqual( ['bar'] );
         });
 
         it('should return empty array if target is null', function () {

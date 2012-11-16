@@ -3,6 +3,24 @@
 Object utilities.
 
 
+
+## contains(obj, value):Boolean
+
+Similar to [Array/contains](array.html#contains). Checks if Object contains
+value.
+
+```js
+var obj = {
+    a: 1,
+    b: 2,
+    c: 'bar'
+};
+contains(obj, 2);      // true
+contains(obj, 'foo');  // false
+```
+
+
+
 ## deepMixIn(target, ...objects):Object
 
 Mixes objects into the target object, recursively mixing existing child objects
@@ -24,6 +42,24 @@ object, and does not clone child objects.
     console.log(target); // { foo: { name: "foo", id: 2, vals : [5, 2] } }
 
 See: [`mixIn()`](#mixIn), [`merge()`](#merge)
+
+
+
+## every(obj, callback, [thisObj]):Boolean
+
+Similar to [Array/every](array.html#every). Tests whether all properties in the
+object pass the test implemented by the provided callback.
+
+```js
+var obj = {
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 'string'
+};
+
+every(obj, isNumber); // false
+```
 
 
 
@@ -66,6 +102,24 @@ filter(obj, function(v) { return value.length > 5; });
 
 // returns { foo: 'value' }
 filter(obj, function(v, k) { return k === 'foo'; });
+```
+
+
+
+## find(obj, callback, [thisObj])
+
+Loops through all the properties in the Object and returns the first one that
+passes a truth test (callback), similar to [Array/find](array.html#find).
+Unlike Array/find, order of iteration is not guaranteed.
+
+```js
+var obj = {
+    a: 'foo',
+    b: 12
+};
+
+find(obj, isString); // 'foo'
+find(obj, isNumber); // 12
 ```
 
 
@@ -297,6 +351,37 @@ See: [`fillIn()`](#fillIn), [`mixIn()`](#mixIn)
 
 
 
+## max(obj[, iterator]):*
+
+Returns maximum value inside object or use a custom iterator to define how
+items should be compared. Similar to [Array/max](array.html#max).
+
+See: [`min()`](#min)
+
+```js
+max({a: 100, b: 2, c: 1, d: 3, e: 200}); // 200
+max({a: 'foo', b: 'lorem', c: 'amet'}, function(val){
+    return val.length;
+}); // 'lorem'
+```
+
+
+
+## min(obj[, iterator]):*
+
+Returns minimum value inside object or use a custom iterator to define how
+items should be compared. Similar to [Array/min](array.html#min).
+
+See: [`max()`](#max)
+
+```js
+min({a: 100, b: 2, c: 1, d: 3, e: 200}); // 1
+min({a: 'foo', b: 'lorem', c: 'amet'}, function(val){
+    return val.length;
+}); // 'foo'
+```
+
+
 
 ## mixIn(target, ...objects):Object
 
@@ -367,6 +452,66 @@ pick(user, 'firstName', 'lastName'); // {firstName:"John", lastName: "Doe"}
 
 
 
+## pluck(obj, propName):Object
+
+Extract an object containing property values with keys as they appear in the
+passed object.
+
+```js
+var users = {
+    first: {
+        name : 'John',
+        age : 21
+    },
+    second: {
+        name : 'Mary',
+        age : 25
+    }
+};
+
+pluck(users, 'name'); // {first: 'John', second: 'Mary'} );
+pluck(users, 'age');  // {first: 21, second: 25} );
+```
+
+
+
+## reduce(obj, callback, initial, [thisObj]):*
+
+Similar to [Array/reduce](array.html#reduce).
+
+Apply a function against an accumulator and each property of the object (order
+is undefined) as to reduce it to a single value.
+
+```js
+var obj = {a: 1, b: 2, c: 3, d: 4};
+
+function sum(prev, cur, key, list) {
+    compare1.push(prev);
+    return prev + cur;
+}
+
+reduce(obj, sum); // 10
+```
+
+
+
+## reject(obj, callback, thisObj):Object
+
+Returns a new object containing all properties where `callback` returns true,
+similar to [Array/reject](array.html#reject). It does not use properties from
+the object's prototype. Opposite of [`filter()`](#filter).
+
+See [`filter()`](#filter)
+
+### Example
+
+```js
+var obj = {a: 1, b: 2, c: 3, d: 4, e: 5};
+reject(obj, function(x) { return (x % 2) !== 0; }); // {b: 2, d: 4}
+```
+
+
+
 ## values(obj):Array
 
 Returns an array of all own enumerable properties values found upon a given object.
@@ -416,6 +561,24 @@ var obj = {
     lorem : 3
 };
 size(obj); // 3
+```
+
+
+
+## some(obj, callback, [thisObj]):Boolean
+
+Similar to [Array/some](array.html#some). Tests whether any properties in the
+object pass the test implemented by the provided callback.
+
+```js
+var obj = {
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 'string'
+};
+
+some(obj, isNumber); // true
 ```
 
 
