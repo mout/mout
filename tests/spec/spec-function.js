@@ -3,6 +3,7 @@
 define([
     'function/spec-bind',
     'function/spec-compose',
+    'function/spec-curry',
     'function/spec-func',
     'function/spec-prop',
     'function/spec-series'
