@@ -1,13 +1,13 @@
-define(['../lang/isArray', '../object/size'], function (isArray, objsize) {
+define(['../lang/isArray', '../object/size'], function (isArray, objSize) {
 
-    function size(obj) {
-        if (!obj) {
+    function size(list) {
+        if (!list) {
             return 0;
         }
-        if (isArray(obj)) {
-            return obj.length;
+        if (isArray(list)) {
+            return list.length;
         }
-        return objsize(obj);
+        return objSize(list);
     }
 
     return size;

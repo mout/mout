@@ -1,13 +1,12 @@
-define(['./every'], function(every) {
+define(['./some'], function(some) {
 
     function find(list, iterator, context) {
         var result;
-        every(list, function(value, index, list) {
+        some(list, function(value, index, list) {
             if (iterator.call(context, value, index, list)) {
                 result = value;
-                return false; //break
+                return true; //break
             }
-            return true;
         });
         return result;
     }
