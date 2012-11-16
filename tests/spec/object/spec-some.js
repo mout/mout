@@ -20,6 +20,13 @@ define(['src/object/some'], function(some){
             expect( some({}, isEven) ).toBe( false );
         });
 
+        it('should avoid don\'t enum bug on IE 7-8', function () {
+            var a1 = {a:1, toString:2};
+            var a2 = {a:1, toString:3};
+            expect( some(a1, isEven) ).toBe( true );
+            expect( some(a2, isEven) ).toBe( false );
+        });
+
     });
 
 });

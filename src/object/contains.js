@@ -1,15 +1,12 @@
-define(['./every'], function (every) {
+define(['./some'], function (some) {
 
-    function contains(obj, containsVal) {
-        var result = false;
-        every(obj, function(val) {
-            if (val === containsVal) {
-                result = true;
-                return false; //break
-            }
-            return true;
+    /**
+     * Check if object contains values.
+     */
+    function contains(obj, needle) {
+        return some(obj, function(val) {
+            return (val === needle);
         });
-        return result;
     }
     return contains;
 

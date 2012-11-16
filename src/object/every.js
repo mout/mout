@@ -1,19 +1,16 @@
-define(['./hasOwn'], function(hasOwn) {
+define(['./forOwn'], function(forOwn) {
 
     /**
      * Object every
      */
     function every(obj, callback, thisObj) {
         var result = true;
-        for (var key in obj) {
-            if (!hasOwn(obj, key)) {
-                continue;
-            }
-            if (callback.call(thisObj, obj[key], key, obj) === false) {
+        forOwn(obj, function(val, key) {
+            if (callback.call(thisObj, val, key, obj) === false) {
                 result = false;
-                break;
+                return false; // break
             }
-        }
+        });
         return result;
     }
 

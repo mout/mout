@@ -20,6 +20,13 @@ define(['src/object/every'], function(every){
             expect( every({}, isEven) ).toBe( true );
         });
 
+        it('should avoid don\'t enum bug on IE 7-8', function () {
+            var a1 = {a:2, toString:3};
+            var a2 = {a:2, toString:4};
+            expect( every(a1, isEven) ).toBe( false );
+            expect( every(a2, isEven) ).toBe( true );
+        });
+
     });
 
 });

@@ -1,19 +1,16 @@
-define(['./hasOwn'], function(hasOwn) {
+define(['./forOwn'], function(forOwn) {
 
     /**
      * Object some
      */
     function some(obj, callback, thisObj) {
         var result = false;
-        for (var key in obj) {
-            if (!hasOwn(obj, key)) {
-                continue;
-            }
-            if (callback.call(thisObj, obj[key], key, obj)) {
+        forOwn(obj, function(val, key) {
+            if (callback.call(thisObj, val, key, obj)) {
                 result = true;
-                break;
+                return false; // break
             }
-        }
+        });
         return result;
     }
 
