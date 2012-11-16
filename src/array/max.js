@@ -1,7 +1,7 @@
 define(['./forEach'], function (forEach) {
 
     /**
-     * Return minimum value inside array
+     * Return maximum value inside array
      * @version 0.1.0 (2012/01/29)
      */
     function max(arr, iterator){

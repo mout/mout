@@ -1,16 +1,15 @@
-define(['./every'], function(every) {
+define(['./some'], function(some) {
 
     /**
      * Returns first item that matches criteria
      */
     function find(obj, callback, thisObj) {
         var result;
-        every(obj, function(value, index, obj) {
-            if (callback.call(thisObj, value, index, obj)) {
+        some(obj, function(value, key, obj) {
+            if (callback.call(thisObj, value, key, obj)) {
                 result = value;
-                return false; //break
+                return true; //break
             }
-            return true;
         });
         return result;
     }
