@@ -65,7 +65,7 @@ exports.getFolderStructure = function(folder){
     fileNames = fileNames.map(function(val){
         return _path.join(folder, val);
     });
-    return {
+    var structure = {
         'folders' : fileNames.filter(function(name){
             return _fs.statSync(name).isDirectory();
         }),
@@ -73,6 +73,13 @@ exports.getFolderStructure = function(folder){
             return hasJsExtension(name) && _fs.statSync(name).isFile();
         })
     };
+
+    // some file systems might not return sorted items, it's better to
+    // normalize behavior so git blame works as expected
+    structure.folders = structure.folders.sort();
+    structure.files = structure.files.sort();
+
+    return structure;
 };
 
 
