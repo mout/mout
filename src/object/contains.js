@@ -1,7 +1,7 @@
 define(['./some'], function (some) {
 
     /**
-     * Check if object contains values.
+     * Check if object contains value
      */
     function contains(obj, needle) {
         return some(obj, function(val) {

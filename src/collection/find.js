@@ -1,16 +1,9 @@
-define(['./some'], function(some) {
+define(['./make_', '../array/find', '../object/find'], function(make, arrFind, objFind) {
 
-    function find(list, iterator, context) {
-        var result;
-        some(list, function(value, index, list) {
-            if (iterator.call(context, value, index, list)) {
-                result = value;
-                return true; //break
-            }
-        });
-        return result;
-    }
-
-    return find;
+    /**
+     * Find value that returns true on iterator check.
+     * @version 0.2.0 (2012/11/19)
+     */
+    return make(arrFind, objFind);
 
 });

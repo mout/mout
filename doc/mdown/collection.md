@@ -2,10 +2,6 @@
 
 Methods for dealing with collections (Array or Objects).
 
-<div style="background-color:#fdd; padding:2em; border:2px solid #f00"><strong>IMPORTANT:</strong>
-This package isn't <em>stable</em>. We are still discussing what is the proper
-behavior. (see <a href="https://github.com/millermedeiros/amd-utils/issues/93">#93</a>)</div>
-
 
 
 ## contains(list, value):Boolean
@@ -41,7 +37,7 @@ See: [array/every](array.html#every), [object/every](object.html#every)
 
 
 
-## filter(list, callback, [thisObj]):*
+## filter(list, callback, [thisObj]):Array
 
 Filter collection properties.
 
@@ -49,10 +45,13 @@ See: [array/filter](array.html#filter), [object/filter](object.html#filter)
 
 
 
-## find(list, callback, [thisObj])
+## find(list, callback, [thisObj]):*
 
 Loops through all the values in the collection and returns the first one that
 passes a truth test (callback).
+
+**Important:** loop order over objects properties isn't guaranteed to be the
+same on all environments.
 
 ```js
 find({a: 'foo', b: 12}, isString); // 'foo'
@@ -63,7 +62,7 @@ See: [array/find](array.html#find), [object/find](object.html#find)
 
 
 
-## forEach(list, callback, [thisObj]):void
+## forEach(list, callback, [thisObj])
 
 Loop through all values of the collection.
 
@@ -71,7 +70,7 @@ See: [array/forEach](array.html#forEach), [object/forOwn](object.html#forOwn)
 
 
 
-## map(list, callback, [thisObj]):*
+## map(list, callback, [thisObj]):Array
 
 Returns a new collection where the properties values are the result of calling
 the callback for each property in the original collection.
@@ -80,7 +79,7 @@ See: [array/map](array.html#map), [object/map](object.html#map)
 
 
 
-## max(list[, iterator]):*
+## max(list, [iterator]):*
 
 Returns maximum value inside collection or use a custom iterator to define how
 items should be compared.
@@ -96,7 +95,7 @@ max(['foo', 'lorem', 'amet'], function(val){
 
 
 
-## min(list[, iterator]):*
+## min(list, [iterator]):*
 
 Returns minimum value inside collection or use a custom iterator to define how
 items should be compared.
@@ -158,7 +157,6 @@ reduce it to a single value.
 var obj = {a: 1, b: 2, c: 3, d: 4};
 
 function sum(prev, cur, key, list) {
-    compare1.push(prev);
     return prev + cur;
 }
 
@@ -169,7 +167,7 @@ See: [array/reduce](array.html#reduce), [object/reduce](object.html#reduce)
 
 
 
-## reject(list, fn, thisObj):Array
+## reject(list, fn, [thisObj]):Array
 
 Creates a new array with all the elements that do **not** pass the truth test.
 Opposite of [`filter()`](#filter).
@@ -177,11 +175,11 @@ Opposite of [`filter()`](#filter).
 ### Example
 
 ```js
-var numbers = [1, 2, 3, 4, 5, 6];
-reject(numbers, function(x) { return (x % 2) !== 0; }); // [2, 4, 6]
+var numbers = [1, 2, 3, 4, 5];
+reject(numbers, function(x) { return (x % 2) !== 0; }); // [2, 4]
 
 var obj = {a: 1, b: 2, c: 3, d: 4, e: 5};
-reject(obj, function(x) { return (x % 2) !== 0; }); // {b: 2, d: 4}
+reject(obj, function(x) { return (x % 2) !== 0; }); // [2, 4]
 ```
 
 See: [array/reject](array.html#reject), [object/reject](object.html#reject)
@@ -198,9 +196,9 @@ var obj = {
     bar : 2,
     lorem : 3
 };
-size(obj); // 3
-
+size(obj);     // 3
 size([1,2,3]); // 3
+size(null);    // 0
 ```
 
 See: [object/size](object.html#size)
@@ -220,8 +218,16 @@ var obj = {
     d: 'string'
 };
 
-some(obj, isNumber); // true
+some(obj, isNumber);      // true
+some(obj, isString);      // true
+some([1, 2, 3], isNumber) // true
 some([1, 2, 3], isString) // false
 ```
 
 See: [array/some](array.html#some), [object/some](object.html#some)
+
+
+-------------------------------------------------------------------------------
+
+For more usage examples check specs inside `/tests` folder. Unit tests are the
+best documentation you can get...

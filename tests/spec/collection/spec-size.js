@@ -39,6 +39,11 @@ define(['src/collection/size'], function(size){
 
         });
 
+        it('should return zero if no collection', function () {
+            expect( size(null) ).toEqual( 0 );
+            expect( size(undefined) ).toEqual( 0 );
+        });
+
     });
 
 });
