@@ -27,7 +27,7 @@
   "main": "./index.js",
   "dependencies": {
     "wrench": "~1.3.9",
-    "amdefine": ">= 0.0.2"
+    "nodefy": "0.2.x"
   },
   "scripts": {
     "install": "node build cjs ."

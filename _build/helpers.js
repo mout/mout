@@ -114,7 +114,11 @@ exports.echo = function (var_args){
 
 exports.echoList = function(var_args){
     if (exports.isSilent) return;
-    var args = Array.prototype.slice.call(arguments);
-    args[0] = '  - '+ args[0];
-    console.log.apply(console, args);
+    if ( Array.isArray(var_args) ) {
+        console.log('  - '+ var_args.join('\n  - ') );
+    } else {
+        var args = Array.prototype.slice.call(arguments);
+        args[0] = '  - '+ args[0];
+        console.log.apply(console, args);
+    }
 };

@@ -3,7 +3,9 @@
 // run `node build -h` for usage information
 
 var _helpers = require('./_build/helpers');
+var _config = require('./_build/config');
 var _cli = require('commander');
+var _path = require('path');
 
 
 _cli
@@ -91,6 +93,12 @@ function addModule(moduleName, templateName){
 
 
 function convert(destinationPath){
-    require('./_build/convert').toNode(destinationPath);
+    var glob = _path.join(_config.SRC_FOLDER, '/**/**.js');
+    _helpers.echo('Converting modules to node.js:');
+    require('nodefy').batchConvert(glob, destinationPath, function(err, results){
+        results = results.map(function(r){ return r.outputPath; });
+        _helpers.echoList(results);
+        _helpers.echo('Finished node.js conversion');
+    });
 }
 
