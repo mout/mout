@@ -1,12 +1,30 @@
+# dumb files
+# ==========
+
 .tmp*
 .project
 .settings/
-node_modules/
-
 .livereload
-
 .DS_Store?
 ehthumbs.db
 Icon?
 Thumbs.db
 
+
+# stuff not needed by node
+# ========================
+
+node_modules/
+tests/
+_build/
+doc/html/
+# we keep the doc/mdown/ folder in case npm decides to display it in the future
+# also good in case user is using an old version or working offline
+
+# yes, we do remove the source files
+src/
+
+component.json
+updateDocs.sh
+clean.sh
+build.js
