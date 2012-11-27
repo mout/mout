@@ -228,6 +228,33 @@ See: [`lerp()`](#lerp), [`map()`](#map)
 
 
 
+## round(val[, step]):Number
+
+Round value to full steps. Similar to `Math.round()` but allow setting an
+arbitrary *radix*.
+
+    // default
+    round(0.22);      // 0
+    round(0.49);      // 0
+    round(0.51);      // 1
+
+    // custom radix
+    round(0.22, 0.5); // 0
+    round(0.49, 0.5); // 0.5
+    round(0.51, 0.5); // 0.5
+    round(0.74, 0.5); // 0.5
+    round(0.75, 0.5); // 1
+    round(1.24, 0.5); // 1
+    round(1.25, 0.5); // 1.5
+    round(1.74, 0.5); // 1.5
+
+### Common use cases
+
+Round values by increments of 0.5/5/10/1000/etc.
+
+See: [`snap()`](#snap), [`countSteps()`](#countSteps)
+
+
 
 ## snap(val, step):Number
 
@@ -242,7 +269,7 @@ an arbitrary *radix*.
 
 Round values by increments of 5/10/1000/etc.
 
-See: [`countSteps()`](#countSteps)
+See: [`round()`](#round), [`countSteps()`](#countSteps)
 
 
 

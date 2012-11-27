@@ -11,6 +11,7 @@ return {
     'loop' : require('./math/loop'),
     'map' : require('./math/map'),
     'norm' : require('./math/norm'),
+    'round' : require('./math/round'),
     'snap' : require('./math/snap')
 };
 

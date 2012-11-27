@@ -9,6 +9,7 @@ define([
     'math/spec-loop',
     'math/spec-map',
     'math/spec-norm',
+    'math/spec-round',
     'math/spec-snap'
 ], function(){
     //noop
