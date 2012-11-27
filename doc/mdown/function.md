@@ -59,6 +59,36 @@ console.log( add10(2) ); // 12
 
 
 
+## debounce(fn, delay[, isAsap]):Function
+
+Creates a function that will delay the execution of `fn` until after `delay`
+milliseconds have elapsed since the last time it was invoked.
+
+Subsequent calls to the debounced function will return the result of the last
+`fn` call.
+
+```js
+// sometimes less is more
+var lazyRedraw = debounce(redraw, 300);
+foo.on.resize.add(lazyRedraw);
+```
+
+In this visualization, `|` is a debounced-function call and `X` is the actual
+callback execution:
+
+    Default
+    ||||||||||||||||||||||||| (pause) |||||||||||||||||||||||||
+                             X                                 X
+
+    Debounced with `isAsap == true`:
+    ||||||||||||||||||||||||| (pause) |||||||||||||||||||||||||
+    X                                 X
+
+See: [`throttle()`](#throttle)
+
+
+
+
 ## func(name):Function
 
 Returns a function that calls a method with given `name` on supplied object.
@@ -99,6 +129,33 @@ passing the same parameters to all of them. Useful for combining multiple
 // call `console.log()` and `doStuff()` for each item item in the array
 forEach(arr, series(console.log, doStuff));
 ```
+
+
+
+## throttle(fn, interval):Function
+
+Creates a function that, when executed, will only call the `fn` function at
+most once per every `interval` milliseconds.
+
+If the throttled function is invoked more than once during the wait timeout,
+`fn` will also be called on the trailing edge of the timeout.
+
+Subsequent calls to the throttled function will return the result of the last
+`fn` call.
+
+```js
+// sometimes less is more
+var lazyRedraw = throttle(redraw, 300);
+foo.on.resize.add(lazyRedraw);
+```
+
+In this visualization, `|` is a throttled-function call and `X` is the actual
+`fn` execution:
+
+    ||||||||||||||||||||||||| (pause) |||||||||||||||||||||||||
+    X    X    X    X    X    X        X    X    X    X    X    X
+
+See: [`debounce()`](#debounce)
 
 
 

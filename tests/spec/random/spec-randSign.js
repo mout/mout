@@ -25,10 +25,13 @@ define(['src/random/randSign'], function (randSign) {
             var s = randSign();
             var d = randSign();
             var f = randSign();
+            var g = randSign();
+            var h = randSign();
+            var j = randSign();
             expect( q ).not.toBeUndefined();
             expect( q ).not.toEqual( Infinity );
             expect( q ).not.toEqual( NaN );
-            expect( q ).toDiffAny(w, e, r, t, y, a, s, d, f);
+            expect( q ).toDiffAny(w, e, r, t, y, a, s, d, f, g, h, j);
         });
 
         it('shouldn\t be biased', function () {
@@ -49,10 +52,11 @@ define(['src/random/randSign'], function (randSign) {
                 }
             }
 
-            expect( c_1 ).toBeLessThan( 540 );
-            expect( c_1 ).toBeGreaterThan( 460 );
-            expect( c1 ).toBeLessThan( 540 );
-            expect( c1 ).toBeGreaterThan( 460 );
+            // 10% margin
+            expect( c_1 ).toBeLessThan( 550 );
+            expect( c_1 ).toBeGreaterThan( 450 );
+            expect( c1 ).toBeLessThan( 550 );
+            expect( c1 ).toBeGreaterThan( 450 );
 
         });
 
