@@ -1,11 +1,14 @@
 define(['./isNumber'], function (isNumber) {
 
     /**
-     * @version 0.1.0 (2012/10/30)
+     * Check if value is NaN for realz
+     * @version 0.1.2 (2012/11/28)
      */
     function isNaN(val){
+        // based on the fact that NaN !== NaN
         // need to check if it's a number to avoid conflicts with host objects
-        return isNumber(val) && val !== val;
+        // also need to coerce ToNumber to avoid edge case `new Number(NaN)`
+        return isNumber(val) && val != +val;
     }
 
     return isNaN;
