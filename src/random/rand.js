@@ -1,4 +1,4 @@
-define(['../number/MIN_INT', '../number/MAX_INT'], function(MIN_INT, MAX_INT){
+define(['./random', '../number/MIN_INT', '../number/MAX_INT'], function(random, MIN_INT, MAX_INT){
 
     /**
      * Returns random number inside range
@@ -7,7 +7,7 @@ define(['../number/MIN_INT', '../number/MAX_INT'], function(MIN_INT, MAX_INT){
     function rand(min, max){
         min = min == null? MIN_INT : min;
         max = max == null? MAX_INT : max;
-        return min + (max - min) * Math.random();
+        return min + (max - min) * random();
     }
 
     return rand;

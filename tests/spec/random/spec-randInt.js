@@ -84,12 +84,12 @@ define(['src/random/randInt'], function (randInt) {
                 }
             }
 
-            expect( c0 ).toBeLessThan( 380 );
-            expect( c0 ).toBeGreaterThan( 280 );
-            expect( c1 ).toBeLessThan( 380 );
-            expect( c1 ).toBeGreaterThan( 280 );
-            expect( c_1 ).toBeLessThan( 380 );
-            expect( c_1 ).toBeGreaterThan( 280 );
+            expect( c0 ).toBeLessThan( 385 );
+            expect( c0 ).toBeGreaterThan( 275 );
+            expect( c1 ).toBeLessThan( 385 );
+            expect( c1 ).toBeGreaterThan( 275 );
+            expect( c_1 ).toBeLessThan( 385 );
+            expect( c_1 ).toBeGreaterThan( 275 );
 
         });
 

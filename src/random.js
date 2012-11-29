@@ -9,7 +9,8 @@ return {
     'randBit' : require('./random/randBit'),
     'randHex' : require('./random/randHex'),
     'randInt' : require('./random/randInt'),
-    'randSign' : require('./random/randSign')
+    'randSign' : require('./random/randSign'),
+    'random' : require('./random/random')
 };
 
 });

@@ -7,7 +7,8 @@ define([
     'random/spec-randBit',
     'random/spec-randHex',
     'random/spec-randInt',
-    'random/spec-randSign'
+    'random/spec-randSign',
+    'random/spec-random'
 ], function(){
     //noop
 });

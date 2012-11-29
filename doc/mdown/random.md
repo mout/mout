@@ -2,6 +2,10 @@
 
 Pseudo-random generators.
 
+amd-utils uses `Math.random` by default on all the pseudo-random generators, if
+you need a seeded random or a better algorithm see the [`random()`](#random)
+documentation for instructions.
+
 
 
 ## choice(...items):*
@@ -27,13 +31,18 @@ Generates a pseudo-random [Globally Unique Identifier](http://en.wikipedia.org/w
 Since the total number of GUIDs is 2<sup>122</sup> the chance of generating the
 same value twice is negligible.
 
-See: [`randHex()`](#randHex)
+**Important:** this method uses `Math.random` by default so the UUID isn't
+*safe* (sequence of outputs can be predicted in some cases), check the
+[`random()`](#random) documentation for more info on how to replace the default
+PRNG if you need extra safety or need *seeded* results.
+
+See: [`randHex()`](#randHex), [`random()`](#random)
 
 ### Example:
 
 ```js
 guid();      // 830e9f50-ac7f-4369-a14f-ed0e62b2fa0b
-guid();      // 5de3d09b-e79c-4727-d32b-48c49228d508
+guid();      // 5de3d09b-e79c-4727-932b-48c49228d508
 ```
 
 
@@ -56,6 +65,8 @@ rand();      // -31797596.097682
 rand(0, 10); // 7.369723
 rand(0, 10); // 5.987042
 ```
+
+See: [`random()`](#random)
 
 
 
@@ -136,3 +147,72 @@ randSign(); // 1
 //same effect as
 choice(-1, 1);
 ```
+
+
+
+## random():Number
+
+Returns a random number between `0` and `1`. Same as `Math.random()`.
+
+```js
+random(); // 0.35435103671625257
+random(); // 0.8768321881070733
+```
+
+**Important:** No methods inside amd-utils should call `Math.random()`
+directly, they all use `random/random` as a proxy, that way we can
+inject/replace the pseudo-random number generator if needed (ie. in case we
+need a seeded random or a better algorithm than the native one).
+
+### Replacing the PRNG
+
+In some cases we might need better/different algorithms than the one provided
+by `Math.random` (ie. safer, seeded).
+
+Because of licensing issues, file size limitations and different needs we
+decided to **not** implement a custom PRNG and instead provide a easy way to
+override the default behavior. - [issue #99](https://github.com/millermedeiros/amd-utils/issues/99)
+
+If you are using amd-utils with a loader that supports the [AMD map
+config](https://github.com/amdjs/amdjs-api/wiki/Common-Config), such as
+[RequireJS](http://requirejs.org/), you can use it to replace the PRNG
+(recommended approach):
+
+```js
+requirejs.config({
+    map : {
+        // all modules will load "my_custom_prng" instead of
+        // "amd-utils/random/random"
+        '*' : {
+            'amd-utils/random/random' : 'my_custom_prng'
+        }
+    }
+});
+```
+
+You also have the option to override `random.get` in case you are using
+amd-utils on node.js or with a loader which doesn't support the map config:
+
+```js
+// replace the PRNG
+var n = 0;
+random.get = function(){
+    return ++n % 2? 0 : 1; // not so random :P
+};
+random(); // 0
+random(); // 1
+random(); // 0
+random(); // 1
+```
+
+See this [detailed explanation about PRNG in
+JavaScript](http://baagoe.org/en/w/index.php/Better_random_numbers_for_javascript)
+to understand the issues with the native `Math.random` and also for a list of
+algorithms that could be used instead.
+
+
+
+-------------------------------------------------------------------------------
+
+For more usage examples check specs inside `/tests` folder. Unit tests are the
+best documentation you can get...
