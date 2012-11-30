@@ -5,7 +5,7 @@
 (function() {
   var withoutAsync = {};
 
-  ["it", "beforeEach", "afterEach"].forEach(function(jasmineFunction) {
+  function monkeyPatch(jasmineFunction) {
     withoutAsync[jasmineFunction] = jasmine.Env.prototype[jasmineFunction];
     return jasmine.Env.prototype[jasmineFunction] = function() {
       var args = Array.prototype.slice.call(arguments, 0);
@@ -22,7 +22,12 @@
       }
       return withoutAsync[jasmineFunction].apply(this, args);
     };
-  });
+  }
+
+  // since oldIE doesn't support forEach
+  monkeyPatch('it');
+  monkeyPatch('beforeEach');
+  monkeyPatch('afterEach');
 
   function isLastArgumentATimeout(args)
   {
