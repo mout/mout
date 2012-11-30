@@ -10,8 +10,8 @@ define(['amd-utils/function/throttle'], function(throttle){
             var start = new Date();
             var cb = throttle(function(){
                 count++;
-            }, 30);
-            var limit = 80;
+            }, 50);
+            var limit = 120;
             while((new Date() - start) < limit) {
                 cb();
             }
@@ -23,9 +23,9 @@ define(['amd-utils/function/throttle'], function(throttle){
             var count = 0;
             var cb = throttle(function(a, b){
                 count += a + b;
-            }, 30);
+            }, 50);
             var start = new Date();
-            var limit = 80;
+            var limit = 120;
             cb(1,2);
             cb(3,4);
             expect( count ).toBe( 3 );
