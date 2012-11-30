@@ -1,4 +1,4 @@
-define(['./snap'], function (snap) {
+define(['./floor'], function (floor) {
 
     /**
      * Round number to a specific radix
@@ -6,7 +6,7 @@ define(['./snap'], function (snap) {
      */
     function round(value, radix){
         radix = radix || 1; // default round 1
-        return snap(value + radix / 2, radix);
+        return floor(value + radix / 2, radix);
     }
 
     return round;

@@ -90,6 +90,22 @@ From [amd-utils/time/parseMs](time.html#parseMs):
 
 
 
+## floor(val, step):Number
+
+Round value down to full steps. Similar to `Math.floor()` but can round value
+to an arbitrary *radix*. (formerly `snap`)
+
+    floor(7, 5);  // 5
+    floor(11, 5); // 10
+    floor(15, 5); // 15
+
+### Common use cases
+
+Round values by increments of 5/10/1000/etc.
+
+See: [`round()`](#round), [`countSteps()`](#countSteps)
+
+
 
 ## inRange(val, min, max[, threshold]):Boolean
 
@@ -252,24 +268,7 @@ arbitrary *radix*.
 
 Round values by increments of 0.5/5/10/1000/etc.
 
-See: [`snap()`](#snap), [`countSteps()`](#countSteps)
-
-
-
-## snap(val, step):Number
-
-Snap value to full steps. Similar to `Math.floor()` but can round value to
-an arbitrary *radix*.
-
-    snap(7, 5);  // 5
-    snap(11, 5); // 10
-    snap(15, 5); // 15
-
-### Common use cases
-
-Round values by increments of 5/10/1000/etc.
-
-See: [`round()`](#round), [`countSteps()`](#countSteps)
+See: [`floor()`](#floor), [`countSteps()`](#countSteps)
 
 
 

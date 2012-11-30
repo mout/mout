@@ -1,4 +1,4 @@
-define(['./enforcePrecision', '../math/snap'], function (enforcePrecision, snap) {
+define(['./enforcePrecision'], function (enforcePrecision) {
 
     var _defaultDict = {
         thousand : 'K',
@@ -8,7 +8,7 @@ define(['./enforcePrecision', '../math/snap'], function (enforcePrecision, snap)
 
     /**
      * Abbreviate number if bigger than 1000. (eg: 2.5K, 17.5M, 3.4B, ...)
-     * @version 0.1.0 (2012/07/16)
+     * @version 0.2.0 (2012/11/30)
      */
     function abbreviateNumber(val, nDecimals, dict){
         nDecimals = nDecimals != null? nDecimals : 1;
