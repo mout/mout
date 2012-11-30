@@ -1,4 +1,4 @@
-define(['src/string/lowerCase'], function (lowerCase) {
+define(['amd-utils/string/lowerCase'], function (lowerCase) {
 
     describe('it should convert string to lower case', function () {
         expect( lowerCase('FOO') ).toEqual( 'foo' );

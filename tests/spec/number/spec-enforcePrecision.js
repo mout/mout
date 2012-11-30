@@ -1,4 +1,4 @@
-define(['src/number/enforcePrecision'], function (enforcePrecision) {
+define(['amd-utils/number/enforcePrecision'], function (enforcePrecision) {
 
     describe('number/enforcePrecision()', function(){
 

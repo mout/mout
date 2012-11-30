@@ -1,4 +1,4 @@
-define(['src/string/removeNonASCII'], function (removeNonASCII) {
+define(['amd-utils/string/removeNonASCII'], function (removeNonASCII) {
 
     describe('string/removeNonASCII()', function(){
         it('should remove non-printable chars', function(){

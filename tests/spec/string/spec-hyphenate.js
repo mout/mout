@@ -1,4 +1,4 @@
-define(['src/string/hyphenate'], function (hyphenate) {
+define(['amd-utils/string/hyphenate'], function (hyphenate) {
 
     describe('string/hyphenate()', function(){
 

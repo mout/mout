@@ -1,4 +1,4 @@
-define(['src/collection/reject', 'src/collection/size'], function(reject, size){
+define(['amd-utils/collection/reject', 'amd-utils/collection/size'], function(reject, size){
 
     describe('collection/reject', function(){
 

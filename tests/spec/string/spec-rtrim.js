@@ -1,4 +1,4 @@
-define(['src/string/rtrim'], function (rtrim) {
+define(['amd-utils/string/rtrim'], function (rtrim) {
 
     describe('string/rtrim()', function(){
         var str = '   \t \t \t\t     lorem  ipsum    \t \t  \t\t  ';

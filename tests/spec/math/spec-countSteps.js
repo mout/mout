@@ -1,4 +1,4 @@
-define(['src/math/countSteps'], function (countSteps) {
+define(['amd-utils/math/countSteps'], function (countSteps) {
 
     describe('math/countSteps()', function(){
 

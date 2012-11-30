@@ -1,4 +1,4 @@
-define(['src/array/range'], function (range) {
+define(['amd-utils/array/range'], function (range) {
 
     describe('array/range()', function () {
 

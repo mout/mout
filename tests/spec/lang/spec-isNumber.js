@@ -1,4 +1,4 @@
-define(['src/lang/isNumber'], function (isNumber) {
+define(['amd-utils/lang/isNumber'], function (isNumber) {
 
     describe('lang/isNumber()', function () {
 

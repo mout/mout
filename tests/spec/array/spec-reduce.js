@@ -1,4 +1,4 @@
-define(['src/array/reduce'], function (reduce) {
+define(['amd-utils/array/reduce'], function (reduce) {
 
     describe('array/reduce()', function () {
 

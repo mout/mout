@@ -1,4 +1,4 @@
-define(['src/queryString/parse'], function (parse) {
+define(['amd-utils/queryString/parse'], function (parse) {
 
     describe('queryString/parse()', function () {
 

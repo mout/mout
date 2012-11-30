@@ -1,4 +1,4 @@
-define(['src/string/typecast'], function (typecast) {
+define(['amd-utils/string/typecast'], function (typecast) {
 
     describe('string/typecast()', function () {
         it('should typecast values if Number, Boolean, null or undefined', function () {

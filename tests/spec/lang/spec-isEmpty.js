@@ -1,4 +1,4 @@
-define(['src/lang/isEmpty'], function (isEmpty) {
+define(['amd-utils/lang/isEmpty'], function (isEmpty) {
 
     describe('lang/isEmpty', function () {
 

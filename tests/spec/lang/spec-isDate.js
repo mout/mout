@@ -1,4 +1,4 @@
-define(['src/lang/isDate'], function (isDate) {
+define(['amd-utils/lang/isDate'], function (isDate) {
 
     describe('lang/isDate()', function () {
 

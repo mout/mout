@@ -1,4 +1,4 @@
-define(['src/string/unCamelCase'], function (unCamelCase) {
+define(['amd-utils/string/unCamelCase'], function (unCamelCase) {
 
     describe('string/unCamelCase()', function(){
 

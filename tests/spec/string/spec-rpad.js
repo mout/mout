@@ -1,4 +1,4 @@
-define(['src/string/rpad'], function (rpad) {
+define(['amd-utils/string/rpad'], function (rpad) {
 
     describe('string/rpad()', function(){
         it('should add chars to the right if length is < minLength', function(){

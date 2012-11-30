@@ -1,4 +1,4 @@
-define(['src/time/parseMs'], function (parseMs) {
+define(['amd-utils/time/parseMs'], function (parseMs) {
 
     describe('time/parseMs()', function(){
 

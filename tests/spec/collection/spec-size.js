@@ -1,4 +1,4 @@
-define(['src/collection/size'], function(size){
+define(['amd-utils/collection/size'], function(size){
 
     describe('collection/size', function(){
 

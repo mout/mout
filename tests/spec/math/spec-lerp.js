@@ -1,4 +1,4 @@
-define(['src/math/lerp'], function (lerp) {
+define(['amd-utils/math/lerp'], function (lerp) {
 
     describe('math/lerp()', function(){
 

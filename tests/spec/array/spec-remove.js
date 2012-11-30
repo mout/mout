@@ -1,4 +1,4 @@
-define(['src/array/remove'], function (remove) {
+define(['amd-utils/array/remove'], function (remove) {
 
     describe('array/remove()', function(){
 

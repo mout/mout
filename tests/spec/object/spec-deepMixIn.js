@@ -1,4 +1,4 @@
-define(['src/object/deepMixIn'], function(deepMixIn) {
+define(['amd-utils/object/deepMixIn'], function(deepMixIn) {
     describe('object/deepMixIn', function() {
 
         it('should mix properties into target', function() {

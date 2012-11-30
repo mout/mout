@@ -1,4 +1,4 @@
-define(['src/random/randHex'], function (randHex) {
+define(['amd-utils/random/randHex'], function (randHex) {
 
     describe('random/randHex()', function () {
 

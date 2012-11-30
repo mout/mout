@@ -1,6 +1,6 @@
 define(
     [
-        'src/object/namespace'
+        'amd-utils/object/namespace'
     ],
     function (namespace) {
 

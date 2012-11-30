@@ -1,4 +1,4 @@
-define(['src/queryString/setParam'], function(setParam){
+define(['amd-utils/queryString/setParam'], function(setParam){
 
     describe('queryString/setParam', function(){
 

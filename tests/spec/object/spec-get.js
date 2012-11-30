@@ -1,6 +1,6 @@
 define(
     [
-        'src/object/get'
+        'amd-utils/object/get'
     ],
     function (get) {
 

@@ -1,4 +1,4 @@
-define(['src/math/snap'], function (snap) {
+define(['amd-utils/math/snap'], function (snap) {
 
     describe('math/snap()', function(){
 

@@ -1,4 +1,4 @@
-define(['src/lang/clone'], function (clone) {
+define(['amd-utils/lang/clone'], function (clone) {
 
     describe('lang/clone()', function () {
 

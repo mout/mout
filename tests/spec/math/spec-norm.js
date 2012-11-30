@@ -1,4 +1,4 @@
-define(['src/math/norm'], function (norm) {
+define(['amd-utils/math/norm'], function (norm) {
 
     describe('math/norm()', function(){
 

@@ -1,4 +1,4 @@
-define(['src/number/rol'], function (rol) {
+define(['amd-utils/number/rol'], function (rol) {
 
     describe('number/rol()', function(){
         it('should rotate bits left', function(){

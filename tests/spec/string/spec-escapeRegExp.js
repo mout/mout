@@ -1,4 +1,4 @@
-define(['src/string/escapeRegExp'], function (escapeRegExp) {
+define(['amd-utils/string/escapeRegExp'], function (escapeRegExp) {
 
     describe('string/escapeRegExp', function () {
 

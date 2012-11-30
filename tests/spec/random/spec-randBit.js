@@ -1,4 +1,4 @@
-define(['src/random/randBit'], function (randBit) {
+define(['amd-utils/random/randBit'], function (randBit) {
 
     describe('random/randBit()', function(){
 

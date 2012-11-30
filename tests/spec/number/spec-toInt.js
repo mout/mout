@@ -1,4 +1,4 @@
-define(['src/number/toInt'], function (toInt) {
+define(['amd-utils/number/toInt'], function (toInt) {
 
     describe('number/toInt()', function(){
 

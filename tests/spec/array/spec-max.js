@@ -1,4 +1,4 @@
-define(['src/array/max'], function (max) {
+define(['amd-utils/array/max'], function (max) {
 
     describe('array/max()', function () {
 

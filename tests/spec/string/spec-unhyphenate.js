@@ -1,4 +1,4 @@
-define(['src/string/unhyphenate'], function (unhyphenate) {
+define(['amd-utils/string/unhyphenate'], function (unhyphenate) {
 
     describe('string/unhyphenate()', function(){
 

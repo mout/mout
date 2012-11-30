@@ -1,4 +1,4 @@
-define(['src/function/debounce'], function(debounce){
+define(['amd-utils/function/debounce'], function(debounce){
 
     describe('function/debounce', function(){
 

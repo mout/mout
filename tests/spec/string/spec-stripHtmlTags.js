@@ -1,4 +1,4 @@
-define(['src/string/stripHtmlTags'], function (stripHtmlTags) {
+define(['amd-utils/string/stripHtmlTags'], function (stripHtmlTags) {
 
     describe('string/stripHtmlTags()', function(){
         it('should remove html tags', function(){

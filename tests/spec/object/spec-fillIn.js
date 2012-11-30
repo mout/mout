@@ -1,4 +1,4 @@
-define(['src/object/fillIn'], function (fillIn) {
+define(['amd-utils/object/fillIn'], function (fillIn) {
 
     describe('object/fillIn', function () {
 

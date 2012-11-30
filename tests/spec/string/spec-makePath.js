@@ -1,4 +1,4 @@
-define(['src/string/makePath'], function (makePath) {
+define(['amd-utils/string/makePath'], function (makePath) {
 
     describe('string/makePath()', function(){
 

@@ -1,4 +1,4 @@
-define(['src/lang/isUndefined'], function (isUndefined) {
+define(['amd-utils/lang/isUndefined'], function (isUndefined) {
 
     describe('lang/isUndefined()', function () {
 

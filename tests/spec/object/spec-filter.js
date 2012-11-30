@@ -1,4 +1,4 @@
-define(['src/object/filter'], function(filter) {
+define(['amd-utils/object/filter'], function(filter) {
 
     describe('object/filter()', function() {
 

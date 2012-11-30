@@ -1,4 +1,4 @@
-define(['src/object/forOwn'], function (forOwn) {
+define(['amd-utils/object/forOwn'], function (forOwn) {
 
     describe('object/forOwn()', function () {
 

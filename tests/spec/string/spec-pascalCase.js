@@ -1,4 +1,4 @@
-define(['src/string/pascalCase'], function (pascalCase) {
+define(['amd-utils/string/pascalCase'], function (pascalCase) {
 
     describe('string/pascalCase()', function(){
 

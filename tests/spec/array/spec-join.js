@@ -1,4 +1,4 @@
-define(['src/array/join'], function(join) {
+define(['amd-utils/array/join'], function(join) {
 
     describe('array/join()', function() {
 

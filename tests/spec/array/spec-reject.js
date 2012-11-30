@@ -1,4 +1,4 @@
-define(['src/array/reject'], function(reject) {
+define(['amd-utils/array/reject'], function(reject) {
 
     describe('array/reject()', function() {
 

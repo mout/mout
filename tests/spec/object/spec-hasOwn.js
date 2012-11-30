@@ -1,4 +1,4 @@
-define(['src/object/hasOwn'], function (hasOwn) {
+define(['amd-utils/object/hasOwn'], function (hasOwn) {
 
     describe('object/hasOwn()', function () {
 

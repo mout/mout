@@ -1,6 +1,6 @@
 define(
     [
-        'src/object/unset'
+        'amd-utils/object/unset'
     ],
     function (unset) {
 

@@ -1,4 +1,4 @@
-define(['src/object/mixIn'], function (mixIn) {
+define(['amd-utils/object/mixIn'], function (mixIn) {
 
     describe('object/mixIn()', function(){
 

@@ -1,4 +1,4 @@
-define(['src/lang/isArguments'], function (isArguments) {
+define(['amd-utils/lang/isArguments'], function (isArguments) {
 
     describe('lang/isArguments()', function () {
 

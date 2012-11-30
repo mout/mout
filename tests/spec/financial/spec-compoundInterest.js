@@ -1,4 +1,4 @@
-define(['src/financial/compoundInterest', 'src/number/enforcePrecision'], function (compoundInterest, enforcePrecision) {
+define(['amd-utils/financial/compoundInterest', 'amd-utils/number/enforcePrecision'], function (compoundInterest, enforcePrecision) {
 
     describe('financial/compoundInterest()', function () {
 

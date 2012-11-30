@@ -1,4 +1,4 @@
-define(['src/function/func'], function (func) {
+define(['amd-utils/function/func'], function (func) {
 
     describe('function/func()', function () {
 

@@ -1,4 +1,4 @@
-define(['src/lang/ctorApply'], function (ctorApply) {
+define(['amd-utils/lang/ctorApply'], function (ctorApply) {
 
     describe('lang/ctorApply()', function () {
 

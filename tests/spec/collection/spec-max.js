@@ -1,4 +1,4 @@
-define(['src/collection/max'], function(max){
+define(['amd-utils/collection/max'], function(max){
 
     describe('collection/max', function(){
 

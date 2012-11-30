@@ -1,4 +1,4 @@
-define(['src/collection/reduce'], function(reduce){
+define(['amd-utils/collection/reduce'], function(reduce){
 
     describe('collection/reduce', function(){
 

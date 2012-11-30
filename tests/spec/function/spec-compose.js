@@ -1,4 +1,4 @@
-define(['src/function/compose'], function (compose) {
+define(['amd-utils/function/compose'], function (compose) {
 
     describe('function/compose()', function () {
 

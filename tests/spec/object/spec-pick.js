@@ -1,4 +1,4 @@
-define(['src/object/pick'], function (pick) {
+define(['amd-utils/object/pick'], function (pick) {
 
     describe('object/pick()', function () {
 

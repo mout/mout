@@ -1,4 +1,4 @@
-define(['src/array/pick'], function (pick) {
+define(['amd-utils/array/pick'], function (pick) {
 
     describe('array/pick()', function () {
 

@@ -1,4 +1,4 @@
-define(['src/object/min'], function(min){
+define(['amd-utils/object/min'], function(min){
 
     describe('object/min', function(){
 

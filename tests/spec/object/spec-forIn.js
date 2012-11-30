@@ -1,4 +1,4 @@
-define(['src/object/forIn'], function(forIn){
+define(['amd-utils/object/forIn'], function(forIn){
 
     describe('object/forIn', function(){
 

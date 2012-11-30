@@ -1,4 +1,4 @@
-define(['src/string/removeNonWord'], function (removeNonWord) {
+define(['amd-utils/string/removeNonWord'], function (removeNonWord) {
 
     describe('string/removeNonWord()', function(){
 

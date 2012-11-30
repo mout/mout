@@ -1,4 +1,4 @@
-define(['src/function/series'], function (series) {
+define(['amd-utils/function/series'], function (series) {
 
     describe('function/series()', function () {
 

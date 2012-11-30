@@ -1,4 +1,4 @@
-define(['src/array/combine'], function (append) {
+define(['amd-utils/array/combine'], function (append) {
 
     describe('array/combine()', function(){
 

@@ -1,4 +1,4 @@
-define(['src/queryString/contains'], function (contains) {
+define(['amd-utils/queryString/contains'], function (contains) {
 
     describe('queryString/contains()', function () {
 

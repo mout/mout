@@ -1,4 +1,4 @@
-define(['src/array/append'], function (append) {
+define(['amd-utils/array/append'], function (append) {
 
     describe('array/append()', function(){
 

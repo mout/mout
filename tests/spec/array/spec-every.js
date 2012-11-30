@@ -1,4 +1,4 @@
-define(['src/array/every'], function (every) {
+define(['amd-utils/array/every'], function (every) {
 
     describe('array/every()', function(){
 

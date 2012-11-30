@@ -1,4 +1,4 @@
-define(['src/array/invoke'], function(invoke){
+define(['amd-utils/array/invoke'], function(invoke){
 
     describe('array/invoke', function(){
 

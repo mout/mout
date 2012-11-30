@@ -1,4 +1,4 @@
-define(['src/lang/toArray'], function (toArray) {
+define(['amd-utils/lang/toArray'], function (toArray) {
 
     describe('lang/toArray()', function () {
 

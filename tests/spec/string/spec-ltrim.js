@@ -1,4 +1,4 @@
-define(['src/string/ltrim'], function (ltrim) {
+define(['amd-utils/string/ltrim'], function (ltrim) {
 
     describe('string/ltrim()', function(){
         var str = '   \t \t \t\t     lorem  ipsum    \t \t  \t\t  ';

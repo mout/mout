@@ -1,4 +1,4 @@
-define(['src/financial/futureValue', 'src/number/enforcePrecision'], function (futureValue, enforcePrecision) {
+define(['amd-utils/financial/futureValue', 'amd-utils/number/enforcePrecision'], function (futureValue, enforcePrecision) {
 
     describe('financial/futureValue()', function () {
 

@@ -1,4 +1,4 @@
-define(['src/queryString/encode'], function (encode) {
+define(['amd-utils/queryString/encode'], function (encode) {
 
     describe('queryString/encode()', function () {
 

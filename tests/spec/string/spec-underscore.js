@@ -1,4 +1,4 @@
-define(['src/string/underscore'], function(underscore) {
+define(['amd-utils/string/underscore'], function(underscore) {
     describe('string/underscore()', function(){
 
         it('should split camelCase text', function(){

@@ -1,4 +1,4 @@
-define(['src/lang/createObject'], function (createObject) {
+define(['amd-utils/lang/createObject'], function (createObject) {
 
     describe('lang/createObject()', function(){
 

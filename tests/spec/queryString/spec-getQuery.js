@@ -1,4 +1,4 @@
-define(['src/queryString/getQuery'], function (getQuery) {
+define(['amd-utils/queryString/getQuery'], function (getQuery) {
 
     describe('queryString/getQuery()', function () {
 

@@ -1,4 +1,4 @@
-define(['src/number/sign'], function (sign) {
+define(['amd-utils/number/sign'], function (sign) {
 
     describe('number/sign()', function () {
 

@@ -1,4 +1,4 @@
-define(['src/string/sentenceCase'], function (sentenceCase) {
+define(['amd-utils/string/sentenceCase'], function (sentenceCase) {
 
     describe('string/sentenceCase()', function(){
 

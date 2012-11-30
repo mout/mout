@@ -1,4 +1,4 @@
-define(["src/array/split"], function(split) {
+define(['amd-utils/array/split'], function(split) {
 
     describe('array/split()', function() {
 

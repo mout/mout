@@ -1,4 +1,4 @@
-define(['src/object/reject', 'src/object/size'], function(reject, size) {
+define(['amd-utils/object/reject', 'amd-utils/object/size'], function(reject, size) {
 
     describe('object/reject', function(){
 

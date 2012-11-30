@@ -1,4 +1,4 @@
-define(['src/math/isNear'], function (isNear) {
+define(['amd-utils/math/isNear'], function (isNear) {
 
     describe('math/isNear()', function(){
 

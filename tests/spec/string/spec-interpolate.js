@@ -1,4 +1,4 @@
-define(['src/string/interpolate'], function (interpolate) {
+define(['amd-utils/string/interpolate'], function (interpolate) {
 
     describe('string/interpolate()', function () {
 

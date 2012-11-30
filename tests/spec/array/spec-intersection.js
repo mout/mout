@@ -1,4 +1,4 @@
-define(['src/array/intersection'], function (intersection) {
+define(['amd-utils/array/intersection'], function (intersection) {
 
     describe('array/intersection()', function () {
 

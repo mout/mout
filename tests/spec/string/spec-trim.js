@@ -1,4 +1,4 @@
-define(['src/string/trim'], function (trim) {
+define(['amd-utils/string/trim'], function (trim) {
 
     describe('string/trim()', function(){
         var str = '   \t \t \t\t     lorem  ipsum    \t \t  \t\t  ';

@@ -1,4 +1,4 @@
-define(['src/object/find'], function(find){
+define(['amd-utils/object/find'], function(find){
 
     describe('object/find', function(){
 

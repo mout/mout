@@ -1,4 +1,4 @@
-define(['src/function/throttle'], function(throttle){
+define(['amd-utils/function/throttle'], function(throttle){
 
     describe('function/throttle', function(){
 

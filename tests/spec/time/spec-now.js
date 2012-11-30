@@ -1,4 +1,4 @@
-define(['src/time/now'], function (now) {
+define(['amd-utils/time/now'], function (now) {
 
     var past = now();
 

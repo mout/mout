@@ -1,6 +1,6 @@
 define(
     [
-        'src/object/set'
+        'amd-utils/object/set'
     ],
     function (set) {
 

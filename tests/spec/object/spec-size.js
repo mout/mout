@@ -1,4 +1,4 @@
-define(['src/object/size'], function (size) {
+define(['amd-utils/object/size'], function (size) {
 
     describe('object/size()', function () {
 

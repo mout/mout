@@ -1,4 +1,4 @@
-define(['src/lang/isRegExp'], function (isRegExp) {
+define(['amd-utils/lang/isRegExp'], function (isRegExp) {
 
     describe('lang/isRegExp()', function () {
 

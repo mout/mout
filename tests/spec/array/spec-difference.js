@@ -1,4 +1,4 @@
-define(['src/array/difference'], function (difference) {
+define(['amd-utils/array/difference'], function (difference) {
 
     describe('array/difference()', function () {
 

@@ -1,4 +1,4 @@
-define(['src/function/prop'], function (prop) {
+define(['amd-utils/function/prop'], function (prop) {
 
     describe('function/prop()', function () {
 

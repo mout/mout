@@ -1,4 +1,4 @@
-define(['src/array/contains'], function (contains) {
+define(['amd-utils/array/contains'], function (contains) {
 
     describe('array/contains()', function(){
 

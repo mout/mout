@@ -1,4 +1,4 @@
-define(['src/lang/isString'], function (isString) {
+define(['amd-utils/lang/isString'], function (isString) {
 
     describe('lang/isString()', function () {
 

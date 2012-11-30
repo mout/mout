@@ -1,4 +1,4 @@
-define(['src/collection/forEach'], function(forEach){
+define(['amd-utils/collection/forEach'], function(forEach){
 
     describe('collection/forEach', function(){
 

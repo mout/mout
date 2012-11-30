@@ -1,4 +1,4 @@
-define(['src/array/indexOf'], function(indexOf){
+define(['amd-utils/array/indexOf'], function(indexOf){
 
     describe('array/indexOf()', function(){
 

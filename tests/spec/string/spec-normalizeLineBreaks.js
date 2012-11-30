@@ -1,4 +1,4 @@
-define(['src/string/normalizeLineBreaks'], function (normalizeLineBreaks) {
+define(['amd-utils/string/normalizeLineBreaks'], function (normalizeLineBreaks) {
 
     describe('string/normalizeLineBreaks()', function () {
 

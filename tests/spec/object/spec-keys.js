@@ -1,4 +1,4 @@
-define(['src/object/keys'], function (keys) {
+define(['amd-utils/object/keys'], function (keys) {
 
     describe('object/keys()', function () {
 

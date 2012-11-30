@@ -1,4 +1,4 @@
-define(['src/number/pad'], function (pad) {
+define(['amd-utils/number/pad'], function (pad) {
 
     describe('number/pad()', function(){
         it('should add zeroes if number length is < minLength', function(){

@@ -1,4 +1,4 @@
-define(['src/object/contains'], function(contains){
+define(['amd-utils/object/contains'], function(contains){
 
     describe('object/contains', function(){
 

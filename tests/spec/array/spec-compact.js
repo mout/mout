@@ -1,4 +1,4 @@
-define(['src/array/compact'], function (compact) {
+define(['amd-utils/array/compact'], function (compact) {
 
     describe('array/compact()', function () {
 

@@ -1,4 +1,4 @@
-define(['src/string/startsWith'], function (startsWith) {
+define(['amd-utils/string/startsWith'], function (startsWith) {
 
     describe('string/startsWith()', function(){
 

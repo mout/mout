@@ -1,4 +1,4 @@
-define(['src/array/unique'], function (unique) {
+define(['amd-utils/array/unique'], function (unique) {
 
     describe('array/unique()', function(){
 

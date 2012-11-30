@@ -1,4 +1,4 @@
-define(['src/object/map'], function(map) {
+define(['amd-utils/object/map'], function(map) {
 
     describe('object/map()', function() {
 

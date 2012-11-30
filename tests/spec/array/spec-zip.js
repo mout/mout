@@ -1,4 +1,4 @@
-define(['src/array/zip'], function(zip){
+define(['amd-utils/array/zip'], function(zip){
 
     describe('array/zip', function(){
 

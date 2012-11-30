@@ -1,4 +1,4 @@
-define(['src/string/repeat'], function (repeat) {
+define(['amd-utils/string/repeat'], function (repeat) {
 
     describe('string/repeat()', function () {
 

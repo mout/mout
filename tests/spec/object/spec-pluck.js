@@ -1,4 +1,4 @@
-define(['src/object/pluck'], function(pluck){
+define(['amd-utils/object/pluck'], function(pluck){
 
     describe('object/pluck', function(){
 

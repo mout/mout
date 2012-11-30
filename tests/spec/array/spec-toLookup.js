@@ -1,4 +1,4 @@
-define(['src/array/toLookup'], function (toLookup) {
+define(['amd-utils/array/toLookup'], function (toLookup) {
 
     describe('array/toLookup()', function () {
 

@@ -1,4 +1,4 @@
-define(['src/array/map'], function (map) {
+define(['amd-utils/array/map'], function (map) {
 
     describe('array/map()', function(){
 

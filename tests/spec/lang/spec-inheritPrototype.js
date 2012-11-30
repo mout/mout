@@ -1,4 +1,4 @@
-define(['src/lang/inheritPrototype'], function (inheritPrototype) {
+define(['amd-utils/lang/inheritPrototype'], function (inheritPrototype) {
 
     describe('lang/inheritPrototype()', function(){
 
