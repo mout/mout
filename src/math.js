@@ -3,6 +3,7 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
+    'ceil' : require('./math/ceil'),
     'clamp' : require('./math/clamp'),
     'countSteps' : require('./math/countSteps'),
     'floor' : require('./math/floor'),

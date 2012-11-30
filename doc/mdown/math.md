@@ -3,6 +3,24 @@
 Math utilities.
 
 
+## ceil(val[, step]):Number
+
+Round value up to full steps. Similar to `Math.ceil()` but can round value
+to an arbitrary *radix*.
+
+    ceil(7.2);   // 8
+    ceil(7.8);   // 8
+    ceil(7, 5);  // 10
+    ceil(11, 5); // 15
+    ceil(15, 5); // 15
+
+### Common use cases
+
+Round values by increments of 5/10/1000/etc.
+
+See: [`round()`](#round), [`floor()`](#floor), [`countSteps()`](#countSteps)
+
+
 
 ## clamp(val, min, max):Number
 
@@ -90,11 +108,13 @@ From [amd-utils/time/parseMs](time.html#parseMs):
 
 
 
-## floor(val, step):Number
+## floor(val[, step]):Number
 
 Round value down to full steps. Similar to `Math.floor()` but can round value
 to an arbitrary *radix*. (formerly `snap`)
 
+    floor(7.2);   // 7
+    floor(7.8);   // 7
     floor(7, 5);  // 5
     floor(11, 5); // 10
     floor(15, 5); // 15
@@ -103,7 +123,7 @@ to an arbitrary *radix*. (formerly `snap`)
 
 Round values by increments of 5/10/1000/etc.
 
-See: [`round()`](#round), [`countSteps()`](#countSteps)
+See: [`round()`](#round), [`ceil()`](#ceil), [`countSteps()`](#countSteps)
 
 
 
@@ -268,7 +288,7 @@ arbitrary *radix*.
 
 Round values by increments of 0.5/5/10/1000/etc.
 
-See: [`floor()`](#floor), [`countSteps()`](#countSteps)
+See: [`floor()`](#floor), [`ceil()`](#ceil), [`countSteps()`](#countSteps)
 
 
 
