@@ -1,5 +1,8 @@
 define(['amd-utils/object/forOwn'], function (forOwn) {
 
+    var global = this;
+
+
     describe('object/forOwn()', function () {
 
         it('should loop through all properties', function () {
@@ -82,7 +85,7 @@ define(['amd-utils/object/forOwn'], function (forOwn) {
 
             forOwn(obj, function(val, key, o){
                 expect(o).toBe(obj);
-                expect(this).toBe(window);
+                expect(this).toBe(global);
                 count++;
             });
 

@@ -1,5 +1,8 @@
 define(['amd-utils/object/forIn'], function(forIn){
 
+    var global = this;
+
+
     describe('object/forIn', function(){
 
         it('should loop through all properties', function(){
@@ -76,7 +79,7 @@ define(['amd-utils/object/forIn'], function(forIn){
 
             forIn(obj, function(val, key, o){
                 expect(o).toBe(obj);
-                expect(this).toBe(window);
+                expect(this).toBe(global);
                 count++;
             });
 

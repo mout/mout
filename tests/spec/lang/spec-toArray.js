@@ -1,5 +1,7 @@
 define(['amd-utils/lang/toArray'], function (toArray) {
 
+    var global = this;
+
     describe('lang/toArray()', function () {
 
 
@@ -45,7 +47,7 @@ define(['amd-utils/lang/toArray'], function (toArray) {
             expect( toArray(/\w+/) ).toEqual( [/\w+/] );
             expect( toArray( new RegExp('\\w+') ) ).toEqual( [/\w+/] );
 
-            expect( toArray(window) ).toEqual( [window] );
+            expect( toArray(global) ).toEqual( [global] );
             expect( toArray({foo:"bar", lorem:123}) ).toEqual( [{foo:"bar", lorem:123}] );
 
             expect( toArray(true) ).toEqual( [true] );
@@ -62,6 +64,7 @@ define(['amd-utils/lang/toArray'], function (toArray) {
         });
 
         it('should convert HTMLCollection to real array - #58', function () {
+            if (typeof document === 'undefined') return; // node.js doesn't have a document
             var els = document.getElementsByTagName('*');
             var arr = toArray( els );
             expect( Object.prototype.toString.call(arr) ).toBe( '[object Array]' );
