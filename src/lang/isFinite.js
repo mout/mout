@@ -1,16 +1,18 @@
 define(['./isNumber'], function (isNumber) {
 
+    var global = this;
+
     /**
      * Check if value is finite
-     * @version 0.1.1 (2012/10/30)
+     * @version 0.1.2 (2012/12/09)
      */
     function isFinite(val){
         var is = false;
         if (typeof val === 'string' && val !== '') {
-            is = window.isFinite( parseFloat(val) );
+            is = global.isFinite( parseFloat(val) );
         } else if (isNumber(val)){
             // need to use isNumber because of Number constructor
-            is = window.isFinite( val );
+            is = global.isFinite( val );
         }
         return is;
     }
