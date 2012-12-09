@@ -13,7 +13,18 @@ var requirejs = requirejs || require('requirejs');
 
 
 var specGroups = [
-    {{#list packages}}'spec-{{this}}'{{/list}}
+    'spec-array',
+    'spec-collection',
+    'spec-financial',
+    'spec-function',
+    'spec-lang',
+    'spec-math',
+    'spec-number',
+    'spec-object',
+    'spec-queryString',
+    'spec-random',
+    'spec-string',
+    'spec-time'
 ];
 
 

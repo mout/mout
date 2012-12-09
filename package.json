@@ -27,14 +27,18 @@
   },
   "main": "./index.js",
   "scripts": {
-    "prepublish": "node build cjs ."
+    "prepublish": "node build cjs .",
+    "test": "node tests/runner"
   },
   "directories": {
     "doc": "./doc/mdown",
     "lib": "./"
   },
   "devDependencies": {
-    "nodefy": "0.2.x",
+    "jasmine-node" : "1.0.28",
+    "requirejs" : "2.1",
+    "amdefine" : "*",
+    "nodefy": "0.2",
     "mdoc": "~0.3.2",
     "handlebars": "~1.0.6",
     "commander": "~1.0.5"
