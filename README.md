@@ -1,5 +1,7 @@
 # amd-utils #
 
+[![Build Status](https://secure.travis-ci.org/millermedeiros/amd-utils.png)](https://travis-ci.org/millermedeiros/amd-utils)
+
 http://millermedeiros.github.com/amd-utils
 
 modular JavaScript utilities written in the

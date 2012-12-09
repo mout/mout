@@ -28,6 +28,7 @@
   "main": "./index.js",
   "scripts": {
     "prepublish": "node build cjs .",
+    "pretest" : "node build pkg",
     "test": "node tests/runner"
   },
   "directories": {
