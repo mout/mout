@@ -519,13 +519,12 @@ hr {
     position:fixed;
     top:0;
     right:0;
-    background-color:#f5f5f5;
     z-index:999;
     overflow:hidden;
     margin:0;
     padding:0;
-    outline:1px solid #ddd;
-    font-weight:bold;
+    font-weight: bold;
+    font-size: 0.85em;
 }
 
 #topnav li{
@@ -537,8 +536,24 @@ hr {
 #topnav a {
     display:block;
     padding:0.5em 1em;
-    outline:1px solid #ddd;
+    border: 1px solid #ddd;
+    margin-right: -1px;
+    border-top: 0;
+    background-color: #fff;
 }
+
+/* make it easier to see */
+#topnav #inject-link {
+    background-color: #eee;
+    padding: 0.8em 1.2em;
+    border-color: #b2b2b2;
+    border-width: 2px;
+}
+
+#inject-link sup {
+    color: #aaa;
+}
+
 
 #sidebar {
     width: 250px;
@@ -689,3 +704,4 @@ hr {
         padding-left:2em;
     }
 }
+
