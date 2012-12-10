@@ -7,54 +7,66 @@
 // `node build pkg`
 // ============================================================================
 
-
-// for nodejs
-var requirejs = requirejs || require('requirejs');
+(function(requirejs, jasmine){
 
 
-var specGroups = [
+var env, reporter;
+
+var opts = {
+    baseUrl : 'spec',
+    paths : {
+        'amd-utils' : '../../src'
+    }
+};
+
+
+var specs = [
     {{#list packages}}'spec-{{this}}'{{/list}}
 ];
 
 
-if (jasmine) { //browser
 
-    requirejs({
-        baseUrl : 'spec',
-        paths : {
-            'amd-utils' : '../../src'
-        },
-        waitSeconds : (location.protocol === 'file:' || location.href.indexOf('://localhost') !== -1)? 5 : 45, //fail early locally
-        urlArgs : 'bust='+ (+new Date())
-    }, specGroups, function(){
-        var reporter = new jasmine.HtmlReporter(),
-            env = jasmine.getEnv();
-        env.specFilter = function(spec){
-            return reporter.specFilter(spec);
-        };
-        env.addReporter(reporter);
-        env.execute();
-    });
+if (typeof document !== 'undefined') { //browser
+
+    env = jasmine.getEnv();
+    reporter = new jasmine.HtmlReporter();
+    // in case the user decides to run a single spec
+    env.specFilter = function(spec){
+        return reporter.specFilter(spec);
+    };
+    env.addReporter(reporter);
+
+    //fail early local and cache bust
+    opts.waitSeconds = (location.protocol === 'file:' || location.href.indexOf('://localhost') !== -1)? 5 : 45;
+    opts.urlArgs = 'bust='+ (+new Date());
 
 } else { // nodejs
 
-    var jasmine = require('jasmine-node');
     // jasmine-node doesn't expose the TerminalReporter :(
-    var Reporter = require('jasmine-node/lib/jasmine-node/reporter').jasmineNode.TerminalReporter;
-    var reporter = new Reporter({
+    // see: https://github.com/mhevery/jasmine-node/issues/184
+    var TerminalReporter = require('jasmine-node/lib/jasmine-node/reporter').jasmineNode.TerminalReporter;
+    reporter = new TerminalReporter({
         color: true
     });
-    var env = jasmine.getEnv();
-    requirejs({
-        baseUrl : __dirname + '/spec',
-        nodeRequire : require,
-        paths : {
-            'amd-utils' : '../../src'
-        }
-    }, specGroups, function(){
-        env.addReporter(reporter);
-        env.execute();
-    });
+    env = jasmine.getEnv();
+    env.addReporter(reporter);
+
+    opts.baseUrl = __dirname + '/spec';
+    opts.nodeRequire = require;
 
 }
+
+
+// load and execute specs, should come after all options and jasmine.getEnv()
+// calls
+requirejs(opts, specs, function(){
+    env.execute();
+});
+
+
+}(
+  typeof requirejs !== 'undefined'? requirejs : require('requirejs'),
+  typeof jasmine !== 'undefined'? jasmine : require('jasmine-node')
+));
+
 
