@@ -36,6 +36,7 @@
     "lib": "./"
   },
   "devDependencies": {
+    "istanbul": "~0.1.24",
     "jasmine-node" : "1.0.28",
     "requirejs" : "2.1",
     "amdefine" : "*",

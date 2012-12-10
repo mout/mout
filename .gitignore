@@ -1,13 +1,27 @@
 .tmp*
 .project
 .settings/
-
 .livereload
 
 .DS_Store?
 ehthumbs.db
 Icon?
 Thumbs.db
+
+
+# ----
+
+
+# no need to keep 3rd party tests
+node_modules/*/test*/
+node_modules/*/spec*/
+
+
+# we ignore coverage reports since they change at each build
+coverage/
+
+
+# ----
 
 
 # ignore files added by `npm install`
