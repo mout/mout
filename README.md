@@ -4,7 +4,7 @@
 
 http://millermedeiros.github.com/amd-utils
 
-modular JavaScript utilities written in the
+Modular JavaScript utilities written in the
 [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) format.
 
 All code is library agnostic and consist mostly of helper methods that aren't
@@ -39,9 +39,62 @@ problems that aren't solved by most of them.
 
 
 
+
+## Why AMD? ##
+
+**Because AMD is awesome!**
+
+By keeping each function in a separate package we can require just the
+methods/packages that are required by our app and let the RequireJS optimizer
+bundle only what is currently being used. We also have an extra benefit that we
+split the methods into separate packages so we reduce the chance of name
+collisions and the code is more organized. AMD is flexible and enables things
+that wouldn't be possible with a different module system or with a conventional
+namespace approach (remapping a module, conditionally loading, etc).
+
+Read these links if you still can't see why:
+
+ - [Why AMD?](http://requirejs.org/docs/whyamd.html)
+ - [AMD is better for the web than CJS modules](blog.millermedeiros.com/2011/09/amd-is-better-for-the-web-than-commonjs-modules/)
+ - [AMD & CommonJS modules](http://briancavalier.com/presentations/pgh-js-amd-10-2011/)
+ - [AMD vs. CJS](http://unscriptable.com/index.php/2011/09/30/amd-versus-cjs-whats-the-best-format/)
+ - [Namespaces are Old School](http://blog.millermedeiros.com/namespaces-are-old-school/)
+
+PS: Your mileage may vary...
+
+
+
+## Node.js ##
+
+AMD-utils also works on [node.js](http://nodejs.org), just run:
+
+    npm install amd-utils
+
+It will download amd-utils from the NPM repository and convert the AMD modules
+into a node.js compatible format using
+[nodefy](https://github.com/millermedeiros/nodefy), there is no extra overhead,
+you can use it like a regular node.js package.
+
+```js
+// you can load individual methods
+var map = require('amd-utils/array/map');
+map([1, 2], function(v){ return val * val; }); // [1, 4]
+
+// a single package
+var stringUtils = require('amd-utils/string');
+stringUtils.camelCase('Foo Bar'); // "fooBar"
+
+// or the whole lib
+var utils = require('amd-utils');
+console.log( utils.math.clamp(100, 0, 50) ); // 50
+```
+
+
+
 ## Important ##
 
-Since each function is a separate module they have independent version numbers.
+Since each function is a separate module they have independent version numbers
+and a last edit date.
 
 Since code is very modular (broken into multiple files) it is really important
 that you run an optimizer before deploying the code to a server, otherwise you
@@ -78,77 +131,63 @@ implementation is as good as possible.
 Check the [contributors list at github](https://github.com/millermedeiros/amd-utils/contributors).
 
 
+## Build Script ##
 
-## Why AMD? ##
+The build script have a set of very helpful commands, run `npm install --dev`
+(only required once) and then check the available commands:
 
-**Because AMD is awesome!** Read these links if you still can't see why:
-
- - [Why AMD?](http://requirejs.org/docs/whyamd.html)
- - [AMD is better for the web than CJS modules](blog.millermedeiros.com/2011/09/amd-is-better-for-the-web-than-commonjs-modules/)
- - [AMD & CommonJS modules](http://briancavalier.com/presentations/pgh-js-amd-10-2011/)
- - [AMD vs. CJS](http://unscriptable.com/index.php/2011/09/30/amd-versus-cjs-whats-the-best-format/)
-
-Your mileage may vary...
+    node build --help
 
 
-
-## License ##
-
-Released under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
-
-
-
-## Node.js ##
-
-AMD-utils also works on [node.js](http://nodejs.org), just run:
-
-    npm install amd-utils
-
-It will download amd-utils from the NPM repository and convert the AMD modules
-into a node.js compatible format.
-
-    // you can load individual methods
-    var map = require('amd-utils/array/map');
-    map([1, 2], function(v){ return val * val; }); // [1, 4]
-
-    // a single package
-    var stringUtils = require('amd-utils/string');
-    stringUtils.camelCase('Foo Bar'); // "fooBar"
-
-    // or the whole lib
-    var utils = require('amd-utils');
-    console.log( utils.math.clamp(100, 0, 50) ); // 50
-
-
-
-## Building The Documentation ##
-
-The documentation is generated based on markdown files inside the
-`doc/mdown` folder using [mdoc](https://github.com/millermedeiros/mdoc).
-To compile the docs run:
-
-    npm install --dev
-    node build doc
-
-It will replace all the files inside the `doc/html` folder and update packages
-and specs runners, this way we avoid human mistakes.
-
-Documentation files should be always up-to-date since modules are only
-committed to the `master` branch after they get proper tests and documentation.
-
-
-
-## Keeping packages and specs in sync ##
+### Keeping packages and specs in sync ###
 
 The build script can be used to update packages and specs files:
 
     node build pkg
 
-You can also add new modules with the command `node build add
-package/moduleName`, this will create a new module `moduleName` inside the
-folder `src/package` and also a failing spec inside the `tests` folder.
+The packages/specs are automatically updated every time you run `npm test` as
+well.
 
-For other available options see `node build -h`.
+You can also add new modules with the command `node build add
+package/moduleName`, this will create a new module `src/package/moduleName.js`
+and also a failing spec `tests/spec/package/spec-moduleName.js`.
+
+
+### Tests & Code Coverage ###
+
+Tests can be found inside the `tests` folder, to execute them in the browser
+open the `tests/runner.html`. The same tests also work on node.js by running
+`npm test`.
+
+We should have tests for all methods and ensure we have a high code coverage
+through our continuous integration server
+([travis](https://travis-ci.org/millermedeiros/amd-utils)). When you ask for
+a pull request Travis will automatically run the tests on node.js and check the
+code coverage as well.
+
+We run `node build pkg` automatically before any `npm test`, so specs and
+packages should always be in sync. (will avoid human mistakes)
+
+To check code coverage run `npm test --coverage`, it will generate the reports
+inside the `coverage` folder and also log the results. Please note that node.js
+doesn't execute all code branches since we have some conditionals that are only
+met on old JavaScript engines (eg. IE 7-8), so we will never have 100% code
+coverage (but should be close to it).
+
+
+### Building The Documentation ###
+
+The documentation is generated based on markdown files inside the
+`doc/mdown` folder using [mdoc](https://github.com/millermedeiros/mdoc).
+To compile the docs run:
+
+    node build doc
+
+It will replace all the files inside the `doc/html` folder.
+
+Documentation files should be always up-to-date since modules are only
+committed to the `master` branch after they get proper tests and documentation.
+
 
 
 
@@ -156,3 +195,10 @@ For other available options see `node build -h`.
 
 Online documentation can be found at http://millermedeiros.github.com/amd-utils
 or inside the `doc` folder.
+
+
+
+## License ##
+
+Released under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
+
