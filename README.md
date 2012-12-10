@@ -75,19 +75,17 @@ into a node.js compatible format using
 [nodefy](https://github.com/millermedeiros/nodefy), there is no extra overhead,
 you can use it like a regular node.js package.
 
-```js
-// you can load individual methods
-var map = require('amd-utils/array/map');
-map([1, 2], function(v){ return val * val; }); // [1, 4]
+    // you can load individual methods
+    var map = require('amd-utils/array/map');
+    map([1, 2], function(v){ return val * val; }); // [1, 4]
 
-// a single package
-var stringUtils = require('amd-utils/string');
-stringUtils.camelCase('Foo Bar'); // "fooBar"
+    // a single package
+    var stringUtils = require('amd-utils/string');
+    stringUtils.camelCase('Foo Bar'); // "fooBar"
 
-// or the whole lib
-var utils = require('amd-utils');
-console.log( utils.math.clamp(100, 0, 50) ); // 50
-```
+    // or the whole lib
+    var utils = require('amd-utils');
+    console.log( utils.math.clamp(100, 0, 50) ); // 50
 
 
 
