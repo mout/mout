@@ -21,6 +21,7 @@ example*/
 # but we do keep ours
 !/test*/
 !/example*/
+!/_build/*/spec/
 
 
 # we ignore coverage reports since they change at each build
