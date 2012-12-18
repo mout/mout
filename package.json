@@ -29,18 +29,17 @@
   "scripts": {
     "prepublish": "node build cjs .",
     "pretest" : "node build pkg",
-    "test": "node node_modules/.bin/istanbul test tests/runner.js"
+    "test": "node node_modules/istanbul/lib/cli test tests/runner.js"
   },
   "directories": {
     "doc": "./doc/mdown",
     "lib": "./"
   },
   "devDependencies": {
-    "istanbul": "~0.1.24",
-    "jasmine-node" : "1.0.28",
-    "requirejs" : "2.1",
-    "amdefine" : "*",
-    "nodefy": "0.2",
+    "istanbul": "https://github.com/millermedeiros/istanbul/tarball/latest",
+    "jasmine-node" : "~1.0.28",
+    "requirejs" : "2.x",
+    "nodefy": "*",
     "mdoc": "~0.3.2",
     "handlebars": "~1.0.6",
     "commander": "~1.0.5"

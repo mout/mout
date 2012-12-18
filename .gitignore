@@ -11,18 +11,8 @@ Thumbs.db
 
 # ----
 
-
-# no need to keep 3rd party tests
-test*/
-spec*/
-test*/
-spec*/
-example*/
-# but we do keep ours
-!/test*/
-!/example*/
-!/_build/*/spec/
-
+# we also ignore node_modules
+node_modules/
 
 # we ignore coverage reports since they change at each build
 coverage/
