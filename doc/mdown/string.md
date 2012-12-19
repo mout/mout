@@ -90,6 +90,22 @@ reg = new RegExp(str);               // /\[lorem\.ipsum\]/
 
 
 
+## escapeUnicode(str[, shouldEscapePrintable]):String
+
+Unicode escape chars.
+
+It will only escape non-printable ASCII chars unless `shouldEscapePrintable` is
+set to `true`.
+
+```js
+escapeUnicode('føo bår');
+// > "f\u00f8o b\u00e5r"
+escapeUnicode('føo bår', true);
+// > "\u0066\u00f8\u006f\u0020\u0062\u00e5\u0072"
+```
+
+
+
 ## hyphenate(str):String
 
 Replaces spaces with hyphens, split camelCase text, remove non-word chars,

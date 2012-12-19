@@ -7,6 +7,7 @@ define([
     'string/spec-endsWith',
     'string/spec-escapeHtml',
     'string/spec-escapeRegExp',
+    'string/spec-escapeUnicode',
     'string/spec-hyphenate',
     'string/spec-interpolate',
     'string/spec-lowerCase',
