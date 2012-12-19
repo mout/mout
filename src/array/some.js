@@ -2,12 +2,12 @@ define(function () {
 
     /**
      * Array some
-     * @version 0.4.0 (2012/10/30)
+     * @version 0.5.0 (2012/12/18)
      */
     function some(arr, callback, thisObj) {
         var result = false,
             i = -1,
-            n = arr.length >>> 0;
+            n = arr.length;
         while (++i < n) {
             // we iterate over sparse items since there is no way to make it
             // work properly on IE 7-8. see #64

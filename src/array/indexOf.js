@@ -2,11 +2,11 @@ define(function () {
 
     /**
      * Array.indexOf
-     * @version 0.4.0 (2012/10/30)
+     * @version 0.5.0 (2012/12/18)
      */
     function indexOf(arr, item, fromIndex) {
         fromIndex = fromIndex || 0;
-        var n = arr.length >>> 0,
+        var n = arr.length,
             i = fromIndex < 0? n + fromIndex : fromIndex;
         while (i < n) {
             // we iterate over sparse items since there is no way to make it
