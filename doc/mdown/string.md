@@ -97,6 +97,8 @@ Unicode escape chars.
 It will only escape non-printable ASCII chars unless `shouldEscapePrintable` is
 set to `true`.
 
+See: [`unescapeUnicode()`](#unescapeUnicode)
+
 ```js
 escapeUnicode('føo bår');
 // > "f\u00f8o b\u00e5r"
@@ -497,6 +499,20 @@ See: [`escapeHtml()`](#escapeHtml)
 ```js
 unescapeHtml('lorem &amp;amp; &amp;quot;ipsum&amp;quot;'); // 'lorem & "ipsum"'
 ```
+
+
+
+## unescapeUnicode(str):String
+
+Unescapes unicode char sequences.
+
+See: [`escapeUnicode()`](#escapeUnicode)
+
+```js
+unescapeUnicode('\\u0066\\u00f8\\u006f\\u0020\\u0062\\u00e5\\u0072');
+// > 'føo bår'
+```
+
 
 
 ## unhyphenate(str):String

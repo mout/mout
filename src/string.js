@@ -35,6 +35,7 @@ return {
     'unCamelCase' : require('./string/unCamelCase'),
     'underscore' : require('./string/underscore'),
     'unescapeHtml' : require('./string/unescapeHtml'),
+    'unescapeUnicode' : require('./string/unescapeUnicode'),
     'unhyphenate' : require('./string/unhyphenate'),
     'upperCase' : require('./string/upperCase')
 };

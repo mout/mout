@@ -33,6 +33,7 @@ define([
     'string/spec-unCamelCase',
     'string/spec-underscore',
     'string/spec-unescapeHtml',
+    'string/spec-unescapeUnicode',
     'string/spec-unhyphenate',
     'string/spec-upperCase'
 ], function(){
