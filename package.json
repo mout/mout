@@ -1,7 +1,7 @@
 {
   "name": "amd-utils",
   "description": "Utility methods written in the AMD format",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "homepage": "http://millermedeiros.github.com/amd-utils/",
   "author": {
     "name": "Miller Medeiros",
