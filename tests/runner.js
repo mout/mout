@@ -23,7 +23,6 @@ var opts = {
 var specs = [
     'spec-array',
     'spec-collection',
-    'spec-financial',
     'spec-function',
     'spec-lang',
     'spec-math',

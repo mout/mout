@@ -5,7 +5,6 @@ define(function(require){
 return {
     'array' : require('./array'),
     'collection' : require('./collection'),
-    'financial' : require('./financial'),
     'function' : require('./function'),
     'lang' : require('./lang'),
     'math' : require('./math'),
