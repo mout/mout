@@ -4,6 +4,7 @@ define(function(require){
 //run `node build` instead
 return {
     'contains' : require('./object/contains'),
+    'deepFillIn' : require('./object/deepFillIn'),
     'deepMixIn' : require('./object/deepMixIn'),
     'every' : require('./object/every'),
     'fillIn' : require('./object/fillIn'),

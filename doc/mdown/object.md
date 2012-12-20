@@ -21,6 +21,31 @@ contains(obj, 'foo');  // false
 
 
 
+## deepFillIn(target, ...objects):Object
+
+Fill missing properties recursively.
+
+It's different from `deepMixIn` since it won't override any existing property.
+It's also different from `merge` since it won't clone child objects during the
+process.
+
+It returns the target object and mutates it in place.
+
+See: [`fillIn()`](#fillIn), [`deepMixIn()`](#deepMixIn), [`merge()`](#merge)
+
+```js
+var base = {
+    foo : {
+        bar : 123
+    },
+    lorem : 'ipsum'
+};
+var options = deepMixIn({foo : { baz : 45 }, lorem : 'amet'}, base);
+// > {foo: {bar:123, baz : 45}, lorem : 'amet'}
+```
+
+
+
 ## deepMixIn(target, ...objects):Object
 
 Mixes objects into the target object, recursively mixing existing child objects
@@ -41,7 +66,7 @@ object, and does not clone child objects.
     // note that arrays are also merged and not replaced
     console.log(target); // { foo: { name: "foo", id: 2, vals : [5, 2] } }
 
-See: [`mixIn()`](#mixIn), [`merge()`](#merge)
+See: [`mixIn()`](#mixIn), [`merge()`](#merge), [`deepFillIn()`](#deepFillIn)
 
 
 
@@ -77,7 +102,7 @@ Fill in missing properties in object with values from the *defaults* objects.
 PS: it allows merging multiple objects at once, the first ones will take
 precedence.
 
-See: [`mixIn()`](#mixIn), [`merge()`](#merge)
+See: [`mixIn()`](#mixIn), [`merge()`](#merge), [`deepFillIn()`](#deepFillIn)
 
 
 
@@ -347,7 +372,7 @@ var obj2 = {a: {b: 2, d : {f : 'yeah'} }};
 merge(obj1, obj2); // {a: {b : 2, c : 1, d : {e : 1, f : 'yeah'}}}
 ```
 
-See: [`fillIn()`](#fillIn), [`mixIn()`](#mixIn)
+See: [`deepMixIn()`](#deppMixIn), [`deepFillIn()`](#deepFillIn)
 
 
 
