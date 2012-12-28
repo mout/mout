@@ -27,6 +27,12 @@ define(['amd-utils/lang/isEmpty'], function (isEmpty) {
             expect( isEmpty(fn_2) ).toEqual( false );
         });
 
+        it('should not be true on other types', function () {
+            expect( isEmpty(null) ).toEqual( false );
+            expect( isEmpty(undefined) ).toEqual( false );
+            expect( isEmpty(123) ).toEqual( false );
+        });
+
     });
 
 });
