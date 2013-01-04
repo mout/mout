@@ -29,14 +29,14 @@
   "scripts": {
     "prepublish": "node build cjs .",
     "pretest" : "node build pkg",
-    "test": "node node_modules/istanbul/lib/cli test tests/runner.js"
+    "test": "node node_modules/istanbul/lib/cli test tests/runner.js --hook-run-in-context"
   },
   "directories": {
     "doc": "./doc/mdown",
     "lib": "./"
   },
   "devDependencies": {
-    "istanbul": "https://github.com/millermedeiros/istanbul/tarball/latest",
+    "istanbul": "~0.1.27",
     "jasmine-node" : "~1.0.28",
     "requirejs" : "2.x",
     "nodefy": "*",
