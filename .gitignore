@@ -1,3 +1,7 @@
+# =======
+# default
+# =======
+
 .tmp*
 .project
 .settings/
@@ -9,19 +13,23 @@ Icon?
 Thumbs.db
 
 
-# ----
+# ================
+# project specific
+# ================
 
-# we also ignore node_modules
+# ignore node_modules since user can `npm install --dev`
 node_modules/
 
-# we ignore coverage reports since they change at each build
+# ignore coverage reports since they change at each build
 coverage/
 
+# ignore HTML docs since they are only useful for gh-pages branch
+doc_html/
 
-# ----
 
-
-# ignore files added by `npm install`
+# -----------------------------------
+# ignore files added by `npm publish`
+# -----------------------------------
 
 /array.js
 /array/
@@ -48,3 +56,4 @@ coverage/
 /string/
 /time.js
 /time/
+

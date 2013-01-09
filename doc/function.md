@@ -1,4 +1,4 @@
-# amd-utils / function
+# mout / function
 
 Function*(al)* utilities.
 

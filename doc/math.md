@@ -1,4 +1,4 @@
-# amd-utils / math #
+# mout / math #
 
 Math utilities.
 
@@ -91,7 +91,7 @@ this number.
 
 #### Split value into different scales or convert value from one scale to another
 
-From [amd-utils/time/parseMs](time.html#parseMs):
+From [mout/time/parseMs](time.html#parseMs):
 
     function parseMs(ms){
         return {

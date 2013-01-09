@@ -1,4 +1,4 @@
-# amd-utils / lang #
+# mout / lang #
 
 Language Utilities. Easier inheritance, scope handling, type checks.
 

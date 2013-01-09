@@ -1,4 +1,4 @@
-# amd-utils / object #
+# mout / object #
 
 Object utilities.
 

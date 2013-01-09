@@ -1,4 +1,4 @@
-# amd-utils / array #
+# mout / array #
 
 Array utilities.
 

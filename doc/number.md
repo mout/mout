@@ -1,4 +1,4 @@
-# amd-utils / number #
+# mout / number #
 
 Number utilities.
 

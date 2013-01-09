@@ -22,18 +22,13 @@ _cli
     .action( cmd(updatePackages) );
 
 _cli
-    .command('deploy')
-    .description('build documentation and update packages.')
-    .action( cmd(buildDocs, updatePackages) );
-
-_cli
     .command('add <moduleName> [templateName]')
     .description('add a new module.')
     .action( cmd(addModule) );
 
 _cli
     .command('cjs <destinationPath>')
-    .description('convert amd-utils into a node.js compatible package.')
+    .description('convert mout into a node.js compatible package.')
     .action( cmd(convert) );
 
 
@@ -70,9 +65,9 @@ function cmd(var_args){
 function buildDocs(){
     var mdoc = require('mdoc');
     mdoc.run({
-        inputDir : 'doc/mdown',
-        outputDir : 'doc/html',
-        baseTitle : 'AMD-Utils',
+        inputDir : 'doc',
+        outputDir : 'doc_html',
+        baseTitle : 'mout',
         indexContentPath : 'README.md',
         templatePath : '_build/doc_template'
     });

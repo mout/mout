@@ -1,8 +1,8 @@
 {
-  "name": "amd-utils",
-  "description": "Utility methods written in the AMD format",
-  "version": "0.10.0",
-  "homepage": "http://millermedeiros.github.com/amd-utils/",
+  "name": "mout",
+  "description": "Modular Utilities",
+  "version": "0.1.0",
+  "homepage": "http://mout.github.com/mout/",
   "author": {
     "name": "Miller Medeiros",
     "url": "http://blog.millermedeiros.com"
@@ -10,11 +10,12 @@
   "keywords": [
     "utilities",
     "functional",
-    "amd"
+    "amd-utils",
+    "stdlib"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/millermedeiros/amd-utils.git"
+    "url": "git://github.com/mout/mout.git"
   },
   "licenses": [
     {
@@ -23,7 +24,7 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/millermedeiros/amd-utils/issues/"
+    "url": "https://github.com/mout/mout/issues/"
   },
   "main": "./index.js",
   "scripts": {
@@ -32,8 +33,7 @@
     "test": "node node_modules/istanbul/lib/cli test tests/runner.js --hook-run-in-context"
   },
   "directories": {
-    "doc": "./doc/mdown",
-    "lib": "./"
+    "doc": "./doc"
   },
   "devDependencies": {
     "istanbul": "~0.1.27",

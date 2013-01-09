@@ -1,8 +1,8 @@
-# amd-utils / random #
+# mout / random #
 
 Pseudo-random generators.
 
-amd-utils uses `Math.random` by default on all the pseudo-random generators, if
+mout uses `Math.random` by default on all the pseudo-random generators, if
 you need a seeded random or a better algorithm see the [`random()`](#random)
 documentation for instructions.
 
@@ -159,7 +159,7 @@ random(); // 0.35435103671625257
 random(); // 0.8768321881070733
 ```
 
-**Important:** No methods inside amd-utils should call `Math.random()`
+**Important:** No methods inside mout should call `Math.random()`
 directly, they all use `random/random` as a proxy, that way we can
 inject/replace the pseudo-random number generator if needed (ie. in case we
 need a seeded random or a better algorithm than the native one).
@@ -173,7 +173,7 @@ Because of licensing issues, file size limitations and different needs we
 decided to **not** implement a custom PRNG and instead provide a easy way to
 override the default behavior. - [issue #99](https://github.com/millermedeiros/amd-utils/issues/99)
 
-If you are using amd-utils with a loader that supports the [AMD map
+If you are using mout with a loader that supports the [AMD map
 config](https://github.com/amdjs/amdjs-api/wiki/Common-Config), such as
 [RequireJS](http://requirejs.org/), you can use it to replace the PRNG
 (recommended approach):
@@ -182,16 +182,16 @@ config](https://github.com/amdjs/amdjs-api/wiki/Common-Config), such as
 requirejs.config({
     map : {
         // all modules will load "my_custom_prng" instead of
-        // "amd-utils/random/random"
+        // "mout/random/random"
         '*' : {
-            'amd-utils/random/random' : 'my_custom_prng'
+            'mout/random/random' : 'my_custom_prng'
         }
     }
 });
 ```
 
 You also have the option to override `random.get` in case you are using
-amd-utils on node.js or with a loader which doesn't support the map config:
+mout on node.js or with a loader which doesn't support the map config:
 
 ```js
 // replace the PRNG

@@ -1,4 +1,4 @@
-# amd-utils / time #
+# mout / time #
 
 Utilities for time manipulation.
 

@@ -1,4 +1,4 @@
-# amd-utils / queryString #
+# mout / queryString #
 
 Utilities for query string manipulation.
 

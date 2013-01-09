@@ -1,16 +1,16 @@
-# amd-utils #
+# mout #
 
-[![Build Status](https://secure.travis-ci.org/millermedeiros/amd-utils.png)](https://travis-ci.org/millermedeiros/amd-utils)
+Modular JavaScript Utilities.
 
-http://millermedeiros.github.com/amd-utils
+http://mout.github.com/
 
-Modular JavaScript utilities written in the
-[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) format.
+[![Build Status](https://secure.travis-ci.org/mout/mout.png)](https://travis-ci.org/mout/mout)
 
 All code is library agnostic and consist mostly of helper methods that aren't
 directly related with the DOM, the purpose of this library isn't to replace
 Dojo, jQuery, YUI, Mootools, etc, but to provide modular solutions for common
-problems that aren't solved by most of them.
+problems that aren't solved by most of them. Consider it as a crossbrowser
+JavaScript standard library.
 
 
 
@@ -25,7 +25,8 @@ problems that aren't solved by most of them.
  - **don't convert JavaScript into another language!**
  - be compatible with other frameworks;
  - be modular;
- - have unit tests for all modules.
+ - have unit tests for all modules;
+ - work on multiple environments (IE7+, modern browsers, node.js);
 
 
 
@@ -35,64 +36,38 @@ problems that aren't solved by most of them.
  - CSS selector engine;
  - Event system - pub/sub;
  - Template engine;
+ - Anything that isn't generic enough to be on a standard library;
  - Anything that could be a separate library and/or isn't a modular utility...
 
 
 
 
-## Why AMD? ##
-
-**Because AMD is awesome!**
-
-By keeping each function in a separate package we can require just the
-methods/packages that are required by our app and let the RequireJS optimizer
-bundle only what is currently being used. We also have an extra benefit that we
-split the methods into separate packages so we reduce the chance of name
-collisions and the code is more organized. AMD is flexible and enables things
-that wouldn't be possible with a different module system or with a conventional
-namespace approach (remapping a module, conditionally loading, etc).
-
-Read these links if you still can't see why:
-
- - [Why AMD?](http://requirejs.org/docs/whyamd.html)
- - [AMD is better for the web than CJS modules](blog.millermedeiros.com/2011/09/amd-is-better-for-the-web-than-commonjs-modules/)
- - [AMD & CommonJS modules](http://briancavalier.com/presentations/pgh-js-amd-10-2011/)
- - [AMD vs. CJS](http://unscriptable.com/index.php/2011/09/30/amd-versus-cjs-whats-the-best-format/)
- - [Namespaces are Old School](http://blog.millermedeiros.com/namespaces-are-old-school/)
-
-PS: Your mileage may vary...
-
-
-
 ## Node.js ##
 
-AMD-utils also works on [node.js](http://nodejs.org), just run:
+mout also works on [node.js](http://nodejs.org), just run:
 
-    npm install amd-utils
+    npm install mout
 
-It will download amd-utils from the NPM repository and convert the AMD modules
-into a node.js compatible format using
-[nodefy](https://github.com/millermedeiros/nodefy), there is no extra overhead,
-you can use it like a regular node.js package.
+It will download mout from the NPM repository and convert the AMD modules into
+a node.js compatible format using
+[nodefy](https://github.com/millermedeiros/nodefy), there is no extra
+overhead, you can use it like a regular node.js package.
 
     // you can load individual methods
-    var map = require('amd-utils/array/map');
+    var map = require('mout/array/map');
     map([1, 2], function(v){ return val * val; }); // [1, 4]
 
     // a single package
-    var stringUtils = require('amd-utils/string');
+    var stringUtils = require('mout/string');
     stringUtils.camelCase('Foo Bar'); // "fooBar"
 
     // or the whole lib
-    var utils = require('amd-utils');
+    var utils = require('mout');
     console.log( utils.math.clamp(100, 0, 50) ); // 50
 
 
 
 ## Important ##
-
-Since each function is a separate module they have independent version numbers
-and a last edit date.
 
 Since code is very modular (broken into multiple files) it is really important
 that you run an optimizer before deploying the code to a server, otherwise you
@@ -105,7 +80,7 @@ more info.
 
 ## Contributing ##
 
-Fork the project on Github: https://github.com/millermedeiros/amd-utils
+Fork the project on Github: https://github.com/mout/mout
 
  > "Write clearly, don't be too clever" - The Elements of Programming Style
 
@@ -126,7 +101,7 @@ merged if they contain proper tests and documentation.
 We should do a code review before merging to make sure names makes sense and
 implementation is as good as possible.
 
-Check the [contributors list at github](https://github.com/millermedeiros/amd-utils/contributors).
+Check the [contributors list at github](https://github.com/mout/mout/contributors).
 
 
 ## Build Script ##
@@ -159,7 +134,7 @@ open the `tests/runner.html`. The same tests also work on node.js by running
 
 We should have tests for all methods and ensure we have a high code coverage
 through our continuous integration server
-([travis](https://travis-ci.org/millermedeiros/amd-utils)). When you ask for
+([travis](https://travis-ci.org/mout/mout)). When you ask for
 a pull request Travis will automatically run the tests on node.js and check the
 code coverage as well.
 
@@ -176,23 +151,54 @@ coverage (but should be close to it).
 ### Building The Documentation ###
 
 The documentation is generated based on markdown files inside the
-`doc/mdown` folder using [mdoc](https://github.com/millermedeiros/mdoc).
+`doc` folder using [mdoc](https://github.com/millermedeiros/mdoc).
 To compile the docs run:
 
     node build doc
 
-It will replace all the files inside the `doc/html` folder.
+It will replace all the files inside the `doc_html` folder.
 
 Documentation files should be always up-to-date since modules are only
 committed to the `master` branch after they get proper tests and documentation.
+Online documentation can be found at http://mout.github.com/docs/
 
+
+
+## Why AMD as the authoring format? ##
+
+**Because AMD is awesome!**
+
+By keeping each function in a separate package we can require just the
+methods/packages that are required by our app and let the RequireJS optimizer
+bundle only what is currently being used. We also have an extra benefit that we
+split the methods into separate packages so we reduce the chance of name
+collisions and the code is more organized. AMD is flexible and enables things
+that wouldn't be possible with a different module system or with a conventional
+namespace approach (remapping a module, conditionally loading, etc).
+
+Read these links if you still can't see why:
+
+ - [Why AMD?](http://requirejs.org/docs/whyamd.html)
+ - [AMD is better for the web than CJS modules](blog.millermedeiros.com/2011/09/amd-is-better-for-the-web-than-commonjs-modules/)
+ - [AMD & CommonJS modules](http://briancavalier.com/presentations/pgh-js-amd-10-2011/)
+ - [AMD vs. CJS](http://unscriptable.com/index.php/2011/09/30/amd-versus-cjs-whats-the-best-format/)
+ - [Namespaces are Old School](http://blog.millermedeiros.com/namespaces-are-old-school/)
+
+Also since most node.js modules are installed through npm it's easier to write
+it using the AMD format and them convert into a node.js compatible format
+during `npm publish` or before each `npm test`.  We use
+[nodefy](https://github.com/millermedeiros/nodefy) to convert the AMD modules
+into regular node.js modules so it won't add any extra overhead for you node.js
+apps. The opposite approach would be harder to automate.
+
+PS: Your mileage may vary...
 
 
 
 ## Documentation ##
 
-Online documentation can be found at http://millermedeiros.github.com/amd-utils
-or inside the `doc` folder.
+Online documentation can be found at http://mout.github.com/docs or inside the
+`doc` folder.
 
 
 

@@ -1,4 +1,4 @@
-# amd-utils / string #
+# mout / string #
 
 String utilities.
 

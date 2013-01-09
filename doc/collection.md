@@ -1,4 +1,4 @@
-# amd-utils / collection #
+# mout / collection #
 
 Methods for dealing with collections (Array or Objects).
 
