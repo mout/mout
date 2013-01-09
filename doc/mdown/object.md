@@ -40,7 +40,7 @@ var base = {
     },
     lorem : 'ipsum'
 };
-var options = deepMixIn({foo : { baz : 45 }, lorem : 'amet'}, base);
+var options = deepFillIn({foo : { baz : 45 }, lorem : 'amet'}, base);
 // > {foo: {bar:123, baz : 45}, lorem : 'amet'}
 ```
 
