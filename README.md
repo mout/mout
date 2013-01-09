@@ -1,6 +1,4 @@
-# mout #
-
-Modular JavaScript Utilities.
+![mout](http://mout.github.com/logo.png "Modular JavaScript Utilties")
 
 http://mout.github.com/
 

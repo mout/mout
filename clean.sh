@@ -6,8 +6,6 @@ rm -r array.js
 rm -r array
 rm -r collection.js
 rm -r collection
-rm -r financial.js
-rm -r financial
 rm -r function.js
 rm -r function
 rm -r index.js
