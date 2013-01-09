@@ -1,4 +1,4 @@
-# mout / object #
+# object #
 
 Object utilities.
 

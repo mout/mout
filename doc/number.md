@@ -1,4 +1,4 @@
-# mout / number #
+# number #
 
 Number utilities.
 

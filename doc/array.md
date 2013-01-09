@@ -1,4 +1,4 @@
-# mout / array #
+# array #
 
 Array utilities.
 

@@ -1,4 +1,4 @@
-# mout / string #
+# string #
 
 String utilities.
 

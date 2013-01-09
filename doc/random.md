@@ -1,4 +1,4 @@
-# mout / random #
+# random #
 
 Pseudo-random generators.
 

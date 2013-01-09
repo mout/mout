@@ -1,4 +1,4 @@
-# mout / collection #
+# collection #
 
 Methods for dealing with collections (Array or Objects).
 

@@ -1,4 +1,4 @@
-# mout / function
+# function #
 
 Function*(al)* utilities.
 

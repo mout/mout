@@ -1,4 +1,4 @@
-# mout / math #
+# math #
 
 Math utilities.
 

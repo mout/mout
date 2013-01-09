@@ -1,4 +1,4 @@
-# mout / lang #
+# lang #
 
 Language Utilities. Easier inheritance, scope handling, type checks.
 

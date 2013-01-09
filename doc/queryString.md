@@ -1,4 +1,4 @@
-# mout / queryString #
+# queryString #
 
 Utilities for query string manipulation.
 

@@ -1,4 +1,4 @@
-# mout / time #
+# time #
 
 Utilities for time manipulation.
 
