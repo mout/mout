@@ -32,6 +32,16 @@ define(['amd-utils/object/fillIn'], function (fillIn) {
             expect( obj.num ).toBe( 123 );
         });
 
+
+        it('should not fill in nested arrays', function () {
+            var base = {arr : [1,2], b : 'foo'};
+            var obj = fillIn({arr:[null, void(0),'c']}, base);
+            expect( obj ).toEqual({
+                arr : [null, void(0), 'c'],
+                b : 'foo'
+            });
+        });
+
     });
 
 });

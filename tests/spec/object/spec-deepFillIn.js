@@ -72,6 +72,16 @@ define(['amd-utils/object/deepFillIn'], function(deepFillIn){
         });
 
 
+        it('should fill in arrays', function () {
+            var base = {lorem : {ipsum: [1, 2, 3]}};
+            var obj = deepFillIn({lorem:{ipsum:[null, void(0), false, 'c']}}, base);
+            expect( obj ).toEqual({
+                lorem : {
+                    ipsum : [1, 2, false, 'c']
+                }
+            });
+        });
+
     });
 
 });
