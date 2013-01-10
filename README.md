@@ -1,6 +1,6 @@
-![mout](http://mout.github.com/logo.png "Modular Utilties")
+![mout](http://moutjs.com/logo.png "Modular JavaScript Utilties")
 
-http://mout.github.com/
+http://moutjs.com/
 
 [![Build Status](https://travis-ci.org/mout/mout.png?branch=master)](https://travis-ci.org/mout/mout)
 
@@ -41,12 +41,12 @@ JavaScript standard library.
 
 ## API Documentation ##
 
-Online documentation can be found at http://mout.github.com/ or inside the
+Online documentation can be found at http://moutjs.com/ or inside the
 `doc` folder.
 
 
 
-## Wiki ##
+## FAQ / Wiki ##
 
 For more info about project structure, design decisions, tips, how to
 contribute, build system, etc, please check the [project
