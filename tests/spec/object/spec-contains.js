@@ -1,4 +1,4 @@
-define(['amd-utils/object/contains'], function(contains){
+define(['mout/object/contains'], function(contains){
 
     describe('object/contains', function(){
 

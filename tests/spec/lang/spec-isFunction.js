@@ -1,4 +1,4 @@
-define(['amd-utils/lang/isFunction'], function (isFunction) {
+define(['mout/lang/isFunction'], function (isFunction) {
 
     describe('lang/isFunction()', function () {
 

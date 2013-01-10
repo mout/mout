@@ -1,4 +1,4 @@
-define(['amd-utils/lang/isFinite'], function(isFinite){
+define(['mout/lang/isFinite'], function(isFinite){
 
     describe('lang/isFinite', function(){
 

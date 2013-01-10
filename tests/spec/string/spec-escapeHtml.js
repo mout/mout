@@ -1,4 +1,4 @@
-define(['amd-utils/string/escapeHtml'], function (escapeHtml) {
+define(['mout/string/escapeHtml'], function (escapeHtml) {
 
     describe('string/escapeHtml()', function () {
 

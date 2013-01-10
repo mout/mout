@@ -1,4 +1,4 @@
-define(['amd-utils/lang/kindOf'], function (kindOf) {
+define(['mout/lang/kindOf'], function (kindOf) {
 
     describe('lang/kindOf()', function(){
 

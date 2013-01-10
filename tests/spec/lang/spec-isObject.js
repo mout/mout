@@ -1,4 +1,4 @@
-define(['amd-utils/lang/isObject'], function (isObject) {
+define(['mout/lang/isObject'], function (isObject) {
 
     describe('lang/isObject()', function () {
 

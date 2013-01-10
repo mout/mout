@@ -1,4 +1,4 @@
-define(['amd-utils/math/map'], function (map) {
+define(['mout/math/map'], function (map) {
 
     describe('math/map()', function(){
 

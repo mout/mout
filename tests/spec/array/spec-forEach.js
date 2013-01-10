@@ -1,4 +1,4 @@
-define(['amd-utils/array/forEach'], function (forEach) {
+define(['mout/array/forEach'], function (forEach) {
 
     describe('array/forEach()', function(){
 

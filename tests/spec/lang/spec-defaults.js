@@ -1,4 +1,4 @@
-define(['amd-utils/lang/defaults'], function (defaults) {
+define(['mout/lang/defaults'], function (defaults) {
 
     describe('lang/defaults', function () {
 

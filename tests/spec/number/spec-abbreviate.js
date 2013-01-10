@@ -1,4 +1,4 @@
-define(['amd-utils/number/abbreviate'], function (abbr) {
+define(['mout/number/abbreviate'], function (abbr) {
 
     describe('number/abbreviate', function () {
 

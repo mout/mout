@@ -1,4 +1,4 @@
-define(['amd-utils/string/endsWith'], function (endsWith) {
+define(['mout/string/endsWith'], function (endsWith) {
 
     describe('string/endsWith()', function(){
 

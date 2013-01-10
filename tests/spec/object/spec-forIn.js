@@ -1,4 +1,4 @@
-define(['amd-utils/object/forIn'], function(forIn){
+define(['mout/object/forIn'], function(forIn){
 
     var global = this;
 

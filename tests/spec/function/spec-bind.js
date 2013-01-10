@@ -1,4 +1,4 @@
-define(['amd-utils/function/bind'], function (bind) {
+define(['mout/function/bind'], function (bind) {
 
     describe('function/bind()', function(){
 

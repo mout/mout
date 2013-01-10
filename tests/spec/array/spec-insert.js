@@ -1,4 +1,4 @@
-define(['amd-utils/array/insert'], function (insert) {
+define(['mout/array/insert'], function (insert) {
 
     describe('array/insert()', function(){
 

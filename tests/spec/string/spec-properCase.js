@@ -1,4 +1,4 @@
-define(['amd-utils/string/properCase'], function (properCase) {
+define(['mout/string/properCase'], function (properCase) {
 
     describe('string/properCase()', function(){
 

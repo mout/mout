@@ -1,4 +1,4 @@
-define(['amd-utils/object/keys'], function (keys) {
+define(['mout/object/keys'], function (keys) {
 
     describe('object/keys()', function () {
 

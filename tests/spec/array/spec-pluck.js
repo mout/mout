@@ -1,4 +1,4 @@
-define(['amd-utils/array/pluck'], function (pluck) {
+define(['mout/array/pluck'], function (pluck) {
 
     describe('array/pluck()', function () {
 

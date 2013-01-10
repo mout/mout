@@ -1,4 +1,4 @@
-define(['amd-utils/array/union'], function (union) {
+define(['mout/array/union'], function (union) {
 
     describe('array/union()', function () {
 

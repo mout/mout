@@ -1,4 +1,4 @@
-define(['amd-utils/number/toUInt31'], function (toUInt31) {
+define(['mout/number/toUInt31'], function (toUInt31) {
 
     describe('number/toUInt31()', function(){
 

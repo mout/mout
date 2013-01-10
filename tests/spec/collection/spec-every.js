@@ -1,4 +1,4 @@
-define(['amd-utils/collection/every'], function(every){
+define(['mout/collection/every'], function(every){
 
     describe('collection/every', function(){
 

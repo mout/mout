@@ -1,4 +1,4 @@
-define(['amd-utils/array/removeAll'], function (removeAll) {
+define(['mout/array/removeAll'], function (removeAll) {
 
     describe('array/removeAll()', function(){
 

@@ -1,4 +1,4 @@
-define(['amd-utils/string/slugify'], function (slugify) {
+define(['mout/string/slugify'], function (slugify) {
 
     describe('string/slugify()', function(){
 

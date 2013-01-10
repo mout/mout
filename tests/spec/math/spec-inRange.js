@@ -1,4 +1,4 @@
-define(['amd-utils/math/inRange'], function (inRange) {
+define(['mout/math/inRange'], function (inRange) {
 
     describe('math/inRange()', function(){
 

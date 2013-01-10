@@ -1,4 +1,4 @@
-define(['amd-utils/time/toTimeString'], function (toTimeString) {
+define(['mout/time/toTimeString'], function (toTimeString) {
 
     describe('time/toTimeString()', function(){
 

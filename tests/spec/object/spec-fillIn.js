@@ -1,4 +1,4 @@
-define(['amd-utils/object/fillIn'], function (fillIn) {
+define(['mout/object/fillIn'], function (fillIn) {
 
     describe('object/fillIn', function () {
 

@@ -1,4 +1,4 @@
-define(['amd-utils/string/crop'], function (crop) {
+define(['mout/string/crop'], function (crop) {
 
     describe('cropstring/()', function(){
         var str = 'lorem ipsum dolor sit amet';

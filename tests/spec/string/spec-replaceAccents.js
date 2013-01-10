@@ -1,4 +1,4 @@
-define(['amd-utils/string/replaceAccents'], function (replaceAccents) {
+define(['mout/string/replaceAccents'], function (replaceAccents) {
 
     describe('string/replaceAccents()', function(){
 

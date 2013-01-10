@@ -1,4 +1,4 @@
-define(['amd-utils/object/has'], function (has) {
+define(['mout/object/has'], function (has) {
 
     describe('object/has()', function () {
 

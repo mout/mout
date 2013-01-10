@@ -1,4 +1,4 @@
-define(['amd-utils/collection/min'], function(min){
+define(['mout/collection/min'], function(min){
 
     describe('collection/min', function(){
 

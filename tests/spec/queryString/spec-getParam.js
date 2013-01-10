@@ -1,4 +1,4 @@
-define(['amd-utils/queryString/getParam'], function (getParam) {
+define(['mout/queryString/getParam'], function (getParam) {
 
     describe('queryString/getParam()', function () {
 

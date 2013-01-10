@@ -1,6 +1,6 @@
 define(
     [
-        'amd-utils/object/get'
+        'mout/object/get'
     ],
     function (get) {
 

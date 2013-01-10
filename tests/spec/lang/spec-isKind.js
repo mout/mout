@@ -1,4 +1,4 @@
-define(['amd-utils/lang/isKind'], function (isKind) {
+define(['mout/lang/isKind'], function (isKind) {
 
     describe('lang/isKind()', function(){
 

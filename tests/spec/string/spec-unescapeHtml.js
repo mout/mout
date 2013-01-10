@@ -1,4 +1,4 @@
-define(['amd-utils/string/unescapeHtml'], function (unescapeHtml) {
+define(['mout/string/unescapeHtml'], function (unescapeHtml) {
 
     describe('string/unescapeHtml()', function () {
 

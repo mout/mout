@@ -1,4 +1,4 @@
-define(['amd-utils/lang/isRegExp'], function (isRegExp) {
+define(['mout/lang/isRegExp'], function (isRegExp) {
 
     describe('lang/isRegExp()', function () {
 

@@ -1,4 +1,4 @@
-define(['amd-utils/object/reduce'], function(reduce){
+define(['mout/object/reduce'], function(reduce){
 
     describe('object/reduce', function(){
 

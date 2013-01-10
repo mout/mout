@@ -1,4 +1,4 @@
-define(['amd-utils/math/loop'], function (loop) {
+define(['mout/math/loop'], function (loop) {
 
     describe('math/loop()', function(){
 

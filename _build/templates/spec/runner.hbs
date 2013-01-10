@@ -15,7 +15,7 @@ var env, reporter;
 var opts = {
     baseUrl : 'spec',
     paths : {
-        'amd-utils' : '../../src'
+        'mout' : '../../src'
     }
 };
 

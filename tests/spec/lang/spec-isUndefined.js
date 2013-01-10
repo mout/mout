@@ -1,4 +1,4 @@
-define(['amd-utils/lang/isUndefined'], function (isUndefined) {
+define(['mout/lang/isUndefined'], function (isUndefined) {
 
     describe('lang/isUndefined()', function () {
 

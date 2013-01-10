@@ -1,4 +1,4 @@
-define(['amd-utils/queryString/contains'], function (contains) {
+define(['mout/queryString/contains'], function (contains) {
 
     describe('queryString/contains()', function () {
 

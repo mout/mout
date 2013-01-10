@@ -1,4 +1,4 @@
-define(['amd-utils/array/reduceRight'], function (reduceRight) {
+define(['mout/array/reduceRight'], function (reduceRight) {
 
     describe('array/reduceRight()', function () {
 

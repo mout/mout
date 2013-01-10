@@ -1,15 +1,17 @@
 // Based on mdoc default template
 // author: Miller Medeiros
 // license: MIT
-// version : 0.1.2 (2012/02/25)
+// version : 0.2.0 (2013/01/10)
 
 
 (function ($) {
 
 
     var DEFAULT_BRUSH = 'js',
-        _srcUrl = 'https://github.com/millermedeiros/amd-utils/blob/master/src/',
-        _specsUrl = 'https://github.com/millermedeiros/amd-utils/blob/master/tests/spec/',
+        VERSION_TAG = 'master',
+        _srcUrl = 'https://github.com/mout/mout/blob/'+ VERSION_TAG +'/src/',
+        _specsUrl = 'https://github.com/mout/mout/blob/'+ VERSION_TAG +'/tests/spec/',
+        _rawUrl = 'https://raw.github.com/mout/mout/'+ VERSION_TAG +'/src',
         _curPath = document.location.pathname.split('/'),
         _curFile = _curPath[_curPath.length - 1],
         _curPackage = _curFile.split('.')[0],
@@ -191,7 +193,7 @@
             var packageName = prompt('Module Name:', _curPackage);
             if (! packageName) return;
 
-            packageName = 'amd-utils/'+ packageName;
+            packageName = 'mout/'+ packageName;
 
             // can only call once
             if (_didInjected) {
@@ -207,17 +209,17 @@
 
         function registerLoad(packageName){
             var pkg = require(packageName);
-            window.utils = window.utils || {};
+            window.mout = window.mout || {};
             if (typeof pkg === 'object') {
                 for (var key in pkg) {
-                    window.utils[key] = pkg[key];
+                    window.mout[key] = pkg[key];
                 }
             } else {
                 var nameParts = packageName.split('/');
-                window.utils[ nameParts[nameParts.length - 1] ] = pkg;
+                window.mout[ nameParts[nameParts.length - 1] ] = pkg;
             }
             if (console && console.log) {
-                console.log(' == You can now access "'+ packageName +'" inside the "utils" namespace. == ');
+                console.log(' == You can now access "'+ packageName +'" inside the global "mout" namespace. == ');
             }
         }
 
@@ -225,7 +227,7 @@
         function injectRequireJs(packageName){
             window.requirejs = {
                 paths : {
-                    'amd-utils' : 'https://raw.github.com/millermedeiros/amd-utils/master/src'
+                    'mout' : _rawUrl
                 },
                 deps : [packageName],
                 callback : function() {

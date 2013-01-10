@@ -1,4 +1,4 @@
-define(['amd-utils/array/min'], function (min) {
+define(['mout/array/min'], function (min) {
 
     describe('array/min()', function () {
 

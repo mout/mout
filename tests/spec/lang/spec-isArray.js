@@ -1,4 +1,4 @@
-define(['amd-utils/lang/isArray'], function (isArray) {
+define(['mout/lang/isArray'], function (isArray) {
 
     describe('lang/isArray()', function () {
 

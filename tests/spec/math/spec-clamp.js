@@ -1,4 +1,4 @@
-define(['amd-utils/math/clamp'], function (clamp) {
+define(['mout/math/clamp'], function (clamp) {
 
     describe('math/clamp()', function(){
 

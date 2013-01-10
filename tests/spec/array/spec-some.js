@@ -1,4 +1,4 @@
-define(['amd-utils/array/some'], function (some) {
+define(['mout/array/some'], function (some) {
 
     describe('array/some()', function(){
 

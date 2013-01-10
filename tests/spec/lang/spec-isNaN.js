@@ -1,4 +1,4 @@
-define(['amd-utils/lang/isNaN'], function(isNaN){
+define(['mout/lang/isNaN'], function(isNaN){
 
     describe('lang/isNaN', function(){
 

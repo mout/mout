@@ -1,4 +1,4 @@
-define(['amd-utils/math/floor'], function (floor) {
+define(['mout/math/floor'], function (floor) {
 
     describe('math/floor()', function(){
 

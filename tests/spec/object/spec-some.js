@@ -1,4 +1,4 @@
-define(['amd-utils/object/some'], function(some){
+define(['mout/object/some'], function(some){
 
     describe('object/some', function(){
 

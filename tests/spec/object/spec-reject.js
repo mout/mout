@@ -1,4 +1,4 @@
-define(['amd-utils/object/reject', 'amd-utils/object/size'], function(reject, size) {
+define(['mout/object/reject', 'mout/object/size'], function(reject, size) {
 
     describe('object/reject', function(){
 

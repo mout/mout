@@ -1,4 +1,4 @@
-define(['amd-utils/collection/filter'], function(filter){
+define(['mout/collection/filter'], function(filter){
 
     describe('collection/filter', function(){
 

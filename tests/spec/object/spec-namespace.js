@@ -1,6 +1,6 @@
 define(
     [
-        'amd-utils/object/namespace'
+        'mout/object/namespace'
     ],
     function (namespace) {
 

@@ -1,4 +1,4 @@
-define(['amd-utils/lang/isBoolean'], function (isBoolean) {
+define(['mout/lang/isBoolean'], function (isBoolean) {
 
     describe('lang/isBoolean()', function () {
 

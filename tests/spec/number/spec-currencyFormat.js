@@ -1,4 +1,4 @@
-define(['amd-utils/number/currencyFormat'], function (currencyFormat) {
+define(['mout/number/currencyFormat'], function (currencyFormat) {
 
     describe('number/currencyFormat()', function () {
 

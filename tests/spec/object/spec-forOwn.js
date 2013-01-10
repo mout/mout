@@ -1,4 +1,4 @@
-define(['amd-utils/object/forOwn'], function (forOwn) {
+define(['mout/object/forOwn'], function (forOwn) {
 
     var global = this;
 

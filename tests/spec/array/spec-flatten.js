@@ -1,4 +1,4 @@
-define(['amd-utils/array/flatten'], function (flatten) {
+define(['mout/array/flatten'], function (flatten) {
 
     describe('array/flatten()', function () {
 

@@ -1,4 +1,4 @@
-define(['amd-utils/string/unescapeUnicode'], function(unescapeUnicode){
+define(['mout/string/unescapeUnicode'], function(unescapeUnicode){
 
     describe('string/unescapeUnicode', function(){
 

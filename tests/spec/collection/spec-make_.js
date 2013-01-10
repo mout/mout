@@ -1,4 +1,4 @@
-define(['amd-utils/collection/make_'], function(make){
+define(['mout/collection/make_'], function(make){
 
     describe('collection/make_', function(){
 

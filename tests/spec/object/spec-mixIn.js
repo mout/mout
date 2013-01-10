@@ -1,4 +1,4 @@
-define(['amd-utils/object/mixIn'], function (mixIn) {
+define(['mout/object/mixIn'], function (mixIn) {
 
     describe('object/mixIn()', function(){
 

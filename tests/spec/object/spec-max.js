@@ -1,4 +1,4 @@
-define(['amd-utils/object/max'], function(max){
+define(['mout/object/max'], function(max){
 
     describe('object/max', function(){
 

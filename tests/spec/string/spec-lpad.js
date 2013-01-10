@@ -1,4 +1,4 @@
-define(['amd-utils/string/lpad'], function (lpad) {
+define(['mout/string/lpad'], function (lpad) {
 
     describe('string/lpad()', function(){
         it('should add chars to the left if length is < minLength', function(){

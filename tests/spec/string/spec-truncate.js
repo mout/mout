@@ -1,4 +1,4 @@
-define(['amd-utils/string/truncate'], function (truncate) {
+define(['mout/string/truncate'], function (truncate) {
 
     describe('string/truncate()', function(){
         var str = 'lorem ipsum dolor sit amet';

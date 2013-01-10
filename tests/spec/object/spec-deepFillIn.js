@@ -1,4 +1,4 @@
-define(['amd-utils/object/deepFillIn'], function(deepFillIn){
+define(['mout/object/deepFillIn'], function(deepFillIn){
 
     describe('object/deepFillIn', function(){
 

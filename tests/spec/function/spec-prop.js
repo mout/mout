@@ -1,4 +1,4 @@
-define(['amd-utils/function/prop'], function (prop) {
+define(['mout/function/prop'], function (prop) {
 
     describe('function/prop()', function () {
 

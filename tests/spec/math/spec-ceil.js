@@ -1,4 +1,4 @@
-define(['amd-utils/math/ceil'], function(ceil){
+define(['mout/math/ceil'], function(ceil){
 
     describe('math/ceil', function(){
 

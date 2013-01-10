@@ -1,4 +1,4 @@
-define(['amd-utils/array/xor'], function (xor) {
+define(['mout/array/xor'], function (xor) {
 
     describe('array/xor()', function () {
 

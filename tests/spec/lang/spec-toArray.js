@@ -1,4 +1,4 @@
-define(['amd-utils/lang/toArray'], function (toArray) {
+define(['mout/lang/toArray'], function (toArray) {
 
     var global = this;
 

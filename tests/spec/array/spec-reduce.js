@@ -1,4 +1,4 @@
-define(['amd-utils/array/reduce'], function (reduce) {
+define(['mout/array/reduce'], function (reduce) {
 
     describe('array/reduce()', function () {
 

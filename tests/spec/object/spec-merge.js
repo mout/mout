@@ -1,4 +1,4 @@
-define(['amd-utils/object/merge'], function (merge) {
+define(['mout/object/merge'], function (merge) {
 
     describe('object/merge()', function () {
 

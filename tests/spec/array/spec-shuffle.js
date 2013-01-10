@@ -1,4 +1,4 @@
-define(['amd-utils/array/shuffle'], function (shuffle) {
+define(['mout/array/shuffle'], function (shuffle) {
 
     describe('array/shuffle()', function () {
 

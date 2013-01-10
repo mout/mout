@@ -1,6 +1,6 @@
-define(['amd-utils/src/math'], function(math){
+define(['mout/src/math'], function(math){
 
-    describe('amd-utils/math', function(){
+    describe('mout/math', function(){
 
         it('', function(){
             expect( math() ).toBe({});

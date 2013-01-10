@@ -1,4 +1,4 @@
-define(['amd-utils/collection/contains'], function(contains){
+define(['mout/collection/contains'], function(contains){
 
     describe('collection/contains', function(){
 

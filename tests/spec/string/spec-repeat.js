@@ -1,4 +1,4 @@
-define(['amd-utils/string/repeat'], function (repeat) {
+define(['mout/string/repeat'], function (repeat) {
 
     describe('string/repeat()', function () {
 

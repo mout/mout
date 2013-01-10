@@ -1,4 +1,4 @@
-define(['amd-utils/array/filter'], function (filter) {
+define(['mout/array/filter'], function (filter) {
 
     describe('array/filter()', function(){
 

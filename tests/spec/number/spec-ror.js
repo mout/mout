@@ -1,4 +1,4 @@
-define(['amd-utils/number/ror'], function (ror) {
+define(['mout/number/ror'], function (ror) {
 
     describe('number/ror()', function(){
         it('should rotate bits right', function(){

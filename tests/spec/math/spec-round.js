@@ -1,4 +1,4 @@
-define(['amd-utils/math/round'], function(round){
+define(['mout/math/round'], function(round){
 
     describe('math/round', function(){
 

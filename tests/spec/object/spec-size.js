@@ -1,4 +1,4 @@
-define(['amd-utils/object/size'], function (size) {
+define(['mout/object/size'], function (size) {
 
     describe('object/size()', function () {
 

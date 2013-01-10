@@ -1,4 +1,4 @@
-define(['amd-utils/object/values'], function (values) {
+define(['mout/object/values'], function (values) {
 
     describe('object/values()', function () {
 

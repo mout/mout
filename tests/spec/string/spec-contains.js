@@ -1,4 +1,4 @@
-define(['amd-utils/string/contains'], function (contains) {
+define(['mout/string/contains'], function (contains) {
 
     describe('string/contains()', function () {
 

@@ -1,6 +1,6 @@
 define(
     [
-        'amd-utils/object/unset'
+        'mout/object/unset'
     ],
     function (unset) {
 

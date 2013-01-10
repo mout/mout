@@ -1,4 +1,4 @@
-define(['amd-utils/array/find'], function (find) {
+define(['mout/array/find'], function (find) {
 
     describe('array/find', function () {
 

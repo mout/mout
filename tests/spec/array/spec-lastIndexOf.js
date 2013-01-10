@@ -1,4 +1,4 @@
-define(['amd-utils/array/lastIndexOf'], function (lastIndexOf) {
+define(['mout/array/lastIndexOf'], function (lastIndexOf) {
 
     describe('array/lastIndexOf()', function(){
 

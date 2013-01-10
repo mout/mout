@@ -1,4 +1,4 @@
-define(['amd-utils/string/upperCase'], function (upperCase) {
+define(['mout/string/upperCase'], function (upperCase) {
 
     describe('it should convert string to lower case', function () {
         expect( upperCase('FOO') ).toEqual( 'FOO' );

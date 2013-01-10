@@ -1,4 +1,4 @@
-define(['amd-utils/array/sort'], function (sort) {
+define(['mout/array/sort'], function (sort) {
 
     describe('array/sort()', function () {
 

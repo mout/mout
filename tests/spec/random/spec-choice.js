@@ -1,4 +1,4 @@
-define(['amd-utils/random/choice'], function (choice) {
+define(['mout/random/choice'], function (choice) {
 
     describe('random/choice()', function () {
 

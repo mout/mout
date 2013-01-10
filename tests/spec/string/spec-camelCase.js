@@ -1,4 +1,4 @@
-define(['amd-utils/string/camelCase'], function (camelCase) {
+define(['mout/string/camelCase'], function (camelCase) {
 
     describe('string/camelCase()', function(){
 

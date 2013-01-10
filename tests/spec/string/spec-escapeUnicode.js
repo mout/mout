@@ -1,4 +1,4 @@
-define(['amd-utils/string/escapeUnicode'], function(escapeUnicode){
+define(['mout/string/escapeUnicode'], function(escapeUnicode){
 
     describe('string/escapeUnicode', function(){
 

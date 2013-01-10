@@ -1,4 +1,4 @@
-define(['amd-utils/lang/isNull'], function (isNull) {
+define(['mout/lang/isNull'], function (isNull) {
 
     describe('lang/isNull()', function () {
 

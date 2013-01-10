@@ -1,4 +1,4 @@
-define(['amd-utils/queryString/decode'], function (decode) {
+define(['mout/queryString/decode'], function (decode) {
 
     describe('queryString/decode()', function () {
 

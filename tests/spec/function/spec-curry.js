@@ -1,4 +1,4 @@
-define(['amd-utils/function/curry'], function(curry){
+define(['mout/function/curry'], function(curry){
 
     var add = function(a, b){
         return a + b;

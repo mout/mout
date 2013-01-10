@@ -1,4 +1,4 @@
-define(['amd-utils/object/min'], function(min){
+define(['mout/object/min'], function(min){
 
     describe('object/min', function(){
 

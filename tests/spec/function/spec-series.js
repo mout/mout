@@ -1,4 +1,4 @@
-define(['amd-utils/function/series'], function (series) {
+define(['mout/function/series'], function (series) {
 
     describe('function/series()', function () {
 

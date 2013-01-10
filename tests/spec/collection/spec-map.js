@@ -1,4 +1,4 @@
-define(['amd-utils/collection/map'], function(map){
+define(['mout/collection/map'], function(map){
 
     describe('collection/map', function(){
 

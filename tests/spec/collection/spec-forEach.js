@@ -1,4 +1,4 @@
-define(['amd-utils/collection/forEach'], function(forEach){
+define(['mout/collection/forEach'], function(forEach){
 
     describe('collection/forEach', function(){
 

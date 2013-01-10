@@ -1,6 +1,6 @@
 define(
     [
-        'amd-utils/object/set'
+        'mout/object/set'
     ],
     function (set) {
 

@@ -1,4 +1,4 @@
-define(['amd-utils/lang/isEmpty'], function (isEmpty) {
+define(['mout/lang/isEmpty'], function (isEmpty) {
 
     describe('lang/isEmpty', function () {
 
