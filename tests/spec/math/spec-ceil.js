@@ -17,7 +17,7 @@ define(['mout/math/ceil'], function(ceil){
 
         it('should work with negative numbers', function () {
             expect( ceil(-5.3) ).toEqual( -5 );
-            expect( ceil(-5.3, -2) ).toEqual( -2 );
+            expect( ceil(-5.3, -2) ).toEqual( -4 );
         });
 
         it('should not round up if value is divisible by radix', function () {
