@@ -71,15 +71,18 @@ define(['mout/object/deepFillIn'], function(deepFillIn){
 
         });
 
+        it('should copy values that are not plain objects by reference', function() {
+            function Custom() { }
+            var defaults = {
+                custom: new Custom(),
+                items: [1, 2, 3]
+            };
 
-        it('should fill in arrays', function () {
-            var base = {lorem : {ipsum: [1, 2, 3]}};
-            var obj = deepFillIn({lorem:{ipsum:[null, void(0), false, 'c']}}, base);
-            expect( obj ).toEqual({
-                lorem : {
-                    ipsum : [1, 2, false, 'c']
-                }
-            });
+            var target = {};
+            deepFillIn(target, defaults);
+
+            expect( target.custom ).toBe(defaults.custom);
+            expect( target.items ).toBe(defaults.items);
         });
 
     });

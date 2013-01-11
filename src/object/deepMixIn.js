@@ -1,10 +1,9 @@
-// use collection/forEach since we also deep merge arrays during the process
-define(['../collection/forEach'], function (forEach) {
+define(['./forOwn', '../lang/isPlainObject'], function (forOwn, isPlainObject) {
 
     /**
      * Mixes objects into the target object, recursively mixing existing child
-     * objects and arrays.
-     * @version 0.1.1 (2012/11/08)
+     * objects.
+     * @version 0.2.0 (2013/01/11)
      */
     function deepMixIn(target, objects) {
         var i = 0,
@@ -14,7 +13,7 @@ define(['../collection/forEach'], function (forEach) {
         while(++i < n){
             obj = arguments[i];
             if (obj) {
-                forEach(obj, copyProp, target);
+                forOwn(obj, copyProp, target);
             }
         }
 
@@ -23,10 +22,7 @@ define(['../collection/forEach'], function (forEach) {
 
     function copyProp(val, key) {
         var existing = this[key];
-        // WTFJS: `typeof null === 'object'` so we check if val is truthy.
-        // need to use `typeof` check instead of lang/isObject since we also
-        // need to deep merge arrays
-        if (val && typeof val === 'object' && typeof existing === 'object') {
+        if (isPlainObject(val) && isPlainObject(existing)) {
             deepMixIn(existing, val);
         } else {
             this[key] = val;
