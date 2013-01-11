@@ -229,6 +229,12 @@ If value is an Object.
 
 
 
+## isPlainObject(val):Boolean
+
+If the value is an Object created by the Object constructor.
+
+
+
 ## isRegExp(val):Boolean
 
 If value is a RegExp.
