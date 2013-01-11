@@ -90,6 +90,16 @@ define(['mout/lang/clone'], function (clone) {
 
             expect(result.test).toEqual(1);
         });
+
+        it('should copy custom instances by reference by default', function() {
+            function CustomType() { }
+            var a = {
+                test: new CustomType()
+            };
+
+            var result = clone(a);
+            expect(result.test).toBe(a.test);
+        });
     });
 
 });

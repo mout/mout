@@ -10,7 +10,9 @@ Deep clone native types like Object, Array, RegExp, Date and primitives.
 
 The `instanceClone` function will be invoked to clone non-native objects if
 provided. Non-native objects are defined as objects that have the
-`.constructor` property set to a custom function (not `Object`).
+`.constructor` property set to a custom function (not `Object`). If
+`instanceClone` is not specified, it will copy the object reference without
+cloning.
 
 ### Example
 
