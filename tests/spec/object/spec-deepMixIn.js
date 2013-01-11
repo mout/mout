@@ -76,7 +76,7 @@ define(['mout/object/deepMixIn'], function(deepMixIn) {
             expect(target.bar).toBe( 1 );
         });
 
-        it('should copy values that are not native objects by reference', function() {
+        it('should copy values that are not plain objects by reference', function() {
             function Custom() { }
             var source = {
                 custom: new Custom(),
