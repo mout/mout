@@ -9,5 +9,9 @@ define(['mout/math/countSteps'], function (countSteps) {
             expect( countSteps(129, 10) ).toEqual(12);
         });
 
+        it('should work with step fractures', function(){
+            expect( countSteps(3.1415, 0.02, 10) ).toEqual(7);
+        });
+
     });
 });
