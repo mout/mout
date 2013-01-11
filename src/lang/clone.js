@@ -4,14 +4,14 @@ define(['../object/forOwn', './kindOf'], function (forOwn, kindOf) {
      * Clone native types.
      * @version 0.1.0 (2012/07/13)
      */
-    function clone(val){
+    function clone(val, instanceClone) {
         var result;
         switch ( kindOf(val) ) {
             case 'Object':
-                result = cloneObject(val);
+                result = cloneObject(val, instanceClone);
                 break;
             case 'Array':
-                result = deepCloneArray(val);
+                result = cloneArray(val, instanceClone);
                 break;
             case 'RegExp':
                 result = cloneRegExp(val);
@@ -25,17 +25,21 @@ define(['../object/forOwn', './kindOf'], function (forOwn, kindOf) {
         return result;
     }
 
-    function cloneObject(source) {
-        var out = {};
-        forOwn(source, copyProperty, out);
-        return out;
+    function cloneObject(source, instanceClone) {
+        if (source.constructor === Object) {
+            var out = {};
+            forOwn(source, function(val, key) {
+                this[key] = clone(val, instanceClone);
+            }, out);
+            return out;
+        } else if (instanceClone) {
+            return instanceClone(source);
+        } else {
+            return source;
+        }
     }
 
-    function copyProperty(val, key){
-        this[key] = clone(val);
-    }
-
-    function cloneRegExp(r){
+    function cloneRegExp(r) {
         var flags = '';
         flags += r.multiline? 'm' : '';
         flags += r.global? 'g' : '';
@@ -43,17 +47,17 @@ define(['../object/forOwn', './kindOf'], function (forOwn, kindOf) {
         return new RegExp(r.source, flags);
     }
 
-    function cloneDate(date){
+    function cloneDate(date) {
         return new Date( date.getTime() );
     }
 
-    function deepCloneArray(arr){
+    function cloneArray(arr, instanceClone) {
         var out = [],
             i = -1,
             n = arr.length,
             val;
         while (++i < n) {
-            out[i] = clone(arr[i]);
+            out[i] = clone(arr[i], instanceClone);
         }
         return out;
     }

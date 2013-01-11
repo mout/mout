@@ -76,6 +76,30 @@ define(['mout/lang/clone'], function (clone) {
             expect( b.b ).not.toBe( a.b );
         });
 
+        it('should invoke function to clone instances', function() {
+            function CustomType() { }
+
+            var a = {
+                test: new CustomType()
+            };
+
+            var result = clone(a, function(x) {
+                expect(x).toBe(a.test);
+                return 1;
+            });
+
+            expect(result.test).toEqual(1);
+        });
+
+        it('should copy custom instances by reference by default', function() {
+            function CustomType() { }
+            var a = {
+                test: new CustomType()
+            };
+
+            var result = clone(a);
+            expect(result.test).toBe(a.test);
+        });
     });
 
 });
