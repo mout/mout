@@ -1,9 +1,8 @@
-// use collection/forEach since we also deep merge arrays during the process
-define(['../collection/forEach'], function (forEach) {
+define(['../object/forOwn', '../lang/kindOf'], function (forOwn, kindOf) {
 
     /**
      * Mixes objects into the target object, recursively mixing existing child
-     * objects and arrays.
+     * objects.
      * @version 0.1.1 (2012/11/08)
      */
     function deepMixIn(target, objects) {
@@ -14,19 +13,28 @@ define(['../collection/forEach'], function (forEach) {
         while(++i < n){
             obj = arguments[i];
             if (obj) {
-                forEach(obj, copyProp, target);
+                forOwn(obj, copyProp, target);
             }
         }
 
         return target;
     }
 
-    function copyProp(val, key) {
-        var existing = this[key];
+    function isNativeObject(value) {
+        // A native object is one that is not created with a custom constructor
+        // function.
+        //
         // WTFJS: `typeof null === 'object'` so we check if val is truthy.
         // need to use `typeof` check instead of lang/isObject since we also
         // need to deep merge arrays
-        if (val && typeof val === 'object' && typeof existing === 'object') {
+        return (value
+            && typeof value === 'object'
+            && value.constructor === Object);
+    }
+
+    function copyProp(val, key) {
+        var existing = this[key];
+        if (isNativeObject(val) && isNativeObject(existing)) {
             deepMixIn(existing, val);
         } else {
             this[key] = val;

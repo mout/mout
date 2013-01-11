@@ -49,7 +49,12 @@ var options = deepFillIn({foo : { baz : 45 }, lorem : 'amet'}, base);
 ## deepMixIn(target, ...objects):Object
 
 Mixes objects into the target object, recursively mixing existing child objects
-and arrays as well.
+as well.
+
+It will only recursively mix objects if both (existing and new) values are
+native objects. Native objects are objects that are not created with a custom
+constructor. Values that are not native objects are copied by their object
+reference.
 
 Returns the target object. Like [`merge()`](#merge), but mutates the target
 object, and does not clone child objects.
