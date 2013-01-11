@@ -4,9 +4,13 @@ Language Utilities. Easier inheritance, scope handling, type checks.
 
 
 
-## clone(val):*
+## clone(val, [instanceClone]):*
 
 Deep clone native types like Object, Array, RegExp, Date and primitives.
+
+The `instanceClone` function will be invoked to clone non-native objects if
+provided. Non-native objects are defined as objects that have the
+`.constructor` property set to a custom function (not `Object`).
 
 ### Example
 
@@ -23,6 +27,12 @@ var e = c.concat(); // [1, 2, [3, 4]]
 console.log( c[2] === d[2] ); // false
 // concat doesn't do a deep clone, arrays are passed by reference
 console.log( e[2] === d[2] ); // true
+
+function Custom() { }
+function cloneCustom(x) { return new Custom(); }
+var f = { test: new Custom() };
+var g = clone(Custom, cloneCustom);
+g.test === f.test // false, since new Custom instance will be created
 ```
 
 
