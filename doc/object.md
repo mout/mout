@@ -52,24 +52,22 @@ Mixes objects into the target object, recursively mixing existing child objects
 as well.
 
 It will only recursively mix objects if both (existing and new) values are
-native objects. Native objects are objects that are not created with a custom
-constructor. Values that are not native objects are copied by their object
-reference.
+plain objects.
 
 Returns the target object. Like [`merge()`](#merge), but mutates the target
 object, and does not clone child objects.
 
-    var target = {
-        foo: {
-            name: "foo",
-            id: 1,
-            vals: [1, 2]
-        }
-    };
+```js
+var target = {
+    foo: {
+        name: "foo",
+        id: 1
+    }
+};
 
-    deepMixIn(target, { foo: { id: 2, vals: [5] } });
-    // note that arrays are also merged and not replaced
-    console.log(target); // { foo: { name: "foo", id: 2, vals : [5, 2] } }
+deepMixIn(target, { foo: { id: 2 } });
+console.log(target); // { foo: { name: "foo", id: 2 } }
+```
 
 See: [`mixIn()`](#mixIn), [`merge()`](#merge), [`deepFillIn()`](#deepFillIn)
 

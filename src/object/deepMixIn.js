@@ -1,4 +1,4 @@
-define(['../object/forOwn', '../lang/kindOf'], function (forOwn, kindOf) {
+define(['./forOwn', '../lang/isPlainObject'], function (forOwn, isPlainObject) {
 
     /**
      * Mixes objects into the target object, recursively mixing existing child
@@ -20,21 +20,9 @@ define(['../object/forOwn', '../lang/kindOf'], function (forOwn, kindOf) {
         return target;
     }
 
-    function isNativeObject(value) {
-        // A native object is one that is not created with a custom constructor
-        // function.
-        //
-        // WTFJS: `typeof null === 'object'` so we check if val is truthy.
-        // need to use `typeof` check instead of lang/isObject since we also
-        // need to deep merge arrays
-        return (value
-            && typeof value === 'object'
-            && value.constructor === Object);
-    }
-
     function copyProp(val, key) {
         var existing = this[key];
-        if (isNativeObject(val) && isNativeObject(existing)) {
+        if (isPlainObject(val) && isPlainObject(existing)) {
             deepMixIn(existing, val);
         } else {
             this[key] = val;
