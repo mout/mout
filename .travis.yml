@@ -4,4 +4,12 @@
  script:
    - "npm test --coverage"
    - "node node_modules/.bin/istanbul check-coverage --functions 90 --statements 90 --branches 90 --lines 90"
+ notifications:
+  irc:
+    channels:
+      - "irc.freenode.org#moutjs"
+    on_success: change
+    on_failure: always
+    use_notice: true
+    skip_join: true
 
