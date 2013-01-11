@@ -3,10 +3,14 @@
   "description": "Modular Utilities",
   "version": "0.1.0",
   "homepage": "http://mout.github.com/mout/",
-  "author": {
-    "name": "Miller Medeiros",
-    "url": "http://blog.millermedeiros.com"
-  },
+  "contributors": [
+    "Adam Nowotny",
+    "André Cruz",
+    "Conrad Zimmerman (http://www.conradz.com)",
+    "Jarrod Overson (http://jarrodoverson.com)",
+    "Miller Medeiros <contact@millermedeiros.com> (http://blog.millermedeiros.com)",
+    "Zach Shipley"
+  ],
   "keywords": [
     "utilities",
     "functional",
