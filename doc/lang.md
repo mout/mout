@@ -33,7 +33,7 @@ console.log( e[2] === d[2] ); // true
 function Custom() { }
 function cloneCustom(x) { return new Custom(); }
 var f = { test: new Custom() };
-var g = clone(Custom, cloneCustom);
+var g = clone(f, cloneCustom);
 g.test === f.test // false, since new Custom instance will be created
 ```
 

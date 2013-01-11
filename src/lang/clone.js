@@ -31,12 +31,12 @@ define(['../object/forOwn', './kindOf'], function (forOwn, kindOf) {
             forOwn(source, function(val, key) {
                 this[key] = clone(val, instanceClone);
             }, out);
+            return out;
         } else if (instanceClone) {
             return instanceClone(source);
         } else {
             return source;
         }
-        return out;
     }
 
     function cloneRegExp(r) {
