@@ -46,11 +46,14 @@ Online documentation can be found at http://moutjs.com/ or inside the
 
 
 
-## FAQ / Wiki ##
+## FAQ / Wiki / IRC ##
 
 For more info about project structure, design decisions, tips, how to
 contribute, build system, etc, please check the [project
 wiki](https://github.com/mout/mout/wiki).
+
+We also have an IRC channel [#moutjs on
+irc.freenode.net](http://webchat.freenode.net/)
 
 
 
