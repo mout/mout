@@ -1,4 +1,4 @@
-define(['../object/forOwn', './kindOf'], function (forOwn, kindOf) {
+define(['../object/forOwn', './kindOf', './isPlainObject'], function (forOwn, kindOf, isPlainObject) {
 
     /**
      * Clone native types.
@@ -26,7 +26,7 @@ define(['../object/forOwn', './kindOf'], function (forOwn, kindOf) {
     }
 
     function cloneObject(source, instanceClone) {
-        if (source.constructor === Object) {
+        if (isPlainObject(source)) {
             var out = {};
             forOwn(source, function(val, key) {
                 this[key] = clone(val, instanceClone);

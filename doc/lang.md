@@ -8,11 +8,10 @@ Language Utilities. Easier inheritance, scope handling, type checks.
 
 Deep clone native types like Object, Array, RegExp, Date and primitives.
 
-The `instanceClone` function will be invoked to clone non-native objects if
-provided. Non-native objects are defined as objects that have the
-`.constructor` property set to a custom function (not `Object`). If
-`instanceClone` is not specified, it will not attempt to clone non-native
-objects, and will copy the object reference.
+The `instanceClone` function will be invoked to clone objects that are not
+"plain" objects (as defined by [`isPlainObject`](#isPlainObject)) if it is
+provided. If `instanceClone` is not specified, it will not attempt to clone
+non-plain objects, and will copy the object reference.
 
 ### Example
 
