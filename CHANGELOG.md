@@ -4,6 +4,7 @@ mout changelog
 next
 ----
 
+ - fix bug in `math/ceil` for negative radixes.
  - change `object/deepFillIn` and `object/deepMixIn` to recurse only if both
    existing and new values are plain objects. Will not recurse into arrays
    or objects not created by the Object constructor.
