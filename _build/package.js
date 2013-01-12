@@ -105,7 +105,7 @@ function makeIndex(){
 
 var specTemplate = _helpers.compileSpecTemplate('default'),
     specPackageTemplate = _helpers.compileSpecTemplate('package'),
-    specRunnerTemplate = _helpers.compileSpecTemplate('runner');
+    specIndexTemplate = _helpers.compileSpecTemplate('index');
 
 
 function makeSpecGroup(name){
@@ -136,15 +136,15 @@ function makeSpecGroup(name){
 
 
 function makeSpecRunner(){
-    purgeFiles([ _config.SPEC_RUNNER_PATH ]);
+    purgeFiles([ _config.SPEC_INDEX_PATH ]);
 
     var packages = getFolderStructure( srcPath() ).folders;
     var packagesNames = packages.map(function(val){
         return _path.basename(val);
     });
 
-    _fs.writeFileSync(_config.SPEC_RUNNER_PATH, specRunnerTemplate({'packages' : packagesNames}), 'utf-8');
-    echo('updated spec runner: ', _config.SPEC_RUNNER_PATH);
+    _fs.writeFileSync(_config.SPEC_INDEX_PATH, specIndexTemplate({'packages' : packagesNames}), 'utf-8');
+    echo('updated spec index: ', _config.SPEC_INDEX_PATH);
 }
 
 
