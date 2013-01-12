@@ -2,9 +2,9 @@ define(['../object/forOwn', './kindOf', './isPlainObject'], function (forOwn, ki
 
     /**
      * Clone native types.
-     * @version 0.1.0 (2012/07/13)
+     * @version 0.2.0 (2013/01/11)
      */
-    function clone(val, instanceClone) {
+    function deepClone(val, instanceClone) {
         var result;
         switch ( kindOf(val) ) {
             case 'Object':
@@ -29,7 +29,7 @@ define(['../object/forOwn', './kindOf', './isPlainObject'], function (forOwn, ki
         if (isPlainObject(source)) {
             var out = {};
             forOwn(source, function(val, key) {
-                this[key] = clone(val, instanceClone);
+                this[key] = deepClone(val, instanceClone);
             }, out);
             return out;
         } else if (instanceClone) {
@@ -57,12 +57,12 @@ define(['../object/forOwn', './kindOf', './isPlainObject'], function (forOwn, ki
             n = arr.length,
             val;
         while (++i < n) {
-            out[i] = clone(arr[i], instanceClone);
+            out[i] = deepClone(arr[i], instanceClone);
         }
         return out;
     }
 
-    return clone;
+    return deepClone;
 
 });
 

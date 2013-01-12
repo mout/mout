@@ -4,7 +4,7 @@ Language Utilities. Easier inheritance, scope handling, type checks.
 
 
 
-## clone(val, [instanceClone]):*
+## deepClone(val, [instanceClone]):*
 
 Deep clone native types like Object, Array, RegExp, Date and primitives.
 
@@ -17,12 +17,12 @@ non-plain objects, and will copy the object reference.
 
 ```js
 var a = {foo:'bar', obj: {a:1, b:2}};
-var b = clone(a); // {foo:'bar', obj: {a:1, b:2}}
+var b = deepClone(a); // {foo:'bar', obj: {a:1, b:2}}
 console.log( a === b ); // false
 console.log( a.obj === b.obj ); // false
 
 var c = [1, 2, [3, 4]];
-var d = clone(c); // [1, 2, [3, 4]]
+var d = deepClone(c); // [1, 2, [3, 4]]
 var e = c.concat(); // [1, 2, [3, 4]]
 
 console.log( c[2] === d[2] ); // false
@@ -32,7 +32,7 @@ console.log( e[2] === d[2] ); // true
 function Custom() { }
 function cloneCustom(x) { return new Custom(); }
 var f = { test: new Custom() };
-var g = clone(f, cloneCustom);
+var g = deepClone(f, cloneCustom);
 g.test === f.test // false, since new Custom instance will be created
 ```
 

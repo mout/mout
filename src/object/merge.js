@@ -1,4 +1,4 @@
-define(['./hasOwn', '../lang/clone', '../lang/isObject'], function (hasOwn, clone, isObject) {
+define(['./hasOwn', '../lang/deepClone', '../lang/isObject'], function (hasOwn, deepClone, isObject) {
 
     /**
      * Deep merge objects.
@@ -10,7 +10,7 @@ define(['./hasOwn', '../lang/clone', '../lang/isObject'], function (hasOwn, clon
 
         // make sure we don't modify source element and it's properties
         // objects are passed by reference
-        target = clone( arguments[0] );
+        target = deepClone( arguments[0] );
 
         while (obj = arguments[i++]) {
             for (key in obj) {
@@ -25,7 +25,7 @@ define(['./hasOwn', '../lang/clone', '../lang/isObject'], function (hasOwn, clon
                     target[key] = merge(target[key], val);
                 } else {
                     // make sure arrays, regexp, date, objects are cloned
-                    target[key] = clone(val);
+                    target[key] = deepClone(val);
                 }
 
             }

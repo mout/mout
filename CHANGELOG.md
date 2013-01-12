@@ -12,6 +12,7 @@ next
    by the Object constructor
  - change `lang/clone` behavior when dealing with custom types (avoid cloning
    it by default) and add second argument to allow custom behavior if needed.
+ - rename `lang/clone` to `lang/deepClone`.
 
 
 v0.1.0

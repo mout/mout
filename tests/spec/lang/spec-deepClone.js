@@ -1,10 +1,10 @@
-define(['mout/lang/clone'], function (clone) {
+define(['mout/lang/deepClone'], function (deepClone) {
 
-    describe('lang/clone()', function () {
+    describe('lang/deepClone()', function () {
 
         it('should create a new object and copy properties', function () {
             var a = {a:1, b:2, c:'foo'};
-            var b = clone(a);
+            var b = deepClone(a);
             expect( b ).toEqual( a );
             expect( b ).not.toBe( a );
         });
@@ -20,7 +20,7 @@ define(['mout/lang/clone'], function (clone) {
                     }
                 }
             };
-            var b = clone(a);
+            var b = deepClone(a);
 
             expect( b ).toEqual( a );
             expect( b ).not.toBe( a );
@@ -37,7 +37,7 @@ define(['mout/lang/clone'], function (clone) {
                 b : [1, 2, ['lorem', {c : 'ipsum', d: ['dolor', 'amet']}]]
             };
 
-            var b = clone(a);
+            var b = deepClone(a);
 
             expect( b ).toEqual( a );
             expect( b ).not.toBe( a );
@@ -55,7 +55,7 @@ define(['mout/lang/clone'], function (clone) {
                 a : 1,
                 b : /foo\/bar\/(.+)/
             };
-            var b = clone(a);
+            var b = deepClone(a);
 
             expect( b ).toEqual( a );
             expect( b ).not.toBe( a );
@@ -68,7 +68,7 @@ define(['mout/lang/clone'], function (clone) {
                 a : 1,
                 b : new Date()
             };
-            var b = clone(a);
+            var b = deepClone(a);
 
             expect( b ).toEqual( a );
             expect( b ).not.toBe( a );
@@ -83,7 +83,7 @@ define(['mout/lang/clone'], function (clone) {
                 test: new CustomType()
             };
 
-            var result = clone(a, function(x) {
+            var result = deepClone(a, function(x) {
                 expect(x).toBe(a.test);
                 return 1;
             });
@@ -97,7 +97,7 @@ define(['mout/lang/clone'], function (clone) {
                 test: new CustomType()
             };
 
-            var result = clone(a);
+            var result = deepClone(a);
             expect(result.test).toBe(a.test);
         });
     });
