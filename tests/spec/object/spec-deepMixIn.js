@@ -76,36 +76,22 @@ define(['mout/object/deepMixIn'], function(deepMixIn) {
             expect(target.bar).toBe( 1 );
         });
 
-        it('should override array keys in place (no clone)', function () {
-            var arr1 = [1,2];
-            var arr2 = [3];
-            var arr3 = [4, 5, 6];
+        it('should copy values that are not plain objects by reference', function() {
+            function Custom() { }
+            var source = {
+                custom: new Custom(),
+                items: [1, 2, 3],
+                regexp: /test/
+            };
 
-            var target = {a : arr1};
-            var o1 = {c: 'bar'};
-            var o2 = {a : arr2, b : true};
+            var target = {
+                items: [5]
+            };
 
-            deepMixIn(target, o1, o2);
-
-            expect( target.a ).toEqual( [3,2] );
-            expect( target.b ).toEqual( true );
-            expect( target.c ).toEqual( 'bar' );
-
-            // it should edit the original array without cloning
-            expect( target.a ).toBe( arr1 );
-
-            var o3 = {a : arr3};
-
-            deepMixIn(target, o3);
-
-            // it should edit the original array without cloning
-            expect( target.a ).toBe( arr1 );
-            expect( target.a ).not.toBe( arr3 );
-            expect( target.a ).toEqual( arr3 );
-
-            // should keep keep old properties
-            expect( target.b ).toEqual( true );
-            expect( target.c ).toEqual( 'bar' );
+            deepMixIn(target, source);
+            expect(target.custom).toBe(source.custom);
+            expect(target.items).toBe(source.items);
+            expect(target.regexp).toBe(source.regexp);
         });
 
     });

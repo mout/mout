@@ -49,22 +49,25 @@ var options = deepFillIn({foo : { baz : 45 }, lorem : 'amet'}, base);
 ## deepMixIn(target, ...objects):Object
 
 Mixes objects into the target object, recursively mixing existing child objects
-and arrays as well.
+as well.
+
+It will only recursively mix objects if both (existing and new) values are
+plain objects.
 
 Returns the target object. Like [`merge()`](#merge), but mutates the target
 object, and does not clone child objects.
 
-    var target = {
-        foo: {
-            name: "foo",
-            id: 1,
-            vals: [1, 2]
-        }
-    };
+```js
+var target = {
+    foo: {
+        name: "foo",
+        id: 1
+    }
+};
 
-    deepMixIn(target, { foo: { id: 2, vals: [5] } });
-    // note that arrays are also merged and not replaced
-    console.log(target); // { foo: { name: "foo", id: 2, vals : [5, 2] } }
+deepMixIn(target, { foo: { id: 2 } });
+console.log(target); // { foo: { name: "foo", id: 2 } }
+```
 
 See: [`mixIn()`](#mixIn), [`merge()`](#merge), [`deepFillIn()`](#deepFillIn)
 

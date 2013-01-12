@@ -20,6 +20,7 @@ return {
     'isNull' : require('./lang/isNull'),
     'isNumber' : require('./lang/isNumber'),
     'isObject' : require('./lang/isObject'),
+    'isPlainObject' : require('./lang/isPlainObject'),
     'isRegExp' : require('./lang/isRegExp'),
     'isString' : require('./lang/isString'),
     'isUndefined' : require('./lang/isUndefined'),

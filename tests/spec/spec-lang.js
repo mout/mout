@@ -18,6 +18,7 @@ define([
     'lang/spec-isNull',
     'lang/spec-isNumber',
     'lang/spec-isObject',
+    'lang/spec-isPlainObject',
     'lang/spec-isRegExp',
     'lang/spec-isString',
     'lang/spec-isUndefined',
