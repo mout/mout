@@ -3,9 +3,9 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
-    'clone' : require('./lang/clone'),
     'createObject' : require('./lang/createObject'),
     'ctorApply' : require('./lang/ctorApply'),
+    'deepClone' : require('./lang/deepClone'),
     'defaults' : require('./lang/defaults'),
     'inheritPrototype' : require('./lang/inheritPrototype'),
     'isArguments' : require('./lang/isArguments'),
