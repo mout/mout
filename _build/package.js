@@ -93,7 +93,11 @@ function makeIndex(){
     });
 
     var indexPath = srcPath('index.js');
-    _fs.writeFileSync(indexPath, indexTemplate({'modules' : modules}), 'utf-8');
+    var packageJson = require(__dirname +'/../package.json');
+    _fs.writeFileSync(indexPath, indexTemplate({
+        modules : modules,
+        version : packageJson.version
+    }), 'utf-8');
     echo('updated index:', indexPath);
 }
 
