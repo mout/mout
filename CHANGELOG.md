@@ -1,8 +1,8 @@
 mout changelog
 ==============
 
-next
-----
+v0.2.0
+------
 
  - fix bug in `math/ceil` for negative radixes.
  - change `object/deepFillIn` and `object/deepMixIn` to recurse only if both
@@ -13,6 +13,8 @@ next
  - change `lang/clone` behavior when dealing with custom types (avoid cloning
    it by default) and add second argument to allow custom behavior if needed.
  - rename `lang/clone` to `lang/deepClone`.
+ - add VERSION property to index.js
+ - simplify `math/floor`, `math/round`, `math/ceil` and `math/countSteps`.
 
 
 v0.1.0

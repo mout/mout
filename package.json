@@ -1,16 +1,16 @@
 {
   "name": "mout",
   "description": "Modular Utilities",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "http://moutjs.com/",
   "contributors": [
     "Adam Nowotny",
     "André Cruz",
     "Conrad Zimmerman (http://www.conradz.com)",
+    "Friedemann Altrock <frodenius@gmail.com>",
     "Jarrod Overson (http://jarrodoverson.com)",
     "Miller Medeiros <contact@millermedeiros.com> (http://blog.millermedeiros.com)",
-    "Zach Shipley",
-    "Friedemann Altrock <frodenius@gmail.com>"
+    "Zach Shipley"
   ],
   "keywords": [
     "utilities",
