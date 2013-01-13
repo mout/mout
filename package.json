@@ -5,7 +5,7 @@
   "homepage": "http://moutjs.com/",
   "contributors": [
     "Adam Nowotny",
-    "André Cruz",
+    "André Cruz <amdfcruz@gmail.com>",
     "Conrad Zimmerman (http://www.conradz.com)",
     "Friedemann Altrock <frodenius@gmail.com>",
     "Jarrod Overson (http://jarrodoverson.com)",
@@ -15,7 +15,7 @@
   "keywords": [
     "utilities",
     "functional",
-    "amd-utils",
+    "mout",
     "stdlib"
   ],
   "repository": {
