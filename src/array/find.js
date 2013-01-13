@@ -2,7 +2,6 @@ define(['./some'], function (some) {
 
     /**
      * Returns first item that matches criteria
-     * @version 0.3.0 (2012/12/18)
      */
     function find(arr, iterator, thisObj){
         var needle,

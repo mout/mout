@@ -6,7 +6,6 @@ define(function () {
 
     /**
      * Gets the "kind" of value. (e.g. "String", "Number", etc)
-     * @version 0.1.0 (2011/10/31)
      */
     function kindOf(val) {
         if (val === null) {

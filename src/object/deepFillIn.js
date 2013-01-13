@@ -2,7 +2,6 @@ define(['./forOwn', '../lang/isPlainObject'], function (forOwn, isPlainObject) {
 
     /**
      * Deeply copy missing properties in the target from the defaults.
-     * @version 0.2.0 (2013/01/11)
      */
     function deepFillIn(target, defaults){
         var i = 0,

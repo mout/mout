@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Array.indexOf
-     * @version 0.5.0 (2012/12/18)
      */
     function indexOf(arr, item, fromIndex) {
         fromIndex = fromIndex || 0;

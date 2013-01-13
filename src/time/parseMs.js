@@ -2,7 +2,6 @@ define(['../math/countSteps'], function(countSteps){
 
     /**
      * Parse timestamp into an object.
-     * @version 0.1.0 (2011/12/08)
      */
     function parseMs(ms){
         return {

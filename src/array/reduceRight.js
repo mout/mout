@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Array reduceRight
-     * @version 0.5.0 (2012/12/18)
      */
     function reduceRight(arr, fn, initVal) {
         // check for args.length since initVal might be "undefined" see #gh-57

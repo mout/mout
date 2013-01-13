@@ -8,7 +8,6 @@ define(['./replaceAccents', './removeNonWord', './trim'], function(replaceAccent
      * @param {string} str
      * @param {string} [delimeter="-"]
      * @return {string}
-     * @version 0.2.0 (2012/08/17)
      */
     function slugify(str, delimeter){
         if (delimeter == null) {

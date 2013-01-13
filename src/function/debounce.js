@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Debounce callback execution
-     * @version 0.1.0 (2012/11/27)
      */
     function debounce(fn, threshold, isAsap){
         var timeout, result;

@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Converts number into currency format
-     * @version 0.4.0 (2012/01/09)
      */
     var currencyFormatter = {
 

@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Escape string into unicode sequences
-     * @version 0.1.0 (2012/12/19)
      */
     function escapeUnicode(str, shouldEscapePrintable){
         if (!str) return '';

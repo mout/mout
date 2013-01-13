@@ -1,7 +1,6 @@
 define(['./isKind'], function (isKind) {
 
     /**
-     * @version 0.2.0 (2011/12/05)
      */
     var isArgs = isKind(arguments, 'Arguments')?
             function(val){

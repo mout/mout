@@ -2,7 +2,6 @@ define(['./forEach'], function (forEach) {
 
     /**
      * Array reduce
-     * @version 0.3.0 (2012/07/26)
      */
     function reduce(arr, fn, initVal) {
         // check for args.length since initVal might be "undefined" see #gh-57

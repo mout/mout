@@ -5,7 +5,6 @@ define(['./replaceAccents', './removeNonWord', './upperCase', './lowerCase'], fu
     * @example camelCase('my --  awesome-text') -> 'myAwesomeText';
     * @param {string} str
     * @return {string}
-    * @version 0.2.0 (2011/08/09)
     */
     function camelCase(str){
         str = replaceAccents(str);

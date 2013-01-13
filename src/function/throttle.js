@@ -1,7 +1,6 @@
 define(['../time/now'], function (now) {
 
     /**
-     * @version 0.1.0 (2012/11/27)
      */
     function throttle(fn, delay){
         var context, timeout, result, args,

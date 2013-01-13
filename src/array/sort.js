@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Merge sort (http://en.wikipedia.org/wiki/Merge_sort)
-     * @version 0.1.0 (2012/05/23)
      */
     function mergeSort(arr, compareFn) {
         if (arr.length < 2) {

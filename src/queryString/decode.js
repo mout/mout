@@ -2,7 +2,6 @@ define(['../string/typecast', '../lang/isString'], function (typecast, isString)
 
     /**
      * Decode query string into an object of keys => vals.
-     * @version 0.3.0 (2012/09/26)
      */
     function decode(queryStr, shouldTypecast) {
         var queryArr = (queryStr || '').replace('?', '').split('&'),

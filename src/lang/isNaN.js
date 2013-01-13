@@ -2,7 +2,6 @@ define(['./isNumber'], function (isNumber) {
 
     /**
      * Check if value is NaN for realz
-     * @version 0.1.2 (2012/11/28)
      */
     function isNaN(val){
         // based on the fact that NaN !== NaN

@@ -6,7 +6,6 @@ define(['../object/mixIn'], function(mixIn){
      * @param {object} parent    Parent Object.
      * @param {object} [props] Object properties.
      * @return {object} Created object.
-     * @version 0.1.0 (2011/08/09)
      */
     function createObject(parent, props){
         function F(){}

@@ -6,7 +6,6 @@ define(function () {
     * @param {string} str
     * @param {string} prefix
     * @return {bool}
-    * @version 0.1.0 (2012/03/01)
     */
     function startsWith(str, prefix) {
         str = (str || '');

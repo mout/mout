@@ -2,7 +2,6 @@ define(function() {
 
     /**
      * Split array into a fixed number of segments.
-     * @version 0.1.0
      */
     function split(array, segments) {
         segments = segments || 2;

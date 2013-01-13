@@ -5,7 +5,6 @@ define(function () {
      * Math.random() directly so we can inject the pseudo-random number
      * generator if needed (ie. in case we need a seeded random or a better
      * algorithm than the native one)
-     * @version 0.1.0 (2012/11/29)
      */
     function random(){
         return random.get();

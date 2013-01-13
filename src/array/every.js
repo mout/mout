@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Array every
-     * @version 0.5.0 (2012/12/18)
      */
     function every(arr, callback, thisObj) {
         var result = true,

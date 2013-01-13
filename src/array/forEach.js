@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Array forEach
-     * @version 0.8.0 (2012/12/18)
      */
     function forEach(arr, callback, thisObj) {
         if (arr == null) {

@@ -3,7 +3,6 @@ define(['./unique', './filter', './some', './contains'], function (unique, filte
 
     /**
      * Return a new Array with elements that aren't present in the other Arrays.
-     * @version 0.1.0 (2011/01/12)
      */
     function difference(arr) {
         var arrs = Array.prototype.slice.call(arguments, 1),

@@ -2,7 +2,6 @@ define(['../object/forOwn', './kindOf', './isPlainObject'], function (forOwn, ki
 
     /**
      * Clone native types.
-     * @version 0.2.0 (2013/01/11)
      */
     function deepClone(val, instanceClone) {
         var result;

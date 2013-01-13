@@ -6,7 +6,6 @@ define(function () {
     * @param {string} str
     * @param {string} suffix
     * @return {bool}
-    * @version 0.1.0 (2012/03/01)
     */
     function endsWith(str, suffix) {
         str = (str || '');

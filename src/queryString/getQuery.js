@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Gets full query as string with all special chars decoded.
-     * @version 0.2.0 (2012/09/26)
      */
     function getQuery(url) {
         url = url.replace(/#.*/, ''); //removes hash (to avoid getting hash query)

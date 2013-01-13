@@ -4,7 +4,6 @@ define(['./kindOf'], function (kindOf) {
 
     /**
      * Convert array-like object into array
-     * @version 0.3.1 (2012/08/30)
      */
     function toArray(val){
         var ret = [],

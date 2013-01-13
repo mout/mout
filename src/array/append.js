@@ -3,7 +3,6 @@ define(function () {
     /**
      * Appends an array to the end of another.
      * The first array will be modified.
-     * @version 0.1.1 (2012/06/10)
      */
     function append(arr1, arr2) {
         var pad = arr1.length,

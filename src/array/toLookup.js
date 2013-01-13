@@ -7,7 +7,6 @@ define(['../lang/isFunction'], function (isFunction) {
      * the parameter and the result will be used for the key. If `key` is a
      * string it will use the property specified by `key` as the key for each
      * value.
-     * @version 0.1.0 (2012/08/02)
      */
     function toLookup(arr, key) {
         var result = {},

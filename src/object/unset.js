@@ -2,7 +2,6 @@ define(['./has'], function (has) {
 
     /**
      * Unset object property.
-     * @version 0.2.0 (2012/01/31)
      */
     function unset(obj, prop){
         if (has(obj, prop)) {

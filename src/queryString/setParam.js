@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Set query string parameter value
-     * @version 0.1.0 (2012/10/11)
      */
     function setParam(url, paramName, value){
         url = url || '';

@@ -2,7 +2,6 @@ define(['./forEach'], function(forEach) {
 
     /**
      * Array reject
-     * @version 0.1.0 (2012/09/04)
      */
     function reject(arr, callback, thisObj) {
         var results = [];

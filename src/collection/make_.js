@@ -2,7 +2,6 @@ define(function(){
 
     /**
      * internal method used to create other collection modules.
-     * @version 0.2.0 (2012/10/30)
      */
     function makeCollectionMethod(arrMethod, objMethod, defaultReturn) {
         return function(){

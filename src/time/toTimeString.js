@@ -6,7 +6,6 @@ define(['../math/countSteps', '../number/pad'], function(countSteps, pad){
 
     /**
      * Format timestamp into a time string.
-     * @version 0.3.0 (2012/08/08)
      */
     function toTimeString(ms){
         var h = ms < HOUR   ? 0 : countSteps(ms, HOUR),

@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Array lastIndexOf
-     * @version 0.4.0 (2012/12/18)
      */
     function lastIndexOf(arr, item, fromIndex) {
         var len = arr.length;

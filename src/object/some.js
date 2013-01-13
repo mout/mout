@@ -2,7 +2,6 @@ define(['./forOwn'], function(forOwn) {
 
     /**
      * Object some
-     * @version 0.2.0 (2012/11/16)
      */
     function some(obj, callback, thisObj) {
         var result = false;

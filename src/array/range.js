@@ -2,7 +2,6 @@ define(['../math/countSteps'], function (countSteps) {
 
     /**
      * Returns an Array of numbers inside range.
-     * @version 0.1.0 (2011/11/15)
      */
     function range(start, stop, step) {
         if (stop == null) {

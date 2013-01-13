@@ -6,7 +6,6 @@ define(['./forOwn'], function(forOwn){
     * @param {object} target    Target Object
     * @param {...object} objects    Objects to be combined (0...n objects).
     * @return {object} Target Object.
-    * @version 0.1.4 (2012/10/29)
     */
     function mixIn(target, objects){
         var i = 0,

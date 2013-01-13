@@ -3,7 +3,6 @@ define(function () {
     /**
      * Returns a function that composes multiple functions, passing results to
      * each other.
-     * @version 0.1.0 (2012/05/24)
      */
     function compose() {
         var fns = arguments;

@@ -3,7 +3,6 @@ define(['./forOwn', '../lang/isPlainObject'], function (forOwn, isPlainObject) {
     /**
      * Mixes objects into the target object, recursively mixing existing child
      * objects.
-     * @version 0.2.0 (2013/01/11)
      */
     function deepMixIn(target, objects) {
         var i = 0,

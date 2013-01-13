@@ -2,7 +2,6 @@ define(['../lang/isObject', '../object/values', '../array/map'], function (isObj
 
     /**
      * Map collection values, returns Array.
-     * @version 0.2.0 (2012/11/19)
      */
     function map(list, callback, thisObj) {
         // list.length to check array-like object, if not array-like

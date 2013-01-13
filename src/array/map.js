@@ -2,7 +2,6 @@ define(['./forEach'], function (forEach) {
 
     /**
      * Array map
-     * @version 0.5.0 (2012/11/19)
      */
     function map(arr, callback, thisObj) {
         var results = [];

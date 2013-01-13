@@ -2,7 +2,6 @@ define(function () {
 
     /**
      * Array some
-     * @version 0.5.0 (2012/12/18)
      */
     function some(arr, callback, thisObj) {
         var result = false,

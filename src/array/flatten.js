@@ -27,7 +27,6 @@ define(['../lang/isArray'], function (isArray) {
      * Recursively flattens an array.
      * A new array containing all the elements is returned.
      * If `shallow` is true, it will only flatten one level.
-     * @version 0.1.0 (2012/08/02)
      */
     function flatten(arr, shallow) {
         return flattenTo(arr, [], shallow ? 1 : -1);

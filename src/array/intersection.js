@@ -4,7 +4,6 @@ define(['./unique', './filter', './every', './contains'], function (unique, filt
     /**
      * Return a new Array with elements common to all Arrays.
      * - based on underscore.js implementation
-     * @version 0.1.0 (2011/01/12)
      */
     function intersection(arr) {
         var arrs = Array.prototype.slice.call(arguments, 1),

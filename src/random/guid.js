@@ -6,7 +6,6 @@ define(['./randHex', './choice'], function (randHex, choice) {
    * by default and sequences can be predicted in some cases. See the
    * "random/random" documentation for more info about it and how to replace
    * the default PRNG.
-   * @version 0.1.1 (2012/11/29)
    */
   function guid() {
     return (

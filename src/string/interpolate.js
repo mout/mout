@@ -4,7 +4,6 @@ define(function () {
 
     /**
      * String interpolation
-     * @version 0.1.0 (2012/03/05)
      */
     function interpolate(template, replacements, syntax){
         var replaceFn = function(match, prop){

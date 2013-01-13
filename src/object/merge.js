@@ -2,7 +2,6 @@ define(['./hasOwn', '../lang/deepClone', '../lang/isObject'], function (hasOwn, 
 
     /**
      * Deep merge objects.
-     * @version 0.2.0 (2012/07/13)
      */
     function merge() {
         var i = 1,

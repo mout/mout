@@ -6,7 +6,6 @@ define(function(){
     * @example stringUtils.replaceAccents('lõrêm ípsûm') -> 'lorem ipsum'
     * @param {string} str
     * @return {string} formated string
-    * @version 0.1.0 (2011/07/20)
     */
     function replaceAccents(str){
         str = str || '';

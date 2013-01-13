@@ -4,7 +4,6 @@ define(['./isNumber'], function (isNumber) {
 
     /**
      * Check if value is finite
-     * @version 0.1.2 (2012/12/09)
      */
     function isFinite(val){
         var is = false;
