@@ -4,6 +4,32 @@ Language Utilities. Easier inheritance, scope handling, type checks.
 
 
 
+## clone(val):*
+
+Clone native types like Object, Array, RegExp, Date and primitives.
+
+This method will not clone values that are referenced within `val`. It will
+only copy the value reference to the new value. If the value is not a plain
+object but is an object, it will return the value unchanged.
+
+### Example
+
+```js
+var a = { foo: 'bar' };
+var b = clone(a);
+console.log(a === b); // false
+console.log(a.foo === b.foo); // true
+
+var c = [1, 2, 3];
+var d = clone(b);
+console.log(c === d); // false
+console.log(c); // [1, 2, 3]
+```
+
+See: [`deepClone()`](#deepClone)
+
+
+
 ## createObject(parent, [props]):Object
 
 Create Object using prototypal inheritance and setting custom properties.
@@ -88,6 +114,8 @@ var f = { test: new Custom() };
 var g = deepClone(f, cloneCustom);
 g.test === f.test // false, since new Custom instance will be created
 ```
+
+See: [`clone()`](#clone)
 
 
 
