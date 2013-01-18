@@ -4,40 +4,6 @@ Language Utilities. Easier inheritance, scope handling, type checks.
 
 
 
-## deepClone(val, [instanceClone]):*
-
-Deep clone native types like Object, Array, RegExp, Date and primitives.
-
-The `instanceClone` function will be invoked to clone objects that are not
-"plain" objects (as defined by [`isPlainObject`](#isPlainObject)) if it is
-provided. If `instanceClone` is not specified, it will not attempt to clone
-non-plain objects, and will copy the object reference.
-
-### Example
-
-```js
-var a = {foo:'bar', obj: {a:1, b:2}};
-var b = deepClone(a); // {foo:'bar', obj: {a:1, b:2}}
-console.log( a === b ); // false
-console.log( a.obj === b.obj ); // false
-
-var c = [1, 2, [3, 4]];
-var d = deepClone(c); // [1, 2, [3, 4]]
-var e = c.concat(); // [1, 2, [3, 4]]
-
-console.log( c[2] === d[2] ); // false
-// concat doesn't do a deep clone, arrays are passed by reference
-console.log( e[2] === d[2] ); // true
-
-function Custom() { }
-function cloneCustom(x) { return new Custom(); }
-var f = { test: new Custom() };
-var g = deepClone(f, cloneCustom);
-g.test === f.test // false, since new Custom instance will be created
-```
-
-
-
 ## createObject(parent, [props]):Object
 
 Create Object using prototypal inheritance and setting custom properties.
@@ -87,6 +53,40 @@ var args = ['John', 'Doe'];
 // "similar" effect as calling `new Person("John", "Doe")`
 var john = ctorApply(Person, args);
 john.walk(); // "John is walking"
+```
+
+
+
+## deepClone(val, [instanceClone]):*
+
+Deep clone native types like Object, Array, RegExp, Date and primitives.
+
+The `instanceClone` function will be invoked to clone objects that are not
+"plain" objects (as defined by [`isPlainObject`](#isPlainObject)) if it is
+provided. If `instanceClone` is not specified, it will not attempt to clone
+non-plain objects, and will copy the object reference.
+
+### Example
+
+```js
+var a = {foo:'bar', obj: {a:1, b:2}};
+var b = deepClone(a); // {foo:'bar', obj: {a:1, b:2}}
+console.log( a === b ); // false
+console.log( a.obj === b.obj ); // false
+
+var c = [1, 2, [3, 4]];
+var d = deepClone(c); // [1, 2, [3, 4]]
+var e = c.concat(); // [1, 2, [3, 4]]
+
+console.log( c[2] === d[2] ); // false
+// concat doesn't do a deep clone, arrays are passed by reference
+console.log( e[2] === d[2] ); // true
+
+function Custom() { }
+function cloneCustom(x) { return new Custom(); }
+var f = { test: new Custom() };
+var g = deepClone(f, cloneCustom);
+g.test === f.test // false, since new Custom instance will be created
 ```
 
 
