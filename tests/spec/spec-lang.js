@@ -1,6 +1,7 @@
 //automatically generated, do not edit!
 //run `node build` instead
 define([
+    'lang/spec-clone',
     'lang/spec-createObject',
     'lang/spec-ctorApply',
     'lang/spec-deepClone',

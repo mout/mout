@@ -1,27 +1,17 @@
-define(['../object/forOwn', './kindOf', './isPlainObject'], function (forOwn, kindOf, isPlainObject) {
+define(['./clone', '../object/forOwn', './kindOf', './isPlainObject'], function (clone, forOwn, kindOf, isPlainObject) {
 
     /**
-     * Clone native types.
+     * Recursively clone native types.
      */
     function deepClone(val, instanceClone) {
-        var result;
         switch ( kindOf(val) ) {
             case 'Object':
-                result = cloneObject(val, instanceClone);
-                break;
+                return cloneObject(val, instanceClone);
             case 'Array':
-                result = cloneArray(val, instanceClone);
-                break;
-            case 'RegExp':
-                result = cloneRegExp(val);
-                break;
-            case 'Date':
-                result = cloneDate(val);
-                break;
+                return cloneArray(val, instanceClone);
             default:
-                result = val;
+                return clone(val);
         }
-        return result;
     }
 
     function cloneObject(source, instanceClone) {
@@ -36,18 +26,6 @@ define(['../object/forOwn', './kindOf', './isPlainObject'], function (forOwn, ki
         } else {
             return source;
         }
-    }
-
-    function cloneRegExp(r) {
-        var flags = '';
-        flags += r.multiline? 'm' : '';
-        flags += r.global? 'g' : '';
-        flags += r.ignoreCase? 'i' : '';
-        return new RegExp(r.source, flags);
-    }
-
-    function cloneDate(date) {
-        return new Date( date.getTime() );
     }
 
     function cloneArray(arr, instanceClone) {
