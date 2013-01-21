@@ -1,6 +1,13 @@
 mout changelog
 ==============
 
+Next
+----
+
+ - add `lang/clone`.
+ - rename `function/curry` to `function/partial`.
+
+
 v0.2.0
 ------
 
