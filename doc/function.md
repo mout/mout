@@ -14,7 +14,7 @@ Return a function that will execute in the given context, optionally adding any 
  2. `context` (Object) : Execution context (object used as `this`)
  3. `[...args]` (*)    : Arguments (0...n arguments)
 
-See: [`curry()`](#curry)
+See: [`partial()`](#partial)
 
 
 
@@ -33,28 +33,6 @@ map([1, 2, 3], compose(add2, multi2)); // [4, 6, 8]
 map([1, 2, 3], function(x){
     return add2( multi2(x) );
 });
-```
-
-
-
-## curry(fn, [...args]):Function
-
-Return a partially applied function supplying default arguments.
-
-This method is similar to [`bind`](#bind), except it does not alter the this
-binding.
-
-### Arguments
-
- 1. `fn` (Function)    : Target Function
- 3. `[...args]` (*)    : Arguments (0...n arguments)
-
-See: [`bind()`](#bind)
-
-```js
-function add(a, b){ return a + b }
-var add10 = curry(add, 10);
-console.log( add10(2) ); // 12
 ```
 
 
@@ -99,6 +77,28 @@ See: [`prop()`](#prop)
 ```js
 // will call the method `getName()` for each `user`
 var names = map(users, func('getName'));
+```
+
+
+
+## partial(fn, [...args]):Function
+
+Return a partially applied function supplying default arguments.
+
+This method is similar to [`bind`](#bind), except it does not alter the this
+binding.
+
+### Arguments
+
+ 1. `fn` (Function)    : Target Function
+ 3. `[...args]` (*)    : Arguments (0...n arguments)
+
+See: [`bind()`](#bind)
+
+```js
+function add(a, b){ return a + b }
+var add10 = partial(add, 10);
+console.log( add10(2) ); // 12
 ```
 
 
