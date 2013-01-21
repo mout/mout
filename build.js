@@ -27,6 +27,11 @@ _cli
     .action( cmd(addModule) );
 
 _cli
+    .command('mv <moduleName> <newName>')
+    .description('rename module.')
+    .action( cmd(renameModule) );
+
+_cli
     .command('cjs <destinationPath>')
     .description('convert mout into a node.js compatible package.')
     .action( cmd(convert) );
@@ -84,6 +89,12 @@ function addModule(moduleName, templateName){
     var add = require('./_build/add');
     add.createSource(moduleName, templateName);
     add.createSpec(moduleName);
+}
+
+
+function renameModule(moduleName, newName){
+    var rename = require('./_build/rename');
+    rename.renameModule(moduleName, newName);
 }
 
 
