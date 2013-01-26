@@ -22,6 +22,7 @@ return {
     'removeNonASCII' : require('./string/removeNonASCII'),
     'removeNonWord' : require('./string/removeNonWord'),
     'repeat' : require('./string/repeat'),
+    'replace' : require('./string/replace'),
     'replaceAccents' : require('./string/replaceAccents'),
     'rpad' : require('./string/rpad'),
     'rtrim' : require('./string/rtrim'),
