@@ -311,6 +311,35 @@ replaceAccents('spéçïãl çhârs'); // "special chars"
 
 
 
+## replace(str, search, replacement[, caseInsensitive]):String
+
+Replaces `search` characters found in `str`, and replace them by `replacement`.
+If `caseInsesitive` is truthy, the a case insensitive search is made.
+
+### Example
+
+```js
+replace('hello world', 'eo', '$$'); // "h$$ll$$ w$$rld";
+replace('hello world', 'eo', ''); // "hll wrld";
+
+replace('hello world', ['e', 'o'], ['@', '#']); // "h@ll# w#rld";
+
+replace('hellO world', ['e', 'o'], ['@', '#'], true); // "h@llO w#rld";
+```
+
+If you want to replace series of characters, then you must use an
+search array.
+
+```js
+// search for 'l' or 'l' and replace by '@'
+replace('hello world', 'll', '@'); // "he@@o world";
+
+// search for 'll' and replace by '@'
+replace('hello world', ['ll'], '@'); // "he@o world";
+```
+
+
+
 ## rpad(str, minLength[, char]):String
 
 Pad string from right with `char` if its' length is smaller than `minLen`.
