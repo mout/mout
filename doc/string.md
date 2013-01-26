@@ -314,7 +314,7 @@ replaceAccents('spéçïãl çhârs'); // "special chars"
 ## replace(str, search, replacement[, caseInsensitive]):String
 
 Replaces `search` characters found in `str`, and replace them by `replacement`.
-If `caseInsesitive` is truthy, the a case insensitive search is made.
+If `caseInsesitive` is truthy, then a case insensitive search is made.
 
 ### Example
 
