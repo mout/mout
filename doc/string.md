@@ -327,12 +327,12 @@ replace('hello world', ['e', 'o'], ['@', '#']); // "h@ll# w#rld";
 replace('hellO world', ['e', 'o'], ['@', '#'], true); // "h@llO w#rld";
 ```
 
-If you want to replace series of characters, then you must use an
+If you want to replace series of characters, then you must use a
 search array.
 
 ```js
 // search for 'l' or 'l' and replace by '@'
-replace('hello world', 'll', '@'); // "he@@o world";
+replace('hello world', 'll', '@'); // "he@@o wor@d";
 
 // search for 'll' and replace by '@'
 replace('hello world', ['ll'], '@'); // "he@o world";
