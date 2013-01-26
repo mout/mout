@@ -2,8 +2,8 @@ define(function(){
     /**
      * "Safer" String.toLowerCase()
      */
-    function upperCase(str){
+    function lowerCase(str){
         return (str || '').toLowerCase();
     }
-    return upperCase;
+    return lowerCase;
 });
