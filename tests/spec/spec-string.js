@@ -20,6 +20,7 @@ define([
     'string/spec-removeNonASCII',
     'string/spec-removeNonWord',
     'string/spec-repeat',
+    'string/spec-replace',
     'string/spec-replaceAccents',
     'string/spec-rpad',
     'string/spec-rtrim',

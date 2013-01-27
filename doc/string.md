@@ -311,6 +311,29 @@ replaceAccents('spéçïãl çhârs'); // "special chars"
 
 
 
+## replace(str, search, replacement[, caseInsensitive]):String
+
+Finds `search` string in `str`, and replace them by `replacement`.
+If `caseInsesitive` is truthy, then a case insensitive search is made.
+
+### Example
+
+```js
+replace('hello world', 'el', '$$'); // "h$$lo world";
+replace('hello world', 'o w', ''); // "hellorld";
+replace('hello world', ['e', 'o'], '%'); // "h%ll% w%rld";
+
+replace('hello world', ['e', 'o'], ['@', '#']); // "h@ll# w#rld";
+
+replace('hellO world', ['e', 'o'], ['@', '#'], true); // "h@llO w#rld";
+
+// remove all vowels from string
+replace('Lorem Ipsum Dolor Sit Amet', ['a', 'e', 'i', 'o', 'u'], '', true); // "Lrm psm Dlr St mt";
+```
+
+
+
+
 ## rpad(str, minLength[, char]):String
 
 Pad string from right with `char` if its' length is smaller than `minLen`.
