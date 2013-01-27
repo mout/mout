@@ -1,4 +1,5 @@
 define(['../lang/isArray', '../lang/isString'], function (isArray, isString){
+    'use strict';
 
     function replaceFromArrayToArray(subject, search, replacement) {
         var replacementChars;
@@ -33,6 +34,8 @@ define(['../lang/isArray', '../lang/isString'], function (isArray, isString){
         if(isArray(search) && isArray(replacement)) {
             return replaceFromArrayToArray(subject, search, replacement);
         }
+
+        var charsBeeingSearched;
 
         if(isArray(search)) {
             charsBeeingSearched = search;
