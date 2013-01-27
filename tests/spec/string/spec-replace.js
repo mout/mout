@@ -58,15 +58,15 @@ define(['mout/string/replace'], function (replace) {
 
         it('should replace characters', function(){
             var subject = 'hello world';
-            var search = 'eo';
+            var search = 'el';
             var replacement = '';
-            var expected = 'hll wrld';
+            var expected = 'hlo world';
             expect( replace(subject, search, replacement) ).toEqual( expected );
 
             subject = 'hellO world';
-            search = 'eo';
+            search = 'lO ';
             replacement = '__';
-            expected = 'h__llO w__rld';
+            expected = 'hel__world';
             expect( replace(subject, search, replacement) ).toEqual( expected );
 
         });
@@ -108,10 +108,10 @@ define(['mout/string/replace'], function (replace) {
         });
 
         it('default behaviour should be case sensitive', function(){
-            var subject = 'helLo wOrld';
-            var search = 'LO';
+            var subject = 'Lo lo lO';
+            var search = 'Lo';
             var replacement = '###';
-            var expected = 'hel###o w###rld';
+            var expected = '### lo lO';
             expect( replace(subject, search, replacement) ).toEqual( expected );
             expect( replace(subject, search, replacement, false) ).toEqual( expected );
 

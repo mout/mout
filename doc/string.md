@@ -313,30 +313,24 @@ replaceAccents('spéçïãl çhârs'); // "special chars"
 
 ## replace(str, search, replacement[, caseInsensitive]):String
 
-Replaces `search` characters found in `str`, and replace them by `replacement`.
+Finds `search` string in `str`, and replace them by `replacement`.
 If `caseInsesitive` is truthy, then a case insensitive search is made.
 
 ### Example
 
 ```js
-replace('hello world', 'eo', '$$'); // "h$$ll$$ w$$rld";
-replace('hello world', 'eo', ''); // "hll wrld";
+replace('hello world', 'el', '$$'); // "h$$lo world";
+replace('hello world', 'o w', ''); // "hellorld";
+replace('hello world', ['e', 'o'], '%'); // "h%ll% w%rld";
 
 replace('hello world', ['e', 'o'], ['@', '#']); // "h@ll# w#rld";
 
 replace('hellO world', ['e', 'o'], ['@', '#'], true); // "h@llO w#rld";
+
+// remove all vowels from string
+replace('Lorem Ipsum Dolor Sit Amet', ['a', 'e', 'i', 'o', 'u'], '', true); // "Lrm psm Dlr St mt";
 ```
 
-If you want to replace series of characters, then you must use a
-search array.
-
-```js
-// search for 'l' or 'l' and replace by '@'
-replace('hello world', 'll', '@'); // "he@@o wor@d";
-
-// search for 'll' and replace by '@'
-replace('hello world', ['ll'], '@'); // "he@o world";
-```
 
 
 

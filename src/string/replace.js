@@ -16,10 +16,11 @@ define(['../lang/isArray', '../lang/isString'], function (isArray, isString){
     /**
     * Replace string characters.
     *
-    * @example replace('Hello World', 'eo', '$') -> 'H$ll$ W$rld';
+    * @example replace('Hello World', 'lo', '$') -> 'Hel$ World';
     * @example replace('Hello World', ['ell', 'r'], '@') -> 'H@o Wo@ld';
     * @example replace('Hello World', ['e', 'o'], ['o', 'e']) -> 'Holle Werld';
-    * @example replace('HellO World', 'O', 'i') -> 'Holli World';
+    * @example replace('HellO World', 'O', 'i') -> 'Helli World';
+    * @example replace('HellO World', 'O', 'i', true) -> 'Holli Wirld';
     * @param {string} subject
     * @param {string} search
     * @param {string} replacement
@@ -40,7 +41,7 @@ define(['../lang/isArray', '../lang/isString'], function (isArray, isString){
         if(isArray(search)) {
             charsBeeingSearched = search;
         } else if(isString(search)) {
-            charsBeeingSearched = search.split('');
+            charsBeeingSearched = [search];
         } else {
             return subject;
         }
