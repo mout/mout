@@ -5,19 +5,22 @@ define(['../lang/toArray'], function (toArray) {
      */
     function replace(str, search, replace) {
         search = toArray(search);
-        replace= toArray(replace);
+        replace = toArray(replace);
 
-        if (replace.length !== 1 && search.length !== replace.length) {
+        var searchLength = search.length,
+            replaceLength = replace.length;
+
+        if (replaceLength !== 1 && searchLength !== replace.length) {
             throw new Error('Unequal number of searches and replacements');
         }
 
         var i = -1;
-        while (++i < search.length) {
+        while (++i < searchLength) {
             // Use the first replacement for all searches if only one
             // replacement is provided
             str = str.replace(
                 search[i],
-                replace[(replace.length === 1) ? 0 : i]);
+                replace[(replaceLength === 1) ? 0 : i]);
         }
 
         return str;
