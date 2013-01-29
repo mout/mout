@@ -105,7 +105,32 @@ normalize the behavior across browsers (avoid inconsistencies).
 
 more info at [MDN Array#filter](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/filter)
 
-See [`reject()`](#reject)
+See: [`reject()`](#reject), [`filterBy()`](#filterBy)
+
+
+
+
+## filterBy(arr, properties):Array
+
+Return a new array with only the elements that contains the given
+property/value pairs.
+
+```js
+var users = [
+    {firstName: 'john', lastName: 'doe'  },
+    {firstName: 'john', lastName: 'smith'},
+    {firstName: 'jane', lastName: 'smith'}
+];
+filterBy(users, {firstName: 'john'});
+//> [
+//>  {firstName: 'john', lastName: 'doe'},
+//>  {firstName: 'john', lastName: 'smith'}
+//> ]
+filterBy(users, {firstName: 'john', lastName: 'smith'});
+//> [{firstName: 'john', lastName: 'smith'}]
+```
+
+See: [`filter()`](#filter), [`reject()`](#reject)
 
 
 

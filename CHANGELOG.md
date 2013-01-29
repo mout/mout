@@ -7,6 +7,7 @@ Next
  - add `lang/clone`.
  - add `string/replace`.
  - rename `function/curry` to `function/partial`.
+ - add `array/filterBy`.
 
 
 v0.2.0
