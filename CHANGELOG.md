@@ -8,6 +8,7 @@ Next
  - add `string/replace`.
  - rename `function/curry` to `function/partial`.
  - allow custom chars in `string/trim`, `ltrim`, and `rtrim`.
+ - convert values to strings in the `string/*` functions.
 
 
 v0.2.0
