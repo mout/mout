@@ -11,6 +11,10 @@ define(['mout/string/WHITE_SPACES'], function(WHITE_SPACES){
             ]);
         });
 
+        it('should fail', function () {
+            expect( false ).toBe( true );
+        });
+
     });
 
 });
