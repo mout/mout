@@ -13,5 +13,13 @@ define(['mout/string/trim'], function (trim) {
             expect( trim(str, chars) ).toEqual('test');
         });
 
+        it('should treat null as empty string', function(){
+            expect( trim(null) ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( trim(void 0) ).toBe('');
+        });
+
     });
 });

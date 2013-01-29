@@ -1,14 +1,10 @@
-define(function(){
+define(['../lang/toString'], function(toString){
     /**
     * Replaces all accented chars with regular ones
-    * - ported from Miller Medeiros AS3 StringUtils.replaceAccents
-    * - only covers Basic Latin and Latin-1 unicode chars.
-    * @example stringUtils.replaceAccents('lõrêm ípsûm') -> 'lorem ipsum'
-    * @param {string} str
-    * @return {string} formated string
     */
     function replaceAccents(str){
-        str = str || '';
+        str = toString(str);
+
         // verifies if the String has accents and replace them
         if (str.search(/[\xC0-\xFF]/g) > -1) {
             str = str

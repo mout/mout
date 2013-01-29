@@ -37,5 +37,14 @@ define(['mout/string/slugify'], function (slugify) {
             expect( slugify(str) ).toEqual('lorem-ipsum-dolor-special-chars');
         });
 
+        it('should treat null as empty string', function(){
+            expect( slugify(null) ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( slugify(void 0) ).toBe('');
+        });
+
     });
+
 });

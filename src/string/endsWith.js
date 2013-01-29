@@ -1,16 +1,13 @@
-define(function () {
+define(['../lang/toString'], function(toString) {
     /**
-    * Checks if string ends with specified suffix.
-    * @example endsWith('lorem ipsum', 'ipsum') -> true
-    * @example endsWith('lorem ipsum', 'lorem') -> false
-    * @param {string} str
-    * @param {string} suffix
-    * @return {bool}
-    */
+     * Checks if string ends with specified suffix.
+     */
     function endsWith(str, suffix) {
-        str = (str || '');
-        suffix = (suffix || '');
+        str = toString(str);
+        suffix = toString(suffix);
+
         return str.indexOf(suffix, str.length - suffix.length) !== -1;
     }
+
     return endsWith;
 });

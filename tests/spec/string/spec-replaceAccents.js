@@ -8,5 +8,14 @@ define(['mout/string/replaceAccents'], function (replaceAccents) {
             expect( replaceAccents(accents) ).toEqual( regular );
         });
 
+        it('should treat null as empty string', function(){
+            expect( replaceAccents(null) ).toEqual('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( replaceAccents(void 0) ).toEqual('');
+        });
+
     });
+
 });

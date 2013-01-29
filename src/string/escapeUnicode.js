@@ -1,10 +1,10 @@
-define(function () {
+define(['../lang/toString'], function(toString) {
 
     /**
      * Escape string into unicode sequences
      */
     function escapeUnicode(str, shouldEscapePrintable){
-        if (!str) return '';
+        str = toString(str);
         return str.replace(/[\s\S]/g, function(ch){
             // skip printable ASCII chars if we should not escape them
             if (!shouldEscapePrintable && (/[\x20-\x7E]/).test(ch)) {

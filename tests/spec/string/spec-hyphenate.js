@@ -32,5 +32,14 @@ define(['mout/string/hyphenate'], function (hyphenate) {
             expect( hyphenate(str) ).toEqual('lorem-ipsum-dolor-special-chars');
         });
 
+        it('should treat null as empty string', function(){
+            expect( hyphenate(null) ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( hyphenate(void 0) ).toBe('');
+        });
+
     });
+
 });

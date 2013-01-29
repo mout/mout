@@ -1,9 +1,10 @@
-define(function(){
+define(['../lang/toString'], function(toString){
     /**
      * "Safer" String.toUpperCase()
      */
     function upperCase(str){
-        return (str || '').toUpperCase();
+        str = toString(str);
+        return str.toUpperCase();
     }
     return upperCase;
 });

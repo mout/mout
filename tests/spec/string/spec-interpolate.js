@@ -37,6 +37,16 @@ define(['mout/string/interpolate'], function (interpolate) {
 
         });
 
+        it('should treat null as empty string', function(){
+            expect( interpolate('{{a}}', { a: null }) ).toBe('');
+            expect( interpolate(null, {}) ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( interpolate('{{a}}', { a: void 0 }) ).toBe('');
+            expect( interpolate(null, {}) ).toBe('');
+        });
+
     });
 
 });

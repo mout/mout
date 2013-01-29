@@ -11,6 +11,14 @@ define(['mout/string/repeat'], function (repeat) {
 
         });
 
+        it('should treat null as empty string', function(){
+            expect( repeat(null, 1) ).toEqual('');
+        });
+
+        it('should tread undefined as empty string', function(){
+            expect( repeat(void 0, 1) ).toEqual('');
+        });
+
     });
 
 });
