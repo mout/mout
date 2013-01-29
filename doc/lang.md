@@ -318,6 +318,16 @@ toArray({foo:"bar", lorem:123}); // [{foo:"bar", lorem:123}]
 See: object/values()
 
 
+
+## toString(val):String
+
+Convert any value to its string representation.
+
+Will return an empty string for `undefined` or `null`, otherwise will convert
+the value to its string representation.
+
+
+
 -------------------------------------------------------------------------------
 
 For more usage examples check specs inside `/tests` folder. Unit tests are the
