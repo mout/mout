@@ -5,6 +5,7 @@ Next
 ----
 
  - add `lang/clone`.
+ - add `string/replace`.
  - rename `function/curry` to `function/partial`.
 
 
