@@ -179,16 +179,20 @@ lpad('abc', 4, '-'); // "-abc"
 
 
 
-## ltrim(str):String
+## ltrim(str, [chars]):String
 
-Remove white-spaces from beginning of string.
+Remove chars or white-spaces from beginning of string.
+
+`chars` is an array of chars to remove from the beginning of the string. If
+`chars` is not specified, Unicode whitespace chars will be used instead.
 
 See: [`rtrim()`](#rtrim), [`trim()`](#trim)
 
 ### Example
 
 ```js
-ltrim('   lorem ipsum   ');  // "lorem ipsum   "
+ltrim('   lorem ipsum   ');      // "lorem ipsum   "
+ltrim('--lorem ipsum--', ['-']); // "lorem ipsum--"
 ```
 
 
@@ -349,16 +353,20 @@ rpad('abc', 4, '-'); // "abc-"
 
 
 
-## rtrim(str):String
+## rtrim(str, [chars]):String
 
-Remove white-spaces from end of string.
+Remove chars or white-spaces from end of string.
+
+`chars` is an array of chars to remove from the end of the string. If
+`chars` is not specified, Unicode whitespace chars will be used instead.
 
 See: [`trim()`](#trim), [`ltrim()`](#ltrim)
 
 ### Example
 
 ```js
-rtrim('   lorem ipsum   '); // "   lorem ipsum"
+rtrim('   lorem ipsum   ');      // "   lorem ipsum"
+rtrim('--lorem ipsum--', ['-']); // "--lorem ipsum"
 ```
 
 
@@ -423,16 +431,21 @@ slugify(str, '_'); // "loremipsum_dolor_special_chars"
 
 
 
-## trim(str):String
+## trim(str, [chars]):String
+ 
+Remove chars or white-spaces from beginning and end of string.
 
-Remove white-spaces from beginning and end of string.
+`chars` is an array of chars to remove from the beginning and end of the
+string. If `chars` is not specified, Unicode whitespace chars will be used
+instead.
 
 See: [`rtrim()`](#rtrim), [`ltrim()`](#ltrim)
 
 ### Example
 
 ```js
-trim('   lorem ipsum   '); // "lorem ipsum"
+trim('   lorem ipsum   ');             // "lorem ipsum"
+trim('-+-lorem ipsum-+-', ['-', '+']); // "lorem ipsum"
 ```
 
 
