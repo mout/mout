@@ -575,6 +575,15 @@ upperCase(null);           // ""
 upperCase(undefined);      // ""
 ```
 
+
+
+## WHITE_SPACES:Array
+
+Constant array of all [Unicode white-space
+characters](http://en.wikipedia.org/wiki/Whitespace_character).
+
+
+
 -------------------------------------------------------------------------------
 
 For more usage examples check specs inside `/tests` folder. Unit tests are the
