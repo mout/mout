@@ -297,6 +297,27 @@ repeat('a', 0);  // ""
 
 
 
+## replace(str, search, replace):String
+
+Replace string(s) with the replacement(s) in the source.
+
+`search` and `replace` can be an array, or a single item. For every item in
+`search`, it will call `str.replace` with the search item and the matching
+replacement in `replace`. If `replace` only contains one replacement, it will
+be used for all the searches, otherwise it will use the replacement at the same
+index as the search.
+
+### Example
+
+```js
+replace('foo bar', 'foo', 'test');                // "test bar"
+replace('test 1 2', ['1', '2'], 'n');             // "test n n"
+replace('test 1 2', ['1', '2'], ['one', 'two']);  // "test one two"
+replace('123abc', [/\d/g, /[a-z]/g], ['0', '.']); // "000..."
+```
+
+
+
 ## replaceAccents(str):String
 
 Replaces all accented chars with regular ones.
