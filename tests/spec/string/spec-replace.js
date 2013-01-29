@@ -22,6 +22,20 @@ define(['mout/string/replace'], function(replace){
             expect(result).toEqual('test n n');
         });
 
+        it('should replace with function replacer', function(){
+            function replaceNum(m) {
+                return (+m[0]) * (+m[0]);
+            }
+            function replaceLetter(m) {
+                return m[0].charCodeAt(0);
+            }
+
+            var result = replace('1 2 3 a', [/\d+/g, /[a-z]/g],
+                                 [replaceNum, replaceLetter]);
+
+            expect(result).toEqual('1 4 9 97');
+        });
+
     });
 
 });
