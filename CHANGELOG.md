@@ -5,6 +5,7 @@ Next
 ----
 
  - add `lang/clone`.
+ - add `lang/toString`.
  - add `string/replace`.
  - rename `function/curry` to `function/partial`.
  - allow custom chars in `string/trim`, `ltrim`, and `rtrim`.
