@@ -1,12 +1,32 @@
-define(function(){
+define(['./WHITE_SPACES'], function(WHITE_SPACES){
     /**
-    * Remove white-spaces from beginning of string.
-    * @example stringUtils.ltrim('   lorem ipsum   ') -> 'lorem ipsum   '
-    * @param {string} str
-    * @return {string}
-    */
-    function ltrim(str){
-        return (str || '').replace(/^\s+/g, '');
+     * Remove chars from beginning of string.
+     */
+    function ltrim(str, chars) {
+        chars = chars || WHITE_SPACES;
+
+        var start = 0,
+            len = str.length,
+            charLen = chars.length,
+            found = true,
+            i, c;
+
+        while (found && start < len) {
+            found = false;
+            i = -1;
+            c = str.charAt(start);
+
+            while (++i < charLen) {
+                if (c === chars[i]) {
+                    found = true;
+                    start++;
+                    break;
+                }
+            }
+        }
+
+        return (start >= len) ? '' : str.substr(start, len);
     }
+
     return ltrim;
 });

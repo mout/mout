@@ -1,12 +1,11 @@
-define(function(){
+define(['./WHITE_SPACES', './ltrim', './rtrim'], function(WHITE_SPACES, ltrim, rtrim){
     /**
-    * Remove white-spaces from beginning and end of string.
-    * @example trim('   lorem ipsum   ') -> 'lorem ipsum'
-    * @param {string} str
-    * @return {string}
-    */
-    function trim(str){
-        return (str || '').replace(/^\s+|\s+$/g, '');
+     * Remove white-spaces from beginning and end of string.
+     */
+    function trim(str, chars) {
+        chars = chars || WHITE_SPACES;
+        return ltrim(rtrim(str, chars), chars);
     }
+
     return trim;
 });

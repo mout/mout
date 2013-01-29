@@ -1,12 +1,31 @@
-define(function(){
+define(['./WHITE_SPACES'], function(WHITE_SPACES){
     /**
-    * Remove white-spaces from end of string.
-    * @example stringUtils.rtrim('   lorem ipsum   ') -> '   lorem ipsum'
-    * @param {string} str
-    * @return {string}
-    */
-    function rtrim(str){
-        return (str || '').replace(/\s+$/g, '');
+     * Remove chars from end of string.
+     */
+    function rtrim(str, chars) {
+        chars = chars || WHITE_SPACES;
+
+        var end = str.length - 1,
+            charLen = chars.length,
+            found = true,
+            i, c;
+
+        while (found && end >= 0) {
+            found = false;
+            i = -1;
+            c = str.charAt(end);
+
+            while (++i < charLen) {
+                if (c === chars[i]) {
+                    found = true;
+                    end--;
+                    break;
+                }
+            }
+        }
+
+        return (end >= 0) ? str.substring(0, end + 1) : '';
     }
+
     return rtrim;
 });
