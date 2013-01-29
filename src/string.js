@@ -3,6 +3,7 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
+    'WHITE_SPACES' : require('./string/WHITE_SPACES'),
     'camelCase' : require('./string/camelCase'),
     'contains' : require('./string/contains'),
     'crop' : require('./string/crop'),

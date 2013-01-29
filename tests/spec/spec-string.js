@@ -1,6 +1,7 @@
 //automatically generated, do not edit!
 //run `node build` instead
 define([
+    'string/spec-WHITE_SPACES',
     'string/spec-camelCase',
     'string/spec-contains',
     'string/spec-crop',
