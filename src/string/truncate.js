@@ -1,8 +1,9 @@
-define(['./trim'], function(trim){
+define(['../lang/toString', './trim'], function(toString, trim){
     /**
-    * Limit number of chars.
-    */
+     * Limit number of chars.
+     */
     function truncate(str, maxChars, append, onlyFullWords){
+        str = toString(str);
         append = append || '...';
         maxChars = onlyFullWords? maxChars + 1 : maxChars;
 

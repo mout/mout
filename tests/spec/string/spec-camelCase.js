@@ -27,5 +27,13 @@ define(['mout/string/camelCase'], function (camelCase) {
             expect( camelCase(str) ).toEqual('loremIpsumDolorSpecialChars');
         });
 
+        it('should treat null as empty string', function(){
+            expect( camelCase(null) ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( camelCase(void 0) ).toBe('');
+        });
+
     });
 });

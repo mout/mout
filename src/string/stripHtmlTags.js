@@ -1,12 +1,11 @@
-define(function(){
+define(['../lang/toString'], function(toString){
     /**
-    * Remove HTML tags from string.
-    * @example stripHtmlTags('<p><em>lorem</em> <strong>ipsum</strong></p>') -> 'lorem ipsum'
-    * @param {string} str
-    * @return {string}
-    */
+     * Remove HTML tags from string.
+     */
     function stripHtmlTags(str){
-        return (str || '').replace(/<[^>]*>/g, '');
+        str = toString(str);
+
+        return str.replace(/<[^>]*>/g, '');
     }
     return stripHtmlTags;
 });

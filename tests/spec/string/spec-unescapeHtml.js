@@ -11,8 +11,15 @@ define(['mout/string/unescapeHtml'], function (unescapeHtml) {
             expect( unescapeHtml() ).toBe( '' );
         });
 
-    });
+        it('should treat null as empty string', function(){
+            expect( unescapeHtml(null) ).toBe('');
+        });
 
+        it('should treat undefined as empty string', function(){
+            expect( unescapeHtml(void 0) ).toBe('');
+        });
+
+    });
 
 });
 

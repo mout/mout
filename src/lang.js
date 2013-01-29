@@ -26,7 +26,8 @@ return {
     'isString' : require('./lang/isString'),
     'isUndefined' : require('./lang/isUndefined'),
     'kindOf' : require('./lang/kindOf'),
-    'toArray' : require('./lang/toArray')
+    'toArray' : require('./lang/toArray'),
+    'toString' : require('./lang/toString')
 };
 
 });

@@ -1,15 +1,13 @@
-define(function () {
+define(['../lang/toString'], function(toString) {
 
-    var _rEscapeChars;
+    var ESCAPE_CHARS = /[\\.+*?\^$\[\](){}\/'#]/g;
 
     /**
      * Escape RegExp string chars.
      */
     function escapeRegExp(str) {
-        if (! _rEscapeChars) {
-            _rEscapeChars = /[\\.+*?\^$\[\](){}\/'#]/g;
-        }
-        return str.replace(_rEscapeChars,'\\$&');
+        str = toString(str);
+        return str.replace(ESCAPE_CHARS,'\\$&');
     }
 
     return escapeRegExp;

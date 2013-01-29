@@ -38,5 +38,14 @@ define(['mout/string/truncate'], function (truncate) {
             expect( r2 ).toEqual( 'lorem ipsum...' );
         });
 
+        it('should treat null as empty string', function(){
+            expect( truncate(null, 1) ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( truncate(void 0, 1) ).toBe('');
+        });
+
     });
+
 });

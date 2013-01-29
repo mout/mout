@@ -15,13 +15,20 @@ define(['mout/string/contains'], function (contains) {
             expect( contains('lorem ipsum', 'bar') ).toEqual( false );
         });
 
-        it('should throw error if passing something that isn\'t a string', function () {
-            expect( function(){ contains(null, 'a'); } ).toThrow();
-        });
-
         it('should work with empty strings', function () {
             expect( contains('', '') ).toEqual( true );
             expect( contains('foo', '') ).toEqual( true );
+        });
+
+        it('should treat null as empty string', function () {
+            expect( contains(null, 'a') ).toEqual(false);
+            expect( contains(null, '') ).toEqual(true);
+            expect( contains('', null) ).toEqual(true);
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( contains(void 0, '') ).toEqual(true);
+            expect( contains('a', void 0) ).toEqual(true);
         });
 
     });

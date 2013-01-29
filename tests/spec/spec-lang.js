@@ -24,7 +24,8 @@ define([
     'lang/spec-isString',
     'lang/spec-isUndefined',
     'lang/spec-kindOf',
-    'lang/spec-toArray'
+    'lang/spec-toArray',
+    'lang/spec-toString'
 ], function(){
     //noop
 });

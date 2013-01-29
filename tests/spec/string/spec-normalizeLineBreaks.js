@@ -42,6 +42,14 @@ define(['mout/string/normalizeLineBreaks'], function (normalizeLineBreaks) {
 
         });
 
+        it('should treat null as empty string', function(){
+            expect( normalizeLineBreaks(null) ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( normalizeLineBreaks(void 0) ).toBe('');
+        });
+
     });
 
 });

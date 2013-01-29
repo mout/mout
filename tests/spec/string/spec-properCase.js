@@ -6,6 +6,14 @@ define(['mout/string/properCase'], function (properCase) {
             expect( properCase('lorem iPSum dolor') ).toEqual('Lorem Ipsum Dolor');
         });
 
+        it('should treat null as empty string', function(){
+            expect( properCase(null) ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( properCase(void 0) ).toBe('');
+        });
+
     });
 
 });

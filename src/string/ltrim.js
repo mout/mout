@@ -1,8 +1,9 @@
-define(['./WHITE_SPACES'], function(WHITE_SPACES){
+define(['../lang/toString', './WHITE_SPACES'], function(toString, WHITE_SPACES){
     /**
      * Remove chars from beginning of string.
      */
     function ltrim(str, chars) {
+        str = toString(str);
         chars = chars || WHITE_SPACES;
 
         var start = 0,
