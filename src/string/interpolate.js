@@ -1,4 +1,4 @@
-define(function () {
+define(['../lang/toString'], function(toString) {
 
     var stache = /\{\{(\w+)\}\}/g; //mustache-like
 
@@ -6,8 +6,9 @@ define(function () {
      * String interpolation
      */
     function interpolate(template, replacements, syntax){
+        template = toString(template);
         var replaceFn = function(match, prop){
-            return (prop in replacements)? replacements[prop] : '';
+            return (prop in replacements)? toString(replacements[prop]) : '';
         };
         return template.replace(syntax || stache, replaceFn);
     }

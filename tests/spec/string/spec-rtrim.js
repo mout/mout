@@ -13,5 +13,14 @@ define(['mout/string/rtrim'], function (rtrim) {
             expect( rtrim(str, chars) ).toEqual('-+-*test');
         });
 
+        it('should treat null as empty string', function(){
+            expect( rtrim(null) ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( rtrim(void 0) ).toBe('');
+        })
+
     });
+
 });

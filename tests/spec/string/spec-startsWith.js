@@ -10,22 +10,19 @@ define(['mout/string/startsWith'], function (startsWith) {
             expect( startsWith('lorem-ipsum', 'ipsum')).toBeFalsy();
         });
 
+        it('should return true if prefix is empty', function(){
+            expect( startsWith('', '') ).toBeTruthy();
+            expect( startsWith('lorem', '') ).toBeTruthy();
+        });
+
         it('should treat undefined as empty string', function () {
-            var str;
-            expect( startsWith(str, 'ipsum') ).toBeFalsy();
+            expect( startsWith(void 0, 'ipsum') ).toBeFalsy();
+            expect( startsWith('lorem', void 0) ).toBeTruthy();
         });
 
         it('should treat null as empty string', function(){
             expect( startsWith(null, '') ).toBeTruthy();
-        });
-
-        it('should return true if prefix undefined', function(){
-            var prefix;
-            expect( startsWith('lorem-ipsum', prefix) ).toBeTruthy();
-        });
-
-        it('should return true if prefix null', function () {
-            expect( startsWith('lorem-ipsum', null) ).toBeTruthy();
+            expect( startsWith('lorem', null) ).toBeTruthy();
         });
 
     });

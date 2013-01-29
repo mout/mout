@@ -1,4 +1,5 @@
 define(['mout/string/underscore'], function(underscore) {
+
     describe('string/underscore()', function(){
 
         it('should split camelCase text', function(){
@@ -31,6 +32,15 @@ define(['mout/string/underscore'], function(underscore) {
             expect( underscore(str) ).toEqual('lorem_ipsum_dolor_special_chars');
         });
 
+        it('should treat null as empty string', function(){
+            expect( underscore(null) ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( underscore(void 0) ).toBe('');
+        });
+
     });
+
 });
 

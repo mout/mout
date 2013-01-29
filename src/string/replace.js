@@ -1,9 +1,10 @@
-define(['../lang/toArray'], function (toArray) {
+define(['../lang/toString', '../lang/toArray'], function (toString, toArray) {
 
     /**
      * Replace string(s) with the replacement(s) in the source.
      */
     function replace(str, search, replace) {
+        str = toString(str);
         search = toArray(search);
         replace = toArray(replace);
 

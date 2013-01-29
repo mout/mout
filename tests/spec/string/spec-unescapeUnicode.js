@@ -12,8 +12,15 @@ define(['mout/string/unescapeUnicode'], function(unescapeUnicode){
 
         it('should work with empty strings and null', function () {
             expect( unescapeUnicode('') ).toBe('');
-            expect( unescapeUnicode(null) ).toBe('');
             expect( unescapeUnicode() ).toBe('');
+        });
+
+        it('should treat null as empty string', function(){
+            expect( unescapeUnicode(null) ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( unescapeUnicode(void 0) ).toBe('');
         });
 
         it('should work with escaped printable ASCII chars as well', function () {

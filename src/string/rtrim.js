@@ -1,8 +1,9 @@
-define(['./WHITE_SPACES'], function(WHITE_SPACES){
+define(['../lang/toString', './WHITE_SPACES'], function(toString, WHITE_SPACES){
     /**
      * Remove chars from end of string.
      */
     function rtrim(str, chars) {
+        str = toString(str);
         chars = chars || WHITE_SPACES;
 
         var end = str.length - 1,

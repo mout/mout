@@ -13,5 +13,14 @@ define(['mout/string/ltrim'], function (ltrim) {
             expect( ltrim(str, chars) ).toEqual('test*-+-');
         });
 
+        it('should treat null as empty string', function(){
+            expect( ltrim(null) ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( ltrim(void 0) ).toBe('');
+        });
+
     });
+
 });

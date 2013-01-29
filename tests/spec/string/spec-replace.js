@@ -36,6 +36,14 @@ define(['mout/string/replace'], function(replace){
             expect(result).toEqual('1 4 9 97');
         });
 
+        it('should treat null as empty string', function(){
+            expect( replace(null, 'a', 'b') ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( replace(void 0, 'a', 'b') ).toBe('');
+        });
+
     });
 
 });

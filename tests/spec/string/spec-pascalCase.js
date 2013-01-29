@@ -27,5 +27,14 @@ define(['mout/string/pascalCase'], function (pascalCase) {
             expect( pascalCase(str) ).toEqual('LoremIpsumDolorSpecialChars');
         });
 
+        it('should treat null as empty string', function(){
+            expect( pascalCase(null) ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( pascalCase(void 0) ).toBe('');
+        });
+
     });
+
 });

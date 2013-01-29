@@ -7,5 +7,14 @@ define(['mout/string/unCamelCase'], function (unCamelCase) {
            expect( unCamelCase('lorem IpsumDolor') ).toEqual('lorem ipsum dolor');
         });
 
+        it('should treat null as empty string', function(){
+            expect( unCamelCase(null) ).toBe('');
+        });
+
+        it('should treat undefined as empty string', function(){
+            expect( unCamelCase(void 0) ).toBe('');
+        });
+
     });
+
 });

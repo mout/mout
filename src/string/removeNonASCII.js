@@ -1,11 +1,14 @@
-define(function(){
+define(['../lang/toString'], function(toString){
     /**
-    * Remove non-printable ASCII chars
-    * @param {string} str
-    * @return {string}
-    */
+     * Remove non-printable ASCII chars
+     */
     function removeNonASCII(str){
-        return (str || '').replace(/[^\x20-\x7E]/g, ''); //matches non-printable ASCII chars - http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters
+        str = toString(str);
+
+        // Matches non-printable ASCII chars -
+        // http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters
+        return str.replace(/[^\x20-\x7E]/g, '');
     }
+
     return removeNonASCII;
 });
