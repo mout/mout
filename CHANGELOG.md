@@ -1,12 +1,13 @@
 mout changelog
 ==============
 
-Next
-----
+v0.3.0
+------
 
  - add `lang/clone`.
  - add `lang/toString`.
  - add `string/replace`.
+ - add `string/WHITE_SPACES`
  - rename `function/curry` to `function/partial`.
  - allow custom chars in `string/trim`, `ltrim`, and `rtrim`.
  - convert values to strings in the `string/*` functions.
