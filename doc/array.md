@@ -109,7 +109,7 @@ See [`reject()`](#reject)
 
 
 
-## find(arr, callback, [thisObj]):void
+## find(arr, callback, [thisObj]):*
 
 Loops through all the items in the Array and returns the first one that passes
 a truth test (callback).
@@ -118,6 +118,28 @@ a truth test (callback).
     find(arr, isString); // "foo"
     find(arr, isNumber); // 123
     find(arr, isObject); // {a:'b'}
+
+See: [`findBy()`](#findBy)
+
+
+
+## findBy(arr, properties):*
+
+Loops through all the items in the Array and returns the first one that
+contains all given values.
+
+
+    var users = [
+        {firstName: 'john', lastName: 'doe'  },
+        {firstName: 'john', lastName: 'smith'},
+        {firstName: 'jane', lastName: 'smith'}
+    ];
+    findBy(users, {firstName: 'john'});
+    //> {firstName: 'john', lastName: 'doe'}
+    findBy(users, {firstName: 'john', lastName: 'smith'});
+    //> {firstName: 'john', lastName: 'smith'}
+
+See: [`find()`](#find)
 
 
 

@@ -9,6 +9,7 @@ define([
     'array/spec-every',
     'array/spec-filter',
     'array/spec-find',
+    'array/spec-findBy',
     'array/spec-flatten',
     'array/spec-forEach',
     'array/spec-indexOf',
