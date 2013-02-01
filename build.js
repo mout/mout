@@ -36,6 +36,11 @@ _cli
     .description('convert mout into a node.js compatible package.')
     .action( cmd(convert) );
 
+_cli
+    .command('release <version>')
+    .description('bump version number, update packages and run tests')
+    .action( cmd(release) );
+
 
 _cli.parse(process.argv);
 
@@ -106,5 +111,35 @@ function convert(destinationPath){
         _helpers.echoList(results);
         _helpers.echo('Finished node.js conversion');
     });
+}
+
+
+function release(version){
+    if (! version) throw new Error('version is a required argument');
+
+    version = String(version).replace(/[^\d\.]/g, '');
+
+    updateJsonVersion('./package.json', version);
+    updateJsonVersion('./component.json', version);
+
+    _helpers.shellSeries([
+        'npm test --coverage',
+        'git add -A',
+        'git commit --verbose',
+        'git tag v'+ version
+    ], function(err){
+        if (err) {
+            console.log(err.toString());
+            process.exit(1);
+        }
+    });
+}
+
+
+function updateJsonVersion(path, version) {
+    var target = require(path);
+    var fs = require('fs');
+    target.version = version;
+    fs.writeFileSync(path, JSON.stringify(target, null, '  '), _config.ENCODING);
 }
 
