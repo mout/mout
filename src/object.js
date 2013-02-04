@@ -6,6 +6,7 @@ return {
     'contains' : require('./object/contains'),
     'deepFillIn' : require('./object/deepFillIn'),
     'deepMixIn' : require('./object/deepMixIn'),
+    'equals' : require('./object/equals'),
     'every' : require('./object/every'),
     'fillIn' : require('./object/fillIn'),
     'filter' : require('./object/filter'),

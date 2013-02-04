@@ -73,6 +73,26 @@ See: [`mixIn()`](#mixIn), [`merge()`](#merge), [`deepFillIn()`](#deepFillIn)
 
 
 
+## equals(a, b):Boolean
+
+Tests whether the objects contain the same properties and values.
+
+If `a` or `b` is not an object, it will compare with a strict equals. When `a`
+and `b` are both objects, it will test whether each object contains the same
+properties and equal property values.
+
+```js
+equals({}, {}); // true
+equals({ a: 1 }, { a: 1 }); // true
+equals({ a: 1 }, { a: 2 }); // false
+equals({ a: 1, b: 2 }, { a: 1 }); // false
+equals({ a: 1 }, { a: 1, b: 2 }); // false
+equals(null, null); // true
+equals(null, {}); // false
+```
+
+
+
 ## every(obj, callback, [thisObj]):Boolean
 
 Similar to [Array/every](array.html#every). Tests whether all properties in the
