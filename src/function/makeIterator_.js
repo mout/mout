@@ -5,7 +5,7 @@ define(['./prop', '../object/matches'], function(prop, matches) {
      * Used internally on most array/object/collection methods that receives a
      * callback/iterator providing a shortcut syntax.
      */
-    function shorthandIterator(src){
+    function makeIterator(src){
         switch(typeof src) {
             case 'object':
                 // typeof null == "object"
@@ -20,6 +20,6 @@ define(['./prop', '../object/matches'], function(prop, matches) {
         }
     }
 
-    return shorthandIterator;
+    return makeIterator;
 
 });

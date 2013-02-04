@@ -7,10 +7,10 @@ return {
     'compose' : require('./function/compose'),
     'debounce' : require('./function/debounce'),
     'func' : require('./function/func'),
+    'makeIterator_' : require('./function/makeIterator_'),
     'partial' : require('./function/partial'),
     'prop' : require('./function/prop'),
     'series' : require('./function/series'),
-    'shorthandIterator_' : require('./function/shorthandIterator_'),
     'throttle' : require('./function/throttle')
 };
 

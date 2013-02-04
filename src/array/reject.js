@@ -1,10 +1,10 @@
-define(['./forEach', '../function/shorthandIterator_'], function(forEach, shorthandIterator) {
+define(['./forEach', '../function/makeIterator_'], function(forEach, makeIterator) {
 
     /**
      * Array reject
      */
     function reject(arr, callback, thisObj) {
-        callback = shorthandIterator(callback);
+        callback = makeIterator(callback);
         var results = [];
         forEach(arr, function(val, i, arr) {
             if (!callback.call(thisObj, val, i, arr)) {

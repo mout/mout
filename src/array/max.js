@@ -1,4 +1,4 @@
-define(['./forEach', '../function/shorthandIterator_'], function (forEach, shorthandIterator) {
+define(['./forEach', '../function/makeIterator_'], function (forEach, makeIterator) {
 
     /**
      * Return maximum value inside array
@@ -9,7 +9,7 @@ define(['./forEach', '../function/shorthandIterator_'], function (forEach, short
         } else if (!arr.length) {
             return Infinity;
         } else {
-            iterator = shorthandIterator(iterator);
+            iterator = makeIterator(iterator);
             var result,
                 compare = -Infinity,
                 tmp;

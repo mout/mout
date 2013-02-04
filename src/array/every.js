@@ -1,10 +1,10 @@
-define(['../function/shorthandIterator_'], function (shorthandIterator) {
+define(['../function/makeIterator_'], function (makeIterator) {
 
     /**
      * Array every
      */
     function every(arr, callback, thisObj) {
-        callback = shorthandIterator(callback);
+        callback = makeIterator(callback);
         var result = true,
             i = -1,
             n = arr.length;
