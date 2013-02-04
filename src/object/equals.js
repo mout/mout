@@ -1,4 +1,12 @@
-define(['./every', './forOwn', '../lang/isObject'], function(every, forOwn, isObject) {
+define(['./hasOwn', './every', '../lang/isObject'], function(hasOwn, every, isObject) {
+
+    function compareValues(value, key) {
+        return hasOwn(this, key) && this[key] === value;
+    }
+
+    function checkProperties(value, key) {
+        return hasOwn(this, key);
+    }
 
     /**
      * Checks if two objects have the same keys and values.
@@ -17,24 +25,7 @@ define(['./every', './forOwn', '../lang/isObject'], function(every, forOwn, isOb
             return false;
         }
 
-        var size = 0;
-        var result = true;
-        forOwn(a, function(value, key) {
-            size++;
-            if (b[key] !== value) {
-                return (result = false);
-            }
-        });
-
-        if (!result) {
-            return false;
-        }
-
-        forOwn(b, function() {
-            return --size >= 0;
-        });
-
-        return size === 0;
+        return every(a, compareValues, b) && every(b, checkProperties, a);
     }
 
     return equals;

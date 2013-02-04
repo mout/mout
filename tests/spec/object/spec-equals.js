@@ -51,6 +51,19 @@ define(['mout/object/equals'], function(equals){
             expect( equals(new A(), new A()) ).toBe(true);
         });
 
+        it('should not use prototype properties', function() {
+            function Test() { }
+            Test.prototype.test = true;
+
+            var a = new Test();
+            var b = new Test();
+            a.test = true;
+            expect( equals(a, b) ).toBe(false);
+
+            b.isB = true;
+            expect( equals(a, b) ).toBe(false);
+        });
+
     });
 
 });
