@@ -1,9 +1,10 @@
-define(['./some'], function (some) {
+define(['./some', '../function/makeIterator_'], function (some, makeIterator) {
 
     /**
      * Returns first item that matches criteria
      */
     function find(arr, iterator, thisObj){
+        iterator = makeIterator(iterator);
         var needle,
             i = -1, n = arr.length,
             val;

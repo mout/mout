@@ -26,6 +26,14 @@ define(['mout/array/min'], function (min) {
 
         });
 
+
+        it('should allow shorthand string iterator', function () {
+            var arr = [{a:1,b:3}, {a:4,b:1}, {a:2,b:8}];
+            expect( min(arr, 'a') ).toBe( arr[0] );
+            expect( min(arr, 'b') ).toBe( arr[1] );
+        });
+
+
     });
 
 });

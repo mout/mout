@@ -90,7 +90,26 @@ Tests whether all elements in the array pass the test implemented by the provide
 It differs from ES5 since it will also loop over sparse items in the array to
 normalize the behavior across browsers (avoid inconsistencies).
 
+```js
+var items = [1, 'foo', 'bar'];
+every(items, isString);   // false
+every(items, isFunction); // false
+every(items, function(val, key, arr){
+    return val != null;
+}); // true
+```
+
 more info at [MDN Array#every](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/every)
+
+It also supports a shorthand syntax:
+
+```js
+var items = [{id:1, active:true}, {id:3, active:true}, {id:8, active:true}];
+// all items with `id === 8`
+every(items, {id:8}); // false
+// `active` is truthy on all items
+every(items, 'active'); // true
+```
 
 
 
@@ -103,7 +122,31 @@ Creates a new array with all elements that pass the callback test.
 It differs from ES5 since it will also loop over sparse items in the array to
 normalize the behavior across browsers (avoid inconsistencies).
 
+```js
+var nums = [1, 2, 3, 4, 5, 6];
+var oddNumbers = filter(nums, function(val, key, arr){
+    return (val % 2) !== 0;
+});
+// > [1, 3, 5]
+```
+
 more info at [MDN Array#filter](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/filter)
+
+Filter also supports shorthand notation:
+
+```js
+var users = [
+    {name:'john', surname:'connor', beard:false},
+    {name:'john', surname:'doe', beard:true},
+    {name:'jane', surname:'doe', beard:false}
+];
+// filter item that matches all properties/values pairs
+filter(arr, {name:'john', beard:false});
+// > [{name:'john', surnname:'connor', beard:false}]
+// items where 'beard' is a truthy value
+filter(arr, 'beard');
+// > [{name:'john', surnname:'doe', beard:true}]
+```
 
 See [`reject()`](#reject)
 
@@ -114,10 +157,25 @@ See [`reject()`](#reject)
 Loops through all the items in the Array and returns the first one that passes
 a truth test (callback).
 
-    var arr = [123, {a:'b'}, 'foo', 'bar'];
-    find(arr, isString); // "foo"
-    find(arr, isNumber); // 123
-    find(arr, isObject); // {a:'b'}
+```js
+var arr = [123, {a:'b'}, 'foo', 'bar'];
+find(arr, isString); // "foo"
+find(arr, isNumber); // 123
+find(arr, isObject); // {a:'b'}
+```
+
+Find also supports shorthand notation:
+
+```js
+var users = [
+    {name:'john', surname:'connor', beard:false},
+    {name:'john', surname:'doe', beard:true}
+];
+// first item that matches all properties/values pairs
+find(arr, {name:'john'}); // {name:'john', surnname:'connor', beard:false}
+// first item where 'beard' is a truthy value
+find(arr, 'beard'); // {name:'john', surnname:'doe', beard:true}
+```
 
 
 
@@ -144,6 +202,17 @@ It allows exiting the iteration early by returning `false` on the callback.
 
 It differs from ES5 since it will also loop over sparse items in the array to
 normalize the behavior across browsers (avoid inconsistencies).
+
+```js
+var items = ['foo', 'bar', 'lorem', 'ipsum'];
+forEach(items, function(val, key, arr){
+    console.log(key +' : '+ val);
+    if (val === 'lorem') {
+        // stop iteration (break)
+        return false;
+    }
+});
+```
 
 more info at [MDN Array#forEach](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/forEach)
 
@@ -236,7 +305,7 @@ more info at [MDN Array#lastIndexOf](https://developer.mozilla.org/en/JavaScript
 
 
 
-## map(arr, callback):Array
+## map(arr, callback, [thisObj]]):Array
 
 Crossbrowser `Array.map()`.
 
@@ -246,7 +315,24 @@ element in this array.
 It differs from ES5 since it will also loop over sparse items in the array to
 normalize the behavior across browsers (avoid inconsistencies).
 
+```js
+var nums = [1,2,3,4];
+var double = map(nums, function(val, key, arr){
+    return val * 2;
+});
+// > [2, 4, 6, 8]
+```
+
 more info at [MDN Array#map](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/map)
+
+It also supports a shorthand notation which can be used to achieve same result
+as [`array/pluck`](#pluck):
+
+```js
+var src = ['lorem', 'ipsum', 'foo', 'amet'];
+// grab the "length" property of all items
+var lengths = map(src, 'length'); // [5, 5, 3, 4]
+```
 
 
 
@@ -264,6 +350,12 @@ max(['foo', 'lorem', 'amet'], function(val){
 }); // 'lorem'
 ```
 
+It also supports a shorthand notation:
+
+```js
+max(['foo', 'lorem', 'amet'], 'length'); // "lorem"
+```
+
 
 
 ## min(arr[, iterator]):*
@@ -278,6 +370,12 @@ min([10, 2, 7]); // 2
 min(['foo', 'lorem', 'amet'], function(val){
     return val.length;
 }); // 'foo'
+```
+
+It also supports a shorthand notation:
+
+```js
+min(['foo', 'lorem', 'amet'], 'length'); // "foo"
 ```
 
 
@@ -373,6 +471,23 @@ var numbers = [1, 2, 3, 4, 5, 6];
 reject(numbers, function(x) { return (x % 2) !== 0; }); // [2, 4, 6]
 ```
 
+It also supports a shorthand syntax:
+
+```js
+var users = [
+    {name:'john', surname:'connor', beard:false},
+    {name:'john', surname:'doe', beard:true},
+    {name:'jane', surname:'doe', beard:false}
+];
+// reject items that matches all properties/values pairs
+reject(arr, {name:'john'});
+// > [{name:'jane', surnname:'doe', beard:false}]
+// reject items where 'beard' is a truthy value
+filter(arr, 'beard');
+// > [{name:'john', surnname:'connor', beard:false},
+//    {name:'jane', surname:'doe', beard:false}]
+```
+
 
 
 ## remove(arr, item):void
@@ -427,8 +542,25 @@ Tests whether some element in the array passes the test implemented by the provi
 It differs from ES5 since it will also loop over sparse items in the array to
 normalize the behavior across browsers (avoid inconsistencies).
 
+```js
+var items = [1, 'foo', 'bar'];
+some(items, isString);   // true
+some(items, isFunction); // false
+```
+
 more info at [MDN Array#some](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/some)
 
+It also supports a shorthand syntax:
+
+```js
+var items = [{id:1, active:true}, {id:3, active:false}, {id:8, active:false}];
+// at least one item with `id === 8`
+some(items, {id:8}); // true
+// `active` is truthy on at least one item
+some(items, 'active'); // true
+```
+
+see also: [`object/matches`](object.html#matches)
 
 
 

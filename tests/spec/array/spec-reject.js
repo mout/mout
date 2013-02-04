@@ -37,6 +37,19 @@ define(['mout/array/reject'], function(reject) {
             expect(result).toEqual([]);
         });
 
+
+        it('should allow object shorthand syntax', function () {
+            var arr = [{a:1,b:2}, {a:2,b:3}, {a:1}, {a:1,b:2,c:3}];
+            expect( reject(arr, {a:1}) ).toEqual( [arr[1]] );
+        });
+
+
+        it('should allow string shorthand syntax', function () {
+            var arr = [{a:1,b:2}, {a:2,b:3}, {a:1}, {a:1,b:2,c:3}];
+            expect( reject(arr, 'c') ).toEqual( arr.slice(0,3) );
+        });
+
+
     });
 
 });

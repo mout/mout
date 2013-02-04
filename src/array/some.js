@@ -1,9 +1,10 @@
-define(function () {
+define(['../function/makeIterator_'], function (makeIterator) {
 
     /**
      * Array some
      */
     function some(arr, callback, thisObj) {
+        callback = makeIterator(callback);
         var result = false,
             i = -1,
             n = arr.length;

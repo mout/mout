@@ -1,4 +1,4 @@
-define(['./forEach'], function (forEach) {
+define(['./forEach', '../function/makeIterator_'], function (forEach, makeIterator) {
 
     /**
      * Return minimum value inside array
@@ -9,6 +9,7 @@ define(['./forEach'], function (forEach) {
         } else if (!arr.length) {
             return -Infinity;
         } else {
+            iterator = makeIterator(iterator);
             var result,
                 compare = Infinity,
                 tmp;

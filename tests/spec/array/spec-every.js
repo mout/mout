@@ -53,6 +53,21 @@ define(['mout/array/every'], function (every) {
 
         });
 
+
+        it('should allow shorthand object syntax', function () {
+            var arr = [{a:3}, {a:3,b:2}, {a:3,b:4}, {a:3,b:1}];
+            expect( every(arr, {a:3}) ).toEqual( true );
+            expect( every(arr, {b:2}) ).toEqual( false );
+        });
+
+
+        it('should allow shorthand string syntax', function () {
+            var arr = [{a:3}, {a:3,b:2}, {a:3,b:4}, {a:3,b:1}];
+            expect( every(arr, 'a') ).toEqual( true );
+            expect( every(arr, 'b') ).toEqual( false );
+        });
+
+
     });
 
 

@@ -15,6 +15,7 @@ define([
     'object/spec-hasOwn',
     'object/spec-keys',
     'object/spec-map',
+    'object/spec-matches',
     'object/spec-max',
     'object/spec-merge',
     'object/spec-min',
