@@ -1,6 +1,12 @@
 mout changelog
 ==============
 
+Next
+----
+
+ - add `object/matches`.
+
+
 v0.3.0
 ------
 
