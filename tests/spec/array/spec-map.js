@@ -33,6 +33,13 @@ define(['mout/array/map'], function (map) {
             expect( result ).toEqual( [] );
         });
 
+
+        it('should allow shorthand string syntax (same as "pluck")', function () {
+            var arr = [{a:1}, {b:1}, {a:3,c:3}];
+            expect( map(arr, 'a') ).toEqual( [1, undefined, 3] );
+        });
+
+
     });
 
 });

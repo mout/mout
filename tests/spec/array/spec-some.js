@@ -49,5 +49,22 @@ define(['mout/array/some'], function (some) {
             expect( a ).toEqual( compare );
         });
 
+
+        it('should allow shorthand object syntax', function () {
+            var arr = [{a:3}, {a:3,b:2}, {a:3,b:4}, {a:3,b:1}];
+            expect( some(arr, {a:3,b:2}) ).toEqual( true );
+            expect( some(arr, {b:2}) ).toEqual( true );
+            expect( some(arr, {b:5}) ).toEqual( false );
+        });
+
+
+        it('should allow shorthand string syntax', function () {
+            var arr = [{a:3}, {a:3,b:2}, {a:3,b:4}, {a:3,b:1}];
+            expect( some(arr, 'a') ).toEqual( true );
+            expect( some(arr, 'b') ).toEqual( true );
+            expect( some(arr, 'c') ).toEqual( false );
+        });
+
+
     });
 });

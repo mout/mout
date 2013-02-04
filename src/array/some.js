@@ -1,9 +1,10 @@
-define(function () {
+define(['../function/shorthandIterator_'], function (shorthandIterator) {
 
     /**
      * Array some
      */
     function some(arr, callback, thisObj) {
+        callback = shorthandIterator(callback);
         var result = false,
             i = -1,
             n = arr.length;

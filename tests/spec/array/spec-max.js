@@ -26,6 +26,13 @@ define(['mout/array/max'], function (max) {
 
         });
 
+        it('should allow shorthand string iterator', function () {
+            var arr = [{a:1,b:3}, {a:4,b:5}, {a:2,b:8}];
+            expect( max(arr, 'a') ).toBe( arr[1] );
+            expect( max(arr, 'b') ).toBe( arr[2] );
+        });
+
+
     });
 
 });

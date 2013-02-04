@@ -10,6 +10,7 @@ return {
     'partial' : require('./function/partial'),
     'prop' : require('./function/prop'),
     'series' : require('./function/series'),
+    'shorthandIterator_' : require('./function/shorthandIterator_'),
     'throttle' : require('./function/throttle')
 };
 

@@ -8,6 +8,7 @@ define([
     'function/spec-partial',
     'function/spec-prop',
     'function/spec-series',
+    'function/spec-shorthandIterator_',
     'function/spec-throttle'
 ], function(){
     //noop

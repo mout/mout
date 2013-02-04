@@ -1,9 +1,10 @@
-define(['./some'], function (some) {
+define(['./some', '../function/shorthandIterator_'], function (some, shorthandIterator) {
 
     /**
      * Returns first item that matches criteria
      */
     function find(arr, iterator, thisObj){
+        iterator = shorthandIterator(iterator);
         var needle,
             i = -1, n = arr.length,
             val;
