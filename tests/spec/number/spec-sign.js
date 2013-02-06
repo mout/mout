@@ -18,6 +18,14 @@ define(['mout/number/sign'], function (sign) {
             expect( sign(0) ).toEqual(0);
         });
 
+        it('should return NaN if value is NaN', function () {
+            expect( sign(NaN) ).toBeNaN();
+        });
+
+        it('should return NaN if value is not a Number', function () {
+            expect( sign('foo') ).toBeNaN();
+        });
+
     });
 
 });
