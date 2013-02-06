@@ -37,6 +37,18 @@ define(['mout/object/deepEquals'], function(deepEquals){
             expect( deepEquals(null, undefined) ).toBe(false);
         });
 
+        it('should only check object\'s own properties', function() {
+            function A() { }
+            A.prototype.isA = true;
+            function B() { }
+            B.prototype.isA = false;
+
+            var a = { foo: new A() };
+            var b = { foo: new B() };
+
+            expect( deepEquals(a, b) ).toBe(true);
+        });
+
     });
 
 });

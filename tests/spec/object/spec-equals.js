@@ -57,6 +57,15 @@ define(['mout/object/equals'], function(equals){
             expect( equals(a, b) ).toBe(false);
         });
 
+        it('should only check own properties', function() {
+            function A() { }
+            A.prototype.isA = true;
+            function B() { }
+            B.prototype.isA = false;
+
+            expect( equals(new A(), new B()) ).toBe(true);
+        });
+
     });
 
 });
