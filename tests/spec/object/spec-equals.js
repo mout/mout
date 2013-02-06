@@ -66,6 +66,12 @@ define(['mout/object/equals'], function(equals){
             expect( equals(new A(), new B()) ).toBe(true);
         });
 
+        it('should ignore order of keys', function() {
+            var a = { a: 1, b: 2 };
+            var b = { b: 2, a: 1 };
+            expect( equals(a, b) ).toBe(true);
+        });
+
     });
 
 });
