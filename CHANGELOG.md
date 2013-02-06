@@ -6,6 +6,7 @@ Next
 
  - add `object/matches`.
  - add shorthand syntax to `array/*` methods.
+ - improve `number/sign` behavior when value is zero (returns zero).
 
 
 v0.3.0
