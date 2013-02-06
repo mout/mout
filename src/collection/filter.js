@@ -1,9 +1,10 @@
-define(['./forEach'], function (forEach) {
+define(['./forEach', '../function/makeIterator_'], function (forEach, makeIterator) {
 
     /**
      * filter collection values, returns array.
      */
     function filter(list, iterator, context) {
+        iterator = makeIterator(iterator);
         var results = [];
         if (!list) {
             return results;

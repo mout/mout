@@ -23,6 +23,30 @@ define(['mout/object/reject', 'mout/object/size'], function(reject, size) {
             expect(result).toEqual({});
         });
 
-    });
 
+        it('should support shorthand syntax', function () {
+            var obj = {
+                a : {foo:'bar', lorem:'ipsum', id:1},
+                b : {foo:'bar', lorem:'ipsum', id:2},
+                c : {foo:'bar', lorem:'ipsum', id:4}
+            };
+            expect( reject(obj, {foo:'bar', lorem:'ipsum'}) ).toEqual( {} );
+            expect( reject(obj, {lorem:'ipsum', id:1}) ).toEqual( {b:obj.b, c:obj.c} );
+            expect( reject(obj, {amet:123}) ).toEqual( obj );
+        });
+
+
+        it('should allow string shorthand syntax', function () {
+            var obj = {
+                a : {foo:'bar', lorem:'ipsum', id:1},
+                b : {foo:'bar', lorem:'ipsum', id:2},
+                c : {foo:'bar', lorem:'ipsum', id:0}
+            };
+            expect( reject(obj, 'foo') ).toEqual( {} );
+            expect( reject(obj, 'id') ).toEqual( {c:obj.c} );
+            expect( reject(obj, 'amet') ).toEqual( obj );
+        });
+
+
+    });
 });

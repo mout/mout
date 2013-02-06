@@ -5,7 +5,7 @@ Next
 ----
 
  - add `object/matches`.
- - add shorthand syntax to `array/*` methods.
+ - add shorthand syntax to `array/*`, `object/*` and `collection/*` methods.
  - improve `number/sign` behavior when value is zero (returns zero).
 
 

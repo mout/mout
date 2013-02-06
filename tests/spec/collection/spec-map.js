@@ -36,6 +36,24 @@ define(['mout/collection/map'], function(map){
             expect( result ).toEqual( ['0-1', '1-b', '2-c'] );
         });
 
-    });
 
+        it('should allow string shorthand syntax', function () {
+            var obj = {
+                '0' : {foo:'bar', lorem:'ipsum', id:1},
+                '1' : {foo:'bar', lorem:'ipsum', id:2},
+                '2' : {foo:'bar', lorem:'ipsum', id:0}
+            };
+            var arr = [obj[0], obj[1], obj[2]];
+
+            expect( map(obj, 'foo') ).toEqual( ['bar', 'bar', 'bar'] );
+            expect( map(obj, 'id') ).toEqual( [1,2,0] );
+            expect( map(obj, 'amet') ).toEqual( [undefined,undefined,undefined] );
+
+            expect( map(arr, 'foo') ).toEqual( ['bar', 'bar', 'bar'] );
+            expect( map(arr, 'id') ).toEqual( [1,2,0] );
+            expect( map(arr, 'amet') ).toEqual( [undefined,undefined,undefined] );
+        });
+
+
+    });
 });

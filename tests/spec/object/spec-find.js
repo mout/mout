@@ -32,6 +32,29 @@ define(['mout/object/find'], function(find){
             }) ).toEqual( 'foo123' );
         });
 
+
+        it('should support shorthand syntax', function () {
+            var obj = {
+                a : {foo:'bar', lorem:'ipsum', id:1},
+                b : {foo:'bar', lorem:'ipsum', id:2},
+                c : {foo:'bar', lorem:'ipsum', id:4}
+            };
+            expect( find(obj, {lorem:'ipsum', id:1}) ).toEqual( obj.a );
+            expect( find(obj, {amet:123}) ).toBeUndefined();
+        });
+
+
+        it('should allow string shorthand syntax', function () {
+            var obj = {
+                a : {foo:1, bar:null},
+                b : {foo:0, bar:''},
+                c : {foo:0, bar:'amet'}
+            };
+            expect( find(obj, 'foo') ).toEqual( obj.a );
+            expect( find(obj, 'bar') ).toEqual( obj.c );
+            expect( find(obj, 'amet') ).toBeUndefined();
+        });
+
     });
 
 });

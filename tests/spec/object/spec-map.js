@@ -51,8 +51,20 @@ define(['mout/object/map'], function(map) {
             var obj = { foo: null },
                 thisObj = {};
 
-            var result = map(obj, function() { return this }, thisObj);
+            var result = map(obj, function() { return this; }, thisObj);
             expect(result.foo).toBe(thisObj);
+        });
+
+
+        it('should allow string shorthand syntax', function () {
+            var obj = {
+                a : {foo:'bar', lorem:'ipsum', id:1},
+                b : {foo:'bar', lorem:'ipsum', id:2},
+                c : {foo:'bar', lorem:'ipsum', id:0}
+            };
+            expect( map(obj, 'foo') ).toEqual( {a:'bar', b:'bar',c:'bar'} );
+            expect( map(obj, 'id') ).toEqual( {a:1,b:2,c:0} );
+            expect( map(obj, 'amet') ).toEqual( {a:undefined,b:undefined,c:undefined} );
         });
 
     });

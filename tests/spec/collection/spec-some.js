@@ -63,6 +63,42 @@ define(['mout/collection/some'], function(some){
             expect( a ).toEqual( compare );
         });
 
-    });
 
+        it('should support shorthand syntax', function () {
+            var obj = {
+                '0' : {foo:'bar', lorem:'ipsum', id:1},
+                '1' : {foo:'bar', lorem:'ipsum', id:2},
+                '2' : {foo:'bar', lorem:'ipsum', id:4}
+            };
+            var arr = [obj[0], obj[1], obj[2]];
+
+            expect( some(obj, {foo:'bar', lorem:'ipsum'}) ).toEqual( true );
+            expect( some(obj, {lorem:'ipsum', id:1}) ).toEqual( true );
+            expect( some(obj, {amet:123}) ).toEqual( false );
+
+            expect( some(arr, {foo:'bar', lorem:'ipsum'}) ).toEqual( true );
+            expect( some(arr, {lorem:'ipsum', id:1}) ).toEqual( true );
+            expect( some(arr, {amet:123}) ).toEqual( false );
+        });
+
+
+        it('should allow string shorthand syntax', function () {
+            var obj = {
+                '0' : {foo:'bar', lorem:'ipsum', id:1},
+                '1' : {foo:'bar', lorem:'ipsum', id:2},
+                '2' : {foo:'bar', lorem:'ipsum', id:0}
+            };
+            var arr = [obj[0], obj[1], obj[2]];
+
+            expect( some(obj, 'foo') ).toEqual( true );
+            expect( some(obj, 'id') ).toEqual( true );
+            expect( some(obj, 'amet') ).toEqual( false );
+
+            expect( some(arr, 'foo') ).toEqual( true );
+            expect( some(arr, 'id') ).toEqual( true );
+            expect( some(arr, 'amet') ).toEqual( false );
+        });
+
+
+    });
 });

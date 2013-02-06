@@ -57,6 +57,30 @@ define(['mout/object/filter'], function(filter) {
             expect(result).toEqual(obj);
         });
 
-    });
 
+        it('should support shorthand syntax', function () {
+            var obj = {
+                a : {foo:'bar', lorem:'ipsum', id:1},
+                b : {foo:'bar', lorem:'ipsum', id:2},
+                c : {foo:'bar', lorem:'ipsum', id:4}
+            };
+            expect( filter(obj, {foo:'bar', lorem:'ipsum'}) ).toEqual( obj );
+            expect( filter(obj, {lorem:'ipsum', id:1}) ).toEqual( {a:obj.a} );
+            expect( filter(obj, {amet:123}) ).toEqual( {} );
+        });
+
+
+        it('should allow string shorthand syntax', function () {
+            var obj = {
+                a : {foo:'bar', lorem:'ipsum', id:1},
+                b : {foo:'bar', lorem:'ipsum', id:2},
+                c : {foo:'bar', lorem:'ipsum', id:0}
+            };
+            expect( filter(obj, 'foo') ).toEqual( obj );
+            expect( filter(obj, 'id') ).toEqual( {a:obj.a, b:obj.b} );
+            expect( filter(obj, 'amet') ).toEqual( {} );
+        });
+
+
+    });
 });
