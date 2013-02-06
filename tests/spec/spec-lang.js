@@ -7,6 +7,7 @@ define([
     'lang/spec-deepClone',
     'lang/spec-defaults',
     'lang/spec-inheritPrototype',
+    'lang/spec-is',
     'lang/spec-isArguments',
     'lang/spec-isArray',
     'lang/spec-isBoolean',
@@ -23,6 +24,7 @@ define([
     'lang/spec-isRegExp',
     'lang/spec-isString',
     'lang/spec-isUndefined',
+    'lang/spec-isnt',
     'lang/spec-kindOf',
     'lang/spec-toArray',
     'lang/spec-toString'

@@ -157,6 +157,42 @@ myObj.getName(); // "lorem ipsum"
 ```
 
 
+## is(x, y):Boolean
+
+Check if both values are identical/egal.
+
+```js
+// wtfjs
+NaN === NaN; // false
+-0 === +0;   // true
+
+is(NaN, NaN); // true
+is(-0, +0);   // false
+is('a', 'b'); // false
+```
+
+See: [`isnt()`](#isnt)
+
+
+
+## isnt(x, y):Boolean
+
+Check if both values are not identical/egal.
+
+```js
+// wtfjs
+NaN === NaN; // false
+-0 === +0;   // true
+
+isnt(NaN, NaN); // false
+isnt(-0, +0);   // true
+isnt('a', 'b'); // true
+```
+
+See: [`is()`](#is)
+
+
+
 
 ## isArguments(val):Boolean
 

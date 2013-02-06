@@ -9,6 +9,7 @@ return {
     'deepClone' : require('./lang/deepClone'),
     'defaults' : require('./lang/defaults'),
     'inheritPrototype' : require('./lang/inheritPrototype'),
+    'is' : require('./lang/is'),
     'isArguments' : require('./lang/isArguments'),
     'isArray' : require('./lang/isArray'),
     'isBoolean' : require('./lang/isBoolean'),
@@ -25,6 +26,7 @@ return {
     'isRegExp' : require('./lang/isRegExp'),
     'isString' : require('./lang/isString'),
     'isUndefined' : require('./lang/isUndefined'),
+    'isnt' : require('./lang/isnt'),
     'kindOf' : require('./lang/kindOf'),
     'toArray' : require('./lang/toArray'),
     'toString' : require('./lang/toString')
