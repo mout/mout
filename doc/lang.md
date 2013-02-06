@@ -229,6 +229,21 @@ isKind(3, 'Number');    // true
 See: [`kindOf()`](#kindOf)
 
 
+
+## isInteger(val):Boolean
+
+Check if value is an integer.
+
+```js
+isInteger(123);    // true
+isInteger(123.45); // false
+isInteger({});     // false
+isInteger('foo');  // false
+isInteger('123');  // false
+```
+
+
+
 ## isNaN(val):Boolean
 
 Check if value is `NaN`.
