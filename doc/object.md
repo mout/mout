@@ -21,6 +21,33 @@ contains(obj, 'foo');  // false
 
 
 
+## deepEquals(a, b):Boolean
+
+Recursively checks if two objects have the same keys and values.
+
+It will check for keys and values to be the same for the two objects, also
+recursing inside of the objects that are contained by each object. All objects
+must include all the property names of and have the same values as the
+corresponding object it is being checked against.
+
+If the either of the values are not objects, it will be checked using the
+`===` operator.
+
+Example:
+
+```js
+deepEquals({ a: 1 }, { a: 1 }); // true
+deepEquals({ value: { a: 1 } }, { value: { a: 1 } }); // true
+deepEquals({ value: { a: 1 } }, { value: { a: 2 } }); // false
+deepEquals({ value: { a: 1 } }, { value: { a: 1, b: 2 } }); // false
+deepEquals({}, null); // false
+deepEquals(null, null); // true
+```
+
+See: [`equals()`](#equals)
+
+
+
 ## deepFillIn(target, ...objects):Object
 
 Fill missing properties recursively.
