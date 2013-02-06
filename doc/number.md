@@ -144,12 +144,13 @@ More info at [Wikipedia#Circular_shift](http://en.wikipedia.org/wiki/Circular_sh
 
 ## sign(val):Number
 
-Returns `-1` if value is negative and `1` if value is positive. Useful for
+Returns `-1` if value is negative, `0` if the value is `0` and `1` if value is positive. Useful for
 multiplications.
 
 ```js
 sign(-123); // -1
 sign(123);  // 1
+sign(0);    // 0
 ```
 
 
