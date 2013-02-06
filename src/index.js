@@ -1,3 +1,6 @@
+/**@license
+ * mout v0.3.0 | http://moutjs.com | MIT license
+ */
 define(function(require){
 
 //automatically generated, do not edit!
