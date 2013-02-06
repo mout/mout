@@ -8,7 +8,7 @@ define(['mout/number/sign'], function (sign) {
             expect( sign(- Math.pow(2,32)) ).toEqual(-1);
         });
 
-        it('should return +1 if number is positive or zero', function () {
+        it('should return +1 if number is positive', function () {
             expect( sign(123) ).toEqual(1);
             expect( sign(0.5) ).toEqual(1);
             expect( sign(Math.pow(2,32)) ).toEqual(1);
