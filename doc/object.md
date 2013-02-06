@@ -23,16 +23,15 @@ contains(obj, 'foo');  // false
 
 ## deepEquals(a, b):Boolean
 
-Recursively checks if two objects have the same keys and values.
+Recursively tests whether two objects contain the same keys and values.
 
-It will check for keys and values to be the same for the two objects, also
-recursing inside of the objects that are contained by each object. All objects
-must include all the property names of and have the same values as the
-corresponding object it is being checked against. It will only check each
-object's own properties.
+Tests whether the objects contain the same keys and equal values.  If the
+values are both an object, it will recurse into the objects, checking if their
+keys/values are equal.
 
-If the either of the values are not objects, it will be checked using the
-`===` operator.
+It will only check the keys and values contained by the objects; it will not
+check the objects' prototypes.  If the either of the values are not objects,
+they will be checked using the `===` operator.
 
 Example:
 
@@ -103,12 +102,11 @@ See: [`mixIn()`](#mixIn), [`merge()`](#merge), [`deepFillIn()`](#deepFillIn)
 
 ## equals(a, b):Boolean
 
-Tests whether the objects contain the same properties and values.
+Tests whether two objects contain the same keys and values.
 
-If `a` or `b` is not an object, it will compare with a strict equals. When `a`
-and `b` are both objects, it will test whether each object contains the same
-properties and equal property values. It will only check each object's own
-properties.
+It will only check the keys and values contained by the objects; it will not
+check the objects' prototypes. If either of the values are not objects, they
+will be compared using the `===` operator.
 
 ```js
 equals({}, {}); // true
