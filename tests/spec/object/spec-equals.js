@@ -35,13 +35,6 @@ define(['mout/object/equals'], function(equals){
             expect( equals(a, b) ).toBe(false);
         });
 
-        it('should require object to have same constructor', function() {
-            function A() { }
-            function B() { }
-
-            expect( equals(new A(), new B()) ).toBe(false);
-        });
-
         it('should allow objects with same prototype', function() {
             function A() {
                 this.id = 'test';

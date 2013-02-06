@@ -14,14 +14,7 @@ define(['./hasOwn', './every', '../lang/isObject'], function(hasOwn, every, isOb
     function equals(a, b) {
         if (a === b) {
             return true;
-        }
-
-        if (!isObject(a) || !isObject(b)) {
-            return false;
-        }
-
-        // Objects are not equal if created with different constructors
-        if (a.constructor !== b.constructor) {
+        } else if (!isObject(a) || !isObject(b)) {
             return false;
         }
 
