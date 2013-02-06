@@ -1,6 +1,13 @@
 mout changelog
 ==============
 
+Next
+----
+
+ - add `object/matches`.
+ - add shorthand syntax to `array/*` methods.
+
+
 v0.3.0
 ------
 

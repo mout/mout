@@ -13,6 +13,20 @@ define(['mout/array/find'], function (find) {
 
         });
 
+
+        it('should support object shortcut syntax', function () {
+            var obj = {a : 'b'},
+                arr = [123, 'foo', 'bar', obj];
+
+            expect( find(arr, {a:'b'}) ).toEqual( obj );
+        });
+
+        it('should support string shortcut syntax', function () {
+            var obj = {a : 'b'},
+                arr = [123, 'foo', 'bar', obj];
+            expect( find(arr, 'a') ).toEqual( obj );
+        });
+
     });
 
 });

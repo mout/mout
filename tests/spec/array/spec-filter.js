@@ -46,6 +46,23 @@ define(['mout/array/filter'], function (filter) {
             expect( filter(null) ).toEqual( [] );
         });
 
+
+        it('should allow shorthand object syntax', function () {
+            var arr = [{a:1,b:1}, {a:2,b:1}, {a:1,b:1,c:3}];
+            expect( filter(arr, {a:1}) ).toEqual( [arr[0], arr[2]] );
+            expect( filter(arr, {b:1}) ).toEqual( [arr[0], arr[1], arr[2]] );
+            expect( filter(arr, {a:1,b:1}) ).toEqual( [arr[0], arr[2]] );
+        });
+
+
+        it('should allow shorthand string syntax', function () {
+            var arr = [{a:1,b:1}, {a:2,b:1}, {a:1,b:1,c:3}];
+            expect( filter(arr, 'a') ).toEqual( [arr[0], arr[1], arr[2]] );
+            expect( filter(arr, 'c') ).toEqual( [arr[2]] );
+            expect( filter(arr, 'd') ).toEqual( [] );
+        });
+
+
     });
 
 });

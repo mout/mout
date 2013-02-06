@@ -17,6 +17,7 @@ return {
     'hasOwn' : require('./object/hasOwn'),
     'keys' : require('./object/keys'),
     'map' : require('./object/map'),
+    'matches' : require('./object/matches'),
     'max' : require('./object/max'),
     'merge' : require('./object/merge'),
     'min' : require('./object/min'),

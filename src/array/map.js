@@ -1,9 +1,10 @@
-define(['./forEach'], function (forEach) {
+define(['./forEach', '../function/makeIterator_'], function (forEach, makeIterator) {
 
     /**
      * Array map
      */
     function map(arr, callback, thisObj) {
+        callback = makeIterator(callback);
         var results = [];
         if (arr == null){
             return results;

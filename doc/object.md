@@ -362,6 +362,21 @@ map(obj, function(v, k) { return this[k]; }, data); // { foo: 0, bar: 1 }
 
 
 
+## matches(obj, props):Boolean
+
+Checks if object contains all properties/values pairs. Useful for validation
+and filtering.
+
+```js
+var john = {age:25, hair:'long', beard:true};
+var mark = {age:27, hair:'short', beard:false};
+var hippie = {hair:'long', beard:true};
+matches(john, hippie); // true
+matches(mark, hippie); // false
+```
+
+
+
 ## merge(...objects):Object
 
 Deep merges objects. Note that objects and properties will be cloned during the
