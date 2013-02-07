@@ -53,7 +53,7 @@ contribute, build system, etc, please check the [project
 wiki](https://github.com/mout/mout/wiki).
 
 We also have an IRC channel [#moutjs on
-irc.freenode.net](http://webchat.freenode.net/)
+irc.freenode.net](http://webchat.freenode.net/?channels=moutjs)
 
 
 
