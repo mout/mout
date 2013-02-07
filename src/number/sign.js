@@ -4,9 +4,10 @@ define(function () {
      * Get sign of the value.
      */
     function sign(val) {
-        if (val === 0) return 0;
-        if (isNaN(val)) return NaN; // NaN
-        return val < 0? -1 : 1;
+        var num = Number(val);
+        if (num === 0) return num; // +0 and +0 === 0
+        if (isNaN(num)) return num; // NaN
+        return num < 0? -1 : 1;
     }
 
     return sign;
