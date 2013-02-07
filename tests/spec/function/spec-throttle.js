@@ -15,7 +15,10 @@ define(['mout/function/throttle'], function(throttle){
             while((new Date() - start) < limit) {
                 cb();
             }
-            expect( count ).toBe( 3 );
+            // we compare using greaterThan/lessThan to avoid issues on
+            // travis-ci (see #41)
+            expect( count ).toBeGreaterThan( 1 );
+            expect( count ).toBeLessThan( 4 );
         });
 
 
@@ -32,10 +35,13 @@ define(['mout/function/throttle'], function(throttle){
             while ((new Date() - start) < limit) {
                 cb(1,1);
             }
-            expect( count ).toBe( 7 );
+            // we compare using greaterThan/lessThan to avoid issues on
+            // travis-ci (see #41)
+            expect( count ).toBeGreaterThan( 3 );
+            expect( count ).toBeLessThan( 8 );
         });
 
-        it('should return first value', function () {
+        it('throttled fn should always return first returned value', function () {
             var cb = throttle(function(val){
                 return val;
             }, 50);
