@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "istanbul": "~0.1.27",
-    "jasmine-node": "~1.0.28",
+    "jasmine-node": "~1.2.2",
     "requirejs": "2.x",
     "nodefy": "*",
     "mdoc": "~0.3.2",
