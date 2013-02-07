@@ -2,25 +2,25 @@ define(['mout/function/throttle'], function(throttle){
 
     describe('function/throttle', function(){
 
-        var timerCallback;
-
         beforeEach(function() {
-            timerCallback = jasmine.createSpy('timerCallback');
             jasmine.Clock.useMock();
         });
 
         it('should execute callback only once per interval', function(){
-            var cb = throttle(timerCallback, 50);
             var i = 0;
+            var count = 0;
+            var cb = throttle(function() {
+                count++;
+            }, 50);
 
             while (++i <= 5) { cb(); }
-            expect(timerCallback.callCount).toEqual(1);
+            expect(count).toEqual(1);
 
             jasmine.Clock.tick(51);
 
             i = 0;
             while (++i <= 5) { cb(); }
-            expect(timerCallback.callCount).toEqual(2);
+            expect(count).toEqual(2);
         });
 
 
@@ -30,7 +30,6 @@ define(['mout/function/throttle'], function(throttle){
                 count += x + y;
             }, 50);
 
-            var i = 0;
             cb(1, 2);
             cb(3, 4);
             cb(5, 6);
