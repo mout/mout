@@ -18,6 +18,31 @@ define(['mout/number/sign'], function (sign) {
             expect( sign(0) ).toEqual(0);
         });
 
+        it('should return +0 if number is +0', function () {
+            expect( 1 / sign(+0) ).toBe( Infinity );
+        });
+
+        it('should return -0 if number is -0', function () {
+            expect( 1 / sign(-0) ).toBe( -Infinity );
+        });
+
+        it('should return NaN if value is NaN', function () {
+            expect( sign(NaN) ).toBeNaN();
+        });
+
+        it('should return NaN if value is not a Number', function () {
+            expect( sign('foo') ).toBeNaN();
+        });
+
+        it('should typecast value into a number', function () {
+            expect( sign('-123') ).toEqual( -1 );
+            expect( sign('123') ).toEqual( 1 );
+            expect( sign('') ).toEqual( 0 );
+            expect( sign([]) ).toEqual( 0 );
+            expect( sign([1]) ).toEqual( 1 );
+            expect( sign(null) ).toEqual( 0 );
+        });
+
     });
 
 });
