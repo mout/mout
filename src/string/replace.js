@@ -3,15 +3,15 @@ define(['../lang/toString', '../lang/toArray'], function (toString, toArray) {
     /**
      * Replace string(s) with the replacement(s) in the source.
      */
-    function replace(str, search, replace) {
+    function replace(str, search, replacements) {
         str = toString(str);
         search = toArray(search);
-        replace = toArray(replace);
+        replacements = toArray(replacements);
 
         var searchLength = search.length,
-            replaceLength = replace.length;
+            replacementsLength = replacements.length;
 
-        if (replaceLength !== 1 && searchLength !== replace.length) {
+        if (replacementsLength !== 1 && searchLength !== replacementsLength) {
             throw new Error('Unequal number of searches and replacements');
         }
 
@@ -21,7 +21,7 @@ define(['../lang/toString', '../lang/toArray'], function (toString, toArray) {
             // replacement is provided
             str = str.replace(
                 search[i],
-                replace[(replaceLength === 1) ? 0 : i]);
+                replacements[(replacementsLength === 1) ? 0 : i]);
         }
 
         return str;
