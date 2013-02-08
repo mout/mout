@@ -30,6 +30,14 @@ define(['mout/lang/isInteger'], function(isInteger){
         });
 
 
+        it('should work even with large numbers', function () {
+            expect( isInteger(Math.pow(2,45) + 0.05) ).toEqual( false );
+            expect( isInteger(Math.pow(2,45) - 0.05) ).toEqual( false );
+            expect( isInteger(Math.pow(2,45)) ).toEqual( true );
+            expect( isInteger(-Math.pow(2,45)) ).toEqual( true );
+        });
+
+
     });
 
 });
