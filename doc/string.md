@@ -301,15 +301,15 @@ repeat('a', 0);  // ""
 
 
 
-## replace(str, search, replace):String
+## replace(str, search, replacements):String
 
 Replace string(s) with the replacement(s) in the source.
 
-`search` and `replace` can be an array, or a single item. For every item in
-`search`, it will call `str.replace` with the search item and the matching
-replacement in `replace`. If `replace` only contains one replacement, it will
-be used for all the searches, otherwise it will use the replacement at the same
-index as the search.
+`search` and `replacements` can be an array, or a single item. For every item
+in `search`, it will call `str.replace` with the search item and the matching
+replacement in `replacements`. If `replacements` only contains one replacement,
+it will be used for all the searches, otherwise it will use the replacement at
+the same index as the search.
 
 ### Example
 
