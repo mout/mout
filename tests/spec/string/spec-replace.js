@@ -24,10 +24,10 @@ define(['mout/string/replace'], function(replace){
 
         it('should replace with function replacer', function(){
             function replaceNum(m) {
-                return (+m[0]) * (+m[0]);
+                return (+m) * (+m);
             }
             function replaceLetter(m) {
-                return m[0].charCodeAt(0);
+                return m.charCodeAt(0);
             }
 
             var result = replace('1 2 3 a', [/\d+/g, /[a-z]/g],
