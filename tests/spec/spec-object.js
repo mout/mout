@@ -2,8 +2,10 @@
 //run `node build` instead
 define([
     'object/spec-contains',
+    'object/spec-deepEquals',
     'object/spec-deepFillIn',
     'object/spec-deepMixIn',
+    'object/spec-equals',
     'object/spec-every',
     'object/spec-fillIn',
     'object/spec-filter',
