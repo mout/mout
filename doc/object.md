@@ -21,6 +21,33 @@ contains(obj, 'foo');  // false
 
 
 
+## deepEquals(a, b):Boolean
+
+Recursively tests whether two objects contain the same keys and values.
+
+Tests whether the objects contain the same keys and equal values.  If the
+values are both an object, it will recurse into the objects, checking if their
+keys/values are equal.
+
+It will only check the keys and values contained by the objects; it will not
+check the objects' prototypes.  If the either of the values are not objects,
+they will be checked using the `===` operator.
+
+Example:
+
+```js
+deepEquals({ a: 1 }, { a: 1 }); // true
+deepEquals({ value: { a: 1 } }, { value: { a: 1 } }); // true
+deepEquals({ value: { a: 1 } }, { value: { a: 2 } }); // false
+deepEquals({ value: { a: 1 } }, { value: { a: 1, b: 2 } }); // false
+deepEquals({}, null); // false
+deepEquals(null, null); // true
+```
+
+See: [`equals()`](#equals)
+
+
+
 ## deepFillIn(target, ...objects):Object
 
 Fill missing properties recursively.
@@ -70,6 +97,26 @@ console.log(target); // { foo: { name: "foo", id: 2 } }
 ```
 
 See: [`mixIn()`](#mixIn), [`merge()`](#merge), [`deepFillIn()`](#deepFillIn)
+
+
+
+## equals(a, b):Boolean
+
+Tests whether two objects contain the same keys and values.
+
+It will only check the keys and values contained by the objects; it will not
+check the objects' prototypes. If either of the values are not objects, they
+will be compared using the `===` operator.
+
+```js
+equals({}, {}); // true
+equals({ a: 1 }, { a: 1 }); // true
+equals({ a: 1 }, { a: 2 }); // false
+equals({ a: 1, b: 2 }, { a: 1 }); // false
+equals({ a: 1 }, { a: 1, b: 2 }); // false
+equals(null, null); // true
+equals(null, {}); // false
+```
 
 
 

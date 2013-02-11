@@ -4,8 +4,10 @@ define(function(require){
 //run `node build` instead
 return {
     'contains' : require('./object/contains'),
+    'deepEquals' : require('./object/deepEquals'),
     'deepFillIn' : require('./object/deepFillIn'),
     'deepMixIn' : require('./object/deepMixIn'),
+    'equals' : require('./object/equals'),
     'every' : require('./object/every'),
     'fillIn' : require('./object/fillIn'),
     'filter' : require('./object/filter'),
