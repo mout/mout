@@ -31,6 +31,20 @@ define(['mout/string/contains'], function (contains) {
             expect( contains('a', void 0) ).toEqual(true);
         });
 
+        it('should start search at given "fromIndex"', function () {
+            expect( contains('lorem ipsum', 'o', 0) ).toEqual( true );
+            expect( contains('lorem ipsum', 'o', 1) ).toEqual( true );
+            expect( contains('lorem ipsum', 'o', 2) ).toEqual( false );
+            expect( contains('lorem ipsum', 'o', 200) ).toEqual( false );
+        });
+
+        it('should treat negative fromIndex === 0', function () {
+            expect( contains('lorem ipsum', 'o', -1) ).toEqual( true );
+            expect( contains('lorem ipsum', 'o', -9) ).toEqual( true );
+            expect( contains('lorem ipsum', 'o', -10) ).toEqual( true );
+            expect( contains('lorem ipsum', 'o', -11) ).toEqual( true );
+        });
+
     });
 
 });

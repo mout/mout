@@ -13,6 +13,7 @@ Next
  - add `lang/isInteger`.
  - improve `lang/isNaN` to actually check if value *is not a number* (#39).
  - add `array/findIndex`.
+ - improve `string/contains` to match ES6 behavior (add fromIndex argument).
 
 
 v0.3.0

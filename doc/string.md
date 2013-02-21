@@ -18,7 +18,7 @@ camelCase('lorem ipsum dolor'); // "loremIpsumDolor"
 
 
 
-## contains(str, substring):Boolean
+## contains(str, substring, [fromIndex]):Boolean
 
 Checks if string contains the given substring.
 
