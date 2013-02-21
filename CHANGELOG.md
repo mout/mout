@@ -10,6 +10,7 @@ Next
  - add shorthand syntax to `array/*` methods.
  - improve `number/sign` behavior when value is zero (returns zero).
  - add `lang/is` and `lang/isnt`.
+ - add `lang/isInteger`.
 
 
 v0.3.0
