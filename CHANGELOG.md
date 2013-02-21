@@ -9,6 +9,7 @@ Next
  - add `object/matches`.
  - add shorthand syntax to `array/*` methods.
  - improve `number/sign` behavior when value is zero (returns zero).
+ - add `lang/is` and `lang/isnt`.
 
 
 v0.3.0
