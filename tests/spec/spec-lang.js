@@ -15,6 +15,7 @@ define([
     'lang/spec-isEmpty',
     'lang/spec-isFinite',
     'lang/spec-isFunction',
+    'lang/spec-isInteger',
     'lang/spec-isKind',
     'lang/spec-isNaN',
     'lang/spec-isNull',
