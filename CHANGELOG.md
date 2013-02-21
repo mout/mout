@@ -12,6 +12,7 @@ Next
  - add `lang/is` and `lang/isnt`.
  - add `lang/isInteger`.
  - improve `lang/isNaN` to actually check if value *is not a number* (#39).
+ - add `array/findIndex`.
 
 
 v0.3.0
