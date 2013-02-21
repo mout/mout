@@ -50,6 +50,23 @@ define(['mout/collection/max'], function(max){
 
         });
 
+
+        it('should allow string shorthand syntax', function () {
+            var obj = {
+                '0' : {foo:'bar', lorem:'ipsum', id:1},
+                '1' : {foo:'bar', lorem:'ipsum', id:2},
+                '2' : {foo:'bar', lorem:'ipsum', id:0}
+            };
+            var arr = [obj[0], obj[1], obj[2]];
+
+            expect( max(obj, 'id') ).toEqual( obj[1] );
+            expect( max(obj, 'amet') ).toBeUndefined();
+
+            expect( max(arr, 'id') ).toEqual( obj[1] );
+            expect( max(arr, 'amet') ).toBeUndefined();
+        });
+
+
     });
 
 });

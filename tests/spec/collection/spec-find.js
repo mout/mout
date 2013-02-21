@@ -33,6 +33,37 @@ define(['mout/collection/find'], function(find){
 
         });
 
-    });
 
+        it('should support shorthand syntax', function () {
+            var obj = {
+                '0' : {foo:'bar', lorem:'ipsum', id:1},
+                '1' : {foo:'bar', lorem:'ipsum', id:2},
+                '2' : {foo:'bar', lorem:'ipsum', id:4}
+            };
+            var arr = [obj[0], obj[1], obj[2]];
+
+            expect( find(obj, {lorem:'ipsum', id:1}) ).toEqual( obj[0] );
+            expect( find(obj, {amet:123}) ).toBeUndefined();
+
+            expect( find(arr, {lorem:'ipsum', id:1}) ).toEqual( obj[0] );
+            expect( find(arr, {amet:123}) ).toBeUndefined();
+        });
+
+
+        it('should allow string shorthand syntax', function () {
+            var obj = {
+                '0' : {foo:'bar', lorem:'ipsum', id:0},
+                '1' : {foo:'bar', lorem:'ipsum', id:1}
+            };
+            var arr = [obj[0], obj[1]];
+
+            expect( find(obj, 'id') ).toEqual( obj[1] );
+            expect( find(obj, 'amet') ).toBeUndefined();
+
+            expect( find(arr, 'id') ).toEqual( obj[1] );
+            expect( find(arr, 'amet') ).toBeUndefined();
+        });
+
+
+    });
 });

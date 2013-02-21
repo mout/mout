@@ -27,6 +27,32 @@ define(['mout/object/some'], function(some){
             expect( some(a2, isEven) ).toBe( false );
         });
 
-    });
 
+        it('should support shorthand syntax', function () {
+            var obj = {
+                a : {foo:'bar', lorem:'ipsum', id:1},
+                b : {foo:'bar', lorem:'ipsum', id:2},
+                c : {foo:'bar', lorem:'ipsum', id:4}
+            };
+            expect( some(obj, {foo:'bar', lorem:'ipsum'}) ).toEqual( true );
+            expect( some(obj, {lorem:'ipsum', id:1}) ).toEqual( true );
+            expect( some(obj, {id:123}) ).toEqual( false );
+            expect( some(obj, {amet:123}) ).toEqual( false );
+        });
+
+
+        it('should allow string shorthand syntax', function () {
+            var obj = {
+                a : {foo:'bar', lorem:'ipsum', id:1, disabled:false},
+                b : {foo:'bar', lorem:'ipsum', id:2, disabled:false},
+                c : {foo:'bar', lorem:'ipsum', id:0, disabled:false}
+            };
+            expect( some(obj, 'foo') ).toEqual( true );
+            expect( some(obj, 'id') ).toEqual( true );
+            expect( some(obj, 'amet') ).toEqual( false );
+            expect( some(obj, 'disabled') ).toEqual( false );
+        });
+
+
+    });
 });

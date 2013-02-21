@@ -7,7 +7,7 @@ Next
  - add `object/equals`
  - add `object/deepEquals`
  - add `object/matches`.
- - add shorthand syntax to `array/*` methods.
+ - add shorthand syntax to `array/*`, `object/*` and `collection/*` methods.
  - improve `number/sign` behavior when value is zero (returns zero).
  - add `lang/is` and `lang/isnt`.
  - add `lang/isInteger`.
