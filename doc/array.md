@@ -177,6 +177,39 @@ find(arr, {name:'john'}); // {name:'john', surnname:'connor', beard:false}
 find(arr, 'beard'); // {name:'john', surnname:'doe', beard:true}
 ```
 
+See: [findIndex()](#findIndex)
+
+
+
+## findIndex(arr, iterator, [thisObj]):Number
+
+Loops through the items in the Array and returns the index of the first one
+that passes a truth test (callback).
+
+Returns `-1` if no item was found that passes the truth test.
+
+```js
+var arr = [1, { a: 1 }, 'foo', 'bar'];
+findIndex(arr, isString); // 2
+findIndex(arr, isNumber); // 0
+findIndex(arr, isObject); // 1
+findIndex(arr, isRegExp); // -1
+```
+
+`findIndex` also supports shorthand notation:
+
+```js
+var pets = [
+    { pet: 'dog', name: 'Sam' },
+    { pet: 'dog', name: 'Maggie' }
+];
+
+findIndex(pets, { pet: 'dog' }); // 0
+findIndex(pets, { name: 'Maggie' }); // 1
+```
+
+See: [find()](#find)
+
 
 
 ## flatten(arr, [shallow]):Array
