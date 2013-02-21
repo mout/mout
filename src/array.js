@@ -11,6 +11,7 @@ return {
     'every' : require('./array/every'),
     'filter' : require('./array/filter'),
     'find' : require('./array/find'),
+    'findIndex' : require('./array/findIndex'),
     'flatten' : require('./array/flatten'),
     'forEach' : require('./array/forEach'),
     'indexOf' : require('./array/indexOf'),
