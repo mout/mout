@@ -11,6 +11,7 @@ Next
  - improve `number/sign` behavior when value is zero (returns zero).
  - add `lang/is` and `lang/isnt`.
  - add `lang/isInteger`.
+ - improve `lang/isNaN` to actually check if value *is not a number* (#39).
 
 
 v0.3.0
