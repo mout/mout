@@ -26,6 +26,17 @@ define(['mout/object/max'], function(max){
 
         });
 
-    });
 
+        it('should allow string shorthand syntax', function () {
+            var obj = {
+                a : {foo:'bar', lorem:'ipsum', id:1},
+                b : {foo:'bar', lorem:'ipsum', id:2},
+                c : {foo:'bar', lorem:'ipsum', id:0}
+            };
+            expect( max(obj, 'id') ).toEqual( obj.b  );
+            expect( max(obj, 'amet') ).toBeUndefined();
+        });
+
+
+    });
 });

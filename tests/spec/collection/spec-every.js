@@ -67,6 +67,43 @@ define(['mout/collection/every'], function(every){
             expect( every({}, isEven) ).toBe( true );
         });
 
-    });
 
+
+        it('should support shorthand syntax', function () {
+            var obj = {
+                '0' : {foo:'bar', lorem:'ipsum', id:1},
+                '1' : {foo:'bar', lorem:'ipsum', id:2},
+                '2' : {foo:'bar', lorem:'ipsum', id:4}
+            };
+            var arr = [obj[0], obj[1], obj[2]];
+
+            expect( every(obj, {foo:'bar', lorem:'ipsum'}) ).toEqual( true );
+            expect( every(obj, {lorem:'ipsum', id:1}) ).toEqual( false );
+            expect( every(obj, {amet:123}) ).toEqual( false );
+
+            expect( every(arr, {foo:'bar', lorem:'ipsum'}) ).toEqual( true );
+            expect( every(arr, {lorem:'ipsum', id:1}) ).toEqual( false );
+            expect( every(arr, {amet:123}) ).toEqual( false );
+        });
+
+
+        it('should allow string shorthand syntax', function () {
+            var obj = {
+                '0' : {foo:'bar', lorem:'ipsum', id:1},
+                '1' : {foo:'bar', lorem:'ipsum', id:2},
+                '2' : {foo:'bar', lorem:'ipsum', id:0}
+            };
+            var arr = [obj[0], obj[1], obj[2]];
+
+            expect( every(obj, 'foo') ).toEqual( true );
+            expect( every(obj, 'id') ).toEqual( false );
+            expect( every(obj, 'amet') ).toEqual( false );
+
+            expect( every(arr, 'foo') ).toEqual( true );
+            expect( every(arr, 'id') ).toEqual( false );
+            expect( every(arr, 'amet') ).toEqual( false );
+        });
+
+
+    });
 });

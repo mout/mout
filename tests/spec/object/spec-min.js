@@ -26,6 +26,17 @@ define(['mout/object/min'], function(min){
 
         });
 
-    });
 
+        it('should allow string shorthand syntax', function () {
+            var obj = {
+                a : {foo:'bar', lorem:'ipsum', id:1},
+                b : {foo:'bar', lorem:'ipsum', id:2},
+                c : {foo:'bar', lorem:'ipsum', id:0}
+            };
+            expect( min(obj, 'id') ).toEqual( obj.c  );
+            expect( min(obj, 'amet') ).toBeUndefined();
+        });
+
+
+    });
 });
