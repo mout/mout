@@ -5,10 +5,10 @@ define(['./forOwn', '../function/makeIterator_'], function(forOwn, makeIterator)
      * true.
      */
     function filterValues(obj, callback, thisObj) {
-        callback = makeIterator(callback);
+        callback = makeIterator(callback, thisObj);
         var output = {};
         forOwn(obj, function(value, key, obj) {
-            if (callback.call(thisObj, value, key, obj)) {
+            if (callback(value, key, obj)) {
                 output[key] = value;
             }
         });

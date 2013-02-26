@@ -3,14 +3,14 @@ define(['./forEach', '../function/makeIterator_'], function (forEach, makeIterat
     /**
      * filter collection values, returns array.
      */
-    function filter(list, iterator, context) {
-        iterator = makeIterator(iterator);
+    function filter(list, iterator, thisObj) {
+        iterator = makeIterator(iterator, thisObj);
         var results = [];
         if (!list) {
             return results;
         }
         forEach(list, function(value, index, list) {
-            if (iterator.call(context, value, index, list)) {
+            if (iterator(value, index, list)) {
                 results[results.length] = value;
             }
         });
