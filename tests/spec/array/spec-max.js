@@ -32,6 +32,14 @@ define(['mout/array/max'], function (max) {
             expect( max(arr, 'b') ).toBe( arr[2] );
         });
 
+        it('should pass thisObj to callback', function () {
+            var arr = [{a:1, b:3}, {b:2}, {c:1.5}];
+            var context = ['a', 'b', 'c'];
+            function map(val, i) { return val[this[i]]; }
+
+            expect( max(arr, map, context) ).toBe( arr[1] );
+        });
+
 
     });
 

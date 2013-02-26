@@ -369,7 +369,7 @@ var lengths = map(src, 'length'); // [5, 5, 3, 4]
 
 
 
-## max(arr[, iterator]):*
+## max(arr, [iterator], [thisObj]):*
 
 Returns maximum value inside array or use a custom iterator to define how items
 should be compared.
@@ -391,7 +391,7 @@ max(['foo', 'lorem', 'amet'], 'length'); // "lorem"
 
 
 
-## min(arr[, iterator]):*
+## min(arr, [iterator], [thisObj]):*
 
 Returns minimum value inside array or use a custom iterator to define how items
 should be compared.
