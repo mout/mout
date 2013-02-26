@@ -33,6 +33,14 @@ define(['mout/array/min'], function (min) {
             expect( min(arr, 'b') ).toBe( arr[1] );
         });
 
+        it('should pass thisObj to callback', function () {
+            var arr = [{a:1, b:0}, {b:0.5}, {c:1.5}];
+            var context = ['a', 'b', 'c'];
+            function map(val, i) { return val[this[i]]; };
+
+            expect( min(arr, map, context) ).toBe( arr[1] );
+        });
+
 
     });
 
