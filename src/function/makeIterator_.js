@@ -15,10 +15,16 @@ define(['./prop', '../object/matches'], function(prop, matches) {
             case 'string':
             case 'number':
                 return prop(src);
+            case 'function':
+                if (typeof thisObj === 'undefined') {
+                    return src;
+                } else {
+                    return function(val, i, arr){
+                        return src.call(thisObj, val, i, arr);
+                    };
+                }
             default:
-                return function(val, i, arr){
-                    return src.call(thisObj, val, i, arr);
-                };
+                return src;
         }
     }
 
