@@ -18,6 +18,7 @@ node_modules/
 tests/
 _build/
 doc_html/
+coverage/
 
 # we keep the doc/ folder in case npm decides to display it in the future
 # also good in case user is using an old version or working offline
