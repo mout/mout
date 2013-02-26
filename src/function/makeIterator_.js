@@ -5,7 +5,7 @@ define(['./prop', '../object/matches'], function(prop, matches) {
      * Used internally on most array/object/collection methods that receives a
      * callback/iterator providing a shortcut syntax.
      */
-    function makeIterator(src){
+    function makeIterator(src, thisObj){
         switch(typeof src) {
             case 'object':
                 // typeof null == "object"
@@ -16,7 +16,9 @@ define(['./prop', '../object/matches'], function(prop, matches) {
             case 'number':
                 return prop(src);
             default:
-                return src;
+                return function(val, i, arr){
+                    return src.call(thisObj, val, i, arr);
+                };
         }
     }
 
