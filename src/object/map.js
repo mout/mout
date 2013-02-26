@@ -5,10 +5,10 @@ define(['./forOwn', '../function/makeIterator_'], function(forOwn, makeIterator)
      * `callback`.
      */
     function mapValues(obj, callback, thisObj) {
-        callback = makeIterator(callback);
+        callback = makeIterator(callback, thisObj);
         var output = {};
         forOwn(obj, function(val, key, obj) {
-            output[key] = callback.call(thisObj, val, key, obj);
+            output[key] = callback(val, key, obj);
         });
 
         return output;

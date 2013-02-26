@@ -2,7 +2,7 @@ define(['mout/function/makeIterator_'], function(makeIterator_){
 
     describe('function/makeIterator_', function(){
 
-        it('should return source argument if it is already a function', function(){
+        it('should return source argument if it is already a function with no context', function(){
             var fn = function(){};
             expect( makeIterator_(fn) ).toBe(fn);
         });
@@ -29,9 +29,15 @@ define(['mout/function/makeIterator_'], function(makeIterator_){
         });
 
 
-        it('should return return source argument if it is from an unsupported type', function(){
+        it('should return source argument if it is from an unsupported type', function(){
             expect( makeIterator_(null) ).toBe( null );
             expect( makeIterator_(void(0)) ).toBe( void(0) );
+        });
+
+        it('should return a function that is called with the specified context', function(){
+            var context = {}
+            var iterator = makeIterator_(function(){ return this; }, context);
+            expect( iterator() ).toBe(context);
         });
 
 
