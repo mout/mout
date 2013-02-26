@@ -1,23 +1,24 @@
 mout changelog
 ==============
 
-Next
-----
+v0.4.0 (2013/02/26)
+-------------------
 
  - add `object/equals`
  - add `object/deepEquals`
  - add `object/matches`.
- - add shorthand syntax to `array/*`, `object/*` and `collection/*` methods.
- - improve `number/sign` behavior when value is zero (returns zero).
  - add `lang/is` and `lang/isnt`.
  - add `lang/isInteger`.
- - improve `lang/isNaN` to actually check if value *is not a number* (#39).
  - add `array/findIndex`.
+ - add shorthand syntax to `array/*`, `object/*` and `collection/*` methods.
+ - improve `number/sign` behavior when value is NaN or +0 or -0.
+ - improve `lang/isNaN` to actually check if value *is not a number* without
+   coercing value; so `[]`, `""`, `null` and `"12"` are considered NaN (#39).
  - improve `string/contains` to match ES6 behavior (add fromIndex argument).
 
 
-v0.3.0
-------
+v0.3.0 (2013/02/01)
+-------------------
 
  - add `lang/clone`.
  - add `lang/toString`.
@@ -28,8 +29,8 @@ v0.3.0
  - convert values to strings in the `string/*` functions.
 
 
-v0.2.0
-------
+v0.2.0 (2013/01/13)
+-------------------
 
  - fix bug in `math/ceil` for negative radixes.
  - change `object/deepFillIn` and `object/deepMixIn` to recurse only if both
@@ -44,8 +45,8 @@ v0.2.0
  - simplify `math/floor`, `math/round`, `math/ceil` and `math/countSteps`.
 
 
-v0.1.0
-------
+v0.1.0 (2013/01/09)
+-------------------
 
 - Rename project from "amd-utils" to "mout"
 
