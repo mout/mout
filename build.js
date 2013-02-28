@@ -119,14 +119,24 @@ function release(version){
 
     version = String(version).replace(/[^\d\.]/g, '');
 
+    var remote = require('./package.json').repository.url;
+
     updateJsonVersion('./package.json', version);
     updateJsonVersion('./component.json', version);
 
     _helpers.shellSeries([
+        'git checkout master',
+        // scripts.pretest already generates the packages
         'npm test --coverage',
         'git add -A',
         'git commit --verbose',
-        'git tag v'+ version
+        'git tag v'+ version,
+        'git push '+ remote,
+        'git push --tags',
+        // scripts.prepublish already generates the cjs modules
+        'npm publish',
+        // TODO: use node instead of a shell script (so it works on windows)
+        'sh _build/clean.sh'
     ], function(err){
         if (err) {
             console.log(err.toString());
