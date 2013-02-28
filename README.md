@@ -4,6 +4,8 @@ http://moutjs.com/
 
 [![Build Status](https://travis-ci.org/mout/mout.png?branch=master)](https://travis-ci.org/mout/mout)
 
+[![browser support](http://ci.testling.com/mout/mout.png)](http://ci.testling.com/mout/mout)
+
 All code is library agnostic and consist mostly of helper methods that aren't
 directly related with the DOM, the purpose of this library isn't to replace
 Dojo, jQuery, YUI, Mootools, etc, but to provide modular solutions for common

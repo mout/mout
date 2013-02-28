@@ -8,24 +8,43 @@
 var env = jasmine.getEnv();
 var reporter;
 
-var opts = {
-    paths : {
-        'mout' : '../src'
-    }
-};
+var opts = {};
 
 
 if (typeof document !== 'undefined') { // browser ---
 
-    reporter = new jasmine.HtmlReporter();
-    // in case the user decides to run a single spec
-    env.specFilter = function(spec){
-        return reporter.specFilter(spec);
-    };
+    if ('HtmlReporter' in jasmine) { // regular browser ---
 
-    //fail early local and cache bust
-    opts.waitSeconds = (location.protocol === 'file:' || location.href.indexOf('://localhost') !== -1)? 5 : 45;
-    opts.urlArgs = 'bust='+ (+new Date());
+        reporter = new jasmine.HtmlReporter();
+        // in case the user decides to run a single spec
+        env.specFilter = function(spec){
+            return reporter.specFilter(spec);
+        };
+
+        opts.paths = {
+            'mout' : '../src'
+        };
+        //fail early local and cache bust
+        opts.waitSeconds = (location.protocol === 'file:' || location.href.indexOf('://localhost') !== -1)? 5 : 45;
+        opts.urlArgs = 'bust='+ (+new Date());
+
+    } else { // tesling ---
+
+        reporter = new jasmine.TapReporter();
+
+        // testling bundles all the scripts together and we can't use relative
+        // paths to load files on the repository so we need to load the files
+        // from rawgithub.com - tesling bundler also doesn't seem to use UTF-8
+        // making all the "special chars" tests to fail, so best approach for
+        // now is really to load the scripts dynamically (even tho it might
+        // fail in case rawgithub.com is down)
+        opts.paths = {
+            mout : 'http://rawgithub.com/mout/mout/master/src',
+            spec : 'http://rawgithub.com/mout/mout/master/tests/spec'
+        };
+        opts.waitSeconds = 200;
+
+    }
 
 } else { // nodejs ---
 

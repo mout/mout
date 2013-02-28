@@ -49,5 +49,23 @@
     "handlebars": "~1.0.6",
     "commander": "~1.0.5",
     "rocambole": "~0.2.3"
+  },
+  "testling": {
+    "browsers": {
+      "ie" : [7, 8, 9, 10],
+      "firefox" : [17, "nightly"],
+      "chrome": [23, "canary"],
+      "opera": [12, "next"],
+      "safari": [5.1, 6.0],
+      "iphone" : [6.0],
+      "ipad" : [6.0]
+    },
+    "scripts": [
+      "tests/lib/jasmine/jasmine.js",
+      "tests/lib/jasmine/jasmine.async.js",
+      "tests/lib/jasmine/jasmine-tap.js",
+      "tests/lib/requirejs/require.js",
+      "tests/runner.js"
+    ]
   }
 }
