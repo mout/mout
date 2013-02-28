@@ -33,7 +33,6 @@
   },
   "main": "./index.js",
   "scripts": {
-    "postinstall": "node build ci",
     "prepublish": "node build cjs .",
     "pretest": "node build pkg",
     "test": "node node_modules/istanbul/lib/cli test tests/runner.js --hook-run-in-context"
@@ -52,6 +51,7 @@
     "rocambole": "~0.2.3"
   },
   "testling": {
+    "preprocess" : "node build testling",
     "browsers": {
       "ie" : [7, 8, 9, 10],
       "firefox" : [17, "nightly"],
