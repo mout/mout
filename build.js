@@ -41,6 +41,10 @@ _cli
     .description('bump version number, update packages and run tests')
     .action( cmd(release) );
 
+_cli
+    .command('ci')
+    .description('prepare files for ci.testling.')
+    .action( cmd(generateTestBundle) );
 
 _cli.parse(process.argv);
 
@@ -151,5 +155,58 @@ function updateJsonVersion(path, version) {
     var fs = require('fs');
     target.version = version;
     fs.writeFileSync(path, JSON.stringify(target, null, '  '), _config.ENCODING);
+}
+
+
+// ci.testling.com can't load relative resources so we need to bundle all the
+// source files and tests into few files to make it work properly.
+// we can't use rawgithub.com to load the files dynamically since it can
+// timeout and was causing more issues (see #10).
+function generateTestBundle(){
+    // tests folder is on .npmignore so it should only exist if user cloned
+    // the repository directly which is enough to avoid running this action if
+    // not necessary
+    // ---
+    // this is just a quick hack to circunvent testling limitations until they
+    // update npm to 1.2.0, provide some environment variable, or support dynamic
+    // load of specs/modules.
+
+    var fs = require('fs');
+    fs.exists('tests', function(exists){
+        if (exists) {
+
+            var rjs = require('requirejs');
+            _helpers.echo('generateTestBundle: generating AMD bundles...');
+
+            // yes, it's ugly but works for now.
+            rjs.optimize({
+                logLevel : 3,
+                baseUrl : '.',
+                optimize: 'none',
+                name : 'mout/index',
+                paths : {
+                    'mout' : 'src'
+                },
+                out : 'tests/testling/src.js'
+            }, function(){
+
+                rjs.optimize({
+                    logLevel : 3,
+                    baseUrl : '.',
+                    optimize: 'none',
+                    name : 'spec/spec-index',
+                    paths : {
+                        'mout' : 'empty:',
+                        'spec' : 'tests/spec'
+                    },
+                    out : 'tests/testling/specs.js'
+                }, function(){
+                    _helpers.echo('generateTestBundle: done.');
+                });
+
+            });
+
+        }
+    });
 }
 

@@ -27,6 +27,4 @@ coverage/
 # after build (see issue #102)
 
 component.json
-updateDocs.sh
-clean.sh
 build.js

@@ -33,6 +33,7 @@
   },
   "main": "./index.js",
   "scripts": {
+    "postinstall": "node build ci",
     "prepublish": "node build cjs .",
     "pretest": "node build pkg",
     "test": "node node_modules/istanbul/lib/cli test tests/runner.js --hook-run-in-context"
@@ -65,6 +66,8 @@
       "tests/lib/jasmine/jasmine.async.js",
       "tests/lib/jasmine/jasmine-tap.js",
       "tests/lib/requirejs/require.js",
+      "tests/testling/src.js",
+      "tests/testling/specs.js",
       "tests/runner.js"
     ]
   }

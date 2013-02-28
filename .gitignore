@@ -12,6 +12,8 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
+npm-debug.log
+
 
 # ================
 # project specific
@@ -25,6 +27,9 @@ coverage/
 
 # ignore HTML docs since they are only useful for gh-pages branch
 doc_html/
+
+# these files are only needed by testling
+tests/testling/
 
 
 # -----------------------------------
