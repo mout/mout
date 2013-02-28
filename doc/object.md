@@ -234,7 +234,7 @@ var obj = new Foo();
 var result = 0;
 var keys = [];
 
-forOwn(obj, function(val, key, o){
+forIn(obj, function(val, key, o){
     result += val;
     keys.push(key);
 });
