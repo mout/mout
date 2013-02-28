@@ -9,6 +9,9 @@ var env = jasmine.getEnv();
 var reporter;
 
 var opts = {};
+opts.paths = {
+    'mout' : '../src'
+};
 
 
 if (typeof document !== 'undefined') { // browser ---
@@ -21,9 +24,6 @@ if (typeof document !== 'undefined') { // browser ---
             return reporter.specFilter(spec);
         };
 
-        opts.paths = {
-            'mout' : '../src'
-        };
         //fail early local and cache bust
         opts.waitSeconds = (location.protocol === 'file:' || location.href.indexOf('://localhost') !== -1)? 5 : 45;
         opts.urlArgs = 'bust='+ (+new Date());
@@ -61,7 +61,7 @@ if (typeof document !== 'undefined') { // browser ---
         }
     });
 
-    opts.baseUrl = __dirname + '/spec';
+    opts.baseUrl = __dirname;
     opts.nodeRequire = require;
 
 }
