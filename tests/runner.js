@@ -9,9 +9,8 @@ var env = jasmine.getEnv();
 var reporter;
 
 var opts = {
-    baseUrl : 'spec',
     paths : {
-        'mout' : '../../src'
+        'mout' : '../src'
     }
 };
 
@@ -51,7 +50,7 @@ if (typeof document !== 'undefined') { // browser ---
 
 // load and execute specs, should come after all options and jasmine.getEnv()
 // calls
-requirejs(opts, ['spec-index'], function(){
+requirejs(opts, ['spec/spec-index'], function(){
     env.addReporter(reporter);
     env.execute();
 });
