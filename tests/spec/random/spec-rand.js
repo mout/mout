@@ -1,56 +1,37 @@
-define(['mout/random/rand'], function (rand) {
+define(['mout/random/rand', './helper-mockRandom'], function (rand, mockRandom) {
 
     describe('random/rand()', function(){
 
         beforeEach(function(){
-            this.addMatchers({
-                toSnap : function(min, max){
-                    return this.actual === min || this.actual === max;
-                },
-                toDiffAny : function(vals){
-                    var n = arguments.length;
-                    while(n--){
-                        if(this.actual !== arguments[n]) return true;
-                    }
-                    return false;
-                }
-            });
+            mockRandom();
+        });
+
+        afterEach(function() {
+            mockRandom.end();
         });
 
         it('returns a rand number at each call', function(){
-            var q = rand();
-            var w = rand();
-            var e = rand();
-            var r = rand();
-            var t = rand();
-            var y = rand();
-            expect( q ).not.toBeUndefined();
-            expect( q ).not.toEqual( Infinity );
-            expect( q ).toDiffAny(w, e, r, t, y);
+            var a = rand(),
+                b = rand();
+            expect( a ).not.toBeUndefined();
+            expect( b ).not.toEqual( Infinity );
+            expect( a === b ).toBe(false);
         });
 
         it('returns a rand number inside range', function(){
-            var q = rand(0, 9999);
-            var w = rand(0, 9999);
-            var e = rand(0, 9999);
-            var r = rand(0, 9999);
-            var t = rand(0, 9999);
-            var y = rand(0, 9999);
-            expect( q ).toBeLessThan(9999.01);
-            expect( q ).toBeGreaterThan(-0.01);
-            expect( w ).toBeLessThan(9999.01);
-            expect( w ).toBeGreaterThan(-0.01);
-            expect( e ).toBeLessThan(9999.01);
-            expect( e ).toBeGreaterThan(-0.01);
-            expect( r ).toBeLessThan(9999.01);
-            expect( r ).toBeGreaterThan(-0.01);
-            expect( t ).toBeLessThan(9999.01);
-            expect( t ).toBeGreaterThan(-0.01);
-            expect( y ).toBeLessThan(9999.01);
-            expect( y ).toBeGreaterThan(-0.01);
+            var a = rand(0, 9999),
+                b = rand(0, 9999),
+                c = rand(0, 9999);
+            expect( a ).toBeLessThan(9999.01);
+            expect( a ).toBeGreaterThan(-0.01);
+            expect( b ).toBeLessThan(9999.01);
+            expect( b ).toBeGreaterThan(-0.01);
+            expect( c ).toBeLessThan(9999.01);
+            expect( c ).toBeGreaterThan(-0.01);
 
-            expect( q ).toDiffAny(w, e, r, t, y);
+            expect( a === b && b === c ).toBe(false);
         });
 
     });
+
 });

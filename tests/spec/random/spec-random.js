@@ -2,32 +2,28 @@ define(['mout/random/random'], function(random){
 
     describe('random/random', function(){
 
-        beforeEach(function(){
-            this.addMatchers({
-                toDiffAny : function(vals){
-                    var n = arguments.length;
-                    while(n--){
-                        if(this.actual !== arguments[n]) return true;
-                    }
-                    return false;
-                }
-            });
-        });
-
-
         it('should return a number from 0 till 1', function(){
             var nums = [];
-            var n = 15;
+            var n = 500;
             var r;
             while (n--) {
                 r = random();
                 expect( r ).toBeGreaterThan(-0.00000001);
                 expect( r ).toBeLessThan(1.000000001);
-                // there is a very small chance of returning same value in
-                // a row, so we just compare it against the last value
-                expect( r ).not.toEqual( nums[nums.length? nums.length - 1 : 0] );
                 nums.push(r);
             }
+
+            var areSame = true,
+                first = nums[0];
+            n = 0;
+            while (++n < nums.length) {
+                if (nums[n] !== first) {
+                    areSame = false;
+                    break;
+                }
+            }
+
+            expect( areSame ).toBe(false);
         });
 
 
