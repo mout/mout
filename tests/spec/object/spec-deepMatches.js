@@ -51,6 +51,16 @@ define(['mout/object/deepMatches'], function(deepMatches){
             expect( deepMatches(obj, { a: [ { c: ['b', 'd'] } ] }) ).toBe(false);
         });
 
+        it('should not duck-type arrays', function(){
+            var obj = { a: [0, 2, 3] };
+            expect( deepMatches(obj, { a: { length: 1, "0": 0 } }) ).toBe(false);
+        });
+
+        it('should match array properties with object', function(){
+            var obj = { a: [1, 2] };
+            expect( deepMatches(obj, { a: { length: 2 } }) ).toBe(true);
+        });
+
     });
 
 });
