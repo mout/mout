@@ -1,20 +1,16 @@
 define(['mout/random/random'], function(random) {
     var original;
 
+    // Values to return from the mocked generator
+    // The values should be equally split with no bias.
+    var values = [0.1, 0.7, 0.3, 0.45, 0.55, 0.9, 0.2, 0.35, 0.8, 0.65];
+
     function mockRandom() {
         original = random.get;
 
         var i = 0;
-        var reps = 0;
-        // Mock random number generator
-        // This makes large variations between each call, gradually shifting to
-        // cover a wider range
-        //
-        // Starts at 0.9, then ~0.1, then ~0, then ~0.2
         random.get = function() {
-            i = (i + ((reps % 2 === 0) ? 0.9 : 0.2) + reps * 0.001) % 1;
-            reps++;
-            return i;
+            return values[i++ % values.length];
         };
     }
 

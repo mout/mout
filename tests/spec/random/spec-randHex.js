@@ -5,6 +5,7 @@ define(['mout/random/randHex', './helper-mockRandom'], function (randHex, mockRa
         beforeEach(function(){
             mockRandom();
         });
+
         afterEach(function() {
             mockRandom.end();
         });
@@ -12,7 +13,7 @@ define(['mout/random/randHex', './helper-mockRandom'], function (randHex, mockRa
         it('should return a random hexadecimal value', function () {
             var a = randHex(),
                 b = randHex();
-            expect( a === b && b === a ).toBe(false);
+            expect( a ).not.toEqual( b );
         });
 
         it('should return a 6 char length hex value by default', function () {

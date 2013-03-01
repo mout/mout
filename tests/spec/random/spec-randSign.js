@@ -2,28 +2,28 @@ define(['mout/random/randSign', './helper-mockRandom'], function (randSign, mock
 
     describe('random/randSign()', function(){
 
-        it('returns a random number at each call', function(){
+        beforeEach(function(){
             mockRandom();
+        });
 
+        afterEach(function(){
+            mockRandom.end();
+        });
+
+        it('returns a random number at each call', function(){
             var a = randSign(),
-                b = randSign(),
-                c = randSign();
+                b = randSign();
 
             expect( a ).not.toBeUndefined();
             expect( a ).not.toEqual( Infinity );
             expect( a ).not.toEqual( NaN );
-            expect( a === b && b === c ).toBe(false);
-
-            mockRandom.end();
+            expect( a ).not.toEqual( b );
         });
 
         it('shouldn\t be biased', function () {
-            // Do not mock, since it needs a good non-biased random number
-            // generator
-
             var c1 = 0,
                 c_1 = 0,
-                n = 5000,
+                n = 10,
                 rnd;
 
             while (n--) {
@@ -37,11 +37,8 @@ define(['mout/random/randSign', './helper-mockRandom'], function (randSign, mock
                 }
             }
 
-            expect( c_1 ).toBeLessThan( 2600 );
-            expect( c_1 ).toBeGreaterThan( 2400 );
-            expect( c1 ).toBeLessThan( 2600 );
-            expect( c1 ).toBeGreaterThan( 2400 );
-
+            expect( c_1 ).toEqual(5);
+            expect( c1 ).toEqual(5);
         });
 
     });
