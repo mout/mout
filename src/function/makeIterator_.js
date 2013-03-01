@@ -1,4 +1,4 @@
-define(['./prop', '../object/matches'], function(prop, matches) {
+define(['./prop', '../object/deepMatches'], function(prop, deepMatches) {
 
     /**
      * Converts argument into a valid iterator.
@@ -10,7 +10,7 @@ define(['./prop', '../object/matches'], function(prop, matches) {
             case 'object':
                 // typeof null == "object"
                 return (src != null)? function(val, key, target){
-                    return matches(val, src);
+                    return deepMatches(val, src);
                 } : src;
             case 'string':
             case 'number':
