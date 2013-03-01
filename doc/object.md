@@ -73,6 +73,33 @@ var options = deepFillIn({foo : { baz : 45 }, lorem : 'amet'}, base);
 
 
 
+## deepMatches(target, pattern):Boolean
+
+Recursively checks if object contains all properties/value pairs. When both
+the target and pattern values are arrays, it checks that the target value
+contain matches for all the items in the pattern array (independent of order).
+
+```js
+var john = {
+    name: 'John',
+    age: 22,
+    pets: [
+        { type: 'cat', name: 'Grumpy Cat' },
+        { type: 'dog', name: 'Hawk' }
+    ]
+};
+
+deepMatches(john, { name: 'John' }); // true
+deepMatches(john, { age: 21 }); // false
+deepMatches(john, { pets: [ { type: 'cat' } ] }); // true
+deepMatches(john, { pets: [ { name: 'Hawk' } ] }); // true
+deepMatches(john, { pets: [ { name: 'Hairball' } ] }); // false
+```
+
+See [`matches()`](#matches)
+
+
+
 ## deepMixIn(target, ...objects):Object
 
 Mixes objects into the target object, recursively mixing existing child objects
@@ -421,6 +448,8 @@ var hippie = {hair:'long', beard:true};
 matches(john, hippie); // true
 matches(mark, hippie); // false
 ```
+
+See [`deepMatches()`](#deepMatches)
 
 
 

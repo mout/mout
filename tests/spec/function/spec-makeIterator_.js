@@ -8,10 +8,10 @@ define(['mout/function/makeIterator_'], function(makeIterator_){
         });
 
 
-        it('should return a function that calls object/matches if argument is an object', function(){
-            var fn =  makeIterator_({a:1,b:2});
-            expect( fn({a:1,b:2}) ).toBe( true );
-            expect( fn({a:2,b:2}) ).toBe( false );
+        it('should return a function that calls object/deepMatches if argument is an object', function(){
+            var fn =  makeIterator_({ a: 1, b: { c: 2 } });
+            expect( fn({ a: 1, b: { c: 2, d: 3 } }) ).toBe( true );
+            expect( fn({ a: 1, b: { c: 3 } }) ).toBe( false );
         });
 
 
