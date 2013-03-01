@@ -4,6 +4,7 @@ define([
     './object/spec-contains',
     './object/spec-deepEquals',
     './object/spec-deepFillIn',
+    './object/spec-deepMatches',
     './object/spec-deepMixIn',
     './object/spec-equals',
     './object/spec-every',
