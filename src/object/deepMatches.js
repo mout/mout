@@ -1,4 +1,4 @@
-define(['./forOwn'], function(forOwn) {
+define(['./forOwn', '../lang/isArray'], function(forOwn, isArray) {
 
     function containsMatch(array, pattern) {
         var i = -1, length = array.length;
@@ -39,8 +39,7 @@ define(['./forOwn'], function(forOwn) {
      */
     function deepMatches(target, pattern){
         if (target && typeof target === 'object') {
-            if (typeof target.length === 'number'
-                && typeof pattern.length === 'number') {
+            if (isArray(target) && isArray(pattern)) {
                 return matchArray(target, pattern);
             } else {
                 return matchObject(target, pattern);
