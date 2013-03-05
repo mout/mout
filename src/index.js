@@ -9,6 +9,7 @@ return {
     'VERSION' : '0.4.0',
     'array' : require('./array'),
     'collection' : require('./collection'),
+    'date' : require('./date'),
     'function' : require('./function'),
     'lang' : require('./lang'),
     'math' : require('./math'),
