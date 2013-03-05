@@ -1,74 +1,49 @@
-define(['mout/random/randInt'], function (randInt) {
+define(['mout/random/randInt', './helper-mockRandom'], function (randInt, mockRandom){
 
     describe('random/randInt()', function(){
 
         beforeEach(function(){
-            this.addMatchers({
-                toDiffAny : function(vals){
-                    var n = arguments.length;
-                    while(n--){
-                        if(this.actual !== arguments[n]) return true;
-                    }
-                    return false;
-                }
-            });
+            mockRandom();
+        });
+
+        afterEach(function(){
+            mockRandom.end();
         });
 
         it('returns a random number at each call', function(){
-            var q = randInt();
-            var w = randInt();
-            var e = randInt();
-            var r = randInt();
-            var t = randInt();
-            var y = randInt();
-            expect( q ).not.toBeUndefined();
-            expect( q ).not.toEqual( Infinity );
-            expect( q ).not.toEqual( NaN );
-            expect( q ).toDiffAny(w, e, r, t, y);
+            var a = randInt(),
+                b = randInt();
+            expect( a ).not.toBeUndefined();
+            expect( a ).not.toEqual( Infinity );
+            expect( a ).not.toEqual( NaN );
+            expect( a ).not.toEqual( b );
         });
 
         it('returns a same number if mix/max are same', function(){
-            var q = randInt(1, 1);
-            var w = randInt(1, 1);
-            var e = randInt(1, 1);
-            var r = randInt(1, 1);
-            var t = randInt(1, 1);
-            var y = randInt(1, 1);
-            expect( q ).not.toBeUndefined();
-            expect( q ).not.toEqual( Infinity );
-            expect( q ).not.toEqual( NaN );
-            expect( q ).not.toDiffAny(w, e, r, t, y);
+            var a = randInt(1, 1),
+                b = randInt(1, 1);
+
+            expect( a ).not.toBeUndefined();
+            expect( a ).not.toEqual( Infinity );
+            expect( a ).not.toEqual( NaN );
+            expect( a ).toEqual( b );
         });
 
         it('returns a random number inside range', function(){
-            var q = randInt(0, 9999);
-            var w = randInt(0, 9999);
-            var e = randInt(0, 9999);
-            var r = randInt(0, 9999);
-            var t = randInt(0, 9999);
-            var y = randInt(0, 9999);
-            expect( q ).toBeLessThan(9999.01);
-            expect( q ).toBeGreaterThan(-0.01);
-            expect( w ).toBeLessThan(9999.01);
-            expect( w ).toBeGreaterThan(-0.01);
-            expect( e ).toBeLessThan(9999.01);
-            expect( e ).toBeGreaterThan(-0.01);
-            expect( r ).toBeLessThan(9999.01);
-            expect( r ).toBeGreaterThan(-0.01);
-            expect( t ).toBeLessThan(9999.01);
-            expect( t ).toBeGreaterThan(-0.01);
-            expect( y ).toBeLessThan(9999.01);
-            expect( y ).toBeGreaterThan(-0.01);
-
-            expect( q ).toDiffAny(w, e, r, t, y);
+            var a = randInt(0, 9999), 
+                b = randInt(0, 9999);
+            expect( a ).toBeLessThan(9999.01);
+            expect( a ).toBeGreaterThan(-0.01);
+            expect( b ).toBeLessThan(9999.01);
+            expect( b ).toBeGreaterThan(-0.01);
+            expect( a ).not.toEqual( b );
         });
 
-        it('shouldn\t be biased', function () {
-
+        it('shouldn\'t be biased', function () {
             var c1 = 0,
                 c_1 = 0,
                 c0 = 0,
-                n = 1000,
+                n = 10,
                 rnd;
 
             while (n--) {
@@ -84,12 +59,12 @@ define(['mout/random/randInt'], function (randInt) {
                 }
             }
 
-            expect( c0 ).toBeLessThan( 385 );
-            expect( c0 ).toBeGreaterThan( 275 );
-            expect( c1 ).toBeLessThan( 385 );
-            expect( c1 ).toBeGreaterThan( 275 );
-            expect( c_1 ).toBeLessThan( 385 );
-            expect( c_1 ).toBeGreaterThan( 275 );
+            expect( c0 ).toBeLessThan(5);
+            expect( c0 ).toBeGreaterThan(2);
+            expect( c1 ).toBeLessThan(5);
+            expect( c1 ).toBeGreaterThan(2);
+            expect( c_1 ).toBeLessThan(5)
+            expect( c_1 ).toBeGreaterThan(2);
 
         });
 
@@ -97,7 +72,7 @@ define(['mout/random/randInt'], function (randInt) {
 
             var c1 = 0,
                 c0 = 0,
-                n = 1000,
+                n = 10,
                 rnd;
 
             while (n--) {
@@ -111,10 +86,8 @@ define(['mout/random/randInt'], function (randInt) {
                 }
             }
 
-            expect( c0 ).toBeLessThan( 550 );
-            expect( c0 ).toBeGreaterThan( 450 );
-            expect( c1 ).toBeLessThan( 550 );
-            expect( c1 ).toBeGreaterThan( 450 );
+            expect( c0 ).toEqual(5);
+            expect( c1 ).toEqual(5);
 
         });
 
