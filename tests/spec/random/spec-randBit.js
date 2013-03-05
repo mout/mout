@@ -1,41 +1,28 @@
-define(['mout/random/randBit'], function (randBit) {
+define(['mout/random/randBit', './helper-mockRandom'], function (randBit, mockRandom) {
 
     describe('random/randBit()', function(){
 
         beforeEach(function(){
-            this.addMatchers({
-                toDiffAny : function(vals){
-                    var n = arguments.length;
-                    while(n--){
-                        if(this.actual !== arguments[n]) return true;
-                    }
-                    return false;
-                }
-            });
+            mockRandom();
+        });
+
+        afterEach(function(){
+            mockRandom.end();
         });
 
         it('returns a random number at each call', function(){
-            var q = randBit();
-            var w = randBit();
-            var e = randBit();
-            var r = randBit();
-            var t = randBit();
-            var y = randBit();
-            var a = randBit();
-            var s = randBit();
-            var d = randBit();
-            var f = randBit();
-            expect( q ).not.toBeUndefined();
-            expect( q ).not.toEqual( Infinity );
-            expect( q ).not.toEqual( NaN );
-            expect( q ).toDiffAny(w, e, r, t, y, a, s, d, f);
+            var a = randBit(),
+                b = randBit();
+            expect( a ).not.toBeUndefined();
+            expect( a ).not.toEqual( Infinity );
+            expect( a ).not.toEqual( NaN );
+            expect( a ).not.toEqual( b );
         });
 
         it('shouldn\t be biased', function () {
-
             var c1 = 0,
                 c0 = 0,
-                n = 1000,
+                n = 10,
                 rnd;
 
             while (n--) {
@@ -49,11 +36,8 @@ define(['mout/random/randBit'], function (randBit) {
                 }
             }
 
-            expect( c0 ).toBeLessThan( 560 );
-            expect( c0 ).toBeGreaterThan( 440 );
-            expect( c1 ).toBeLessThan( 560 );
-            expect( c1 ).toBeGreaterThan( 440 );
-
+            expect( c0 ).toEqual(5);
+            expect( c1 ).toEqual(5);
         });
 
     });

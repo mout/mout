@@ -1,27 +1,19 @@
-define(['mout/random/randHex'], function (randHex) {
+define(['mout/random/randHex', './helper-mockRandom'], function (randHex, mockRandom) {
 
     describe('random/randHex()', function () {
 
         beforeEach(function(){
-            this.addMatchers({
-                toDiffAny : function(vals){
-                    var n = vals.length;
-                    while(n--){
-                        if(this.actual !== vals[n]) return true;
-                    }
-                    return false;
-                }
-            });
+            mockRandom();
         });
 
+        afterEach(function() {
+            mockRandom.end();
+        });
 
         it('should return a random hexadecimal value', function () {
-            var results = [];
-            var n = 16;
-            while (n--){
-                results[n] = randHex();
-            }
-            expect( randHex() ).toDiffAny( results );
+            var a = randHex(),
+                b = randHex();
+            expect( a ).not.toEqual( b );
         });
 
         it('should return a 6 char length hex value by default', function () {

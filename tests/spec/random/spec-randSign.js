@@ -1,44 +1,29 @@
-define(['mout/random/randSign'], function (randSign) {
+define(['mout/random/randSign', './helper-mockRandom'], function (randSign, mockRandom) {
 
     describe('random/randSign()', function(){
 
         beforeEach(function(){
-            this.addMatchers({
-                toDiffAny : function(vals){
-                    var n = arguments.length;
-                    while(n--){
-                        if(this.actual !== arguments[n]) return true;
-                    }
-                    return false;
-                }
-            });
+            mockRandom();
+        });
+
+        afterEach(function(){
+            mockRandom.end();
         });
 
         it('returns a random number at each call', function(){
-            var q = randSign();
-            var w = randSign();
-            var e = randSign();
-            var r = randSign();
-            var t = randSign();
-            var y = randSign();
-            var a = randSign();
-            var s = randSign();
-            var d = randSign();
-            var f = randSign();
-            var g = randSign();
-            var h = randSign();
-            var j = randSign();
-            expect( q ).not.toBeUndefined();
-            expect( q ).not.toEqual( Infinity );
-            expect( q ).not.toEqual( NaN );
-            expect( q ).toDiffAny(w, e, r, t, y, a, s, d, f, g, h, j);
+            var a = randSign(),
+                b = randSign();
+
+            expect( a ).not.toBeUndefined();
+            expect( a ).not.toEqual( Infinity );
+            expect( a ).not.toEqual( NaN );
+            expect( a ).not.toEqual( b );
         });
 
         it('shouldn\t be biased', function () {
-
             var c1 = 0,
                 c_1 = 0,
-                n = 1000,
+                n = 10,
                 rnd;
 
             while (n--) {
@@ -52,12 +37,8 @@ define(['mout/random/randSign'], function (randSign) {
                 }
             }
 
-            // 10% margin
-            expect( c_1 ).toBeLessThan( 550 );
-            expect( c_1 ).toBeGreaterThan( 450 );
-            expect( c1 ).toBeLessThan( 550 );
-            expect( c1 ).toBeGreaterThan( 450 );
-
+            expect( c_1 ).toEqual(5);
+            expect( c1 ).toEqual(5);
         });
 
     });
