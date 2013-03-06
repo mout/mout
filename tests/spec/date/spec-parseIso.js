@@ -125,7 +125,9 @@ define(['mout/date/parseIso'], function(parseIso){
         });
 
         it('should parse zero date', function(){
-            var date = Date.UTC(0, 0, 1, 0, 0, 0, 0);
+            // Date.UTC converts all dates < 100 to be relative to 1900, so
+            // hardcode the time stamp
+            var date = -62167219200000;
             expect( parseIso('0000-01-01T00:00') ).toEqual(date);
         });
 

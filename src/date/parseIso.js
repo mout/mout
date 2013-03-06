@@ -27,6 +27,11 @@ define(['../array/some'], function (some) {
 
     function getDate(year, month, day) {
         var date = new Date(Date.UTC(year, month, day));
+
+        // Explicitly set year to avoid Date.UTC making dates < 100 relative to
+        // 1900
+        date.setUTCFullYear(year);
+
         var valid =
             date.getUTCFullYear() === year &&
             date.getUTCMonth() === month &&
