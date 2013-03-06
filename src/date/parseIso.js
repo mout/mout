@@ -65,33 +65,50 @@ define(['../array/some'], function (some) {
         return getDate(year, month, day);
     }
 
-    function parseTime(str) {
-        var match, isValid;
+    function getTime(hr, min, sec) {
+        var valid =
+            (hr < 24 && hr >= 0 &&
+             min < 60 && min >= 0 &&
+             sec < 60 && min >= 0) ||
+            (hr === 24 && min === 0 && sec === 0);
+        if (!valid) {
+            return NaN;
+        }
 
-        var offset;
+        return ((hr * 60 + min) * 60 + sec) * 1000;
+    }
+
+    function parseOffset(str) {
+        var match;
         if (str.charAt(str.length - 1) === 'Z') {
-            // `Z` denotes GMT time
-            offset = 0;
             str = str.substring(0, str.length - 1);
         } else if ((match = TIME_ZONE.exec(str))) {
-            str = match[1];
-            var offsetHours = +match[3],
-                offsetMinutes = (match[4] === void 0) ? 0 : +match[4];
+            var match = TIME_ZONE.exec(str);
+            if (match) {
+                var hours = +match[3],
+                    minutes = (match[4] === void 0) ? 0 : +match[4],
+                    offset = getTime(hours, minutes, 0);
 
-            isValid =
-                offsetHours <= 24 && offsetHours >= 0 &&
-                offsetMinutes < 60 && offsetMinutes >= 0 &&
-                (offsetHours !== 24 || offsetMinutes === 0);
-            if (!isValid) {
-                return NaN;
-            }
+                if (match[2] === '-') {
+                    offset *= -1;
+                }
 
-            offset = (offsetHours * 60 + offsetMinutes) * 60 * 1000;
-            if (match[2] === '-') {
-                offset *= -1;
+                return { offset: offset, time: match[1] };
             }
-        } else {
-            offset = 0;
+        }
+
+        // No time zone specified, assume UTC
+        return { offset: 0, time: str };
+    }
+
+    function parseTime(str) {
+        var match;
+        var offset = parseOffset(str);
+
+        str = offset.time;
+        offset = offset.offset;
+        if (isNaN(offset)) {
+            return NaN;
         }
 
         match = matchAll(str, timePatterns);
@@ -103,20 +120,7 @@ define(['../array/some'], function (some) {
             minutes = (match[2] === void 0) ? 0 : +match[2],
             seconds = (match[3] === void 0) ? 0 : +match[3];
 
-        var isValid =
-            hours <= 24 && hours >= 0 &&
-            minutes < 60 && minutes >= 0 &&
-            seconds < 60 && seconds >= 0 &&
-            (hours !== 24 || (minutes === 0 && seconds === 0));
-
-        if (!isValid) {
-            return NaN;
-        }
-
-        var time = ((hours * 60 + minutes) * 60 + seconds) * 1000;
-        time -= offset;
-
-        return time;
+        return getTime(hours, minutes, seconds) - offset;
     }
 
     /**
@@ -125,20 +129,11 @@ define(['../array/some'], function (some) {
     function parseISO8601(str){
         var match = DATE_TIME.exec(str);
         if (!match) {
+            // No time specified
             return parseDate(str);
         }
 
-        var date = parseDate(match[1]);
-        if (isNaN(date)) {
-            return date;
-        }
-
-        var time = parseTime(match[2]);
-        if (isNaN(time)) {
-            return time;
-        }
-
-        return date + time;
+        return parseDate(match[1]) + parseTime(match[2]);
     }
 
     return parseISO8601;
