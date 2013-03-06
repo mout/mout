@@ -131,6 +131,14 @@ define(['mout/date/parseIso'], function(parseIso){
             expect( parseIso('0000-01-01T00:00') ).toEqual(date);
         });
 
+        it('should parse epoch date', function(){
+            expect( parseIso('1970-01-01T00:00:00') ).toEqual(0);
+            expect( parseIso('1970-001') ).toEqual(0);
+            expect( parseIso('1970-01-01') ).toEqual(0);
+            expect( parseIso('19700101T000000.00') ).toEqual(0);
+            expect( parseIso('1970-01-01T02:00+02:00') ).toEqual(0);
+        });
+
         it('should error on invalid year', function(){
             expect( parseIso('123') ).toBeNaN();
         });
