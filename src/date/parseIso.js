@@ -1,57 +1,68 @@
 define(['../array/some'], function (some) {
 
     var datePatterns = [
-        /^([0-9]{4})$/,                         // YYYY
-        /^([0-9]{4})-([0-9]{2})$/,              // YYYY-MM (YYYYMM not allowed)
-        /^([0-9]{4})-?([0-9]{2})-?([0-9]{2})$/  // YYYY-MM-DD or YYYYMMDD
+        /^([0-9]{4})$/,                        // YYYY
+        /^([0-9]{4})-([0-9]{2})$/,             // YYYY-MM (YYYYMM not allowed)
+        /^([0-9]{4})-?([0-9]{2})-?([0-9]{2})$/ // YYYY-MM-DD or YYYYMMDD
     ];
-    var ORD_DATE = /^([0-9]{4})-?([0-9]{3})$/;
+    var ORD_DATE = /^([0-9]{4})-?([0-9]{3})$/; // YYYY-DDD
 
     var timePatterns = [
-        /^([0-9]{2}(?:\.[0-9]*)?)$/,
-        /^([0-9]{2}):?([0-9]{2}(?:\.[0-9]*)?)$/,
-        /^([0-9]{2}):?([0-9]{2}):?([0-9]{2}(\.[0-9]*)?)$/
+        /^([0-9]{2}(?:\.[0-9]*)?)$/,                      // HH.hh
+        /^([0-9]{2}):?([0-9]{2}(?:\.[0-9]*)?)$/,          // HH:MM.mm
+        /^([0-9]{2}):?([0-9]{2}):?([0-9]{2}(\.[0-9]*)?)$/ // HH:MM:SS.ss
     ];
 
     var DATE_TIME = /^(.+)T(.+)$/;
     var TIME_ZONE = /^(.+)([+\-])([0-9]{2}):?([0-9]{2})$/;
 
-    function parseDate(str) {
-        var match, date,
-            year, month, day,
-            isValid;
-
-        function findMatch(pattern) {
+    function matchAll(str, patterns) {
+        var match;
+        var found = some(patterns, function(pattern) {
             return !!(match = pattern.exec(str));
+        });
+
+        return found ? match : null;
+    }
+
+    function getDate(year, month, day) {
+        var date = new Date(Date.UTC(year, month, day));
+        var valid =
+            date.getUTCFullYear() === year &&
+            date.getUTCMonth() === month &&
+            date.getUTCDate() === day;
+        return valid ? +date : NaN;
+    }
+
+    function parseOrdinalDate(str) {
+        var match = ORD_DATE.exec(str);
+        if (match ) {
+            var year = +match[1],
+                day = +match[2],
+                date = new Date(Date.UTC(year, 0, day));
+
+            if (date.getUTCFullYear() === year) {
+                return +date;
+            }
         }
 
-        if (!some(datePatterns, findMatch)) {
-            // Special case the YYYY-DDD format, since the days can overflow
-            // the month limit
-            if ((match = ORD_DATE.exec(str))) {
-                year = +match[1];
-                day = +match[2];
-                date = new Date(Date.UTC(year, 0, day));
-                isValid = date.getUTCFullYear() === year;
+        return NaN;
+    }
 
-                return isValid ? +date : NaN;
-            }
+    function parseDate(str) {
+        var match, year, month, day;
 
-            // No format found
-            return NaN;
+        var match = matchAll(str, datePatterns);
+        if (match === null) {
+            // Ordinal dates are verified differently.
+            return parseOrdinalDate(str);
         }
 
         year = (match[1] === void 0) ? 0 : +match[1];
         month = (match[2] === void 0) ? 0 : +match[2] - 1;
         day = (match[3] === void 0) ? 1 : +match[3];
 
-        date = new Date(Date.UTC(year, month, day));
-        isValid =
-            date.getUTCFullYear() === year &&
-            date.getUTCMonth() === month &&
-            date.getUTCDate() === day;
-
-        return isValid ? +date : NaN;
+        return getDate(year, month, day);
     }
 
     function parseTime(str) {
@@ -83,10 +94,8 @@ define(['../array/some'], function (some) {
             offset = 0;
         }
 
-        function matchTime(pattern) {
-            return !!(match = pattern.exec(str));
-        }
-        if (!some(timePatterns, matchTime)) {
+        match = matchAll(str, timePatterns);
+        if (match === null) {
             return NaN;
         }
 
