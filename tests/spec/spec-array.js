@@ -16,6 +16,7 @@ define([
     './array/spec-insert',
     './array/spec-intersection',
     './array/spec-invoke',
+    './array/spec-isSorted',
     './array/spec-join',
     './array/spec-lastIndexOf',
     './array/spec-map',
