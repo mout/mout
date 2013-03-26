@@ -3,6 +3,7 @@
 define([
     './spec-array',
     './spec-collection',
+    './spec-date',
     './spec-function',
     './spec-lang',
     './spec-math',
