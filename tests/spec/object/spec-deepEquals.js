@@ -49,6 +49,17 @@ define(['mout/object/deepEquals'], function(deepEquals){
             expect( deepEquals(a, b) ).toBe(true);
         });
 
+        it('should allow custom compare function', function() {
+            var a = { a: 1, b: { value: 2 } };
+            var b = { a: '1', b: { value: '02.0' } };
+
+            function numericCompare(a, b) {
+                return +a === +b;
+            }
+
+            expect( deepEquals(a, b, numericCompare) ).toBe(true);
+        });
+
     });
 
 });
