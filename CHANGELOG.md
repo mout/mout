@@ -4,6 +4,7 @@ mout changelog
 Next
 ----
 
+ - add `array/collect`
  - add `date/parseIso`
  - add `object/deepMatches`
  - change `function/makeIterator_` to use `deepMatches` (affects nearly all
