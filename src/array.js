@@ -4,6 +4,7 @@ define(function(require){
 //run `node build` instead
 return {
     'append' : require('./array/append'),
+    'collect' : require('./array/collect'),
     'combine' : require('./array/combine'),
     'compact' : require('./array/compact'),
     'contains' : require('./array/contains'),
