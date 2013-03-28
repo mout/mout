@@ -17,6 +17,11 @@ define(['mout/array/zip'], function(zip){
             expect( zip(['a', 'b', 'c'], [1, 2, 3], [true, false], [4]) ).toEqual( output );
         });
 
+        it('should use undefined for null argument values', function () {
+            var output = [ [1, undefined], [2, undefined] ];
+            expect( zip([1, 2], null) ).toEqual(output);
+        });
+
     });
 
 });

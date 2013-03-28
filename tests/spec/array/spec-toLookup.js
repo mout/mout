@@ -29,6 +29,10 @@ define(['mout/array/toLookup'], function (toLookup) {
             });
         });
 
+        it('should return empty object when array is null', function () {
+            expect( toLookup(null, 'foo') ).toEqual( {} );
+        });
+
     });
 
 });

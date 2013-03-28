@@ -23,6 +23,10 @@ define(['mout/array/pluck'], function (pluck) {
             expect( pluck(users, 'age') ).toEqual( [21, 25, 27] );
         });
 
+        it('should allow source array to be null', function () {
+            expect( pluck(null, 'foo') ).toEqual( [] );
+        });
+
     });
 
 });

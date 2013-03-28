@@ -8,8 +8,8 @@ define(function () {
             return;
         }
         var i = -1,
-            n = arr.length;
-        while (++i < n) {
+            l = arr.length;
+        while (++i < l) {
             // we iterate over sparse items since there is no way to make it
             // work properly on IE 7-8. see #64
             if ( callback.call(thisObj, arr[i], i, arr) === false ) {

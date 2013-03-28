@@ -39,6 +39,10 @@ define(['mout/array/some'], function (some) {
             expect( some([], isEven) ).toBe( false );
         });
 
+        it('should work on null array', function () {
+            expect( some(null, isEven) ).toBe(false);
+        });
+
         it('should be incremental', function () {
             var a = [1, 2, 3];
             var compare = [];

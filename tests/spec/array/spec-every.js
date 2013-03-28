@@ -40,6 +40,10 @@ define(['mout/array/every'], function (every) {
             expect( every([], isEven) ).toBe( true );
         });
 
+        it('should work on null array', function () {
+            expect( every(null, isEven) ).toBe(true);
+        });
+
         it('should loop forwards to avoid undesired behavior', function () {
             // not that the loop order should matter on a truth check over all
             // elements

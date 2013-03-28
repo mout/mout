@@ -5,10 +5,17 @@ define(['./forEach'], function (forEach) {
      * needed.
      */
     function invoke(arr, methodName, var_args){
+        if (arr == null) {
+            return arr;
+        }
+
         var args = Array.prototype.slice.call(arguments, 2);
-        forEach(arr, function(item){
-            item[methodName].apply(item, args);
-        });
+        var i = -1, l = arr.length, value;
+        while (++i < l) {
+            value = arr[i];
+            value[methodName].apply(value, args);
+        }
+
         return arr;
     }
 

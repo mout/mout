@@ -32,6 +32,10 @@ define(['mout/array/intersection'], function (intersection) {
 
         });
 
+        it('should use empty array when null', function () {
+            expect( intersection([1, 2], null, [1]) ).toEqual( [] );
+        });
+
     });
 
 });

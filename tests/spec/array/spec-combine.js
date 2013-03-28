@@ -1,4 +1,4 @@
-define(['mout/array/combine'], function (append) {
+define(['mout/array/combine'], function (combine) {
 
     describe('array/combine()', function(){
 
@@ -8,9 +8,16 @@ define(['mout/array/combine'], function (append) {
                 arr2 = [3, 4, 5],
                 result;
 
-            result = append(arr, arr2);
+            result = combine(arr, arr2);
             expect(arr).toBe( result );
             expect(arr).toEqual([1, 2, 3, 4, 5]);
+        });
+
+        it('should allow null second array', function(){
+            var arr = [1, 2];
+            combine(arr, null);
+
+            expect(arr).toEqual([1, 2]);
         });
 
     });

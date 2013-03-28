@@ -18,5 +18,9 @@ define(['mout/array/flatten'], function (flatten) {
             expect(result).toEqual([1, 2, 3, [4, 5]]);
         });
 
+        it('should return empty array when source array is null', function () {
+            expect( flatten(null) ).toEqual( [] );
+        });
+
     });
 });

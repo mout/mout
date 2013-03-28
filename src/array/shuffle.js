@@ -4,18 +4,24 @@ define(['../random/randInt', './forEach'], function (randInt, forEach) {
      * Shuffle array items.
      */
     function shuffle(arr) {
-        var result = [],
+        var results = [],
             rnd;
-        forEach(arr, function(val, i, arr){
+        if (arr == null) {
+            return results;
+        }
+
+        var i = -1, l = arr.length, value;
+        while (++i < l) {
             if (!i) {
-                result[0] = val;
+                results[0] = arr[0];
             } else {
                 rnd = randInt(0, i);
-                result[i] = result[rnd];
-                result[rnd] = val;
+                results[i] = results[rnd];
+                results[rnd] = arr[i];
             }
-        });
-        return result;
+        }
+
+        return results;
     }
 
     return shuffle;

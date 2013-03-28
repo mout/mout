@@ -32,6 +32,12 @@ define(['mout/array/difference'], function (difference) {
 
         });
 
+        it('should use empty array if null', function () {
+            var arr = [1, 2];
+            expect( difference(null, arr) ).toEqual( [] );
+            expect( difference(arr, null) ).toEqual( arr );
+        });
+
     });
 
 });

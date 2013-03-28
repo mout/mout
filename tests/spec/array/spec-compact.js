@@ -11,6 +11,10 @@ define(['mout/array/compact'], function (compact) {
             expect( compact(arr) ).toEqual( [1, 2, false, '', 'foo', 'bar'] );
         });
 
+        it('should return empty array if source array is null', function () {
+            expect( compact(null) ).toEqual([]);
+        });
+
     });
 
 });

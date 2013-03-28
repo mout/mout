@@ -4,22 +4,27 @@ define(['./forEach', '../function/makeIterator_'], function (forEach, makeIterat
      * Return minimum value inside array
      */
     function min(arr, iterator, thisObj){
-        if (arr.length && !iterator) {
-            return Math.min.apply(Math, arr);
-        } else if (!arr.length) {
+        if (arr == null || !arr.length) {
             return -Infinity;
+        } else if (arr.length && !iterator) {
+            return Math.min.apply(Math, arr);
         } else {
             iterator = makeIterator(iterator, thisObj);
             var result,
                 compare = Infinity,
-                tmp;
-            forEach(arr, function(val, i, list){
-                tmp = iterator(val, i, list);
-                if (tmp < compare) {
-                    compare = tmp;
-                    result = val;
+                value,
+                temp;
+
+            var i = -1, l = arr.length;
+            while (++i < l) {
+                value = arr[i];
+                temp = iterator(value, i, arr);
+                if (temp < compare) {
+                    compare = temp;
+                    result = value;
                 }
-            });
+            }
+
             return result;
         }
     }

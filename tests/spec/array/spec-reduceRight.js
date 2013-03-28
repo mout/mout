@@ -64,11 +64,19 @@ define(['mout/array/reduceRight'], function (reduceRight) {
             expect( function(){ reduceRight([], sum); } ).toThrow();
         });
 
+        it('should throw error if null', function () {
+            expect( function(){ reduceRight(null, function(){}) }).toThrow();
+        });
+
         it('should work on empty arrays if provide initVal', function () {
             function sum(prev, cur, idx, arr) {
                 return prev + cur;
             }
             expect( reduceRight([], sum, 10) ).toBe(10);
+        });
+
+        it('should work on null array if initVal provided', function () {
+            expect( reduceRight(null, function(){}, 10) ).toBe( 10 );
         });
 
 

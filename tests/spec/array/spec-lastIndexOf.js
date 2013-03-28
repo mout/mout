@@ -85,6 +85,10 @@ define(['mout/array/lastIndexOf'], function (lastIndexOf) {
             expect( lastIdx(arr, 'foo', 15) ).toEqual( -1 );
         });
 
+        it('should return -1 if array is null', function(){
+            expect( lastIdx(null, 1) ).toEqual( -1 );
+        });
+
     });
 
 });
