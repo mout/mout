@@ -25,8 +25,8 @@ contains(obj, 'foo');  // false
 
 Recursively tests whether two objects contain the same keys and equal values.
 
-`callback` specifies the equality comparison function. It defaults to using the
-strict equals (`===`) operator.
+`callback` specifies the equality comparison function used to compare
+non-object values. It defaults to using the strict equals (`===`) operator.
 
 If the values are both an object, it will recurse into the objects, checking if
 their keys/values are equal. It will only check the keys and values contained
