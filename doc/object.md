@@ -127,13 +127,16 @@ See: [`mixIn()`](#mixIn), [`merge()`](#merge), [`deepFillIn()`](#deepFillIn)
 
 
 
-## equals(a, b):Boolean
+## equals(a, b, compare):Boolean
 
 Tests whether two objects contain the same keys and values.
 
 It will only check the keys and values contained by the objects; it will not
 check the objects' prototypes. If either of the values are not objects, they
 will be compared using the `===` operator.
+
+The values in the objects are compared by the `compare` function if provided,
+otherwise it compares using the `===` operator.
 
 ```js
 equals({}, {}); // true
@@ -143,6 +146,7 @@ equals({ a: 1, b: 2 }, { a: 1 }); // false
 equals({ a: 1 }, { a: 1, b: 2 }); // false
 equals(null, null); // true
 equals(null, {}); // false
+equals({ a: 1 }, { a: '1' }, function(a, b) { return a == b; }); // true
 ```
 
 
