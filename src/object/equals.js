@@ -1,8 +1,7 @@
 define(['./hasOwn', './every', '../lang/isObject'], function(hasOwn, every, isObject) {
 
-    // Default compare function
-    function compareValues(value, key) {
-        return hasOwn(this, key) && this[key] === value;
+    function defaultCompare(a, b) {
+        return a === b;
     }
 
     // Makes a function to compare the object values from the specified compare
@@ -21,12 +20,14 @@ define(['./hasOwn', './every', '../lang/isObject'], function(hasOwn, every, isOb
      * Checks if two objects have the same keys and values.
      */
     function equals(a, b, callback) {
+        callback = callback || defaultCompare;
+
         if (!isObject(a) || !isObject(b)) {
-            return callback ? callback(a, b) : a === b;
+            return callback(a, b);
         }
 
-        var compare = callback ? makeCompare(callback) : compareValues;
-        return every(a, compare, b) && every(b, checkProperties, a);
+        return (every(a, makeCompare(callback), b) &&
+                every(b, checkProperties, a));
     }
 
     return equals;
