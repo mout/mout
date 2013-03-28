@@ -4,7 +4,8 @@ define(function(require){
 //run `node build` instead
 return {
     'isLeapYear' : require('./date/isLeapYear'),
-    'parseIso' : require('./date/parseIso')
+    'parseIso' : require('./date/parseIso'),
+    'totalDaysInMonth' : require('./date/totalDaysInMonth')
 };
 
 });

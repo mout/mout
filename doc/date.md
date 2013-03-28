@@ -8,6 +8,8 @@ Date utilities.
 
 Checks if it's a [leap year](http://en.wikipedia.org/wiki/Leap_year).
 
+see: [`totalDaysInMonth()`](#totalDaysInMonth)
+
 ```js
 isLeapYear(2012); // true
 isLeapYear(2013); // false
@@ -42,6 +44,19 @@ parseIso('2000-01-02T20:10+04:00') // 946829400000
 ```
 
 
+## totalDaysInMonth(fullYear, monthIndex):Number
+
+Returns the amount of days in the month taking into consideration leap years.
+
+see: [`isLeapYear()`](#isLeapYear)
+
+```js
+totalDaysInMonth(2008, 1); // 29 (leap year)
+totalDaysInMonth(2009, 1); // 28
+
+// you can also pass a Date object as single argument
+totalDaysInMonth( new Date(2013, 0, 1) ); // 31
+```
 
 
 -------------------------------------------------------------------------------
