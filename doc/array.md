@@ -21,6 +21,31 @@ append(foo, bar); // ['a', 'b', 'b', 'd']
 
 
 
+## collect(arr, callback, [thisObj]):Array
+
+Maps the items in `arr` and concatenates the resulting arrays.
+
+See: [`map()`](#map)
+
+```js
+collect([1, 2, 3], function(val) {
+    return [val, val % 2];
+}); // [1, 1, 2, 0, 3, 1];
+
+collect(['a', 'bb', ''], function(val) {
+    return val.split('');
+}); // ['a', 'b', 'b']
+```
+
+It also supports a shorthand syntax:
+
+```js
+var items = [{ a: [1] }, { b: 'foo' }, { a: [2, 3] }];
+collect(items, 'a'); // [1, 2, 3];
+```
+
+
+
 ## combine(arr1, arr2):Array
 
 Combines an array with all the items of another.
@@ -347,6 +372,8 @@ element in this array.
 
 It differs from ES5 since it will also loop over sparse items in the array to
 normalize the behavior across browsers (avoid inconsistencies).
+
+See: [`collect()`](#collect)
 
 ```js
 var nums = [1,2,3,4];
