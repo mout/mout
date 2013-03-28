@@ -72,6 +72,25 @@ define(['mout/object/equals'], function(equals){
             expect( equals(a, b) ).toBe(true);
         });
 
+        it('should allow custom compare function', function() {
+            var a = { a: 1, b: 2 };
+            var b = { a: '1', b: '02' };
+
+            function numericCompare(a, b) {
+                return +a === +b;
+            }
+
+            expect( equals(a, b, numericCompare) ).toBe(true);
+        });
+
+        it('should use custom compare function when values are not objects', function() {
+            function numericCompare(a, b) {
+                return +a === +b;
+            }
+
+            expect( equals('1.0', 1, numericCompare) ).toBe(true);
+        });
+
     });
 
 });

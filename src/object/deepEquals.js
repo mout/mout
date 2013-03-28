@@ -1,24 +1,24 @@
-define(['./hasOwn', './every', '../lang/isObject'], function (hasOwn, every, isObject) {
+define(['../lang/isObject', './equals'], function (isObject, equals) {
 
-    function compareValues(value, key) {
-        return hasOwn(this, key) && deepEquals(this[key], value);
-    }
-
-    function checkProperties(value, key) {
-        return hasOwn(this, key);
+    function defaultCompare(a, b) {
+        return a === b;
     }
 
     /**
      * Recursively checks for same properties and values.
      */
-    function deepEquals(a, b){
-        if (a === b) {
-            return true;
-        } else if (!isObject(a) || !isObject(b)) {
-            return false;
+    function deepEquals(a, b, callback){
+        callback = callback || defaultCompare;
+
+        if (!isObject(a) || !isObject(b)) {
+            return callback(a, b);
         }
 
-        return every(a, compareValues, b) && every(b, checkProperties, a);
+        function compare(a, b){
+            return deepEquals(a, b, callback);
+        }
+
+        return equals(a, b, compare);
     }
 
     return deepEquals;
