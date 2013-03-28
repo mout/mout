@@ -21,10 +21,8 @@ define(['./hasOwn', './every', '../lang/isObject'], function(hasOwn, every, isOb
      * Checks if two objects have the same keys and values.
      */
     function equals(a, b, callback) {
-        if (a === b) {
-            return true;
-        } else if (!isObject(a) || !isObject(b)) {
-            return false;
+        if (!isObject(a) || !isObject(b)) {
+            return callback ? callback(a, b) : a === b;
         }
 
         var compare = callback ? makeCompare(callback) : compareValues;
