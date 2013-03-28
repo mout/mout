@@ -4,6 +4,17 @@ Date utilities.
 
 
 
+## isLeapYear(fullYear|date):Boolean
+
+Checks if it's a [leap year](http://en.wikipedia.org/wiki/Leap_year).
+
+```js
+isLeapYear(2012); // true
+isLeapYear(2013); // false
+isLeapYear(new Date(2012, 2, 28)); // true
+```
+
+
 
 ## parseIso(str):Number
 
