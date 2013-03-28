@@ -5,6 +5,8 @@ Next
 ----
 
  - add `array/collect`
+ - add `callback` parameter to `object/equals` and `object/deepEquals` to allow
+   custom compare operations.
  - add `date/parseIso`
  - add `object/deepMatches`
  - change `function/makeIterator_` to use `deepMatches` (affects nearly all

@@ -21,17 +21,17 @@ contains(obj, 'foo');  // false
 
 
 
-## deepEquals(a, b):Boolean
+## deepEquals(a, b, [callback]):Boolean
 
-Recursively tests whether two objects contain the same keys and values.
+Recursively tests whether two objects contain the same keys and equal values.
 
-Tests whether the objects contain the same keys and equal values.  If the
-values are both an object, it will recurse into the objects, checking if their
-keys/values are equal.
+`callback` specifies the equality comparison function used to compare
+non-object values. It defaults to using the strict equals (`===`) operator.
 
-It will only check the keys and values contained by the objects; it will not
-check the objects' prototypes.  If the either of the values are not objects,
-they will be checked using the `===` operator.
+If the values are both an object, it will recurse into the objects, checking if
+their keys/values are equal. It will only check the keys and values contained
+by the objects; it will not check the objects' prototypes.  If the either of
+the values are not objects, they will be checked using the `callback` function.
 
 Example:
 
@@ -42,6 +42,10 @@ deepEquals({ value: { a: 1 } }, { value: { a: 2 } }); // false
 deepEquals({ value: { a: 1 } }, { value: { a: 1, b: 2 } }); // false
 deepEquals({}, null); // false
 deepEquals(null, null); // true
+deepEquals(
+    { a: { b: 1 } },
+    { a: { b: '1' } },
+    function(a, b) { return a == b; }); // true
 ```
 
 See: [`equals()`](#equals)
@@ -127,13 +131,16 @@ See: [`mixIn()`](#mixIn), [`merge()`](#merge), [`deepFillIn()`](#deepFillIn)
 
 
 
-## equals(a, b):Boolean
+## equals(a, b, [callback]):Boolean
 
 Tests whether two objects contain the same keys and values.
 
+`callback` specifies the equality comparison function used to compare the
+values. It defaults to using the strict equals (`===`) operator.
+
 It will only check the keys and values contained by the objects; it will not
 check the objects' prototypes. If either of the values are not objects, they
-will be compared using the `===` operator.
+will be compared using the `callback` function.
 
 ```js
 equals({}, {}); // true
@@ -143,6 +150,7 @@ equals({ a: 1, b: 2 }, { a: 1 }); // false
 equals({ a: 1 }, { a: 1, b: 2 }); // false
 equals(null, null); // true
 equals(null, {}); // false
+equals({ a: 1 }, { a: '1' }, function(a, b) { return a == b; }); // true
 ```
 
 
