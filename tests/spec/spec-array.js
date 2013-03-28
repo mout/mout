@@ -2,6 +2,7 @@
 //run `node build` instead
 define([
     './array/spec-append',
+    './array/spec-collect',
     './array/spec-combine',
     './array/spec-compact',
     './array/spec-contains',
