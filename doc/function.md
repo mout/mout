@@ -72,10 +72,11 @@ Executes a function after a delay in milliseconds within the given context, opti
 
 ### Arguments
 
- 1. `fn` (Function)    : Target Function
- 2. `millis` (Number)  : Delay in milliseconds
- 2. `context` (Object) : Execution context (object used as `this`)
- 3. `[...args]` (*)    : Arguments (0...n arguments)
+ 1. `fn` (Function)      : Target Function
+ 2. `millis` (Number)    : Delay in milliseconds
+ 3. `context` (Object)   : Execution context (object used as `this`)
+ 4. `override` (Boolean) : Determins weather previous delays on the same function are canceled.
+ 5. `[...args]` (*)      : Arguments (0...n arguments)
 
 ```js
 function addValue(value) {
