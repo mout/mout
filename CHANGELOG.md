@@ -5,6 +5,8 @@ Next
 ----
 
  - add `date/parseIso`
+ - add `date/isLeapYear`
+ - add `date/totalDaysInMonth`
  - add `object/deepMatches`
  - change `function/makeIterator_` to use `deepMatches` (affects nearly all
    iteration methods)
