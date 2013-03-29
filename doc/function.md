@@ -63,9 +63,34 @@ callback execution:
     X                                 X
 
 See: [`throttle()`](#throttle)
+See: [`delay()`](#delay)
 
 
+## delay(fn, millis, context, [...args]):Number;
 
+Executes a function after a delay in milliseconds within the given context, optionally adding any additional parameters.
+
+### Arguments
+
+ 1. `fn` (Function)    : Target Function
+ 2. `millis` (Number)  : Delay in milliseconds
+ 2. `context` (Object) : Execution context (object used as `this`)
+ 3. `[...args]` (*)    : Arguments (0...n arguments)
+
+```js
+function addValue(value) {
+	this.a += value;
+}
+
+var context = { a: 400 };
+var timeout = delay(addValue, 3200, context, 100);
+
+// to cancel call: clearTimeout(timeout);
+```
+
+See: [`bind()`](#bind)
+See: [`throttle()`](#throttle)
+See: [`debounce()`](#debounce)
 
 ## func(name):Function
 
@@ -156,6 +181,7 @@ In this visualization, `|` is a throttled-function call and `X` is the actual
     X    X    X    X    X    X        X    X    X    X    X    X
 
 See: [`debounce()`](#debounce)
+See: [`delay()`](#delay)
 
 
 

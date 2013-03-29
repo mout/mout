@@ -6,6 +6,7 @@ return {
     'bind' : require('./function/bind'),
     'compose' : require('./function/compose'),
     'debounce' : require('./function/debounce'),
+    'delay' : require('./function/delay'),
     'func' : require('./function/func'),
     'makeIterator_' : require('./function/makeIterator_'),
     'partial' : require('./function/partial'),
