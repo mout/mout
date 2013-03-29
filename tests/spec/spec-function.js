@@ -9,7 +9,8 @@ define([
     './function/spec-partial',
     './function/spec-prop',
     './function/spec-series',
-    './function/spec-throttle'
+    './function/spec-throttle',
+    './function/spec-timeout'
 ], function(){
     //noop
 });
