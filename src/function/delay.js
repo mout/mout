@@ -15,6 +15,14 @@ define(['../array/findIndex'], function(findIndex) {
         }
     }
 
+    function removeTimeout(fn, id) {
+        var index = findIndex(cache, {fn: fn, id: id});
+
+        if (index > -1) {
+            cache.splice(index, 1);
+        }
+    }
+
     /**
      * Calls a function in a given context with a supplied delay. Returns the timeout identifier.
      * @param {Function} fn       Function.
@@ -35,8 +43,7 @@ define(['../array/findIndex'], function(findIndex) {
         var args = slice(arguments, 4);
 
         var id = setTimeout( function() {
-            cancelTimeout(fn);
-
+            removeTimeout(fn, id);
             fn.apply(context, args);
         }, millis);
 
