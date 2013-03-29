@@ -42,8 +42,10 @@ define(['mout/array/filter'], function (filter) {
         });
 
         it('should return empty array if target is null/undefined', function () {
-            expect( filter() ).toEqual( [] );
-            expect( filter(null) ).toEqual( [] );
+            var testFunc = function() { return true; }
+
+            expect( filter(undefined, testFunc) ).toEqual( [] );
+            expect( filter(null, testFunc) ).toEqual( [] );
         });
 
 

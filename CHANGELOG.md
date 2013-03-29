@@ -4,13 +4,25 @@ mout changelog
 Next
 ----
 
+ - Add optional delimiter to `string/unCamelCase`
+ - Allow underscore characters in `string/removeNonWord`
+ - Convert underscores to camelCase in `string/camelCase`
+
+v0.5.0 (2013/04/04)
+-------------------
+
  - add `array/collect`
  - add `callback` parameter to `object/equals` and `object/deepEquals` to allow
    custom compare operations.
+ - normalize behavior in `array/*` methods to treat `null` values as empty
+   arrays when reading from array
  - add `date/parseIso`
+ - add `date/isLeapYear`
+ - add `date/totalDaysInMonth`
  - add `object/deepMatches`
  - change `function/makeIterator_` to use `deepMatches` (affects nearly all
    iteration methods)
+ - Add `thisObj` parameter to `array/min` and `array/max`
 
 v0.4.0 (2013/02/26)
 -------------------

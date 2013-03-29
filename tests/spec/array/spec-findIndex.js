@@ -33,6 +33,13 @@ define(['mout/array/findIndex'], function(findIndex){
             expect( findIndex(items, findTwo) ).toEqual(-1);
         });
 
+        it('should return -1 when array is null/undefined', function(){
+            var testFunc = function() { return true; };
+
+            expect( findIndex(null, testFunc) ).toBe( -1 );
+            expect( findIndex(undefined, testFunc) ).toBe( -1 );
+        });
+
     });
 
 });

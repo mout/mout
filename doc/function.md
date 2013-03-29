@@ -65,8 +65,6 @@ callback execution:
 See: [`throttle()`](#throttle)
 
 
-
-
 ## func(name):Function
 
 Returns a function that calls a method with given `name` on supplied object.
@@ -158,7 +156,16 @@ In this visualization, `|` is a throttled-function call and `X` is the actual
 See: [`debounce()`](#debounce)
 
 
+## timeout(fn, millis, context, [...args]):Number
 
+Functions as a wrapper for `setTimeout`. Calls a the function `fn` after a given delay `millis` in milliseconds.
+The function is called within the specified context. The return value can be used to clear the timeout using `clearTimeout`.
+
+```js
+var id = timeout(doStuff, 300, this);
+
+clearTimeout(id);
+```
 
 -------------------------------------------------------------------------------
 

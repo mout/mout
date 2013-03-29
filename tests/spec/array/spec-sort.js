@@ -50,6 +50,12 @@ define(['mout/array/sort'], function (sort) {
             expect( sort(arr, compareFn2) ).toEqual( com );
 
         });
+
+        it('should return empty array if input is null/undefined', function () {
+            expect( sort(null) ).toEqual( [] );
+            expect( sort(undefined) ).toEqual( [] );
+        });
+
     });
 
 });

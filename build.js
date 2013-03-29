@@ -38,7 +38,7 @@ _cli
 
 _cli
     .command('release <version>')
-    .description('bump version number, update packages and run tests')
+    .description('bump version number, run tests, git tag, publish')
     .action( cmd(release) );
 
 _cli
@@ -127,8 +127,11 @@ function release(version){
 
     updateJsonVersion('./package.json', version);
     updateJsonVersion('./component.json', version);
+    updateChangelog('./CHANGELOG.md', version);
 
     _helpers.shellSeries([
+        // make sure we checkout master so git will warn about uncommited
+        // changes and it will also avoid publishing wrong branch
         'git checkout master',
         // scripts.pretest already generates the packages
         'npm test --coverage',
@@ -155,6 +158,38 @@ function updateJsonVersion(path, version) {
     var fs = require('fs');
     target.version = version;
     fs.writeFileSync(path, JSON.stringify(target, null, '  '), _config.ENCODING);
+}
+
+
+function updateChangelog(path, version) {
+    var fs = require('fs');
+    var content = fs.readFileSync(path).toString();
+    var release = 'v'+ version +' ('+ today() +')';
+    var dashedLine = (new Array(release.length + 1)).join('-');
+    // add version number and release date to changelog if first h2 doesn't
+    // start with "v"
+    content = content.replace(/^(?!v)[^\n]+\n\-+/m, release +'\n'+ dashedLine);
+    fs.writeFileSync(path, content, _config.ENCODING);
+}
+
+
+function today(){
+    // YYYY/MM/DD
+    var date = new Date();
+    var dateString = '';
+    dateString += date.getFullYear();
+    dateString += '/'+ pad(date.getMonth() + 1);
+    dateString += '/'+ pad(date.getDate());
+    return dateString;
+}
+
+
+function pad(val){
+    val = String(val);
+    if (val.length < 2) {
+        val = '0'+ val;
+    }
+    return val;
 }
 
 
