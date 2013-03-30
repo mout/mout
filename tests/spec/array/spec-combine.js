@@ -14,10 +14,15 @@ define(['mout/array/combine'], function (combine) {
         });
 
         it('should allow null second array', function(){
-            var arr = [1, 2];
+            var arr = [1];
             combine(arr, null);
+            expect( arr ).toEqual( [1] );
+        });
 
-            expect(arr).toEqual([1, 2]);
+        it('should allow undefined second array', function(){
+            var arr = [1];
+            combine(arr, undefined);
+            expect( arr ).toEqual( [1] );
         });
 
     });

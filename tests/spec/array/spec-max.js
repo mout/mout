@@ -40,8 +40,9 @@ define(['mout/array/max'], function (max) {
             expect( max(arr, map, context) ).toBe( arr[1] );
         });
 
-        it('should return Infinity if array is null', function () {
-            expect( max(null) ).toBe(Infinity);
+        it('should return Infinity if array is null/undefined', function () {
+            expect( max(null) ).toBe( Infinity );
+            expect( max(undefined) ).toBe( Infinity );
         });
 
 

@@ -13,8 +13,11 @@ define(['mout/array/find'], function (find) {
 
         });
 
-        it('should return undefined if array is null', function () {
-            expect( find(null, function(){ return true; }) ).toBeUndefined();
+        it('should return undefined if array is null/undefined', function () {
+            var testFunc = function() { return true; };
+
+            expect( find(null, testFunc) ).toBeUndefined();
+            expect( find(undefined, testFunc) ).toBeUndefined();
         });
 
         it('should support object shortcut syntax', function () {

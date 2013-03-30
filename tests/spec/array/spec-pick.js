@@ -24,8 +24,9 @@ define(['mout/array/pick'], function (pick) {
             expect( arr.length ).toBe( 0 );
         });
 
-        it('should return undefined if array is null', function () {
+        it('should return undefined if array is null/undefined', function () {
             expect( pick(null) ).toBeUndefined();
+            expect( pick(undefined) ).toBeUndefined();
         });
 
     });

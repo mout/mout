@@ -14,8 +14,9 @@ define(['mout/array/unique'], function (unique) {
 
         });
 
-        it('should return empty array if source array is null', function(){
+        it('should return empty array if source array is null/undefined', function(){
             expect( unique(null) ).toEqual( [] );
+            expect( unique(undefined) ).toEqual( [] );
         });
 
     });

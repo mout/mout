@@ -9,8 +9,9 @@ define(['mout/array/contains'], function (contains) {
             expect( contains(arr, 4) ).toBe( false );
         });
 
-        it('should return false when array is null', function(){
+        it('should return false when array is null/undefined', function(){
             expect( contains(null, 1) ).toBe( false );
+            expect( contains(undefined, 1) ).toBe( false );
         });
 
     });

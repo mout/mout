@@ -19,5 +19,11 @@ define(['mout/array/append'], function (append) {
             expect( arr ).toEqual([1, 2]);
         });
 
+        it('should accept undefined second array', function(){
+            var arr = [1];
+            append(arr, undefined);
+            expect( arr ).toEqual([1]);
+        });
+
     });
 });

@@ -40,8 +40,9 @@ define(['mout/array/every'], function (every) {
             expect( every([], isEven) ).toBe( true );
         });
 
-        it('should work on null array', function () {
-            expect( every(null, isEven) ).toBe(true);
+        it('should work on null/undefined array', function () {
+            expect( every(null, isEven) ).toBe( true );
+            expect( every(undefined, isEven) ).toBe( true );
         });
 
         it('should loop forwards to avoid undesired behavior', function () {

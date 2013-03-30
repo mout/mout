@@ -23,8 +23,9 @@ define(['mout/array/join'], function(join) {
             expect( join(arr, '-') ).toEqual('foo-bar-baz');
         });
 
-        it('should return empty string when array is null', function() {
+        it('should return empty string when array is null/undefined', function() {
             expect( join(null) ).toEqual( '' );
+            expect( join(undefined) ).toEqual( '' );
         });
 
     });

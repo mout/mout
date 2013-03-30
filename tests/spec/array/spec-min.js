@@ -41,8 +41,9 @@ define(['mout/array/min'], function (min) {
             expect( min(arr, map, context) ).toBe( arr[1] );
         });
 
-        it('should return -Infinity if array is null', function () {
-            expect( min(null) ).toBe(-Infinity);
+        it('should return -Infinity if array is null/undefined', function () {
+            expect( min(null) ).toBe( -Infinity );
+            expect( min(undefined) ).toBe( -Infinity );
         });
 
 

@@ -22,8 +22,9 @@ define(['mout/array/split'], function(split) {
             expect( split([]) ).toEqual([]);
         });
 
-        it('should return empty array when input is null', function() {
+        it('should return empty array when input is null/undefined', function() {
             expect( split(null) ).toEqual( [] );
+            expect( split(undefined) ).toEqual( [] );
         });
 
         it('should not return empty segments', function() {

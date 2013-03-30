@@ -84,8 +84,9 @@ define(['mout/array/indexOf'], function(indexOf){
             expect( idx(arr, 'foo', 15) ).toEqual( -1 );
         });
 
-        it('should return -1 when array is null', function(){
+        it('should return -1 when array is null/undefined', function(){
             expect( idx(null, 1) ).toBe( -1 );
+            expect( idx(undefined, 1) ).toBe( -1 );
         });
 
     });

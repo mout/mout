@@ -64,8 +64,11 @@ define(['mout/array/reduce'], function (reduce) {
             expect( function(){ reduce([], sum); } ).toThrow();
         });
 
-        it('should throw error if null', function () {
-            expect( function(){ reduce(null, function(){}) } ).toThrow();
+        it('should throw error if null/undefined', function () {
+            var testFunc = function(){};
+
+            expect( function(){ reduce(null, testFunc) } ).toThrow();
+            expect( function(){ reduce(undefined, testFunc) } ).toThrow();
         });
 
         it('should work on empty arrays if provide initVal', function () {
@@ -75,8 +78,11 @@ define(['mout/array/reduce'], function (reduce) {
             expect( reduce([], sum, 10) ).toBe(10);
         });
 
-        it('should work on null array if initVal provided', function () {
-            expect( reduce(null, function(){}, 10) ).toBe(10);
+        it('should work on null/undefined array if initVal provided', function () {
+            var testFunc = function(){};
+
+            expect( reduce(null, testFunc, 10) ).toBe( 10 );
+            expect( reduce(undefined, testFunc, 10) ).toBe( 10 );
         });
 
         it('should loop over sparse items. see #64', function () {

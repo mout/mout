@@ -51,8 +51,9 @@ define(['mout/array/sort'], function (sort) {
 
         });
 
-        it('should return empty array if input is null', function () {
+        it('should return empty array if input is null/undefined', function () {
             expect( sort(null) ).toEqual( [] );
+            expect( sort(undefined) ).toEqual( [] );
         });
 
     });

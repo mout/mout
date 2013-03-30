@@ -29,8 +29,9 @@ define(['mout/array/xor'], function (xor) {
 
         });
 
-        it('should use empty array if array is null', function () {
+        it('should use empty array if array is null/undefined', function () {
             expect( xor(null, [1]) ).toEqual( [1] );
+            expect( xor(undefined, [1]) ).toEqual( [1] );
         });
 
     });

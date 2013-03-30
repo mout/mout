@@ -29,8 +29,9 @@ define(['mout/array/toLookup'], function (toLookup) {
             });
         });
 
-        it('should return empty object when array is null', function () {
+        it('should return empty object when array is null/undefined', function () {
             expect( toLookup(null, 'foo') ).toEqual( {} );
+            expect( toLookup(undefined, 'foo') ).toEqual( {} );
         });
 
     });
