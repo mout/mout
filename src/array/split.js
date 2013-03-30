@@ -13,11 +13,11 @@ define(function() {
         var minLength = Math.floor(array.length / segments),
             remainder = array.length % segments,
             i = 0,
-            l = array.length,
+            len = array.length,
             segmentIndex = 0,
             segmentLength;
 
-        while (i < l) {
+        while (i < len) {
             segmentLength = minLength;
             if (segmentIndex < remainder) {
                 segmentLength++;

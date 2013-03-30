@@ -9,11 +9,11 @@ define(['./max', './pluck', './map'], function (max, pluck, map) {
      * corresponding position.
      */
     function zip(arr){
-        var l = arr ? max(map(arguments, getLength)) : 0,
+        var len = arr ? max(map(arguments, getLength)) : 0,
             results = [],
             i = -1,
             item;
-        while (++i < l) {
+        while (++i < len) {
             results.push(map(arguments, function(item) {
                 return item == null ? undefined : item[i];
             }));

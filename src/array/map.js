@@ -10,8 +10,8 @@ define(['./forEach', '../function/makeIterator_'], function (forEach, makeIterat
             return results;
         }
 
-        var i = -1, l = arr.length;
-        while (++i < l) {
+        var i = -1, len = arr.length;
+        while (++i < len) {
             results[i] = callback(arr[i], i, arr);
         }
 

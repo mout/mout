@@ -5,8 +5,8 @@ define(['./unique', './append'], function (unique, append) {
      */
     function union(arrs) {
         var results = [];
-        var i = -1, l = arguments.length;
-        while (++i < l) {
+        var i = -1, len = arguments.length;
+        while (++i < len) {
             append(results, arguments[i]);
         }
 

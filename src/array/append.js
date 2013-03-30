@@ -11,8 +11,8 @@ define(function () {
 
         var pad = arr1.length,
             i = -1,
-            l = arr2.length;
-        while (++i < l) {
+            len = arr2.length;
+        while (++i < len) {
             arr1[pad + i] = arr2[i];
         }
         return arr1;

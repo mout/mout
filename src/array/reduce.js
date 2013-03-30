@@ -16,8 +16,8 @@ define(['./forEach'], function (forEach) {
             }
         }
 
-        var i = -1, l = arr.length;
-        while (++i < l) {
+        var i = -1, len = arr.length;
+        while (++i < len) {
             if (!hasInit) {
                 result = arr[i];
                 hasInit = true;

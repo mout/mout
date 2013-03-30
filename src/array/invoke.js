@@ -10,8 +10,8 @@ define(['./forEach'], function (forEach) {
         }
 
         var args = Array.prototype.slice.call(arguments, 2);
-        var i = -1, l = arr.length, value;
-        while (++i < l) {
+        var i = -1, len = arr.length, value;
+        while (++i < len) {
             value = arr[i];
             value[methodName].apply(value, args);
         }

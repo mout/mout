@@ -10,8 +10,8 @@ define(['../random/randInt', './forEach'], function (randInt, forEach) {
             return results;
         }
 
-        var i = -1, l = arr.length, value;
-        while (++i < l) {
+        var i = -1, len = arr.length, value;
+        while (++i < len) {
             if (!i) {
                 results[0] = arr[0];
             } else {

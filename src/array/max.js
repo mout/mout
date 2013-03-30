@@ -15,8 +15,8 @@ define(['./forEach', '../function/makeIterator_'], function (forEach, makeIterat
                 value,
                 temp;
 
-            var i = -1, l = arr.length;
-            while (++i < l) {
+            var i = -1, len = arr.length;
+            while (++i < len) {
                 value = arr[i];
                 temp = iterator(value, i, arr);
                 if (temp > compare) {

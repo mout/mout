@@ -9,14 +9,14 @@ define(['../lang/isFunction'], function (isFunction) {
             return result;
         }
 
-        var i = -1, l = arr.length, value;
+        var i = -1, len = arr.length, value;
         if (isFunction(key)) {
-            while (++i < l) {
+            while (++i < len) {
                 value = arr[i];
                 result[key(value)] = value;
             }
         } else {
-            while (++i < l) {
+            while (++i < len) {
                 value = arr[i];
                 result[value[key]] = value;
             }

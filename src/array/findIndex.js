@@ -9,8 +9,8 @@ define(['../function/makeIterator_'], function (makeIterator) {
             return -1;
         }
 
-        var i = -1, l = arr.length;
-        while (++i < l) {
+        var i = -1, len = arr.length;
+        while (++i < len) {
             if (iterator(arr[i], i, arr)) {
                 return i;
             }
