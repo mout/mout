@@ -9,9 +9,12 @@ define(['./forEach', '../function/makeIterator_'], function (forEach, makeIterat
         if (arr == null){
             return results;
         }
-        forEach(arr, function (val, i, arr) {
-            results[i] = callback(val, i, arr);
-        });
+
+        var i = -1, len = arr.length;
+        while (++i < len) {
+            results[i] = callback(arr[i], i, arr);
+        }
+
         return results;
     }
 

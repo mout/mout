@@ -40,9 +40,9 @@ define(['mout/array/collect'], function(collect){
             expect( result ).toEqual( [1, 1, 1, 1, 1, 1] );
         });
 
-        it('should return empty array if target is null', function(){
-            var result = collect(null);
-            expect( result ).toEqual( [] );
+        it('should return empty array if target is null/undefined', function(){
+            expect( collect(null) ).toEqual( [] );
+            expect( collect(undefined) ).toEqual( [] );
         });
 
         it('should allow shorthand syntax (same as "pluck")', function(){

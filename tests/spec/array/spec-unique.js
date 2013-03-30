@@ -10,8 +10,13 @@ define(['mout/array/unique'], function (unique) {
             expect( result.length ).toEqual( 5 );
             expect( source.length ).toEqual( 9 );
 
-            expect( result.join(',') ).toEqual('a,2,1,b,c');
+            expect( result ).toEqual(['a', 2, 1, 'b', 'c']);
 
+        });
+
+        it('should return empty array if source array is null/undefined', function(){
+            expect( unique(null) ).toEqual( [] );
+            expect( unique(undefined) ).toEqual( [] );
         });
 
     });

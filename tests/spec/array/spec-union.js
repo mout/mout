@@ -23,6 +23,10 @@ define(['mout/array/union'], function (union) {
 
         });
 
+        it('should use empty array for null/undefined arguments', function () {
+            expect( union([1], null, undefined, [2, 3]) ).toEqual( [1, 2, 3] );
+        });
+
     });
 
 });
