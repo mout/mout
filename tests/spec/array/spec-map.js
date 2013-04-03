@@ -28,9 +28,11 @@ define(['mout/array/map'], function (map) {
             expect( r ).toEqual( [1,1,1,1,1,1] );
         });
 
-        it('should return empty array if target is undefined', function () {
-            var result = map(null);
-            expect( result ).toEqual( [] );
+        it('should return empty array if target is null/undefined', function () {
+            var testFunc = function() { return {}; };
+
+            expect( map(null, testFunc) ).toEqual( [] );
+            expect( map(undefined, testFunc) ).toEqual( [] );
         });
 
 

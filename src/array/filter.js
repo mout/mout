@@ -6,11 +6,18 @@ define(['./forEach', '../function/makeIterator_'], function (forEach, makeIterat
     function filter(arr, callback, thisObj) {
         callback = makeIterator(callback, thisObj);
         var results = [];
-        forEach(arr, function (val, i, arr) {
-            if ( callback(val, i, arr) ) {
-                results.push(val);
+        if (arr == null) {
+            return results;
+        }
+
+        var i = -1, len = arr.length, value;
+        while (++i < len) {
+            value = arr[i];
+            if (callback(value, i, arr)) {
+                results.push(value);
             }
-        });
+        }
+
         return results;
     }
 

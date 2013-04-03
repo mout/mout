@@ -4,7 +4,9 @@ define(function () {
      * Merge sort (http://en.wikipedia.org/wiki/Merge_sort)
      */
     function mergeSort(arr, compareFn) {
-        if (arr.length < 2) {
+        if (arr == null) {
+            return [];
+        } else if (arr.length < 2) {
             return arr;
         }
 

@@ -13,6 +13,11 @@ define(['mout/array/shuffle'], function (shuffle) {
 
         });
 
+        it('should return empty array if source array is null/undefined', function () {
+            expect( shuffle(null) ).toEqual( [] );
+            expect( shuffle(undefined) ).toEqual( [] );
+        });
+
     });
 
 

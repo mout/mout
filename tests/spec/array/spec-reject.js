@@ -37,6 +37,12 @@ define(['mout/array/reject'], function(reject) {
             expect(result).toEqual([]);
         });
 
+        it('should return empty array if source array is null/undefined', function() {
+            var testFunc = function() { return true; };
+
+            expect( reject(null, testFunc) ).toEqual( [] );
+            expect( reject(undefined, testFunc) ).toEqual( [] );
+        });
 
         it('should allow object shorthand syntax', function () {
             var arr = [{a:1,b:2}, {a:2,b:3}, {a:1}, {a:1,b:2,c:3}];

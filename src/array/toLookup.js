@@ -2,27 +2,26 @@ define(['../lang/isFunction'], function (isFunction) {
 
     /**
      * Creates an object that holds a lookup for the objects in the array.
-     * The key for each value in `arr` is specified by the `key` parameter.
-     * If `key` is a function, the function will be called with the value as
-     * the parameter and the result will be used for the key. If `key` is a
-     * string it will use the property specified by `key` as the key for each
-     * value.
      */
     function toLookup(arr, key) {
-        var result = {},
-            value,
-            i = -1, n = arr.length;
+        var result = {};
+        if (arr == null) {
+            return result;
+        }
+
+        var i = -1, len = arr.length, value;
         if (isFunction(key)) {
-            while (++i < n) {
+            while (++i < len) {
                 value = arr[i];
                 result[key(value)] = value;
             }
         } else {
-            while (++i < n) {
+            while (++i < len) {
                 value = arr[i];
                 result[value[key]] = value;
             }
         }
+
         return result;
     }
     return toLookup;

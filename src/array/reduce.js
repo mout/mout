@@ -8,18 +8,23 @@ define(['./forEach'], function (forEach) {
         var hasInit = arguments.length > 2,
             result = initVal;
 
-        if (!arr.length && !hasInit) {
-            throw new Error('reduce of empty array with no initial value');
+        if (arr == null || !arr.length) {
+            if (!hasInit) {
+                throw new Error('reduce of empty array with no initial value');
+            } else {
+                return initVal;
+            }
         }
 
-        forEach(arr, function (val, i, arr) {
-            if (! hasInit) {
-                result = val;
+        var i = -1, len = arr.length;
+        while (++i < len) {
+            if (!hasInit) {
+                result = arr[i];
                 hasInit = true;
             } else {
-                result = fn(result, val, i, arr);
+                result = fn(result, arr[i], i, arr);
             }
-        });
+        }
 
         return result;
     }

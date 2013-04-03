@@ -5,22 +5,31 @@ define(function() {
      */
     function split(array, segments) {
         segments = segments || 2;
-
-        var output = [],
-            segmentLength = Math.floor(array.length / segments),
-            remainder = array.length % segments,
-            start = 0,
-            i = 0,
-            n = array.length,
-            len;
-
-        while (start < n) {
-            len = i++ < remainder ? segmentLength + 1 : segmentLength;
-            output.push(array.slice(start, start + len));
-            start += len;
+        var results = [];
+        if (array == null) {
+            return results;
         }
 
-        return output;
+        var minLength = Math.floor(array.length / segments),
+            remainder = array.length % segments,
+            i = 0,
+            len = array.length,
+            segmentIndex = 0,
+            segmentLength;
+
+        while (i < len) {
+            segmentLength = minLength;
+            if (segmentIndex < remainder) {
+                segmentLength++;
+            }
+
+            results.push(array.slice(i, i + segmentLength));
+
+            segmentIndex++;
+            i += segmentLength;
+        }
+
+        return results;
     }
     return split;
 });
