@@ -5,8 +5,12 @@ define(['../function/makeIterator_'], function (makeIterator) {
      */
     function findIndex(arr, iterator, thisObj){
         iterator = makeIterator(iterator, thisObj);
-        var i = -1, n = arr.length;
-        while (++i < n) {
+        if (arr == null) {
+            return -1;
+        }
+
+        var i = -1, len = arr.length;
+        while (++i < len) {
             if (iterator(arr[i], i, arr)) {
                 return i;
             }

@@ -5,8 +5,6 @@ define(['mout/array/removeAll'], function (removeAll) {
         it('should work in normal array', function(){
             var arr = [1, 'a', 2, 'b', 'a', 'a'];
 
-            expect( arr.length ).toEqual( 6 );
-            expect( arr[1] ).toBe( 'a' );
             removeAll(arr, 'a');
             expect( arr[1] ).toBe( 2 );
             expect( arr.length ).toEqual( 3 );
@@ -21,8 +19,6 @@ define(['mout/array/removeAll'], function (removeAll) {
             arr[9] = 'a';
             arr[15] = 'a';
 
-            expect( arr.length ).toEqual( 16 );
-            expect( arr[3] ).toBe( 'a' );
             removeAll(arr, 'a');
             expect( arr[3] ).toBeUndefined();
             expect( arr.length ).toEqual( 13 );

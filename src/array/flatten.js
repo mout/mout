@@ -4,15 +4,17 @@ define(['../lang/isArray'], function (isArray) {
      * Used to remove the need to create intermediate arrays while flattening.
      */
     function flattenTo(arr, result, level) {
-        if (level === 0) {
+        if (arr == null) {
+            return result;
+        } else if (level === 0) {
             result.push.apply(result, arr);
-            return;
+            return result;
         }
 
         var value,
             i = -1,
-            n = arr.length;
-        while (++i < n) {
+            len = arr.length;
+        while (++i < len) {
             value = arr[i];
             if (isArray(value)) {
                 flattenTo(value, result, level - 1);

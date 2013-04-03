@@ -34,6 +34,11 @@ define(['mout/array/invoke'], function(invoke){
             expect( invoke(arr, 'sort') ).toBe( arr );
         });
 
+        it('should ignore null/undefined source array', function() {
+            expect( invoke(null, 'foo') ).toBe( null );
+            expect( invoke(undefined, 'foo') ).toBeUndefined();
+        });
+
     });
 
 });
