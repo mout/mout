@@ -13,6 +13,7 @@ Next
  - add `object/deepMatches`
  - change `function/makeIterator_` to use `deepMatches` (affects nearly all
    iteration methods)
+ - Add `thisObj` parameter to `array/min` and `array/max`
 
 v0.4.0 (2013/02/26)
 -------------------
