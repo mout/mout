@@ -1,26 +1,21 @@
-define(['../array/findIndex'], function(findIndex) {
+define(['../array/findIndex' ], function(findIndex) {
 
     var cache = [];
 
-    function slice(arr, offset){
-        return Array.prototype.slice.call(arr, offset || 0);
-    }
+    function cancelDelay(fn) {
+        var index = findIndex(cache, { fn: fn });
 
-    function cancelTimeout(fn) {
-        var index = findIndex(cache, {fn: fn});
-
-        if (index > -1) {
+        while (index > -1) {
             clearTimeout(cache[index].id);
             cache.splice(index, 1);
+
+            index = findIndex(cache, { fn: fn });
         }
     }
 
-    function removeTimeout(fn, id) {
-        var index = findIndex(cache, {fn: fn, id: id});
-
-        if (index > -1) {
-            cache.splice(index, 1);
-        }
+    function execute(fn, context, args, identifier) {
+        delay.clear(identifier);
+        fn.apply(context, args);
     }
 
     /**
@@ -28,29 +23,40 @@ define(['../array/findIndex'], function(findIndex) {
      * @param {Function} fn       Function.
      * @param {Number} millis     Delay in milliseconds.
      * @param {object} context    Execution context.
-     * @param {boolean} override  cancel previous delays.
-     * @param {rest} args         Arguments (0...n arguments).
-     * @return {number} timeout identifier.
+     * @param {Array} args        Additional parameters.
+     * @param {Boolean} override  Determins if previous delays on this function gets cancelled.
+     * @return {Object}           delay identifier object.
      */
-    function delay(fn, millis, context, override){
+    function delay(fn, millis, context, args, override){
 
-        override = override != null? override : true;
+        override = override != null ? override : true;
+        args = args != null ? args : [];
 
         if (override === true) {
-            cancelTimeout(fn);
+            cancelDelay(fn);
         }
 
-        var args = slice(arguments, 4);
-
-        var id = setTimeout( function() {
-            removeTimeout(fn, id);
-            fn.apply(context, args);
+        var id = setTimeout(function() {
+            execute(fn, context, args, identifier);
         }, millis);
 
+        var identifier = {id: id, fn: fn};
 
-        cache.push( { id: id, fn: fn } );
+        cache.push( identifier );
 
-        return id;
+        return identifier;
+    }
+
+
+    /**
+     * Stops and clears an already created delay bassed on it's identifier object.
+     * @param {Object} id       Identifier.
+     */
+    delay.clear = function(identifier) {
+        var index = findIndex(cache, { id: identifier.id });
+
+        clearTimeout(cache[index].id);
+        cache.splice(index, 1);
     }
 
     return delay;

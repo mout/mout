@@ -48,7 +48,7 @@ define(['mout/function/delay'], function (delay) {
         	runs(function(){
         		this.context = { a: 0 };
 
-        		delay(manipulate, 300, this.context, true, 5);
+        		delay(manipulate, 300, this.context, [ 5 ]);
         	});
 
         	waits(350);
@@ -89,7 +89,7 @@ define(['mout/function/delay'], function (delay) {
             waits(100);
 
             runs(function(){
-                delay(this.callback, 100, this, false);
+                delay(this.callback, 100, this, null, false);
             });
 
             waits(250);
@@ -98,6 +98,26 @@ define(['mout/function/delay'], function (delay) {
                 expect(this.callback.callCount).toBe(2);
             })
 
+        });
+
+        it('should clear an delay', function() {
+            runs(function() {
+                this.callback = jasmine.createSpy();
+
+                this.identifier = delay(this.callback, 300);
+            });
+
+            waits(100);
+
+            runs(function() {
+                delay.clear(this.identifier);
+            });
+
+            waits(250);
+
+            runs(function() {
+                expect(this.callback).not.toHaveBeenCalled();
+            });
 
         });
 
