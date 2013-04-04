@@ -19,20 +19,13 @@ define(['../array/findIndex' ], function(findIndex) {
     }
 
     /**
-     * Calls a function in a given context with a supplied delay. Returns the timeout identifier.
-     * @param {Function} fn       Function.
-     * @param {Number} millis     Delay in milliseconds.
-     * @param {object} context    Execution context.
-     * @param {Array} args        Additional parameters.
-     * @param {Boolean} override  Determins if previous delays on this function gets cancelled.
-     * @return {Object}           delay identifier object.
+     * Calls a function in a given context with a supplied delay. Returns an identifier object.
      */
     function delay(fn, millis, context, args, override){
 
-        override = override != null ? override : true;
         args = args != null ? args : [];
 
-        if (override === true) {
+        if (override !== false) {
             cancelDelay(fn);
         }
 
@@ -49,8 +42,7 @@ define(['../array/findIndex' ], function(findIndex) {
 
 
     /**
-     * Stops and clears an already created delay bassed on it's identifier object.
-     * @param {Object} id       Identifier.
+     * Stops and clears an already created delay based on it's identifier object.
      */
     delay.clear = function(identifier) {
         var index = findIndex(cache, { id: identifier.id });
