@@ -66,7 +66,7 @@ See: [`throttle()`](#throttle)
 See: [`delay()`](#delay)
 
 
-## delay(fn, millis, [context, args, override=true]):Number;
+## delay(fn, millis, [context, ...args]):Object;
 
 Executes a function after a delay in milliseconds within the given context, optionally adding any additional parameters.
 
