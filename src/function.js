@@ -12,7 +12,8 @@ return {
     'partial' : require('./function/partial'),
     'prop' : require('./function/prop'),
     'series' : require('./function/series'),
-    'throttle' : require('./function/throttle')
+    'throttle' : require('./function/throttle'),
+    'timeout' : require('./function/timeout')
 };
 
 });
