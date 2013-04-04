@@ -40,6 +40,8 @@ tests/testling/
 /array/
 /collection.js
 /collection/
+/date/
+/date.js
 /financial.js
 /financial/
 /function.js
