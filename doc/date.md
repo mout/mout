@@ -6,7 +6,8 @@ Date utilities.
 
 ## isLeapYear(fullYear|date):Boolean
 
-Checks if it's a [leap year](http://en.wikipedia.org/wiki/Leap_year).
+Checks if it's a [leap year](http://en.wikipedia.org/wiki/Leap_year) according
+to the Gregorian calendar.
 
 see: [`totalDaysInMonth()`](#totalDaysInMonth)
 
@@ -46,7 +47,8 @@ parseIso('2000-01-02T20:10+04:00') // 946829400000
 
 ## totalDaysInMonth(fullYear, monthIndex):Number
 
-Returns the amount of days in the month taking into consideration leap years.
+Returns the amount of days in the month taking into consideration leap years
+(following Gregorian calendar).
 
 see: [`isLeapYear()`](#isLeapYear)
 
