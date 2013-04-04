@@ -1,8 +1,8 @@
 mout changelog
 ==============
 
-Next
-----
+v0.5.0 (2013/04/04)
+-------------------
 
  - add `array/collect`
  - add `callback` parameter to `object/equals` and `object/deepEquals` to allow

@@ -1,7 +1,7 @@
 {
   "name": "mout",
   "description": "Modular Utilities",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "homepage": "http://moutjs.com/",
   "contributors": [
     "Adam Nowotny",
@@ -51,15 +51,36 @@
     "rocambole": "~0.2.3"
   },
   "testling": {
-    "preprocess" : "node build testling",
+    "preprocess": "node build testling",
     "browsers": {
-      "ie" : [7, 8, 9, 10],
-      "firefox" : [17, "nightly"],
-      "chrome": [23, "canary"],
-      "opera": [12, "next"],
-      "safari": [5.1, 6.0],
-      "iphone" : [6.0],
-      "ipad" : [6.0]
+      "ie": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "firefox": [
+        17,
+        "nightly"
+      ],
+      "chrome": [
+        23,
+        "canary"
+      ],
+      "opera": [
+        12,
+        "next"
+      ],
+      "safari": [
+        5.1,
+        6
+      ],
+      "iphone": [
+        6
+      ],
+      "ipad": [
+        6
+      ]
     },
     "scripts": [
       "tests/lib/jasmine/jasmine.js",
