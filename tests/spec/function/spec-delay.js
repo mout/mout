@@ -7,7 +7,7 @@ define(['mout/function/delay'], function (delay) {
         }
 
         function manipulate(value) {
-        	this.a = value;
+            this.a = value;
         }
 
         beforeEach(function() {
@@ -26,7 +26,7 @@ define(['mout/function/delay'], function (delay) {
         });
 
         it('should call closure with context', function(){
-        	var context = { a: 0 };
+            var context = { a: 0 };
             delay(doIt, 300, context);
 
             jasmine.Clock.tick(350);
@@ -34,14 +34,14 @@ define(['mout/function/delay'], function (delay) {
         });
 
         it('should curry arguments', function(){
-    		var context = { a: 0 };
-    		delay(manipulate, 300, context, [ 5 ]);
+            var context = { a: 0 };
+            delay(manipulate, 300, context, 5 );
 
             jasmine.Clock.tick(350);
-    		expect(context.a).toBe(5);
+            expect(context.a).toBe(5);
         });
 
-        it('should override previous delay by default', function(){
+        it('should override previous delay', function(){
             var callback = jasmine.createSpy();
             delay(callback, 200);
 
@@ -52,27 +52,24 @@ define(['mout/function/delay'], function (delay) {
             expect(callback.callCount).toBe(1);
         });
 
-        it('should not override delay', function(){
-            var callback = jasmine.createSpy();
-            delay(callback, 300);
-
-            jasmine.Clock.tick(100);
-            delay(callback, 100, this, null, false);
-
-            jasmine.Clock.tick(250);
-            expect(callback.callCount).toBe(2);
-        });
-
         it('should clear an delay', function() {
-
             var callback = jasmine.createSpy();
-            var identifier = delay(callback, 300);
+            var delayObject = delay(callback, 300);
 
             jasmine.Clock.tick(100);
-            delay.clear(identifier);
+            delayObject.cancel();
 
             jasmine.Clock.tick(250);
             expect(callback).not.toHaveBeenCalled();
+        });
+
+        it('should return the same delay object', function() {
+            var callback = jasmine.createSpy();
+
+            var firstObject = delay(callback, 300);
+            var secondObject = delay(callback, 100);
+
+            expect(firstObject).toBe(secondObject);
         });
     });
 });

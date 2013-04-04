@@ -75,8 +75,7 @@ Executes a function after a delay in milliseconds within the given context, opti
  1. `fn` (Function)      : Target Function
  2. `millis` (Number)    : Delay in milliseconds
  3. `context` (Object)   : Execution context (object used as `this`)
- 4. `args` (Array)       : Optional additional parameters.
- 5. `override` (Boolean) : Determines whether previous delays on the same function should be canceled. Default is `true`.
+ 4. `...args` (*)        : additional parameters.
 
 ```js
 function addValue(value) {
@@ -84,34 +83,24 @@ function addValue(value) {
 }
 
 var context = { a: 400 };
-var identifier = delay(addValue, 3200, context, [100]);
+var delayObject = delay(addValue, 3200, context, 100);
 ```
 
-To cancel a created delay before it's execution `delay.clear` can be called using the identifier object as parameter.
-
+The creation of the delay returns an `delayObject` which can be used to cancel the delay before it's execution.
 
 ```js
-var identifier = delay(addValue, 3000, context, [100]);
+var delayObject = delay(addValue, 3200, context, 100);
 ...
-delay.clear(identifier);
+delayObject.cancel();
 ```
 
-The override flag determines if multiple delays on the same function can coexist. By default any delay will override previous delays.
+Delays override any previous delay on the same function that has not been executed yet.
 
 ```js
 delay(animateIn, 100);
 delay(animateIn, 500);
 // animateIn will only be called once after 500 milliseconds
 ```
-
-By setting the flag to `false` multiple delays will be triggered.
-
-```js
-delay(animateIn, 100, this, null, false);
-delay(animateIn, 500, this, null, false);
-// animateIn will be called twice, after 100 and 500 milliseconds
-```
-
 
 See: [`bind()`](#bind)
 See: [`throttle()`](#throttle)

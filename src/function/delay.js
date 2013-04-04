@@ -1,54 +1,61 @@
-define(['../array/findIndex' ], function(findIndex) {
+define(['../array/findIndex'], function(findIndex) {
 
     var cache = [];
 
-    function cancelDelay(fn) {
-        var index = findIndex(cache, { fn: fn });
+    function slice(arr, offset){
+        return Array.prototype.slice.call(arr, offset || 0);
+    }
 
-        while (index > -1) {
-            clearTimeout(cache[index].id);
+    function remove(fn) {
+        var index = findIndex(cache, {fn: fn});
+
+        if (index > -1) {
             cache.splice(index, 1);
-
-            index = findIndex(cache, { fn: fn });
         }
     }
 
-    function execute(fn, context, args, identifier) {
-        delay.clear(identifier);
+    function override(fn) {
+        var index = findIndex(cache, {fn: fn});
+        var object;
+
+        if (index < 0) {
+            object = {};
+            cache.push(object);
+        } else {
+            object = cache[ index ];
+            clearTimeout(object.id);
+        }
+
+        return object;
+    }
+
+    function execute(fn, context, args) {
+        remove(fn);
         fn.apply(context, args);
     }
 
+
     /**
-     * Calls a function in a given context with a supplied delay. Returns an identifier object.
+     * Delays the call of a function within a given context. Overrides any delay on the same function that hasen't executed yet.
      */
-    function delay(fn, millis, context, args, override){
+    function delay(fn, millis, context) {
+        var args = slice(arguments, 3);
 
-        args = args != null ? args : [];
-
-        if (override !== false) {
-            cancelDelay(fn);
-        }
+        var object = override(fn);
 
         var id = setTimeout(function() {
-            execute(fn, context, args, identifier);
+            execute(fn, context, args);
         }, millis);
 
-        var identifier = {id: id, fn: fn};
+        object.fn = fn;
+        object.id = id;
 
-        cache.push( identifier );
+        object.cancel = function() {
+            clearTimeout(id);
+            remove(fn);
+        }
 
-        return identifier;
-    }
-
-
-    /**
-     * Stops and clears an already created delay based on it's identifier object.
-     */
-    delay.clear = function(identifier) {
-        var index = findIndex(cache, { id: identifier.id });
-
-        clearTimeout(cache[index].id);
-        cache.splice(index, 1);
+        return object;
     }
 
     return delay;
