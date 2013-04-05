@@ -2,6 +2,7 @@
 //run `node build` instead
 define([
     './date/spec-isLeapYear',
+    './date/spec-isSame',
     './date/spec-parseIso',
     './date/spec-startOf',
     './date/spec-totalDaysInMonth'

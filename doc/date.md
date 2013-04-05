@@ -18,6 +18,24 @@ isLeapYear(new Date(2012, 2, 28)); // true
 ```
 
 
+## isSame(date1, date2[, period]):Boolean
+
+Check if both dates are the "same".
+
+You can pass an optional *period* used to set the comparisson precision.
+
+Available periods: `year`, `month`, `week`, `day`, `hour`, `minute`, `second`.
+
+```js
+var date1 = new Date(2013, 1, 3);
+var date2 = new Date(2013, 2, 9);
+isSame(date1, date2);          // false
+isSame(date1, date2, 'day');   // false
+isSame(date1, date2, 'month'); // false
+isSame(date1, date2, 'year');  // true
+```
+
+
 
 ## parseIso(str):Number
 
