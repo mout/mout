@@ -5,7 +5,8 @@ define(function(require){
 return {
     'isLeapYear' : require('./date/isLeapYear'),
     'parseIso' : require('./date/parseIso'),
-    'totalDaysInMonth' : require('./date/totalDaysInMonth')
+    'totalDaysInMonth' : require('./date/totalDaysInMonth'),
+    'totalDaysInYear' : require('./date/totalDaysInYear')
 };
 
 });
