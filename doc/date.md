@@ -97,6 +97,22 @@ totalDaysInMonth( new Date(2013, 0, 1) ); // 31
 ```
 
 
+## totalDaysInYear(fullYear):Number
+
+Returns the amount of days in the year taking into consideration leap years
+(following Gregorian calendar).
+
+see: [`isLeapYear()`](#isLeapYear), [`totalDaysInMonth()`](#totalDaysInMonth)
+
+```js
+totalDaysInYear(2008); // 366 (leap year)
+totalDaysInYear(2009); // 365
+
+// you can also pass a Date object as single argument
+totalDaysInYear( new Date(2013, 0, 1) ); // 365
+```
+
+
 -------------------------------------------------------------------------------
 
 For more usage examples check specs inside `/tests` folder. Unit tests are the

@@ -5,7 +5,8 @@ define([
     './date/spec-isSame',
     './date/spec-parseIso',
     './date/spec-startOf',
-    './date/spec-totalDaysInMonth'
+    './date/spec-totalDaysInMonth',
+    './date/spec-totalDaysInYear'
 ], function(){
     //noop
 });

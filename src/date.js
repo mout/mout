@@ -7,7 +7,8 @@ return {
     'isSame' : require('./date/isSame'),
     'parseIso' : require('./date/parseIso'),
     'startOf' : require('./date/startOf'),
-    'totalDaysInMonth' : require('./date/totalDaysInMonth')
+    'totalDaysInMonth' : require('./date/totalDaysInMonth'),
+    'totalDaysInYear' : require('./date/totalDaysInYear')
 };
 
 });
