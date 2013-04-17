@@ -3,6 +3,7 @@
 define([
     './date/spec-isLeapYear',
     './date/spec-parseIso',
+    './date/spec-startOf',
     './date/spec-totalDaysInMonth'
 ], function(){
     //noop

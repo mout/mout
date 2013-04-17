@@ -45,6 +45,24 @@ parseIso('2000-01-02T20:10+04:00') // 946829400000
 ```
 
 
+
+## startOf(date, period):Date
+
+Get a new Date at the start of the period.
+
+Available periods: `year`, `month`, `week`, `day`, `hour`, `minute`, `second`.
+
+```js
+// Apr 05 2013 11:27:43
+var date = new Date(2013, 3, 5, 11, 27, 43, 123);
+startOf(date, 'year');  // Jan 01 2013 00:00:00
+startOf(date, 'month'); // Apr 01 2013 00:00:00
+startOf(date, 'day');   // Apr 05 2013 00:00:00
+startOf(date, 'hour');  // Apr 05 2013 11:00:00
+```
+
+
+
 ## totalDaysInMonth(fullYear, monthIndex):Number
 
 Returns the amount of days in the month taking into consideration leap years
