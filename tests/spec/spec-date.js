@@ -1,6 +1,7 @@
 //automatically generated, do not edit!
 //run `node build` instead
 define([
+    './date/spec-diff',
     './date/spec-isLeapYear',
     './date/spec-isSame',
     './date/spec-parseIso',

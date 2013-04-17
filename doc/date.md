@@ -3,6 +3,28 @@
 Date utilities.
 
 
+## diff(date1, date2, [unitName]):Number
+
+Calculate the difference between dates (range).
+
+The returned value is always positive. The default `unitName` is `"ms"`.
+
+Available units: `year`, `month`, `week`, `day`, `hour`, `minute`, `second`,
+`millisecond`.
+
+See: [`time/convert()`](time.html#convert)
+
+```js
+var d1 = new Date(2012, 4, 5);
+var d2 = new Date(2013, 4, 8);
+diff(d1, d2);          // 31795200000
+diff(d1, d2, 'hour');  // 8832
+diff(d1, d2, 'week');  // 52.57142857142857
+diff(d1, d2, 'month'); // 12.096774193548388
+diff(d1, d2, 'year');  // 1.0082191780821919
+```
+
+
 
 ## isLeapYear(fullYear|date):Boolean
 
