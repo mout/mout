@@ -12,6 +12,11 @@ define(['mout/string/camelCase'], function (camelCase) {
             expect( camelCase(str) ).toEqual('loremIpsumDolor');
         });
 
+        it('should convert underscores to camelCase', function(){
+            var str = 'lorem_ipsum_dolor';
+            expect( camelCase(str) ).toEqual('loremIpsumDolor');
+        });
+
         it('should remove non word', function(){
             var str = ' #$  lorem ipsum ^ &:  dolor ++ ';
             expect( camelCase(str) ).toEqual('loremIpsumDolor');

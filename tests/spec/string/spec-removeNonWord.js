@@ -4,7 +4,7 @@ define(['mout/string/removeNonWord'], function (removeNonWord) {
 
         it('should remove non word chars', function(){
             var str = 'lorem ~!@#$%^&*()_+`-={}[]|\\:";\'/?><., ipsum';
-            expect( removeNonWord(str) ).toEqual('lorem - ipsum');
+            expect( removeNonWord(str) ).toEqual('lorem _- ipsum');
         });
 
         it('should treat null as empty string', function(){
