@@ -3,6 +3,28 @@
 Date utilities.
 
 
+## diff(date1, date2, [unitName]):Number
+
+Calculate the difference between dates (range).
+
+The returned value is always positive. The default `unitName` is `"ms"`.
+
+Available units: `year`, `month`, `week`, `day`, `hour`, `minute`, `second`,
+`millisecond`.
+
+See: [`time/convert()`](time.html#convert)
+
+```js
+var d1 = new Date(2012, 4, 5);
+var d2 = new Date(2013, 4, 8);
+diff(d1, d2);          // 31795200000
+diff(d1, d2, 'hour');  // 8832
+diff(d1, d2, 'week');  // 52.57142857142857
+diff(d1, d2, 'month'); // 12.096774193548388
+diff(d1, d2, 'year');  // 1.0082191780821919
+```
+
+
 
 ## isLeapYear(fullYear|date):Boolean
 
@@ -15,6 +37,24 @@ see: [`totalDaysInMonth()`](#totalDaysInMonth)
 isLeapYear(2012); // true
 isLeapYear(2013); // false
 isLeapYear(new Date(2012, 2, 28)); // true
+```
+
+
+## isSame(date1, date2[, period]):Boolean
+
+Check if both dates are the "same".
+
+You can pass an optional *period* used to set the comparisson precision.
+
+Available periods: `year`, `month`, `week`, `day`, `hour`, `minute`, `second`.
+
+```js
+var date1 = new Date(2013, 1, 3);
+var date2 = new Date(2013, 2, 9);
+isSame(date1, date2);          // false
+isSame(date1, date2, 'day');   // false
+isSame(date1, date2, 'month'); // false
+isSame(date1, date2, 'year');  // true
 ```
 
 
@@ -45,6 +85,24 @@ parseIso('2000-01-02T20:10+04:00') // 946829400000
 ```
 
 
+
+## startOf(date, period):Date
+
+Get a new Date at the start of the period.
+
+Available periods: `year`, `month`, `week`, `day`, `hour`, `minute`, `second`.
+
+```js
+// Apr 05 2013 11:27:43
+var date = new Date(2013, 3, 5, 11, 27, 43, 123);
+startOf(date, 'year');  // Jan 01 2013 00:00:00
+startOf(date, 'month'); // Apr 01 2013 00:00:00
+startOf(date, 'day');   // Apr 05 2013 00:00:00
+startOf(date, 'hour');  // Apr 05 2013 11:00:00
+```
+
+
+
 ## totalDaysInMonth(fullYear, monthIndex):Number
 
 Returns the amount of days in the month taking into consideration leap years
@@ -58,6 +116,22 @@ totalDaysInMonth(2009, 1); // 28
 
 // you can also pass a Date object as single argument
 totalDaysInMonth( new Date(2013, 0, 1) ); // 31
+```
+
+
+## totalDaysInYear(fullYear):Number
+
+Returns the amount of days in the year taking into consideration leap years
+(following Gregorian calendar).
+
+see: [`isLeapYear()`](#isLeapYear), [`totalDaysInMonth()`](#totalDaysInMonth)
+
+```js
+totalDaysInYear(2008); // 366 (leap year)
+totalDaysInYear(2009); // 365
+
+// you can also pass a Date object as single argument
+totalDaysInYear( new Date(2013, 0, 1) ); // 365
 ```
 
 
