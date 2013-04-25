@@ -6,7 +6,7 @@ define(['../lang/toString', './replaceAccents', './removeNonWord', './upperCase'
         str = toString(str);
         str = replaceAccents(str);
         str = removeNonWord(str)
-            .replace(/\-/g, ' ') //convert all hyphens to spaces
+            .replace(/[\-_]/g, ' ') //convert all hyphens and underscores to spaces
             .replace(/\s[a-z]/g, upperCase) //convert first char of each word to UPPERCASE
             .replace(/\s+/g, '') //remove spaces
             .replace(/^[A-Z]/g, lowerCase); //convert first char to lowercase
