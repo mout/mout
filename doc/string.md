@@ -493,10 +493,12 @@ typecast('undefined');   // undefined
 
 
 
-## unCamelCase(str):String
+## unCamelCase(str, [delimiter]):String
 
-Add space between camelCase text and convert first char of each word to lower
-case.
+Add the delimiter between camelCase text and convert first char of each word to
+lower case.
+
+The delimiter defaults to a space character.
 
 See: [`camelCase()`][#camelCase]
 
@@ -504,6 +506,7 @@ See: [`camelCase()`][#camelCase]
 
 ```js
 unCamelCase('loremIpsumDolor'); // "lorem ipsum dolor"
+unCamelCase('loremIpsumDolor', '-'); // "lorem-ipsum-color"
 ```
 
 
