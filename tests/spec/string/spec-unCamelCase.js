@@ -7,6 +7,11 @@ define(['mout/string/unCamelCase'], function (unCamelCase) {
            expect( unCamelCase('lorem IpsumDolor') ).toEqual('lorem ipsum dolor');
         });
 
+        it('should use specified separator', function(){
+            var str = 'loremIpsumDolor';
+            expect( unCamelCase(str, '-') ).toEqual('lorem-ipsum-dolor');
+        });
+
         it('should treat null as empty string', function(){
             expect( unCamelCase(null) ).toBe('');
         });

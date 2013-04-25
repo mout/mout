@@ -6,6 +6,8 @@ rm -r array.js
 rm -r array
 rm -r collection.js
 rm -r collection
+rm -r date.js
+rm -r date
 rm -r function.js
 rm -r function
 rm -r index.js
