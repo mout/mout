@@ -4,7 +4,6 @@ define([
     './function/spec-bind',
     './function/spec-compose',
     './function/spec-debounce',
-    './function/spec-delay',
     './function/spec-func',
     './function/spec-makeIterator_',
     './function/spec-partial',
