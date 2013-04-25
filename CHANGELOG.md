@@ -1,6 +1,13 @@
 mout changelog
 ==============
 
+Next
+----
+
+ - Add optional delimiter to `string/unCamelCase`
+ - Allow underscore characters in `string/removeNonWord`
+ - Convert underscores to camelCase in `string/camelCase`
+
 v0.5.0 (2013/04/04)
 -------------------
 
