@@ -5,6 +5,7 @@ Next
 ----
 
  - Add optional delimiter to `string/unCamelCase`
+ - Allow underscore characters in `string/removeNonWord`
 
 v0.5.0 (2013/04/04)
 -------------------

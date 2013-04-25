@@ -4,7 +4,7 @@ define(['../lang/toString'], function(toString){
      */
     function removeNonWord(str){
         str = toString(str);
-        return str.replace(/[^0-9a-zA-Z\xC0-\xFF \-]/g, '');
+        return str.replace(/[^0-9a-zA-Z\xC0-\xFF \-_]/g, '');
     }
 
     return removeNonWord;
