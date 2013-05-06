@@ -1,6 +1,6 @@
 define(
     [
-        'mout/object/get'
+    'mout/object/get'
     ],
     function (get) {
 
@@ -27,8 +27,29 @@ define(
                 expect( get(foo, 'bar.dolor') ).toBe( undef );
             });
 
-        });
+            it('should accept arrays', function () {
+                var foo = {
+                    bar : {
+                        spam : 'eggs'
+                    }
+                };
 
+                expect(get(foo, ['bar', 'spam'])).toBe('eggs');
+            });
+
+            it('should return the original object when given an empty query', function () {
+                var anObject = {value: true};
+
+                expect(get(anObject, [])).toBe(anObject);
+            });
+
+            it('should return non-truthy results for the last value.', function () {
+                var anObject = {value: false};
+
+                expect(get(anObject, "value")).toBe(false);
+            });
+
+        });
     }
 );
 
