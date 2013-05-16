@@ -14,7 +14,7 @@ Return a function that will execute in the given context, optionally adding any 
  2. `context` (Object) : Execution context (object used as `this`)
  3. `[...args]` (*)    : Arguments (0...n arguments)
 
-See: [`partial()`](#partial)
+See: [`partial()`](#partial), [object/bindAll](./object.html#bindAll)
 
 
 
