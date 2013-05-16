@@ -4,6 +4,36 @@ Object utilities.
 
 
 
+## bindAll(obj, [...methodNames]):void
+
+Bind methods of the target object to always execute on its own context
+(ovewritting the original function).
+
+See: [function/bind](./function.html#bind)
+
+```js
+var view = {
+    name: 'Lorem Ipsum',
+    logNameOnClick: function() {
+        console.log(this.name);
+    }
+};
+
+// binds all methods by default
+bindAll(view);
+jQuery('#docs').on('click', view.logNameOnClick);
+```
+
+You can also specify the list of methods that you want to bind (in case you
+just want to bind a few of them).
+
+```js
+// only the listed methods will be bound to `obj` context
+bindAll(obj, 'logNameOnClick', 'doAwesomeStuffOnDrag');
+```
+
+
+
 ## contains(obj, value):Boolean
 
 Similar to [Array/contains](array.html#contains). Checks if Object contains
@@ -323,6 +353,21 @@ forOwn(obj, function(val, key, o){
 
 console.log(result); // 3
 console.log(keys);   // ['foo', 'bar']
+```
+
+
+
+## functions(obj):Array
+
+Returns a sorted list of all enumerable properties that have function values
+(including inherited properties).
+
+```js
+var obj = {
+    foo : function(){},
+    bar : 'baz'
+};
+functions(obj); // ['foo']
 ```
 
 

@@ -3,6 +3,7 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
+    'bindAll' : require('./object/bindAll'),
     'contains' : require('./object/contains'),
     'deepEquals' : require('./object/deepEquals'),
     'deepFillIn' : require('./object/deepFillIn'),
@@ -15,6 +16,7 @@ return {
     'find' : require('./object/find'),
     'forIn' : require('./object/forIn'),
     'forOwn' : require('./object/forOwn'),
+    'functions' : require('./object/functions'),
     'get' : require('./object/get'),
     'has' : require('./object/has'),
     'hasOwn' : require('./object/hasOwn'),
