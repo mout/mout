@@ -1,6 +1,7 @@
 //automatically generated, do not edit!
 //run `node build` instead
 define([
+    './object/spec-bindAll',
     './object/spec-contains',
     './object/spec-deepEquals',
     './object/spec-deepFillIn',
@@ -13,6 +14,7 @@ define([
     './object/spec-find',
     './object/spec-forIn',
     './object/spec-forOwn',
+    './object/spec-functions',
     './object/spec-get',
     './object/spec-has',
     './object/spec-hasOwn',
