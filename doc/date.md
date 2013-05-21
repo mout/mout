@@ -117,6 +117,22 @@ startOf(date, 'hour');  // Apr 05 2013 11:00:00
 
 
 
+## timezoneAbbr(date):String
+
+Return timezone abbreviation or similar data.
+
+The result will vary based on the OS/browser since some environments doesn't
+provide enough info about the current locale.
+
+```js
+// IE 7-8
+timezoneAbbr(new Date()); // "-0500"
+// Chrome, FF, V8
+timezoneAbbr(new Date()); // "EST"
+```
+
+
+
 ## timezoneOffset(date):String
 
 Return time zone as hour and minute offset from UTC (e.g. +0900).

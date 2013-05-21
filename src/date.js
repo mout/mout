@@ -9,6 +9,7 @@ return {
     'isSame' : require('./date/isSame'),
     'parseIso' : require('./date/parseIso'),
     'startOf' : require('./date/startOf'),
+    'timezoneAbbr' : require('./date/timezoneAbbr'),
     'timezoneOffset' : require('./date/timezoneOffset'),
     'totalDaysInMonth' : require('./date/totalDaysInMonth'),
     'totalDaysInYear' : require('./date/totalDaysInYear')
