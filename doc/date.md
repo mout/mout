@@ -117,6 +117,22 @@ startOf(date, 'hour');  // Apr 05 2013 11:00:00
 
 
 
+## timezoneOffset(date):String
+
+Return time zone as hour and minute offset from UTC (e.g. +0900).
+
+It's important to note that JavaScript Date object will use the system locale
+info to determinate the [timezone
+offset](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset)
+and that daylight saving time affects the result.
+
+```js
+// if system locale is EST
+timezoneOffset(new Date()); // -0500
+```
+
+
+
 ## totalDaysInMonth(fullYear, monthIndex):Number
 
 Returns the amount of days in the month taking into consideration leap years
