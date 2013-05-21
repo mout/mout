@@ -117,6 +117,90 @@ startOf(date, 'hour');  // Apr 05 2013 11:00:00
 
 
 
+## strftime(date, format, [l10n]):String
+
+Format date based on strftime format.
+
+Replaced tokens:
+
+<dl>
+<dt>%a</dt><dd> locale's abbreviated weekday name.</dd>
+<dt>%A</dt><dd> locale's full weekday name.</dd>
+<dt>%b</dt><dd> locale's abbreviated month name.</dd>
+<dt>%B</dt><dd> locale's full month name.</dd>
+<dt>%c</dt><dd> locale's appropriate date and time representation.</dd>
+<dt>%C</dt><dd> century number (the year divided by 100 and truncated
+to an integer) as a decimal number [00..99].</dd>
+<dt>%d</dt><dd> day of the month as a decimal number [01..31].</dd>
+<dt>%D</dt><dd>same as %m/%d/%y.</dd>
+<dt>%e</dt><dd> day of the month as a decimal number [1..31];
+a single digit is preceded by a space.</dd>
+<dt>%F</dt><dd>The ISO 8601 date format (%Y-%m-%d)</dd>
+<dt>%h</dt><dd>same as %b.</dd>
+<dt>%H</dt><dd> hour (24-hour clock) as a decimal number [00..23].</dd>
+<dt>%I</dt><dd> hour (12-hour clock) as a decimal number [01..12].</dd>
+<dt>%j</dt><dd> day of the year as a decimal number [001..366].</dd>
+<dt>%L</dt><dd> zero-padded milliseconds [000..999]</dd>
+<dt>%m</dt><dd> month as a decimal number [01..12].</dd>
+<dt>%M</dt><dd> minute as a decimal number [00..59].</dd>
+<dt>%n</dt><dd> newline character.</dd>
+<dt>%p</dt><dd> locale's equivalent of either "am" or "pm"</dd>
+<dt>%P</dt><dd> locale's equivalent of either "AM" or "PM"</dd>
+<dt>%r</dt><dd> time in a.m. and
+p.m. notation; in the POSIX locale this is equivalent to %I:%M:%S %p.</dd>
+<dt>%R</dt><dd> time in 24 hour notation (%H:%M).</dd>
+<dt>%s</dt><dd> seconds since Epoch (1970-01-01 00:00:00 UTC)</dd>
+<dt>%S</dt><dd> second as a decimal number [00..60].</dd>
+<dt>%t</dt><dd> tab character.</dd>
+<dt>%T</dt><dd> time (%H:%M:%S).</dd>
+<dt>%u</dt><dd> weekday as a decimal number [1..7], with 1 representing
+Monday.</dd>
+<dt>%U</dt><dd> week number of the year (Sunday as the first day of
+the week) as a decimal number [00..53].</dd>
+<del><dt>%V</dt><dd> week number of the year (Monday as the first day of the
+week) as a decimal number [01..53].  If the week containing 1 January has
+four or more days in the new year, then it is considered week 1. Otherwise,
+it is the last week of the previous year, and the next week is week 1.</dd></del>
+<dt>%w</dt><dd> weekday as a decimal number [0..6], with 0 representing
+Sunday.</dd>
+<dt>%W</dt><dd> week number of the year (Monday as the first day of
+the week) as a decimal number [00..53].  All days in a new year preceding
+the first Monday are considered to be in week 0.</dd>
+<dt>%x</dt><dd> locale's appropriate date representation.</dd>
+<dt>%X</dt><dd> locale's appropriate time representation.</dd>
+<dt>%y</dt><dd> year without century as a decimal number [00..99].</dd>
+<dt>%Y</dt><dd> year with century as a decimal number.</dd>
+<dt>%Z</dt><dd> timezone name or abbreviation, or by no bytes
+if no timezone information exists.</dd>
+<dt>%%</dt><dd>is replaced by %.</dd>
+</dl>
+
+```js
+var date = new Date(2013, 3, 8, 9, 2, 4);
+strftime(date, '%Y-%m-%d'); // "2013-04-08"
+strftime(date, '%R'); // "09:02"
+strftime(date, '%Y-%m-%dT%H:%M:%S%z'); // "2013-04-08T09:02:04+0000"
+```
+
+You can also set a custom locale:
+
+```js
+var ptBr = require('mout/date/i18n/pt-BR');
+strftime(date, '%a, %d %b', ptBr); // 'Seg, 08 Abr'
+strftime(date, '%A, %d %B', ptBr); // 'Segunda, 08 Abril'
+```
+
+To set it globally:
+
+```js
+require('mout/date/i18n_').set( customLocaleData );
+```
+
+See [date/i18n](https://github.com/mout/mout/tree/master/src/date/i18n)
+for localization examples.
+
+
+
 ## timezoneAbbr(date):String
 
 Return timezone abbreviation or similar data.

@@ -5,10 +5,12 @@ define(function(require){
 return {
     'dayOfTheYear' : require('./date/dayOfTheYear'),
     'diff' : require('./date/diff'),
+    'i18n_' : require('./date/i18n_'),
     'isLeapYear' : require('./date/isLeapYear'),
     'isSame' : require('./date/isSame'),
     'parseIso' : require('./date/parseIso'),
     'startOf' : require('./date/startOf'),
+    'strftime' : require('./date/strftime'),
     'timezoneAbbr' : require('./date/timezoneAbbr'),
     'timezoneOffset' : require('./date/timezoneOffset'),
     'totalDaysInMonth' : require('./date/totalDaysInMonth'),
