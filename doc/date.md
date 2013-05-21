@@ -3,6 +3,20 @@
 Date utilities.
 
 
+## dayOfTheYear(date):Number
+
+How many days elapsed since begining of the year (following gregorian
+calendar).
+
+```js
+// Jan 1st
+dayOfTheYear(new Date(2013, 0, 1)); // 1
+// Dec 31th
+dayOfTheYear(new Date(2013, 11, 31)); // 364
+```
+
+
+
 ## diff(date1, date2, [unitName]):Number
 
 Calculate the difference between dates (range).
