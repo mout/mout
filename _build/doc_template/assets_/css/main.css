@@ -287,11 +287,20 @@ sub {
 ul,
 ol {
     margin-left: 0;
-    padding: 0 0 0 40px;
+    padding: 0 0 0 3em;
+}
+
+dl {
+    margin: 2em 1em;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 0.5em;
 }
 
 dd {
-    margin: 0 0 0 40px;
+    margin: 0 0 0 3em;
 }
 
 nav ul,
