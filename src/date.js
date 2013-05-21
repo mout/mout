@@ -12,7 +12,8 @@ return {
     'timezoneAbbr' : require('./date/timezoneAbbr'),
     'timezoneOffset' : require('./date/timezoneOffset'),
     'totalDaysInMonth' : require('./date/totalDaysInMonth'),
-    'totalDaysInYear' : require('./date/totalDaysInYear')
+    'totalDaysInYear' : require('./date/totalDaysInYear'),
+    'weekOfTheYear' : require('./date/weekOfTheYear')
 };
 
 });

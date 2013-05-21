@@ -181,6 +181,29 @@ totalDaysInYear( new Date(2013, 0, 1) ); // 365
 ```
 
 
+
+## weekOfTheYear(date, [firstDayOfWeek]):Number
+
+Returns how many weeks elapsed since start of the year (`0..53`).
+
+`firstDayOfWeek` can be `0` (Sunday) or `1` (Monday). By default weeks start at
+Sunday.
+
+It will return `0` if `date` is before the first `firstDayOfWeek` of the year.
+
+```js
+// Tue Jan 01 2013
+weekOfTheYear( new Date(2013,0,1) ); // 0
+// Wed Jan 09 2013
+weekOfTheYear( new Date(2013,0,9) ); // 1
+// Sun Jan 01 2012
+weekOfTheYear( new Date(2012,0,1) ); // 1
+// Mon Jan 09 2012
+weekOfTheYear( new Date(2012,0,9) ); // 2
+```
+
+
+
 -------------------------------------------------------------------------------
 
 For more usage examples check specs inside `/tests` folder. Unit tests are the

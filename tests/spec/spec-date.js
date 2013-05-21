@@ -10,7 +10,8 @@ define([
     './date/spec-timezoneAbbr',
     './date/spec-timezoneOffset',
     './date/spec-totalDaysInMonth',
-    './date/spec-totalDaysInYear'
+    './date/spec-totalDaysInYear',
+    './date/spec-weekOfTheYear'
 ], function(){
     //noop
 });
