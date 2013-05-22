@@ -3,8 +3,8 @@ define(['../string/lpad'], function(lpad){
     /**
      * Add padding zeros if n.length < minLength.
      */
-    function pad(n, minLength){
-        return lpad(''+ n, minLength, '0');
+    function pad(n, minLength, char){
+        return lpad(''+ n, minLength, char || '0');
     }
 
     return pad;
