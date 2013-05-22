@@ -4,9 +4,26 @@ mout changelog
 Next
 ----
 
- - Add optional delimiter to `string/unCamelCase`
- - Allow underscore characters in `string/removeNonWord`
- - Convert underscores to camelCase in `string/camelCase`
+ - add optional delimeter to `string/unCamelCase`
+ - allow custom char on `number/pad`
+ - allow underscore characters in `string/removeNonWord`
+ - accept `level` on `array/flatten` instead of a flag
+ - convert underscores to camelCase in `string/camelCase`
+ - remove `create()` from number/currencyFormat
+ - add `date/dayOfTheYear`
+ - add `date/diff`
+ - add `date/isSame`
+ - add `date/startOf`
+ - add `date/strftime`
+ - add `date/timezoneAbbr`
+ - add `date/timezoneOffset`
+ - add `date/totalDaysInYear`
+ - add `date/weekOfTheYear`
+ - add `function/timeout`
+ - add `object/bindAll`
+ - add `object/functions`
+ - add `time/convert`
+
 
 v0.5.0 (2013/04/04)
 -------------------
@@ -22,7 +39,8 @@ v0.5.0 (2013/04/04)
  - add `object/deepMatches`
  - change `function/makeIterator_` to use `deepMatches` (affects nearly all
    iteration methods)
- - Add `thisObj` parameter to `array/min` and `array/max`
+ - add `thisObj` parameter to `array/min` and `array/max`
+
 
 v0.4.0 (2013/02/26)
 -------------------
