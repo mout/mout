@@ -1,8 +1,8 @@
 mout changelog
 ==============
 
-Next
-----
+v0.6.0 (2013/05/22)
+-------------------
 
  - add optional delimeter to `string/unCamelCase`
  - allow custom char on `number/pad`
