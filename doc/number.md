@@ -49,14 +49,6 @@ Format a number as currency.
     currencyFormat(1000, 1);           // "1,000.0"
     currencyFormat(1000, 2, ',', '.'); // "1.000,00"
 
-You can also create a new instance that will have different defaults.
-
-    var cur = currencyFormat.create(0, ',', '.');
-    cur(1000);    // "1.000"
-    cur(1000, 1); // "1.000,0"
-    cur(1000, 2); // "1.000,00"
-
-PS: All arguments are required on the `currencyFormat.create()` method.
 
 
 ## enforcePrecision(val, nDecimalDigits):Number
