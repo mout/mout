@@ -8,6 +8,10 @@ define(['mout/number/pad'], function (pad) {
             expect( pad(15, 3) ).toEqual( '015' );
             expect( pad(15, 4) ).toEqual( '0015' );
         });
+
+        it('should allow custom pad char', function () {
+            expect( pad(15, 4, '_') ).toEqual( '__15' );
+        });
     });
 
 });
