@@ -237,17 +237,18 @@ See: [find()](#find)
 
 
 
-## flatten(arr, [shallow]):Array
+## flatten(arr, [level]):Array
 
-Recursively flattens an array. A new array containing all the elements is returned. If `shallow` is true, it will only flatten one level.
+Recursively flattens an array. A new array containing all the elements is
+returned. If `level` is specified, it will only flatten up to that level.
 
 ### Example
 
 ```js
-// [1, 2, 3, 4, 5]
 flatten([1, [2], [3, [4, 5]]]);
-// [1, 2, 3, [4, 5]]
-flatten([1, [2], [3, [4, 5]]], true);
+// > [1, 2, 3, 4, 5]
+flatten([1, [2], [3, [4, 5]]], 1);
+// > [1, 2, 3, [4, 5]]
 ```
 
 

@@ -1,4 +1,5 @@
-define(['../lang/isArray'], function (isArray) {
+define(['../lang/isArray', './append'], function (isArray, append) {
+
     /*
      * Helper function to flatten to a destination array.
      * Used to remove the need to create intermediate arrays while flattening.
@@ -7,7 +8,7 @@ define(['../lang/isArray'], function (isArray) {
         if (arr == null) {
             return result;
         } else if (level === 0) {
-            result.push.apply(result, arr);
+            append(result, arr);
             return result;
         }
 
@@ -30,9 +31,12 @@ define(['../lang/isArray'], function (isArray) {
      * A new array containing all the elements is returned.
      * If `shallow` is true, it will only flatten one level.
      */
-    function flatten(arr, shallow) {
-        return flattenTo(arr, [], shallow ? 1 : -1);
+    function flatten(arr, level) {
+        level = level == null? -1 : level;
+        return flattenTo(arr, [], level);
     }
+
     return flatten;
+
 });
 
