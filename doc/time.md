@@ -3,6 +3,27 @@
 Utilities for time manipulation.
 
 
+## convert(value, sourceUnit, [destinationUnit]):Number
+
+Converts time between units.
+
+Available units: `millisecond`, `second`, `minute`, `hour`, `day`, `week`.
+Abbreviations: `ms`, `s`, `m`, `h`, `d`, `w`.
+
+We do **not** support year and month as a time unit since their values are not
+fixed.
+
+The default `destinationUnit` is `ms`.
+
+```js
+convert(1, 'minute');    // 60000
+convert(2.5, 's', 'ms'); // 2500
+convert(2, 'm', 's');    // 120
+convert(500, 'ms', 's'); // 0.5
+```
+
+
+
 ## now():Number
 
 Returns the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC.

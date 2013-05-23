@@ -49,14 +49,6 @@ Format a number as currency.
     currencyFormat(1000, 1);           // "1,000.0"
     currencyFormat(1000, 2, ',', '.'); // "1.000,00"
 
-You can also create a new instance that will have different defaults.
-
-    var cur = currencyFormat.create(0, ',', '.');
-    cur(1000);    // "1.000"
-    cur(1000, 1); // "1.000,0"
-    cur(1000, 2); // "1.000,00"
-
-PS: All arguments are required on the `currencyFormat.create()` method.
 
 
 ## enforcePrecision(val, nDecimalDigits):Number
@@ -109,20 +101,25 @@ console.log( MIN_INT ); // -2147483648
 ```
 
 
-## pad(n, minLength):String
+## pad(n, minLength[, char]):String
 
 Add padding zeros if `n.length` < `minLength`.
 
 ### Example:
 
 ```js
-pad(1, 5);      // 00001
-pad(12, 5);     // 00012
-pad(123, 5);    // 00123
-pad(1234, 5);   // 01234
-pad(12345, 5);  // 12345
-pad(123456, 5); // 123456
+pad(1, 5);      // "00001"
+pad(12, 5);     // "00012"
+pad(123, 5);    // "00123"
+pad(1234, 5);   // "01234"
+pad(12345, 5);  // "12345"
+pad(123456, 5); // "123456"
+
+// you can also specify the "char" used for padding
+pad(12, 5, '_'); // "___12"
 ```
+
+see: [string/lpad](./string.html#lpad)
 
 
 

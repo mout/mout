@@ -36,21 +36,4 @@ define(['mout/number/currencyFormat'], function (currencyFormat) {
 
     });
 
-    describe('number/currencyFormat.create()', function(){
-
-        it('should create a new instance with default arguments and they shouldn\'t interfer with each other', function () {
-            var brl = currencyFormat.create(2, ',', '.');
-            var cur = currencyFormat.create(0, '.', ',');
-
-            expect( brl(1.4) ).toEqual( '1,40' );
-            expect( brl(999.99) ).toEqual( '999,99' );
-            expect( brl(1234.56) ).toEqual( '1.234,56' );
-
-            expect( cur(1.4) ).toEqual( '1' );
-            expect( cur(999.99) ).toEqual( '1,000' );
-            expect( cur(1234.56) ).toEqual( '1,235' );
-        });
-
-    });
-
 });
