@@ -519,7 +519,7 @@ var obj2 = {a: {b: 2, d : {f : 'yeah'} }};
 merge(obj1, obj2); // {a: {b : 2, c : 1, d : {e : 1, f : 'yeah'}}}
 ```
 
-See: [`deepMixIn()`](#deppMixIn), [`deepFillIn()`](#deepFillIn)
+See: [`deepMixIn()`](#deepMixIn), [`deepFillIn()`](#deepFillIn)
 
 
 
