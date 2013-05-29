@@ -89,7 +89,7 @@ binding.
 ### Arguments
 
  1. `fn` (Function)    : Target Function
- 3. `[...args]` (*)    : Arguments (0...n arguments)
+ 2. `[...args]` (*)    : Arguments (0...n arguments)
 
 See: [`bind()`](#bind)
 
@@ -167,8 +167,25 @@ var id = timeout(doStuff, 300, this);
 clearTimeout(id);
 ```
 
+## times(n, callback, [context]):void
+
+Iterates over a callback `n` times.
+
+### Arguments
+
+ 1. `n` (Number)           : Number of iterations
+ 2. `callback` (Function)  : Closure executed for every iteration
+ 3. `context` (Object)     : Execution context (object used as `this`)
+
+```js
+var output = '';
+times(5, function(i) {
+	output += i.toString();
+});
+// output: 01234
+```
+
 -------------------------------------------------------------------------------
 
 For more usage examples check specs inside `/tests` folder. Unit tests are the
 best documentation you can get...
-
