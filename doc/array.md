@@ -445,12 +445,30 @@ min(['foo', 'lorem', 'amet'], 'length'); // "foo"
 
 Gets a random item and remove it from the array.
 
-### Example:
+```js
+var arr = [1, 2, 3, 4, 5, 6];
+var item_1 = pick(arr); // 4
+var item_2 = pick(arr); // 1
+console.log(arr); // [2, 3, 5, 6]
+```
 
-    var arr = [1, 2, 3, 4, 5, 6];
-    var item_1 = pick(arr); // 4
-    var item_2 = pick(arr); // 1
-    console.log(arr); // [2, 3, 5, 6]
+See: [`random/choice`](./random.html#choice), [`pickMany()`](#pickMany)
+
+
+
+## pickMany(arr, nItems):Array
+
+Gets [N] random items and remove them from the original array.
+
+```js
+var arr = [1, 2, 3, 4, 5, 6];
+var items_1 = pickMany(arr, 2); // [4, 1]
+console.log(arr); // [2, 3, 5, 6]
+var items_2 = pickMany(arr, 3); // [3, 2, 5]
+console.log(arr); // [6]
+```
+
+See: [`pick()`](#pick)
 
 
 
