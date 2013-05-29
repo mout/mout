@@ -12,7 +12,8 @@ return {
     'prop' : require('./function/prop'),
     'series' : require('./function/series'),
     'throttle' : require('./function/throttle'),
-    'timeout' : require('./function/timeout')
+    'timeout' : require('./function/timeout'),
+    'times' : require('./function/times')
 };
 
 });
