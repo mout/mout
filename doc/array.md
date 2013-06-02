@@ -441,16 +441,24 @@ min(['foo', 'lorem', 'amet'], 'length'); // "foo"
 
 
 
-## pick(arr):*
+## pick(arr, [nItems]):*
 
-Gets a random item and remove it from the array.
+Gets random item(s) and removes it from the original array.
+
+If `nItems` is specified it will return a new Array contained the *picked*
+items otherwise it returns a single item.
+
+See: [`random/choice()`](./random.html#choice)
 
 ### Example:
 
-    var arr = [1, 2, 3, 4, 5, 6];
-    var item_1 = pick(arr); // 4
-    var item_2 = pick(arr); // 1
-    console.log(arr); // [2, 3, 5, 6]
+```js
+var arr = [1, 2, 3, 4, 5, 6];
+var item1 = pick(arr); // 4
+var item2 = pick(arr); // 1
+var items = pick(arr, 2); // [5, 2]
+console.log(arr); // [3, 6]
+```
 
 
 
