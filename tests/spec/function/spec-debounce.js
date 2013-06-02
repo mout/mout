@@ -67,6 +67,27 @@ define(['mout/function/debounce'], function(debounce){
             expect( count ).toBe(14);
         });
 
+
+        it('should allow to cancel the debounced call', function () {
+            var count = 0;
+            var cb = debounce(function(){
+                count++;
+            }, 50);
+            cb();
+            cb();
+            expect( count ).toBe( 0 );
+
+            jasmine.Clock.tick(51);
+            expect( count ).toBe( 1 );
+
+            cb();
+            cb();
+            cb.cancel();
+            jasmine.Clock.tick(51);
+            expect( count ).toBe( 1 );
+        });
+
+
     });
 
 });

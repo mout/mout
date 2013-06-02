@@ -21,6 +21,9 @@ define(function () {
             timeout = setTimeout(delayed, threshold);
             return result;
         }
+        debounced.cancel = function(){
+            clearTimeout(timeout);
+        };
         return debounced;
     }
 
