@@ -3,10 +3,12 @@
 define([
     './date/spec-dayOfTheYear',
     './date/spec-diff',
+    './date/spec-format',
     './date/spec-i18n_',
     './date/spec-isLeapYear',
     './date/spec-isSame',
     './date/spec-parseIso',
+    './date/spec-quarter',
     './date/spec-startOf',
     './date/spec-strftime',
     './date/spec-timezoneAbbr',
