@@ -10,6 +10,8 @@ return {
     'currencyFormat' : require('./number/currencyFormat'),
     'enforcePrecision' : require('./number/enforcePrecision'),
     'isNaN' : require('./number/isNaN'),
+    'nth' : require('./number/nth'),
+    'ordinal' : require('./number/ordinal'),
     'pad' : require('./number/pad'),
     'rol' : require('./number/rol'),
     'ror' : require('./number/ror'),

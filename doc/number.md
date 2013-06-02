@@ -117,6 +117,39 @@ console.log( MIN_INT ); // -2147483648
 ```
 
 
+## nth(n):String
+
+Returns the "nth" of number. (`"st"`, `"nd"`, `"rd"`, `"th"`)
+
+```js
+nth(1); // "st"
+nth(2); // "nd"
+nth(12); // "th"
+nth(22); // "nd"
+nth(23); // "rd"
+nth(34); // "th"
+```
+
+See: [`ordinal()`](#ordinal)
+
+
+
+## ordinal(n):String
+
+Converts number into ordinal form (1st, 2nd, 3rd, 4th, ...)
+
+```js
+ordinal(1); // "1st"
+ordinal(2); // "2nd"
+ordinal(3); // "3rd"
+ordinal(14); // "14th"
+ordinal(21); // "21st"
+```
+
+See: [`nth()`](#nth)
+
+
+
 ## pad(n, minLength[, char]):String
 
 Add padding zeros if `n.length` < `minLength`.

@@ -8,6 +8,8 @@ define([
     './number/spec-currencyFormat',
     './number/spec-enforcePrecision',
     './number/spec-isNaN',
+    './number/spec-nth',
+    './number/spec-ordinal',
     './number/spec-pad',
     './number/spec-rol',
     './number/spec-ror',
