@@ -12,9 +12,11 @@ define(['mout/object/underscoreKeys'], function(underscoreKeys){
 
         	obj = underscoreKeys(obj);
             
-            expect(obj['foo_bar']).toBeDefined();
-            expect(obj['bar_baz']).toBeDefined();
-            expect(obj['lorem_ipsum']).toBeDefined();
+            expect(obj).toEqual({
+                'foo_bar': 0,
+                'bar_baz': 1,
+                'lorem_ipsum': 2
+            });
 
         });
 

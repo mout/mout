@@ -1,15 +1,15 @@
 define(['mout/object/mapKeys'], function(mapKeys) {
 
-	describe('object/mapKeys', function(){
+	describe('object/mapKeys', function() {
 
-		var obj = {
-			foo: 0,
-			bar: 1,
-			baz: 2
-		};
+        var obj = {
+            foo: 0,
+            bar: 1,
+            baz: 2
+        };
 
-        it('should map a function over the keys of an object', function(){
-        	var strings = [];
+		it('should map a function over the keys of an object', function() {
+            var strings = [];
 
         	mapKeys(obj, function(key) {
         		strings.push(key);
@@ -22,17 +22,29 @@ define(['mout/object/mapKeys'], function(mapKeys) {
             expect(strings).not.toContain('ipsum');
         });
 
-        it('should generate a new object with the same keys as the source', function() {
+        it('should check if returning a new value will replace object keys.', function() {
         	
-        	newObj = mapKeys(obj, function(key) {
-        	    return key;
-        	});
+        	var thisObj = {},
+                newObj;
 
-        	expect(newObj['foo']).toBeDefined();
-        	expect(newObj['bar']).toBeDefined();
-        	expect(newObj['baz']).toBeDefined();
-        	expect(newObj['lorem']).not.toBeDefined();
-        	expect(newObj['ipsum']).not.toBeDefined();
+            newObj = mapKeys(obj, function(key, val, o) {
+               
+               // Make sure it receives all arguments.
+               expect(o).toBe(obj);
+               expect(this).toBe(thisObj);
+
+               return key + '-' + val;
+
+            }, thisObj);
+
+            expect(newObj).toEqual({
+               'foo-0': 0,
+               'bar-1': 1,
+               'baz-2': 2 
+            });
+
+            // Make sure it returns a new object.
+            expect(newObj).not.toBe(obj);
 
         });
 
