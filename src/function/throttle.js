@@ -24,6 +24,9 @@ define(['../time/now'], function (now) {
             }
             return result;
         }
+        throttled.cancel = function(){
+            clearTimeout(timeout);
+        };
         return throttled;
     }
 

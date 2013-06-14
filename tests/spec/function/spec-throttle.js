@@ -47,6 +47,20 @@ define(['mout/function/throttle'], function(throttle){
             expect( cb('x') ).toEqual( cb('y') );
         });
 
+        it('should allow to cancel the throttled call', function () {
+            var count = 0;
+            var cb = throttle(function() {
+                count++;
+            }, 50);
+            cb();
+            expect( count ).toEqual( 1 );
+            jasmine.Clock.tick(20);
+            cb();
+            expect( count ).toEqual( 1 );
+            cb.cancel();
+            jasmine.Clock.tick(51);
+            expect( count ).toEqual( 1 );
+        });
 
     });
 
