@@ -62,6 +62,14 @@ callback execution:
     ||||||||||||||||||||||||| (pause) |||||||||||||||||||||||||
     X                                 X
 
+You also have the option to cancel the debounced call if it didn't happen yet:
+
+```js
+lazyRedraw();
+// lazyRedraw won't be called since `cancel` was called before the `delay`
+lazyRedraw.cancel();
+```
+
 See: [`throttle()`](#throttle)
 
 
@@ -122,7 +130,6 @@ Returns a function that will execute all the supplied functions in order and
 passing the same parameters to all of them. Useful for combining multiple
 `array/forEach` into a single one and/or for debugging.
 
-
 ```js
 // call `console.log()` and `doStuff()` for each item item in the array
 forEach(arr, series(console.log, doStuff));
@@ -153,6 +160,18 @@ In this visualization, `|` is a throttled-function call and `X` is the actual
     ||||||||||||||||||||||||| (pause) |||||||||||||||||||||||||
     X    X    X    X    X    X        X    X    X    X    X    X
 
+You also have the option to cancel the throttled call if it didn't happen yet:
+
+```js
+lazyRedraw();
+setTimeout(function(){
+    lazyRedraw();
+    // lazyRedraw will be called only once since `cancel` was called before
+    // the `interval` for 2nd call completed
+    lazyRedraw.cancel();
+}, 250);
+```
+
 See: [`debounce()`](#debounce)
 
 
@@ -180,7 +199,7 @@ Iterates over a callback `n` times.
 ```js
 var output = '';
 times(5, function(i) {
-	output += i.toString();
+    output += i.toString();
 });
 // output: 01234
 ```
