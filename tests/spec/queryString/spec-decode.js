@@ -25,6 +25,11 @@ define(['mout/queryString/decode'], function (decode) {
             expect( q.d ).toBe( 'bar' );
         });
 
+        it('should allow properties with same name and create an array', function () {
+            var q = decode('?a=undefined&a=false&a=0&a=null&a=bar&b=123&b=foo');
+            expect( q.a ).toEqual( [undefined,false,0,null,"bar"] );
+            expect( q.b ).toEqual( [123,"foo"] );
+        });
 
     });
 });
