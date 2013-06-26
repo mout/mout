@@ -10,14 +10,14 @@ define(['../string/typecast', '../lang/isString', '../lang/isArray', '../object/
             obj = {},
             item, pValue, pName, toSet;
 
-        while (++count<length) {
+        while (++count < length) {
             item = queryArr[count].split('=');
             pName = item[0];
             if (!pName || !pName.length){
                 continue;
             }
             pValue = shouldTypecast === false ? item[1] : typecast(item[1]);
-            toSet = isString(pValue)? decodeURIComponent(pValue) : pValue;
+            toSet = isString(pValue) ? decodeURIComponent(pValue) : pValue;
             if (hasOwn(obj,pName)){
                 if(isArray(obj[pName])){
                     obj[pName].push(toSet);
