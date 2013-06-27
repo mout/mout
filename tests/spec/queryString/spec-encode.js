@@ -26,9 +26,10 @@ define(['mout/queryString/encode'], function (encode) {
                 a : "foo",
                 b : [0,false,null,undefined,'spéçîãl çhârs'],
                 c : [],
-                e : ['', '', "foo"]
+                e : ['', '', "foo"],
+                'blob-name' : ['loren', 'ipsun']
             };
-            expect( encode(q) ).toBe( '?a=foo&b=0&b=false&b=null&b=undefined&b=sp%C3%A9%C3%A7%C3%AE%C3%A3l%20%C3%A7h%C3%A2rs&c=&e=&e=&e=foo' );
+            expect( encode(q) ).toBe( '?a=foo&b=0&b=false&b=null&b=undefined&b=sp%C3%A9%C3%A7%C3%AE%C3%A3l%20%C3%A7h%C3%A2rs&c=&e=&e=&e=foo&blob-name=loren&blob-name=ipsun' );
         });
 
     });

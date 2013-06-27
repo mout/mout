@@ -5,14 +5,15 @@ define(['../object/forOwn','../lang/isArray','../array/forEach'], function (forO
      */
     function encode(obj){
         var query = [],
-            arrValues;
+            arrValues, reg;
         forOwn(obj, function (val, key) {
             if (isArray(val)) {
                 arrValues = key + '=';
+                reg = new RegExp('&'+key+'+=$');
                 forEach(val, function (aValue) {
                     arrValues += encodeURIComponent(aValue) + '&' + key + '=';
                 });
-                query.push(arrValues.replace(/&[\w]+=$/, ''));
+                query.push(arrValues.replace(reg, ''));
             } else {
                query.push(key + '=' + encodeURIComponent(val));
             }
