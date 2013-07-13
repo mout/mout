@@ -1,4 +1,4 @@
-define(['./kindOf'], function (kindOf) {
+define(['./kindOf', './isArguments'], function (kindOf, isArguments) {
 
     var _win = this;
 
@@ -11,6 +11,14 @@ define(['./kindOf'], function (kindOf) {
             n;
 
         if (val != null) {
+            if (isArguments(val)) {
+                // if the value given is an arguments object we just slice it
+                // and return the result, this should save some resources compared
+                // with an iteration, besides if a user is intentionally giving
+                // an arguments object, it most probably just want to avoid the
+                // pseudo-array gotchas
+                return Array.prototype.slice.call(val, 0);
+            }
             if ( val.length == null || kind === 'String' || kind === 'Function' || kind === 'RegExp' || val === _win ) {
                 //string, regexp, function have .length but user probably just want
                 //to wrap value into an array..
