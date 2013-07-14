@@ -10,6 +10,7 @@ define([
     './string/spec-escapeRegExp',
     './string/spec-escapeUnicode',
     './string/spec-hyphenate',
+    './string/spec-insert',
     './string/spec-interpolate',
     './string/spec-lowerCase',
     './string/spec-lpad',

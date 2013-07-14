@@ -124,6 +124,18 @@ hyphenate('loremIpsum');                  // "lorem-ipsum"
 
 
 
+## insert(str, index, partial):String
+
+Inserts a `partial` before the given `index` in the provided `str`.
+If the index is larger than the length of the string the partial is appended at the end.
+A negative index is treated as `length - index` where `length` is the length or the string.
+
+```js
+insert('this is a sentence', 10, 'sample '); // "this is a sample sentence"
+insert('foo', 100, 'bar'); // "foobar"
+insert('image.png', -4, '-large'); // "image-large.png"
+```
+
 ## interpolate(str, replacements[, syntax]):String
 
 String interpolation. Format/replace tokens with object properties.
@@ -432,7 +444,7 @@ slugify(str, '_'); // "loremipsum_dolor_special_chars"
 
 
 ## trim(str, [chars]):String
- 
+
 Remove chars or white-spaces from beginning and end of string.
 
 `chars` is an array of chars to remove from the beginning and end of the
