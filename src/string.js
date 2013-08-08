@@ -12,6 +12,7 @@ return {
     'escapeRegExp' : require('./string/escapeRegExp'),
     'escapeUnicode' : require('./string/escapeUnicode'),
     'hyphenate' : require('./string/hyphenate'),
+    'insert' : require('./string/insert'),
     'interpolate' : require('./string/interpolate'),
     'lowerCase' : require('./string/lowerCase'),
     'lpad' : require('./string/lpad'),
