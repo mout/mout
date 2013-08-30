@@ -1,4 +1,4 @@
-define(['./forEach', '../function/makeIterator_'], function(forEach, makeIterator) {
+define(['../function/makeIterator_'], function(makeIterator) {
 
     /**
      * Array reject

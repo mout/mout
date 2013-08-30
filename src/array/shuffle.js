@@ -1,4 +1,4 @@
-define(['../random/randInt', './forEach'], function (randInt, forEach) {
+define(['../random/randInt'], function (randInt) {
 
     /**
      * Shuffle array items.

@@ -1,4 +1,4 @@
-define(['./max', './pluck', './map'], function (max, pluck, map) {
+define(['./max', './map'], function (max, map) {
 
     function getLength(arr) {
         return arr == null ? 0 : arr.length;
@@ -11,8 +11,7 @@ define(['./max', './pluck', './map'], function (max, pluck, map) {
     function zip(arr){
         var len = arr ? max(map(arguments, getLength)) : 0,
             results = [],
-            i = -1,
-            item;
+            i = -1;
         while (++i < len) {
             results.push(map(arguments, function(item) {
                 return item == null ? undefined : item[i];

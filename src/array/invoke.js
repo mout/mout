@@ -1,4 +1,4 @@
-define(['./forEach'], function (forEach) {
+define(function () {
 
     /**
      * Call `methodName` on each item of the array passing custom arguments if

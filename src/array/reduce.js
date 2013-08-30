@@ -1,4 +1,4 @@
-define(['./forEach'], function (forEach) {
+define(function () {
 
     /**
      * Array reduce
