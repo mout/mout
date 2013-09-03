@@ -32,7 +32,8 @@ define(['mout/lang/toNumber'], function(toNumber){
         });
 
         it('should convert Date to ms integer', function () {
-            expect( toNumber(new Date(1985, 6, 23)) ).toBe( 490935600000 );
+            // use timestamp to make test deterministic (avoid timezone issues)
+            expect( toNumber(new Date(490935600000)) ).toBe( 490935600000 );
         });
 
         it('should handle String constructor', function () {
