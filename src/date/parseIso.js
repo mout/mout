@@ -57,7 +57,7 @@ define(['../array/some'], function (some) {
     function parseDate(str) {
         var match, year, month, day;
 
-        var match = matchAll(str, datePatterns);
+        match = matchAll(str, datePatterns);
         if (match === null) {
             // Ordinal dates are verified differently.
             return parseOrdinalDate(str);
@@ -87,8 +87,8 @@ define(['../array/some'], function (some) {
         var match;
         if (str.charAt(str.length - 1) === 'Z') {
             str = str.substring(0, str.length - 1);
-        } else if ((match = TIME_ZONE.exec(str))) {
-            var match = TIME_ZONE.exec(str);
+        } else {
+            match = TIME_ZONE.exec(str);
             if (match) {
                 var hours = +match[3],
                     minutes = (match[4] === void 0) ? 0 : +match[4],
