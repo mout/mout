@@ -7,22 +7,19 @@ define(['./prop', '../object/deepMatches'], function(prop, deepMatches) {
      */
     function makeIterator(src, thisObj){
         switch(typeof src) {
+            case 'function':
+                // function is the first to improve perf (most common case)
+                return (typeof thisObj !== 'undefined')? function(val, i, arr){
+                    return src.call(thisObj, val, i, arr);
+                } : src;
             case 'object':
                 // typeof null == "object"
-                return (src != null)? function(val, key, target){
+                return (src != null)? function(val){
                     return deepMatches(val, src);
                 } : src;
             case 'string':
             case 'number':
                 return prop(src);
-            case 'function':
-                if (typeof thisObj === 'undefined') {
-                    return src;
-                } else {
-                    return function(val, i, arr){
-                        return src.call(thisObj, val, i, arr);
-                    };
-                }
             default:
                 return src;
         }

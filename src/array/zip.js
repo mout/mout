@@ -13,6 +13,7 @@ define(['./max', './map'], function (max, map) {
             results = [],
             i = -1;
         while (++i < len) {
+            // jshint loopfunc: true
             results.push(map(arguments, function(item) {
                 return item == null ? undefined : item[i];
             }));

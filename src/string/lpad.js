@@ -7,8 +7,8 @@ define(['../lang/toString', './repeat'], function(toString, repeat) {
         str = toString(str);
         ch = ch || ' ';
 
-        return ((str.length < minLen)
-            ? repeat(ch, minLen - str.length) + str : str);
+        return (str.length < minLen) ?
+            repeat(ch, minLen - str.length) + str : str;
     }
 
     return lpad;
