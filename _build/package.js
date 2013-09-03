@@ -87,9 +87,17 @@ function makeIndex(){
     var packages = getFolderStructure( srcPath() ).folders;
 
     var modules = packages.map(function(fileName){
+        var name = _path.basename(fileName);
         return {
-            name : _path.basename(fileName)
+            name: name,
+            path: './'+ name
         };
+    });
+
+    // function is a reserved keyword so we create an alias (#119)
+    modules.push({
+        name: 'fn',
+        path: './function'
     });
 
     var indexPath = srcPath('index.js');

@@ -18,7 +18,8 @@ return {
     'queryString' : require('./queryString'),
     'random' : require('./random'),
     'string' : require('./string'),
-    'time' : require('./time')
+    'time' : require('./time'),
+    'fn' : require('./function')
 };
 
 });
