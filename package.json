@@ -48,7 +48,8 @@
     "mdoc": "~0.3.2",
     "handlebars": "~1.0.6",
     "commander": "~1.0.5",
-    "rocambole": "~0.2.3"
+    "rocambole": "~0.2.3",
+    "jshint": "2.x"
   },
   "testling": {
     "preprocess": "node build testling",

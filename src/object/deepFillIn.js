@@ -11,12 +11,13 @@ define(['./forOwn', '../lang/isPlainObject'], function (forOwn, isPlainObject) {
         while(++i < n) {
             obj = arguments[i];
             if (obj) {
+                // jshint loopfunc: true
                 forOwn(obj, function(newValue, key) {
                     var curValue = target[key];
                     if (curValue == null) {
                         target[key] = newValue;
-                    } else if (isPlainObject(curValue)
-                               && isPlainObject(newValue)) {
+                    } else if (isPlainObject(curValue) &&
+                               isPlainObject(newValue)) {
                         deepFillIn(curValue, newValue);
                     }
                 });
