@@ -28,6 +28,7 @@ define([
     './lang/spec-isnt',
     './lang/spec-kindOf',
     './lang/spec-toArray',
+    './lang/spec-toNumber',
     './lang/spec-toString'
 ], function(){
     //noop
