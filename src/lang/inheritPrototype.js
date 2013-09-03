@@ -10,6 +10,7 @@ define(['./createObject'], function(createObject){
         var p = createObject(parent.prototype);
         p.constructor = child;
         child.prototype = p;
+        child.super_ = parent;
     }
 
     return inheritPrototype;

@@ -24,10 +24,14 @@ define(['mout/lang/inheritPrototype'], function (inheritPrototype) {
             var b = new Bar('asd');
 
             expect(a.getName()).toEqual('ipsum');
-            expect(a.test).toEqual(undefined);
+            expect(a.test).toBeUndefined();
+            expect(a.super_).toBeUndefined();
+            expect(Foo.super_).toBeUndefined();
 
             expect(b.getName()).toEqual('asd');
             expect(b.test).toEqual(true);
+            expect(b.super_).toBeUndefined();
+            expect(Bar.super_).toBe(Foo);
 
         });
 
