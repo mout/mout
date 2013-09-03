@@ -1,6 +1,14 @@
-define(['mout/array/shuffle'], function (shuffle) {
+define(['mout/array/shuffle', '../random/helper-mockRandom'], function (shuffle, mockRandom) {
 
     describe('array/shuffle()', function () {
+
+        beforeEach(function(){
+            mockRandom();
+        });
+
+        afterEach(function() {
+            mockRandom.end();
+        });
 
         it('should return new array with shuffled items', function () {
 
