@@ -28,6 +28,12 @@ define(['mout/string/makePath'], function (makePath) {
 
         it('should remove duplicate slashes', function () {
             expect( makePath('dolor/', '/',  '/ipsum', '//') ).toEqual( 'dolor/ipsum/' );
+            expect( makePath('///dolor//////ipsum', '//') ).toEqual( '/dolor/ipsum/' );
+        });
+
+        it('should not remove duplicate slashes if after ":" (protocol)', function () {
+            expect( makePath('file:///dolor/', '/',  '/ipsum', '//') ).toEqual( 'file:///dolor/ipsum/' );
+            expect( makePath('http://dolor/', '/',  '/ipsum', '//') ).toEqual( 'http://dolor/ipsum/' );
         });
 
     });

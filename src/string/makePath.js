@@ -6,7 +6,8 @@ define(['../array/join'], function(join){
      */
     function makePath(var_args){
         var result = join(Array.prototype.slice.call(arguments), '/');
-        return result.replace(/\/{2,}/g, '/');
+        // need to disconsider duplicate '/' after protocol (eg: 'http://')
+        return result.replace(/([^:\/]|^)\/{2,}/g, '$1/');
     }
 
     return makePath;
