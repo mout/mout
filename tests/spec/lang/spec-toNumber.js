@@ -25,6 +25,11 @@ define(['mout/lang/toNumber'], function(toNumber){
             expect( toNumber(Infinity) ).toEqual( Infinity );
         });
 
+        it('should keep negative zero sign', function () {
+            expect( 1 / toNumber(-0) ).toEqual( -Infinity );
+            expect( 1 / toNumber(+0) ).toEqual( Infinity );
+        });
+
         it('should typecast boolean into number', function () {
             expect( toNumber(false) ).toBe( 0 );
             expect( toNumber(true) ).toBe( 1 );
