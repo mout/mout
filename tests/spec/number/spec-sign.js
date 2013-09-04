@@ -38,9 +38,10 @@ define(['mout/number/sign'], function (sign) {
             expect( sign('-123') ).toEqual( -1 );
             expect( sign('123') ).toEqual( 1 );
             expect( sign('') ).toEqual( 0 );
-            expect( sign([]) ).toEqual( 0 );
-            expect( sign([1]) ).toEqual( 1 );
             expect( sign(null) ).toEqual( 0 );
+            expect( sign(undefined) ).toEqual( 0 );
+            expect( sign([]) ).toBeNaN();
+            expect( sign([1]) ).toBeNaN();
         });
 
     });
