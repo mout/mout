@@ -12,6 +12,10 @@ define(['mout/lang/toNumber'], function(toNumber){
             expect( toNumber(void(0)) ).toBe(0);
         });
 
+        it('should handle empty string as zero', function () {
+            expect( toNumber('') ).toBe( 0 );
+        });
+
         it('should return numeric value unchanged', function(){
             expect( toNumber(0) ).toBe( 0 );
             expect( toNumber(123) ).toBe( 123 );
@@ -22,13 +26,13 @@ define(['mout/lang/toNumber'], function(toNumber){
         });
 
         it('should typecast boolean into number', function () {
-            expect( toNumber(false) ).toEqual( 0 );
-            expect( toNumber(true) ).toEqual( 1 );
+            expect( toNumber(false) ).toBe( 0 );
+            expect( toNumber(true) ).toBe( 1 );
         });
 
         it('should typecast numeric string into number', function () {
-            expect( toNumber('123') ).toEqual( 123 );
-            expect( toNumber('123.45') ).toEqual( 123.45 );
+            expect( toNumber('123') ).toBe( 123 );
+            expect( toNumber('123.45') ).toBe( 123.45 );
         });
 
         it('should convert Date to ms integer', function () {
@@ -37,11 +41,11 @@ define(['mout/lang/toNumber'], function(toNumber){
         });
 
         it('should handle String constructor', function () {
-            expect( toNumber(new String('78')) ).toEqual( 78 );
+            expect( toNumber(new String('78')) ).toBe( 78 );
         });
 
         it('should handle Number constructor', function () {
-            expect( toNumber(new Number(90)) ).toEqual( 90 );
+            expect( toNumber(new Number(90)) ).toBe( 90 );
         });
 
         it('should return NaN if not numeric', function () {
