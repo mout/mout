@@ -1,9 +1,10 @@
-define(function () {
+define(['../lang/toNumber'], function (toNumber) {
 
     /**
      * Converts number into currency format
      */
     function currencyFormat(val, nDecimalDigits, decimalSeparator, thousandsSeparator) {
+        val = toNumber(val);
         nDecimalDigits = nDecimalDigits == null? 2 : nDecimalDigits;
         decimalSeparator = decimalSeparator == null? '.' : decimalSeparator;
         thousandsSeparator = thousandsSeparator == null? ',' : thousandsSeparator;

@@ -7,6 +7,8 @@ define(function(){
      * Perf tests: http://jsperf.com/vs-vs-parseint-bitwise-operators/7
      */
     function toInt(val){
+        // we do not use lang/toNumber because of perf and also because it
+        // doesn't break the functionality
         return ~~val;
     }
 

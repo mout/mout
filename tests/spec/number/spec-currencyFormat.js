@@ -34,6 +34,12 @@ define(['mout/number/currencyFormat'], function (currencyFormat) {
             expect( currencyFormat(1000, 0) ).toEqual( '1,000' );
         });
 
+        it('should typecast value to number', function () {
+            expect( currencyFormat(null) ).toEqual( '0.00' );
+            expect( currencyFormat('') ).toEqual( '0.00' );
+            expect( currencyFormat('123.45') ).toEqual( '123.45' );
+        });
+
     });
 
 });

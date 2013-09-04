@@ -20,6 +20,17 @@ define(['mout/number/toInt'], function (toInt) {
             expect( toInt( Math.pow(-2,31) + 0.5 ) ).toEqual(-2147483647);
         });
 
+        it('should typecast value to number', function () {
+            expect( toInt('123.45') ).toBe( 123 );
+            expect( toInt(null) ).toBe( 0 );
+            // we do not use lang/toNumber because of perf and also because it
+            // doesn't break the functionality
+            expect( toInt(void(0)) ).toBe( 0 );
+            expect( toInt('') ).toBe( 0 );
+            expect( toInt([]) ).toBe(0);
+            expect( toInt([4,5]) ).toBe(0);
+            expect( toInt({}) ).toBe(0);
+        });
     });
 
 });
