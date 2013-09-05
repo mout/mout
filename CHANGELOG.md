@@ -1,8 +1,8 @@
 mout changelog
 ==============
 
-Next
-----
+v0.7.0 (2013/09/05)
+-------------------
 
  - add bower ignores.
  - add german translation for date localization.
