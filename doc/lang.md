@@ -237,9 +237,20 @@ isEmpty({a:1, b:2}); // false
 
 Checks if value is Finite.
 
-Note: This is not the same as native `isFinite`, which will return `true` for
-booleans and empty strings. See http://es5.github.com/#x15.1.2.5.
+**IMPORTANT:** This is not the same as native `isFinite`, which will return
+`true` for values that can be coerced into finite numbers. See
+http://es5.github.com/#x15.1.2.5.
 
+```js
+isFinite(123);      // true
+isFinite(Infinity); // false
+
+// this is different than native behavior
+isFinite('');   // false
+isFinite(true); // false
+isFinite([]);   // false
+isFinite(null); // false
+```
 
 
 ## isFunction(val):Boolean
@@ -282,10 +293,32 @@ isInteger('123');  // false
 
 ## isNaN(val):Boolean
 
-Check if value is `NaN`.
+Check if value is not a number.
 
-Note: This is not the same as native `isNaN`, which will return `true` for
-`undefined` and other values. See [ES5 isNaN](http://es5.github.com/#x15.1.2.4)
+It doesn't coerce value into number before doing the check, giving better
+results than native `isNaN`. Returns `true` for everything besides numeric
+values.
+
+**IMPORTANT:** behavior is very different than the native `isNaN` and way more
+useful!!! See: http://es5.github.io/#x15.1.2.4
+
+```js
+isNaN(123);       // false
+
+isNaN(NaN);       // true
+isNaN({});        // true
+isNaN(undefined); // true
+isNaN([4,5]);     // true
+
+// these are all "false" on native isNaN and main reason why this module exists
+isNaN('');    // true
+isNaN(null);  // true
+isNaN(true);  // true
+isNaN(false); // true
+isNaN("123"); // true
+isNaN([]);    // true
+isNaN([5]);   // true
+```
 
 
 
@@ -379,11 +412,13 @@ Convert value into number.
 toNumber('123');     // 123
 toNumber(-567);      // -567
 
-// null and undefined returns zero
+// falsy values returns zero
+toNumber('');        // 0
 toNumber(null);      // 0
 toNumber(undefined); // 0
+toNumber(false);     // 0
 
-// any non-numeric value returns NaN
+// non-numeric values returns NaN
 toNumber('asd');     // NaN
 toNumber({});        // NaN
 toNumber([]);        // NaN
@@ -400,6 +435,19 @@ Convert any value to its string representation.
 
 Will return an empty string for `undefined` or `null`, otherwise will convert
 the value to its string representation.
+
+```js
+// null and undefined are converted into empty strings
+toString(null);      // ""
+toString(undefined); // ""
+
+toString(1);       // "1"
+toString([1,2,3]); // "1,2,3"
+toString(false);   // "false"
+
+// uses `val.toString()` to convert value
+toString({toString:funtion(){ return 'foo'; }}); // "foo"
+```
 
 
 

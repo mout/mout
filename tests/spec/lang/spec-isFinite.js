@@ -2,8 +2,7 @@ define(['mout/lang/isFinite'], function(isFinite){
 
     describe('lang/isFinite', function(){
 
-        it('should check if value is finite for realz', function(){
-
+        it('should return false for all values that aren\'t finite', function(){
             expect( isFinite(null) ).toBe( false );
             expect( isFinite() ).toBe( false );
             expect( isFinite(void(0)) ).toBe( false );
@@ -21,7 +20,9 @@ define(['mout/lang/isFinite'], function(isFinite){
             expect( isFinite(-Infinity) ).toBe( false );
             expect( isFinite(+Infinity) ).toBe( false );
             expect( isFinite('Infinity') ).toBe( false );
+        });
 
+        it('should return true to all finite values', function(){
             expect( isFinite('-123') ).toBe( true );
             expect( isFinite('123') ).toBe( true );
             expect( isFinite(new Number(123)) ).toBe( true );
@@ -30,7 +31,6 @@ define(['mout/lang/isFinite'], function(isFinite){
             expect( isFinite(-123) ).toBe( true );
             expect( isFinite(-123.45) ).toBe( true );
             expect( isFinite(0) ).toBe( true );
-
         });
 
     });
