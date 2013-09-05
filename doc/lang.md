@@ -34,7 +34,7 @@ See: [`deepClone()`](#deepClone)
 
 Create Object using prototypal inheritance and setting custom properties.
 
-Mix between [Douglas Crockford Prototypal Inheritance](http://javascript.crockford.com/prototypal.html) and the EcmaScript 5 `Object.create()` method.
+Mix between [Douglas Crockford Prototypal Inheritance](http://javascript.crockford.com/prototypal.html) and [`object/mixIn`](./object.html#mixIn).
 
 ### Arguments
 
@@ -132,9 +132,11 @@ Return first value that isn't `null` or `undefined`.
 
 
 
-## inheritPrototype(child, parent):void
+## inheritPrototype(childCtor, parentCtor):void
 
-Inherit prototype from another Object.
+Inherit the prototype methods from one constructor into another.
+
+Similar to [node.js util/inherits](http://nodejs.org/docs/latest/api/util.html#util_util_inherits_constructor_superconstructor).
 
 ```js
 function Foo(name){
@@ -147,13 +149,18 @@ Foo.prototype = {
 };
 
 function Bar(name){
-    this.name = name;
+    Foo.call(this, name);
 }
 //should be called before calling constructor
 inheritPrototype(Bar, Foo);
 
 var myObj = new Bar('lorem ipsum');
 myObj.getName(); // "lorem ipsum"
+
+console.log(myObj instanceof Foo); // true
+
+// you also have access to the "super" constructor
+console.log(Bar.super_ === Foo); // true
 ```
 
 
