@@ -1,6 +1,24 @@
 mout changelog
 ==============
 
+Next
+----
+
+ - add bower ignores.
+ - add german translation for date localization.
+ - alias `function` package as `fn` since "function" is a reserved keyword.
+ - allow second argument on `array/pick`.
+ - improve `string/makePath` to not remove "//" after protocol.
+ - make sure methods inside `number` package works with mixed types.
+ - support arrays on `queryString/encode`.
+ - support multiple values for same property on `queryString/decode`.
+ - add `cancel()` method to `throttled/debounced` functions.
+ - add `function/times`.
+ - add `lang/toNumber`.
+ - add `string/insert`.
+ - add `super_` to constructor on `lang/inheritPrototype`.
+
+
 v0.6.0 (2013/05/22)
 -------------------
 
