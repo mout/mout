@@ -30,6 +30,7 @@ return {
     'isnt' : require('./lang/isnt'),
     'kindOf' : require('./lang/kindOf'),
     'toArray' : require('./lang/toArray'),
+    'toNumber' : require('./lang/toNumber'),
     'toString' : require('./lang/toString')
 };
 

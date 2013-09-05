@@ -92,5 +92,15 @@ define(['mout/number/abbreviate'], function (abbr) {
 
         });
 
+
+        it('should work with null', function () {
+            expect( abbr(null) ).toEqual( '0K' );
+            expect( abbr('') ).toEqual( '0K' );
+        });
+
+        it('should work with strings', function () {
+            expect( abbr('2345') ).toEqual( '2.3K' );
+        });
+
     });
 });

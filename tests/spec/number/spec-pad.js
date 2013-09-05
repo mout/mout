@@ -12,6 +12,13 @@ define(['mout/number/pad'], function (pad) {
         it('should allow custom pad char', function () {
             expect( pad(15, 4, '_') ).toEqual( '__15' );
         });
+
+        it('should typecast value to number', function () {
+            expect( pad(null, 2) ).toEqual( '00' );
+            expect( pad('', 2) ).toEqual( '00' );
+            expect( pad('1', 2) ).toEqual( '01' );
+        });
+
     });
 
 });

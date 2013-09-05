@@ -24,5 +24,11 @@ define(['mout/number/enforcePrecision'], function (enforcePrecision) {
             expect( enforcePrecision(n, 0) ).toEqual( 1 );
         });
 
+        it('should typecast argument to number', function () {
+            expect( enforcePrecision(null, 2) ).toBe( 0 );
+            expect( enforcePrecision('', 2) ).toBe( 0 );
+            expect( enforcePrecision('123.5666', 2) ).toBe( 123.57 );
+        });
+
     });
 });

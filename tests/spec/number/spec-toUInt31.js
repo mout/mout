@@ -21,5 +21,17 @@ define(['mout/number/toUInt31'], function (toUInt31) {
             expect( toUInt31( Math.pow(2,32) - 0.5 ) ).toEqual( 2147483647 );
         });
 
+        it('should typecast value to number', function () {
+            expect( toUInt31('123.45') ).toBe( 123 );
+            expect( toUInt31(null) ).toBe( 0 );
+            expect( toUInt31(void(0)) ).toBe( 0 );
+            expect( toUInt31('') ).toBe( 0 );
+            // we do not use lang/toNumber because of perf and also because it
+            // doesn't break the functionality
+            expect( toUInt31([]) ).toBe(0);
+            expect( toUInt31([4,5]) ).toBe(0);
+            expect( toUInt31({}) ).toBe(0);
+        });
+
     });
 });

@@ -370,6 +370,30 @@ See: object/values()
 
 
 
+## toNumber(val):Number
+
+Convert value into number.
+
+```js
+// numeric values are typecasted as Number
+toNumber('123');     // 123
+toNumber(-567);      // -567
+
+// null and undefined returns zero
+toNumber(null);      // 0
+toNumber(undefined); // 0
+
+// any non-numeric value returns NaN
+toNumber('asd');     // NaN
+toNumber({});        // NaN
+toNumber([]);        // NaN
+
+// Date objects return milliseconds since epoch
+toNumber(new Date(1985, 6, 23)); // 490935600000
+```
+
+
+
 ## toString(val):String
 
 Convert any value to its string representation.
