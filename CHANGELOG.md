@@ -1,6 +1,11 @@
 mout changelog
 ==============
 
+Next
+----
+
+ - fix `null` value handling in object/get.
+
 v0.7.0 (2013/09/05)
 -------------------
 
