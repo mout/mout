@@ -9,7 +9,7 @@ define(function () {
 
         while (prop = parts.shift()) {
             obj = obj[prop];
-            if (typeof obj !== 'object') return;
+            if (typeof obj !== 'object' || !obj) return;
         }
 
         return obj[last];
