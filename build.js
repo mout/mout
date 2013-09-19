@@ -46,6 +46,11 @@ _cli
     .description('prepare files for ci.testling.com')
     .action( cmd(generateTestBundle) );
 
+_cli
+    .command('prune')
+    .description('remove cjs files created during "release"')
+    .action( cmd(prune) );
+
 _cli.parse(process.argv);
 
 
@@ -175,8 +180,7 @@ function release(version){
         // https://github.com/isaacs/npm/issues/3856
         'node build cjs .',
         'npm publish',
-        // TODO: use node instead of a shell script (so it works on windows)
-        'sh _build/clean.sh'
+        'node build prune'
     ], function(err){
         if (err) {
             console.error(err.toString());
@@ -263,5 +267,13 @@ function generateTestBundle(){
 
     });
 
+}
+
+
+function prune(){
+    var ls = _helpers.getFolderStructure('./src');
+    var rimraf = require('rimraf');
+    ls.folders.map(_path.basename).forEach(rimraf.sync);
+    ls.files.map(_path.basename).forEach(rimraf.sync);
 }
 
