@@ -111,6 +111,37 @@ function convert(destinationPath){
     var glob = _path.join(_config.SRC_FOLDER, '/**/**.js');
     _helpers.echo('Converting modules to node.js:');
     require('nodefy').batchConvert(glob, destinationPath, function(err, results){
+        if (err) {
+            console.error( err.toString() );
+            process.exit(1);
+        }
+
+        function checkKeys(mod, name){
+            try {
+                var keys = Object.keys(mod);
+            } catch (err) {
+                throw new Error('"'+ name +'" is not an object');
+            }
+            if (! keys.length ) {
+                throw new Error('"'+ name +'" does\'t contain any enumerable properties');
+            }
+        }
+
+        try {
+            // we load the index file and check if all the properties contain
+            // keys to make sure module conversion worked properly this will
+            // avoid npm publish mistakes like mout/mout#127
+            var index = require( _path.join('./', destinationPath, 'index') );
+            checkKeys(index, 'mout');
+            for (var key in index) {
+                if (key !== 'VERSION') checkKeys(index[key], 'mout.'+ key);
+            }
+        } catch (err) {
+            console.error( 'node.js module conversion went wrong:' );
+            console.error( err.toString() );
+            process.exit(1);
+        }
+
         results = results.map(function(r){ return r.outputPath; });
         _helpers.echoList(results);
         _helpers.echo('Finished node.js conversion');
@@ -140,13 +171,15 @@ function release(version){
         'git tag v'+ version,
         'git push '+ remote,
         'git push --tags',
-        // scripts.prepublish already generates the cjs modules
+        // we do not rely on npm.scripts.prepublish because of
+        // https://github.com/isaacs/npm/issues/3856
+        'node build cjs .',
         'npm publish',
         // TODO: use node instead of a shell script (so it works on windows)
         'sh _build/clean.sh'
     ], function(err){
         if (err) {
-            console.log(err.toString());
+            console.error(err.toString());
             process.exit(1);
         }
     });

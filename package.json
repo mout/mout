@@ -33,9 +33,8 @@
   },
   "main": "./index.js",
   "scripts": {
-    "prepublish": "node build cjs .",
     "pretest": "node build pkg",
-    "test": "node node_modules/istanbul/lib/cli test tests/runner.js --hook-run-in-context"
+    "test": "istanbul test tests/runner.js --hook-run-in-context"
   },
   "directories": {
     "doc": "./doc"
