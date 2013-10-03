@@ -47,6 +47,10 @@ define(['mout/string/interpolate'], function (interpolate) {
             expect( interpolate(null, {}) ).toBe('');
         });
 
+        it('should treat false as string "false"', function() {
+            expect( interpolate('{{a}} {{b}}', { a: false, b: true }) ).toBe( 'false true' );
+        });
+
         it('should allow nested replacement objects', function(){
             var replacements = {
                 a: { b: {c: 'lorem ipsum' } }
