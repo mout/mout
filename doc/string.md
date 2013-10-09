@@ -144,6 +144,9 @@ String interpolation. Format/replace tokens with object properties.
 var tmpl = 'Hello {{name}}!';
 interpolate(tmpl, {name: 'World'});       // "Hello World!"
 interpolate(tmpl, {name: 'Lorem Ipsum'}); // "Hello Lorem Ipsum!"
+
+tmpl = 'Hello {{name.first}}!';
+interpolate(tmpl, {name: {first: 'Lorem'}}); // "Hello Lorem!"
 ```
 
 It uses a mustache-like syntax by default but you can set your own format if

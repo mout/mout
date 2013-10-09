@@ -47,6 +47,27 @@ define(['mout/string/interpolate'], function (interpolate) {
             expect( interpolate(null, {}) ).toBe('');
         });
 
+        it('should treat false as string "false"', function() {
+            expect( interpolate('{{a}} {{b}}', { a: false, b: true }) ).toBe( 'false true' );
+        });
+
+        it('should allow nested replacement objects', function(){
+            var replacements = {
+                a: { b: {c: 'lorem ipsum' } }
+            };
+
+            expect( interpolate('{{a.b.c}}', replacements) ).toEqual('lorem ipsum');
+            expect( interpolate('{{a.b.d}}', replacements) ).toEqual('');
+        });
+
+        it('should allow nested complex key names', function(){
+            var replacements = {
+                '-#$&@_': 'foo bar'
+            };
+
+            expect( interpolate('{{-#$&@_}}', replacements) ).toEqual('foo bar');
+        });
+
     });
 
 });
