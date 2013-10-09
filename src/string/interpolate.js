@@ -3,7 +3,7 @@ define([
     '../object/get'
 ], function(toString, get) {
 
-    var stache = /\{\{([\.\w]+)\}\}/g; //mustache-like
+    var stache = /\{\{([^\}]+)\}\}/g; //mustache-like
 
     /**
      * String interpolation
@@ -11,7 +11,7 @@ define([
     function interpolate(template, replacements, syntax){
         template = toString(template);
         var replaceFn = function(match, prop){
-            return toString( get(replacements, prop) ) || '';
+            return toString( get(replacements, prop) );
         };
         return template.replace(syntax || stache, replaceFn);
     }

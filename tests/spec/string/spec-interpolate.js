@@ -60,6 +60,14 @@ define(['mout/string/interpolate'], function (interpolate) {
             expect( interpolate('{{a.b.d}}', replacements) ).toEqual('');
         });
 
+        it('should allow nested complex key names', function(){
+            var replacements = {
+                '-#$&@_': 'foo bar'
+            };
+
+            expect( interpolate('{{-#$&@_}}', replacements) ).toEqual('foo bar');
+        });
+
     });
 
 });
