@@ -726,16 +726,25 @@ union(a, b, c); // ['c', 1, 'b', 2, 3, 'a']
 
 
 
-## unique(arr):Array
+## unique(arr, [compare]):Array
 
 Return a new Array of unique items.
 
-### Example
+**IMPORTANT:** duplicates are removed starting from begining of array.
 
 ```js
-var foo = [1, 2, 3, 4, 2, 2, 3, 4];
-var bar = unique(foo);
-console.log(foo); // [1, 2, 3, 4];
+var arr = [1, 2, 3, 4, 2, 2, 4];
+var foo = unique(arr);
+console.log(foo);
+// > [1, 3, 2, 4];
+
+// you also have the option to set a custom compare function
+var users = [{name: 'john'}, {name: 'paul'}, {name: 'john'}];
+var uniqueNames = unique(arr, function(a, b){
+    return a.name === b.name;
+});
+console.log(uniqueNames);
+// > [{name: 'paul'}, {name: 'john'}]
 ```
 
 
