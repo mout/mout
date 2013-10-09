@@ -177,7 +177,7 @@ See [`reject()`](#reject)
 
 
 
-## find(arr, callback, [thisObj]):void
+## find(arr, callback, [thisObj]):*
 
 Loops through all the items in the Array and returns the first one that passes
 a truth test (callback).
@@ -202,7 +202,38 @@ find(arr, {name:'john'}); // {name:'john', surnname:'connor', beard:false}
 find(arr, 'beard'); // {name:'john', surnname:'doe', beard:true}
 ```
 
-See: [findIndex()](#findIndex), [findLastIndex()](#findLastIndex)
+See: [findIndex()](#findIndex), [findLast()](#findLast),
+[findLastIndex()](#findLastIndex)
+
+
+
+## findLast(arr, callback, [thisObj]):*
+
+Loops through all the items in the Array (starting from last item) and returns
+the first one that passes a truth test (callback).
+
+```js
+var arr = [123, {a:'b'}, 'foo', 'bar'];
+findLast(arr, isString); // "bar"
+findLast(arr, isNumber); // 123
+findLast(arr, isObject); // {a:'b'}
+```
+
+`findLast` also supports shorthand notation:
+
+```js
+var users = [
+    {name:'john', surname:'connor', beard:false},
+    {name:'john', surname:'doe', beard:true}
+];
+// last item that matches all properties/values pairs
+findLast(arr, {name:'john'}); // {name:'john', surnname:'doe', beard:true}
+// last item where 'beard' is a truthy value
+findLast(arr, 'beard'); // {name:'john', surnname:'doe', beard:true}
+```
+
+See: [find()](#find), [findIndex()](#findIndex),
+[findLastIndex()](#findLastIndex)
 
 
 
