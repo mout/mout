@@ -13,6 +13,7 @@ return {
     'filter' : require('./array/filter'),
     'find' : require('./array/find'),
     'findIndex' : require('./array/findIndex'),
+    'findLastIndex' : require('./array/findLastIndex'),
     'flatten' : require('./array/flatten'),
     'forEach' : require('./array/forEach'),
     'indexOf' : require('./array/indexOf'),

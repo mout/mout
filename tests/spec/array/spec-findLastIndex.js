@@ -1,43 +1,43 @@
-define(['mout/array/findIndex'], function(findIndex){
+define(['mout/array/findLastIndex'], function(findLastIndex){
 
-    describe('array/findIndex', function(){
+    describe('array/findLastIndex', function(){
 
-        it('should return index of first match', function(){
+        it('should return index of first match starting from end of array', function(){
             var items = [1, { a: 1 }, 1, 'foo', 'bar', { a: 1 }];
 
             var findOne = function(val) { return val === 1; },
                 isString = function(val) { return typeof val === 'string'; },
                 findObj = function(val) { return val.a === 1; };
 
-            expect( findIndex(items, findOne) ).toEqual(0);
-            expect( findIndex(items, isString) ).toEqual(3);
-            expect( findIndex(items, findObj) ).toEqual(1);
+            expect( findLastIndex(items, findOne) ).toEqual(2);
+            expect( findLastIndex(items, isString) ).toEqual(4);
+            expect( findLastIndex(items, findObj) ).toEqual(5);
         });
 
         it('should support object shortcut syntax', function(){
             var items = [1, { a: 1 }, 1, 'foo', 'bar', { a: 1 }];
 
-            expect( findIndex(items, { a: 1 }) ).toEqual(1);
+            expect( findLastIndex(items, { a: 1 }) ).toEqual(5);
         });
 
         it('should support string shortcut syntax', function(){
             var items = [1, { a: 1 }, 1, 'foo', 'bar', { a: 1 }];
 
-            expect( findIndex(items, 'a') ).toEqual(1);
+            expect( findLastIndex(items, 'a') ).toEqual(5);
         });
 
         it('should return -1 when not found', function(){
             var items = [1, { a: 1 }, 1, 'foo', 'bar', { a: 1 }];
             var findTwo = function(val) { return val === 2; };
 
-            expect( findIndex(items, findTwo) ).toEqual(-1);
+            expect( findLastIndex(items, findTwo) ).toEqual(-1);
         });
 
         it('should return -1 when array is null/undefined', function(){
             var testFunc = function() { return true; };
 
-            expect( findIndex(null, testFunc) ).toBe( -1 );
-            expect( findIndex(undefined, testFunc) ).toBe( -1 );
+            expect( findLastIndex(null, testFunc) ).toBe( -1 );
+            expect( findLastIndex(undefined, testFunc) ).toBe( -1 );
         });
 
     });

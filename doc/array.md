@@ -202,7 +202,7 @@ find(arr, {name:'john'}); // {name:'john', surnname:'connor', beard:false}
 find(arr, 'beard'); // {name:'john', surnname:'doe', beard:true}
 ```
 
-See: [findIndex()](#findIndex)
+See: [findIndex()](#findIndex), [findLastIndex()](#findLastIndex)
 
 
 
@@ -233,7 +233,38 @@ findIndex(pets, { pet: 'dog' }); // 0
 findIndex(pets, { name: 'Maggie' }); // 1
 ```
 
-See: [find()](#find)
+See: [find()](#find), [findLastIndex()](#findLastIndex)
+
+
+
+## findLastIndex(arr, iterator, [thisObj]):Number
+
+Loops through the items in the Array on the reverse order and returns the index
+of the first one that passes a truth test (callback).
+
+Returns `-1` if no item was found that passes the truth test.
+
+```js
+var arr = [1, { a: 1 }, 'foo', 'bar'];
+findLastIndex(arr, isString); // 3
+findLastIndex(arr, isNumber); // 0
+findLastIndex(arr, isObject); // 1
+findLastIndex(arr, isRegExp); // -1
+```
+
+`findLastndex` also supports shorthand notation:
+
+```js
+var pets = [
+    { pet: 'dog', name: 'Sam' },
+    { pet: 'dog', name: 'Maggie' }
+];
+
+findLastIndex(pets, { pet: 'dog' }); // 1
+findLastIndex(pets, { name: 'Sam' }); // 0
+```
+
+See: [find()](#find), [findIndex()](#findIndex)
 
 
 
