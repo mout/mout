@@ -13,16 +13,23 @@ define(['mout/function/throttle'], function(throttle){
                 count++;
             }, 50);
 
+            expect(count).toEqual(0);
             while (++i <= 5) { cb(); }
             expect(count).toEqual(1);
 
             jasmine.Clock.tick(51);
+            // ensure it was called again after timeout
+            expect(count).toEqual(2);
 
             i = 0;
             while (++i <= 5) { cb(); }
+            // ensure it wasn't called until timeout
             expect(count).toEqual(2);
-        });
 
+            // ensure it is executed once at "tail" of callbacks
+            jasmine.Clock.tick(150);
+            expect(count).toEqual(3);
+        });
 
         it('should allow passing args and should use first supplied value by default', function () {
             var count = 0;
