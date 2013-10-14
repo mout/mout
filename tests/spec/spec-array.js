@@ -11,6 +11,8 @@ define([
     './array/spec-filter',
     './array/spec-find',
     './array/spec-findIndex',
+    './array/spec-findLast',
+    './array/spec-findLastIndex',
     './array/spec-flatten',
     './array/spec-forEach',
     './array/spec-indexOf',
