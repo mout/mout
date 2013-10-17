@@ -3,7 +3,7 @@ define(['mout/random/randBit', './helper-mockRandom'], function (randBit, mockRa
     describe('random/randBit()', function(){
 
         beforeEach(function(){
-            mockRandom();
+            mockRandom.start();
         });
 
         afterEach(function(){

@@ -1,9 +1,14 @@
-define(['mout/function/debounce'], function(debounce){
+define(['mout/function/debounce', '../time/helper-mockNow'], function(debounce, mockNow){
 
     describe('function/debounce', function(){
 
         beforeEach(function() {
             jasmine.Clock.useMock();
+            mockNow.start();
+        });
+
+        afterEach(function(){
+            mockNow.end();
         });
 
         it('should execute callback only once after consecutive calls and just after interval', function(){
