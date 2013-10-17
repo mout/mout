@@ -3,7 +3,7 @@ define(['mout/random/randSign', './helper-mockRandom'], function (randSign, mock
     describe('random/randSign()', function(){
 
         beforeEach(function(){
-            mockRandom();
+            mockRandom.start();
         });
 
         afterEach(function(){

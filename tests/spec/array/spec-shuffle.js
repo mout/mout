@@ -3,7 +3,7 @@ define(['mout/array/shuffle', '../random/helper-mockRandom'], function (shuffle,
     describe('array/shuffle()', function () {
 
         beforeEach(function(){
-            mockRandom();
+            mockRandom.start();
         });
 
         afterEach(function() {

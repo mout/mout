@@ -3,7 +3,7 @@ define(['mout/random/randHex', './helper-mockRandom'], function (randHex, mockRa
     describe('random/randHex()', function () {
 
         beforeEach(function(){
-            mockRandom();
+            mockRandom.start();
         });
 
         afterEach(function() {

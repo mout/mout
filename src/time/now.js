@@ -3,7 +3,13 @@ define(function () {
     /**
      * Get current time in miliseconds
      */
-    var now = (typeof Date.now === 'function')? Date.now : function(){
+    function now(){
+        // yes, we defer the work to another function to allow mocking it
+        // during the tests
+        return now.get();
+    }
+
+    now.get = (typeof Date.now === 'function')? Date.now : function(){
         return +(new Date());
     };
 
