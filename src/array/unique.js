@@ -1,14 +1,23 @@
-define(['./indexOf', './filter'], function(indexOf, filter){
+define(['./filter'], function(filter){
 
     /**
      * @return {array} Array of unique items
      */
-    function unique(arr){
-        return filter(arr, isUnique);
+    function unique(arr, compare){
+        compare = compare || isEqual;
+        return filter(arr, function(item, i, arr){
+            var n = arr.length;
+            while (++i < n) {
+                if ( compare(item, arr[i]) ) {
+                    return false;
+                }
+            }
+            return true;
+        });
     }
 
-    function isUnique(item, i, arr){
-        return indexOf(arr, item, i+1) === -1;
+    function isEqual(a, b){
+        return a === b;
     }
 
     return unique;
