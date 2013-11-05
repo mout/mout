@@ -1,26 +1,17 @@
-define(function () {
+define(['../time/now', './timeout', '../array/append'], function (now, timeout, append) {
 
     /**
      * Ensure a minimum delay for callbacks
      */
     function after( callback, delay ){
-        var count = 0;
-        var args;
-        var context;
-
-        setTimeout(function() {
-            if ( ++count > 1 ) {
-                callback.apply(context, args);
-            }
-        }, delay);
-
+        var baseTime = now() + delay;
         return function() {
-            if ( ++count > 1 ) {
-                callback.apply(this, arguments);
-            } else {
-                args = arguments;
-                context = this;
-            }
+            // ensure all browsers will execute it asynchronously (avoid hard
+            // to catch errors) not using "0" because of old browsers and also
+            // since new browsers increase the value to be at least "4"
+            // http://www.whatwg.org/specs/web-apps/current-work/multipage/timers.html#dom-windowtimers-settimeout
+            var ms = Math.max(baseTime - now(), 4);
+            return timeout.apply(this, append([callback, ms, this], arguments));
         };
     }
 
