@@ -3,10 +3,11 @@
 Function*(al)* utilities.
 
 
-## after(fn, delay, [context]):Function
+## after(fn, delay):Function
 
-Returns a functions that calls through to `fn` after a minimum given `delay`. If the call happens before the `delay` if will wait and execute after
-the delay, yet if it's called later it will call `fn` right away.
+Returns a function that ensures that `fn` is only called *after* `delay` milliseconds have elapsed. When the returned function is called before the
+delay has elapsed, it will wait until the delay has elapsed and then call `fn`. When the returned function is called after the delay has elapsed, it will call
+`fn` immediately. The context and arguments that the returned function is called in are applyed to `fn`.
 
 In the below example `onLoaded` will not be executed before a 1000 millisecond delay. Even if `loadImages` loads and calls `callback` earlier.
 However, say the images take 1500 milliseconds to load, it will trigger `onLoaded` immediatly.
@@ -25,7 +26,6 @@ function onLoaded() {
 
  1. `fn` (Function)    : Target Function
  2. `delay` (Number)   : Delay of execution in milliseconds
- 3. `context` (Object) : Execution context (object used as `this`)
 
 See: [`debounce()`](#debounce)
 

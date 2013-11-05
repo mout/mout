@@ -39,17 +39,31 @@ define(['mout/function/after', '../time/helper-mockNow'], function(after, mockNo
             expect( count ).toBe(1);
         });
 
-        it('should execute in context', function() {
-            var context = { count: 0 };
-            var fn = function() {
-                this.count++;
+        it('should carry arguments', function() {
+            var count = 0;
+            var fn = function(a) {
+                count = a;
             }
-            var callback = after(fn, 100, context);
+            var callback = after(fn, 100);
 
-            callback();
             jasmine.Clock.tick(100);
 
-            expect( context.count ).toBe(1);
+            callback(5);
+            expect( count ).toBe(5);
+        });
+
+        it('should carry arguments from premature call', function() {
+            var count = 0;
+            var fn = function(a) {
+                count = a;
+            }
+            var callback = after(fn, 100);
+
+            callback(2);
+            expect( count ).toBe(0);
+
+            jasmine.Clock.tick(100);
+            expect( count ).toBe(2);
         });
 
     });
