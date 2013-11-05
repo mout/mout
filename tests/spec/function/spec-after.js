@@ -21,7 +21,7 @@ define(['mout/function/after', '../time/helper-mockNow'], function(after, mockNo
             callback();
             expect( count ).toBe(0);
 
-            jasmine.Clock.tick(101);
+            jasmine.Clock.tick(100);
             expect( count ).toBe(1);
         });
 
@@ -32,7 +32,7 @@ define(['mout/function/after', '../time/helper-mockNow'], function(after, mockNo
             }
             var callback = after(fn, 100);
 
-            jasmine.Clock.tick(200)
+            jasmine.Clock.tick(100)
             expect( count ).toBe(0);
 
             callback();
@@ -47,7 +47,7 @@ define(['mout/function/after', '../time/helper-mockNow'], function(after, mockNo
             var callback = after(fn, 100, context);
 
             callback();
-            jasmine.Clock.tick(200);
+            jasmine.Clock.tick(100);
 
             expect( context.count ).toBe(1);
         });
