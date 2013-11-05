@@ -3,6 +3,32 @@
 Function*(al)* utilities.
 
 
+## after(fn, delay, [context]):Function
+
+Returns a functions that calls through to `fn` after a minimum given `delay`. If the call happens before the `delay` if will wait and execute after
+the delay, yet if it's called later it will call `fn` right away.
+
+In the below example `onLoaded` will not be executed before a 1000 millisecond delay. Even if `loadImages` loads and calls `callback` earlier.
+However, say the images take 1500 milliseconds to load, it will trigger `onLoaded` immediatly.
+
+```js
+var callback = after(onLoaded, 1000);
+
+loadImages(callback);
+
+function onLoaded() {
+    ...
+}
+```
+
+### Arguments:
+
+ 1. `fn` (Function)    : Target Function
+ 2. `delay` (Number)   : Delay of execution in milliseconds
+ 3. `context` (Object) : Execution context (object used as `this`)
+
+See: [`debounce()`](#debounce)
+
 
 ## bind(fn, context, [...args]):Function
 
