@@ -3,7 +3,7 @@
 Function*(al)* utilities.
 
 
-## after(fn, delay):Function
+## awaitDelay(fn, delay):Function
 
 Returns a function that ensures that `fn` is only called *after* `delay`
 milliseconds have elapsed. When the returned function is called before the
@@ -34,6 +34,7 @@ function onLoaded() {
  2. `delay` (Number)   : Delay of execution in milliseconds
 
 See: [`debounce()`](#debounce)
+
 
 
 ## bind(fn, context, [...args]):Function

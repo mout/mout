@@ -3,7 +3,7 @@ define(['../time/now', './timeout', '../array/append'], function (now, timeout, 
     /**
      * Ensure a minimum delay for callbacks
      */
-    function after( callback, delay ){
+    function awaitDelay( callback, delay ){
         var baseTime = now() + delay;
         return function() {
             // ensure all browsers will execute it asynchronously (avoid hard
@@ -15,6 +15,6 @@ define(['../time/now', './timeout', '../array/append'], function (now, timeout, 
         };
     }
 
-    return after;
+    return awaitDelay;
 
 });

@@ -3,7 +3,7 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
-    'after' : require('./function/after'),
+    'awaitDelay' : require('./function/awaitDelay'),
     'bind' : require('./function/bind'),
     'compose' : require('./function/compose'),
     'debounce' : require('./function/debounce'),

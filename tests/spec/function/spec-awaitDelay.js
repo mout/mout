@@ -1,6 +1,6 @@
-define(['mout/function/after', '../time/helper-mockNow'], function(after, mockNow){
+define(['mout/function/awaitDelay', '../time/helper-mockNow'], function(awaitDelay, mockNow){
 
-    describe('function/after', function(){
+    describe('function/awaitDelay', function(){
 
         beforeEach(function() {
             jasmine.Clock.useMock();
@@ -16,7 +16,7 @@ define(['mout/function/after', '../time/helper-mockNow'], function(after, mockNo
             var fn = function() {
                 count++;
             };
-            var callback = after(fn, 100);
+            var callback = awaitDelay(fn, 100);
 
             callback();
             expect( count ).toBe(0);
@@ -30,7 +30,7 @@ define(['mout/function/after', '../time/helper-mockNow'], function(after, mockNo
             var fn = function() {
                 count++;
             };
-            var callback = after(fn, 100);
+            var callback = awaitDelay(fn, 100);
 
             jasmine.Clock.tick(100);
             expect( count ).toBe(0);
@@ -48,7 +48,7 @@ define(['mout/function/after', '../time/helper-mockNow'], function(after, mockNo
             var fn = function() {
                 count++;
             };
-            var callback = after(fn, 30);
+            var callback = awaitDelay(fn, 30);
 
             callback();
             callback();
@@ -63,7 +63,7 @@ define(['mout/function/after', '../time/helper-mockNow'], function(after, mockNo
             var fn = function(a) {
                 count = a;
             };
-            var callback = after(fn, 100);
+            var callback = awaitDelay(fn, 100);
 
             jasmine.Clock.tick(100);
 
@@ -78,7 +78,7 @@ define(['mout/function/after', '../time/helper-mockNow'], function(after, mockNo
             var fn = function(a) {
                 count = a;
             };
-            var callback = after(fn, 100);
+            var callback = awaitDelay(fn, 100);
 
             callback(2);
             expect( count ).toBe(0);
@@ -96,7 +96,7 @@ define(['mout/function/after', '../time/helper-mockNow'], function(after, mockNo
                 val = a;
                 ctx = this;
             };
-            var callback = after(fn, 100);
+            var callback = awaitDelay(fn, 100);
 
             callback.call(foo, 2);
             expect( val ).toBeUndefined();

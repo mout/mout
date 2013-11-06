@@ -1,7 +1,7 @@
 //automatically generated, do not edit!
 //run `node build` instead
 define([
-    './function/spec-after',
+    './function/spec-awaitDelay',
     './function/spec-bind',
     './function/spec-compose',
     './function/spec-debounce',
