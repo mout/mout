@@ -87,6 +87,27 @@ define(['mout/function/after', '../time/helper-mockNow'], function(after, mockNo
             expect( count ).toBe(2);
         });
 
+        it('should allow changing the context', function () {
+            var val;
+            var ctx;
+            var foo = {bar:'baz'};
+
+            var fn = function(a) {
+                val = a;
+                ctx = this;
+            };
+            var callback = after(fn, 100);
+
+            callback.call(foo, 2);
+            expect( val ).toBeUndefined();
+            expect( ctx ).toBeUndefined();
+
+            jasmine.Clock.tick(100);
+            expect( val ).toBe(2);
+            expect( ctx ).toBe(foo);
+        });
+
+
     });
 
 });
