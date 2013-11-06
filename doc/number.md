@@ -67,6 +67,22 @@ enforcePrecision(0.625, 2); // 0.63
 ```
 
 
+## isNaN(val):Boolean
+
+ES6 `Number.isNaN()`, checks if supplied value is `NaN`.
+
+```js
+// only returns `true` for `NaN`
+isNaN(NaN);    // true
+isNaN(0 / 0);  // true
+
+// everything else is `false`
+isNaN(true);   // false
+isNaN(123);    // false
+isNaN('asd');  // false
+isNaN('NaN');  // false
+```
+
 
 ## MAX_INT:Number
 
