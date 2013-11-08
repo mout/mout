@@ -1,4 +1,4 @@
-define(function () {
+define(['../number/isNaN'], function (isNaN) {
 
     /**
      * Check if both arguments are egal.
@@ -11,11 +11,9 @@ define(function () {
         }
 
         // NaN !== NaN, but they are identical.
-        // NaNs are the only non-reflexive value, i.e., if x !== x,
-        // then x is a NaN.
-        // isNaN is broken: it converts its argument to number, so
+        // native isNaN is broken: it converts its argument to number, so
         // isNaN("foo") => true
-        return x !== x && y !== y;
+        return isNaN(x) && isNaN(y);
     }
 
     return is;
