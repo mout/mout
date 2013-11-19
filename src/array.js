@@ -37,6 +37,7 @@ return {
     'shuffle' : require('./array/shuffle'),
     'some' : require('./array/some'),
     'sort' : require('./array/sort'),
+    'sortBy' : require('./array/sortBy'),
     'split' : require('./array/split'),
     'toLookup' : require('./array/toLookup'),
     'union' : require('./array/union'),
