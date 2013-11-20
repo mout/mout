@@ -371,6 +371,12 @@ If value is `undefined`.
 
 
 
+## isWindow(val):Boolean
+
+If value is a window object.
+
+
+
 ## kindOf(val):String
 
 Gets kind of value (e.g. "String", "Number", "RegExp", "Null", "Date").
