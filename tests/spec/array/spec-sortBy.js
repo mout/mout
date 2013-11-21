@@ -50,6 +50,10 @@ define(['mout/array/sortBy'], function(sortBy){
             expect( result ).toEqual([]);
         });
 
+        it('should sort items by value if missing callback', function () {
+            expect( sortBy([1,10,20,2,3]) ).toEqual( [1,2,3,10,20] );
+        });
+
     });
 
 });
