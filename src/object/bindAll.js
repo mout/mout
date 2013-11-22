@@ -1,11 +1,11 @@
-define(['./functions', '../function/bind', '../array/forEach'], function (functions, bind, forEach) {
+define(['./functions', '../function/bind', '../array/forEach', '../array/slice'], function (functions, bind, forEach, slice) {
 
     /**
      * Binds methods of the object to be run in it's own context.
      */
     function bindAll(obj, rest_methodNames){
         var keys = arguments.length > 1?
-                    Array.prototype.slice.call(arguments, 1) : functions(obj);
+                    slice(arguments, 1) : functions(obj);
         forEach(keys, function(key){
             obj[key] = bind(obj[key], obj);
         });

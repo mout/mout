@@ -1,8 +1,4 @@
-define(function () {
-
-    function slice(arr, offset){
-        return Array.prototype.slice.call(arr, offset || 0);
-    }
+define(['../array/slice'], function (slice) {
 
     /**
      * Creates a partially applied function.
