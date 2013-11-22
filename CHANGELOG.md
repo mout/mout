@@ -1,8 +1,8 @@
 mout changelog
 ==============
 
-Next
-----
+v0.8.0 (2013/11/22)
+-------------------
 
  - add `array/findLast`.
  - add `array/findLastIndex`.
