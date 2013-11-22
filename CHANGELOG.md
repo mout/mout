@@ -1,10 +1,29 @@
 mout changelog
 ==============
 
+Next
+----
+
+ - add `array/findLast`.
+ - add `array/findLastIndex`.
+ - add `array/slice` and use it internally.
+ - add `array/sortBy`
+ - add `function/awaitDelay`.
+ - add `function/identity`
+ - add `number/isNaN`.
+ - add `number/nth`.
+ - add `number/ordinal`.
+ - allows nested replacement patterns in `string/interpolate`.
+ - change `function/makeIterator_` behavior (uses `identity` by default).
+ - simplify `string/escapeRegExp`.
+ - support custom equality on `array/compare`.
+
+
 v0.7.1 (2013/09/18)
 -------------------
 
  - fix `null` value handling in object/get.
+
 
 v0.7.0 (2013/09/05)
 -------------------
