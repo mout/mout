@@ -107,6 +107,27 @@ define(['mout/function/awaitDelay', '../time/helper-mockNow'], function(awaitDel
             expect( ctx ).toBe(foo);
         });
 
+        it('should allow using `clearTimeout` to cancel the delayed call', function () {
+            var count = 0;
+            var fn = function() {
+                count++;
+            };
+            var callback = awaitDelay(fn, 100);
+
+            var timeout = callback();
+            expect( count ).toBe(0);
+            jasmine.Clock.tick(50);
+            clearTimeout(timeout);
+
+            // ensure clearTimeout avoided call
+            jasmine.Clock.tick(50);
+            expect( count ).toBe(0);
+
+            // ensure that second call is still triggered
+            timeout = callback();
+            jasmine.Clock.tick(100);
+            expect( count ).toBe(1);
+        });
 
     });
 

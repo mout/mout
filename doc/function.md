@@ -20,12 +20,19 @@ immediately.
 
 ```js
 var callback = after(onLoaded, 1000);
-
 loadImages(callback);
-
-function onLoaded() {
-    ...
+function onLoaded(){
+    console.log('loaded');
 }
+```
+
+You can also cancel de delayed call by simply using the native `clearTimeout`
+method (like a regular `setTimeout` call).
+
+```js
+var timeoutId = callback();
+// onLoaded won't be called since it was canceled before the 1000ms delay
+clearTimeout(timeoutId);
 ```
 
 ### Arguments:

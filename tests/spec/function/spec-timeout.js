@@ -2,7 +2,7 @@ define(['mout/function/timeout'], function(timeout){
 
     describe('function/timeout', function(){
 
-	function doIt(){
+    function doIt(){
             this.a++;
         }
 
@@ -10,7 +10,7 @@ define(['mout/function/timeout'], function(timeout){
             this.a = value;
         }
 
-	beforeEach(function() {
+    beforeEach(function() {
             jasmine.Clock.useMock();
         });
 
@@ -42,14 +42,14 @@ define(['mout/function/timeout'], function(timeout){
         });
 
         it('should cancel a timemout', function(){
-		var callback = jasmine.createSpy();
-		var id = timeout(callback, 200);
+        var callback = jasmine.createSpy();
+        var id = timeout(callback, 200);
 
-		jasmine.Clock.tick(100);
-		clearTimeout(id);
+        jasmine.Clock.tick(100);
+        clearTimeout(id);
 
-		jasmine.Clock.tick(200);
-		expect(callback).not.toHaveBeenCalled();
+        jasmine.Clock.tick(200);
+        expect(callback).not.toHaveBeenCalled();
         });
 
     });
