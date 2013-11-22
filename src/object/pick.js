@@ -1,10 +1,10 @@
-define(function(){
+define(['../array/slice'], function(slice){
 
     /**
      * Return a copy of the object, filtered to only have values for the whitelisted keys.
      */
     function pick(obj, var_keys){
-        var keys = typeof arguments[1] !== 'string'? arguments[1] : Array.prototype.slice.call(arguments, 1),
+        var keys = typeof arguments[1] !== 'string'? arguments[1] : slice(arguments, 1),
             out = {},
             i = 0, key;
         while (key = keys[i++]) {

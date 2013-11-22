@@ -33,6 +33,7 @@ define([
     './array/spec-remove',
     './array/spec-removeAll',
     './array/spec-shuffle',
+    './array/spec-slice',
     './array/spec-some',
     './array/spec-sort',
     './array/spec-sortBy',

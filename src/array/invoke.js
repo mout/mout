@@ -1,4 +1,4 @@
-define(function () {
+define(['./slice'], function (slice) {
 
     /**
      * Call `methodName` on each item of the array passing custom arguments if
@@ -9,7 +9,7 @@ define(function () {
             return arr;
         }
 
-        var args = Array.prototype.slice.call(arguments, 2);
+        var args = slice(arguments, 2);
         var i = -1, len = arr.length, value;
         while (++i < len) {
             value = arr[i];

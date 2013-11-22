@@ -664,6 +664,27 @@ shuffle(arr); // ['b', 'd', 'e', 'c', 'a']
 
 
 
+## slice(arr, [start], [end]):Array
+
+Returns a new array containing the items from `arr` from the start index to the
+end index.
+
+If `start` is omitted, it will start at `0`. If `end` is omitted, it will used
+the last index of the array.
+
+It will also convert array-like objects to arrays.
+
+### Example
+
+```js
+slice([1, 2, 3, 4], 1, 2); // [2, 3]
+slice([1, 2, 3], 1); // [2, 3]
+slice([1, 2, 3]); // [1, 2, 3]
+slice({ length: 2, 0: 'a', 1: 'b' }); // ['a', 'b']
+```
+
+
+
 ## some(arr, callback, [thisObj]):Array
 
 Crossbrowser `Array.some()`.

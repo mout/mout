@@ -35,6 +35,7 @@ return {
     'remove' : require('./array/remove'),
     'removeAll' : require('./array/removeAll'),
     'shuffle' : require('./array/shuffle'),
+    'slice' : require('./array/slice'),
     'some' : require('./array/some'),
     'sort' : require('./array/sort'),
     'sortBy' : require('./array/sortBy'),

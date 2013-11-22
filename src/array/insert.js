@@ -1,10 +1,10 @@
-define(['./difference', '../lang/toArray'], function (difference, toArray) {
+define(['./difference', './slice'], function (difference, slice) {
 
     /**
      * Insert item into array if not already present.
      */
     function insert(arr, rest_items) {
-        var diff = difference(toArray(arguments).slice(1), arr);
+        var diff = difference(slice(arguments, 1), arr);
         if (diff.length) {
             Array.prototype.push.apply(arr, diff);
         }

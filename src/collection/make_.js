@@ -1,11 +1,11 @@
-define(function(){
+define(['../array/slice'], function(slice){
 
     /**
      * internal method used to create other collection modules.
      */
     function makeCollectionMethod(arrMethod, objMethod, defaultReturn) {
         return function(){
-            var args = Array.prototype.slice.call(arguments);
+            var args = slice(arguments);
             if (args[0] == null) {
                 return defaultReturn;
             }

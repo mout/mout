@@ -1,4 +1,4 @@
-define(['./unique', './filter', './every', './contains'], function (unique, filter, every, contains) {
+define(['./unique', './filter', './every', './contains', './slice'], function (unique, filter, every, contains, slice) {
 
 
     /**
@@ -6,7 +6,7 @@ define(['./unique', './filter', './every', './contains'], function (unique, filt
      * - based on underscore.js implementation
      */
     function intersection(arr) {
-        var arrs = Array.prototype.slice.call(arguments, 1),
+        var arrs = slice(arguments, 1),
             result = filter(unique(arr), function(needle){
                 return every(arrs, function(haystack){
                     return contains(haystack, needle);
