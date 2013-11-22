@@ -8,6 +8,7 @@ define(['mout/array/map'], function (map) {
                 return val + i;
             });
 
+            expect( r ).not.toBe( base );
             expect( r ).toEqual( [1, 3, 5, 7, 9] );
         });
 
@@ -39,6 +40,13 @@ define(['mout/array/map'], function (map) {
         it('should allow shorthand string syntax (same as "pluck")', function () {
             var arr = [{a:1}, {b:1}, {a:3,c:3}];
             expect( map(arr, 'a') ).toEqual( [1, undefined, 3] );
+        });
+
+
+        it('should return same values if no callback (identity)', function () {
+            var arr = [1,2,3];
+            expect( map(arr) ).toEqual( [1,2,3] );
+            expect( map(arr) ).not.toBe( arr );
         });
 
 

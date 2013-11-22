@@ -8,6 +8,7 @@ return {
     'compose' : require('./function/compose'),
     'debounce' : require('./function/debounce'),
     'func' : require('./function/func'),
+    'identity' : require('./function/identity'),
     'makeIterator_' : require('./function/makeIterator_'),
     'partial' : require('./function/partial'),
     'prop' : require('./function/prop'),

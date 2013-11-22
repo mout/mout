@@ -2,7 +2,7 @@ define(['mout/object/map'], function(map) {
 
     describe('object/map()', function() {
 
-        it('should map the values', function() {
+        it('should return a new object with updated values', function() {
             var obj = {
                 a: 1,
                 b: 2
@@ -11,6 +11,7 @@ define(['mout/object/map'], function(map) {
             var result = map(obj, function(x) { return x + 1; });
             expect(result.a).toEqual(2);
             expect(result.b).toEqual(3);
+            expect(result).not.toBe(obj);
         });
 
         it('should pass key as second parameter', function() {
@@ -22,6 +23,7 @@ define(['mout/object/map'], function(map) {
             var result = map(obj, function(val, key) { return key; });
             expect(result.a).toEqual('a');
             expect(result.b).toEqual('b');
+            expect(result).not.toBe(obj);
         });
 
         it('should pass object as third parameter', function() {
@@ -65,6 +67,17 @@ define(['mout/object/map'], function(map) {
             expect( map(obj, 'foo') ).toEqual( {a:'bar', b:'bar',c:'bar'} );
             expect( map(obj, 'id') ).toEqual( {a:1,b:2,c:0} );
             expect( map(obj, 'amet') ).toEqual( {a:undefined,b:undefined,c:undefined} );
+        });
+
+
+        it('should return a new object with unchanged values if no callback', function () {
+            var obj = {
+                a: 1,
+                b: 2
+            };
+            var result = map(obj);
+            expect(result).toEqual({a: 1, b:2});
+            expect(result).not.toBe(obj);
         });
 
     });

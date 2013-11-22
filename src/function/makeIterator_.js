@@ -1,4 +1,4 @@
-define(['./prop', '../object/deepMatches'], function(prop, deepMatches) {
+define(['./identity', './prop', '../object/deepMatches'], function(identity, prop, deepMatches) {
 
     /**
      * Converts argument into a valid iterator.
@@ -6,22 +6,24 @@ define(['./prop', '../object/deepMatches'], function(prop, deepMatches) {
      * callback/iterator providing a shortcut syntax.
      */
     function makeIterator(src, thisObj){
+        if (src == null) {
+            return identity;
+        }
         switch(typeof src) {
             case 'function':
                 // function is the first to improve perf (most common case)
+                // also avoid using `Function#call` if not needed, which boosts
+                // perf a lot in some cases
                 return (typeof thisObj !== 'undefined')? function(val, i, arr){
                     return src.call(thisObj, val, i, arr);
                 } : src;
             case 'object':
-                // typeof null == "object"
-                return (src != null)? function(val){
+                return function(val){
                     return deepMatches(val, src);
-                } : src;
+                };
             case 'string':
             case 'number':
                 return prop(src);
-            default:
-                return src;
         }
     }
 

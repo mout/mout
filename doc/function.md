@@ -120,6 +120,18 @@ var names = map(users, func('getName'));
 
 
 
+## identity(val):*
+
+Returns the first argument provided to it.
+
+```js
+identity(3);     // 3
+identity(1,2,3); // 1
+identity('foo'); // "foo"
+```
+
+
+
 ## partial(fn, [...args]):Function
 
 Return a partially applied function supplying default arguments.

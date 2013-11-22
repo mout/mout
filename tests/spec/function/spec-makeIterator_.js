@@ -29,13 +29,24 @@ define(['mout/function/makeIterator_'], function(makeIterator_){
         });
 
 
-        it('should return source argument if it is from an unsupported type', function(){
-            expect( makeIterator_(null) ).toBe( null );
-            expect( makeIterator_(void(0)) ).toBe( void(0) );
+        it('should return an identify function if no args', function(){
+            var fn = makeIterator_();
+            expect( fn(null) ).toBe( null );
+            expect( fn(void(0)) ).toBe( void(0) );
+            expect( fn(3) ).toBe( 3 );
         });
 
+
+        it('should return an identify function if first arg is `null`', function(){
+            var fn = makeIterator_(null);
+            expect( fn(null) ).toBe( null );
+            expect( fn(void(0)) ).toBe( void(0) );
+            expect( fn(3) ).toBe( 3 );
+        });
+
+
         it('should return a function that is called with the specified context', function(){
-            var context = {}
+            var context = {};
             var iterator = makeIterator_(function(){ return this; }, context);
             expect( iterator() ).toBe(context);
         });

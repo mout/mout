@@ -6,6 +6,7 @@ define([
     './function/spec-compose',
     './function/spec-debounce',
     './function/spec-func',
+    './function/spec-identity',
     './function/spec-makeIterator_',
     './function/spec-partial',
     './function/spec-prop',
