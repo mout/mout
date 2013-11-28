@@ -4,6 +4,7 @@ define([
     './function/spec-awaitDelay',
     './function/spec-bind',
     './function/spec-compose',
+    './function/spec-constant',
     './function/spec-debounce',
     './function/spec-func',
     './function/spec-identity',
