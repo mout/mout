@@ -1,4 +1,4 @@
-define(['../number/pad', './i18n_', './dayOfTheYear', './timezoneOffset', './timezoneAbbr', './weekOfTheYear'], function (pad, i18n, dayOfTheYear, timezoneOffset, timezoneAbbr, weekOfTheYear) {
+define(['../number/pad', '../string/lpad', './i18n_', './dayOfTheYear', './timezoneOffset', './timezoneAbbr', './weekOfTheYear'], function (pad, lpad, i18n, dayOfTheYear, timezoneOffset, timezoneAbbr, weekOfTheYear) {
 
     var _combinations = {
         'D': '%m/%d/%y',
@@ -65,7 +65,7 @@ define(['../number/pad', './i18n_', './dayOfTheYear', './timezoneOffset', './tim
             case 'j':
                 return pad(dayOfTheYear(date), 3);
             case 'l':
-                return date.getHours() % 12;
+                return lpad(date.getHours() % 12, 2);
             case 'L':
                 return pad(date.getMilliseconds(), 3);
             case 'm':

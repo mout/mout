@@ -84,8 +84,8 @@ define(['mout/date/strftime'], function(strftime){
         });
 
         it('should return un-padded hour (12h) for %l', function () {
-            expect( strftime(date, '%l') ).toBe('9');
-            expect( strftime(date_2, '%l') ).toBe('7');
+            expect( strftime(date, '%l') ).toBe(' 9');
+            expect( strftime(date_2, '%l') ).toBe(' 7');
         });
 
         it('should return day of the year for %j', function () {

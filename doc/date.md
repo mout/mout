@@ -140,7 +140,7 @@ a single digit is preceded by a space.</dd>
 <dt>%H</dt><dd> hour (24-hour clock) as a decimal number [00..23].</dd>
 <dt>%I</dt><dd> hour (12-hour clock) as a decimal number [01..12].</dd>
 <dt>%j</dt><dd> day of the year as a decimal number [001..366].</dd>
-<dt>%l</dt><dd> hour (12-hour clock) as an un-padded decimal [1..12]</dd>
+<dt>%l</dt><dd> hour (12-hour clock) as a decimal number (range 1 to 12); single digits are preceded by a blank</dd>
 <dt>%L</dt><dd> zero-padded milliseconds [000..999]</dd>
 <dt>%m</dt><dd> month as a decimal number [01..12].</dd>
 <dt>%M</dt><dd> minute as a decimal number [00..59].</dd>
