@@ -64,6 +64,8 @@ define(['../number/pad', './i18n_', './dayOfTheYear', './timezoneOffset', './tim
                 return pad(date.getHours() % 12, 2);
             case 'j':
                 return pad(dayOfTheYear(date), 3);
+            case 'l':
+                return date.getHours() % 12;
             case 'L':
                 return pad(date.getMilliseconds(), 3);
             case 'm':

@@ -83,6 +83,11 @@ define(['mout/date/strftime'], function(strftime){
             expect( strftime(date_2, '%I') ).toBe('07');
         });
 
+        it('should return un-padded hour (12h) for %l', function () {
+            expect( strftime(date, '%l') ).toBe('9');
+            expect( strftime(date_2, '%l') ).toBe('7');
+        });
+
         it('should return day of the year for %j', function () {
             expect( strftime(date, '%j') ).toEqual( '098' );
             expect( strftime(date_2, '%j') ).toEqual( '352' );
