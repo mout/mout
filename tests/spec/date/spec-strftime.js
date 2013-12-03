@@ -83,7 +83,7 @@ define(['mout/date/strftime'], function(strftime){
             expect( strftime(date_2, '%I') ).toBe('07');
         });
 
-        it('should return un-padded hour (12h) for %l', function () {
+        it('should return single space padded hour (12h) for %l if <10', function () {
             expect( strftime(date, '%l') ).toBe(' 9');
             expect( strftime(date_2, '%l') ).toBe(' 7');
         });
