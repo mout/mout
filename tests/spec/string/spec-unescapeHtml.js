@@ -4,17 +4,17 @@ define(['mout/string/unescapeHtml'], function (unescapeHtml) {
 
         it('should convert entities into chars', function () {
             expect( unescapeHtml( '&lt;em&gt;&#39;lorem&#39;&lt;/em&gt; &amp; &quot;ipsum&quot;' ) )
-                .toEqual( '<em>\'lorem\'</em> & "ipsum"' );
+                .toBe( '<em>\'lorem\'</em> & "ipsum"' );
         });
 
         it('should convert decimal character references into chars', function() {
             expect( unescapeHtml('&#9;&#10;&#010;&#0010;') )
-                .toEqual( '\t\n\n\n' );
+                .toBe( '\t\n\n\n' );
         });
 
         it('should convert hexadecimal character references into chars', function() {
             expect( unescapeHtml('&#x2b;&#X2b;&#x02B;&#x002b;') )
-                .toEqual( '++++' );
+                .toBe( '++++' );
         });
 
         it('should return string with no escapes unchanged', function() {
@@ -22,7 +22,7 @@ define(['mout/string/unescapeHtml'], function (unescapeHtml) {
         });
 
         it('should ignore invalid escapes', function() {
-            expect( unescapeHtml('&test;') ).toEqual( '&test;' );
+            expect( unescapeHtml('&test;') ).toBe( '&test;' );
             expect( unescapeHtml('&12') ).toBe( '&12' );
             expect( unescapeHtml('&x12') ).toBe( '&x12' );
             expect( unescapeHtml('amp;') ).toBe( 'amp;' );
