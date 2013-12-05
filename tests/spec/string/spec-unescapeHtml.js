@@ -17,6 +17,10 @@ define(['mout/string/unescapeHtml'], function (unescapeHtml) {
                 .toEqual( '++++' );
         });
 
+        it('should return string with no escapes unchanged', function() {
+            expect( unescapeHtml('foo') ).toBe( 'foo' );
+        });
+
         it('should ignore invalid escapes', function() {
             expect( unescapeHtml('&test;') ).toEqual( '&test;' );
             expect( unescapeHtml('&12') ).toBe( '&12' );

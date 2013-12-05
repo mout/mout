@@ -34,6 +34,11 @@ define(['../lang/toString'], function (toString) {
             start = end + 1;
         }
 
+        if (start === 0) {
+            // No escapes found
+            return str;
+        }
+
         // Add the remaining string
         output += str.substring(start, str.length);
 
