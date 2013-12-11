@@ -65,7 +65,15 @@ endsWith('lorem ipsum', 'ipsum'); // true
 
 ## escapeHtml(str):String
 
-Escapes HTML special chars (`>`, `<`, `&`, `"`, `'`).
+Escapes the following special characters for use in HTML:
+
+* `&` becomes `&amp;`
+* `<` becomes `&lt;`
+* `>` becomes `&gt;`
+* `'` becomes `&#39;`
+* `"` becomes `&quot;`
+
+No other characters are escaped. To HTML-escape other characters as well, use a third-party library like [_he_](http://mths.be/he).
 
 See: [`unescapeHtml()`](#unescapeHtml)
 
@@ -542,7 +550,16 @@ underscore('loremIpsum');                  // "lorem_ipsum"
 
 ## unescapeHtml(str):String
 
-Unescapes HTML special chars (`>`, `<`, `&`, `"`, `'`).
+Unescapes the following HTML character references back into the raw symbol they map to: 
+
+* `&amp;` becomes `&`
+* `&lt;` becomes `<`
+* `&gt;` becomes `>`
+* `&#39;` becomes `'`
+* `&quot;` becomes `"`
+
+No other HTML character references are unescaped. To HTML-unescape other entities as well, use a third-party library like [_he_](http://mths.be/he).
+
 
 See: [`escapeHtml()`](#escapeHtml)
 
