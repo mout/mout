@@ -8,7 +8,7 @@ define(['../lang/toString'], function (toString) {
             .replace(/&amp;/g , '&')
             .replace(/&lt;/g  , '<')
             .replace(/&gt;/g  , '>')
-            .replace(/&#39;/g , "'")
+            .replace(/&#0*39;/g , "'")
             .replace(/&quot;/g, '"');
         return str;
     }
