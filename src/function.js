@@ -6,6 +6,7 @@ return {
     'awaitDelay' : require('./function/awaitDelay'),
     'bind' : require('./function/bind'),
     'compose' : require('./function/compose'),
+    'constant' : require('./function/constant'),
     'debounce' : require('./function/debounce'),
     'func' : require('./function/func'),
     'identity' : require('./function/identity'),

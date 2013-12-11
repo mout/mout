@@ -77,6 +77,23 @@ map([1, 2, 3], function(x){
 
 
 
+## constant(value):Function
+
+Returns a new function that will always return `value` when called.
+
+```js
+var f = constant('foo');
+f(); // 'foo'
+
+// Provided arguments are ignored; value is always returned
+f(1); // 'foo'
+
+f = constant({ foo: 'bar' });
+f(); // { foo: 'bar' }
+```
+
+
+
 ## debounce(fn, delay[, isAsap]):Function
 
 Creates a function that will delay the execution of `fn` until after `delay`
