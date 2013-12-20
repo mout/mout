@@ -90,6 +90,20 @@ choice(0, 1);
 ```
 
 
+## randBool():Boolean
+
+Returns a random Boolean (`true` or `false`).
+
+Since this is very common it makes sense to abstract it into a discrete method.
+
+### Example:
+
+```js
+randBool(); // true
+randBool(); // false
+```
+
+
 
 ## randHex([size]):String
 
