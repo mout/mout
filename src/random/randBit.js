@@ -1,10 +1,10 @@
-define(['./random'], function (random) {
+define(['./randBool'], function (randBool) {
 
     /**
      * Returns random bit (0 or 1)
      */
     function randomBit() {
-        return random() > 0.5? 1 : 0;
+        return randBool()? 1 : 0;
     }
 
     return randomBit;
