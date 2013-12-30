@@ -26,6 +26,21 @@ define(['mout/array/slice'], function(slice){
             expect( result.constructor ).toBe( Array );
         });
 
+        it('should convert NodeList objects', function() {
+            if (typeof document === 'undefined') {
+                expect(true).toBeTruthy('not in browser');
+                return;
+            }
+
+            // Native Array.prototype.slice errors in IE 8 on NodeList
+            var el = document.createElement('div'),
+                child = document.createElement('div');
+            el.appendChild(child);
+
+            var list = el.childNodes;
+            expect(slice(list)).toEqual([child]);
+        });
+
     });
 
 });
