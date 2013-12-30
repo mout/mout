@@ -6,6 +6,7 @@
 .project
 .settings/
 .livereload
+.idea
 
 .DS_Store?
 ehthumbs.db

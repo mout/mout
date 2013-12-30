@@ -3,7 +3,7 @@ mout changelog
 
 next
 ----
-
+ - improve `string/repeat` performance.
  - add `function/constant`
 
 v0.8.0 (2013/11/22)
