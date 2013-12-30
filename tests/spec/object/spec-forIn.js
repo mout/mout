@@ -34,36 +34,32 @@ define(['mout/object/forIn'], function(forIn){
                 this.bar = true;
             }
 
-            Foo.prototype = {
-                dolor : 'amet',
-                toString : function(){
-                    return '[Foo bar:'+ this.bar +']';
-                }
+            Foo.prototype.dolor = 'amet';
+
+            Foo.prototype.toString = function() {
+                return '[Foo bar: ' + this.bar + ']';
             };
 
             var obj = new Foo();
             var keys = [],
-                vals = [];
+                values = [];
 
-            forIn(obj, function(val, key, o){
+            forIn(obj, function(value, key, o){
                 keys.push(key);
-                vals.push(val);
+                values.push(value);
                 expect(o).toBe(obj);
             });
 
             // loop order isn't guaranteed to be always the same
-            var haystack = ['bar', 'dolor', 'toString'];
-            expect( keys[0] !== keys[1] && keys[0] !== keys[2] ).toBe(true);
-            expect( haystack ).toContain( keys[0] );
-            expect( haystack ).toContain( keys[1] );
-            expect( haystack ).toContain( keys[2] );
+            expect( keys.length ).toBe( 3 );
+            expect( keys ).toContain( 'bar' );
+            expect( keys ).toContain( 'dolor' );
+            expect( keys ).toContain( 'toString' );
 
-            haystack = [true, 'amet', Foo.prototype.toString];
-            expect( vals[0] !== vals[1] && vals[0] !== vals[2] ).toBe(true);
-            expect( haystack ).toContain( vals[0] );
-            expect( haystack ).toContain( vals[1] );
-            expect( haystack ).toContain( vals[2] );
-
+            expect( values.length ).toBe( 3 );
+            expect( values ).toContain( true );
+            expect( values ).toContain( 'amet' );
+            expect( values ).toContain( Foo.prototype.toString );
         });
 
 
