@@ -27,9 +27,25 @@ define(['mout/object/forIn'], function(forIn){
 
         });
 
+        it('should enumerate special properties when defined', function() {
+            var obj = {
+                constructor: 'foo',
+                toString: 'bar',
+                hasOwnProperty: true
+            };
+
+            var keys = [];
+            forIn(obj, function(value, key) {
+                keys.push(key);
+            });
+
+            expect( keys.length ).toBe( 3 );
+            expect( keys ).toContain( 'constructor' );
+            expect( keys ).toContain( 'toString' );
+            expect( keys ).toContain( 'hasOwnProperty' );
+        });
 
         it('grab all enumerable properties, including inherited ones', function () {
-
             function Foo(){
                 this.bar = true;
             }
@@ -62,7 +78,6 @@ define(['mout/object/forIn'], function(forIn){
             expect( values ).toContain( Foo.prototype.toString );
         });
 
-
         it('should allow custom thisObject', function () {
 
             var obj = {
@@ -88,7 +103,6 @@ define(['mout/object/forIn'], function(forIn){
             expect( count ).toEqual( 6 );
 
         });
-
 
         it('should allow exiting the iteration early. see #94', function () {
 
