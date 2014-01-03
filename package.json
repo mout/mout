@@ -51,7 +51,8 @@
     "commander": "~1.0.5",
     "rocambole": "~0.2.3",
     "jshint": "2.x",
-    "rimraf": "~2.2.2"
+    "rimraf": "~2.2.2",
+    "regenerate": "~0.5.4"
   },
   "testling": {
     "preprocess": "node build testling",
