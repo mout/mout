@@ -1,7 +1,6 @@
 // Run this script with Node to generate the pattern that is included in
 // src/string/removeNonWord.js.
 //
-//     npm install regenerate
 //     node _build/pattern-removeNonWord
 //
 
