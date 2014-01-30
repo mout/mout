@@ -2,17 +2,18 @@ define(['../lang/toString', '../number/toInt'], function(toString, toInt){
 
     /**
      * Repeat string n times
-     *
-     * Performance improvement based on http://stackoverflow.com/questions/202605/repeat-string-javascript
-     * Perf tests: http://jsfiddle.net/disfated/GejWV/
      */
      function repeat(str, n){
          var result = '';
          str = toString(str);
          n = toInt(n);
-        if (n < 1) return '';
+        if (n < 1) {
+            return '';
+        }
         while (n > 0) {
-            if (n % 2) result += str;
+            if (n % 2) {
+                result += str;
+            }
             n = Math.floor(n / 2);
             str += str;
         }
