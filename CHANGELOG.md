@@ -3,7 +3,7 @@ mout changelog
 
 next
 ----
-
+ - improve `string/repeat` to use bitwise operators instead of array.join (fastest as longer the string is)
  - add `function/constant`
 
 v0.8.0 (2013/11/22)

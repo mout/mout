@@ -1,11 +1,23 @@
-define(['../lang/toString'], function(toString){
+define(['../lang/toString', '../number/toInt'], function(toString, toInt){
 
     /**
      * Repeat string n times
      */
      function repeat(str, n){
+         var result = '';
          str = toString(str);
-         return (new Array(n + 1)).join(str);
+         n = toInt(n);
+        if (n < 1) {
+            return '';
+        }
+        while (n > 0) {
+            if (n % 2) {
+                result += str;
+            }
+            n = Math.floor(n / 2);
+            str += str;
+        }
+        return result;
      }
 
      return repeat;

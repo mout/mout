@@ -18,7 +18,9 @@ define(['mout/string/repeat'], function (repeat) {
         it('should tread undefined as empty string', function(){
             expect( repeat(void 0, 1) ).toEqual('');
         });
-
+        it('should treat "ab" as not a number', function(){
+            expect( repeat('a','ab') ).toEqual('');
+        });
     });
 
 });
