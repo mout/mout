@@ -11,6 +11,7 @@ define(['./createObject'], function(createObject){
         p.constructor = child;
         child.prototype = p;
         child.super_ = parent;
+        return p;
     }
 
     return inheritPrototype;

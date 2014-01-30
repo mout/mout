@@ -2,23 +2,25 @@ define(['mout/lang/inheritPrototype'], function (inheritPrototype) {
 
     describe('lang/inheritPrototype()', function(){
 
-        it('should inherit prototype', function(){
+        var Foo, Bar;
 
-            function Foo(name){
+        beforeEach(function(){
+            Foo = function FooCtor(name){
                 this.name = name;
-            }
+            };
             Foo.prototype = {
                 getName : function(){
                     return this.name;
                 }
             };
-
-            function Bar(name){
+            Bar = function BarCtor(name){
                 this.name = name;
-            }
+            };
+        });
+
+        it('should inherit prototype', function(){
             inheritPrototype(Bar, Foo);
             Bar.prototype.test = true;
-
 
             var a = new Foo('ipsum');
             var b = new Bar('asd');
@@ -36,7 +38,11 @@ define(['mout/lang/inheritPrototype'], function (inheritPrototype) {
             expect(Bar.super_).toBe(Foo);
             expect(b instanceof Foo).toBe(true);
             expect(b instanceof Bar).toBe(true);
+        });
 
+        it('should return the prototype object', function(){
+            var proto = inheritPrototype(Bar, Foo);
+            expect(proto).toBe(Bar.prototype);
         });
 
     });

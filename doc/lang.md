@@ -132,11 +132,13 @@ Return first value that isn't `null` or `undefined`.
 
 
 
-## inheritPrototype(childCtor, parentCtor):void
+## inheritPrototype(childCtor, parentCtor):Object
 
 Inherit the prototype methods from one constructor into another.
 
 Similar to [node.js util/inherits](http://nodejs.org/docs/latest/api/util.html#util_util_inherits_constructor_superconstructor).
+
+It returns the the `childCtor.prototype` for convenience.
 
 ```js
 function Foo(name){
@@ -152,7 +154,10 @@ function Bar(name){
     Foo.call(this, name);
 }
 //should be called before calling constructor
-inheritPrototype(Bar, Foo);
+var proto = inheritPrototype(Bar, Foo);
+
+// for convenience we return the new prototype object
+console.log(proto === Bar.prototype); // true
 
 var myObj = new Bar('lorem ipsum');
 myObj.getName(); // "lorem ipsum"
