@@ -99,6 +99,17 @@ parseIso('2000-01-02T20:10+04:00') // 946829400000
 ```
 
 
+## quarter(date):Number
+
+Get a number between 1 to 4 that represents the quarter of the year.
+
+```js
+quarter(new Date(2013, 1, 19)); // 1
+quarter(new Date(2013, 4, 12)); // 2
+quarter(new Date(2013, 7, 25)); // 3
+quarter(new Date(2013, 10, 8)); // 4
+```
+
 
 ## startOf(date, period):Date
 

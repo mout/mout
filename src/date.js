@@ -9,6 +9,7 @@ return {
     'isLeapYear' : require('./date/isLeapYear'),
     'isSame' : require('./date/isSame'),
     'parseIso' : require('./date/parseIso'),
+    'quarter' : require('./date/quarter'),
     'startOf' : require('./date/startOf'),
     'strftime' : require('./date/strftime'),
     'timezoneAbbr' : require('./date/timezoneAbbr'),
