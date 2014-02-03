@@ -4,7 +4,9 @@ mout changelog
 next
 ----
  - improve `string/repeat` performance.
+ - return prototype from `lang/inheritProto`
  - add `function/constant`
+ - add `date/quarter`
 
 v0.8.0 (2013/11/22)
 -------------------
