@@ -26,6 +26,12 @@ define(['mout/array/slice'], function(slice){
             expect( slice(arr, -2, -1) ).toEqual( [3] );
         });
 
+        it('should not allow negative start/end beyond array length', function() {
+            var arr = [1, 2, 3];
+            expect( slice(arr, -5, 2) ).toEqual( [1, 2] );
+            expect( slice(arr, 0, -5) ).toEqual( [] );
+        });
+
         it('should convert array-like object to array', function(){
             var obj = { 'length': 3, 0: 'a', 1: 'b', 2: 'c' },
                 result = slice(obj);

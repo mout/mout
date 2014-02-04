@@ -1,7 +1,5 @@
 define(function () {
 
-    var arrSlice = Array.prototype.slice;
-
     /**
      * Create slice of source array or array-like object
      */
@@ -9,13 +7,13 @@ define(function () {
         if (start == null) {
             start = 0;
         } else if (start < 0) {
-            start = arr.length + start;
+            start = Math.max(arr.length + start, 0);
         }
 
         if (end == null) {
             end = arr.length;
         } else if (end < 0) {
-            end = arr.length + end;
+            end = Math.max(arr.length + end, 0);
         }
 
         var result = [];
