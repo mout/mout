@@ -9,11 +9,11 @@ v0.9.0 (2014/02/04)
  - add `random/randBool`;
  - add un-padded 12-hour (`%l`) to `date/strftime`;
  - fix `array/slice` on IE < 9 by using a custom implementation.
- - fix `object/forIn` iteration for IE8 constructor property;
- - fix `string/removeNonWord` to cover more chars;
+ - fix `object/forIn` iteration for IE < 9 constructor property;
  - improve `lang/inheritPrototype` by returning the `prototype`;
+ - improve `string/removeNonWord` to cover more chars;
  - improve `string/repeat` performance;
- - improve `string/unescapeHtml` by acceptin leading zeros for `&#39`;
+ - improve `string/unescapeHtml` by accepting leading zeros for `&#39`;
 
 
 v0.8.0 (2013/11/22)
