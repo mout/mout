@@ -22,6 +22,7 @@ return {
     'intersection' : require('./array/intersection'),
     'invoke' : require('./array/invoke'),
     'join' : require('./array/join'),
+    'last' : require('./array/last'),
     'lastIndexOf' : require('./array/lastIndexOf'),
     'map' : require('./array/map'),
     'max' : require('./array/max'),

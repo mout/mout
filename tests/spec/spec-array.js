@@ -20,6 +20,7 @@ define([
     './array/spec-intersection',
     './array/spec-invoke',
     './array/spec-join',
+    './array/spec-last',
     './array/spec-lastIndexOf',
     './array/spec-map',
     './array/spec-max',

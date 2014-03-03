@@ -414,6 +414,17 @@ join([null, 'foo', '', 'bar', undefined], ':'); // 'foo:bar'
 ```
 
 
+## last(arr[, amount]):Number|Array
+
+Returns the last or last few elements of an array. When `amount` is not defined it will return the last value, if amount is
+defined it will return an array of the specified amount of elements taken from the end of the array.
+
+
+```js
+last( [1, 2, 3, 4] ) // > 4
+last( [1, 2, 3, 4], 2) // > [3, 4]
+```
+
 
 ## lastIndexOf(arr, item, [fromIndex]):Number
 
