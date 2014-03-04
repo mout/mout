@@ -5,7 +5,7 @@ define(["./slice"], function (slice) {
      */
     function last(arr, n){
         if (arr == null || arr.length < 1) {
-            return null;
+            return undefined;
         }
 
         if (typeof n === 'undefined') {

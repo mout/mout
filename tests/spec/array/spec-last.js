@@ -6,8 +6,8 @@ define(['mout/array/last'], function(last){
             expect( last( ['one', 'two'] ) ).toBe('two');
             expect( last( [1,2,3,4,5] ) ).toBe(5);
             expect( last( [1]) ).toBe(1);
-            expect( last( [] ) ).toBe(null);
-            expect( last() ).toBe(null);
+            expect( last( [] ) ).toBe(undefined);
+            expect( last() ).toBe(undefined);
         });
 
         it('should return an array of elements', function() {
