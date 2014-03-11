@@ -27,10 +27,23 @@ define(['mout/lang/isEmpty'], function (isEmpty) {
             expect( isEmpty(fn_2) ).toEqual( false );
         });
 
-        it('should not be true on other types', function () {
-            expect( isEmpty(null) ).toEqual( false );
-            expect( isEmpty(undefined) ).toEqual( false );
+        it('should return true for "null" and "undefined"', function() {
+            expect( isEmpty(null) ).toEqual( true );
+            expect( isEmpty(undefined) ).toEqual( true );
+        });
+
+        it('should return false for numbers', function () {
+            expect( isEmpty(0) ).toEqual( false );
             expect( isEmpty(123) ).toEqual( false );
+            expect( isEmpty(-3) ).toEqual( false );
+            expect( isEmpty(NaN) ).toEqual( false );
+            expect( isEmpty(Infinity) ).toEqual( false );
+            expect( isEmpty(-Infinity) ).toEqual( false );
+        });
+
+        it('should return false for booleans', function() {
+            expect( isEmpty(false) ).toEqual( false );
+            expect( isEmpty(true) ).toEqual( false );
         });
 
     });

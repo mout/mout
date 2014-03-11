@@ -234,6 +234,8 @@ If value is a Date.
 
 Checks if Array/Object/String is empty.
 
+Will return `false` for booleans, numbers and any object that doesn't contain
+enumerable properties.
 
 ```js
 isEmpty('');         // true
@@ -242,6 +244,9 @@ isEmpty([]);         // true
 isEmpty([1, 2]);     // false
 isEmpty({});         // true
 isEmpty({a:1, b:2}); // false
+// null and undefined are considered as "empty" values
+isEmpty(null);       // true
+isEmpty(undefined);  // true
 ```
 
 
