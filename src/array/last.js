@@ -1,18 +1,14 @@
-define(["./slice"], function (slice) {
+define(function () {
 
     /**
-     * Returns on ore more items from end of array.
+     * Returns last element of array.
      */
-    function last(arr, n){
+    function last(arr){
         if (arr == null || arr.length < 1) {
             return undefined;
         }
 
-        if (typeof n === 'undefined') {
-            return arr[arr.length - 1];
-        }
-
-        return slice(arr, arr.length - n);
+        return arr[arr.length - 1];
     }
 
     return last;
