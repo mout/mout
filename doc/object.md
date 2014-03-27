@@ -778,3 +778,23 @@ unset(lorem, 'ipsum.dolor.sit'); // true
 console.log(lorem.ipsum.dolor);  // {}
 unset(lorem, 'foo.bar');         // true
 ```
+
+
+
+## result(object, property):Mixed
+
+Evaluates an objects property and returns result.
+
+```js
+var person = {
+    name: 'john',
+
+    mood: function() {
+        // some dynamic calculated property.
+        return 'happy';
+    }
+};
+
+var name = result(person, 'name'), // john
+    mood = result(person, 'mood'); // happy
+```

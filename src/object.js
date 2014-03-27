@@ -32,6 +32,7 @@ return {
     'pluck' : require('./object/pluck'),
     'reduce' : require('./object/reduce'),
     'reject' : require('./object/reject'),
+    'result' : require('./object/result'),
     'set' : require('./object/set'),
     'size' : require('./object/size'),
     'some' : require('./object/some'),
