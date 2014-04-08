@@ -9,6 +9,7 @@ define([
     './random/spec-randHex',
     './random/spec-randInt',
     './random/spec-randSign',
+    './random/spec-randString',
     './random/spec-random'
 ], function(){
     //noop

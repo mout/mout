@@ -30,6 +30,7 @@ define([
     './object/spec-pluck',
     './object/spec-reduce',
     './object/spec-reject',
+    './object/spec-result',
     './object/spec-set',
     './object/spec-size',
     './object/spec-some',

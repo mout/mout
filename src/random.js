@@ -11,6 +11,7 @@ return {
     'randHex' : require('./random/randHex'),
     'randInt' : require('./random/randInt'),
     'randSign' : require('./random/randSign'),
+    'randString' : require('./random/randString'),
     'random' : require('./random/random')
 };
 
