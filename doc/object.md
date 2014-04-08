@@ -34,6 +34,23 @@ bindAll(obj, 'logNameOnClick', 'doAwesomeStuffOnDrag');
 
 
 
+## camelCaseKeys(obj):Object
+
+Normalize all the keys of a given object to camel case. It returns a new object.
+
+See [`hyphenateKeys()`](#hyphenateKeys), [`mapKeys()`](#mapKeys), [`underscoreKeys()`](#underscoreKeys)
+
+```js
+var obj = {
+  '# foo bar': 0,
+  'bar_baz': 1,
+  'lorem ipsum': 2
+};
+
+camelCaseKeys(obj); // { fooBar: 0, barBaz: 1, loremIpsum: 2 }
+```
+
+
 ## contains(obj, value):Boolean
 
 Similar to [Array/contains](array.html#contains). Checks if Object contains
@@ -449,6 +466,22 @@ hasOwn(obj, 'toString');       // false
 
 
 
+## hyphenateKeys(obj):Object
+
+Normalize all the keys of a given object by using hyphens as separators. It returns a new object.
+
+See [`camelCaseKeys()`](#camelCaseKeys), [`mapKeys()`](#mapKeys), [`underscoreKeys()`](#underscoreKeys)
+
+```js
+var obj = {
+	'# foo bar': 0,
+	'BAR BAZ': 1,
+	'lorem ipsum': 2
+};
+
+hyphenateKeys(obj); // { 'foo-bar': 0, 'bar-baz': 1, 'lorem-ipsum': 2 }
+```
+            
 ## keys(obj):Array
 
 Returns an array of all own enumerable properties found upon a given object.
@@ -488,6 +521,24 @@ map(obj, function(v, k) { return this[k]; }, data); // { foo: 0, bar: 1 }
 ```
 
 
+
+## mapKeys(obj, callback, [thisObj]):Object
+
+Maps a function over the keys of an object and returns a new one.
+
+```js
+var obj = {
+  foo: 0,
+  bar: 1,
+  baz: 2
+};
+
+mapKeys(obj, console.log);
+
+// foo 0 { foo: 0, bar: 1, baz: 2 }
+// bar 1 { foo: 0, bar: 1, baz: 2 }
+// baz 2 { foo: 0, bar: 1, baz: 2 }
+```
 
 ## matches(obj, props):Boolean
 
@@ -683,26 +734,6 @@ reject(obj, function(x) { return (x % 2) !== 0; }); // {b: 2, d: 4}
 ```
 
 
-
-## values(obj):Array
-
-Returns an array of all own enumerable properties values found upon a given object.
-
-PS: it won't return properties from the prototype.
-
-See: [`forOwn()`](#forOwn), [`keys()`](#keys)
-
-```js
-var obj = {
-    foo : 1,
-    bar : 2,
-    lorem : 3
-};
-values(obj); // [1, 2, 3]
-```
-
-
-
 ## set(obj, propName, value)
 
 Sets a nested property value.
@@ -755,6 +786,23 @@ some(obj, isNumber); // true
 
 
 
+## underscoreKeys(obj):Object
+
+Normalize all the keys of a given object by using underscores as separators. It returns a new object.
+
+See [`camelCaseKeys()`](#camelCaseKeys), [`hyphenateKeys()`](#hyphenateKeys), [`mapKeys()`](#mapKeys)
+
+```js
+var obj = {
+  '# foo bar': 0,
+  'BAR BAZ': 1,
+  'lorem ipsum': 2
+};
+
+underscoreKeys(obj); // { foo_bar: 0, bar_baz: 1, lorem_ipsum: 2 }
+```
+
+
 ## unset(obj, propName):Boolean
 
 Delete object property if existent and returns a boolean indicating succes. It
@@ -777,4 +825,22 @@ var lorem = {
 unset(lorem, 'ipsum.dolor.sit'); // true
 console.log(lorem.ipsum.dolor);  // {}
 unset(lorem, 'foo.bar');         // true
+```
+
+
+## values(obj):Array
+
+Returns an array of all own enumerable properties values found upon a given object.
+
+PS: it won't return properties from the prototype.
+
+See: [`forOwn()`](#forOwn), [`keys()`](#keys)
+
+```js
+var obj = {
+    foo : 1,
+    bar : 2,
+    lorem : 3
+};
+values(obj); // [1, 2, 3]
 ```

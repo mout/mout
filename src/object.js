@@ -4,6 +4,7 @@ define(function(require){
 //run `node build` instead
 return {
     'bindAll' : require('./object/bindAll'),
+    'camelCaseKeys' : require('./object/camelCaseKeys'),
     'contains' : require('./object/contains'),
     'deepEquals' : require('./object/deepEquals'),
     'deepFillIn' : require('./object/deepFillIn'),
@@ -20,8 +21,10 @@ return {
     'get' : require('./object/get'),
     'has' : require('./object/has'),
     'hasOwn' : require('./object/hasOwn'),
+    'hyphenateKeys' : require('./object/hyphenateKeys'),
     'keys' : require('./object/keys'),
     'map' : require('./object/map'),
+    'mapKeys' : require('./object/mapKeys'),
     'matches' : require('./object/matches'),
     'max' : require('./object/max'),
     'merge' : require('./object/merge'),
@@ -35,6 +38,7 @@ return {
     'set' : require('./object/set'),
     'size' : require('./object/size'),
     'some' : require('./object/some'),
+    'underscoreKeys' : require('./object/underscoreKeys'),
     'unset' : require('./object/unset'),
     'values' : require('./object/values')
 };

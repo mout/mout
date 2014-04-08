@@ -2,6 +2,7 @@
 //run `node build` instead
 define([
     './object/spec-bindAll',
+    './object/spec-camelCaseKeys',
     './object/spec-contains',
     './object/spec-deepEquals',
     './object/spec-deepFillIn',
@@ -18,8 +19,10 @@ define([
     './object/spec-get',
     './object/spec-has',
     './object/spec-hasOwn',
+    './object/spec-hyphenateKeys',
     './object/spec-keys',
     './object/spec-map',
+    './object/spec-mapKeys',
     './object/spec-matches',
     './object/spec-max',
     './object/spec-merge',
@@ -33,6 +36,7 @@ define([
     './object/spec-set',
     './object/spec-size',
     './object/spec-some',
+    './object/spec-underscoreKeys',
     './object/spec-unset',
     './object/spec-values'
 ], function(){
