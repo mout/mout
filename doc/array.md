@@ -414,6 +414,16 @@ join([null, 'foo', '', 'bar', undefined], ':'); // 'foo:bar'
 ```
 
 
+## last(arr):*
+
+Returns the last element of an array without modifying the array.
+
+
+```js
+last( [1, 2, 3, 4] ) // > 4
+last( ['foo', 'bar'] ) // > 'bar'
+```
+
 
 ## lastIndexOf(arr, item, [fromIndex]):Number
 
