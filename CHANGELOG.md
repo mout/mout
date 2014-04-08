@@ -1,6 +1,12 @@
 mout changelog
 ==============
 
+Next
+-------------------
+
+ - fix `array/slice` behavior when start and end are higher than length.
+
+
 v0.9.0 (2014/02/04)
 -------------------
 
