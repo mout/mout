@@ -40,6 +40,21 @@ define(['mout/array/findLastIndex'], function(findLastIndex){
             expect( findLastIndex(undefined, testFunc) ).toBe( -1 );
         });
 
+        it('should pass array index and context', function() {
+            var items = [1, 2, 3];
+            var context = {};
+            var testFunc = function(val, i, arr) {
+                expect( this ).toBe( context );
+                expect( arr ).toBe( items );
+                expect( val ).toBe( arr[i] );
+                expect( i ).toBeGreaterThan( -1 );
+                expect( i ).toBeLessThan( items.length );
+                return false;
+            };
+
+            expect( findLastIndex(items, testFunc, context) ).toBe( -1 );
+        });
+
     });
 
 });
