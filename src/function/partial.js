@@ -1,7 +1,7 @@
 define(['../array/slice'], function (slice) {
 
     /**
-     * Creates a partially applied function
+     * Creates a partially applied function.
      */
     function partial(f) {
         var as = slice(arguments, 1);
