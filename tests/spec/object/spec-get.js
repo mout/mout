@@ -36,6 +36,19 @@ define(
                 expect( get(foo, 'foo.bar.baz') ).toBe(undef);
             });
 
+            it('should return undefined when encountering primitive', function () {
+                var foo = {
+                    bar : {
+                        lorem : 'ipsum'
+                    }
+                };
+                var undef;
+
+                foo.bar.lorem.dolor = 'sit'
+
+                expect( get(foo, 'bar.lorem.dolor') ).toBe( undef );
+            });
+
         });
 
     }
