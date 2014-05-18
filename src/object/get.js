@@ -1,4 +1,4 @@
-define(function () {
+define(['../lang/isPrimitive'], function (isPrimitive) {
 
     /**
      * get "nested" object property
@@ -9,7 +9,7 @@ define(function () {
 
         while (prop = parts.shift()) {
             obj = obj[prop];
-            if (typeof obj !== 'object' || !obj) return;
+            if (obj == null) return;
         }
 
         return obj[last];

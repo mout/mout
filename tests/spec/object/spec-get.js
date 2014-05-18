@@ -17,6 +17,28 @@ define(
                 expect( get(foo, 'bar.lorem.ipsum') ).toBe( 'dolor' );
             });
 
+            it('should get nested property when encountering non-primitive', function () {
+                var foo = {
+                    bar : {
+                        lorem : function(){}
+                    }
+                };
+                
+                foo.bar.lorem.ipsum = 'dolor'
+
+                expect( get(foo, 'bar.lorem.ipsum') ).toBe( 'dolor' );
+            });
+
+            it('should get nested property when encountering primitive', function () {
+                var foo = {
+                    bar : {
+                        lorem : 'ipsum'
+                    }
+                };
+
+                expect( get(foo, 'bar.lorem.toString') ).toBe( foo.bar.lorem.toString );
+            });
+
             it('should return undefined if non existent', function () {
                 var foo = {
                     bar : {
