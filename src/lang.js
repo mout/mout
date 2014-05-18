@@ -27,6 +27,7 @@ return {
     'isRegExp' : require('./lang/isRegExp'),
     'isString' : require('./lang/isString'),
     'isUndefined' : require('./lang/isUndefined'),
+    'isPrimitive' : require('./lang/isPrimitive'),
     'isnt' : require('./lang/isnt'),
     'kindOf' : require('./lang/kindOf'),
     'toArray' : require('./lang/toArray'),
