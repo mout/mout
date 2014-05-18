@@ -2,7 +2,7 @@ define(['mout/lang/isPrimitive'], function(isPrimitive) {
 
     describe('lang/isPrimitive', function() {
 
-        it('should return true when primitive object', function() {
+        it('should return true when primitive value', function() {
             expect( isPrimitive(null) ).toBe(true);
             expect( isPrimitive(undefined) ).toBe(true);
             expect( isPrimitive(1) ).toBe(true);
@@ -13,7 +13,7 @@ define(['mout/lang/isPrimitive'], function(isPrimitive) {
             expect( isPrimitive(Infinity) ).toBe(true);
         });
 
-        it('should return false when not primitive object', function() {
+        it('should return false when not primitive value', function() {
             expect( isPrimitive({}) ).toBe(false);
             expect( isPrimitive([]) ).toBe(false);
             expect( isPrimitive(/./) ).toBe(false);
@@ -24,7 +24,6 @@ define(['mout/lang/isPrimitive'], function(isPrimitive) {
             expect( isPrimitive(new Boolean) ).toBe(false);
             expect( isPrimitive(new Date) ).toBe(false);
             expect( isPrimitive(new Error) ).toBe(false);
-            expect( isPrimitive(Object.create(null)) ).toBe(false);
         });
     });
 
