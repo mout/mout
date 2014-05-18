@@ -11,7 +11,7 @@ define(function () {
                 return true;
         }
 
-        return obj === null || obj === undefined;
+        return obj == null;
     }
 
     return isPrimitive;
