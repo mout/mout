@@ -17,6 +17,28 @@ define(
                 expect( get(foo, 'bar.lorem.ipsum') ).toBe( 'dolor' );
             });
 
+            it('should get nested property when encountering non-primitive', function () {
+                var foo = {
+                    bar : {
+                        lorem : function(){}
+                    }
+                };
+                
+                foo.bar.lorem.ipsum = 'dolor'
+
+                expect( get(foo, 'bar.lorem.ipsum') ).toBe( 'dolor' );
+            });
+
+            it('should get nested property when encountering primitive', function () {
+                var foo = {
+                    bar : {
+                        lorem : 'ipsum'
+                    }
+                };
+
+                expect( get(foo, 'bar.lorem.toString') ).toBe( foo.bar.lorem.toString );
+            });
+
             it('should return undefined if non existent', function () {
                 var foo = {
                     bar : {
@@ -34,19 +56,6 @@ define(
 
                 var undef;
                 expect( get(foo, 'foo.bar.baz') ).toBe(undef);
-            });
-
-            it('should return undefined when encountering primitive', function () {
-                var foo = {
-                    bar : {
-                        lorem : 'ipsum'
-                    }
-                };
-                var undef;
-
-                foo.bar.lorem.dolor = 'sit'
-
-                expect( get(foo, 'bar.lorem.dolor') ).toBe( undef );
             });
 
         });

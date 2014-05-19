@@ -9,7 +9,7 @@ define(['../lang/isPrimitive'], function (isPrimitive) {
 
         while (prop = parts.shift()) {
             obj = obj[prop];
-            if (isPrimitive(obj) || !obj) return;
+            if (obj == null) return;
         }
 
         return obj[last];
