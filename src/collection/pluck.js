@@ -1,14 +1,7 @@
-define(['./map'], function (map) {
+define(['./make_', '../array/pluck', '../object/pluck'], function (make, arrPluck, objPluck) {
 
     /**
-     * Extract a list of property values.
      */
-    function pluck(list, key) {
-        return map(list, function(value) {
-            return value[key];
-        });
-    }
-
-    return pluck;
+    return make(arrPluck, objPluck);
 
 });

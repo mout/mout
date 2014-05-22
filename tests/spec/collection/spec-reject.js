@@ -49,49 +49,49 @@ define(['mout/collection/reject', 'mout/collection/size'], function(reject, size
             }, thisObj);
 
             expect(size(obj)).toEqual(5);
-            expect(result).toEqual([2, 4]);
+            expect(result).toEqual({b: 2, d: 4});
         });
 
         it('should return empty array if all items rejected from object', function() {
             var obj = {a: 1, b: 2, c: 3, d: 4, e: 5};
             var result = reject(obj, function() { return true; });
-            expect(result).toEqual([]);
+            expect(result).toEqual({});
         });
 
 
         it('should support shorthand syntax', function () {
             var obj = {
-                '0' : {foo:'bar', lorem:'ipsum', id:1},
-                '1' : {foo:'bar', lorem:'ipsum', id:2},
-                '2' : {foo:'bar', lorem:'ipsum', id:4}
+                a : {foo:'bar', lorem:'ipsum', id:1},
+                b : {foo:'bar', lorem:'ipsum', id:2},
+                c : {foo:'bar', lorem:'ipsum', id:4}
             };
-            var arr = [obj[0], obj[1], obj[2]];
+            var arr = [obj.a, obj.b, obj.c];
 
-            expect( reject(obj, {foo:'bar', lorem:'ipsum'}) ).toEqual( [] );
-            expect( reject(obj, {lorem:'ipsum', id:1}) ).toEqual( [obj[1], obj[2]] );
-            expect( reject(obj, {amet:123}) ).toEqual( arr );
+            expect( reject(obj, {foo:'bar', lorem:'ipsum'}) ).toEqual( {} );
+            expect( reject(obj, {lorem:'ipsum', id:1}) ).toEqual( {b: obj.b, c: obj.c} );
+            expect( reject(obj, {amet:123}) ).toEqual( obj );
 
             expect( reject(arr, {foo:'bar', lorem:'ipsum'}) ).toEqual( [] );
-            expect( reject(arr, {lorem:'ipsum', id:1}) ).toEqual( [obj[1], obj[2]] );
+            expect( reject(arr, {lorem:'ipsum', id:1}) ).toEqual( [obj.b, obj.c] );
             expect( reject(arr, {amet:123}) ).toEqual( arr );
         });
 
 
         it('should allow string shorthand syntax', function () {
             var obj = {
-                '0' : {foo:'bar', lorem:'ipsum', id:1},
-                '1' : {foo:'bar', lorem:'ipsum', id:2},
-                '2' : {foo:'bar', lorem:'ipsum', id:0}
+                a : {foo:'bar', lorem:'ipsum', id:1},
+                b : {foo:'bar', lorem:'ipsum', id:2},
+                c : {foo:'bar', lorem:'ipsum', id:0}
             };
-            var arr = [obj[0], obj[1], obj[2]];
+            var arr = [obj.a, obj.b, obj.c];
 
-            expect( reject(obj, 'foo') ).toEqual( [] );
-            expect( reject(obj, 'id') ).toEqual( [obj[2]] );
-            expect( reject(obj, 'amet') ).toEqual( [obj[0], obj[1], obj[2]] );
+            expect( reject(obj, 'foo') ).toEqual( {} );
+            expect( reject(obj, 'id') ).toEqual( {c: obj.c} );
+            expect( reject(obj, 'amet') ).toEqual( obj );
 
             expect( reject(arr, 'foo') ).toEqual( [] );
-            expect( reject(arr, 'id') ).toEqual( [obj[2]] );
-            expect( reject(arr, 'amet') ).toEqual( [obj[0], obj[1], obj[2]] );
+            expect( reject(arr, 'id') ).toEqual( [obj.c] );
+            expect( reject(arr, 'amet') ).toEqual( [obj.a, obj.b, obj.c] );
         });
 
 

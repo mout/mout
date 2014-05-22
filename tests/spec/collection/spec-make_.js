@@ -59,6 +59,23 @@ define(['mout/collection/make_'], function(make){
             expect( fn(obj) ).toBe( 'array' );
         });
 
+        it('should threat array-like objects with invalid length as objects', function () {
+            var obj = {
+                '0' : '1',
+                '1' : 'b',
+                '2' : 'c',
+                length : NaN
+            };
+
+            var fn = make(function(){
+                return 'array';
+            }, function(){
+                return 'object';
+            });
+
+            expect( fn(obj) ).toBe( 'object' );
+        });
+
 
         it('`null` and `undefined` should return default value', function () {
             var fn = make(function(){
