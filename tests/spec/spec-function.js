@@ -14,7 +14,8 @@ define([
     './function/spec-series',
     './function/spec-throttle',
     './function/spec-timeout',
-    './function/spec-times'
+    './function/spec-times',
+    './function/spec-wrap'
 ], function(){
     //noop
 });
