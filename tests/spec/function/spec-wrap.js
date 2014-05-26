@@ -9,10 +9,10 @@ define(['mout/function/wrap'], function(wrap){
 
         it('should create a wrapped function', function(){
             var wrapped = wrap(add, function(func, a, b){
-                return func(a + 2, b)
+                return func(a + 2, b);
             });
 
-            expect(wrapped(1, 2)).toBe(5)
+            expect(wrapped(1, 2)).toBe(5);
         });
 
         it('should pass the correct `wrapper` arguments', function(){
@@ -29,7 +29,7 @@ define(['mout/function/wrap'], function(wrap){
 
         it('should not set a `this` binding', 1, function(){
             var wrapped = wrap(add, function(func){
-                return func(this.a + this.b)
+                return func(this.a + this.b);
             });
 
             var object = {
