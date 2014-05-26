@@ -6,7 +6,7 @@ define(['./partial'], function (partial) {
      * conditionally execute the original function.
      */
     function wrap(fn, wrapper){
-        return partial(wrapper, fn)
+        return partial(wrapper, fn);
     }
 
     return wrap;
