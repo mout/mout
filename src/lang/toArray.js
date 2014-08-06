@@ -1,6 +1,4 @@
-define(['./kindOf'], function (kindOf) {
-
-    var _win = this;
+define(['./kindOf', './global'], function (kindOf, global) {
 
     /**
      * Convert array-like object into array
@@ -11,7 +9,7 @@ define(['./kindOf'], function (kindOf) {
             n;
 
         if (val != null) {
-            if ( val.length == null || kind === 'String' || kind === 'Function' || kind === 'RegExp' || val === _win ) {
+            if ( val.length == null || kind === 'String' || kind === 'Function' || kind === 'RegExp' || val === global ) {
                 //string, regexp, function have .length but user probably just want
                 //to wrap value into an array..
                 ret[ret.length] = val;

@@ -1,6 +1,4 @@
-define(['./isNumber'], function (isNumber) {
-
-    var global = this;
+define(['./isNumber', './global'], function (isNumber, global) {
 
     /**
      * Check if value is finite
