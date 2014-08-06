@@ -6,7 +6,7 @@ define(['../object/forOwn', './isArray'], function (forOwn, isArray) {
             return true;
         } else if ( typeof val === 'string' || isArray(val) ) {
             return !val.length;
-        } else if ( typeof val === 'object' || typeof val === 'function' ) {
+        } else if ( typeof val === 'object' ) {
             var result = true;
             forOwn(val, function(){
                 result = false;
@@ -14,7 +14,7 @@ define(['../object/forOwn', './isArray'], function (forOwn, isArray) {
             });
             return result;
         } else {
-            return false;
+            return true;
         }
     }
 
