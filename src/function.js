@@ -17,7 +17,7 @@ return {
     'throttle' : require('./function/throttle'),
     'timeout' : require('./function/timeout'),
     'times' : require('./function/times'),
-    'wrap': require('./function/wrap')
+    'wrap' : require('./function/wrap')
 };
 
 });

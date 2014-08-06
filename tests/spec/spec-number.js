@@ -2,6 +2,7 @@
 //run `node build` instead
 define([
     './number/spec-MAX_INT',
+    './number/spec-MAX_SAFE_INTEGER',
     './number/spec-MAX_UINT',
     './number/spec-MIN_INT',
     './number/spec-abbreviate',

@@ -95,6 +95,11 @@ console.log( MAX_INT ); // 2147483647
 ```
 
 
+## MAX_SAFE_INTEGER:Number
+
+Maximum safe integer. `Math.pow(2,53) − 1`
+
+
 ## MAX_UINT:Number
 
 Maximum 32-bit unsigned integer value. `Math.pow(2, 32) - 1`
