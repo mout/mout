@@ -135,7 +135,7 @@ See: [`mixIn()`](#mixIn), [`merge()`](#merge), [`deepFillIn()`](#deepFillIn)
 Tests whether two objects contain the same keys and values.
 
 `callback` specifies the equality comparison function used to compare the
-values. It defaults to using the strict equals (`===`) operator.
+values. It defaults to using [lang/is](lang.html#is).
 
 It will only check the keys and values contained by the objects; it will not
 check the objects' prototypes. If either of the values are not objects, they

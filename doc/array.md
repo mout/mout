@@ -105,6 +105,28 @@ difference(a, b); // ['a', 'b']
 ```
 
 
+## equals(a, b, [compare]):Boolean
+
+Checks if both arrays are equal.
+
+```js
+equals([1, 2], [1, 2]); // true
+equals([2, 4], [1, 2]); // false
+```
+
+By default it uses the [lang/is](lang.html#is) as the `compare` function but
+you can pass a custom function to change the behavior.
+
+```js
+function loose(a, b) {
+    return a == b;
+}
+equals(['1', 2], [1, 2], loose); // true
+```
+
+See: [object/equals](object.html#equals), [lang/deepEquals](lang.html#deepEquals)
+
+
 
 ## every(arr, callback, [thisObj]):Array
 
