@@ -1,6 +1,6 @@
-define(['mout/object/deepEquals'], function(deepEquals){
+define(['mout/lang/deepEquals'], function(deepEquals){
 
-    describe('object/deepEquals', function(){
+    describe('lang/deepEquals', function(){
 
         it('should check object values', function(){
             expect( deepEquals({}, {}) ).toBe(true);
@@ -30,11 +30,22 @@ define(['mout/object/deepEquals'], function(deepEquals){
             expect( deepEquals(a, b) ).toBe(true);
         });
 
+        it('should check arrays', function() {
+            var a = { value: { a: [1,3,[5, {c:6}]], b: 2 } };
+            var b = { value: { b: 2, a: [1,3,[5, {c:6}]] } };
+            expect( deepEquals(a, b) ).toBe(true);
+        });
+
+
         it('should use strict equals for non-objects', function() {
             expect( deepEquals({}, null) ).toBe(false);
             expect( deepEquals(null, {}) ).toBe(false);
             expect( deepEquals(null, null) ).toBe(true);
             expect( deepEquals(null, undefined) ).toBe(false);
+            expect( deepEquals(NaN, NaN) ).toBe(true);
+            expect( deepEquals(+0, -0) ).toBe(false);
+            expect( deepEquals(0, 0) ).toBe(true);
+            expect( deepEquals('123', 123) ).toBe(false);
         });
 
         it('should only check object\'s own properties', function() {

@@ -9,6 +9,7 @@ return {
     'compact' : require('./array/compact'),
     'contains' : require('./array/contains'),
     'difference' : require('./array/difference'),
+    'equals' : require('./array/equals'),
     'every' : require('./array/every'),
     'filter' : require('./array/filter'),
     'find' : require('./array/find'),

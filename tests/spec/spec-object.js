@@ -3,7 +3,6 @@
 define([
     './object/spec-bindAll',
     './object/spec-contains',
-    './object/spec-deepEquals',
     './object/spec-deepFillIn',
     './object/spec-deepMatches',
     './object/spec-deepMixIn',
