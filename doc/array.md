@@ -339,6 +339,21 @@ more info at [MDN Array#forEach](https://developer.mozilla.org/en/JavaScript/Ref
 
 
 
+## groupBy(arr, [categorize=identity], [thisObj]):Object
+
+Groups array elements by the `key` returned from the `categorize` function.
+
+It will use the [function/identity](function.html#identity) as the default
+`categorize` function.
+
+```js
+var items = ['lorem', 'ipsum', 'foo', 'bar', 'baz'];
+groupBy(items, function(val) { return val.length });
+// > {'3': ['foo', 'bar', 'baz'], '5': ['lorem', 'ipsum']}
+```
+
+
+
 ## indexOf(arr, item, [fromIndex]):Number
 
 Crossbrowser `Array.indexOf()`.

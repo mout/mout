@@ -15,6 +15,7 @@ define([
     './array/spec-findLastIndex',
     './array/spec-flatten',
     './array/spec-forEach',
+    './array/spec-groupBy',
     './array/spec-indexOf',
     './array/spec-insert',
     './array/spec-intersection',
