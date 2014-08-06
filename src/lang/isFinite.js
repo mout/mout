@@ -1,4 +1,4 @@
-define(['./isNumber', './global'], function (isNumber, global) {
+define(['./isNumber', './GLOBAL'], function (isNumber, GLOBAL) {
 
     /**
      * Check if value is finite
@@ -6,10 +6,10 @@ define(['./isNumber', './global'], function (isNumber, global) {
     function isFinite(val){
         var is = false;
         if (typeof val === 'string' && val !== '') {
-            is = global.isFinite( parseFloat(val) );
+            is = GLOBAL.isFinite( parseFloat(val) );
         } else if (isNumber(val)){
             // need to use isNumber because of Number constructor
-            is = global.isFinite( val );
+            is = GLOBAL.isFinite( val );
         }
         return is;
     }
