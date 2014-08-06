@@ -3,12 +3,12 @@ define(function(require){
 //automatically generated, do not edit!
 //run `node build` instead
 return {
+    'GLOBAL' : require('./lang/GLOBAL'),
     'clone' : require('./lang/clone'),
     'createObject' : require('./lang/createObject'),
     'ctorApply' : require('./lang/ctorApply'),
     'deepClone' : require('./lang/deepClone'),
     'defaults' : require('./lang/defaults'),
-    'global' : require('./lang/global'),
     'inheritPrototype' : require('./lang/inheritPrototype'),
     'is' : require('./lang/is'),
     'isArguments' : require('./lang/isArguments'),

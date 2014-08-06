@@ -132,6 +132,13 @@ Return first value that isn't `null` or `undefined`.
 
 
 
+## GLOBAL:Object
+
+Reference to the global context (`window` inside a browser, `global` on
+node.js). Works on ES3 and ES5 strict-mode.
+
+
+
 ## inheritPrototype(childCtor, parentCtor):Object
 
 Inherit the prototype methods from one constructor into another.

@@ -1,12 +1,12 @@
 //automatically generated, do not edit!
 //run `node build` instead
 define([
+    './lang/spec-GLOBAL',
     './lang/spec-clone',
     './lang/spec-createObject',
     './lang/spec-ctorApply',
     './lang/spec-deepClone',
     './lang/spec-defaults',
-    './lang/spec-global',
     './lang/spec-inheritPrototype',
     './lang/spec-is',
     './lang/spec-isArguments',
