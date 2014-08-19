@@ -2,7 +2,7 @@
 
 http://moutjs.com/
 
-[![Build Status](https://travis-ci.org/mout/mout.png?branch=master)](https://travis-ci.org/mout/mout)
+[![Build Status](https://travis-ci.org/mout/mout.svg?branch=master)](https://travis-ci.org/mout/mout)
 
 All code is library agnostic and consist mostly of helper methods that aren't
 directly related with the DOM, the purpose of this library isn't to replace
