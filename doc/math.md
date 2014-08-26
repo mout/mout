@@ -252,8 +252,13 @@ See: [`lerp()`](#lerp), [`norm()`](#norm)
 
 Gets normalized ratio of value inside range.
 
+If `val < min` or `val > max` it will throw a `RangeError` since we can't
+normalize the value.
+
     norm(50, 0, 100); // 0.5
     norm(75, 0, 100); // 0.75
+    norm(100, 0, 100); // 1
+    norm(-50, 0, 100); // RangeError: value (-50) must be between 0 and 100
 
 ### Common use cases
 
