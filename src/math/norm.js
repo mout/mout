@@ -3,7 +3,11 @@ define(function(){
     * Gets normalized ratio of value inside range.
     */
     function norm(val, min, max){
-        return min === max ? val / max : (val - min) / (max - min);
+        if (val < min || val > max) {
+            throw new RangeError('Value must be between ' + min + ' and ' + max);
+        }
+
+        return val === max ? 1 : (val - min) / (max - min);
     }
     return norm;
 });
