@@ -13,5 +13,10 @@ define(['mout/math/norm'], function (norm) {
             expect( norm(-1500, 0, 1000) ).toEqual(-1.5);
         });
 
+        it('should calculate ratio even if min equals max', function(){
+            expect( norm(100, 100, 100) ).toEqual(1);
+            expect( norm(200, 100, 100) ).toEqual(2);
+        });
+
     });
 });
