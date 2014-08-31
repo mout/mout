@@ -26,6 +26,7 @@ define([
     './object/spec-min',
     './object/spec-mixIn',
     './object/spec-namespace',
+    './object/spec-omit',
     './object/spec-pick',
     './object/spec-pluck',
     './object/spec-reduce',
