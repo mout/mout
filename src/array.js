@@ -17,6 +17,7 @@ return {
     'findLastIndex' : require('./array/findLastIndex'),
     'flatten' : require('./array/flatten'),
     'forEach' : require('./array/forEach'),
+    'groupBy' : require('./array/groupBy'),
     'indexOf' : require('./array/indexOf'),
     'insert' : require('./array/insert'),
     'intersection' : require('./array/intersection'),
