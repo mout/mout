@@ -1,6 +1,32 @@
 mout changelog
 ==============
 
+
+Next
+----
+
+ - add `array/equals`;
+ - add `array/groupBy`;
+ - add `array/last`;
+ - add `function/wrap`;
+ - add `lang/GLOBAL`;
+ - add `lang/isPrimitive`;
+ - add `number/MAX_SAFE_INTEGER`;
+ - add `object/omit`;
+ - add `object/result`;
+ - add `object/result`;
+ - add `random/randString`;
+ - change `lang/isEmpty` behavior to return `true` for any value that isn't
+   a collection.
+ - fix `array/findLastIndex` to stop at zero index;
+ - improve `function/partial` to accept placeholders;
+ - improve `math.norm` behavior for values outside the range and for cases
+   where `val === min === max`;
+ - improve `object/get` behavior to return properties from any value that is
+   not `null` or `undefined`;
+ - move `object/deepEquals` to `lang/deepEquals` (improving the behavior);
+
+
 v0.9.1 (2014/04/08)
 -------------------
 
