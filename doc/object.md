@@ -569,6 +569,29 @@ console.log(obj);          // {foo:{bar:{}}}
 ```
 
 
+## omit(obj, ...keys):Object
+
+Return a copy of the object without the blacklisted keys.
+
+See: [`filter()`](#filter)
+
+```js
+var user = {
+    firstName : 'John',
+    lastName : 'Doe',
+    dob : '1985/07/23',
+    gender : 'male'
+};
+
+// can pass an array of keys as second argument
+var keys = ['firstName', 'dob']
+omit(user, keys); // {lastName : 'Doe', gender : 'male'}
+
+// or multiple arguments
+omit(user, 'firstName', 'lastName'); // {dob : '1985/07/23', gender : 'male'}
+```
+
+
 
 ## pick(obj, ...keys):Object
 

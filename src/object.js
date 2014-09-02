@@ -27,6 +27,7 @@ return {
     'min' : require('./object/min'),
     'mixIn' : require('./object/mixIn'),
     'namespace' : require('./object/namespace'),
+    'omit' : require('./object/omit'),
     'pick' : require('./object/pick'),
     'pluck' : require('./object/pluck'),
     'reduce' : require('./object/reduce'),
