@@ -2,8 +2,8 @@ mout changelog
 ==============
 
 
-Next
-----
+v0.10.0 (2014/09/02)
+--------------------
 
  - add `array/equals`;
  - add `array/groupBy`;
