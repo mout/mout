@@ -8,6 +8,7 @@ return {
     'createObject' : require('./lang/createObject'),
     'ctorApply' : require('./lang/ctorApply'),
     'deepClone' : require('./lang/deepClone'),
+    'deepEquals' : require('./lang/deepEquals'),
     'defaults' : require('./lang/defaults'),
     'inheritPrototype' : require('./lang/inheritPrototype'),
     'is' : require('./lang/is'),

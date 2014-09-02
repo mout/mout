@@ -51,37 +51,6 @@ contains(obj, 'foo');  // false
 
 
 
-## deepEquals(a, b, [callback]):Boolean
-
-Recursively tests whether two objects contain the same keys and equal values.
-
-`callback` specifies the equality comparison function used to compare
-non-object values. It defaults to using the strict equals (`===`) operator.
-
-If the values are both an object, it will recurse into the objects, checking if
-their keys/values are equal. It will only check the keys and values contained
-by the objects; it will not check the objects' prototypes.  If the either of
-the values are not objects, they will be checked using the `callback` function.
-
-Example:
-
-```js
-deepEquals({ a: 1 }, { a: 1 }); // true
-deepEquals({ value: { a: 1 } }, { value: { a: 1 } }); // true
-deepEquals({ value: { a: 1 } }, { value: { a: 2 } }); // false
-deepEquals({ value: { a: 1 } }, { value: { a: 1, b: 2 } }); // false
-deepEquals({}, null); // false
-deepEquals(null, null); // true
-deepEquals(
-    { a: { b: 1 } },
-    { a: { b: '1' } },
-    function(a, b) { return a == b; }); // true
-```
-
-See: [`equals()`](#equals)
-
-
-
 ## deepFillIn(target, ...objects):Object
 
 Fill missing properties recursively.
@@ -166,7 +135,7 @@ See: [`mixIn()`](#mixIn), [`merge()`](#merge), [`deepFillIn()`](#deepFillIn)
 Tests whether two objects contain the same keys and values.
 
 `callback` specifies the equality comparison function used to compare the
-values. It defaults to using the strict equals (`===`) operator.
+values. It defaults to using [lang/is](lang.html#is).
 
 It will only check the keys and values contained by the objects; it will not
 check the objects' prototypes. If either of the values are not objects, they
@@ -183,6 +152,7 @@ equals(null, {}); // false
 equals({ a: 1 }, { a: '1' }, function(a, b) { return a == b; }); // true
 ```
 
+See: [array/equals](array.html#equals), [lang/deepEquals](lang.html#deepEquals)
 
 
 ## every(obj, callback, [thisObj]):Boolean

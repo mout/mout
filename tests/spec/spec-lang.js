@@ -6,6 +6,7 @@ define([
     './lang/spec-createObject',
     './lang/spec-ctorApply',
     './lang/spec-deepClone',
+    './lang/spec-deepEquals',
     './lang/spec-defaults',
     './lang/spec-inheritPrototype',
     './lang/spec-is',
