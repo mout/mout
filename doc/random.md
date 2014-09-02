@@ -226,9 +226,11 @@ algorithms that could be used instead.
 
 
 
-## randomString([length], [dictionary]):String
+## randString([length, dictionary]):String
 
-Returns a random string. By default returns string containing alphanumeric characters (lowercase and uppercase) with a length of 8.
+Returns a random string.
+
+By default returns string containing alphanumeric characters (lowercase and uppercase) with a length of 8.
 
 ### Arguments:
 
@@ -238,12 +240,11 @@ Returns a random string. By default returns string containing alphanumeric chara
 ### Example:
 
 ```js
-randString();     		  // returns a string with length 8.
-randString(12);   		  // returns a string of length 12.
-randString(-1);   		  // returns a string of length 8.
+randString();             // returns a string with length 8.
+randString(12);           // returns a string of length 12.
+randString(-1);           // returns a string of length 8.
 randString(null, 'pew!'); // returns a random string of length 8 composed of 'p', 'e', 'w' and '!'.
-randString(10, '0');   	  // always returns '0's of length 10.
-
+randString(10, '0');      // always returns '0's of length 10.
 randString(rand(8, 10));  // returns a random string with length between 8 and 10.
 ```
 
