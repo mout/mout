@@ -50,7 +50,7 @@ var base = {
     }
 };
 
-var myObj = createObject(base, {
+var myObject = createObject(base, {
     name : 'Lorem Ipsum'
 });
 
