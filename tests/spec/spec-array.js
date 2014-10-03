@@ -41,6 +41,7 @@ define([
     './array/spec-sort',
     './array/spec-sortBy',
     './array/spec-split',
+    './array/spec-take',
     './array/spec-toLookup',
     './array/spec-union',
     './array/spec-unique',
