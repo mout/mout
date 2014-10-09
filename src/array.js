@@ -43,6 +43,7 @@ return {
     'sort' : require('./array/sort'),
     'sortBy' : require('./array/sortBy'),
     'split' : require('./array/split'),
+    'take' : require('./array/take'),
     'toLookup' : require('./array/toLookup'),
     'union' : require('./array/union'),
     'unique' : require('./array/unique'),
