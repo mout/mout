@@ -855,6 +855,21 @@ split([1, 2], 3) // [ [1], [2] ]
 
 
 
+## take(times, callback, [thisObj]):Array
+
+Builds a new array based on the returned values from the given `callback`.
+
+```js
+take(4, function(i, total) {
+    return i / total;
+});
+// > [0, 0.25, 0.5, 0.75]
+```
+
+see: [function/times](../function.html#times)
+
+
+
 ## toLookup(arr, key):Object
 
 Create an object that indexes the items in the array by a key. If `key` is a function, the key for each value in the resulting object will be the result of calling the function with the value as an argument. Otherwise `key` specifies the property on each value to use as the key.
