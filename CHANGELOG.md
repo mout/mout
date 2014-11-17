@@ -1,8 +1,8 @@
 mout changelog
 ==============
 
-Next
-----
+v0.11.0 (2014/11/17)
+--------------------
 
  - add `array/take`;
  - remove unused variable from `date/totalDaysInMonth`;
