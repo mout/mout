@@ -1,6 +1,13 @@
 mout changelog
 ==============
 
+Next
+----
+
+ - add `array/take`;
+ - remove unused variable from `date/totalDaysInMonth`;
+ - fix case insensitive RegExp cloning on `lang/clone`;
+
 
 v0.10.0 (2014/09/02)
 --------------------
