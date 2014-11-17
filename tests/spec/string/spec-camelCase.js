@@ -40,5 +40,27 @@ define(['mout/string/camelCase'], function (camelCase) {
             expect( camelCase(void 0) ).toBe('');
         });
 
+        it('should work with UPPER_CASE input', function() {
+            expect( camelCase('SOME_TEXT') ).toBe('someText');
+        });
+
+        it('should preserve camelCase input', function() {
+            expect( camelCase('loremIpsum') ).toBe('loremIpsum');
+        });
+
+        it('should preserve acronyms if string contains lowercase', function() {
+            expect( camelCase('XML HTTP request') ).toBe('xmlHTTPRequest');
+            expect( camelCase('XML HTTP Request') ).toBe('xmlHTTPRequest');
+            expect( camelCase('XML_HTTP_request') ).toBe('xmlHTTPRequest');
+            expect( camelCase('XML_HTTP_Request') ).toBe('xmlHTTPRequest');
+            expect( camelCase('XML-HTTP-request') ).toBe('xmlHTTPRequest');
+        });
+
+        it('should ignore acronyms if input is all uppercase', function() {
+            expect( camelCase('XML HTTP REQUEST') ).toBe('xmlHttpRequest');
+            expect( camelCase('XML_HTTP_REQUEST') ).toBe('xmlHttpRequest');
+            expect( camelCase('XML-HTTP-REQUEST') ).toBe('xmlHttpRequest');
+        });
+
     });
 });
