@@ -28,10 +28,13 @@ define(['mout/lang/clone'], function(clone) {
         });
 
         it('should clone RegExps', function() {
-            var src = /test/g;
+            var src = /test/gim;
             var result = clone(src);
             expect(result).not.toBe(src);
             expect(result).toEqual(src);
+            expect(result.ignoreCase).toEqual(true);
+            expect(result.multiline).toEqual(true);
+            expect(result.global).toEqual(true);
         });
 
         it('should clone Dates', function() {
