@@ -30,7 +30,7 @@ define(['./kindOf', './isPlainObject', '../object/mixIn'], function (kindOf, isP
         var flags = '';
         flags += r.multiline ? 'm' : '';
         flags += r.global ? 'g' : '';
-        flags += r.ignorecase ? 'i' : '';
+        flags += r.ignoreCase ? 'i' : '';
         return new RegExp(r.source, flags);
     }
 
