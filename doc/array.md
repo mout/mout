@@ -388,6 +388,27 @@ more info at [MDN Array#indexOf](https://developer.mozilla.org/en/JavaScript/Ref
 
 
 
+## indicesOf(arr, item, [fromIndex]):Number
+
+Returns an array of indices where `item` is found in the array.
+
+Like `array/indexOf` it does loop over sparse items in the array. The optional
+`fromIndex` parameter can limit the scope, the same way as it does in indexOf.
+
+```js
+var items = ['lorem', 'ipsum', 'foo', 'ipsum', 'ipsum'];
+
+indicesOf(items, 'ipsum');
+// > [1, 3, 4]
+
+indicesOf(items, 'ipsum', 1);
+// > [3, 4]
+```
+
+
+
+
+
 ## insert(arr, ...items):Number
 
 Push items into array only if they aren't contained by it. Returns the new

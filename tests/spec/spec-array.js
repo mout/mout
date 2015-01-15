@@ -18,6 +18,7 @@ define([
     './array/spec-forEach',
     './array/spec-groupBy',
     './array/spec-indexOf',
+    './array/spec-indicesOf',
     './array/spec-insert',
     './array/spec-intersection',
     './array/spec-invoke',
