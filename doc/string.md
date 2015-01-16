@@ -452,6 +452,23 @@ slugify(str); // "loremipsum-dolor-special-chars"
 slugify(str, '_'); // "loremipsum_dolor_special_chars"
 ```
 
+## stripMargin(str[, marginChar]):String
+
+Strip leading characters followed by 'marginChar' from every line in a String.
+The default margin character is a pipe.
+
+### Example
+
+```js
+var str = 'this\n';
+str += '  |is a formatted\n';
+str += '  |string';
+
+
+stripMargin(str); //"this\nis a formatted\nstring"
+stripMargin("this\n___#works\n___#too", '#'); //"this\nworks\ntoo"
+
+```
 
 
 ## trim(str, [chars]):String
@@ -550,7 +567,7 @@ underscore('loremIpsum');                  // "lorem_ipsum"
 
 ## unescapeHtml(str):String
 
-Unescapes the following HTML character references back into the raw symbol they map to: 
+Unescapes the following HTML character references back into the raw symbol they map to:
 
 * `&amp;` becomes `&`
 * `&lt;` becomes `<`
@@ -623,4 +640,3 @@ characters](http://en.wikipedia.org/wiki/Whitespace_character).
 
 For more usage examples check specs inside `/tests` folder. Unit tests are the
 best documentation you can get...
-

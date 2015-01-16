@@ -32,6 +32,7 @@ return {
     'slugify' : require('./string/slugify'),
     'startsWith' : require('./string/startsWith'),
     'stripHtmlTags' : require('./string/stripHtmlTags'),
+    'stripMargin' : require('./string/stripMargin'),
     'trim' : require('./string/trim'),
     'truncate' : require('./string/truncate'),
     'typecast' : require('./string/typecast'),
