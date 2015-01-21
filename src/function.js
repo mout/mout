@@ -11,6 +11,7 @@ return {
     'func' : require('./function/func'),
     'identity' : require('./function/identity'),
     'makeIterator_' : require('./function/makeIterator_'),
+    'memoize' : require('./function/memoize'),
     'partial' : require('./function/partial'),
     'prop' : require('./function/prop'),
     'series' : require('./function/series'),
