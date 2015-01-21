@@ -6,7 +6,7 @@ define(['../lang/isFunction', '../object/hasOwn'], function(isFunction, hasOwn){
      * arguments provided to the memoized function. By default, the first argument
      * provided to the memoized function is coerced to a string and used as the
      * cache key. The `fn` is invoked with the `this` binding of the memoized
-     * function.
+     * function. Modified from lodash.
      *
      * @param {Function} fn Function to have its output memoized.
      * @param {Function} context Function to resolve the cache key.
