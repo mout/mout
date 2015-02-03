@@ -19,7 +19,7 @@ the images take 1500 milliseconds to load, it will trigger `onLoaded`
 immediately.
 
 ```js
-var callback = after(onLoaded, 1000);
+var callback = awaitDelay(onLoaded, 1000);
 loadImages(callback);
 function onLoaded(){
     console.log('loaded');
