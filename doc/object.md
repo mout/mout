@@ -208,7 +208,7 @@ var obj = {
 };
 
 // returns { bar: 'bar value' }
-filter(obj, function(v) { return value.length > 5; });
+filter(obj, function(v) { return v.length > 5; });
 
 // returns { foo: 'value' }
 filter(obj, function(v, k) { return k === 'foo'; });
