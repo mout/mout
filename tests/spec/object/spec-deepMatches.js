@@ -61,6 +61,22 @@ define(['mout/object/deepMatches'], function(deepMatches){
             expect( deepMatches(obj, { a: { length: 2 } }) ).toBe(true);
         });
 
+        it('should not match objects against primitives', function() {
+           var actual = { prop: {} };
+           var shouldMatch = { prop: 42 };
+           expect( deepMatches(actual, shouldMatch) ).toBe(false);
+        });
+
+        it('should not match against undefined', function() {
+           var obj = { prop: {} };
+           expect( deepMatches(obj, undefined) ).toBe(false);
+        });
+
+        it('should not match if prop is undefined', function() {
+           var obj = { prop: {} };
+           expect( deepMatches(obj, { prop: undefined }) ).toBe(false);
+        });
+
     });
 
 });
