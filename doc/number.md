@@ -25,9 +25,9 @@ You can set the amount of decimal digits (default is `1`):
 You can customize the abbreviation by passing a custom "dictionary":
 
     var _ptbrDict = {
-        thousands : ' mil',
-        millions : ' Mi',
-        billions : ' Bi'
+        thousand: ' mil',
+        million: ' Mi',
+        billion: ' Bi'
     };
     function customAbbr(val) {
         return abbreviate(val, 1, _ptbrDict);
