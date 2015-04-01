@@ -7,6 +7,7 @@ define([
     './array/spec-compact',
     './array/spec-contains',
     './array/spec-difference',
+    './array/spec-empty',
     './array/spec-equals',
     './array/spec-every',
     './array/spec-filter',
