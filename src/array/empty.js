@@ -11,9 +11,7 @@ define(['../lang/isArray'], function(isArray) {
             return [];
         }
 
-        for (i = 0, len = array.length; i < len; i++) {
-            array.pop();
-        }
+        array.length = 0;
 
         return array;
     }
