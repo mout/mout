@@ -5,9 +5,7 @@ define(['../lang/isArray', './append'], function (isArray, append) {
      * Used to remove the need to create intermediate arrays while flattening.
      */
     function flattenTo(arr, result, level) {
-        if (arr == null) {
-            return result;
-        } else if (level === 0) {
+        if (level === 0) {
             append(result, arr);
             return result;
         }
@@ -29,10 +27,14 @@ define(['../lang/isArray', './append'], function (isArray, append) {
     /**
      * Recursively flattens an array.
      * A new array containing all the elements is returned.
-     * If `shallow` is true, it will only flatten one level.
+     * If level is specified, it will only flatten up to that level.
      */
     function flatten(arr, level) {
-        level = level == null? -1 : level;
+        if (arr == null) {
+            return [];
+        }
+
+        level = level == null ? -1 : level;
         return flattenTo(arr, [], level);
     }
 
