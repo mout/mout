@@ -1,23 +1,20 @@
-define(['../lang/isPlainObject', './mixIn'], function (isPlainObject, mixIn) {
+define(['./forOwn', '../lang/isPlainObject'], function (forOwn, isPlainObject) {
 
     /*
      * Helper function to flatten to a destination object.
      * Used to remove the need to create intermediate objects while flattening.
      */
     function flattenTo(obj, result, prefix, level) {
-        var key,
-            value,
-            nestedPrefix;
-        for (key in obj) {
-            value = obj[key];
-            nestedPrefix = prefix ? prefix + '.' + key : key;
+        forOwn(obj, function (value, key) {
+            var nestedPrefix = prefix ? prefix + '.' + key : key;
 
             if (level !== 0 && isPlainObject(value)) {
                 flattenTo(value, result, nestedPrefix, level - 1);
             } else {
                 result[nestedPrefix] = value;
             }
-        }
+        });
+
         return result;
     }
 

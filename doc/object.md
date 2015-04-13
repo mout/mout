@@ -238,6 +238,7 @@ find(obj, isNumber); // 12
 
 Recursively flattens an object. A new object containing all the values is
 returned. If `level` is specified, it will only flatten up to that level.
+Note that objects within arrays will not be flattened.
 
 ### Example
 
@@ -248,6 +249,7 @@ flatten({ a: 1, b: { c: 2, d: { e: 3 } } }, 1);
 // > { a: 1, 'b.c': 2, 'b.d': { e: 3 } }
 ```
 
+See: [`array/flatten()`](./array.html#flatten)
 
 
 ## forIn(obj, callback[, thisObj])

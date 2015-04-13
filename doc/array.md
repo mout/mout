@@ -325,6 +325,7 @@ See: [find()](#find), [findIndex()](#findIndex)
 
 Recursively flattens an array. A new array containing all the elements is
 returned. If `level` is specified, it will only flatten up to that level.
+Note that arrays within objects will not be flattened.
 
 ### Example
 
@@ -335,6 +336,7 @@ flatten([1, [2], [3, [4, 5]]], 1);
 // > [1, 2, 3, [4, 5]]
 ```
 
+See: [`object/flatten()`](./object.html#flatten)
 
 
 ## forEach(arr, callback, [thisObj]):void
