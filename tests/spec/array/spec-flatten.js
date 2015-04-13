@@ -26,6 +26,14 @@ define(['mout/array/flatten'], function (flatten) {
             expect(result).toEqual([1, 2, 3, 4, [5, 6]]);
         });
 
+        it('should not mess with objects within arrays', function () {
+            var arr = [1, { a: [2, [3]] }],
+                result;
+
+            result = flatten(arr);
+            expect(result).toEqual([1, { a: [2, [3]] }]);
+        });
+
         it('should return empty array when source array is null/undefined', function () {
             expect( flatten(null) ).toEqual( [] );
             expect( flatten(undefined) ).toEqual( [] );

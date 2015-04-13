@@ -13,6 +13,7 @@ return {
     'fillIn' : require('./object/fillIn'),
     'filter' : require('./object/filter'),
     'find' : require('./object/find'),
+    'flatten' : require('./object/flatten'),
     'forIn' : require('./object/forIn'),
     'forOwn' : require('./object/forOwn'),
     'functions' : require('./object/functions'),
