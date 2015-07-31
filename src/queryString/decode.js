@@ -1,31 +1,30 @@
-define(['../string/typecast', '../lang/isString', '../lang/isArray', '../object/hasOwn'], function (typecast, isString, isArray, hasOwn) {
+define(['../string/typecast', '../lang/isArray', '../object/hasOwn'], function (typecast, isArray, hasOwn) {
 
     /**
      * Decode query string into an object of keys => vals.
      */
     function decode(queryStr, shouldTypecast) {
         var queryArr = (queryStr || '').replace('?', '').split('&'),
-            count = -1,
-            length = queryArr.length,
+            reg = /([^=]+)=(.+)/,
+            i = -1,
             obj = {},
-            item, pValue, pName, toSet;
+            equalIndex, cur, pValue, pName;
 
-        while (++count < length) {
-            item = queryArr[count].split('=');
-            pName = item[0];
-            if (!pName || !pName.length){
-                continue;
+        while ((cur = queryArr[++i])) {
+            equalIndex = cur.indexOf('=');
+            pName = cur.substring(0, equalIndex);
+            pValue = decodeURIComponent(cur.substring(equalIndex + 1));
+            if (shouldTypecast !== false) {
+                pValue = typecast(pValue);
             }
-            pValue = shouldTypecast === false ? item[1] : typecast(item[1]);
-            toSet = isString(pValue) ? decodeURIComponent(pValue) : pValue;
-            if (hasOwn(obj,pName)){
+            if (hasOwn(obj, pName)){
                 if(isArray(obj[pName])){
-                    obj[pName].push(toSet);
+                    obj[pName].push(pValue);
                 } else {
-                    obj[pName] = [obj[pName],toSet];
+                    obj[pName] = [obj[pName], pValue];
                 }
             } else {
-                obj[pName] = toSet;
+                obj[pName] = pValue;
            }
         }
         return obj;

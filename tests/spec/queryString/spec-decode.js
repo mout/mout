@@ -33,5 +33,11 @@ define(['mout/queryString/decode'], function (decode) {
             expect( q.d ).toEqual( ['', '', 'spéçîãl çhârs'] );
         });
 
+        it('should allow equal signs inside property values', function() {
+            var q = decode('?lorem=ipsum=dolor==Xds&sit=amet');
+            expect( q.lorem ).toEqual( 'ipsum=dolor==Xds' );
+            expect( q.sit ).toEqual( 'amet' );
+        });
+
     });
 });
