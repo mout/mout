@@ -15,6 +15,6 @@ trim_trailing_whitespace = true
 ; The default indent on package.json is 2 spaces, better to keep it so we can
 ; use `npm install --save` and other features that rewrites the package.json
 ; file automatically
-[package.json]
+[{bower,package}.json]
 indent_style = space
 indent_size = 2
