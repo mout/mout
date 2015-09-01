@@ -1,8 +1,7 @@
 {
-  "name": "mout",
-  "description": "Modular Utilities",
-  "version": "0.11.0",
-  "homepage": "http://moutjs.com/",
+  "bugs": {
+    "url": "https://github.com/mout/mout/issues"
+  },
   "contributors": [
     "Adam Nowotny",
     "André Cruz <amdfcruz@gmail.com>",
@@ -14,45 +13,43 @@
     "Mathias Paumgarten <mail@mathias-paumgarten.com>",
     "Zach Shipley"
   ],
-  "keywords": [
-    "utilities",
-    "functional",
-    "amd-utils",
-    "stdlib"
+  "description": "Modular Utilities",
+  "devDependencies": {
+    "commander": "~1.0.5",
+    "handlebars": "~1.0.6",
+    "istanbul": "~0.1.27",
+    "jasmine-node": "~1.14.5",
+    "jshint": "2.x",
+    "mdoc": "~0.3.2",
+    "nodefy": "*",
+    "regenerate": "~0.5.4",
+    "requirejs": "2.x",
+    "rimraf": "2.2.2",
+    "rocambole": "~0.2.3"
+  },
+  "directories": {
+    "doc": "doc/"
+  },
+  "files": [
+    "src/**/*.js"
   ],
+  "homepage": "http://moutjs.com",
+  "keywords": [
+    "amd-utils",
+    "functional",
+    "stdlib",
+    "utilities"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "name": "mout",
   "repository": {
     "type": "git",
     "url": "git://github.com/mout/mout.git"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/mit-license.php"
-    }
-  ],
-  "bugs": {
-    "url": "https://github.com/mout/mout/issues/"
-  },
-  "main": "./index.js",
   "scripts": {
     "pretest": "node build pkg",
     "test": "istanbul test tests/runner.js --hook-run-in-context"
-  },
-  "directories": {
-    "doc": "./doc"
-  },
-  "devDependencies": {
-    "istanbul": "~0.1.27",
-    "jasmine-node": "~1.14.5",
-    "requirejs": "2.x",
-    "nodefy": "*",
-    "mdoc": "~0.3.2",
-    "handlebars": "~1.0.6",
-    "commander": "~1.0.5",
-    "rocambole": "~0.2.3",
-    "jshint": "2.x",
-    "rimraf": "2.2.2",
-    "regenerate": "~0.5.4"
   },
   "testling": {
     "preprocess": "node build testling",
@@ -95,5 +92,6 @@
       "tests/testling/specs.js",
       "tests/runner.js"
     ]
-  }
+  },
+  "version": "0.11.0"
 }
