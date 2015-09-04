@@ -31,7 +31,10 @@
     "doc": "doc/"
   },
   "files": [
-    "src/**/*.js"
+    "**/*.js",
+    "!{_build,tests}/",
+    "!build.js",
+    "doc/"
   ],
   "homepage": "http://moutjs.com",
   "keywords": [
@@ -41,7 +44,7 @@
     "utilities"
   ],
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "index.js",
   "name": "mout",
   "repository": {
     "type": "git",
