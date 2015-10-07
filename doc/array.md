@@ -698,6 +698,21 @@ removeAll(foo, 2);
 console.log(foo); // [1, 3, 4];
 ```
 
+## reverse(arr):void
+
+Returns a copy of the array with all elements in reversed order.
+
+### Example
+
+```js
+var foo = [1, 2, 3, 4, 5];
+var bar = reverse(foo);
+console.log(bar); // [5, 4, 3, 2, 1];
+
+console.log(foo); // [1, 2, 3, 4, 5];
+```
+
+
 
 
 ## shuffle(arr):Array
