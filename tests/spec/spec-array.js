@@ -35,6 +35,7 @@ define([
     './array/spec-reject',
     './array/spec-remove',
     './array/spec-removeAll',
+    './array/spec-reverse',
     './array/spec-shuffle',
     './array/spec-slice',
     './array/spec-some',
