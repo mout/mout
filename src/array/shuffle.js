@@ -10,7 +10,7 @@ define(['../random/randInt'], function (randInt) {
             return results;
         }
 
-        var i = -1, len = arr.length, value;
+        var i = -1, len = arr.length;
         while (++i < len) {
             if (!i) {
                 results[0] = arr[0];
