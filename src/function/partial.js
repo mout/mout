@@ -1,22 +1,28 @@
-define(['../array/slice'], function (slice) {
+define(['../array/indexOf', '../array/slice', '../array/take'], function (indexOf, slice, take) {
+
+    var _ = {};
 
     /**
      * Creates a partially applied function.
      */
     function partial(f) {
         var as = slice(arguments, 1);
+        var has_ = indexOf(as, _) !== -1;
+
         return function() {
-            var args = as.concat(slice(arguments));
-            for (var i = args.length; i--;) {
-                if (args[i] === partial._) {
-                    args[i] = args.splice(-1)[0];
-                }
-            }
-            return f.apply(this, args);
+            var rest = slice(arguments);
+
+            // Don't waste time checking for placeholders if there aren't any.
+            var args = has_ ? take(as.length, function(i) {
+                var a = as[i];
+                return a === _ ? rest.shift() : a;
+            }) : as;
+
+            return f.apply(this, rest.length ? args.concat(rest) : args);
         };
     }
 
-    partial._ = {};
+    partial._ = _;
 
     return partial;
 
