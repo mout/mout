@@ -13,8 +13,8 @@ return {
     'loop' : require('./math/loop'),
     'map' : require('./math/map'),
     'norm' : require('./math/norm'),
-    'round' : require('./math/round'),
-    'wrap' : require('./math/wrap')
+    'overflow' : require('./math/overflow'),
+    'round' : require('./math/round')
 };
 
 });

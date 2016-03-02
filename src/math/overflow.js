@@ -3,7 +3,7 @@ define(function () {
     /**
      * Wraps number within bounds both positive and negative
      */
-    function wrap(number, min, max){
+    function overflow(number, min, max){
         if ( max === undefined ) {
             max = min;
             min = 0;
@@ -17,6 +17,6 @@ define(function () {
         return number;
     }
 
-    return wrap;
+    return overflow;
 
 });
