@@ -17,7 +17,8 @@ var callback = after(onLoaded, imagePaths.length);
 
 forEach(imagePaths, function(path) {
     asyncLoad(path, callback);
-})
+});
+```
 
 ## awaitDelay(fn, delay):Function
 
