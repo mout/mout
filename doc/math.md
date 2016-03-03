@@ -268,6 +268,20 @@ opposite of [`lerp()`](#lerp).
 See: [`lerp()`](#lerp), [`map()`](#map)
 
 
+## overflow(val[, min], max):Number
+
+Wraps number within [min, max). When no `min` is given, the value `0` is assumed.
+A number larger or equal `max` loops around and starts over at `min`. For positive numbers larger
+or equal max this method behaves identical to the modulo operator.
+Numbers smaller than min loop around and start over at `max`.
+
+    overflow(13, 5, 10); // 8
+    overflow(3, 5, 10); // 8
+    overflow(23, 5); // 3
+    overflow(-10, -7, -1); // -4
+
+See: [`loop()`](#loop)
+
 
 ## round(val[, step]):Number
 
@@ -294,7 +308,6 @@ arbitrary *radix*.
 Round values by increments of 0.5/5/10/1000/etc.
 
 See: [`floor()`](#floor), [`ceil()`](#ceil), [`countSteps()`](#countSteps)
-
 
 
 -------------------------------------------------------------------------------

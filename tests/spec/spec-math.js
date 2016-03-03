@@ -11,6 +11,7 @@ define([
     './math/spec-loop',
     './math/spec-map',
     './math/spec-norm',
+    './math/spec-overflow',
     './math/spec-round'
 ], function(){
     //noop
