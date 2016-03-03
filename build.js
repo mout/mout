@@ -64,7 +64,7 @@ if (!_cli.args.length) {
 
 // just a helper to run multiple commands in sequence and process global
 // options before executing them.
-function cmd(var_args){
+function cmd(){
     var fns = Array.prototype.slice.call(arguments);
     return function(){
         if (_cli.silent) {
@@ -273,7 +273,7 @@ function generateTestBundle(){
 function prune(){
     var ls = _helpers.getFolderStructure('./src');
     var rimraf = require('rimraf');
-    ls.folders.map(_path.basename).forEach(rimraf.sync);
-    ls.files.map(_path.basename).forEach(rimraf.sync);
+    ls.folders.map( line => _path.basename( line ) ).forEach(rimraf.sync);
+    ls.files.map( line => _path.basename( line ) ).forEach(rimraf.sync);
 }
 
