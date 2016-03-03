@@ -1,8 +1,9 @@
 {
   "name": "mout",
   "description": "Modular Utilities",
-  "version": "0.11.1",
+  "version": "0.12.0",
   "homepage": "http://moutjs.com/",
+  "author": "Miller Medeiros <contact@millermedeiros.com> (http://blog.millermedeiros.com)",
   "contributors": [
     "Adam Nowotny",
     "André Cruz <amdfcruz@gmail.com>",
@@ -10,7 +11,6 @@
     "Friedemann Altrock <frodenius@gmail.com>",
     "Igor Almeida <igor.p.almeida@gmail.com>",
     "Jarrod Overson (http://jarrodoverson.com)",
-    "Miller Medeiros <contact@millermedeiros.com> (http://blog.millermedeiros.com)",
     "Mathias Paumgarten <mail@mathias-paumgarten.com>",
     "Zach Shipley"
   ],
