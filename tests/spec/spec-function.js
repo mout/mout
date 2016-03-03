@@ -9,6 +9,7 @@ define([
     './function/spec-func',
     './function/spec-identity',
     './function/spec-makeIterator_',
+    './function/spec-memoize',
     './function/spec-partial',
     './function/spec-prop',
     './function/spec-series',
