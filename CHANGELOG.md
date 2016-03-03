@@ -1,6 +1,18 @@
 mout changelog
 ==============
 
+v0.12.0 (2016/03/03)
+--------------------
+ - add `array/indicesOf`
+ - add `function/memoize`
+ - add `array/reverse`
+ - add `math/overflow`
+ - fix `query/getQuery`
+ - fix `object/deepMatches`
+ - optimize `function/partial`
+ - updates license
+
+
 v0.11.0 (2014/11/17)
 --------------------
 
