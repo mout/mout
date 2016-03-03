@@ -20,6 +20,7 @@ return {
     'forEach' : require('./array/forEach'),
     'groupBy' : require('./array/groupBy'),
     'indexOf' : require('./array/indexOf'),
+    'indicesOf' : require('./array/indicesOf'),
     'insert' : require('./array/insert'),
     'intersection' : require('./array/intersection'),
     'invoke' : require('./array/invoke'),
