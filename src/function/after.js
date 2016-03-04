@@ -4,10 +4,8 @@ define(function () {
      * Calls closure only after callback is called x times
      */
     function after(closure, times){
-        var count = 0;
-
         return function () {
-            if (++count >= times) closure();
+            if (--times <= 0) closure();
         };
     }
 
