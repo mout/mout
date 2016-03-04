@@ -220,7 +220,7 @@ random(); // 1
 ```
 
 See this [detailed explanation about PRNG in
-JavaScript](http://baagoe.org/en/w/index.php/Better_random_numbers_for_javascript)
+JavaScript](https://github.com/nquinlan/better-random-numbers-for-javascript-mirror)
 to understand the issues with the native `Math.random` and also for a list of
 algorithms that could be used instead.
 
