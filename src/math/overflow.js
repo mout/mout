@@ -11,10 +11,11 @@ define(function () {
 
         var difference = max - min;
 
-        while( number >= max ) number -= difference;
-        while( number < min ) number += difference;
+        if ( number < min ) {
+            number += difference * ( ~~( ( min - number ) / difference ) + 1 );
+        }
 
-        return number;
+        return min + ( number - min ) % difference;
     }
 
     return overflow;
