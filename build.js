@@ -273,7 +273,7 @@ function generateTestBundle(){
 function prune(){
     var ls = _helpers.getFolderStructure('./src');
     var rimraf = require('rimraf');
-    ls.folders.map( line => _path.basename( line ) ).forEach(rimraf.sync);
-    ls.files.map( line => _path.basename( line ) ).forEach(rimraf.sync);
+    ls.folders.map( function( line ) { return  _path.basename( line ); } ).forEach(rimraf.sync);
+    ls.files.map( function( line ) { return _path.basename( line ); } ).forEach(rimraf.sync);
 }
 
