@@ -2,6 +2,23 @@
 
 Function*(al)* utilities.
 
+## after(fn, n):Function
+
+This creates a function that will only call `fn` if it was called `n` or more times.
+
+
+```js
+function onLoaded() {
+    console.log('all images loaded');
+}
+
+var imagePaths = ['1.jpg', '2.jpg', '3.jpg'];
+var callback = after(onLoaded, imagePaths.length);
+
+forEach(imagePaths, function(path) {
+    asyncLoad(path, callback);
+});
+```
 
 ## awaitDelay(fn, delay):Function
 
