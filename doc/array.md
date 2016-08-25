@@ -188,10 +188,10 @@ var users = [
     {name:'jane', surname:'doe', beard:false}
 ];
 // filter item that matches all properties/values pairs
-filter(arr, {name:'john', beard:false});
+filter(users, {name:'john', beard:false});
 // > [{name:'john', surnname:'connor', beard:false}]
 // items where 'beard' is a truthy value
-filter(arr, 'beard');
+filter(users, 'beard');
 // > [{name:'john', surnname:'doe', beard:true}]
 ```
 
@@ -219,9 +219,9 @@ var users = [
     {name:'john', surname:'doe', beard:true}
 ];
 // first item that matches all properties/values pairs
-find(arr, {name:'john'}); // {name:'john', surnname:'connor', beard:false}
+find(users, {name:'john'}); // {name:'john', surnname:'connor', beard:false}
 // first item where 'beard' is a truthy value
-find(arr, 'beard'); // {name:'john', surnname:'doe', beard:true}
+find(users, 'beard'); // {name:'john', surnname:'doe', beard:true}
 ```
 
 See: [findIndex()](#findIndex), [findLast()](#findLast),
@@ -249,9 +249,9 @@ var users = [
     {name:'john', surname:'doe', beard:true}
 ];
 // last item that matches all properties/values pairs
-findLast(arr, {name:'john'}); // {name:'john', surnname:'doe', beard:true}
+findLast(users, {name:'john'}); // {name:'john', surnname:'doe', beard:true}
 // last item where 'beard' is a truthy value
-findLast(arr, 'beard'); // {name:'john', surnname:'doe', beard:true}
+findLast(users, 'beard'); // {name:'john', surnname:'doe', beard:true}
 ```
 
 See: [find()](#find), [findIndex()](#findIndex),
