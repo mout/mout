@@ -1,15 +1,7 @@
-define(['./filter', '../function/makeIterator_'], function (filter, makeIterator) {
+define(['./make_', '../array/reject', '../object/reject'], function (make, arrReject, objReject) {
 
     /**
-     * Inverse or collection/filter
      */
-    function reject(list, iterator, thisObj) {
-        iterator = makeIterator(iterator, thisObj);
-        return filter(list, function(value, index, list) {
-            return !iterator(value, index, list);
-        }, thisObj);
-    }
-
-    return reject;
+    return make(arrReject, objReject);
 
 });

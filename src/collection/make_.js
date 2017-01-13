@@ -1,16 +1,15 @@
-define(['../array/slice'], function(slice){
+define(['../lang/isInteger'], function(isInteger){
 
     /**
      * internal method used to create other collection modules.
      */
     function makeCollectionMethod(arrMethod, objMethod, defaultReturn) {
-        return function(){
-            var args = slice(arguments);
-            if (args[0] == null) {
+        return function(list){
+            if (list == null) {
                 return defaultReturn;
             }
             // array-like is treated as array
-            return (typeof args[0].length === 'number')? arrMethod.apply(null, args) : objMethod.apply(null, args);
+            return (isInteger(list.length))? arrMethod.apply(null, arguments) : objMethod.apply(null, arguments);
         };
     }
 

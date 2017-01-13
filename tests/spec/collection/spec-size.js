@@ -44,6 +44,14 @@ define(['mout/collection/size'], function(size){
             expect( size(undefined) ).toEqual( 0 );
         });
 
+        it('should return length for array like objects', function () {
+            expect( size({0: 'a', 1: 'b', length: 2}) ).toEqual( 2 );
+        });
+
+        it('should return the object length for invalid array like objects', function () {
+            expect( size({0: 'a', 1: 'b', length: NaN}) ).toEqual( 3 );
+        });
+
     });
 
 });

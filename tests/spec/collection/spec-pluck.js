@@ -40,8 +40,8 @@ define(['mout/collection/pluck'], function(pluck){
                 }
             };
 
-            expect( pluck(users, 'name') ).toEqual( ['John', 'Mary', 'Jane'] );
-            expect( pluck(users, 'age') ).toEqual( [21, 25, 27] );
+            expect( pluck(users, 'name') ).toEqual( {first: 'John', second: 'Mary', third: 'Jane'} );
+            expect( pluck(users, 'age') ).toEqual( {first: 21, second: 25, third: 27} );
 
         });
 

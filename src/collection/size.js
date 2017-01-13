@@ -1,4 +1,4 @@
-define(['../lang/isArray', '../object/size'], function (isArray, objSize) {
+define(['../object/size', '../lang/isInteger'], function (objSize, isInteger) {
 
     /**
      * Get collection size
@@ -7,7 +7,7 @@ define(['../lang/isArray', '../object/size'], function (isArray, objSize) {
         if (!list) {
             return 0;
         }
-        if (isArray(list)) {
+        if (isInteger(list.length)) {
             return list.length;
         }
         return objSize(list);
