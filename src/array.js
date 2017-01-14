@@ -39,6 +39,7 @@ return {
     'remove' : require('./array/remove'),
     'removeAll' : require('./array/removeAll'),
     'reverse' : require('./array/reverse'),
+    'setFields' : require('./array/setFields'),
     'shuffle' : require('./array/shuffle'),
     'slice' : require('./array/slice'),
     'some' : require('./array/some'),
