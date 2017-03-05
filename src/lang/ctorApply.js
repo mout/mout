@@ -1,15 +1,13 @@
 define(function () {
 
-    function F(){}
+    var bind = Function.protype.bind;
 
     /**
      * Do fn.apply on a constructor.
      */
     function ctorApply(ctor, args) {
-        F.prototype = ctor.prototype;
-        var instance = new F();
-        ctor.apply(instance, args);
-        return instance;
+        var bound = bind.bind(ctor, undefined).apply(undefined, args);
+        return new bound();
     }
 
     return ctorApply;
