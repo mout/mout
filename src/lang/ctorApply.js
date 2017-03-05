@@ -1,6 +1,6 @@
 define(function () {
 
-    var bind = Function.protype.bind;
+    var bind = Function.prototype.bind;
 
     /**
      * Do fn.apply on a constructor.
