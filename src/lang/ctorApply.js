@@ -6,8 +6,8 @@ define(function () {
      * Do fn.apply on a constructor.
      */
     function ctorApply(ctor, args) {
-        var bound = bind.bind(ctor, undefined).apply(undefined, args);
-        return new bound();
+        var Bound = bind.bind(ctor, undefined).apply(undefined, args);
+        return new Bound();
     }
 
     return ctorApply;
