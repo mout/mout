@@ -30,6 +30,7 @@ return {
     'isRegExp' : require('./lang/isRegExp'),
     'isString' : require('./lang/isString'),
     'isUndefined' : require('./lang/isUndefined'),
+    'isWindow' : require('./lang/isWindow'),
     'isnt' : require('./lang/isnt'),
     'kindOf' : require('./lang/kindOf'),
     'toArray' : require('./lang/toArray'),

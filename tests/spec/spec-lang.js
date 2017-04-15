@@ -28,6 +28,7 @@ define([
     './lang/spec-isRegExp',
     './lang/spec-isString',
     './lang/spec-isUndefined',
+    './lang/spec-isWindow',
     './lang/spec-isnt',
     './lang/spec-kindOf',
     './lang/spec-toArray',
