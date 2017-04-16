@@ -104,6 +104,18 @@ var b = ['c', 1];
 difference(a, b); // ['a', 'b']
 ```
 
+## empty(arr):Array
+
+Empties the array. Will modify the passed array instead of returning a new one.
+If value passed is not an array it will return an empty array.
+
+```js
+var arr = [1 ,2 ,3];
+var result = empty(arr);
+
+result === arr; // true
+```
+
 
 ## equals(a, b, [compare]):Boolean
 
