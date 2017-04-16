@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/mout/mout/issues/"
   },
-  "main": "./index.js",
+  "main": "./src/index.js",
   "scripts": {
     "pretest": "node build pkg",
     "test": "istanbul test tests/runner.js --hook-run-in-context"
