@@ -1,8 +1,7 @@
  language: node_js
  node_js:
-   - "iojs"
-   - "0.10"
-   - "0.12"
+   - "8.0" # current
+   - "6.0" # stable
  script:
    - "npm test --coverage"
    - "jshint src"
