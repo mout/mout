@@ -1,6 +1,12 @@
 mout changelog
 ==============
 
+v1.1.0 (2017/10/04)
+--------------------
+ - update dependencies
+ - optimize `function/bind`
+ - optimize `lang/kindOf`
+
 v0.12.0 (2016/03/03)
 --------------------
  - add `array/indicesOf`
