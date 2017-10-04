@@ -1,7 +1,7 @@
 {
   "name": "mout",
   "description": "Modular Utilities",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "homepage": "http://moutjs.com/",
   "author": "Miller Medeiros <contact@millermedeiros.com> (http://blog.millermedeiros.com)",
   "contributors": [
@@ -37,17 +37,17 @@
     "doc": "./doc"
   },
   "devDependencies": {
-    "istanbul": "~0.1.27",
+    "istanbul": "~0.4.5",
     "jasmine-node": "~1.14.5",
-    "requirejs": "~2.2.0",
+    "requirejs": "~2.3.5",
     "nodefy": "*",
-    "mdoc": "~0.3.2",
+    "mdoc": "~0.5.3",
     "handlebars": "~1.0.6",
-    "commander": "~1.0.5",
-    "rocambole": "~0.2.3",
+    "commander": "~2.11.0",
+    "rocambole": "~0.7.0",
     "jshint": "~2.9.1",
-    "rimraf": "~2.5.2",
-    "regenerate": "~0.5.4"
+    "rimraf": "~2.6.2",
+    "regenerate": "~1.3.3"
   },
   "testling": {
     "preprocess": "node build testling",
