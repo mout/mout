@@ -37,6 +37,7 @@ define([
     './array/spec-remove',
     './array/spec-removeAll',
     './array/spec-reverse',
+    './array/spec-setFields',
     './array/spec-shuffle',
     './array/spec-slice',
     './array/spec-some',

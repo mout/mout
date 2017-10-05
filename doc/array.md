@@ -735,6 +735,18 @@ console.log(foo); // [1, 2, 3, 4, 5];
 
 
 
+## setFields(arr, obj):Array
+
+Copies properties from the given object into all objects from the array.
+
+### Example
+
+```js
+var arr = [{a: 1}, {b: 2}, 3, {}];
+setFields(arr, {a: 'value'}); // [{a: 'value'}, {a: 'value', b: 2}, 3, {a: 'value'}]
+```
+
+
 
 ## shuffle(arr):Array
 
