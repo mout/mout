@@ -363,7 +363,7 @@ functions(obj); // ['foo']
 ## get(obj, propName):*
 
 Returns nested property value. Will return `undefined` if property doesn't
-exist.
+exist or if the object is null or undefined.
 
 See: [`set()`](#set), [`namespace()`](#namespace), [`has()`](#has)
 
@@ -378,6 +378,7 @@ var lorem = {
 
 get(lorem, 'ipsum.dolor.sit'); // "amet"
 get(lorem, 'foo.bar');         // undefined
+get(undefined, 'foo.bar');     // undefined
 ```
 
 

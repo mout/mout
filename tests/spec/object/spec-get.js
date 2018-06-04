@@ -23,7 +23,7 @@ define(
                         lorem : function(){}
                     }
                 };
-                
+
                 foo.bar.lorem.ipsum = 'dolor'
 
                 expect( get(foo, 'bar.lorem.ipsum') ).toBe( 'dolor' );
@@ -58,8 +58,20 @@ define(
                 expect( get(foo, 'foo.bar.baz') ).toBe(undef);
             });
 
+            it('should return undefined for undefined input objects', function() {
+              var foo = undefined;
+
+              var undef;
+              expect( get(foo, 'bar.baz')).toBe(undef);
+            });
+
+            it('should return undefined for null input objects', function() {
+              var foo = null;
+
+              var undef;
+              expect( get(foo, 'bar.baz')).toBe(undef);
+            });
         });
 
     }
 );
-

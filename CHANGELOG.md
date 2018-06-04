@@ -1,5 +1,8 @@
 mout changelog
 ==============
+v1.1.1 (2018/06/04)
+--------------------
+ - fixed `object/get` throwing an exception for null or undefined input objects
 
 v1.1.0 (2017/10/04)
 --------------------
@@ -204,4 +207,3 @@ v0.1.0 (2013/01/09)
 -------------------
 
 - Rename project from "amd-utils" to "mout"
-
