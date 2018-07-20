@@ -1,12 +1,12 @@
 /**@license
- * mout v1.0.0 | http://moutjs.com | MIT license
+ * mout v1.1.0 | http://moutjs.com | MIT license
  */
 define(function(require){
 
 //automatically generated, do not edit!
 //run `node build` instead
 return {
-    'VERSION' : '1.0.0',
+    'VERSION' : '1.1.0',
     'array' : require('./array'),
     'collection' : require('./collection'),
     'date' : require('./date'),
