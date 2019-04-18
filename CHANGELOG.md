@@ -1,6 +1,6 @@
 mout changelog
 ==============
-v1.1.1 (2018/06/04)
+v1.1.1 (2019/04/18)
 --------------------
  - fixed `object/get` throwing an exception for null or undefined input objects
 
