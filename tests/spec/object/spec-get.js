@@ -62,14 +62,14 @@ define(
               var foo = undefined;
 
               var undef;
-              expect( get(foo, 'bar.baz')).toBe(undef);
+              expect( get(foo, 'bar.baz') ).toBe(undef);
             });
 
             it('should return undefined for null input objects', function() {
               var foo = null;
 
               var undef;
-              expect( get(foo, 'bar.baz')).toBe(undef);
+              expect( get(foo, 'bar.baz') ).toBe(undef);
             });
         });
 
