@@ -38,6 +38,7 @@ return {
     'reject' : require('./array/reject'),
     'remove' : require('./array/remove'),
     'removeAll' : require('./array/removeAll'),
+    'repeat' : require('./array/repeat'),
     'reverse' : require('./array/reverse'),
     'shuffle' : require('./array/shuffle'),
     'slice' : require('./array/slice'),
