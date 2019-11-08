@@ -30,6 +30,7 @@ define([
     './string/spec-slugify',
     './string/spec-startsWith',
     './string/spec-stripHtmlTags',
+    './string/spec-stripMargin',
     './string/spec-trim',
     './string/spec-truncate',
     './string/spec-typecast',
