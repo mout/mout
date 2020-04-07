@@ -1,4 +1,4 @@
-define(['mout/lang/toNumber'], function(toNumber){
+import toNumber from 'mout/lang/toNumber';
 
     describe('lang/toNumber', function(){
 
@@ -64,4 +64,4 @@ define(['mout/lang/toNumber'], function(toNumber){
 
     });
 
-});
+

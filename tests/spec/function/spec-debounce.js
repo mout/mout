@@ -1,4 +1,5 @@
-define(['mout/function/debounce', '../time/helper-mockNow'], function(debounce, mockNow){
+import debounce from 'mout/function/debounce';
+import mockNow from '../time/helper-mockNow';
 
     describe('function/debounce', function(){
 
@@ -95,4 +96,4 @@ define(['mout/function/debounce', '../time/helper-mockNow'], function(debounce, 
 
     });
 
-});
+

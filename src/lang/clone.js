@@ -1,4 +1,6 @@
-define(['./kindOf', './isPlainObject', '../object/mixIn'], function (kindOf, isPlainObject, mixIn) {
+import kindOf from './kindOf';
+import isPlainObject from './isPlainObject';
+import mixIn from '../object/mixIn';
 
     /**
      * Clone native types.
@@ -42,6 +44,6 @@ define(['./kindOf', './isPlainObject', '../object/mixIn'], function (kindOf, isP
         return arr.slice();
     }
 
-    return clone;
+    export default clone;
 
-});
+

@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Wraps number within bounds both positive and negative
@@ -18,6 +18,6 @@ define(function () {
         return min + ( number - min ) % difference;
     }
 
-    return overflow;
+    export default overflow;
 
-});
+

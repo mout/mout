@@ -1,4 +1,5 @@
-define(['../lang/toString', './trim'], function(toString, trim){
+import toString from '../lang/toString';
+import trim from './trim';
     /**
      * Limit number of chars.
      */
@@ -16,5 +17,5 @@ define(['../lang/toString', './trim'], function(toString, trim){
         str = onlyFullWords? str.substr(0, str.lastIndexOf(' ')) : trim(str);
         return str + append;
     }
-    return truncate;
-});
+    export default truncate;
+

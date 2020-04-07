@@ -1,4 +1,4 @@
-define(['mout/string/lowerCase'], function (lowerCase) {
+import lowerCase from 'mout/string/lowerCase';
 
     describe('string/lowerCase()', function(){
 
@@ -18,4 +18,4 @@ define(['mout/string/lowerCase'], function (lowerCase) {
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Returns "nth" of number (1 = "st", 2 = "nd", 3 = "rd", 4..10 = "th", ...)
@@ -20,6 +20,6 @@ define(function () {
         }
     }
 
-    return nth;
+    export default nth;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/array/equals'], function(equals){
+import equals from 'mout/array/equals';
 
     describe('array/equals', function(){
 
@@ -24,4 +24,4 @@ define(['mout/array/equals'], function(equals){
 
     });
 
-});
+

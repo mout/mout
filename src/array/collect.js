@@ -1,4 +1,5 @@
-define(['./append', '../function/makeIterator_'], function (append, makeIterator) {
+import append from './append';
+import makeIterator from '../function/makeIterator_';
 
     /**
      * Maps the items in the array and concatenates the result arrays.
@@ -21,6 +22,6 @@ define(['./append', '../function/makeIterator_'], function (append, makeIterator
         return results;
     }
 
-    return collect;
+    export default collect;
 
-});
+

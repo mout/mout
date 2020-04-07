@@ -1,4 +1,5 @@
-define(['mout/random/randInt', './helper-mockRandom'], function (randInt, mockRandom){
+import randInt from 'mout/random/randInt';
+import mockRandom from './helper-mockRandom';
 
     describe('random/randInt()', function(){
 
@@ -92,4 +93,4 @@ define(['mout/random/randInt', './helper-mockRandom'], function (randInt, mockRa
         });
 
     });
-});
+

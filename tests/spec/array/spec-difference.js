@@ -1,4 +1,4 @@
-define(['mout/array/difference'], function (difference) {
+import difference from 'mout/array/difference';
 
     describe('array/difference()', function () {
 
@@ -42,4 +42,4 @@ define(['mout/array/difference'], function (difference) {
 
     });
 
-});
+

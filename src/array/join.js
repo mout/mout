@@ -1,4 +1,4 @@
-define(['./filter'], function(filter) {
+import filter from './filter';
 
     function isValidString(val) {
         return (val != null && val !== '');
@@ -13,5 +13,5 @@ define(['./filter'], function(filter) {
         return filter(items, isValidString).join(separator);
     }
 
-    return join;
-});
+    export default join;
+

@@ -1,4 +1,4 @@
-define(['./indexOf'], function(indexOf){
+import indexOf from './indexOf';
 
     /**
      * Remove all instances of an item from array.
@@ -11,5 +11,5 @@ define(['./indexOf'], function(indexOf){
         }
     }
 
-    return removeAll;
-});
+    export default removeAll;
+

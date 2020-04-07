@@ -1,4 +1,4 @@
-define(['./timezoneOffset'], function(timezoneOffset) {
+import timezoneOffset from './timezoneOffset';
 
     /**
      * Abbreviated time zone name or similar information.
@@ -12,6 +12,6 @@ define(['./timezoneOffset'], function(timezoneOffset) {
         return tz? tz[1] : timezoneOffset(date);
     }
 
-    return timezoneAbbr;
+    export default timezoneAbbr;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/string/camelCase'], function (camelCase) {
+import camelCase from 'mout/string/camelCase';
 
     describe('string/camelCase()', function(){
 
@@ -63,4 +63,4 @@ define(['mout/string/camelCase'], function (camelCase) {
         });
 
     });
-});
+

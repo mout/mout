@@ -1,4 +1,4 @@
-define(['mout/math/countSteps'], function (countSteps) {
+import countSteps from 'mout/math/countSteps';
 
     describe('math/countSteps()', function(){
 
@@ -14,4 +14,4 @@ define(['mout/math/countSteps'], function (countSteps) {
         });
 
     });
-});
+

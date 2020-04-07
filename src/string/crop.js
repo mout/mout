@@ -1,4 +1,5 @@
-define(['../lang/toString', './truncate'], function (toString, truncate) {
+import toString from '../lang/toString';
+import truncate from './truncate';
     /**
      * Truncate string at full words.
      */
@@ -7,5 +8,5 @@ define(['../lang/toString', './truncate'], function (toString, truncate) {
          return truncate(str, maxChars, append, true);
      }
 
-     return crop;
-});
+     export default crop;
+

@@ -1,4 +1,5 @@
-define(['../array/min', './values'], function(arrMin, values) {
+import arrMin from '../array/min';
+import values from './values';
 
     /**
      * Returns minimum value inside object.
@@ -7,5 +8,5 @@ define(['../array/min', './values'], function(arrMin, values) {
         return arrMin(values(obj), iterator);
     }
 
-    return min;
-});
+    export default min;
+

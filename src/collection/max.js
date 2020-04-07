@@ -1,8 +1,10 @@
-define(['./make_', '../array/max', '../object/max'], function (make, arrMax, objMax) {
+import make from './make_';
+import arrMax from '../array/max';
+import objMax from '../object/max';
 
     /**
      * Get maximum value inside collection
      */
-    return make(arrMax, objMax);
+    export default make(arrMax, objMax);
 
-});
+

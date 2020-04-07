@@ -1,4 +1,4 @@
-define(['mout/string/unescapeHtml'], function (unescapeHtml) {
+import unescapeHtml from 'mout/string/unescapeHtml';
 
     describe('string/unescapeHtml()', function () {
 
@@ -36,5 +36,5 @@ define(['mout/string/unescapeHtml'], function (unescapeHtml) {
 
     });
 
-});
+
 

@@ -1,4 +1,4 @@
-define(['mout/array/invoke'], function(invoke){
+import invoke from 'mout/array/invoke';
 
     describe('array/invoke', function(){
 
@@ -41,4 +41,4 @@ define(['mout/array/invoke'], function(invoke){
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Check if both arguments are egal.
@@ -18,6 +18,6 @@ define(function () {
         return x !== x && y !== y;
     }
 
-    return is;
+    export default is;
 
-});
+

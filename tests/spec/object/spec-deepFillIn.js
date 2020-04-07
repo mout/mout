@@ -1,4 +1,4 @@
-define(['mout/object/deepFillIn'], function(deepFillIn){
+import deepFillIn from 'mout/object/deepFillIn';
 
     describe('object/deepFillIn', function(){
 
@@ -87,4 +87,4 @@ define(['mout/object/deepFillIn'], function(deepFillIn){
 
     });
 
-});
+

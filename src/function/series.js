@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Returns a function that will execute a list of functions in sequence
@@ -17,6 +17,6 @@ define(function () {
         };
     }
 
-    return series;
+    export default series;
 
-});
+

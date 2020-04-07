@@ -1,4 +1,4 @@
-define(['mout/string/escapeUnicode'], function(escapeUnicode){
+import escapeUnicode from 'mout/string/escapeUnicode';
 
     describe('string/escapeUnicode', function(){
 
@@ -24,4 +24,4 @@ define(['mout/string/escapeUnicode'], function(escapeUnicode){
 
     });
 
-});
+

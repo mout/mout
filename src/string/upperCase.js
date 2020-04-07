@@ -1,4 +1,4 @@
-define(['../lang/toString'], function(toString){
+import toString from '../lang/toString';
     /**
      * "Safer" String.toUpperCase()
      */
@@ -6,5 +6,5 @@ define(['../lang/toString'], function(toString){
         str = toString(str);
         return str.toUpperCase();
     }
-    return upperCase;
-});
+    export default upperCase;
+

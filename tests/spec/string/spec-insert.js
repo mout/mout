@@ -1,4 +1,4 @@
-define(['mout/string/insert'], function(insert){
+import insert from 'mout/string/insert';
 
     describe('string/insert', function(){
 
@@ -24,4 +24,4 @@ define(['mout/string/insert'], function(insert){
         });
     });
 
-});
+

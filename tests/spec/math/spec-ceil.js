@@ -1,4 +1,4 @@
-define(['mout/math/ceil'], function(ceil){
+import ceil from 'mout/math/ceil';
 
     describe('math/ceil', function(){
 
@@ -34,4 +34,4 @@ define(['mout/math/ceil'], function(ceil){
 
     });
 
-});
+

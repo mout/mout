@@ -1,4 +1,4 @@
-define(['mout/date/isSame'], function(isSame){
+import isSame from 'mout/date/isSame';
 
     describe('date/isSame', function(){
 
@@ -17,4 +17,4 @@ define(['mout/date/isSame'], function(isSame){
 
     });
 
-});
+

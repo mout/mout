@@ -1,4 +1,4 @@
-define(['mout/queryString/decode'], function (decode) {
+import decode from 'mout/queryString/decode';
 
     describe('queryString/decode()', function () {
 
@@ -40,4 +40,4 @@ define(['mout/queryString/decode'], function (decode) {
         });
 
     });
-});
+

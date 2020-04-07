@@ -1,4 +1,4 @@
-define(['mout/collection/min'], function(min){
+import min from 'mout/collection/min';
 
     describe('collection/min', function(){
 
@@ -69,4 +69,4 @@ define(['mout/collection/min'], function(min){
 
     });
 
-});
+

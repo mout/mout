@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Create slice of source array or array-like object
@@ -30,6 +30,6 @@ define(function () {
         return result;
     }
 
-    return slice;
+    export default slice;
 
-});
+

@@ -1,4 +1,4 @@
-define(['../lang/toString'], function(toString){
+import toString from '../lang/toString';
     /**
      * "Safer" String.toLowerCase()
      */
@@ -7,5 +7,5 @@ define(['../lang/toString'], function(toString){
         return str.toLowerCase();
     }
 
-    return lowerCase;
-});
+    export default lowerCase;
+

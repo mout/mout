@@ -1,4 +1,4 @@
-define(['mout/math/clamp'], function (clamp) {
+import clamp from 'mout/math/clamp';
 
     describe('math/clamp()', function(){
 
@@ -40,4 +40,4 @@ define(['mout/math/clamp'], function (clamp) {
 
     });
 
-});
+

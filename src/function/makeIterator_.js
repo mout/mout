@@ -1,4 +1,6 @@
-define(['./identity', './prop', '../object/deepMatches'], function(identity, prop, deepMatches) {
+import identity from './identity';
+import prop from './prop';
+import deepMatches from '../object/deepMatches';
 
     /**
      * Converts argument into a valid iterator.
@@ -27,6 +29,6 @@ define(['./identity', './prop', '../object/deepMatches'], function(identity, pro
         }
     }
 
-    return makeIterator;
+    export default makeIterator;
 
-});
+

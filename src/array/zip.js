@@ -1,4 +1,5 @@
-define(['./max', './map'], function (max, map) {
+import max from './max';
+import map from './map';
 
     function getLength(arr) {
         return arr == null ? 0 : arr.length;
@@ -22,6 +23,6 @@ define(['./max', './map'], function (max, map) {
         return results;
     }
 
-    return zip;
+    export default zip;
 
-});
+

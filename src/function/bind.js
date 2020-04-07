@@ -1,4 +1,4 @@
-define(['../array/slice'], function(slice){
+import slice from '../array/slice';
 
     /**
      * Return a function that will execute in the given context, optionally adding any additional supplied parameters to the beginning of the arguments collection.
@@ -14,6 +14,6 @@ define(['../array/slice'], function(slice){
         };
     }
 
-    return bind;
-});
+    export default bind;
+
 

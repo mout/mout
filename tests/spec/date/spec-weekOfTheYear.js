@@ -1,4 +1,4 @@
-define(['mout/date/weekOfTheYear'], function(weekOfTheYear){
+import weekOfTheYear from 'mout/date/weekOfTheYear';
 
     describe('date/weekOfTheYear', function(){
 
@@ -29,4 +29,4 @@ define(['mout/date/weekOfTheYear'], function(weekOfTheYear){
 
     });
 
-});
+

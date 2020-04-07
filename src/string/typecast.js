@@ -1,4 +1,4 @@
-define(function () {
+
 
     var UNDEF;
 
@@ -25,5 +25,5 @@ define(function () {
         return r;
     }
 
-    return typecast;
-});
+    export default typecast;
+

@@ -1,4 +1,7 @@
-define(['./clone', '../object/forOwn', './kindOf', './isPlainObject'], function (clone, forOwn, kindOf, isPlainObject) {
+import clone from './clone';
+import forOwn from '../object/forOwn';
+import kindOf from './kindOf';
+import isPlainObject from './isPlainObject';
 
     /**
      * Recursively clone native types.
@@ -39,7 +42,7 @@ define(['./clone', '../object/forOwn', './kindOf', './isPlainObject'], function 
         return out;
     }
 
-    return deepClone;
+    export default deepClone;
 
-});
+
 

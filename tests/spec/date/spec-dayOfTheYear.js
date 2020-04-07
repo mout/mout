@@ -1,4 +1,4 @@
-define(['mout/date/dayOfTheYear'], function(dayOfTheYear){
+import dayOfTheYear from 'mout/date/dayOfTheYear';
 
     describe('date/dayOfTheYear', function(){
 
@@ -11,4 +11,4 @@ define(['mout/date/dayOfTheYear'], function(dayOfTheYear){
 
     });
 
-});
+

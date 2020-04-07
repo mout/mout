@@ -1,4 +1,4 @@
-define(['mout/number/nth'], function(nth){
+import nth from 'mout/number/nth';
 
     describe('number/nth', function(){
 
@@ -75,4 +75,4 @@ define(['mout/number/nth'], function(nth){
 
     });
 
-});
+

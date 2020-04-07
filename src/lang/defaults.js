@@ -1,4 +1,5 @@
-define(['./toArray', '../array/find'], function (toArray, find) {
+import toArray from './toArray';
+import find from '../array/find';
 
     /**
      * Return first non void argument
@@ -11,6 +12,6 @@ define(['./toArray', '../array/find'], function (toArray, find) {
         return val != null;
     }
 
-    return defaults;
+    export default defaults;
 
-});
+

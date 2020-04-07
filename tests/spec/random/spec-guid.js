@@ -1,4 +1,5 @@
-define(['mout/random/guid', './helper-mockRandom'], function (guid, mockRandom) {
+import guid from 'mout/random/guid';
+import mockRandom from './helper-mockRandom';
 
     describe('random/guid()', function(){
 
@@ -20,4 +21,4 @@ define(['mout/random/guid', './helper-mockRandom'], function (guid, mockRandom) 
         });
 
     });
-});
+

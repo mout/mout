@@ -1,4 +1,4 @@
-define(['../function/makeIterator_'], function (makeIterator) {
+import makeIterator from '../function/makeIterator_';
 
     /**
      * Array filter
@@ -21,6 +21,6 @@ define(['../function/makeIterator_'], function (makeIterator) {
         return results;
     }
 
-    return filter;
+    export default filter;
 
-});
+

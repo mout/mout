@@ -1,4 +1,4 @@
-define(['./random'], function (random) {
+import random from './random';
 
     /**
      * returns a random boolean value (true or false)
@@ -7,6 +7,6 @@ define(['./random'], function (random) {
         return random() >= 0.5;
     }
 
-    return randBool;
+    export default randBool;
 
-});
+

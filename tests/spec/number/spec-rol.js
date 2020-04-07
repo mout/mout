@@ -1,4 +1,4 @@
-define(['mout/number/rol'], function (rol) {
+import rol from 'mout/number/rol';
 
     describe('number/rol()', function(){
         it('should rotate bits left', function(){
@@ -15,4 +15,4 @@ define(['mout/number/rol'], function (rol) {
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/string/hyphenate'], function (hyphenate) {
+import hyphenate from 'mout/string/hyphenate';
 
     describe('string/hyphenate()', function(){
 
@@ -42,4 +42,4 @@ define(['mout/string/hyphenate'], function (hyphenate) {
 
     });
 
-});
+

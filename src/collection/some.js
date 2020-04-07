@@ -1,7 +1,9 @@
-define(['./make_', '../array/some', '../object/some'], function (make, arrSome, objSome) {
+import make from './make_';
+import arrSome from '../array/some';
+import objSome from '../object/some';
 
     /**
      */
-    return make(arrSome, objSome);
+    export default make(arrSome, objSome);
 
-});
+

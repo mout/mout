@@ -1,4 +1,4 @@
-define(['mout/array/filter'], function (filter) {
+import filter from 'mout/array/filter';
 
     describe('array/filter()', function(){
 
@@ -67,4 +67,4 @@ define(['mout/array/filter'], function (filter) {
 
     });
 
-});
+

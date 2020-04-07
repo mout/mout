@@ -1,4 +1,4 @@
-define(['../lang/toString'], function(toString){
+import toString from '../lang/toString';
     /**
      * Remove non-printable ASCII chars
      */
@@ -10,5 +10,5 @@ define(['../lang/toString'], function(toString){
         return str.replace(/[^\x20-\x7E]/g, '');
     }
 
-    return removeNonASCII;
-});
+    export default removeNonASCII;
+

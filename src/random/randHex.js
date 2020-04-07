@@ -1,4 +1,4 @@
-define(['./choice'], function (choice) {
+import choice from './choice';
 
     var _chars = '0123456789abcdef'.split('');
 
@@ -14,6 +14,6 @@ define(['./choice'], function (choice) {
         return str;
     }
 
-    return randHex;
+    export default randHex;
 
-});
+

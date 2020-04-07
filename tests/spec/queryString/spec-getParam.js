@@ -1,4 +1,4 @@
-define(['mout/queryString/getParam'], function (getParam) {
+import getParam from 'mout/queryString/getParam';
 
     describe('queryString/getParam()', function () {
 
@@ -29,4 +29,4 @@ define(['mout/queryString/getParam'], function (getParam) {
         });
     });
 
-});
+

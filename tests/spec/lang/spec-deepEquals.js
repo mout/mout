@@ -1,4 +1,4 @@
-define(['mout/lang/deepEquals'], function(deepEquals){
+import deepEquals from 'mout/lang/deepEquals';
 
     describe('lang/deepEquals', function(){
 
@@ -73,4 +73,4 @@ define(['mout/lang/deepEquals'], function(deepEquals){
 
     });
 
-});
+

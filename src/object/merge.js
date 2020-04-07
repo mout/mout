@@ -1,4 +1,6 @@
-define(['./hasOwn', '../lang/deepClone', '../lang/isObject'], function (hasOwn, deepClone, isObject) {
+import hasOwn from './hasOwn';
+import deepClone from '../lang/deepClone';
+import isObject from '../lang/isObject';
 
     /**
      * Deep merge objects.
@@ -33,6 +35,6 @@ define(['./hasOwn', '../lang/deepClone', '../lang/isObject'], function (hasOwn, 
         return target;
     }
 
-    return merge;
+    export default merge;
 
-});
+

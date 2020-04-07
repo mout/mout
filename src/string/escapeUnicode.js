@@ -1,4 +1,4 @@
-define(['../lang/toString'], function(toString) {
+import toString from '../lang/toString';
 
     /**
      * Escape string into unicode sequences
@@ -16,6 +16,6 @@ define(['../lang/toString'], function(toString) {
         });
     }
 
-    return escapeUnicode;
+    export default escapeUnicode;
 
-});
+

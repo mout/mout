@@ -1,4 +1,7 @@
-define(['../lang/toString', './WHITE_SPACES', './ltrim', './rtrim'], function(toString, WHITE_SPACES, ltrim, rtrim){
+import toString from '../lang/toString';
+import WHITE_SPACES from './WHITE_SPACES';
+import ltrim from './ltrim';
+import rtrim from './rtrim';
     /**
      * Remove white-spaces from beginning and end of string.
      */
@@ -8,5 +11,5 @@ define(['../lang/toString', './WHITE_SPACES', './ltrim', './rtrim'], function(to
         return ltrim(rtrim(str, chars), chars);
     }
 
-    return trim;
-});
+    export default trim;
+

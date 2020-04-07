@@ -1,4 +1,6 @@
-define(['../string/typecast', '../lang/isArray', '../object/hasOwn'], function (typecast, isArray, hasOwn) {
+import typecast from '../string/typecast';
+import isArray from '../lang/isArray';
+import hasOwn from '../object/hasOwn';
 
     /**
      * Decode query string into an object of keys => vals.
@@ -30,5 +32,5 @@ define(['../string/typecast', '../lang/isArray', '../object/hasOwn'], function (
         return obj;
     }
 
-    return decode;
-});
+    export default decode;
+

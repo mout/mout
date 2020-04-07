@@ -1,8 +1,8 @@
-define(['./isKind'], function (isKind) {
+import isKind from './isKind';
     /**
      */
     var isArray = Array.isArray || function (val) {
         return isKind(val, 'Array');
     };
-    return isArray;
-});
+    export default isArray;
+

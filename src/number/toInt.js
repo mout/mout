@@ -1,4 +1,4 @@
-define(function(){
+
 
     /**
      * "Convert" value into an 32-bit integer.
@@ -12,6 +12,6 @@ define(function(){
         return ~~val;
     }
 
-    return toInt;
+    export default toInt;
 
-});
+

@@ -1,4 +1,5 @@
-define(['./forOwn', '../function/makeIterator_'], function(forOwn, makeIterator) {
+import forOwn from './forOwn';
+import makeIterator from '../function/makeIterator_';
 
     /**
      * Creates a new object with all the properties where the callback returns
@@ -15,5 +16,5 @@ define(['./forOwn', '../function/makeIterator_'], function(forOwn, makeIterator)
 
         return output;
     }
-    return filterValues;
-});
+    export default filterValues;
+

@@ -1,4 +1,4 @@
-define(['./isLeapYear'], function (isLeapYear) {
+import isLeapYear from './isLeapYear';
 
     /**
      * return the amount of days in the year following the gregorian calendar
@@ -8,6 +8,6 @@ define(['./isLeapYear'], function (isLeapYear) {
         return isLeapYear(fullYear)? 366 : 365;
     }
 
-    return totalDaysInYear;
+    export default totalDaysInYear;
 
-});
+

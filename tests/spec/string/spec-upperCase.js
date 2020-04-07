@@ -1,4 +1,4 @@
-define(['mout/string/upperCase'], function (upperCase) {
+import upperCase from 'mout/string/upperCase';
 
     describe('string/upperCase()', function(){
 
@@ -18,4 +18,4 @@ define(['mout/string/upperCase'], function (upperCase) {
 
     });
 
-});
+

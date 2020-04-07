@@ -1,4 +1,4 @@
-define(['mout/number/ror'], function (ror) {
+import ror from 'mout/number/ror';
 
     describe('number/ror()', function(){
         it('should rotate bits right', function(){
@@ -13,4 +13,4 @@ define(['mout/number/ror'], function (ror) {
             expect( ror(void(0), 30) ).toEqual( 0 );
         });
     });
-});
+

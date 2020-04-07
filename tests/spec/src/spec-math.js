@@ -1,4 +1,4 @@
-define(['mout/src/math'], function(math){
+import math from 'mout/src/math';
 
     describe('mout/math', function(){
 
@@ -8,4 +8,4 @@ define(['mout/src/math'], function(math){
 
     });
 
-});
+

@@ -1,4 +1,6 @@
-define(['../lang/toString', './camelCase', './upperCase'], function(toString, camelCase, upperCase){
+import toString from '../lang/toString';
+import camelCase from './camelCase';
+import upperCase from './upperCase';
     /**
      * camelCase + UPPERCASE first char
      */
@@ -7,5 +9,5 @@ define(['../lang/toString', './camelCase', './upperCase'], function(toString, ca
         return camelCase(str).replace(/^[a-z]/, upperCase);
     }
 
-    return pascalCase;
-});
+    export default pascalCase;
+

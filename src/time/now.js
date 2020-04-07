@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Get current time in miliseconds
@@ -13,6 +13,6 @@ define(function () {
         return +(new Date());
     };
 
-    return now;
+    export default now;
 
-});
+

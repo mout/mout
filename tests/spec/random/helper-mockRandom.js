@@ -1,4 +1,5 @@
-define(['exports', 'mout/random/random'], function(exports, random) {
+import exports from 'exports';
+import random from 'mout/random/random';
     var original = random.get;
 
     // Values to return from the mocked generator
@@ -18,4 +19,4 @@ define(['exports', 'mout/random/random'], function(exports, random) {
         random.get = original;
     };
 
-});
+

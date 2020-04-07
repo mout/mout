@@ -1,4 +1,4 @@
-define(['mout/lang/kindOf'], function (kindOf) {
+import kindOf from 'mout/lang/kindOf';
 
     describe('lang/kindOf()', function(){
 
@@ -40,4 +40,4 @@ define(['mout/lang/kindOf'], function (kindOf) {
         });
 
     });
-});
+

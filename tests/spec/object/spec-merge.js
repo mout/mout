@@ -1,4 +1,4 @@
-define(['mout/object/merge'], function (merge) {
+import merge from 'mout/object/merge';
 
     describe('object/merge()', function () {
 
@@ -52,4 +52,4 @@ define(['mout/object/merge'], function (merge) {
 
     });
 
-});
+

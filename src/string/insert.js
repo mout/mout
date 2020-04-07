@@ -1,4 +1,5 @@
-define(['../math/clamp', '../lang/toString'], function (clamp, toString) {
+import clamp from '../math/clamp';
+import toString from '../lang/toString';
 
     /**
      * Inserts a string at a given index.
@@ -15,6 +16,6 @@ define(['../math/clamp', '../lang/toString'], function (clamp, toString) {
         return string.substr(0, index) + partial + string.substr(index);
     }
 
-    return insert;
+    export default insert;
 
-});
+

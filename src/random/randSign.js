@@ -1,4 +1,4 @@
-define(['./randBool'], function (randBool) {
+import randBool from './randBool';
 
     /**
      * Returns random sign (-1 or 1)
@@ -7,5 +7,5 @@ define(['./randBool'], function (randBool) {
         return randBool()? 1 : -1;
     }
 
-    return randomSign;
-});
+    export default randomSign;
+

@@ -1,4 +1,5 @@
-define(['mout/random/randBool', './helper-mockRandom'], function(randBool, mockRandom){
+import randBool from 'mout/random/randBool';
+import mockRandom from './helper-mockRandom';
 
     describe('random/randBool', function(){
 
@@ -20,4 +21,4 @@ define(['mout/random/randBool', './helper-mockRandom'], function(randBool, mockR
 
     });
 
-});
+

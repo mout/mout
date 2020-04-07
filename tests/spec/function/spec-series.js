@@ -1,4 +1,4 @@
-define(['mout/function/series'], function (series) {
+import series from 'mout/function/series';
 
     describe('function/series()', function () {
 
@@ -48,4 +48,4 @@ define(['mout/function/series'], function (series) {
     });
 
 
-});
+

@@ -1,4 +1,4 @@
-define(['../function/makeIterator_'], function (makeIterator) {
+import makeIterator from '../function/makeIterator_';
 
     /**
      * Return maximum value inside array
@@ -29,6 +29,6 @@ define(['../function/makeIterator_'], function (makeIterator) {
         }
     }
 
-    return max;
+    export default max;
 
-});
+

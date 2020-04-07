@@ -1,4 +1,5 @@
-define(['./forOwn', '../function/makeIterator_'], function(forOwn, makeIterator) {
+import forOwn from './forOwn';
+import makeIterator from '../function/makeIterator_';
 
     /**
      * Object some
@@ -15,6 +16,6 @@ define(['./forOwn', '../function/makeIterator_'], function(forOwn, makeIterator)
         return result;
     }
 
-    return some;
+    export default some;
 
-});
+

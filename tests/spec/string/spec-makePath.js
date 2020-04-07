@@ -1,4 +1,4 @@
-define(['mout/string/makePath'], function (makePath) {
+import makePath from 'mout/string/makePath';
 
     describe('string/makePath()', function(){
 
@@ -38,4 +38,4 @@ define(['mout/string/makePath'], function (makePath) {
 
     });
 
-});
+

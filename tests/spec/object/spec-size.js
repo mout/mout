@@ -1,4 +1,4 @@
-define(['mout/object/size'], function (size) {
+import size from 'mout/object/size';
 
     describe('object/size()', function () {
 
@@ -47,4 +47,4 @@ define(['mout/object/size'], function (size) {
 
     });
 
-});
+

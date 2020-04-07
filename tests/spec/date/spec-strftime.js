@@ -1,4 +1,4 @@
-define(['mout/date/strftime'], function(strftime){
+import strftime from 'mout/date/strftime';
 
     describe('date/strftime', function(){
 
@@ -259,4 +259,4 @@ define(['mout/date/strftime'], function(strftime){
 
     });
 
-});
+

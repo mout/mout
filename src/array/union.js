@@ -1,4 +1,5 @@
-define(['./unique', './append'], function (unique, append) {
+import unique from './unique';
+import append from './append';
 
     /**
      * Concat multiple arrays and remove duplicates
@@ -13,6 +14,6 @@ define(['./unique', './append'], function (unique, append) {
         return unique(results);
     }
 
-    return union;
+    export default union;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/array/unique'], function (unique) {
+import unique from 'mout/array/unique';
 
     describe('array/unique()', function(){
 
@@ -29,4 +29,4 @@ define(['mout/array/unique'], function (unique) {
 
     });
 
-});
+

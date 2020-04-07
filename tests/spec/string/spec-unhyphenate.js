@@ -1,4 +1,4 @@
-define(['mout/string/unhyphenate'], function (unhyphenate) {
+import unhyphenate from 'mout/string/unhyphenate';
 
     describe('string/unhyphenate()', function(){
 
@@ -24,4 +24,4 @@ define(['mout/string/unhyphenate'], function (unhyphenate) {
 
     });
 
-});
+

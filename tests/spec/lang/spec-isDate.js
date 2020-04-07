@@ -1,4 +1,4 @@
-define(['mout/lang/isDate'], function (isDate) {
+import isDate from 'mout/lang/isDate';
 
     describe('lang/isDate()', function () {
 
@@ -16,4 +16,4 @@ define(['mout/lang/isDate'], function (isDate) {
 
     });
 
-});
+

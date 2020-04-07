@@ -1,4 +1,4 @@
-define(['mout/collection/some'], function(some){
+import some from 'mout/collection/some';
 
     describe('collection/some', function(){
 
@@ -101,4 +101,4 @@ define(['mout/collection/some'], function(some){
 
 
     });
-});
+

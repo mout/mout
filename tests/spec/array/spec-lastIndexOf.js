@@ -1,4 +1,4 @@
-define(['mout/array/lastIndexOf'], function (lastIndexOf) {
+import lastIndexOf from 'mout/array/lastIndexOf';
 
     describe('array/lastIndexOf()', function(){
 
@@ -92,4 +92,4 @@ define(['mout/array/lastIndexOf'], function (lastIndexOf) {
 
     });
 
-});
+

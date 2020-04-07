@@ -1,4 +1,5 @@
-define(['./forOwn', '../function/makeIterator_'], function(forOwn, makeIterator) {
+import forOwn from './forOwn';
+import makeIterator from '../function/makeIterator_';
 
     /**
      * Creates a new object where all the values are the result of calling
@@ -13,5 +14,5 @@ define(['./forOwn', '../function/makeIterator_'], function(forOwn, makeIterator)
 
         return output;
     }
-    return mapValues;
-});
+    export default mapValues;
+

@@ -1,4 +1,4 @@
-define(['mout/object/values'], function (values) {
+import values from 'mout/object/values';
 
     describe('object/values()', function () {
 
@@ -59,4 +59,4 @@ define(['mout/object/values'], function (values) {
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/array/compact'], function (compact) {
+import compact from 'mout/array/compact';
 
     describe('array/compact()', function () {
 
@@ -18,4 +18,4 @@ define(['mout/array/compact'], function (compact) {
 
     });
 
-});
+

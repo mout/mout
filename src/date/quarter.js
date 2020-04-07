@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * gets date quarter
@@ -11,6 +11,6 @@ define(function () {
         return 4;
     }
 
-    return quarter;
+    export default quarter;
 
-});
+

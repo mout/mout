@@ -1,4 +1,4 @@
-define(['mout/date/timezoneOffset'], function(timezoneOffset){
+import timezoneOffset from 'mout/date/timezoneOffset';
 
     describe('date/timezoneOffset', function(){
 
@@ -21,4 +21,4 @@ define(['mout/date/timezoneOffset'], function(timezoneOffset){
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/function/func'], function (func) {
+import func from 'mout/function/func';
 
     describe('function/func()', function () {
 
@@ -13,4 +13,4 @@ define(['mout/function/func'], function (func) {
 
     });
 
-});
+

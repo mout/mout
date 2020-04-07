@@ -1,4 +1,4 @@
-define(['mout/array/indicesOf'], function (indicesOf) {
+import indicesOf from 'mout/array/indicesOf';
 
     describe('array/indicesOf()', function() {
 
@@ -82,4 +82,4 @@ define(['mout/array/indicesOf'], function (indicesOf) {
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['./is'], function (is) {
+import is from './is';
 
     /**
      * Check if both values are not identical/egal
@@ -7,6 +7,6 @@ define(['./is'], function (is) {
         return !is(x, y);
     }
 
-    return isnt;
+    export default isnt;
 
-});
+

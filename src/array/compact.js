@@ -1,4 +1,4 @@
-define(['./filter'], function (filter) {
+import filter from './filter';
 
     /**
      * Remove all null/undefined items from array.
@@ -9,5 +9,5 @@ define(['./filter'], function (filter) {
         });
     }
 
-    return compact;
-});
+    export default compact;
+

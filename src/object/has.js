@@ -1,4 +1,4 @@
-define(['./get'], function (get) {
+import get from './get';
 
     var UNDEF;
 
@@ -9,7 +9,7 @@ define(['./get'], function (get) {
         return get(obj, prop) !== UNDEF;
     }
 
-    return has;
+    export default has;
 
-});
+
 

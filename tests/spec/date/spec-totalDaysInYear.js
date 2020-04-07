@@ -1,4 +1,4 @@
-define(['mout/date/totalDaysInYear'], function(totalDaysInYear){
+import totalDaysInYear from 'mout/date/totalDaysInYear';
 
     describe('date/totalDaysInYear', function(){
 
@@ -14,4 +14,4 @@ define(['mout/date/totalDaysInYear'], function(totalDaysInYear){
 
     });
 
-});
+

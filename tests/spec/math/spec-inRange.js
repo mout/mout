@@ -1,4 +1,4 @@
-define(['mout/math/inRange'], function (inRange) {
+import inRange from 'mout/math/inRange';
 
     describe('math/inRange()', function(){
 
@@ -30,4 +30,4 @@ define(['mout/math/inRange'], function (inRange) {
         });
 
     });
-});
+

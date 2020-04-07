@@ -1,4 +1,4 @@
-define(['mout/queryString/encode'], function (encode) {
+import encode from 'mout/queryString/encode';
 
     describe('queryString/encode()', function () {
 
@@ -34,4 +34,4 @@ define(['mout/queryString/encode'], function (encode) {
 
     });
 
-});
+

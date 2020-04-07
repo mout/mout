@@ -1,4 +1,4 @@
-define(['../lang/toString'], function(toString) {
+import toString from '../lang/toString';
 
     /**
      * Searches for a given substring
@@ -9,6 +9,6 @@ define(['../lang/toString'], function(toString) {
         return str.indexOf(substring, fromIndex) !== -1;
     }
 
-    return contains;
+    export default contains;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/lang/inheritPrototype'], function (inheritPrototype) {
+import inheritPrototype from 'mout/lang/inheritPrototype';
 
     describe('lang/inheritPrototype()', function(){
 
@@ -46,4 +46,4 @@ define(['mout/lang/inheritPrototype'], function (inheritPrototype) {
         });
 
     });
-});
+

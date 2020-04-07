@@ -1,4 +1,4 @@
-define(['mout/array/forEach'], function (forEach) {
+import forEach from 'mout/array/forEach';
 
     describe('array/forEach()', function(){
 
@@ -75,5 +75,5 @@ define(['mout/array/forEach'], function (forEach) {
 
     });
 
-});
+
 

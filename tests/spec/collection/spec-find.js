@@ -1,4 +1,4 @@
-define(['mout/collection/find'], function(find){
+import find from 'mout/collection/find';
 
     describe('collection/find', function(){
 
@@ -66,4 +66,4 @@ define(['mout/collection/find'], function(find){
 
 
     });
-});
+

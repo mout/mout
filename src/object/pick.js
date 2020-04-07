@@ -1,4 +1,4 @@
-define(['../array/slice'], function(slice){
+import slice from '../array/slice';
 
     /**
      * Return a copy of the object, filtered to only have values for the whitelisted keys.
@@ -13,6 +13,6 @@ define(['../array/slice'], function(slice){
         return out;
     }
 
-    return pick;
+    export default pick;
 
-});
+

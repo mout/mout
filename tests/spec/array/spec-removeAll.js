@@ -1,4 +1,4 @@
-define(['mout/array/removeAll'], function (removeAll) {
+import removeAll from 'mout/array/removeAll';
 
     describe('array/removeAll()', function(){
 
@@ -26,4 +26,4 @@ define(['mout/array/removeAll'], function (removeAll) {
 
     });
 
-});
+

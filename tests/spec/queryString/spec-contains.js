@@ -1,4 +1,4 @@
-define(['mout/queryString/contains'], function (contains) {
+import contains from 'mout/queryString/contains';
 
     describe('queryString/contains()', function () {
 
@@ -20,4 +20,4 @@ define(['mout/queryString/contains'], function (contains) {
         });
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/lang/isString'], function (isString) {
+import isString from 'mout/lang/isString';
 
     describe('lang/isString()', function () {
 
@@ -16,4 +16,4 @@ define(['mout/lang/isString'], function (isString) {
 
     });
 
-});
+

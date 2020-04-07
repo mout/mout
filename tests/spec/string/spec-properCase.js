@@ -1,4 +1,4 @@
-define(['mout/string/properCase'], function (properCase) {
+import properCase from 'mout/string/properCase';
 
     describe('string/properCase()', function(){
 
@@ -16,4 +16,4 @@ define(['mout/string/properCase'], function (properCase) {
 
     });
 
-});
+

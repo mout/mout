@@ -1,4 +1,4 @@
-define(['mout/collection/filter'], function(filter){
+import filter from 'mout/collection/filter';
 
     describe('collection/filter', function(){
 
@@ -72,4 +72,4 @@ define(['mout/collection/filter'], function(filter){
 
 
     });
-});
+

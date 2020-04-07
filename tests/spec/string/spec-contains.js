@@ -1,4 +1,4 @@
-define(['mout/string/contains'], function (contains) {
+import contains from 'mout/string/contains';
 
     describe('string/contains()', function () {
 
@@ -47,4 +47,4 @@ define(['mout/string/contains'], function (contains) {
 
     });
 
-});
+

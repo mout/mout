@@ -1,4 +1,5 @@
-define(['../lang/toString', '../number/toInt'], function(toString, toInt){
+import toString from '../lang/toString';
+import toInt from '../number/toInt';
 
     /**
      * Repeat string n times
@@ -20,6 +21,6 @@ define(['../lang/toString', '../number/toInt'], function(toString, toInt){
         return result;
      }
 
-     return repeat;
+     export default repeat;
 
-});
+

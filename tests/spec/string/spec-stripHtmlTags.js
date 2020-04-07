@@ -1,4 +1,4 @@
-define(['mout/string/stripHtmlTags'], function (stripHtmlTags) {
+import stripHtmlTags from 'mout/string/stripHtmlTags';
 
     describe('string/stripHtmlTags()', function(){
 
@@ -17,4 +17,4 @@ define(['mout/string/stripHtmlTags'], function (stripHtmlTags) {
 
     });
 
-});
+

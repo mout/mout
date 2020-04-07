@@ -1,4 +1,4 @@
-define(['mout/lang/toArray'], function (toArray) {
+import toArray from 'mout/lang/toArray';
 
     var global = this;
 
@@ -73,4 +73,4 @@ define(['mout/lang/toArray'], function (toArray) {
         });
 
     });
-});
+

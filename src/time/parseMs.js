@@ -1,4 +1,4 @@
-define(['../math/countSteps'], function(countSteps){
+import countSteps from '../math/countSteps';
 
     /**
      * Parse timestamp into an object.
@@ -13,5 +13,5 @@ define(['../math/countSteps'], function(countSteps){
         };
     }
 
-    return parseMs;
-});
+    export default parseMs;
+

@@ -1,4 +1,4 @@
-define(['mout/math/norm'], function (norm) {
+import norm from 'mout/math/norm';
 
     describe('math/norm()', function(){
 
@@ -25,4 +25,4 @@ define(['mout/math/norm'], function (norm) {
         });
 
     });
-});
+

@@ -1,4 +1,4 @@
-define(['mout/lang/isNull'], function (isNull) {
+import isNull from 'mout/lang/isNull';
 
     describe('lang/isNull()', function () {
 
@@ -15,4 +15,4 @@ define(['mout/lang/isNull'], function (isNull) {
 
     });
 
-});
+

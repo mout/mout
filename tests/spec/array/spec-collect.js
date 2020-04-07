@@ -1,4 +1,4 @@
-define(['mout/array/collect'], function(collect){
+import collect from 'mout/array/collect';
 
     describe('array/collect', function(){
 
@@ -52,4 +52,4 @@ define(['mout/array/collect'], function(collect){
 
     });
 
-});
+

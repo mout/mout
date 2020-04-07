@@ -1,4 +1,4 @@
-define(['../array/some'], function (some) {
+import some from '../array/some';
 
     var datePatterns = [
         /^([0-9]{4})$/,                        // YYYY
@@ -141,6 +141,6 @@ define(['../array/some'], function (some) {
         return parseDate(match[1]) + parseTime(match[2]);
     }
 
-    return parseISO8601;
+    export default parseISO8601;
 
-});
+

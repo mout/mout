@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * ES6 Number.isNaN
@@ -9,6 +9,6 @@ define(function () {
         return typeof val === 'number' && val != val;
     }
 
-    return isNaN;
+    export default isNaN;
 
-});
+

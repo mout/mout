@@ -1,4 +1,4 @@
-define(['../lang/toString'], function(toString){
+import toString from '../lang/toString';
     /**
      * Remove HTML tags from string.
      */
@@ -7,5 +7,5 @@ define(['../lang/toString'], function(toString){
 
         return str.replace(/<[^>]*>/g, '');
     }
-    return stripHtmlTags;
-});
+    export default stripHtmlTags;
+

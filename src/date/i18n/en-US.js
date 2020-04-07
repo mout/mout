@@ -1,6 +1,6 @@
-define(function(){
+
     // en-US (English, United States)
-    return {
+    export default {
         "am" : "AM",
         "pm" : "PM",
 
@@ -58,4 +58,4 @@ define(function(){
             "Sat"
         ]
     };
-});
+

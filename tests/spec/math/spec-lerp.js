@@ -1,4 +1,4 @@
-define(['mout/math/lerp'], function (lerp) {
+import lerp from 'mout/math/lerp';
 
     describe('math/lerp()', function(){
 
@@ -12,4 +12,4 @@ define(['mout/math/lerp'], function (lerp) {
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/function/memoize'], function (memoize) {
+import memoize from 'mout/function/memoize';
 
     describe('function/memoize()', function(){
 
@@ -93,4 +93,4 @@ define(['mout/function/memoize'], function (memoize) {
             });
         });
     });
-});
+

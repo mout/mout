@@ -1,4 +1,4 @@
-define(['../lang/toNumber'], function (toNumber) {
+import toNumber from '../lang/toNumber';
 
     /**
      * Get sign of the value.
@@ -10,6 +10,6 @@ define(['../lang/toNumber'], function (toNumber) {
         return num < 0? -1 : 1;
     }
 
-    return sign;
+    export default sign;
 
-});
+

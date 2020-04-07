@@ -1,4 +1,4 @@
-define(['mout/lang/GLOBAL'], function(GLOBAL){
+import GLOBAL from 'mout/lang/GLOBAL';
 
     describe('lang/GLOBAL', function(){
 
@@ -11,4 +11,4 @@ define(['mout/lang/GLOBAL'], function(GLOBAL){
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/object/pick'], function (pick) {
+import pick from 'mout/object/pick';
 
     describe('object/pick()', function () {
 
@@ -24,4 +24,4 @@ define(['mout/object/pick'], function (pick) {
 
     });
 
-});
+

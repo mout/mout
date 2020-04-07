@@ -1,4 +1,4 @@
-define(['./forOwn'], function (forOwn) {
+import forOwn from './forOwn';
 
     /**
      * checks if a object contains all given properties/values
@@ -15,6 +15,6 @@ define(['./forOwn'], function (forOwn) {
         return result;
     }
 
-    return matches;
+    export default matches;
 
-});
+

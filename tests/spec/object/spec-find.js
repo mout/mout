@@ -1,4 +1,4 @@
-define(['mout/object/find'], function(find){
+import find from 'mout/object/find';
 
     describe('object/find', function(){
 
@@ -57,4 +57,4 @@ define(['mout/object/find'], function(find){
 
     });
 
-});
+

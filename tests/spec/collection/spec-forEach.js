@@ -1,4 +1,4 @@
-define(['mout/collection/forEach'], function(forEach){
+import forEach from 'mout/collection/forEach';
 
     describe('collection/forEach', function(){
 
@@ -28,4 +28,4 @@ define(['mout/collection/forEach'], function(forEach){
 
     });
 
-});
+

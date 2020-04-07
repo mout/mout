@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Safer Object.hasOwnProperty
@@ -7,6 +7,6 @@ define(function () {
          return Object.prototype.hasOwnProperty.call(obj, prop);
      }
 
-     return hasOwn;
+     export default hasOwn;
 
-});
+

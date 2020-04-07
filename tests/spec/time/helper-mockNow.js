@@ -1,4 +1,5 @@
-define(['exports', 'mout/time/now'], function(exports, now) {
+import exports from 'exports';
+import now from 'mout/time/now';
 
     var time;
     var original = now.get;
@@ -22,4 +23,4 @@ define(['exports', 'mout/time/now'], function(exports, now) {
         now.get = original;
     };
 
-});
+

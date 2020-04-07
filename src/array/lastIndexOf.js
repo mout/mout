@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Array lastIndexOf
@@ -24,5 +24,5 @@ define(function () {
         return -1;
     }
 
-    return lastIndexOf;
-});
+    export default lastIndexOf;
+

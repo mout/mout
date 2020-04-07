@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * convert time into another unit
@@ -36,6 +36,6 @@ define(function () {
     }
 
 
-    return convert;
+    export default convert;
 
-});
+

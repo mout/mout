@@ -1,4 +1,4 @@
-define(['mout/array/findIndex'], function(findIndex){
+import findIndex from 'mout/array/findIndex';
 
     describe('array/findIndex', function(){
 
@@ -42,4 +42,4 @@ define(['mout/array/findIndex'], function(findIndex){
 
     });
 
-});
+

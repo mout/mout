@@ -1,4 +1,4 @@
-define(['mout/number/ordinal'], function(ordinal){
+import ordinal from 'mout/number/ordinal';
 
     describe('number/ordinal', function(){
 
@@ -40,4 +40,4 @@ define(['mout/number/ordinal'], function(ordinal){
 
     });
 
-});
+

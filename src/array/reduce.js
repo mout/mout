@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Array reduce
@@ -29,5 +29,5 @@ define(function () {
         return result;
     }
 
-    return reduce;
-});
+    export default reduce;
+

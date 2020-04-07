@@ -1,4 +1,5 @@
-define(['./forOwn', '../lang/isPlainObject'], function (forOwn, isPlainObject) {
+import forOwn from './forOwn';
+import isPlainObject from '../lang/isPlainObject';
 
     /**
      * Mixes objects into the target object, recursively mixing existing child
@@ -28,6 +29,6 @@ define(['./forOwn', '../lang/isPlainObject'], function (forOwn, isPlainObject) {
         }
     }
 
-    return deepMixIn;
+    export default deepMixIn;
 
-});
+

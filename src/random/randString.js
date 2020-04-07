@@ -1,8 +1,6 @@
-define([
-  '../lang/isNumber',
-  '../lang/isString',
-  './randInt'
-], function (isNumber, isString, randInt) {
+import isNumber from '../lang/isNumber';
+import isString from '../lang/isString';
+import randInt from './randInt';
 
     var defaultDictionary = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -25,5 +23,5 @@ define([
         return result;
     }
 
-    return randomString;
-});
+    export default randomString;
+

@@ -1,4 +1,4 @@
-define(['mout/array/union'], function (union) {
+import union from 'mout/array/union';
 
     describe('array/union()', function () {
 
@@ -29,4 +29,4 @@ define(['mout/array/union'], function (union) {
 
     });
 
-});
+

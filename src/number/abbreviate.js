@@ -1,4 +1,4 @@
-define(['./enforcePrecision'], function (enforcePrecision) {
+import enforcePrecision from './enforcePrecision';
 
     var _defaultDict = {
         thousand : 'K',
@@ -30,6 +30,6 @@ define(['./enforcePrecision'], function (enforcePrecision) {
         return str;
     }
 
-    return abbreviateNumber;
+    export default abbreviateNumber;
 
-});
+

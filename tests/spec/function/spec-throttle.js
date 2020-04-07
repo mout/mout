@@ -1,4 +1,5 @@
-define(['mout/function/throttle', '../time/helper-mockNow'], function(throttle, mockNow){
+import throttle from 'mout/function/throttle';
+import mockNow from '../time/helper-mockNow';
 
     describe('function/throttle', function(){
 
@@ -113,4 +114,4 @@ define(['mout/function/throttle', '../time/helper-mockNow'], function(throttle, 
 
     });
 
-});
+

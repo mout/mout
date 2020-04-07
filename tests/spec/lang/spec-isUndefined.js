@@ -1,4 +1,4 @@
-define(['mout/lang/isUndefined'], function (isUndefined) {
+import isUndefined from 'mout/lang/isUndefined';
 
     describe('lang/isUndefined()', function () {
 
@@ -17,4 +17,4 @@ define(['mout/lang/isUndefined'], function (isUndefined) {
 
     });
 
-});
+

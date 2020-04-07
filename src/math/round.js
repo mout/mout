@@ -1,4 +1,4 @@
-define(function () {
+
     /**
      * Round number to a specific radix
      */
@@ -7,6 +7,6 @@ define(function () {
         return Math.round(value / radix) * radix;
     }
 
-    return round;
+    export default round;
 
-});
+

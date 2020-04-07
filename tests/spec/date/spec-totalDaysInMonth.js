@@ -1,4 +1,4 @@
-define(['mout/date/totalDaysInMonth'], function(totalDaysInMonth){
+import totalDaysInMonth from 'mout/date/totalDaysInMonth';
 
     describe('date/totalDaysInMonth', function(){
 
@@ -39,4 +39,4 @@ define(['mout/date/totalDaysInMonth'], function(totalDaysInMonth){
 
     });
 
-});
+

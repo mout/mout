@@ -1,4 +1,4 @@
-define(['mout/collection/pluck'], function(pluck){
+import pluck from 'mout/collection/pluck';
 
     describe('collection/pluck', function(){
 
@@ -47,4 +47,4 @@ define(['mout/collection/pluck'], function(pluck){
 
     });
 
-});
+

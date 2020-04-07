@@ -1,4 +1,4 @@
-define(['../math/countSteps'], function (countSteps) {
+import countSteps from '../math/countSteps';
 
     /**
      * Returns an Array of numbers inside range.
@@ -22,6 +22,6 @@ define(['../math/countSteps'], function (countSteps) {
         return result;
     }
 
-    return range;
+    export default range;
 
-});
+

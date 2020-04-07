@@ -1,4 +1,4 @@
-define(['mout/string/rpad'], function (rpad) {
+import rpad from 'mout/string/rpad';
 
     describe('string/rpad()', function(){
 
@@ -20,4 +20,4 @@ define(['mout/string/rpad'], function (rpad) {
 
     });
 
-});
+

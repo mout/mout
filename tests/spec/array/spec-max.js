@@ -1,4 +1,4 @@
-define(['mout/array/max'], function (max) {
+import max from 'mout/array/max';
 
     describe('array/max()', function () {
 
@@ -48,4 +48,4 @@ define(['mout/array/max'], function (max) {
 
     });
 
-});
+

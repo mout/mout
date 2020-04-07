@@ -1,13 +1,11 @@
 //automatically generated, do not edit!
 //run `node build` instead
-define([
-    './queryString/spec-contains',
-    './queryString/spec-decode',
-    './queryString/spec-encode',
-    './queryString/spec-getParam',
-    './queryString/spec-getQuery',
-    './queryString/spec-parse',
-    './queryString/spec-setParam'
-], function(){
+import './queryString/spec-contains';
+import './queryString/spec-decode';
+import './queryString/spec-encode';
+import './queryString/spec-getParam';
+import './queryString/spec-getQuery';
+import './queryString/spec-parse';
+import './queryString/spec-setParam';
     //noop
-});
+

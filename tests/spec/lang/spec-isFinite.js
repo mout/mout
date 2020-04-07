@@ -1,4 +1,4 @@
-define(['mout/lang/isFinite'], function(isFinite){
+import isFinite from 'mout/lang/isFinite';
 
     describe('lang/isFinite', function(){
 
@@ -35,4 +35,4 @@ define(['mout/lang/isFinite'], function(isFinite){
 
     });
 
-});
+

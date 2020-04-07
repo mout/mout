@@ -1,4 +1,4 @@
-define(['mout/lang/isInteger'], function(isInteger){
+import isInteger from 'mout/lang/isInteger';
 
     describe('lang/isInteger', function(){
 
@@ -40,4 +40,4 @@ define(['mout/lang/isInteger'], function(isInteger){
 
     });
 
-});
+

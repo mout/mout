@@ -1,4 +1,4 @@
-define(['mout/function/partial'], function(partial){
+import partial from 'mout/function/partial';
 
     var _ = partial._;
 
@@ -36,4 +36,4 @@ define(['mout/function/partial'], function(partial){
 
     });
 
-});
+

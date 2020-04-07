@@ -1,4 +1,4 @@
-define(['mout/array/reduce'], function (reduce) {
+import reduce from 'mout/array/reduce';
 
     describe('array/reduce()', function () {
 
@@ -123,4 +123,4 @@ define(['mout/array/reduce'], function (reduce) {
 
     });
 
-});
+

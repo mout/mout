@@ -1,4 +1,4 @@
-define(['mout/function/times'], function(times){
+import times from 'mout/function/times';
 
     describe('function/times', function(){
 
@@ -40,4 +40,4 @@ define(['mout/function/times'], function(times){
 
     });
 
-});
+

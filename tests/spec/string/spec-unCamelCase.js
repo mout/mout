@@ -1,4 +1,4 @@
-define(['mout/string/unCamelCase'], function (unCamelCase) {
+import unCamelCase from 'mout/string/unCamelCase';
 
     describe('string/unCamelCase()', function(){
 
@@ -22,4 +22,4 @@ define(['mout/string/unCamelCase'], function (unCamelCase) {
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/array/indexOf'], function(indexOf){
+import indexOf from 'mout/array/indexOf';
 
     describe('array/indexOf()', function(){
 
@@ -91,4 +91,4 @@ define(['mout/array/indexOf'], function(indexOf){
 
     });
 
-});
+

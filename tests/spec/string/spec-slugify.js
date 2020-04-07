@@ -1,4 +1,4 @@
-define(['mout/string/slugify'], function (slugify) {
+import slugify from 'mout/string/slugify';
 
     describe('string/slugify()', function(){
 
@@ -47,4 +47,4 @@ define(['mout/string/slugify'], function (slugify) {
 
     });
 
-});
+

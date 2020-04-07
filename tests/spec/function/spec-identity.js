@@ -1,4 +1,4 @@
-define(['mout/function/identity'], function(identity){
+import identity from 'mout/function/identity';
 
     describe('function/identity', function(){
 
@@ -13,4 +13,4 @@ define(['mout/function/identity'], function(identity){
 
     });
 
-});
+

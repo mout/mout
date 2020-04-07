@@ -1,4 +1,5 @@
-define(['../lang/toString', './repeat'], function(toString, repeat) {
+import toString from '../lang/toString';
+import repeat from './repeat';
 
     /**
      * Pad string with `char` if its' length is smaller than `minLen`
@@ -11,6 +12,6 @@ define(['../lang/toString', './repeat'], function(toString, repeat) {
             repeat(ch, minLen - str.length) + str : str;
     }
 
-    return lpad;
+    export default lpad;
 
-});
+

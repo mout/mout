@@ -1,4 +1,5 @@
-define(['./forOwn', '../lang/isArray'], function(forOwn, isArray) {
+import forOwn from './forOwn';
+import isArray from '../lang/isArray';
 
     function containsMatch(array, pattern) {
         var i = -1, length = array.length;
@@ -50,6 +51,6 @@ define(['./forOwn', '../lang/isArray'], function(forOwn, isArray) {
         }
     }
 
-    return deepMatches;
+    export default deepMatches;
 
-});
+

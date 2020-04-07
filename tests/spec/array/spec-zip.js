@@ -1,4 +1,4 @@
-define(['mout/array/zip'], function(zip){
+import zip from 'mout/array/zip';
 
     describe('array/zip', function(){
 
@@ -27,4 +27,4 @@ define(['mout/array/zip'], function(zip){
 
     });
 
-});
+

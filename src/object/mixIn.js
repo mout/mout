@@ -1,4 +1,4 @@
-define(['./forOwn'], function(forOwn){
+import forOwn from './forOwn';
 
     /**
     * Combine properties from all the objects into first one.
@@ -24,5 +24,5 @@ define(['./forOwn'], function(forOwn){
         this[key] = val;
     }
 
-    return mixIn;
-});
+    export default mixIn;
+

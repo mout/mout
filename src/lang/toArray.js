@@ -1,4 +1,5 @@
-define(['./kindOf', './GLOBAL'], function (kindOf, GLOBAL) {
+import kindOf from './kindOf';
+import GLOBAL from './GLOBAL';
 
     /**
      * Convert array-like object into array
@@ -25,5 +26,5 @@ define(['./kindOf', './GLOBAL'], function (kindOf, GLOBAL) {
         }
         return ret;
     }
-    return toArray;
-});
+    export default toArray;
+

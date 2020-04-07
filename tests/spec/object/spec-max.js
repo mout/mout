@@ -1,4 +1,4 @@
-define(['mout/object/max'], function(max){
+import max from 'mout/object/max';
 
     describe('object/max', function(){
 
@@ -39,4 +39,4 @@ define(['mout/object/max'], function(max){
 
 
     });
-});
+

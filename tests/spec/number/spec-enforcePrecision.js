@@ -1,4 +1,4 @@
-define(['mout/number/enforcePrecision'], function (enforcePrecision) {
+import enforcePrecision from 'mout/number/enforcePrecision';
 
     describe('number/enforcePrecision()', function(){
 
@@ -31,4 +31,4 @@ define(['mout/number/enforcePrecision'], function (enforcePrecision) {
         });
 
     });
-});
+

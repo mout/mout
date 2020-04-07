@@ -1,8 +1,8 @@
-define(['./isKind'], function (isKind) {
+import isKind from './isKind';
     /**
      */
     function isNumber(val) {
         return isKind(val, 'Number');
     }
-    return isNumber;
-});
+    export default isNumber;
+

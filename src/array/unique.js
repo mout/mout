@@ -1,4 +1,4 @@
-define(['./filter'], function(filter){
+import filter from './filter';
 
     /**
      * @return {array} Array of unique items
@@ -20,6 +20,6 @@ define(['./filter'], function(filter){
         return a === b;
     }
 
-    return unique;
-});
+    export default unique;
+
 

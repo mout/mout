@@ -1,4 +1,6 @@
-define(['../lang/toString', './lowerCase', './upperCase'], function(toString, lowerCase, upperCase){
+import toString from '../lang/toString';
+import lowerCase from './lowerCase';
+import upperCase from './upperCase';
     /**
      * UPPERCASE first char of each sentence and lowercase other chars.
      */
@@ -9,5 +11,5 @@ define(['../lang/toString', './lowerCase', './upperCase'], function(toString, lo
         // UPPERCASE
         return lowerCase(str).replace(/(^\w)|\.\s+(\w)/gm, upperCase);
     }
-    return sentenceCase;
-});
+    export default sentenceCase;
+

@@ -1,4 +1,4 @@
-define(['mout/random/random'], function(random){
+import random from 'mout/random/random';
 
     describe('random/random', function(){
 
@@ -21,4 +21,4 @@ define(['mout/random/random'], function(random){
 
     });
 
-});
+

@@ -1,8 +1,4 @@
-define(
-    [
-        'mout/object/namespace'
-    ],
-    function (namespace) {
+import namespace from 'mout/object/namespace';
 
         describe('object/namespace()', function () {
 
@@ -61,6 +57,5 @@ define(
 
         });
 
-    }
-);
+    
 

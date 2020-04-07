@@ -1,4 +1,4 @@
-define(['../function/makeIterator_'], function (makeIterator) {
+import makeIterator from '../function/makeIterator_';
 
     /**
      * Returns the index of the first item that matches criteria
@@ -19,5 +19,5 @@ define(['../function/makeIterator_'], function (makeIterator) {
         return -1;
     }
 
-    return findIndex;
-});
+    export default findIndex;
+

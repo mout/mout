@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Calls closure only after callback is called x times
@@ -9,6 +9,6 @@ define(function () {
         };
     }
 
-    return after;
+    export default after;
 
-});
+

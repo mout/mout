@@ -1,4 +1,4 @@
-define(['mout/lang/deepClone'], function (deepClone) {
+import deepClone from 'mout/lang/deepClone';
 
     describe('lang/deepClone()', function () {
 
@@ -102,4 +102,4 @@ define(['mout/lang/deepClone'], function (deepClone) {
         });
     });
 
-});
+

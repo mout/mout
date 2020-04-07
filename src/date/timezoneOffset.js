@@ -1,4 +1,4 @@
-define(['../number/pad'], function (pad) {
+import pad from '../number/pad';
 
     /**
      * time zone as hour and minute offset from UTC (e.g. +0900)
@@ -11,6 +11,6 @@ define(['../number/pad'], function (pad) {
         return (offset > 0? '-' : '+') + h + m;
     }
 
-    return timezoneOffset;
+    export default timezoneOffset;
 
-});
+

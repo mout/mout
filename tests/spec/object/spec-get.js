@@ -1,8 +1,4 @@
-define(
-    [
-        'mout/object/get'
-    ],
-    function (get) {
+import get from 'mout/object/get';
 
         describe('object/get()', function () {
 
@@ -73,5 +69,4 @@ define(
             });
         });
 
-    }
-);
+    

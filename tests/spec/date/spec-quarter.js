@@ -1,4 +1,4 @@
-define(['mout/date/quarter'], function(quarter){
+import quarter from 'mout/date/quarter';
 
     describe('date/quarter', function(){
 
@@ -11,4 +11,4 @@ define(['mout/date/quarter'], function(quarter){
 
     });
 
-});
+

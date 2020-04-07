@@ -1,4 +1,4 @@
-define(['mout/lang/toString'], function(toString){
+import toString from 'mout/lang/toString';
 
     describe('lang/toString', function(){
 
@@ -27,4 +27,4 @@ define(['mout/lang/toString'], function(toString){
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/string/ltrim'], function (ltrim) {
+import ltrim from 'mout/string/ltrim';
 
     describe('string/ltrim()', function(){
 
@@ -23,4 +23,4 @@ define(['mout/string/ltrim'], function (ltrim) {
 
     });
 
-});
+

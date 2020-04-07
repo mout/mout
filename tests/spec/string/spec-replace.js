@@ -1,4 +1,4 @@
-define(['mout/string/replace'], function(replace){
+import replace from 'mout/string/replace';
 
     describe('string/replace', function(){
 
@@ -46,4 +46,4 @@ define(['mout/string/replace'], function(replace){
 
     });
 
-});
+

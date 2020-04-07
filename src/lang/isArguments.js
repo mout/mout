@@ -1,4 +1,4 @@
-define(['./isKind'], function (isKind) {
+import isKind from './isKind';
 
     /**
      */
@@ -11,5 +11,5 @@ define(['./isKind'], function (isKind) {
                 return !!(val && Object.prototype.hasOwnProperty.call(val, 'callee'));
             };
 
-    return isArgs;
-});
+    export default isArgs;
+

@@ -1,4 +1,4 @@
-define(['./isNumber'], function (isNumber) {
+import isNumber from './isNumber';
 
     /**
      * Check if value is an integer
@@ -7,6 +7,6 @@ define(['./isNumber'], function (isNumber) {
         return isNumber(val) && (val % 1 === 0);
     }
 
-    return isInteger;
+    export default isInteger;
 
-});
+

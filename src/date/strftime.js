@@ -1,4 +1,10 @@
-define(['../number/pad', '../string/lpad', './i18n_', './dayOfTheYear', './timezoneOffset', './timezoneAbbr', './weekOfTheYear'], function (pad, lpad, i18n, dayOfTheYear, timezoneOffset, timezoneAbbr, weekOfTheYear) {
+import pad from '../number/pad';
+import lpad from '../string/lpad';
+import i18n from './i18n_';
+import dayOfTheYear from './dayOfTheYear';
+import timezoneOffset from './timezoneOffset';
+import timezoneAbbr from './timezoneAbbr';
+import weekOfTheYear from './weekOfTheYear';
 
     var _combinations = {
         'D': '%m/%d/%y',
@@ -110,6 +116,6 @@ define(['../number/pad', '../string/lpad', './i18n_', './dayOfTheYear', './timez
     }
 
 
-    return strftime;
+    export default strftime;
 
-});
+

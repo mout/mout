@@ -1,4 +1,4 @@
-define(['mout/function/compose'], function (compose) {
+import compose from 'mout/function/compose';
 
     describe('function/compose()', function () {
 
@@ -31,5 +31,5 @@ define(['mout/function/compose'], function (compose) {
     });
 
 
-});
+
 

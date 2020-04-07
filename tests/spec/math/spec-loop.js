@@ -1,4 +1,4 @@
-define(['mout/math/loop'], function (loop) {
+import loop from 'mout/math/loop';
 
     describe('math/loop()', function(){
 
@@ -25,4 +25,4 @@ define(['mout/math/loop'], function (loop) {
         });
 
     });
-});
+

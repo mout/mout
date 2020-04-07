@@ -1,4 +1,4 @@
-define(['../array/forEach'], function (forEach) {
+import forEach from '../array/forEach';
 
     /**
      * Create nested object if non-existent
@@ -14,6 +14,6 @@ define(['../array/forEach'], function (forEach) {
         return obj;
     }
 
-    return namespace;
+    export default namespace;
 
-});
+

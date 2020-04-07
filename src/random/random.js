@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Just a wrapper to Math.random. No methods inside mout/random should call
@@ -13,6 +13,6 @@ define(function () {
     // we expose the method so it can be swapped if needed
     random.get = Math.random;
 
-    return random;
+    export default random;
 
-});
+

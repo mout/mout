@@ -1,4 +1,5 @@
-define(['../lang/isArray', '../object/size'], function (isArray, objSize) {
+import isArray from '../lang/isArray';
+import objSize from '../object/size';
 
     /**
      * Get collection size
@@ -13,6 +14,6 @@ define(['../lang/isArray', '../object/size'], function (isArray, objSize) {
         return objSize(list);
     }
 
-    return size;
+    export default size;
 
-});
+

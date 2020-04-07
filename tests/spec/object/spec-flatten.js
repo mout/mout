@@ -1,4 +1,4 @@
-define(['mout/object/flatten'], function (flatten) {
+import flatten from 'mout/object/flatten';
 
     describe('object/flatten()', function () {
 
@@ -39,4 +39,4 @@ define(['mout/object/flatten'], function (flatten) {
             expect( flatten(undefined) ).toEqual( {} );
         });
     });
-});
+

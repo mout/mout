@@ -1,4 +1,4 @@
-define(['mout/array/repeat'], function (repeat) {
+import repeat from 'mout/array/repeat';
 
     describe('array/repeat()', function () {
 
@@ -38,4 +38,4 @@ define(['mout/array/repeat'], function (repeat) {
             expect( function () { repeat(-1, null) } ).toThrow();
         });
     });
-});
+

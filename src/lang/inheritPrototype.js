@@ -1,4 +1,4 @@
-define(['./createObject'], function(createObject){
+import createObject from './createObject';
 
     /**
     * Inherit prototype from another Object.
@@ -14,5 +14,5 @@ define(['./createObject'], function(createObject){
         return p;
     }
 
-    return inheritPrototype;
-});
+    export default inheritPrototype;
+

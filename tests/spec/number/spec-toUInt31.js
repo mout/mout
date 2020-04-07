@@ -1,4 +1,4 @@
-define(['mout/number/toUInt31'], function (toUInt31) {
+import toUInt31 from 'mout/number/toUInt31';
 
     describe('number/toUInt31()', function(){
 
@@ -34,4 +34,4 @@ define(['mout/number/toUInt31'], function (toUInt31) {
         });
 
     });
-});
+

@@ -1,4 +1,4 @@
-define(['mout/array/toLookup'], function (toLookup) {
+import toLookup from 'mout/array/toLookup';
 
     describe('array/toLookup()', function () {
 
@@ -36,4 +36,4 @@ define(['mout/array/toLookup'], function (toLookup) {
 
     });
 
-});
+

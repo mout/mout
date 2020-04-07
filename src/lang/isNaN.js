@@ -1,4 +1,5 @@
-define(['./isNumber', '../number/isNaN'], function (isNumber, $isNaN) {
+import isNumber from './isNumber';
+import $isNaN from '../number/isNaN';
 
     /**
      * Check if value is NaN for realz
@@ -10,6 +11,6 @@ define(['./isNumber', '../number/isNaN'], function (isNumber, $isNaN) {
         return !isNumber(val) || $isNaN(Number(val));
     }
 
-    return isNaN;
+    export default isNaN;
 
-});
+

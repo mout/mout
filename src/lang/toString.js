@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Typecast a value to a String, using an empty string value for null or
@@ -8,6 +8,6 @@ define(function () {
         return val == null ? '' : val.toString();
     }
 
-    return toString;
+    export default toString;
 
-});
+

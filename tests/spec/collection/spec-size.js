@@ -1,4 +1,4 @@
-define(['mout/collection/size'], function(size){
+import size from 'mout/collection/size';
 
     describe('collection/size', function(){
 
@@ -46,4 +46,4 @@ define(['mout/collection/size'], function(size){
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/array/insert'], function (insert) {
+import insert from 'mout/array/insert';
 
     describe('array/insert()', function(){
 
@@ -30,4 +30,4 @@ define(['mout/array/insert'], function (insert) {
         });
 
     });
-});
+

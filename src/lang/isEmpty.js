@@ -1,4 +1,5 @@
-define(['../object/forOwn', './isArray'], function (forOwn, isArray) {
+import forOwn from '../object/forOwn';
+import isArray from './isArray';
 
     function isEmpty(val){
         if (val == null) {
@@ -18,6 +19,6 @@ define(['../object/forOwn', './isArray'], function (forOwn, isArray) {
         }
     }
 
-    return isEmpty;
+    export default isEmpty;
 
-});
+

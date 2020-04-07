@@ -1,4 +1,4 @@
-define(['mout/object/keys'], function (keys) {
+import keys from 'mout/object/keys';
 
     describe('object/keys()', function () {
 
@@ -59,4 +59,4 @@ define(['mout/object/keys'], function (keys) {
 
     });
 
-});
+

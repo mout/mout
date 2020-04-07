@@ -1,4 +1,4 @@
-define(['../random/randInt'], function (randInt) {
+import randInt from '../random/randInt';
 
     /**
      * Remove random item(s) from the Array and return it.
@@ -26,6 +26,6 @@ define(['../random/randInt'], function (randInt) {
     }
 
 
-    return pick;
+    export default pick;
 
-});
+

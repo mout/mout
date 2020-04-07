@@ -1,4 +1,4 @@
-define(['../time/now'], function (now) {
+import now from '../time/now';
 
     /**
      */
@@ -28,6 +28,6 @@ define(['../time/now'], function (now) {
         return throttled;
     }
 
-    return throttle;
+    export default throttle;
 
-});
+

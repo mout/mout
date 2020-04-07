@@ -1,4 +1,4 @@
-define(function(){
+
     /**
     * Loops value inside range.
     */
@@ -6,5 +6,5 @@ define(function(){
         return val < min? max : (val > max? min : val);
     }
 
-    return loop;
-});
+    export default loop;
+

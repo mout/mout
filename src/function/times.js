@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Iterates over a callback a set amount of times
@@ -12,6 +12,6 @@ define(function () {
         }
     }
 
-    return times;
+    export default times;
 
-});
+

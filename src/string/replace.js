@@ -1,4 +1,5 @@
-define(['../lang/toString', '../lang/toArray'], function (toString, toArray) {
+import toString from '../lang/toString';
+import toArray from '../lang/toArray';
 
     /**
      * Replace string(s) with the replacement(s) in the source.
@@ -27,6 +28,6 @@ define(['../lang/toString', '../lang/toArray'], function (toString, toArray) {
         return str;
     }
 
-    return replace;
+    export default replace;
 
-});
+

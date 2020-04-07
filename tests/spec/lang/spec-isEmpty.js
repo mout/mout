@@ -1,4 +1,4 @@
-define(['mout/lang/isEmpty'], function (isEmpty) {
+import isEmpty from 'mout/lang/isEmpty';
 
     describe('lang/isEmpty', function () {
 
@@ -42,4 +42,4 @@ define(['mout/lang/isEmpty'], function (isEmpty) {
 
     });
 
-});
+

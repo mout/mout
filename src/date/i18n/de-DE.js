@@ -1,6 +1,6 @@
-define(function(){
+
     // de-DE (German)
-    return {
+    export default {
         "am" : "",
         "pm" : "",
 
@@ -58,4 +58,4 @@ define(function(){
             "Sa"
         ]
     };
-});
+

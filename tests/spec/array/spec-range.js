@@ -1,4 +1,4 @@
-define(['mout/array/range'], function (range) {
+import range from 'mout/array/range';
 
     describe('array/range()', function () {
 
@@ -36,4 +36,4 @@ define(['mout/array/range'], function (range) {
 
     });
 
-});
+

@@ -1,4 +1,8 @@
-define(['../lang/toString', './replaceAccents', './removeNonWord', './upperCase', './lowerCase'], function(toString, replaceAccents, removeNonWord, upperCase, lowerCase){
+import toString from '../lang/toString';
+import replaceAccents from './replaceAccents';
+import removeNonWord from './removeNonWord';
+import upperCase from './upperCase';
+import lowerCase from './lowerCase';
     /**
     * Convert string to camelCase text.
     */
@@ -26,5 +30,5 @@ define(['../lang/toString', './replaceAccents', './removeNonWord', './upperCase'
             .replace(/^\s*[A-Z]+/g, lowerCase) // convert first word to lowercase
             .replace(/\s+/g, ''); // remove spaces
     }
-    return camelCase;
-});
+    export default camelCase;
+

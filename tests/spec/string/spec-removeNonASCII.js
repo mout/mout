@@ -1,4 +1,4 @@
-define(['mout/string/removeNonASCII'], function (removeNonASCII) {
+import removeNonASCII from 'mout/string/removeNonASCII';
 
     describe('string/removeNonASCII()', function(){
 
@@ -20,4 +20,4 @@ define(['mout/string/removeNonASCII'], function (removeNonASCII) {
 
     });
 
-});
+

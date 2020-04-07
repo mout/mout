@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Set query string parameter value
@@ -23,6 +23,6 @@ define(function () {
 
     }
 
-    return setParam;
+    export default setParam;
 
-});
+

@@ -1,4 +1,4 @@
-define(['./namespace'], function (namespace) {
+import namespace from './namespace';
 
     /**
      * set "nested" object property
@@ -12,6 +12,6 @@ define(['./namespace'], function (namespace) {
         }
     }
 
-    return set;
+    export default set;
 
-});
+

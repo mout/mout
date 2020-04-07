@@ -1,4 +1,4 @@
-define(['../lang/toString'], function (toString) {
+import toString from '../lang/toString';
 
     /**
      * Unescapes HTML special chars
@@ -13,6 +13,6 @@ define(['../lang/toString'], function (toString) {
         return str;
     }
 
-    return unescapeHtml;
+    export default unescapeHtml;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/object/has'], function (has) {
+import has from 'mout/object/has';
 
     describe('object/has()', function () {
 
@@ -69,4 +69,4 @@ define(['mout/object/has'], function (has) {
     });
 
 
-});
+

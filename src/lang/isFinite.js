@@ -1,4 +1,5 @@
-define(['./isNumber', './GLOBAL'], function (isNumber, GLOBAL) {
+import isNumber from './isNumber';
+import GLOBAL from './GLOBAL';
 
     /**
      * Check if value is finite
@@ -14,6 +15,6 @@ define(['./isNumber', './GLOBAL'], function (isNumber, GLOBAL) {
         return is;
     }
 
-    return isFinite;
+    export default isFinite;
 
-});
+

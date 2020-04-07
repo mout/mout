@@ -1,4 +1,4 @@
-define(['../lang/toString'], function(toString){
+import toString from '../lang/toString';
 
     var CAMEL_CASE_BORDER = /([a-z\xE0-\xFF])([A-Z\xC0\xDF])/g;
 
@@ -19,5 +19,5 @@ define(['../lang/toString'], function(toString){
         str = str.toLowerCase(); //add space between camelCase text
         return str;
     }
-    return unCamelCase;
-});
+    export default unCamelCase;
+

@@ -1,4 +1,4 @@
-define(['mout/array/findLastIndex'], function(findLastIndex){
+import findLastIndex from 'mout/array/findLastIndex';
 
     describe('array/findLastIndex', function(){
 
@@ -57,4 +57,4 @@ define(['mout/array/findLastIndex'], function(findLastIndex){
 
     });
 
-});
+

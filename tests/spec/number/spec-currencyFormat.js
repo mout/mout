@@ -1,4 +1,4 @@
-define(['mout/number/currencyFormat'], function (currencyFormat) {
+import currencyFormat from 'mout/number/currencyFormat';
 
     describe('number/currencyFormat()', function () {
 
@@ -42,4 +42,4 @@ define(['mout/number/currencyFormat'], function (currencyFormat) {
 
     });
 
-});
+

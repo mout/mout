@@ -1,4 +1,4 @@
-define(['../lang/clone'], function (clone) {
+import clone from '../lang/clone';
 
     /**
      * get a new Date object representing start of period
@@ -49,6 +49,6 @@ define(['../lang/clone'], function (clone) {
         return date;
     }
 
-    return startOf;
+    export default startOf;
 
-});
+

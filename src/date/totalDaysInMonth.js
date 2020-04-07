@@ -1,4 +1,5 @@
-define(['../lang/isDate', './isLeapYear'], function (isDate, isLeapYear) {
+import isDate from '../lang/isDate';
+import isLeapYear from './isLeapYear';
 
     var DAYS_IN_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -17,6 +18,6 @@ define(['../lang/isDate', './isLeapYear'], function (isDate, isLeapYear) {
         }
     }
 
-    return totalDaysInMonth;
+    export default totalDaysInMonth;
 
-});
+

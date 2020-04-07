@@ -1,4 +1,4 @@
-define(['mout/array/pick'], function (pick) {
+import pick from 'mout/array/pick';
 
     describe('array/pick()', function () {
 
@@ -97,4 +97,4 @@ define(['mout/array/pick'], function (pick) {
     });
 
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/object/filter'], function(filter) {
+import filter from 'mout/object/filter';
 
     describe('object/filter()', function() {
 
@@ -83,4 +83,4 @@ define(['mout/object/filter'], function(filter) {
 
 
     });
-});
+

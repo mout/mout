@@ -1,4 +1,6 @@
-define(['./totalDaysInMonth', './totalDaysInYear', '../time/convert'], function(totalDaysInMonth, totalDaysInYear, convert){
+import totalDaysInMonth from './totalDaysInMonth';
+import totalDaysInYear from './totalDaysInYear';
+import convert from '../time/convert';
 
     /**
      * calculate the difference between dates (range)
@@ -123,6 +125,6 @@ define(['./totalDaysInMonth', './totalDaysInYear', '../time/convert'], function(
     }
 
 
-    return diff;
+    export default diff;
 
-});
+

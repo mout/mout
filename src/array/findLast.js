@@ -1,4 +1,4 @@
-define(['./findLastIndex'], function (findLastIndex) {
+import findLastIndex from './findLastIndex';
 
     /**
      * Returns last item that matches criteria
@@ -8,6 +8,6 @@ define(['./findLastIndex'], function (findLastIndex) {
         return idx >= 0? arr[idx] : void(0);
     }
 
-    return findLast;
+    export default findLast;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/array/reduceRight'], function (reduceRight) {
+import reduceRight from 'mout/array/reduceRight';
 
     describe('array/reduceRight()', function () {
 
@@ -123,4 +123,4 @@ define(['mout/array/reduceRight'], function (reduceRight) {
 
     });
 
-});
+

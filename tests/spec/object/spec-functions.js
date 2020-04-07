@@ -1,4 +1,4 @@
-define(['mout/object/functions'], function(functions){
+import functions from 'mout/object/functions';
 
     describe('object/functions', function(){
 
@@ -20,4 +20,4 @@ define(['mout/object/functions'], function(functions){
 
     });
 
-});
+

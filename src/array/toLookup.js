@@ -1,4 +1,4 @@
-define(['../lang/isFunction'], function (isFunction) {
+import isFunction from '../lang/isFunction';
 
     /**
      * Creates an object that holds a lookup for the objects in the array.
@@ -24,5 +24,5 @@ define(['../lang/isFunction'], function (isFunction) {
 
         return result;
     }
-    return toLookup;
-});
+    export default toLookup;
+

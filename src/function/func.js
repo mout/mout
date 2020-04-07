@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Returns a function that call a method on the passed object
@@ -9,6 +9,6 @@ define(function () {
         };
     }
 
-    return func;
+    export default func;
 
-});
+

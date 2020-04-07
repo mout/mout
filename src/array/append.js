@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Appends an array to the end of another.
@@ -17,5 +17,5 @@ define(function () {
         }
         return arr1;
     }
-    return append;
-});
+    export default append;
+

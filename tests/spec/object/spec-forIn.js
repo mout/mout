@@ -1,4 +1,4 @@
-define(['mout/object/forIn'], function(forIn){
+import forIn from 'mout/object/forIn';
 
     var global = this;
 
@@ -128,4 +128,4 @@ define(['mout/object/forIn'], function(forIn){
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/string/WHITE_SPACES'], function(WHITE_SPACES){
+import WHITE_SPACES from 'mout/string/WHITE_SPACES';
 
     describe('string/WHITE_SPACES', function(){
 
@@ -13,4 +13,4 @@ define(['mout/string/WHITE_SPACES'], function(WHITE_SPACES){
 
     });
 
-});
+

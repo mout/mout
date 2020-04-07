@@ -1,4 +1,5 @@
-define(['./forEach', '../function/makeIterator_'], function (forEach, makeIterator) {
+import forEach from './forEach';
+import makeIterator from '../function/makeIterator_';
 
     /**
      * filter collection values, returns array.
@@ -17,6 +18,6 @@ define(['./forEach', '../function/makeIterator_'], function (forEach, makeIterat
         return results;
     }
 
-    return filter;
+    export default filter;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/lang/isObject'], function (isObject) {
+import isObject from 'mout/lang/isObject';
 
     describe('lang/isObject()', function () {
 
@@ -16,4 +16,4 @@ define(['mout/lang/isObject'], function (isObject) {
 
     });
 
-});
+

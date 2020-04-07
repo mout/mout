@@ -1,4 +1,4 @@
-define(['mout/object/forOwn'], function (forOwn) {
+import forOwn from 'mout/object/forOwn';
 
     var global = this;
 
@@ -145,4 +145,4 @@ define(['mout/object/forOwn'], function (forOwn) {
         });
     });
 
-});
+

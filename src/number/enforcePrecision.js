@@ -1,4 +1,4 @@
-define(['../lang/toNumber'], function(toNumber){
+import toNumber from '../lang/toNumber';
     /**
      * Enforce a specific amount of decimal digits and also fix floating
      * point rounding issues.
@@ -8,5 +8,5 @@ define(['../lang/toNumber'], function(toNumber){
         var pow = Math.pow(10, nDecimalDigits);
         return +(Math.round(val * pow) / pow).toFixed(nDecimalDigits);
     }
-    return enforcePrecision;
-});
+    export default enforcePrecision;
+

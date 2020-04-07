@@ -1,4 +1,8 @@
-define(['./unique', './filter', './some', './contains', './slice'], function (unique, filter, some, contains, slice) {
+import unique from './unique';
+import filter from './filter';
+import some from './some';
+import contains from './contains';
+import slice from './slice';
 
 
     /**
@@ -14,6 +18,6 @@ define(['./unique', './filter', './some', './contains', './slice'], function (un
         return result;
     }
 
-    return difference;
+    export default difference;
 
-});
+

@@ -1,4 +1,5 @@
-define(['../math/countSteps', '../number/pad'], function(countSteps, pad){
+import countSteps from '../math/countSteps';
+import pad from '../number/pad';
 
     var HOUR = 3600000,
         MINUTE = 60000,
@@ -19,5 +20,5 @@ define(['../math/countSteps', '../number/pad'], function(countSteps, pad){
 
         return str;
     }
-    return toTimeString;
-});
+    export default toTimeString;
+

@@ -1,4 +1,4 @@
-define(['mout/queryString/parse'], function (parse) {
+import parse from 'mout/queryString/parse';
 
     describe('queryString/parse()', function () {
 
@@ -20,4 +20,4 @@ define(['mout/queryString/parse'], function (parse) {
 
     });
 
-});
+

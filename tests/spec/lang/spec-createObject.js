@@ -1,4 +1,4 @@
-define(['mout/lang/createObject'], function (createObject) {
+import createObject from 'mout/lang/createObject';
 
     describe('lang/createObject()', function(){
 
@@ -39,4 +39,4 @@ define(['mout/lang/createObject'], function (createObject) {
         });
 
     });
-});
+

@@ -1,4 +1,4 @@
-define(['mout/lang/isnt'], function(isnt){
+import isnt from 'mout/lang/isnt';
 
     describe('lang/isnt', function(){
 
@@ -30,4 +30,4 @@ define(['mout/lang/isnt'], function(isnt){
 
     });
 
-});
+

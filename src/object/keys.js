@@ -1,4 +1,4 @@
-define(['./forOwn'], function (forOwn) {
+import forOwn from './forOwn';
 
     /**
      * Get object keys
@@ -11,6 +11,6 @@ define(['./forOwn'], function (forOwn) {
             return keys;
         };
 
-    return keys;
+    export default keys;
 
-});
+

@@ -1,4 +1,5 @@
-define(['./decode', './getQuery'], function (decode, getQuery) {
+import decode from './decode';
+import getQuery from './getQuery';
 
     /**
      * Get query string, parses and decodes it.
@@ -7,6 +8,6 @@ define(['./decode', './getQuery'], function (decode, getQuery) {
         return decode(getQuery(url), shouldTypecast);
     }
 
-    return parse;
-});
+    export default parse;
+
 

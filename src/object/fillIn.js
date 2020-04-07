@@ -1,4 +1,6 @@
-define(['../array/forEach', '../array/slice', './forOwn'], function (forEach, slice, forOwn) {
+import forEach from '../array/forEach';
+import slice from '../array/slice';
+import forOwn from './forOwn';
 
     /**
      * Copy missing properties in the obj from the defaults.
@@ -14,6 +16,6 @@ define(['../array/forEach', '../array/slice', './forOwn'], function (forEach, sl
         return obj;
     }
 
-    return fillIn;
+    export default fillIn;
 
-});
+

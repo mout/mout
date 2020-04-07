@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Array reduceRight
@@ -30,5 +30,5 @@ define(function () {
         return result;
     }
 
-    return reduceRight;
-});
+    export default reduceRight;
+

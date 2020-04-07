@@ -1,8 +1,10 @@
-define(['./make_', '../array/find', '../object/find'], function(make, arrFind, objFind) {
+import make from './make_';
+import arrFind from '../array/find';
+import objFind from '../object/find';
 
     /**
      * Find value that returns true on iterator check.
      */
-    return make(arrFind, objFind);
+    export default make(arrFind, objFind);
 
-});
+

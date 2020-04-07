@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Debounce callback execution
@@ -27,6 +27,6 @@ define(function () {
         return debounced;
     }
 
-    return debounce;
+    export default debounce;
 
-});
+

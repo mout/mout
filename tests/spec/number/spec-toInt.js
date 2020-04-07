@@ -1,4 +1,4 @@
-define(['mout/number/toInt'], function (toInt) {
+import toInt from 'mout/number/toInt';
 
     describe('number/toInt()', function(){
 
@@ -33,4 +33,4 @@ define(['mout/number/toInt'], function (toInt) {
         });
     });
 
-});
+

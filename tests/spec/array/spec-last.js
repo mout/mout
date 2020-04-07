@@ -1,4 +1,4 @@
-define(['mout/array/last'], function(last){
+import last from 'mout/array/last';
 
     describe('array/last', function(){
 
@@ -12,4 +12,4 @@ define(['mout/array/last'], function(last){
 
     });
 
-});
+

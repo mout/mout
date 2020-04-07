@@ -1,4 +1,4 @@
-define(['mout/function/after'], function(after){
+import after from 'mout/function/after';
 
     describe('function/after', function(){
 
@@ -50,4 +50,4 @@ define(['mout/function/after'], function(after){
 
     });
 
-});
+

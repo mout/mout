@@ -1,4 +1,4 @@
-define(function () {
+
     var UNDEF;
 
     /**
@@ -6,5 +6,5 @@ define(function () {
     function isUndef(val){
         return val === UNDEF;
     }
-    return isUndef;
-});
+    export default isUndef;
+

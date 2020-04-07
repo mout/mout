@@ -1,4 +1,4 @@
-define(['mout/array/groupBy'], function(groupBy) {
+import groupBy from 'mout/array/groupBy';
 
     describe('array/groupBy', function() {
         it('should bucket appropriately', function() {
@@ -38,4 +38,4 @@ define(['mout/array/groupBy'], function(groupBy) {
             .toEqual({ '3': ['and', 'ham'], '4': ['eggs'], '5': ['green'] });
         });
     });
-});
+

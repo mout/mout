@@ -1,4 +1,4 @@
-define(['../function/makeIterator_'], function(makeIterator) {
+import makeIterator from '../function/makeIterator_';
 
     /**
      * Array reject
@@ -21,5 +21,5 @@ define(['../function/makeIterator_'], function(makeIterator) {
         return results;
     }
 
-    return reject;
-});
+    export default reject;
+

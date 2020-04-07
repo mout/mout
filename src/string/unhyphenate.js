@@ -1,4 +1,4 @@
-define(['../lang/toString'], function(toString){
+import toString from '../lang/toString';
     /**
      * Replaces hyphens with spaces. (only hyphens between word chars)
      */
@@ -6,5 +6,5 @@ define(['../lang/toString'], function(toString){
         str = toString(str);
         return str.replace(/(\w)(-)(\w)/g, '$1 $3');
     }
-    return unhyphenate;
-});
+    export default unhyphenate;
+

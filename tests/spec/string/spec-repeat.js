@@ -1,4 +1,4 @@
-define(['mout/string/repeat'], function (repeat) {
+import repeat from 'mout/string/repeat';
 
     describe('string/repeat()', function () {
 
@@ -23,4 +23,4 @@ define(['mout/string/repeat'], function (repeat) {
         });
     });
 
-});
+

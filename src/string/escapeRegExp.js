@@ -1,4 +1,4 @@
-define(['../lang/toString'], function(toString) {
+import toString from '../lang/toString';
 
     /**
      * Escape RegExp string chars.
@@ -7,6 +7,6 @@ define(['../lang/toString'], function(toString) {
         return toString(str).replace(/\W/g,'\\$&');
     }
 
-    return escapeRegExp;
+    export default escapeRegExp;
 
-});
+

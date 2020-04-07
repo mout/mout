@@ -1,4 +1,4 @@
-define(function() {
+
 
     /**
      * Checks if the object is a primitive
@@ -16,6 +16,6 @@ define(function() {
         return value == null;
     }
 
-    return isPrimitive;
+    export default isPrimitive;
 
-});
+

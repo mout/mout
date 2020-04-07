@@ -1,4 +1,4 @@
-define(function () {
+
 
     var bind = Function.prototype.bind;
 
@@ -10,6 +10,6 @@ define(function () {
         return new Bound();
     }
 
-    return ctorApply;
+    export default ctorApply;
 
-});
+

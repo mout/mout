@@ -1,4 +1,4 @@
-define(['mout/object/deepMatches'], function(deepMatches){
+import deepMatches from 'mout/object/deepMatches';
 
     describe('object/deepMatches', function(){
 
@@ -79,4 +79,4 @@ define(['mout/object/deepMatches'], function(deepMatches){
 
     });
 
-});
+

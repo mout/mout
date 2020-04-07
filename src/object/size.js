@@ -1,4 +1,4 @@
-define(['./forOwn'], function (forOwn) {
+import forOwn from './forOwn';
 
     /**
      * Get object size
@@ -11,6 +11,6 @@ define(['./forOwn'], function (forOwn) {
         return count;
     }
 
-    return size;
+    export default size;
 
-});
+

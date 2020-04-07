@@ -1,4 +1,6 @@
-define(['../lang/toString', './slugify', './unCamelCase'], function(toString, slugify, unCamelCase){
+import toString from '../lang/toString';
+import slugify from './slugify';
+import unCamelCase from './unCamelCase';
     /**
      * Replaces spaces with hyphens, split camelCase text, remove non-word chars, remove accents and convert to lower case.
      */
@@ -8,5 +10,5 @@ define(['../lang/toString', './slugify', './unCamelCase'], function(toString, sl
         return slugify(str, "-");
     }
 
-    return hyphenate;
-});
+    export default hyphenate;
+

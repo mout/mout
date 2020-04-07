@@ -1,4 +1,4 @@
-define(['../lang/toString'], function(toString){
+import toString from '../lang/toString';
     /**
     * Replaces all accented chars with regular ones
     */
@@ -32,5 +32,5 @@ define(['../lang/toString'], function(toString){
         }
         return str;
     }
-    return replaceAccents;
-});
+    export default replaceAccents;
+

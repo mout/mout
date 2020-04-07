@@ -1,8 +1,4 @@
-define(
-    [
-        'mout/object/set'
-    ],
-    function (set) {
+import set from 'mout/object/set';
 
         describe('object/set()', function () {
 
@@ -33,6 +29,5 @@ define(
 
         });
 
-    }
-);
+    
 

@@ -1,4 +1,4 @@
-define(['mout/array/pluck'], function (pluck) {
+import pluck from 'mout/array/pluck';
 
     describe('array/pluck()', function () {
 
@@ -30,4 +30,4 @@ define(['mout/array/pluck'], function (pluck) {
 
     });
 
-});
+

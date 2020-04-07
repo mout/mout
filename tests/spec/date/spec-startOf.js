@@ -1,4 +1,4 @@
-define(['mout/date/startOf'], function(startOf){
+import startOf from 'mout/date/startOf';
 
     describe('date/startOf', function(){
 
@@ -44,4 +44,4 @@ define(['mout/date/startOf'], function(startOf){
 
     });
 
-});
+

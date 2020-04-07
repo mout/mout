@@ -1,4 +1,4 @@
-define(['mout/object/bindAll'], function(bindAll){
+import bindAll from 'mout/object/bindAll';
 
     describe('object/bindAll', function(){
 
@@ -51,4 +51,4 @@ define(['mout/object/bindAll'], function(bindAll){
 
     });
 
-});
+

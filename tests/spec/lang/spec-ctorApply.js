@@ -1,4 +1,4 @@
-define(['mout/lang/ctorApply'], function (ctorApply) {
+import ctorApply from 'mout/lang/ctorApply';
 
     describe('lang/ctorApply()', function () {
 
@@ -29,4 +29,4 @@ define(['mout/lang/ctorApply'], function (ctorApply) {
 
     });
 
-});
+

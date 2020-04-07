@@ -1,4 +1,4 @@
-define(['mout/number/pad'], function (pad) {
+import pad from 'mout/number/pad';
 
     describe('number/pad()', function(){
         it('should add zeroes if number length is < minLength', function(){
@@ -21,4 +21,4 @@ define(['mout/number/pad'], function (pad) {
 
     });
 
-});
+

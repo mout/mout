@@ -1,4 +1,5 @@
-define(['./randHex', './choice'], function (randHex, choice) {
+import randHex from './randHex';
+import choice from './choice';
 
   /**
    * Returns pseudo-random guid (UUID v4)
@@ -19,5 +20,5 @@ define(['./randHex', './choice'], function (randHex, choice) {
         randHex(12)
     );
   }
-  return guid;
-});
+  export default guid;
+

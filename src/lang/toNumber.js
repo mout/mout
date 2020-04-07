@@ -1,4 +1,4 @@
-define(['./isArray'], function (isArray) {
+import isArray from './isArray';
 
     /**
      * covert value into number if numeric
@@ -15,6 +15,6 @@ define(['./isArray'], function (isArray) {
         return Number(val);
     }
 
-    return toNumber;
+    export default toNumber;
 
-});
+

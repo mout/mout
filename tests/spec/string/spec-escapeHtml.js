@@ -1,4 +1,4 @@
-define(['mout/string/escapeHtml'], function (escapeHtml) {
+import escapeHtml from 'mout/string/escapeHtml';
 
     describe('string/escapeHtml()', function () {
 
@@ -17,5 +17,5 @@ define(['mout/string/escapeHtml'], function (escapeHtml) {
 
     });
 
-});
+
 

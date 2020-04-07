@@ -1,4 +1,5 @@
-define(['./map', '../function/prop'], function (map, prop) {
+import map from './map';
+import prop from '../function/prop';
 
     /**
      * Extract a list of property values.
@@ -7,6 +8,6 @@ define(['./map', '../function/prop'], function (map, prop) {
         return map(obj, prop(propName));
     }
 
-    return pluck;
+    export default pluck;
 
-});
+

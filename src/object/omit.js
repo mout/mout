@@ -1,4 +1,5 @@
-define(['../array/slice', '../array/contains'], function(slice, contains){
+import slice from '../array/slice';
+import contains from '../array/contains';
 
     /**
      * Return a copy of the object, filtered to only contain properties except the blacklisted keys.
@@ -15,6 +16,6 @@ define(['../array/slice', '../array/contains'], function(slice, contains){
         return out;
     }
 
-    return omit;
+    export default omit;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/queryString/getQuery'], function (getQuery) {
+import getQuery from 'mout/queryString/getQuery';
 
     describe('queryString/getQuery()', function () {
 
@@ -23,4 +23,4 @@ define(['mout/queryString/getQuery'], function (getQuery) {
         });
     });
 
-});
+

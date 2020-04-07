@@ -1,4 +1,5 @@
-define(['mout/random/randString', './helper-mockRandom'], function (randString, mockRandom) {
+import randString from 'mout/random/randString';
+import mockRandom from './helper-mockRandom';
 
     describe('random/randString', function(){
 
@@ -49,4 +50,4 @@ define(['mout/random/randString', './helper-mockRandom'], function (randString, 
             expect(randString(16, 'ab')).not.toBe(randString(16, 'ab'));
         });
     });
-});
+

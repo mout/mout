@@ -1,4 +1,4 @@
-define(['../function/makeIterator_'], function (makeIterator) {
+import makeIterator from '../function/makeIterator_';
 
     /**
      * Array every
@@ -23,5 +23,5 @@ define(['../function/makeIterator_'], function (makeIterator) {
         return result;
     }
 
-    return every;
-});
+    export default every;
+

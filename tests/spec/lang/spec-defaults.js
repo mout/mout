@@ -1,4 +1,4 @@
-define(['mout/lang/defaults'], function (defaults) {
+import defaults from 'mout/lang/defaults';
 
     describe('lang/defaults', function () {
 
@@ -22,4 +22,4 @@ define(['mout/lang/defaults'], function (defaults) {
 
     });
 
-});
+

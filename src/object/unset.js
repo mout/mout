@@ -1,4 +1,4 @@
-define(['./has'], function (has) {
+import has from './has';
 
     /**
      * Unset object property.
@@ -18,6 +18,6 @@ define(['./has'], function (has) {
         }
     }
 
-    return unset;
+    export default unset;
 
-});
+

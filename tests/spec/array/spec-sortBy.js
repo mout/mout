@@ -1,4 +1,4 @@
-define(['mout/array/sortBy'], function(sortBy){
+import sortBy from 'mout/array/sortBy';
 
     describe('array/sortBy', function(){
 
@@ -56,4 +56,4 @@ define(['mout/array/sortBy'], function(sortBy){
 
     });
 
-});
+

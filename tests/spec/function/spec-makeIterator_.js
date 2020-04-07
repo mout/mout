@@ -1,4 +1,4 @@
-define(['mout/function/makeIterator_'], function(makeIterator_){
+import makeIterator_ from 'mout/function/makeIterator_';
 
     describe('function/makeIterator_', function(){
 
@@ -54,4 +54,4 @@ define(['mout/function/makeIterator_'], function(makeIterator_){
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['../lang/toNumber'], function (toNumber) {
+import toNumber from '../lang/toNumber';
 
     /**
      * Converts number into currency format
@@ -22,6 +22,6 @@ define(['../lang/toNumber'], function (toNumber) {
         }
     }
 
-    return currencyFormat;
+    export default currencyFormat;
 
-});
+

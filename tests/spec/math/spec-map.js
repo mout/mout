@@ -1,4 +1,4 @@
-define(['mout/math/map'], function (map) {
+import map from 'mout/math/map';
 
     describe('math/map()', function(){
 
@@ -9,4 +9,4 @@ define(['mout/math/map'], function (map) {
         });
 
     });
-});
+

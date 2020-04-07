@@ -1,4 +1,4 @@
-define(['mout/string/interpolate'], function (interpolate) {
+import interpolate from 'mout/string/interpolate';
 
     describe('string/interpolate()', function () {
 
@@ -70,4 +70,4 @@ define(['mout/string/interpolate'], function (interpolate) {
 
     });
 
-});
+

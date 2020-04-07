@@ -1,4 +1,4 @@
-define(['mout/array/combine'], function (combine) {
+import combine from 'mout/array/combine';
 
     describe('array/combine()', function(){
 
@@ -26,4 +26,4 @@ define(['mout/array/combine'], function (combine) {
         });
 
     });
-});
+

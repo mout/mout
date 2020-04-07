@@ -1,4 +1,4 @@
-define(['mout/array/sort'], function (sort) {
+import sort from 'mout/array/sort';
 
     describe('array/sort()', function () {
 
@@ -58,4 +58,4 @@ define(['mout/array/sort'], function (sort) {
 
     });
 
-});
+

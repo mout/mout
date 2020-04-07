@@ -1,9 +1,9 @@
-define(['./kindOf'], function (kindOf) {
+import kindOf from './kindOf';
     /**
      * Check if value is from a specific "kind".
      */
     function isKind(val, kind){
         return kindOf(val) === kind;
     }
-    return isKind;
-});
+    export default isKind;
+

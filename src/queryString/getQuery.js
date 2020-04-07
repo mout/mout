@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Gets full query as string with all special chars decoded.
@@ -9,5 +9,5 @@ define(function () {
         return (queryString)? decodeURIComponent(queryString[0].replace(/\+/g,' ')) : '';
     }
 
-    return getQuery;
-});
+    export default getQuery;
+

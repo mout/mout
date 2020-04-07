@@ -1,4 +1,4 @@
-define(['mout/array/split'], function(split) {
+import split from 'mout/array/split';
 
     describe('array/split()', function() {
 
@@ -33,4 +33,4 @@ define(['mout/array/split'], function(split) {
         });
     });
 
-});
+

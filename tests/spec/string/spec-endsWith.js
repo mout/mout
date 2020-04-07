@@ -1,4 +1,4 @@
-define(['mout/string/endsWith'], function (endsWith) {
+import endsWith from 'mout/string/endsWith';
 
     describe('string/endsWith()', function(){
 
@@ -29,4 +29,4 @@ define(['mout/string/endsWith'], function (endsWith) {
         });
 
     });
-});
+

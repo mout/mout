@@ -1,8 +1,6 @@
-define([
-    '../array/forEach',
-    '../function/identity',
-    '../function/makeIterator_'
-], function(forEach, identity, makeIterator) {
+import forEach from '../array/forEach';
+import identity from '../function/identity';
+import makeIterator from '../function/makeIterator_';
 
     /**
      * Bucket the array values.
@@ -28,5 +26,5 @@ define([
         return buckets;
     }
 
-    return groupBy;
-});
+    export default groupBy;
+

@@ -1,4 +1,4 @@
-define(['mout/lang/isArray'], function (isArray) {
+import isArray from 'mout/lang/isArray';
 
     describe('lang/isArray()', function () {
 
@@ -16,4 +16,4 @@ define(['mout/lang/isArray'], function (isArray) {
 
     });
 
-});
+

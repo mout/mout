@@ -1,4 +1,5 @@
-define(['./filter', '../function/makeIterator_'], function (filter, makeIterator) {
+import filter from './filter';
+import makeIterator from '../function/makeIterator_';
 
     /**
      * Inverse or collection/filter
@@ -10,6 +11,6 @@ define(['./filter', '../function/makeIterator_'], function (filter, makeIterator
         }, thisObj);
     }
 
-    return reject;
+    export default reject;
 
-});
+

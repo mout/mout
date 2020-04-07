@@ -1,4 +1,6 @@
-define(['./random', '../number/MIN_INT', '../number/MAX_INT'], function(random, MIN_INT, MAX_INT){
+import random from './random';
+import MIN_INT from '../number/MIN_INT';
+import MAX_INT from '../number/MAX_INT';
 
     /**
      * Returns random number inside range
@@ -9,5 +11,5 @@ define(['./random', '../number/MIN_INT', '../number/MAX_INT'], function(random, 
         return min + (max - min) * random();
     }
 
-    return rand;
-});
+    export default rand;
+

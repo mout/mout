@@ -1,4 +1,4 @@
-define(['mout/date/isLeapYear'], function(isLeapYear){
+import isLeapYear from 'mout/date/isLeapYear';
 
     describe('date/isLeapYear', function(){
 
@@ -34,4 +34,4 @@ define(['mout/date/isLeapYear'], function(isLeapYear){
 
     });
 
-});
+

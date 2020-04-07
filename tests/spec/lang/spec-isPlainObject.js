@@ -1,4 +1,4 @@
-define(['mout/lang/isPlainObject'], function(isPlainObject) {
+import isPlainObject from 'mout/lang/isPlainObject';
 
     describe('lang/isPlainObject', function() {
 
@@ -28,4 +28,4 @@ define(['mout/lang/isPlainObject'], function(isPlainObject) {
         });
     });
 
-});
+

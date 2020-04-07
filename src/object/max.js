@@ -1,4 +1,5 @@
-define(['../array/max', './values'], function(arrMax, values) {
+import arrMax from '../array/max';
+import values from './values';
 
     /**
      * Returns maximum value inside object.
@@ -7,5 +8,5 @@ define(['../array/max', './values'], function(arrMax, values) {
         return arrMax(values(obj), compareFn);
     }
 
-    return max;
-});
+    export default max;
+

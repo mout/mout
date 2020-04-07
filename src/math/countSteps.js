@@ -1,4 +1,4 @@
-define(function(){
+
     /**
     * Count number of full steps.
     */
@@ -12,5 +12,5 @@ define(function(){
         return val;
     }
 
-    return countSteps;
-});
+    export default countSteps;
+

@@ -1,8 +1,10 @@
-define(['./make_', '../array/min', '../object/min'], function (make, arrMin, objMin) {
+import make from './make_';
+import arrMin from '../array/min';
+import objMin from '../object/min';
 
     /**
      * Get minimum value inside collection.
      */
-    return make(arrMin, objMin);
+    export default make(arrMin, objMin);
 
-});
+

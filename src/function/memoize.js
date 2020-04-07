@@ -1,4 +1,5 @@
-define(['../lang/isFunction', '../object/hasOwn'], function(isFunction, hasOwn){
+import isFunction from '../lang/isFunction';
+import hasOwn from '../object/hasOwn';
 
     /**
      * Creates a function that memoizes the result of `fn`. If `resolver` is
@@ -34,6 +35,6 @@ define(['../lang/isFunction', '../object/hasOwn'], function(isFunction, hasOwn){
         return memoized;
     }
 
-    return memoize;
-});
+    export default memoize;
+
 

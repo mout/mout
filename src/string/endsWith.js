@@ -1,4 +1,4 @@
-define(['../lang/toString'], function(toString) {
+import toString from '../lang/toString';
     /**
      * Checks if string ends with specified suffix.
      */
@@ -9,5 +9,5 @@ define(['../lang/toString'], function(toString) {
         return str.indexOf(suffix, str.length - suffix.length) !== -1;
     }
 
-    return endsWith;
-});
+    export default endsWith;
+

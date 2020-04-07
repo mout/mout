@@ -1,4 +1,5 @@
-define(['mout/collection/reject', 'mout/collection/size'], function(reject, size){
+import reject from 'mout/collection/reject';
+import size from 'mout/collection/size';
 
     describe('collection/reject', function(){
 
@@ -97,4 +98,4 @@ define(['mout/collection/reject', 'mout/collection/size'], function(reject, size
 
     });
 
-});
+

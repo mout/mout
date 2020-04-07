@@ -1,4 +1,4 @@
-define(['mout/lang/isBoolean'], function (isBoolean) {
+import isBoolean from 'mout/lang/isBoolean';
 
     describe('lang/isBoolean()', function () {
 
@@ -20,4 +20,4 @@ define(['mout/lang/isBoolean'], function (isBoolean) {
 
     });
 
-});
+

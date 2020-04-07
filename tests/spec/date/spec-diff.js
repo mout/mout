@@ -1,4 +1,4 @@
-define(['mout/date/diff'], function(diff){
+import diff from 'mout/date/diff';
 
     describe('date/diff', function(){
 
@@ -176,4 +176,4 @@ define(['mout/date/diff'], function(diff){
 
     });
 
-});
+

@@ -1,4 +1,7 @@
-define(['./hasOwn', './every', '../lang/isObject', '../lang/is'], function(hasOwn, every, isObject, is) {
+import hasOwn from './hasOwn';
+import every from './every';
+import isObject from '../lang/isObject';
+import is from '../lang/is';
 
     // Makes a function to compare the object values from the specified compare
     // operation callback.
@@ -26,5 +29,5 @@ define(['./hasOwn', './every', '../lang/isObject', '../lang/is'], function(hasOw
                 every(b, checkProperties, a));
     }
 
-    return equals;
-});
+    export default equals;
+

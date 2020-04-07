@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Array indicesOf
@@ -24,5 +24,5 @@ define(function () {
         return results;
     }
 
-    return indicesOf;
-});
+    export default indicesOf;
+

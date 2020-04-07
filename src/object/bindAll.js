@@ -1,4 +1,7 @@
-define(['./functions', '../function/bind', '../array/forEach', '../array/slice'], function (functions, bind, forEach, slice) {
+import functions from './functions';
+import bind from '../function/bind';
+import forEach from '../array/forEach';
+import slice from '../array/slice';
 
     /**
      * Binds methods of the object to be run in it's own context.
@@ -11,6 +14,6 @@ define(['./functions', '../function/bind', '../array/forEach', '../array/slice']
         });
     }
 
-    return bindAll;
+    export default bindAll;
 
-});
+

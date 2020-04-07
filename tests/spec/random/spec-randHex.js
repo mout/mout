@@ -1,4 +1,5 @@
-define(['mout/random/randHex', './helper-mockRandom'], function (randHex, mockRandom) {
+import randHex from 'mout/random/randHex';
+import mockRandom from './helper-mockRandom';
 
     describe('random/randHex()', function () {
 
@@ -33,4 +34,4 @@ define(['mout/random/randHex', './helper-mockRandom'], function (randHex, mockRa
 
     });
 
-});
+

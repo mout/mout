@@ -1,8 +1,4 @@
-define(
-    [
-        'mout/object/unset'
-    ],
-    function (unset) {
+import unset from 'mout/object/unset';
 
         describe('object/unset()', function () {
 
@@ -35,6 +31,5 @@ define(
 
         });
 
-    }
-);
+    
 

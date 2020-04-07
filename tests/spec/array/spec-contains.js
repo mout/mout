@@ -1,4 +1,4 @@
-define(['mout/array/contains'], function (contains) {
+import contains from 'mout/array/contains';
 
     describe('array/contains()', function(){
 
@@ -15,4 +15,4 @@ define(['mout/array/contains'], function (contains) {
         });
 
     });
-});
+

@@ -1,4 +1,4 @@
-define(['./some'], function (some) {
+import some from './some';
 
     /**
      * Check if object contains value
@@ -8,6 +8,6 @@ define(['./some'], function (some) {
             return (val === needle);
         });
     }
-    return contains;
+    export default contains;
 
-});
+

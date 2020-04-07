@@ -1,4 +1,4 @@
-define(['mout/time/toTimeString'], function (toTimeString) {
+import toTimeString from 'mout/time/toTimeString';
 
     describe('time/toTimeString()', function(){
 
@@ -17,4 +17,4 @@ define(['mout/time/toTimeString'], function (toTimeString) {
 
     });
 
-});
+

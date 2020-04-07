@@ -1,4 +1,4 @@
-define(['mout/string/normalizeLineBreaks'], function (normalizeLineBreaks) {
+import normalizeLineBreaks from 'mout/string/normalizeLineBreaks';
 
     describe('string/normalizeLineBreaks()', function () {
 
@@ -52,5 +52,5 @@ define(['mout/string/normalizeLineBreaks'], function (normalizeLineBreaks) {
 
     });
 
-});
+
 

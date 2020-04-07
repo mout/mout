@@ -1,4 +1,4 @@
-define(['mout/math/floor'], function (floor) {
+import floor from 'mout/math/floor';
 
     describe('math/floor()', function(){
 
@@ -10,4 +10,4 @@ define(['mout/math/floor'], function (floor) {
             expect( floor(129, 10) ).toEqual(120);
         });
     });
-});
+

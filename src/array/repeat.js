@@ -1,4 +1,4 @@
-define(function() {
+
 
   /**
    * Create an array of size N and fill with a value.
@@ -10,5 +10,5 @@ define(function() {
     return arr.fill(value);
   }
 
-  return repeat;
-});
+  export default repeat;
+

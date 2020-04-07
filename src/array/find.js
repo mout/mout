@@ -1,4 +1,4 @@
-define(['./findIndex'], function (findIndex) {
+import findIndex from './findIndex';
 
     /**
      * Returns first item that matches criteria
@@ -8,6 +8,6 @@ define(['./findIndex'], function (findIndex) {
         return idx >= 0? arr[idx] : void(0);
     }
 
-    return find;
+    export default find;
 
-});
+

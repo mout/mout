@@ -1,4 +1,4 @@
-define(['../random/randInt'], function (randInt) {
+import randInt from '../random/randInt';
 
     /**
      * Shuffle array items.
@@ -24,5 +24,5 @@ define(['../random/randInt'], function (randInt) {
         return results;
     }
 
-    return shuffle;
-});
+    export default shuffle;
+

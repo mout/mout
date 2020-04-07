@@ -1,4 +1,5 @@
-define(['./some', '../function/makeIterator_'], function(some, makeIterator) {
+import some from './some';
+import makeIterator from '../function/makeIterator_';
 
     /**
      * Returns first item that matches criteria
@@ -15,6 +16,6 @@ define(['./some', '../function/makeIterator_'], function(some, makeIterator) {
         return result;
     }
 
-    return find;
+    export default find;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/string/escapeRegExp'], function (escapeRegExp) {
+import escapeRegExp from 'mout/string/escapeRegExp';
 
     describe('string/escapeRegExp', function () {
 
@@ -18,4 +18,4 @@ define(['mout/string/escapeRegExp'], function (escapeRegExp) {
 
     });
 
-});
+

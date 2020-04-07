@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Checks if the value is created by the `Object` constructor.
@@ -8,6 +8,6 @@ define(function () {
             value.constructor === Object);
     }
 
-    return isPlainObject;
+    export default isPlainObject;
 
-});
+

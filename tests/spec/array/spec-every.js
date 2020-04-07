@@ -1,4 +1,4 @@
-define(['mout/array/every'], function (every) {
+import every from 'mout/array/every';
 
     describe('array/every()', function(){
 
@@ -76,5 +76,5 @@ define(['mout/array/every'], function (every) {
     });
 
 
-});
+
 

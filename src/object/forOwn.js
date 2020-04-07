@@ -1,4 +1,5 @@
-define(['./hasOwn', './forIn'], function (hasOwn, forIn) {
+import hasOwn from './hasOwn';
+import forIn from './forIn';
 
     /**
      * Similar to Array/forEach but works over object properties and fixes Don't
@@ -13,6 +14,6 @@ define(['./hasOwn', './forIn'], function (hasOwn, forIn) {
         });
     }
 
-    return forOwn;
+    export default forOwn;
 
-});
+

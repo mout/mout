@@ -1,4 +1,4 @@
-define(['mout/time/now'], function (now) {
+import now from 'mout/time/now';
 
     var past = now();
 
@@ -15,4 +15,4 @@ define(['mout/time/now'], function (now) {
 
     });
 
-});
+

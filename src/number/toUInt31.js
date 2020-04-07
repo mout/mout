@@ -1,4 +1,4 @@
-define(['./MAX_INT'], function(MAX_INT){
+import MAX_INT from './MAX_INT';
 
     /**
      * "Convert" value into an 31-bit unsigned integer (since 1 bit is used for sign).
@@ -10,6 +10,6 @@ define(['./MAX_INT'], function(MAX_INT){
         return (val <= 0)? 0 : (val > MAX_INT? ~~(val % (MAX_INT + 1)) : ~~val);
     }
 
-    return toUInt31;
+    export default toUInt31;
 
-});
+

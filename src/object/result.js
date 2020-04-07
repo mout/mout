@@ -1,4 +1,4 @@
-define(['../lang/isFunction'], function (isFunction) {
+import isFunction from '../lang/isFunction';
 
     function result(obj, prop) {
         var property = obj[prop];
@@ -10,5 +10,5 @@ define(['../lang/isFunction'], function (isFunction) {
         return isFunction(property) ? property.call(obj) : property;
     }
 
-    return result;
-});
+    export default result;
+

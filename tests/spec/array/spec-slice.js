@@ -1,4 +1,4 @@
-define(['mout/array/slice'], function(slice){
+import slice from 'mout/array/slice';
 
     describe('array/slice', function(){
 
@@ -73,4 +73,4 @@ define(['mout/array/slice'], function(slice){
 
     });
 
-});
+

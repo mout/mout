@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Returns last element of array.
@@ -11,6 +11,6 @@ define(function () {
         return arr[arr.length - 1];
     }
 
-    return last;
+    export default last;
 
-});
+

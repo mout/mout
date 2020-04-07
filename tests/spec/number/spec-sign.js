@@ -1,4 +1,4 @@
-define(['mout/number/sign'], function (sign) {
+import sign from 'mout/number/sign';
 
     describe('number/sign()', function () {
 
@@ -46,4 +46,4 @@ define(['mout/number/sign'], function (sign) {
 
     });
 
-});
+

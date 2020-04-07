@@ -1,4 +1,4 @@
-define(['../lang/toString'], function (toString) {
+import toString from '../lang/toString';
 
     /**
      * Convert line-breaks from DOS/MAC to a single standard (UNIX by default)
@@ -13,6 +13,6 @@ define(['../lang/toString'], function (toString) {
             .replace(/\n/g, lineEnd);  // Unix
     }
 
-    return normalizeLineBreaks;
+    export default normalizeLineBreaks;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/time/parseMs'], function (parseMs) {
+import parseMs from 'mout/time/parseMs';
 
     describe('time/parseMs()', function(){
 
@@ -127,4 +127,4 @@ define(['mout/time/parseMs'], function (parseMs) {
 
     });
 
-});
+

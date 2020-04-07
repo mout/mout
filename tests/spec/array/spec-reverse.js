@@ -1,4 +1,5 @@
-define(['mout/array/reverse', 'mout/random/rand'], function(reverse, rand){
+import reverse from 'mout/array/reverse';
+import rand from 'mout/random/rand';
 
     describe('array/reverse', function(){
 
@@ -48,4 +49,4 @@ define(['mout/array/reverse', 'mout/random/rand'], function(reverse, rand){
 
     });
 
-});
+

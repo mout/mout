@@ -1,4 +1,4 @@
-define(['../lang/toString'], function(toString) {
+import toString from '../lang/toString';
 
     /**
      * Unescape unicode char sequences
@@ -11,6 +11,6 @@ define(['../lang/toString'], function(toString) {
         });
     }
 
-    return unescapeUnicode;
+    export default unescapeUnicode;
 
-});
+

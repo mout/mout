@@ -1,4 +1,5 @@
-define(['../lang/isArray', './append'], function (isArray, append) {
+import isArray from '../lang/isArray';
+import append from './append';
 
     /*
      * Helper function to flatten to a destination array.
@@ -38,7 +39,7 @@ define(['../lang/isArray', './append'], function (isArray, append) {
         return flattenTo(arr, [], level);
     }
 
-    return flatten;
+    export default flatten;
 
-});
+
 

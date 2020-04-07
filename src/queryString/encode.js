@@ -1,4 +1,6 @@
-define(['../object/forOwn','../lang/isArray','../array/forEach'], function (forOwn,isArray,forEach) {
+import forOwn from '../object/forOwn';
+import isArray from '../lang/isArray';
+import forEach from '../array/forEach';
 
     /**
      * Encode object into a query string.
@@ -21,5 +23,5 @@ define(['../object/forOwn','../lang/isArray','../array/forEach'], function (forO
         return (query.length) ? '?' + query.join('&') : '';
     }
 
-    return encode;
-});
+    export default encode;
+

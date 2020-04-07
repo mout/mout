@@ -1,4 +1,7 @@
-define(['../lang/toString', './replaceAccents', './removeNonWord', './trim'], function(toString, replaceAccents, removeNonWord, trim){
+import toString from '../lang/toString';
+import replaceAccents from './replaceAccents';
+import removeNonWord from './removeNonWord';
+import trim from './trim';
     /**
      * Convert to lower case, remove accents, remove non-word chars and
      * replace spaces with the specified delimeter.
@@ -17,5 +20,5 @@ define(['../lang/toString', './replaceAccents', './removeNonWord', './trim'], fu
                 .toLowerCase();
         return str;
     }
-    return slugify;
-});
+    export default slugify;
+

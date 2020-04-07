@@ -1,4 +1,5 @@
-define(['../lang/toString', './escapeRegExp'], function (toString, escapeRegExp) {
+import toString from '../lang/toString';
+import escapeRegExp from './escapeRegExp';
     var DEFAULT_MARGIN_CHAR = '|';
     /**
      * Strip leading characters followed by 'marginChar' from every line in a String.
@@ -16,6 +17,6 @@ define(['../lang/toString', './escapeRegExp'], function (toString, escapeRegExp)
         return str.replace(regexp, '');
     }
 
-    return stripMargin;
+    export default stripMargin;
 
-});
+

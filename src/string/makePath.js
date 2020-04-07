@@ -1,4 +1,5 @@
-define(['../array/join', '../array/slice'], function(join, slice){
+import join from '../array/join';
+import slice from '../array/slice';
 
     /**
      * Group arguments as path segments, if any of the args is `null` or an
@@ -10,5 +11,5 @@ define(['../array/join', '../array/slice'], function(join, slice){
         return result.replace(/([^:\/]|^)\/{2,}/g, '$1/');
     }
 
-    return makePath;
-});
+    export default makePath;
+

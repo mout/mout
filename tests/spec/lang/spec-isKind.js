@@ -1,4 +1,4 @@
-define(['mout/lang/isKind'], function (isKind) {
+import isKind from 'mout/lang/isKind';
 
     describe('lang/isKind()', function(){
 
@@ -20,4 +20,4 @@ define(['mout/lang/isKind'], function (isKind) {
 
     });
 
-});
+

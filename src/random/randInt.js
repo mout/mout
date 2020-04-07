@@ -1,4 +1,6 @@
-define(['../number/MIN_INT', '../number/MAX_INT', './rand'], function(MIN_INT, MAX_INT, rand){
+import MIN_INT from '../number/MIN_INT';
+import MAX_INT from '../number/MAX_INT';
+import rand from './rand';
 
     /**
      * Gets random integer inside range or snap to min/max values.
@@ -12,5 +14,5 @@ define(['../number/MIN_INT', '../number/MAX_INT', './rand'], function(MIN_INT, M
         return Math.round( rand(min - 0.5, max + 0.499999999999) );
     }
 
-    return randInt;
-});
+    export default randInt;
+

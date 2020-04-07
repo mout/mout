@@ -1,4 +1,4 @@
-define(function(){
+
     /**
     * Linear interpolation.
     * IMPORTANT:will return `Infinity` if numbers overflow Number.MAX_VALUE
@@ -7,5 +7,5 @@ define(function(){
         return start + (end - start) * ratio;
     }
 
-    return lerp;
-});
+    export default lerp;
+

@@ -1,4 +1,6 @@
-define(['../array/indexOf', '../array/slice', '../array/take'], function (indexOf, slice, take) {
+import indexOf from '../array/indexOf';
+import slice from '../array/slice';
+import take from '../array/take';
 
     var _ = {};
 
@@ -24,6 +26,6 @@ define(['../array/indexOf', '../array/slice', '../array/take'], function (indexO
 
     partial._ = _;
 
-    return partial;
+    export default partial;
 
-});
+

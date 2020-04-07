@@ -1,4 +1,4 @@
-define(['mout/string/stripMargin'], function (stripMargin) {
+import stripMargin from 'mout/string/stripMargin';
 
     describe('string/stripMargin', function () {
 
@@ -13,4 +13,4 @@ define(['mout/string/stripMargin'], function (stripMargin) {
         });
     });
 
-});
+

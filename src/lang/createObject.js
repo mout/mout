@@ -1,4 +1,4 @@
-define(['../object/mixIn'], function(mixIn){
+import mixIn from '../object/mixIn';
 
     /**
      * Create Object using prototypal inheritance and setting custom properties.
@@ -13,6 +13,6 @@ define(['../object/mixIn'], function(mixIn){
         return mixIn(new F(), props);
 
     }
-    return createObject;
-});
+    export default createObject;
+
 

@@ -1,4 +1,4 @@
-define(['mout/object/deepMixIn'], function(deepMixIn) {
+import deepMixIn from 'mout/object/deepMixIn';
     describe('object/deepMixIn', function() {
 
         it('should mix properties into target', function() {
@@ -95,4 +95,4 @@ define(['mout/object/deepMixIn'], function(deepMixIn) {
         });
 
     });
-});
+

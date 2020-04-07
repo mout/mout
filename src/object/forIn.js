@@ -1,4 +1,4 @@
-define(['./hasOwn'], function (hasOwn) {
+import hasOwn from './hasOwn';
 
     var _hasDontEnumBug,
         _dontEnums;
@@ -71,6 +71,6 @@ define(['./hasOwn'], function (hasOwn) {
         return fn.call(thisObj, obj[key], key, obj);
     }
 
-    return forIn;
+    export default forIn;
 
-});
+

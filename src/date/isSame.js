@@ -1,4 +1,4 @@
-define(['./startOf'], function (startOf) {
+import startOf from './startOf';
 
     /**
      * Check if date is "same" with optional period
@@ -11,6 +11,6 @@ define(['./startOf'], function (startOf) {
         return Number(date1) === Number(date2);
     }
 
-    return isSame;
+    export default isSame;
 
-});
+

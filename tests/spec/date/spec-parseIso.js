@@ -1,4 +1,4 @@
-define(['mout/date/parseIso'], function(parseIso){
+import parseIso from 'mout/date/parseIso';
 
     describe('date/parseIso', function(){
 
@@ -189,4 +189,4 @@ define(['mout/date/parseIso'], function(parseIso){
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['../array/slice'], function(slice){
+import slice from '../array/slice';
 
     /**
      * internal method used to create other collection modules.
@@ -14,6 +14,6 @@ define(['../array/slice'], function(slice){
         };
     }
 
-    return makeCollectionMethod;
+    export default makeCollectionMethod;
 
-});
+

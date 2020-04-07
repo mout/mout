@@ -1,4 +1,4 @@
-define(['mout/lang/isPrimitive'], function(isPrimitive) {
+import isPrimitive from 'mout/lang/isPrimitive';
 
     describe('lang/isPrimitive', function() {
 
@@ -27,4 +27,4 @@ define(['mout/lang/isPrimitive'], function(isPrimitive) {
         });
     });
 
-});
+

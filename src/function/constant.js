@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Returns a new function that will return the value
@@ -9,6 +9,6 @@ define(function () {
         };
     }
 
-    return constant;
+    export default constant;
 
-});
+

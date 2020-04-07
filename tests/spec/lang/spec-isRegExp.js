@@ -1,4 +1,4 @@
-define(['mout/lang/isRegExp'], function (isRegExp) {
+import isRegExp from 'mout/lang/isRegExp';
 
     describe('lang/isRegExp()', function () {
 
@@ -17,4 +17,4 @@ define(['mout/lang/isRegExp'], function (isRegExp) {
 
     });
 
-});
+

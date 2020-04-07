@@ -1,4 +1,4 @@
-define(['./indexOf'], function(indexOf){
+import indexOf from './indexOf';
 
     /**
      * Remove a single item from the array.
@@ -9,5 +9,5 @@ define(['./indexOf'], function(indexOf){
         if (idx !== -1) arr.splice(idx, 1);
     }
 
-    return remove;
-});
+    export default remove;
+

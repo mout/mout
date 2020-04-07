@@ -1,4 +1,5 @@
-define(['./forOwn', './size'], function(forOwn, size) {
+import forOwn from './forOwn';
+import size from './size';
 
     /**
      * Object reduce
@@ -23,6 +24,6 @@ define(['./forOwn', './size'], function(forOwn, size) {
         return memo;
     }
 
-    return reduce;
+    export default reduce;
 
-});
+

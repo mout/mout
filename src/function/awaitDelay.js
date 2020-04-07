@@ -1,4 +1,6 @@
-define(['../time/now', './timeout', '../array/append'], function (now, timeout, append) {
+import now from '../time/now';
+import timeout from './timeout';
+import append from '../array/append';
 
     /**
      * Ensure a minimum delay for callbacks
@@ -15,6 +17,6 @@ define(['../time/now', './timeout', '../array/append'], function (now, timeout, 
         };
     }
 
-    return awaitDelay;
+    export default awaitDelay;
 
-});
+

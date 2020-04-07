@@ -1,4 +1,4 @@
-define(['mout/math/isNear'], function (isNear) {
+import isNear from 'mout/math/isNear';
 
     describe('math/isNear()', function(){
 
@@ -20,4 +20,4 @@ define(['mout/math/isNear'], function (isNear) {
 
     });
 
-});
+

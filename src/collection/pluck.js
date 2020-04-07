@@ -1,4 +1,4 @@
-define(['./map'], function (map) {
+import map from './map';
 
     /**
      * Extract a list of property values.
@@ -9,6 +9,6 @@ define(['./map'], function (map) {
         });
     }
 
-    return pluck;
+    export default pluck;
 
-});
+

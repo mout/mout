@@ -1,4 +1,6 @@
-define(['./unique', './filter', './contains'], function (unique, filter, contains) {
+import unique from './unique';
+import filter from './filter';
+import contains from './contains';
 
 
     /**
@@ -19,6 +21,6 @@ define(['./unique', './filter', './contains'], function (unique, filter, contain
         return a1.concat(a2);
     }
 
-    return xor;
+    export default xor;
 
-});
+

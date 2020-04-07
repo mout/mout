@@ -1,4 +1,4 @@
-define(['mout/function/timeout'], function(timeout){
+import timeout from 'mout/function/timeout';
 
     describe('function/timeout', function(){
 
@@ -54,4 +54,4 @@ define(['mout/function/timeout'], function(timeout){
 
     });
 
-});
+

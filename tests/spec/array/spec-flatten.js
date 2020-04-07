@@ -1,4 +1,4 @@
-define(['mout/array/flatten'], function (flatten) {
+import flatten from 'mout/array/flatten';
 
     describe('array/flatten()', function () {
 
@@ -40,4 +40,4 @@ define(['mout/array/flatten'], function (flatten) {
         });
 
     });
-});
+

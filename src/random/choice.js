@@ -1,4 +1,5 @@
-define(['./randInt', '../lang/isArray'], function (randInt, isArray) {
+import randInt from './randInt';
+import isArray from '../lang/isArray';
 
     /**
      * Returns a random element from the supplied arguments
@@ -9,6 +10,6 @@ define(['./randInt', '../lang/isArray'], function (randInt, isArray) {
         return target[ randInt(0, target.length - 1) ];
     }
 
-    return choice;
+    export default choice;
 
-});
+

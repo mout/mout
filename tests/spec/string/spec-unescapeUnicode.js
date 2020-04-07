@@ -1,4 +1,4 @@
-define(['mout/string/unescapeUnicode'], function(unescapeUnicode){
+import unescapeUnicode from 'mout/string/unescapeUnicode';
 
     describe('string/unescapeUnicode', function(){
 
@@ -29,4 +29,4 @@ define(['mout/string/unescapeUnicode'], function(unescapeUnicode){
 
     });
 
-});
+

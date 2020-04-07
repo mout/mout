@@ -1,4 +1,6 @@
-define(['../lang/is', '../lang/isArray', './every'], function(is, isArray, every) {
+import is from '../lang/is';
+import isArray from '../lang/isArray';
+import every from './every';
 
     /**
      * Compares if both arrays have the same elements
@@ -23,6 +25,6 @@ define(['../lang/is', '../lang/isArray', './every'], function(is, isArray, every
         };
     }
 
-    return equals;
+    export default equals;
 
-});
+

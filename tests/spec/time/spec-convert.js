@@ -1,4 +1,4 @@
-define(['mout/time/convert'], function(convert){
+import convert from 'mout/time/convert';
 
     describe('time/convert', function(){
 
@@ -30,4 +30,4 @@ define(['mout/time/convert'], function(convert){
 
     });
 
-});
+

@@ -1,7 +1,9 @@
-define(['./make_', '../array/reduce', '../object/reduce'], function (make, arrReduce, objReduce) {
+import make from './make_';
+import arrReduce from '../array/reduce';
+import objReduce from '../object/reduce';
 
     /**
      */
-    return make(arrReduce, objReduce);
+    export default make(arrReduce, objReduce);
 
-});
+

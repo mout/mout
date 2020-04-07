@@ -1,4 +1,4 @@
-define(['./dayOfTheYear'], function (dayOfTheYear) {
+import dayOfTheYear from './dayOfTheYear';
 
     /**
      * Return the week of the year based on given firstDayOfWeek
@@ -11,6 +11,6 @@ define(['./dayOfTheYear'], function (dayOfTheYear) {
         return Math.floor((doy + relativeWeekDay) / 7);
     }
 
-    return weekOfTheYear;
+    export default weekOfTheYear;
 
-});
+

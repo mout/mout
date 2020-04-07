@@ -1,4 +1,4 @@
-define(['./partial'], function (partial) {
+import partial from './partial';
 
     /**
      * Returns the first function passed as an argument to the second,
@@ -9,6 +9,6 @@ define(['./partial'], function (partial) {
         return partial(wrapper, fn);
     }
 
-    return wrap;
+    export default wrap;
 
-});
+

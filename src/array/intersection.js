@@ -1,4 +1,8 @@
-define(['./unique', './filter', './every', './contains', './slice'], function (unique, filter, every, contains, slice) {
+import unique from './unique';
+import filter from './filter';
+import every from './every';
+import contains from './contains';
+import slice from './slice';
 
 
     /**
@@ -15,6 +19,6 @@ define(['./unique', './filter', './every', './contains', './slice'], function (u
         return result;
     }
 
-    return intersection;
+    export default intersection;
 
-});
+

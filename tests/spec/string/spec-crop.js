@@ -1,4 +1,4 @@
-define(['mout/string/crop'], function (crop) {
+import crop from 'mout/string/crop';
 
     describe('string/crop()', function(){
         var str = 'lorem ipsum dolor sit amet';
@@ -32,4 +32,4 @@ define(['mout/string/crop'], function (crop) {
         });
 
     });
-});
+

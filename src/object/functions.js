@@ -1,4 +1,4 @@
-define(['./forIn'], function (forIn) {
+import forIn from './forIn';
 
     /**
      * return a list of all enumerable properties that have function values
@@ -13,6 +13,6 @@ define(['./forIn'], function (forIn) {
         return keys.sort();
     }
 
-    return functions;
+    export default functions;
 
-});
+

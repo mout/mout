@@ -1,4 +1,4 @@
-define(function(){
+
     /**
     * Checks if value is inside the range.
     */
@@ -7,5 +7,5 @@ define(function(){
         return (val + threshold >= min && val - threshold <= max);
     }
 
-    return inRange;
-});
+    export default inRange;
+

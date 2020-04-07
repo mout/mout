@@ -1,4 +1,4 @@
-define(['./slice'], function (slice) {
+import slice from './slice';
 
     /**
      * Call `methodName` on each item of the array passing custom arguments if
@@ -19,5 +19,5 @@ define(['./slice'], function (slice) {
         return arr;
     }
 
-    return invoke;
-});
+    export default invoke;
+

@@ -1,4 +1,4 @@
-define(['mout/object/fillIn'], function (fillIn) {
+import fillIn from 'mout/object/fillIn';
 
     describe('object/fillIn', function () {
 
@@ -44,4 +44,4 @@ define(['mout/object/fillIn'], function (fillIn) {
 
     });
 
-});
+

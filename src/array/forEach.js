@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Array forEach
@@ -18,6 +18,6 @@ define(function () {
         }
     }
 
-    return forEach;
+    export default forEach;
 
-});
+

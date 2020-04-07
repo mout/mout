@@ -1,7 +1,9 @@
-define(['./make_', '../array/forEach', '../object/forOwn'], function (make, arrForEach, objForEach) {
+import make from './make_';
+import arrForEach from '../array/forEach';
+import objForEach from '../object/forOwn';
 
     /**
      */
-    return make(arrForEach, objForEach);
+    export default make(arrForEach, objForEach);
 
-});
+

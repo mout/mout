@@ -1,4 +1,4 @@
-define(['mout/number/MAX_SAFE_INTEGER'], function(MAX_SAFE_INTEGER){
+import MAX_SAFE_INTEGER from 'mout/number/MAX_SAFE_INTEGER';
 
     describe('number/MAX_SAFE_INTEGER', function(){
 
@@ -8,4 +8,4 @@ define(['mout/number/MAX_SAFE_INTEGER'], function(MAX_SAFE_INTEGER){
 
     });
 
-});
+

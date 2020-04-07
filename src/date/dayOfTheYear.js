@@ -1,4 +1,4 @@
-define(['../lang/isDate'], function (isDate) {
+import isDate from '../lang/isDate';
 
     /**
      * return the day of the year (1..366)
@@ -8,6 +8,6 @@ define(['../lang/isDate'], function (isDate) {
                 Date.UTC(date.getFullYear(), 0, 1)) / 86400000 + 1;
     }
 
-    return dayOfTheYear;
+    export default dayOfTheYear;
 
-});
+

@@ -1,4 +1,4 @@
-define(function(){
+
     /**
     * Gets normalized ratio of value inside range.
     */
@@ -9,5 +9,5 @@ define(function(){
 
         return val === max ? 1 : (val - min) / (max - min);
     }
-    return norm;
-});
+    export default norm;
+

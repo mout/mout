@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * "Convert" value into a 32-bit unsigned integer.
@@ -10,6 +10,6 @@ define(function () {
         return val >>> 0;
     }
 
-    return toUInt;
+    export default toUInt;
 
-});
+

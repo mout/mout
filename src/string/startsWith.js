@@ -1,4 +1,4 @@
-define(['../lang/toString'], function (toString) {
+import toString from '../lang/toString';
     /**
      * Checks if string starts with specified prefix.
      */
@@ -9,5 +9,5 @@ define(['../lang/toString'], function (toString) {
         return str.indexOf(prefix) === 0;
     }
 
-    return startsWith;
-});
+    export default startsWith;
+

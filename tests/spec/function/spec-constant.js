@@ -1,4 +1,4 @@
-define(['mout/function/constant'], function(constant){
+import constant from 'mout/function/constant';
 
     describe('function/constant', function(){
 
@@ -29,4 +29,4 @@ define(['mout/function/constant'], function(constant){
 
     });
 
-});
+

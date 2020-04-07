@@ -1,4 +1,5 @@
-define(['../string/lpad', '../lang/toNumber'], function(lpad, toNumber){
+import lpad from '../string/lpad';
+import toNumber from '../lang/toNumber';
 
     /**
      * Add padding zeros if n.length < minLength.
@@ -8,6 +9,6 @@ define(['../string/lpad', '../lang/toNumber'], function(lpad, toNumber){
         return lpad(''+ n, minLength, char || '0');
     }
 
-    return pad;
+    export default pad;
 
-});
+

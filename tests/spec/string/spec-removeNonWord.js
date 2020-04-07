@@ -1,4 +1,4 @@
-define(['mout/string/removeNonWord'], function (removeNonWord) {
+import removeNonWord from 'mout/string/removeNonWord';
 
     describe('string/removeNonWord()', function(){
 
@@ -17,4 +17,4 @@ define(['mout/string/removeNonWord'], function (removeNonWord) {
 
     });
 
-});
+

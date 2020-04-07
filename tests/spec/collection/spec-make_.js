@@ -1,4 +1,4 @@
-define(['mout/collection/make_'], function(make){
+import make from 'mout/collection/make_';
 
     describe('collection/make_', function(){
 
@@ -75,4 +75,4 @@ define(['mout/collection/make_'], function(make){
 
     });
 
-});
+

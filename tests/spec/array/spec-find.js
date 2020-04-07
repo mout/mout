@@ -1,4 +1,4 @@
-define(['mout/array/find'], function (find) {
+import find from 'mout/array/find';
 
     describe('array/find', function () {
 
@@ -35,4 +35,4 @@ define(['mout/array/find'], function (find) {
 
     });
 
-});
+

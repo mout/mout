@@ -1,4 +1,4 @@
-define(['mout/string/pascalCase'], function (pascalCase) {
+import pascalCase from 'mout/string/pascalCase';
 
     describe('string/pascalCase()', function(){
 
@@ -37,4 +37,4 @@ define(['mout/string/pascalCase'], function (pascalCase) {
 
     });
 
-});
+

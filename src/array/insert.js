@@ -1,4 +1,5 @@
-define(['./difference', './slice'], function (difference, slice) {
+import difference from './difference';
+import slice from './slice';
 
     /**
      * Insert item into array if not already present.
@@ -10,5 +11,5 @@ define(['./difference', './slice'], function (difference, slice) {
         }
         return arr.length;
     }
-    return insert;
-});
+    export default insert;
+

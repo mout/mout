@@ -1,4 +1,4 @@
-define(['mout/lang/clone'], function(clone) {
+import clone from 'mout/lang/clone';
 
     describe('lang/clone', function() {
 
@@ -53,4 +53,4 @@ define(['mout/lang/clone'], function(clone) {
 
     });
 
-});
+

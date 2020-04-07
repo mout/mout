@@ -1,4 +1,4 @@
-define(['./indexOf'], function (indexOf) {
+import indexOf from './indexOf';
 
     /**
      * If array contains values.
@@ -6,5 +6,5 @@ define(['./indexOf'], function (indexOf) {
     function contains(arr, val) {
         return indexOf(arr, val) !== -1;
     }
-    return contains;
-});
+    export default contains;
+

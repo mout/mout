@@ -1,4 +1,4 @@
-define(['mout/function/bind'], function (bind) {
+import bind from 'mout/function/bind';
 
     describe('function/bind()', function(){
 
@@ -33,4 +33,4 @@ define(['mout/function/bind'], function (bind) {
         });
 
     });
-});
+

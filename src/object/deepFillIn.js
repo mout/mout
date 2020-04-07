@@ -1,4 +1,5 @@
-define(['./forOwn', '../lang/isPlainObject'], function (forOwn, isPlainObject) {
+import forOwn from './forOwn';
+import isPlainObject from '../lang/isPlainObject';
 
     /**
      * Deeply copy missing properties in the target from the defaults.
@@ -27,6 +28,6 @@ define(['./forOwn', '../lang/isPlainObject'], function (forOwn, isPlainObject) {
         return target;
     }
 
-    return deepFillIn;
+    export default deepFillIn;
 
-});
+

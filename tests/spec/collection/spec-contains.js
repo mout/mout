@@ -1,4 +1,4 @@
-define(['mout/collection/contains'], function(contains){
+import contains from 'mout/collection/contains';
 
     describe('collection/contains', function(){
 
@@ -16,4 +16,4 @@ define(['mout/collection/contains'], function(contains){
 
     });
 
-});
+

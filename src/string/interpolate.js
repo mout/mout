@@ -1,7 +1,5 @@
-define([
-    '../lang/toString',
-    '../object/get'
-], function(toString, get) {
+import toString from '../lang/toString';
+import get from '../object/get';
 
     var stache = /\{\{([^\}]+)\}\}/g; //mustache-like
 
@@ -16,6 +14,6 @@ define([
         return template.replace(syntax || stache, replaceFn);
     }
 
-    return interpolate;
+    export default interpolate;
 
-});
+

@@ -1,4 +1,5 @@
-define(['../lang/toString', './WHITE_SPACES'], function(toString, WHITE_SPACES){
+import toString from '../lang/toString';
+import WHITE_SPACES from './WHITE_SPACES';
     /**
      * Remove chars from end of string.
      */
@@ -28,5 +29,5 @@ define(['../lang/toString', './WHITE_SPACES'], function(toString, WHITE_SPACES){
         return (end >= 0) ? str.substring(0, end + 1) : '';
     }
 
-    return rtrim;
-});
+    export default rtrim;
+

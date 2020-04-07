@@ -1,4 +1,4 @@
-define(['mout/object/result'], function(result) {
+import result from 'mout/object/result';
 
   describe('object/result', function() {
 
@@ -24,4 +24,4 @@ define(['mout/object/result'], function(result) {
       expect(result(object, 'falsey')).toBe('');
     });
   });
-});
+

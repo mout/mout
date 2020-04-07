@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Returns a function that gets a property of the passed object
@@ -9,6 +9,6 @@ define(function () {
         };
     }
 
-    return prop;
+    export default prop;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/array/xor'], function (xor) {
+import xor from 'mout/array/xor';
 
     describe('array/xor()', function () {
 
@@ -36,4 +36,4 @@ define(['mout/array/xor'], function (xor) {
 
     });
 
-});
+

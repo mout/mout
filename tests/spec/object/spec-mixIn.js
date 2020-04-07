@@ -1,4 +1,4 @@
-define(['mout/object/mixIn'], function (mixIn) {
+import mixIn from 'mout/object/mixIn';
 
     describe('object/mixIn()', function(){
 
@@ -55,4 +55,4 @@ define(['mout/object/mixIn'], function (mixIn) {
         });
 
     });
-});
+

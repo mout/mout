@@ -1,4 +1,5 @@
-define(['../string/typecast', './getQuery'], function (typecast, getQuery) {
+import typecast from '../string/typecast';
+import getQuery from './getQuery';
 
     /**
      * Get query parameter value.
@@ -10,5 +11,5 @@ define(['../string/typecast', './getQuery'], function (typecast, getQuery) {
         return shouldTypecast === false? val : typecast(val);
     }
 
-    return getParam;
-});
+    export default getParam;
+

@@ -1,4 +1,4 @@
-define(['mout/array/intersection'], function (intersection) {
+import intersection from 'mout/array/intersection';
 
     describe('array/intersection()', function () {
 
@@ -39,4 +39,4 @@ define(['mout/array/intersection'], function (intersection) {
 
     });
 
-});
+

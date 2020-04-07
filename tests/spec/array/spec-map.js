@@ -1,4 +1,4 @@
-define(['mout/array/map'], function (map) {
+import map from 'mout/array/map';
 
     describe('array/map()', function(){
 
@@ -52,4 +52,4 @@ define(['mout/array/map'], function (map) {
 
     });
 
-});
+

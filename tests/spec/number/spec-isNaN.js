@@ -1,4 +1,4 @@
-define(['mout/number/isNaN'], function(isNaN){
+import isNaN from 'mout/number/isNaN';
 
     describe('number/isNaN', function(){
 
@@ -27,4 +27,4 @@ define(['mout/number/isNaN'], function(isNaN){
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['../function/makeIterator_'], function (makeIterator) {
+import makeIterator from '../function/makeIterator_';
 
     /**
      * Returns the index of the last item that matches criteria
@@ -19,6 +19,6 @@ define(['../function/makeIterator_'], function (makeIterator) {
         return -1;
     }
 
-    return findLastIndex;
+    export default findLastIndex;
 
-});
+

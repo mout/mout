@@ -1,4 +1,5 @@
-define(['mout/random/choice', './helper-mockRandom'], function (choice, mockRandom) {
+import choice from 'mout/random/choice';
+import mockRandom from './helper-mockRandom';
 
     describe('random/choice()', function () {
 
@@ -33,5 +34,5 @@ define(['mout/random/choice', './helper-mockRandom'], function (choice, mockRand
 
     });
 
-});
+
 

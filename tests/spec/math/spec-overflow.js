@@ -1,4 +1,4 @@
-define(['mout/math/overflow'], function(overflow){
+import overflow from 'mout/math/overflow';
 
     describe('math/overflow', function(){
 
@@ -36,4 +36,4 @@ define(['mout/math/overflow'], function(overflow){
 
     });
 
-});
+

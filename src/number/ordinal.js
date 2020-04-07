@@ -1,4 +1,5 @@
-define(['./toInt', './nth'], function (toInt, nth) {
+import toInt from './toInt';
+import nth from './nth';
 
     /**
      * converts number into ordinal form (1st, 2nd, 3rd, 4th, ...)
@@ -8,6 +9,6 @@ define(['./toInt', './nth'], function (toInt, nth) {
        return n + nth(n);
     }
 
-    return ordinal;
+    export default ordinal;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/collection/every'], function(every){
+import every from 'mout/collection/every';
 
     describe('collection/every', function(){
 
@@ -106,4 +106,4 @@ define(['mout/collection/every'], function(every){
 
 
     });
-});
+

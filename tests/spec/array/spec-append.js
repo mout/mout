@@ -1,4 +1,4 @@
-define(['mout/array/append'], function (append) {
+import append from 'mout/array/append';
 
     describe('array/append()', function(){
 
@@ -26,4 +26,4 @@ define(['mout/array/append'], function (append) {
         });
 
     });
-});
+

@@ -1,4 +1,4 @@
-define(['mout/string/replaceAccents'], function (replaceAccents) {
+import replaceAccents from 'mout/string/replaceAccents';
 
     describe('string/replaceAccents()', function(){
 
@@ -18,4 +18,4 @@ define(['mout/string/replaceAccents'], function (replaceAccents) {
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['./getQuery'], function (getQuery) {
+import getQuery from './getQuery';
 
     /**
      * Checks if query string contains parameter.
@@ -8,5 +8,5 @@ define(['./getQuery'], function (getQuery) {
         return regex.test(getQuery(url));
     }
 
-    return contains;
-});
+    export default contains;
+

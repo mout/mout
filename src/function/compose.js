@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Returns a function that composes multiple functions, passing results to
@@ -18,6 +18,6 @@ define(function () {
          };
      }
 
-     return compose;
+     export default compose;
 
-});
+

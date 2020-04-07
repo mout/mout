@@ -1,4 +1,4 @@
-define(['mout/string/truncate'], function (truncate) {
+import truncate from 'mout/string/truncate';
 
     describe('string/truncate()', function(){
         var str = 'lorem ipsum dolor sit amet';
@@ -48,4 +48,4 @@ define(['mout/string/truncate'], function (truncate) {
 
     });
 
-});
+

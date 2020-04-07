@@ -1,4 +1,8 @@
-define(['./is', './isObject', './isArray', '../object/equals', '../array/equals'], function (is, isObject, isArray, objEquals, arrEquals) {
+import is from './is';
+import isObject from './isObject';
+import isArray from './isArray';
+import objEquals from '../object/equals';
+import arrEquals from '../array/equals';
 
     /**
      * Recursively checks for same properties and values.
@@ -21,6 +25,6 @@ define(['./is', './isObject', './isArray', '../object/equals', '../array/equals'
         return method(a, b, compare);
     }
 
-    return deepEquals;
+    export default deepEquals;
 
-});
+

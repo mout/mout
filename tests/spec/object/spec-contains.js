@@ -1,4 +1,4 @@
-define(['mout/object/contains'], function(contains){
+import contains from 'mout/object/contains';
 
     describe('object/contains', function(){
 
@@ -10,4 +10,4 @@ define(['mout/object/contains'], function(contains){
 
     });
 
-});
+

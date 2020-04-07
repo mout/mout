@@ -1,4 +1,4 @@
-define(['../array/slice'], function (slice) {
+import slice from '../array/slice';
 
     /**
      * Delays the call of a function within a given context.
@@ -12,6 +12,6 @@ define(['../array/slice'], function (slice) {
         }, millis);
     }
 
-    return timeout;
+    export default timeout;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/lang/isArguments'], function (isArguments) {
+import isArguments from 'mout/lang/isArguments';
 
     describe('lang/isArguments()', function () {
 
@@ -16,4 +16,4 @@ define(['mout/lang/isArguments'], function (isArguments) {
 
     });
 
-});
+

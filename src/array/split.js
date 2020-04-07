@@ -1,4 +1,4 @@
-define(function() {
+
 
     /**
      * Split array into a fixed number of segments.
@@ -31,5 +31,5 @@ define(function() {
 
         return results;
     }
-    return split;
-});
+    export default split;
+

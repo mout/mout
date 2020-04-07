@@ -1,4 +1,4 @@
-define(['mout/array/min'], function (min) {
+import min from 'mout/array/min';
 
     describe('array/min()', function () {
 
@@ -49,4 +49,4 @@ define(['mout/array/min'], function (min) {
 
     });
 
-});
+

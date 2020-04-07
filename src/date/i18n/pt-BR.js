@@ -1,6 +1,6 @@
-define(function(){
+
     // pt-BR (Brazillian Portuguese)
-    return {
+    export default {
         "am" : "",
         "pm" : "",
 
@@ -58,4 +58,4 @@ define(function(){
             "Sáb"
         ]
     };
-});
+

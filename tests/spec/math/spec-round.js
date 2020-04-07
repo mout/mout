@@ -1,4 +1,4 @@
-define(['mout/math/round'], function(round){
+import round from 'mout/math/round';
 
     describe('math/round', function(){
 
@@ -58,4 +58,4 @@ define(['mout/math/round'], function(round){
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['./indexOf'], function (indexOf) {
+import indexOf from './indexOf';
 
     /**
      * Combines an array with all the items of another.
@@ -18,5 +18,5 @@ define(['./indexOf'], function (indexOf) {
 
         return arr1;
     }
-    return combine;
-});
+    export default combine;
+

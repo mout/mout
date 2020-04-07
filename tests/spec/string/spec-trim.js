@@ -1,4 +1,4 @@
-define(['mout/string/trim'], function (trim) {
+import trim from 'mout/string/trim';
 
     describe('string/trim()', function(){
 
@@ -22,4 +22,4 @@ define(['mout/string/trim'], function (trim) {
         });
 
     });
-});
+

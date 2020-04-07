@@ -1,4 +1,5 @@
-define(['./sort', '../function/makeIterator_'], function (sort, makeIterator) {
+import sort from './sort';
+import makeIterator from '../function/makeIterator_';
 
     /*
      * Sort array by the result of the callback
@@ -13,6 +14,6 @@ define(['./sort', '../function/makeIterator_'], function (sort, makeIterator) {
         });
     }
 
-    return sortBy;
+    export default sortBy;
 
-});
+

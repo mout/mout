@@ -1,4 +1,4 @@
-define(['mout/object/matches'], function(matches){
+import matches from 'mout/object/matches';
 
     describe('object/matches', function(){
 
@@ -14,4 +14,4 @@ define(['mout/object/matches'], function(matches){
 
     });
 
-});
+

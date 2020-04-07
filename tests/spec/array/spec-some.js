@@ -1,4 +1,4 @@
-define(['mout/array/some'], function (some) {
+import some from 'mout/array/some';
 
     describe('array/some()', function(){
 
@@ -72,4 +72,4 @@ define(['mout/array/some'], function (some) {
 
 
     });
-});
+

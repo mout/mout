@@ -1,4 +1,5 @@
-define(['mout/function/awaitDelay', '../time/helper-mockNow'], function(awaitDelay, mockNow){
+import awaitDelay from 'mout/function/awaitDelay';
+import mockNow from '../time/helper-mockNow';
 
     describe('function/awaitDelay', function(){
 
@@ -131,4 +132,4 @@ define(['mout/function/awaitDelay', '../time/helper-mockNow'], function(awaitDel
 
     });
 
-});
+

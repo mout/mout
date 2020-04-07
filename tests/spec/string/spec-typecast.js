@@ -1,4 +1,4 @@
-define(['mout/string/typecast'], function (typecast) {
+import typecast from 'mout/string/typecast';
 
     describe('string/typecast()', function () {
 
@@ -16,4 +16,4 @@ define(['mout/string/typecast'], function (typecast) {
 
     });
 
-});
+

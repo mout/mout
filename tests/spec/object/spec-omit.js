@@ -1,4 +1,4 @@
-define(['mout/object/omit'], function (omit) {
+import omit from 'mout/object/omit';
 
     describe('object/omit()', function () {
 
@@ -24,4 +24,4 @@ define(['mout/object/omit'], function (omit) {
 
     });
 
-});
+

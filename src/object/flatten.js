@@ -1,4 +1,5 @@
-define(['./forOwn', '../lang/isPlainObject'], function (forOwn, isPlainObject) {
+import forOwn from './forOwn';
+import isPlainObject from '../lang/isPlainObject';
 
     /*
      * Helper function to flatten to a destination object.
@@ -32,6 +33,6 @@ define(['./forOwn', '../lang/isPlainObject'], function (forOwn, isPlainObject) {
         return flattenTo(obj, {}, '', level);
     }
 
-    return flatten;
+    export default flatten;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/number/abbreviate'], function (abbr) {
+import abbr from 'mout/number/abbreviate';
 
     describe('number/abbreviate', function () {
 
@@ -103,4 +103,4 @@ define(['mout/number/abbreviate'], function (abbr) {
         });
 
     });
-});
+

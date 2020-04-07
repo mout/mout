@@ -1,4 +1,5 @@
-define(['mout/array/shuffle', '../random/helper-mockRandom'], function (shuffle, mockRandom) {
+import shuffle from 'mout/array/shuffle';
+import mockRandom from '../random/helper-mockRandom';
 
     describe('array/shuffle()', function () {
 
@@ -29,4 +30,4 @@ define(['mout/array/shuffle', '../random/helper-mockRandom'], function (shuffle,
     });
 
 
-});
+

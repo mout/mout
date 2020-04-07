@@ -1,4 +1,4 @@
-define(['mout/array/join'], function(join) {
+import join from 'mout/array/join';
 
     describe('array/join()', function() {
 
@@ -30,4 +30,4 @@ define(['mout/array/join'], function(join) {
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/object/hasOwn'], function (hasOwn) {
+import hasOwn from 'mout/object/hasOwn';
 
     describe('object/hasOwn()', function () {
 
@@ -45,4 +45,4 @@ define(['mout/object/hasOwn'], function (hasOwn) {
     });
 
 
-});
+

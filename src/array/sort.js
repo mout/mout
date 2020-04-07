@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Merge sort (http://en.wikipedia.org/wiki/Merge_sort)
@@ -50,6 +50,6 @@ define(function () {
         return result;
     }
 
-    return mergeSort;
+    export default mergeSort;
 
-});
+

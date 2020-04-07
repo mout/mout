@@ -1,4 +1,4 @@
-define(['mout/date/i18n_'], function(i18n){
+import i18n from 'mout/date/i18n_';
 
     describe('date/i18n_', function(){
 
@@ -27,4 +27,4 @@ define(['mout/date/i18n_'], function(i18n){
 
     });
 
-});
+

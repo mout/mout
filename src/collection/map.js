@@ -1,4 +1,7 @@
-define(['../lang/isObject', '../object/values', '../array/map', '../function/makeIterator_'], function (isObject, values, arrMap, makeIterator) {
+import isObject from '../lang/isObject';
+import values from '../object/values';
+import arrMap from '../array/map';
+import makeIterator from '../function/makeIterator_';
 
     /**
      * Map collection values, returns Array.
@@ -15,6 +18,6 @@ define(['../lang/isObject', '../object/values', '../array/map', '../function/mak
         });
     }
 
-    return map;
+    export default map;
 
-});
+

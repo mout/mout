@@ -1,4 +1,4 @@
-define(['mout/array/reject'], function(reject) {
+import reject from 'mout/array/reject';
 
     describe('array/reject()', function() {
 
@@ -58,4 +58,4 @@ define(['mout/array/reject'], function(reject) {
 
     });
 
-});
+

@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Returns a copy of the array in reversed order.
@@ -9,6 +9,6 @@ define(function () {
         return copy;
     }
 
-    return reverse;
+    export default reverse;
 
-});
+

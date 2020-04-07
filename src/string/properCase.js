@@ -1,4 +1,6 @@
-define(['../lang/toString', './lowerCase', './upperCase'], function(toString, lowerCase, upperCase){
+import toString from '../lang/toString';
+import lowerCase from './lowerCase';
+import upperCase from './upperCase';
     /**
      * UPPERCASE first char of each word.
      */
@@ -7,5 +9,5 @@ define(['../lang/toString', './lowerCase', './upperCase'], function(toString, lo
         return lowerCase(str).replace(/^\w|\s\w/g, upperCase);
     }
 
-    return properCase;
-});
+    export default properCase;
+

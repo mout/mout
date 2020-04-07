@@ -1,4 +1,4 @@
-define(['mout/string/underscore'], function(underscore) {
+import underscore from 'mout/string/underscore';
 
     describe('string/underscore()', function(){
 
@@ -42,5 +42,5 @@ define(['mout/string/underscore'], function(underscore) {
 
     });
 
-});
+
 

@@ -1,4 +1,5 @@
-define(['../lang/toString', './WHITE_SPACES'], function(toString, WHITE_SPACES){
+import toString from '../lang/toString';
+import WHITE_SPACES from './WHITE_SPACES';
     /**
      * Remove chars from beginning of string.
      */
@@ -29,5 +30,5 @@ define(['../lang/toString', './WHITE_SPACES'], function(toString, WHITE_SPACES){
         return (start >= len) ? '' : str.substr(start, len);
     }
 
-    return ltrim;
-});
+    export default ltrim;
+

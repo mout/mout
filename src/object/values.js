@@ -1,4 +1,4 @@
-define(['./forOwn'], function (forOwn) {
+import forOwn from './forOwn';
 
     /**
      * Get object values
@@ -11,6 +11,6 @@ define(['./forOwn'], function (forOwn) {
         return vals;
     }
 
-    return values;
+    export default values;
 
-});
+

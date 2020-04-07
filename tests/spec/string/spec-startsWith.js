@@ -1,4 +1,4 @@
-define(['mout/string/startsWith'], function (startsWith) {
+import startsWith from 'mout/string/startsWith';
 
     describe('string/startsWith()', function(){
 
@@ -26,4 +26,4 @@ define(['mout/string/startsWith'], function (startsWith) {
         });
 
     });
-});
+

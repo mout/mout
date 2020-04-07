@@ -1,4 +1,4 @@
-define(['mout/array/remove'], function (remove) {
+import remove from 'mout/array/remove';
 
     describe('array/remove()', function(){
 
@@ -30,4 +30,4 @@ define(['mout/array/remove'], function (remove) {
 
     });
 
-});
+

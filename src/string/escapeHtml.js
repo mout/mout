@@ -1,4 +1,4 @@
-define(['../lang/toString'], function(toString) {
+import toString from '../lang/toString';
 
     /**
      * Escapes a string for insertion into HTML.
@@ -13,6 +13,6 @@ define(['../lang/toString'], function(toString) {
         return str;
     }
 
-    return escapeHtml;
+    export default escapeHtml;
 
-});
+

@@ -1,4 +1,4 @@
-define(['mout/string/sentenceCase'], function (sentenceCase) {
+import sentenceCase from 'mout/string/sentenceCase';
 
     describe('string/sentenceCase()', function(){
 
@@ -18,4 +18,4 @@ define(['mout/string/sentenceCase'], function (sentenceCase) {
 
     });
 
-});
+

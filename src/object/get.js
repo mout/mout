@@ -1,4 +1,4 @@
-define(['../lang/isPrimitive'], function (isPrimitive) {
+import isPrimitive from '../lang/isPrimitive';
 
     /**
      * get "nested" object property
@@ -15,6 +15,6 @@ define(['../lang/isPrimitive'], function (isPrimitive) {
         return obj[last];
     }
 
-    return get;
+    export default get;
 
-});
+

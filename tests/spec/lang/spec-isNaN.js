@@ -1,4 +1,4 @@
-define(['mout/lang/isNaN'], function(isNaN){
+import isNaN from 'mout/lang/isNaN';
 
     describe('lang/isNaN', function(){
 
@@ -25,4 +25,4 @@ define(['mout/lang/isNaN'], function(isNaN){
 
     });
 
-});
+

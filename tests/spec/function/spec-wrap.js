@@ -1,4 +1,4 @@
-define(['mout/function/wrap'], function(wrap){
+import wrap from 'mout/function/wrap';
 
     var add = function(a, b){
         return a + b;
@@ -43,4 +43,4 @@ define(['mout/function/wrap'], function(wrap){
 
     });
 
-});
+

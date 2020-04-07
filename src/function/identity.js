@@ -1,4 +1,4 @@
-define(function () {
+
 
     /**
      * Returns the first argument provided to it.
@@ -7,6 +7,6 @@ define(function () {
         return val;
     }
 
-    return identity;
+    export default identity;
 
-});
+

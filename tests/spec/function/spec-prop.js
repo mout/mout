@@ -1,4 +1,4 @@
-define(['mout/function/prop'], function (prop) {
+import prop from 'mout/function/prop';
 
     describe('function/prop()', function () {
 
@@ -13,4 +13,4 @@ define(['mout/function/prop'], function (prop) {
 
     });
 
-});
+

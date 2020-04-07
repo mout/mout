@@ -1,4 +1,4 @@
-define(['mout/number/MAX_INT'], function (MAX_INT) {
+import MAX_INT from 'mout/number/MAX_INT';
 
     describe('number/MAX_INT', function(){
         it('should be equal (2 ^ 31) - 1', function(){
@@ -6,4 +6,4 @@ define(['mout/number/MAX_INT'], function (MAX_INT) {
         });
     });
 
-});
+

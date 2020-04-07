@@ -1,4 +1,4 @@
-define(['../lang/isDate'], function (isDate) {
+import isDate from '../lang/isDate';
 
     /**
      * checks if it's a leap year
@@ -10,6 +10,6 @@ define(['../lang/isDate'], function (isDate) {
         return fullYear % 400 === 0 || (fullYear % 100 !== 0 && fullYear % 4 === 0);
     }
 
-    return isLeapYear;
+    export default isLeapYear;
 
-});
+

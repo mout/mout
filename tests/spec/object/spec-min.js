@@ -1,4 +1,4 @@
-define(['mout/object/min'], function(min){
+import min from 'mout/object/min';
 
     describe('object/min', function(){
 
@@ -39,4 +39,4 @@ define(['mout/object/min'], function(min){
 
 
     });
-});
+
