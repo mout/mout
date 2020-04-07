@@ -4,11 +4,12 @@ import mockNow from '../time/helper-mockNow';
     describe('function/debounce', function(){
 
         beforeEach(function() {
-            jasmine.Clock.useMock();
+            jasmine.clock.install();
             mockNow.start();
         });
 
         afterEach(function(){
+            jasmine.clock.uninstall();
             mockNow.end();
         });
 
@@ -21,7 +22,7 @@ import mockNow from '../time/helper-mockNow';
             cb();
             expect( count ).toBe( 0 );
 
-            jasmine.Clock.tick(50);
+            jasmine.clock.tick(50);
             expect( count ).toBe( 1 );
         });
 
@@ -35,7 +36,7 @@ import mockNow from '../time/helper-mockNow';
             cb(3,4);
             expect( count ).toBe(0);
 
-            jasmine.Clock.tick(51);
+            jasmine.clock.tick(51);
             expect( count ).toBe(7);
         });
 
@@ -49,7 +50,7 @@ import mockNow from '../time/helper-mockNow';
             cb();
             expect( count ).toBe(1);
 
-            jasmine.Clock.tick(51);
+            jasmine.clock.tick(51);
             expect( count ).toBe(1);
             cb();
             cb();
@@ -66,7 +67,7 @@ import mockNow from '../time/helper-mockNow';
             cb(3,4);
             expect( count ).toBe(3);
 
-            jasmine.Clock.tick(51);
+            jasmine.clock.tick(51);
             expect( count ).toBe(3);
             cb(5, 6);
             cb(7, 8);
@@ -83,17 +84,15 @@ import mockNow from '../time/helper-mockNow';
             cb();
             expect( count ).toBe( 0 );
 
-            jasmine.Clock.tick(51);
+            jasmine.clock.tick(51);
             expect( count ).toBe( 1 );
 
             cb();
             cb();
             cb.cancel();
-            jasmine.Clock.tick(51);
+            jasmine.clock.tick(51);
             expect( count ).toBe( 1 );
         });
 
 
     });
-
-

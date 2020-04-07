@@ -4,11 +4,12 @@ import mockNow from '../time/helper-mockNow';
     describe('function/awaitDelay', function(){
 
         beforeEach(function() {
-            jasmine.Clock.useMock();
+            jasmine.clock.install();
             mockNow.start();
         });
 
         afterEach(function(){
+            jasmine.clock.uninstall();
             mockNow.end();
         });
 
@@ -22,7 +23,7 @@ import mockNow from '../time/helper-mockNow';
             callback();
             expect( count ).toBe(0);
 
-            jasmine.Clock.tick(100);
+            jasmine.clock.tick(100);
             expect( count ).toBe(1);
         });
 
@@ -33,14 +34,14 @@ import mockNow from '../time/helper-mockNow';
             };
             var callback = awaitDelay(fn, 100);
 
-            jasmine.Clock.tick(100);
+            jasmine.clock.tick(100);
             expect( count ).toBe(0);
 
             callback();
             // callback is always async
             expect( count ).toBe(0);
 
-            jasmine.Clock.tick(5);
+            jasmine.clock.tick(5);
             expect( count ).toBe(1);
         });
 
@@ -53,9 +54,9 @@ import mockNow from '../time/helper-mockNow';
 
             callback();
             callback();
-            jasmine.Clock.tick(29);
+            jasmine.clock.tick(29);
             expect( count ).toBe(0);
-            jasmine.Clock.tick(1);
+            jasmine.clock.tick(1);
             expect( count ).toBe(2);
         });
 
@@ -66,11 +67,11 @@ import mockNow from '../time/helper-mockNow';
             };
             var callback = awaitDelay(fn, 100);
 
-            jasmine.Clock.tick(100);
+            jasmine.clock.tick(100);
 
             callback(5);
             // callback is always async
-            jasmine.Clock.tick(5);
+            jasmine.clock.tick(5);
             expect( count ).toBe(5);
         });
 
@@ -84,7 +85,7 @@ import mockNow from '../time/helper-mockNow';
             callback(2);
             expect( count ).toBe(0);
 
-            jasmine.Clock.tick(100);
+            jasmine.clock.tick(100);
             expect( count ).toBe(2);
         });
 
@@ -103,7 +104,7 @@ import mockNow from '../time/helper-mockNow';
             expect( val ).toBeUndefined();
             expect( ctx ).toBeUndefined();
 
-            jasmine.Clock.tick(100);
+            jasmine.clock.tick(100);
             expect( val ).toBe(2);
             expect( ctx ).toBe(foo);
         });
@@ -117,19 +118,17 @@ import mockNow from '../time/helper-mockNow';
 
             var timeout = callback();
             expect( count ).toBe(0);
-            jasmine.Clock.tick(50);
+            jasmine.clock.tick(50);
             clearTimeout(timeout);
 
             // ensure clearTimeout avoided call
-            jasmine.Clock.tick(50);
+            jasmine.clock.tick(50);
             expect( count ).toBe(0);
 
             // ensure that second call is still triggered
             timeout = callback();
-            jasmine.Clock.tick(100);
+            jasmine.clock.tick(100);
             expect( count ).toBe(1);
         });
 
     });
-
-

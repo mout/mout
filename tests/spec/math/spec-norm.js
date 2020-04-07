@@ -21,8 +21,7 @@ import norm from 'mout/math/norm';
         it('should throw error if value outside range', function() {
             expect(function() {
                 norm(-50, 0, 100)
-            }).toThrow('value (-50) must be between 0 and 100');
+            }).toThrow(new RangeError('value (-50) must be between 0 and 100'));
         });
 
     });
-

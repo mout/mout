@@ -11,17 +11,21 @@ import timeout from 'mout/function/timeout';
         }
 
     beforeEach(function() {
-            jasmine.Clock.useMock();
+            jasmine.clock.install();
+        });
+
+    afterEach(function() {
+            jasmine.clock.uninstall();
         });
 
         it('should delay the execution', function(){
             var callback = jasmine.createSpy();
             timeout(callback, 300);
 
-            jasmine.Clock.tick(100);
+            jasmine.clock.tick(100);
             expect(callback).not.toHaveBeenCalled();
 
-            jasmine.Clock.tick(250);
+            jasmine.clock.tick(250);
             expect(callback).toHaveBeenCalled();
         });
 
@@ -29,7 +33,7 @@ import timeout from 'mout/function/timeout';
             var context = { a: 0 };
             timeout(doIt, 300, context);
 
-            jasmine.Clock.tick(350);
+            jasmine.clock.tick(350);
             expect(context.a).toBe(1);
         });
 
@@ -37,7 +41,7 @@ import timeout from 'mout/function/timeout';
             var context = { a: 0 };
             timeout(manipulate, 300, context, 5 );
 
-            jasmine.Clock.tick(350);
+            jasmine.clock.tick(350);
             expect(context.a).toBe(5);
         });
 
@@ -45,13 +49,11 @@ import timeout from 'mout/function/timeout';
         var callback = jasmine.createSpy();
         var id = timeout(callback, 200);
 
-        jasmine.Clock.tick(100);
+        jasmine.clock.tick(100);
         clearTimeout(id);
 
-        jasmine.Clock.tick(200);
+        jasmine.clock.tick(200);
         expect(callback).not.toHaveBeenCalled();
         });
 
     });
-
-

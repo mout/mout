@@ -7,7 +7,7 @@ import createObject from 'mout/lang/createObject';
             var base = {foo: 'bar'};
             var result = createObject(base);
 
-            expect(result).toEqual(base);
+            expect(JSON.parse(JSON.stringify(result, ['foo']))).toEqual(base);
 
             result.foo = 'asd';
             expect(result.foo).toEqual('asd');
@@ -21,7 +21,7 @@ import createObject from 'mout/lang/createObject';
             var props = {lorem : 'ipsum', num:5, test:null};
             var result = createObject(base, props);
 
-            expect(result).toEqual( {
+            expect(JSON.parse(JSON.stringify(result, ['foo', 'lorem', 'num', 'test']))).toEqual( {
                 foo : 'bar',
                 lorem : 'ipsum',
                 num : 5,

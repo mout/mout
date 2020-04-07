@@ -34,7 +34,7 @@ import make from 'mout/collection/make_';
             fn([], 'lorem', 123, true);
 
             expect( calledArr ).toEqual( [[], 'lorem', 123, true] );
-            expect( calledObj ).toEqual( null );
+            expect( calledObj ).toEqual( undefined );
 
             fn({}, 'dolor', 567, true);
 

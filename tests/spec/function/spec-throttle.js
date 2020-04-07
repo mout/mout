@@ -5,11 +5,12 @@ import mockNow from '../time/helper-mockNow';
 
 
         beforeEach(function() {
-            jasmine.Clock.useMock();
+            jasmine.clock.install();
             mockNow.start();
         });
 
         afterEach(function(){
+            jasmine.clock.uninstall();
             mockNow.end();
         });
 
@@ -26,37 +27,37 @@ import mockNow from '../time/helper-mockNow';
             expect(count).toEqual(1);
 
             // ensure it was not called again before timeout
-            jasmine.Clock.tick(49);
+            jasmine.clock.tick(49);
             expect(count).toEqual(1);
 
             // ensure it was called again after timeout
-            jasmine.Clock.tick(1);
+            jasmine.clock.tick(1);
             expect(count).toEqual(2);
 
             // ensure it wasnt called more than once at tail
-            jasmine.Clock.tick(51);
+            jasmine.clock.tick(51);
             expect(count).toEqual(2);
 
             // ensure it still works after "delay gaps"
-            jasmine.Clock.tick(120);
+            jasmine.clock.tick(120);
             expect(count).toEqual(2);
             cb();
             expect(count).toEqual(3);
-            jasmine.Clock.tick(1);
+            jasmine.clock.tick(1);
             i = 0;
             while (++i <= 5) { cb(); }
             expect(count).toEqual(3);
 
             // ensure it wasnt called during interval
-            jasmine.Clock.tick(48);
+            jasmine.clock.tick(48);
             expect(count).toEqual(3);
 
             // ensure it is called at tail
-            jasmine.Clock.tick(1);
+            jasmine.clock.tick(1);
             expect(count).toEqual(4);
 
             // only once at tail
-            jasmine.Clock.tick(51);
+            jasmine.clock.tick(51);
             expect(count).toEqual(4);
         });
 
@@ -69,7 +70,7 @@ import mockNow from '../time/helper-mockNow';
 
             cb();
             expect(count).toEqual(1);
-            jasmine.Clock.tick(51);
+            jasmine.clock.tick(51);
             expect(count).toEqual(1);
         });
 
@@ -85,7 +86,7 @@ import mockNow from '../time/helper-mockNow';
             cb(5, 6);
 
             expect(count).toEqual(3);
-            jasmine.Clock.tick(51);
+            jasmine.clock.tick(51);
             expect(count).toEqual(14);
         });
 
@@ -104,14 +105,12 @@ import mockNow from '../time/helper-mockNow';
             }, 50);
             cb();
             expect( count ).toEqual( 1 );
-            jasmine.Clock.tick(20);
+            jasmine.clock.tick(20);
             cb();
             expect( count ).toEqual( 1 );
             cb.cancel();
-            jasmine.Clock.tick(51);
+            jasmine.clock.tick(51);
             expect( count ).toEqual( 1 );
         });
 
     });
-
-

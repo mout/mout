@@ -1,11 +1,11 @@
-import exports from 'exports';
 import now from 'mout/time/now';
 
     var time;
     var original = now.get;
     var interval;
+    var _exports = {};
 
-    exports.start = function (ts) {
+    _exports.start = function (ts) {
         time = ts != null? ts : 1382023145920;
         now.get = function() {
             return time;
@@ -15,7 +15,7 @@ import now from 'mout/time/now';
         }, 1);
     };
 
-    exports.end = function() {
+    _exports.end = function() {
         if (interval) {
             clearInterval(interval);
             interval = null;
@@ -23,4 +23,4 @@ import now from 'mout/time/now';
         now.get = original;
     };
 
-
+    export default _exports;

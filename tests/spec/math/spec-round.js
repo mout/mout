@@ -18,8 +18,8 @@ import round from 'mout/math/round';
             expect( round(0.49) ).toEqual( 0 );
             expect( round(0.5) ).toEqual( 1 );
             expect( round(0.51) ).toEqual( 1 );
-            expect( round(-0.49) ).toEqual( 0 );
-            expect( round(-0.5) ).toEqual( 0 );
+            expect( round(-0.49) === 0 ).toBe( true );
+            expect( round(-0.5) === 0 ).toBe( true );
             expect( round(-0.51) ).toEqual( -1 );
         });
 
@@ -57,5 +57,3 @@ import round from 'mout/math/round';
         });
 
     });
-
-

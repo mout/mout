@@ -27,9 +27,9 @@ import wrap from 'mout/function/wrap';
             expect(args).toEqual([noop, 1, 2, 3]);
         });
 
-        it('should not set a `this` binding', 1, function(){
+        it('should not set a `this` binding', function(){
             var wrapped = wrap(add, function(func){
-                return func(this.a + this.b);
+                return func(this.a, this.b);
             });
 
             var object = {

@@ -85,7 +85,7 @@ import forOwn from 'mout/object/forOwn';
 
             forOwn(obj, function(val, key, o){
                 expect(o).toBe(obj);
-                expect(this).toBe(global);
+                expect(this).toBe(undefined);
                 count++;
             });
 
@@ -144,5 +144,3 @@ import forOwn from 'mout/object/forOwn';
 
         });
     });
-
-

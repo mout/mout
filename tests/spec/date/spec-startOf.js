@@ -4,7 +4,7 @@ import startOf from 'mout/date/startOf';
 
         var baseDate;
 
-        this.beforeEach(function(){
+        beforeEach(function(){
             baseDate = new Date(2013, 3, 5, 11, 27, 43, 123);
         });
 
@@ -39,9 +39,7 @@ import startOf from 'mout/date/startOf';
         it('should throw error if invalid "period"', function () {
             expect( function(){
                 startOf(baseDate, 'lorem');
-            } ).toThrow('"lorem" is not a valid period');
+            } ).toThrow(new Error('"lorem" is not a valid period'));
         });
 
     });
-
-

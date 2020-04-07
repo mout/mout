@@ -40,7 +40,7 @@ import diff from 'mout/date/diff';
             it('should throw error if unit is invalid', function () {
                 expect( function(){
                     diff(d1, d2, 'lorem');
-                } ).toThrow( '"lorem" is not a valid unit' );
+                } ).toThrow( new Error('"lorem" is not a valid unit') );
             });
 
             it('should disconsider daylight time savings', function () {
@@ -175,5 +175,3 @@ import diff from 'mout/date/diff';
 
 
     });
-
-

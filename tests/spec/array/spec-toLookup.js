@@ -5,7 +5,7 @@ import toLookup from 'mout/array/toLookup';
         it('should create an object with the key specified as a string', function () {
             var arr = [{ name: 'a', thing: 1 }, { name: 'b', thing: 2 }];
 
-            result = toLookup(arr, 'name');
+            var result = toLookup(arr, 'name');
             expect(result).toEqual({
                 a: { name: 'a', thing: 1 },
                 b: { name: 'b', thing: 2 }
@@ -35,5 +35,3 @@ import toLookup from 'mout/array/toLookup';
         });
 
     });
-
-

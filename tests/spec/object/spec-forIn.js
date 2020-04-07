@@ -90,7 +90,7 @@ import forIn from 'mout/object/forIn';
 
             forIn(obj, function(val, key, o){
                 expect(o).toBe(obj);
-                expect(this).toBe(global);
+                expect(this).toBe(undefined);
                 count++;
             });
 
@@ -127,5 +127,3 @@ import forIn from 'mout/object/forIn';
         });
 
     });
-
-
