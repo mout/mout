@@ -30,24 +30,15 @@
   },
   "main": "./index.js",
   "scripts": {
-    "pretest": "node build pkg",
-    "test": "istanbul test tests/runner.js --hook-run-in-context"
+    "test": "node -r esm -r module-alias/register tests/runner.js"
   },
   "directories": {
     "doc": "./doc"
   },
   "devDependencies": {
-    "commander": "~2.16.0",
-    "handlebars": "~4.1.2",
-    "istanbul": "~0.4.5",
-    "jasmine-node": "^1.15.0",
-    "jshint": "~2.9.5",
-    "mdoc": "~0.5.3",
-    "nodefy": "~0.2.2",
-    "regenerate": "~1.4.0",
-    "requirejs": "~2.3.5",
-    "rimraf": "~2.6.2",
-    "rocambole": "~0.7.0"
+    "esm": "^3.2.25",
+    "jasmine": "^3.5.0",
+    "module-alias": "^2.2.2"
   },
   "testling": {
     "preprocess": "node build testling",
@@ -90,5 +81,8 @@
       "tests/testling/specs.js",
       "tests/runner.js"
     ]
+  },
+  "_moduleAliases": {
+    "mout": "./src"
   }
 }
