@@ -8,7 +8,7 @@
 .livereload
 .idea
 
-.DS_Store?
+.DS_Store
 ehthumbs.db
 Icon?
 Thumbs.db
@@ -64,4 +64,3 @@ tests/testling/
 /string/
 /time.js
 /time/
-
