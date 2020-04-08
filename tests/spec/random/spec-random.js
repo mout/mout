@@ -1,4 +1,4 @@
-import random from 'mout/random/random';
+import random from '../../../src/random/random';
 
     describe('random/random', function(){
 

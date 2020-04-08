@@ -1,4 +1,4 @@
-import filter from 'mout/collection/filter';
+import filter from '../../../src/collection/filter';
 
     describe('collection/filter', function(){
 

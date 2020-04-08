@@ -1,4 +1,4 @@
-import deepMatches from 'mout/object/deepMatches';
+import deepMatches from '../../../src/object/deepMatches';
 
     describe('object/deepMatches', function(){
 

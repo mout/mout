@@ -1,4 +1,4 @@
-import lastIndexOf from 'mout/array/lastIndexOf';
+import lastIndexOf from '../../../src/array/lastIndexOf';
 
     describe('array/lastIndexOf()', function(){
 

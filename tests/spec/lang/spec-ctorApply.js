@@ -1,4 +1,4 @@
-import ctorApply from 'mout/lang/ctorApply';
+import ctorApply from '../../../src/lang/ctorApply';
 
     describe('lang/ctorApply()', function () {
 

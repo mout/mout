@@ -1,4 +1,4 @@
-import removeAll from 'mout/array/removeAll';
+import removeAll from '../../../src/array/removeAll';
 
     describe('array/removeAll()', function(){
 

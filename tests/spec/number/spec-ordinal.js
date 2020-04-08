@@ -1,4 +1,4 @@
-import ordinal from 'mout/number/ordinal';
+import ordinal from '../../../src/number/ordinal';
 
     describe('number/ordinal', function(){
 

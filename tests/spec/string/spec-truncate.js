@@ -1,4 +1,4 @@
-import truncate from 'mout/string/truncate';
+import truncate from '../../../src/string/truncate';
 
     describe('string/truncate()', function(){
         var str = 'lorem ipsum dolor sit amet';

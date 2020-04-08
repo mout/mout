@@ -1,4 +1,4 @@
-import hasOwn from 'mout/object/hasOwn';
+import hasOwn from '../../../src/object/hasOwn';
 
     describe('object/hasOwn()', function () {
 

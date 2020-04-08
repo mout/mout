@@ -1,4 +1,4 @@
-import unique from 'mout/array/unique';
+import unique from '../../../src/array/unique';
 
     describe('array/unique()', function(){
 

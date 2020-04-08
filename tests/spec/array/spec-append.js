@@ -1,4 +1,4 @@
-import append from 'mout/array/append';
+import append from '../../../src/array/append';
 
     describe('array/append()', function(){
 

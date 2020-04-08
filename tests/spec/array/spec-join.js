@@ -1,4 +1,4 @@
-import join from 'mout/array/join';
+import join from '../../../src/array/join';
 
     describe('array/join()', function() {
 

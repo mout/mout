@@ -1,6 +1,6 @@
-// import math from 'mout/src/math';
+// import math from '../../../src/src/math';
 
-//     describe('mout/math', function(){
+//     describe('../../../src/math', function(){
 
 //         it('', function(){
 //             expect( math() ).toBe({});

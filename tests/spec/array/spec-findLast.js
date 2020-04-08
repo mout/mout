@@ -1,4 +1,4 @@
-import findLast from 'mout/array/findLast';
+import findLast from '../../../src/array/findLast';
 
     describe('array/findLast', function(){
 

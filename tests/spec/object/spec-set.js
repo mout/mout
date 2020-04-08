@@ -1,4 +1,4 @@
-import set from 'mout/object/set';
+import set from '../../../src/object/set';
 
         describe('object/set()', function () {
 

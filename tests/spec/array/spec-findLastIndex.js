@@ -1,4 +1,4 @@
-import findLastIndex from 'mout/array/findLastIndex';
+import findLastIndex from '../../../src/array/findLastIndex';
 
     describe('array/findLastIndex', function(){
 

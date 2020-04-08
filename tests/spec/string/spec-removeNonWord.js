@@ -1,4 +1,4 @@
-import removeNonWord from 'mout/string/removeNonWord';
+import removeNonWord from '../../../src/string/removeNonWord';
 
     describe('string/removeNonWord()', function(){
 

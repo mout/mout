@@ -1,4 +1,4 @@
-import rpad from 'mout/string/rpad';
+import rpad from '../../../src/string/rpad';
 
     describe('string/rpad()', function(){
 

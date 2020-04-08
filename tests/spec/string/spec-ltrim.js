@@ -1,4 +1,4 @@
-import ltrim from 'mout/string/ltrim';
+import ltrim from '../../../src/string/ltrim';
 
     describe('string/ltrim()', function(){
 

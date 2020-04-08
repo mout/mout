@@ -1,4 +1,4 @@
-import pluck from 'mout/array/pluck';
+import pluck from '../../../src/array/pluck';
 
     describe('array/pluck()', function () {
 

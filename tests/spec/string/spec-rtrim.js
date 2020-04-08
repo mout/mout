@@ -1,4 +1,4 @@
-import rtrim from 'mout/string/rtrim';
+import rtrim from '../../../src/string/rtrim';
 
     describe('string/rtrim()', function(){
 

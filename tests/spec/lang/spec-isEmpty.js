@@ -1,4 +1,4 @@
-import isEmpty from 'mout/lang/isEmpty';
+import isEmpty from '../../../src/lang/isEmpty';
 
     describe('lang/isEmpty', function () {
 

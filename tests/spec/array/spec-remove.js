@@ -1,4 +1,4 @@
-import remove from 'mout/array/remove';
+import remove from '../../../src/array/remove';
 
     describe('array/remove()', function(){
 

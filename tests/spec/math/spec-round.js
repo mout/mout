@@ -1,4 +1,4 @@
-import round from 'mout/math/round';
+import round from '../../../src/math/round';
 
     describe('math/round', function(){
 

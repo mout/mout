@@ -1,4 +1,4 @@
-import insert from 'mout/array/insert';
+import insert from '../../../src/array/insert';
 
     describe('array/insert()', function(){
 

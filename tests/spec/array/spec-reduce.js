@@ -1,4 +1,4 @@
-import reduce from 'mout/array/reduce';
+import reduce from '../../../src/array/reduce';
 
     describe('array/reduce()', function () {
 

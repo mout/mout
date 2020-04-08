@@ -1,4 +1,4 @@
-import insert from 'mout/string/insert';
+import insert from '../../../src/string/insert';
 
     describe('string/insert', function(){
 

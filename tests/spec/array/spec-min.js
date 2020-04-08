@@ -1,4 +1,4 @@
-import min from 'mout/array/min';
+import min from '../../../src/array/min';
 
     describe('array/min()', function () {
 

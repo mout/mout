@@ -1,4 +1,4 @@
-import underscore from 'mout/string/underscore';
+import underscore from '../../../src/string/underscore';
 
     describe('string/underscore()', function(){
 

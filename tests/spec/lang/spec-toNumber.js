@@ -1,4 +1,4 @@
-import toNumber from 'mout/lang/toNumber';
+import toNumber from '../../../src/lang/toNumber';
 
     describe('lang/toNumber', function(){
 

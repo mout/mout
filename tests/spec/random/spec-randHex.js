@@ -1,4 +1,4 @@
-import randHex from 'mout/random/randHex';
+import randHex from '../../../src/random/randHex';
 import mockRandom from './helper-mockRandom';
 
     describe('random/randHex()', function () {

@@ -1,4 +1,4 @@
-import sentenceCase from 'mout/string/sentenceCase';
+import sentenceCase from '../../../src/string/sentenceCase';
 
     describe('string/sentenceCase()', function(){
 

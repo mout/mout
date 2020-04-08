@@ -1,4 +1,4 @@
-import decode from 'mout/queryString/decode';
+import decode from '../../../src/queryString/decode';
 
     describe('queryString/decode()', function () {
 

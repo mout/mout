@@ -1,4 +1,4 @@
-import unset from 'mout/object/unset';
+import unset from '../../../src/object/unset';
 
         describe('object/unset()', function () {
 

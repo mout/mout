@@ -1,4 +1,4 @@
-import getQuery from 'mout/queryString/getQuery';
+import getQuery from '../../../src/queryString/getQuery';
 
     describe('queryString/getQuery()', function () {
 

@@ -1,4 +1,4 @@
-import map from 'mout/array/map';
+import map from '../../../src/array/map';
 
     describe('array/map()', function(){
 

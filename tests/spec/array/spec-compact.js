@@ -1,4 +1,4 @@
-import compact from 'mout/array/compact';
+import compact from '../../../src/array/compact';
 
     describe('array/compact()', function () {
 

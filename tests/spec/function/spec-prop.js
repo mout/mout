@@ -1,4 +1,4 @@
-import prop from 'mout/function/prop';
+import prop from '../../../src/function/prop';
 
     describe('function/prop()', function () {
 

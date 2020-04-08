@@ -30,15 +30,14 @@
   },
   "main": "./index.js",
   "scripts": {
-    "test": "node -r esm -r module-alias/register tests/runner.js"
+    "test": "node tests/runner.js"
   },
   "directories": {
     "doc": "./doc"
   },
   "devDependencies": {
     "esm": "^3.2.25",
-    "jasmine": "^3.5.0",
-    "module-alias": "^2.2.2"
+    "jasmine": "^3.5.0"
   },
   "testling": {
     "preprocess": "node build testling",
@@ -81,8 +80,5 @@
       "tests/testling/specs.js",
       "tests/runner.js"
     ]
-  },
-  "_moduleAliases": {
-    "mout": "./src"
   }
 }

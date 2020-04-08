@@ -1,4 +1,4 @@
-import dayOfTheYear from 'mout/date/dayOfTheYear';
+import dayOfTheYear from '../../../src/date/dayOfTheYear';
 
     describe('date/dayOfTheYear', function(){
 

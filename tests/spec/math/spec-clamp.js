@@ -1,4 +1,4 @@
-import clamp from 'mout/math/clamp';
+import clamp from '../../../src/math/clamp';
 
     describe('math/clamp()', function(){
 

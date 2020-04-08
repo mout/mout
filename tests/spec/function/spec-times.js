@@ -1,4 +1,4 @@
-import times from 'mout/function/times';
+import times from '../../../src/function/times';
 
     describe('function/times', function(){
 

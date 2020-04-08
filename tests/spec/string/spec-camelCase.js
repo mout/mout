@@ -1,4 +1,4 @@
-import camelCase from 'mout/string/camelCase';
+import camelCase from '../../../src/string/camelCase';
 
     describe('string/camelCase()', function(){
 

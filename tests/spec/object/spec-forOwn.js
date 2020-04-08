@@ -1,4 +1,4 @@
-import forOwn from 'mout/object/forOwn';
+import forOwn from '../../../src/object/forOwn';
 
     var global = this;
 

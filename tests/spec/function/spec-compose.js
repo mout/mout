@@ -1,4 +1,4 @@
-import compose from 'mout/function/compose';
+import compose from '../../../src/function/compose';
 
     describe('function/compose()', function () {
 

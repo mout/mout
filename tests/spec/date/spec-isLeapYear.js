@@ -1,4 +1,4 @@
-import isLeapYear from 'mout/date/isLeapYear';
+import isLeapYear from '../../../src/date/isLeapYear';
 
     describe('date/isLeapYear', function(){
 

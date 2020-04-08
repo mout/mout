@@ -1,4 +1,4 @@
-import lpad from 'mout/string/lpad';
+import lpad from '../../../src/string/lpad';
 
     describe('string/lpad()', function(){
 

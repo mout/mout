@@ -1,4 +1,4 @@
-import size from 'mout/object/size';
+import size from '../../../src/object/size';
 
     describe('object/size()', function () {
 

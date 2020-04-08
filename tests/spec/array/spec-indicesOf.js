@@ -1,4 +1,4 @@
-import indicesOf from 'mout/array/indicesOf';
+import indicesOf from '../../../src/array/indicesOf';
 
     describe('array/indicesOf()', function() {
 

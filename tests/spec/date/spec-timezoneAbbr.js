@@ -1,4 +1,4 @@
-import timezoneAbbr from 'mout/date/timezoneAbbr';
+import timezoneAbbr from '../../../src/date/timezoneAbbr';
 
     describe('date/timezoneAbbr', function(){
 

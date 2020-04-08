@@ -1,4 +1,4 @@
-import MAX_INT from 'mout/number/MAX_UINT';
+import MAX_INT from '../../../src/number/MAX_UINT';
 
     describe('number/MAX_UINT', function(){
         it('should be equal (2 ^ 32) - 1', function(){

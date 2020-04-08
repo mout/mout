@@ -1,4 +1,4 @@
-import difference from 'mout/array/difference';
+import difference from '../../../src/array/difference';
 
     describe('array/difference()', function () {
 

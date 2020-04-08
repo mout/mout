@@ -1,4 +1,4 @@
-import combine from 'mout/array/combine';
+import combine from '../../../src/array/combine';
 
     describe('array/combine()', function(){
 

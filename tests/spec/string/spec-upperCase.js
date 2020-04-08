@@ -1,4 +1,4 @@
-import upperCase from 'mout/string/upperCase';
+import upperCase from '../../../src/string/upperCase';
 
     describe('string/upperCase()', function(){
 

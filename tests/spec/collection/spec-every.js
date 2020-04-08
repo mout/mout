@@ -1,4 +1,4 @@
-import every from 'mout/collection/every';
+import every from '../../../src/collection/every';
 
     describe('collection/every', function(){
 

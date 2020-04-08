@@ -1,4 +1,4 @@
-import partial from 'mout/function/partial';
+import partial from '../../../src/function/partial';
 
     var _ = partial._;
 

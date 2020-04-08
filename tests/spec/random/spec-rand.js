@@ -1,4 +1,4 @@
-import rand from 'mout/random/rand';
+import rand from '../../../src/random/rand';
 import mockRandom from './helper-mockRandom';
 
     describe('random/rand()', function(){

@@ -1,4 +1,4 @@
-import randSign from 'mout/random/randSign';
+import randSign from '../../../src/random/randSign';
 import mockRandom from './helper-mockRandom';
 
     describe('random/randSign()', function(){

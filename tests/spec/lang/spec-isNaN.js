@@ -1,4 +1,4 @@
-import isNaN from 'mout/lang/isNaN';
+import isNaN from '../../../src/lang/isNaN';
 
     describe('lang/isNaN', function(){
 

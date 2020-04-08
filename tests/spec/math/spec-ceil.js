@@ -1,4 +1,4 @@
-import ceil from 'mout/math/ceil';
+import ceil from '../../../src/math/ceil';
 
     describe('math/ceil', function(){
 

@@ -1,4 +1,4 @@
-import equals from 'mout/object/equals';
+import equals from '../../../src/object/equals';
 
     describe('object/equals', function(){
 

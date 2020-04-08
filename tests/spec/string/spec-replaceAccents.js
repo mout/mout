@@ -1,4 +1,4 @@
-import replaceAccents from 'mout/string/replaceAccents';
+import replaceAccents from '../../../src/string/replaceAccents';
 
     describe('string/replaceAccents()', function(){
 

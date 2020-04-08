@@ -1,4 +1,4 @@
-import toUInt from 'mout/number/toUInt';
+import toUInt from '../../../src/number/toUInt';
 
     describe('number/toUInt()', function(){
 

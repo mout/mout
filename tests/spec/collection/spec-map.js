@@ -1,4 +1,4 @@
-import map from 'mout/collection/map';
+import map from '../../../src/collection/map';
 
     describe('collection/map', function(){
 

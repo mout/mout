@@ -1,4 +1,4 @@
-import isObject from 'mout/lang/isObject';
+import isObject from '../../../src/lang/isObject';
 
     describe('lang/isObject()', function () {
 

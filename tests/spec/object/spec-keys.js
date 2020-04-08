@@ -1,4 +1,4 @@
-import keys from 'mout/object/keys';
+import keys from '../../../src/object/keys';
 
     describe('object/keys()', function () {
 

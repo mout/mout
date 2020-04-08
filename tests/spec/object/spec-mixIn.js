@@ -1,4 +1,4 @@
-import mixIn from 'mout/object/mixIn';
+import mixIn from '../../../src/object/mixIn';
 
     describe('object/mixIn()', function(){
 

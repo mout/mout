@@ -1,4 +1,4 @@
-import every from 'mout/array/every';
+import every from '../../../src/array/every';
 
     describe('array/every()', function(){
 

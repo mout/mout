@@ -1,4 +1,4 @@
-import encode from 'mout/queryString/encode';
+import encode from '../../../src/queryString/encode';
 
     describe('queryString/encode()', function () {
 

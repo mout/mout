@@ -1,4 +1,4 @@
-import debounce from 'mout/function/debounce';
+import debounce from '../../../src/function/debounce';
 import mockNow from '../time/helper-mockNow';
 
     describe('function/debounce', function(){

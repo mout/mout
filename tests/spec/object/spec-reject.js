@@ -1,5 +1,5 @@
-import reject from 'mout/object/reject';
-import size from 'mout/object/size';
+import reject from '../../../src/object/reject';
+import size from '../../../src/object/size';
 
     describe('object/reject', function(){
 

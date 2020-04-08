@@ -1,4 +1,4 @@
-import max from 'mout/object/max';
+import max from '../../../src/object/max';
 
     describe('object/max', function(){
 

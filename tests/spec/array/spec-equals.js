@@ -1,4 +1,4 @@
-import equals from 'mout/array/equals';
+import equals from '../../../src/array/equals';
 
     describe('array/equals', function(){
 

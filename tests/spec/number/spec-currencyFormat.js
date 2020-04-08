@@ -1,4 +1,4 @@
-import currencyFormat from 'mout/number/currencyFormat';
+import currencyFormat from '../../../src/number/currencyFormat';
 
     describe('number/currencyFormat()', function () {
 

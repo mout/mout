@@ -1,4 +1,4 @@
-import unCamelCase from 'mout/string/unCamelCase';
+import unCamelCase from '../../../src/string/unCamelCase';
 
     describe('string/unCamelCase()', function(){
 

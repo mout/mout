@@ -1,4 +1,4 @@
-import makeIterator_ from 'mout/function/makeIterator_';
+import makeIterator_ from '../../../src/function/makeIterator_';
 
     describe('function/makeIterator_', function(){
 

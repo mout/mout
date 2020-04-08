@@ -1,4 +1,4 @@
-import unescapeUnicode from 'mout/string/unescapeUnicode';
+import unescapeUnicode from '../../../src/string/unescapeUnicode';
 
     describe('string/unescapeUnicode', function(){
 

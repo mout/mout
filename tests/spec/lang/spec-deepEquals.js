@@ -1,4 +1,4 @@
-import deepEquals from 'mout/lang/deepEquals';
+import deepEquals from '../../../src/lang/deepEquals';
 
     describe('lang/deepEquals', function(){
 

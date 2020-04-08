@@ -1,4 +1,4 @@
-import find from 'mout/array/find';
+import find from '../../../src/array/find';
 
     describe('array/find', function () {
 

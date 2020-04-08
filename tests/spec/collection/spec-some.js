@@ -1,4 +1,4 @@
-import some from 'mout/collection/some';
+import some from '../../../src/collection/some';
 
     describe('collection/some', function(){
 

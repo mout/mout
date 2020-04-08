@@ -1,4 +1,4 @@
-import isPrimitive from 'mout/lang/isPrimitive';
+import isPrimitive from '../../../src/lang/isPrimitive';
 
     describe('lang/isPrimitive', function() {
 

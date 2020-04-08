@@ -1,4 +1,4 @@
-import norm from 'mout/math/norm';
+import norm from '../../../src/math/norm';
 
     describe('math/norm()', function(){
 

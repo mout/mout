@@ -1,4 +1,4 @@
-import properCase from 'mout/string/properCase';
+import properCase from '../../../src/string/properCase';
 
     describe('string/properCase()', function(){
 

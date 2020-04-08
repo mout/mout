@@ -1,4 +1,4 @@
-import sign from 'mout/number/sign';
+import sign from '../../../src/number/sign';
 
     describe('number/sign()', function () {
 

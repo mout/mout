@@ -1,4 +1,4 @@
-import lowerCase from 'mout/string/lowerCase';
+import lowerCase from '../../../src/string/lowerCase';
 
     describe('string/lowerCase()', function(){
 

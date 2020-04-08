@@ -1,4 +1,4 @@
-import random from 'mout/random/random';
+import random from '../../../src/random/random';
     var original = random.get;
 
     // Values to return from the mocked generator

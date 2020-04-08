@@ -1,4 +1,4 @@
-import timeout from 'mout/function/timeout';
+import timeout from '../../../src/function/timeout';
 
     describe('function/timeout', function(){
 

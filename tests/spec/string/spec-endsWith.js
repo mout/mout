@@ -1,4 +1,4 @@
-import endsWith from 'mout/string/endsWith';
+import endsWith from '../../../src/string/endsWith';
 
     describe('string/endsWith()', function(){
 

@@ -1,4 +1,4 @@
-import find from 'mout/object/find';
+import find from '../../../src/object/find';
 
     describe('object/find', function(){
 

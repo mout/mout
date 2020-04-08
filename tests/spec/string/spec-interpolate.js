@@ -1,4 +1,4 @@
-import interpolate from 'mout/string/interpolate';
+import interpolate from '../../../src/string/interpolate';
 
     describe('string/interpolate()', function () {
 

@@ -1,4 +1,4 @@
-import diff from 'mout/date/diff';
+import diff from '../../../src/date/diff';
 
     describe('date/diff', function(){
 

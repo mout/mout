@@ -1,4 +1,4 @@
-import strftime from 'mout/date/strftime';
+import strftime from '../../../src/date/strftime';
 
     describe('date/strftime', function(){
 

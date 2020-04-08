@@ -1,4 +1,4 @@
-import weekOfTheYear from 'mout/date/weekOfTheYear';
+import weekOfTheYear from '../../../src/date/weekOfTheYear';
 
     describe('date/weekOfTheYear', function(){
 

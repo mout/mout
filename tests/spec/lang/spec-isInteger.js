@@ -1,4 +1,4 @@
-import isInteger from 'mout/lang/isInteger';
+import isInteger from '../../../src/lang/isInteger';
 
     describe('lang/isInteger', function(){
 

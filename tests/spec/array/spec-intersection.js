@@ -1,4 +1,4 @@
-import intersection from 'mout/array/intersection';
+import intersection from '../../../src/array/intersection';
 
     describe('array/intersection()', function () {
 

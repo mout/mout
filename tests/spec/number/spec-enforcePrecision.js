@@ -1,4 +1,4 @@
-import enforcePrecision from 'mout/number/enforcePrecision';
+import enforcePrecision from '../../../src/number/enforcePrecision';
 
     describe('number/enforcePrecision()', function(){
 

@@ -1,4 +1,4 @@
-import MAX_SAFE_INTEGER from 'mout/number/MAX_SAFE_INTEGER';
+import MAX_SAFE_INTEGER from '../../../src/number/MAX_SAFE_INTEGER';
 
     describe('number/MAX_SAFE_INTEGER', function(){
 

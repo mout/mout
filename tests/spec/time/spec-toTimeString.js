@@ -1,4 +1,4 @@
-import toTimeString from 'mout/time/toTimeString';
+import toTimeString from '../../../src/time/toTimeString';
 
     describe('time/toTimeString()', function(){
 

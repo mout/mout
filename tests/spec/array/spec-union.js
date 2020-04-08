@@ -1,4 +1,4 @@
-import union from 'mout/array/union';
+import union from '../../../src/array/union';
 
     describe('array/union()', function () {
 

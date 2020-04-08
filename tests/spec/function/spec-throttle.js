@@ -1,4 +1,4 @@
-import throttle from 'mout/function/throttle';
+import throttle from '../../../src/function/throttle';
 import mockNow from '../time/helper-mockNow';
 
     describe('function/throttle', function(){

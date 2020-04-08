@@ -1,4 +1,4 @@
-import clone from 'mout/lang/clone';
+import clone from '../../../src/lang/clone';
 
     describe('lang/clone', function() {
 

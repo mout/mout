@@ -1,4 +1,4 @@
-import max from 'mout/collection/max';
+import max from '../../../src/collection/max';
 
     describe('collection/max', function(){
 

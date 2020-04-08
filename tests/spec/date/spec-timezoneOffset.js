@@ -1,4 +1,4 @@
-import timezoneOffset from 'mout/date/timezoneOffset';
+import timezoneOffset from '../../../src/date/timezoneOffset';
 
     describe('date/timezoneOffset', function(){
 

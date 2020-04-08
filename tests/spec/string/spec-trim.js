@@ -1,4 +1,4 @@
-import trim from 'mout/string/trim';
+import trim from '../../../src/string/trim';
 
     describe('string/trim()', function(){
 

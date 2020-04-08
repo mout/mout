@@ -1,4 +1,4 @@
-import parseIso from 'mout/date/parseIso';
+import parseIso from '../../../src/date/parseIso';
 
     describe('date/parseIso', function(){
 

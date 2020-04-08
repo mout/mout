@@ -1,4 +1,4 @@
-import sort from 'mout/array/sort';
+import sort from '../../../src/array/sort';
 
     describe('array/sort()', function () {
 

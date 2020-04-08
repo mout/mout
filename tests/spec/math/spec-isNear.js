@@ -1,4 +1,4 @@
-import isNear from 'mout/math/isNear';
+import isNear from '../../../src/math/isNear';
 
     describe('math/isNear()', function(){
 

@@ -1,4 +1,4 @@
-import contains from 'mout/object/contains';
+import contains from '../../../src/object/contains';
 
     describe('object/contains', function(){
 

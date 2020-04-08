@@ -1,4 +1,4 @@
-import getParam from 'mout/queryString/getParam';
+import getParam from '../../../src/queryString/getParam';
 
     describe('queryString/getParam()', function () {
 

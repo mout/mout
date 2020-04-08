@@ -1,4 +1,4 @@
-import isFinite from 'mout/lang/isFinite';
+import isFinite from '../../../src/lang/isFinite';
 
     describe('lang/isFinite', function(){
 

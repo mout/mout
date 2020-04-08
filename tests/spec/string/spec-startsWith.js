@@ -1,4 +1,4 @@
-import startsWith from 'mout/string/startsWith';
+import startsWith from '../../../src/string/startsWith';
 
     describe('string/startsWith()', function(){
 

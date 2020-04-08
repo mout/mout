@@ -1,4 +1,4 @@
-import countSteps from 'mout/math/countSteps';
+import countSteps from '../../../src/math/countSteps';
 
     describe('math/countSteps()', function(){
 

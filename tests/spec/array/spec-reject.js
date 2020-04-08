@@ -1,4 +1,4 @@
-import reject from 'mout/array/reject';
+import reject from '../../../src/array/reject';
 
     describe('array/reject()', function() {
 

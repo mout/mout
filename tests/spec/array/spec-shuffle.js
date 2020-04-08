@@ -1,4 +1,4 @@
-import shuffle from 'mout/array/shuffle';
+import shuffle from '../../../src/array/shuffle';
 import mockRandom from '../random/helper-mockRandom';
 
     describe('array/shuffle()', function () {

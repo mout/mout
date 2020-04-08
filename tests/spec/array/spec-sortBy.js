@@ -1,4 +1,4 @@
-import sortBy from 'mout/array/sortBy';
+import sortBy from '../../../src/array/sortBy';
 
     describe('array/sortBy', function(){
 

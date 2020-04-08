@@ -1,4 +1,4 @@
-import matches from 'mout/object/matches';
+import matches from '../../../src/object/matches';
 
     describe('object/matches', function(){
 

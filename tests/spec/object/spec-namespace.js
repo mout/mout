@@ -1,4 +1,4 @@
-import namespace from 'mout/object/namespace';
+import namespace from '../../../src/object/namespace';
 
         describe('object/namespace()', function () {
 

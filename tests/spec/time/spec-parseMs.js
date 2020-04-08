@@ -1,4 +1,4 @@
-import parseMs from 'mout/time/parseMs';
+import parseMs from '../../../src/time/parseMs';
 
     describe('time/parseMs()', function(){
 

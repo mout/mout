@@ -1,4 +1,4 @@
-import collect from 'mout/array/collect';
+import collect from '../../../src/array/collect';
 
     describe('array/collect', function(){
 

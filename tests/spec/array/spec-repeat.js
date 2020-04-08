@@ -1,4 +1,4 @@
-import repeat from 'mout/array/repeat';
+import repeat from '../../../src/array/repeat';
 
     describe('array/repeat()', function () {
 

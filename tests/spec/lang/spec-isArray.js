@@ -1,4 +1,4 @@
-import isArray from 'mout/lang/isArray';
+import isArray from '../../../src/lang/isArray';
 
     describe('lang/isArray()', function () {
 

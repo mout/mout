@@ -1,4 +1,4 @@
-import unhyphenate from 'mout/string/unhyphenate';
+import unhyphenate from '../../../src/string/unhyphenate';
 
     describe('string/unhyphenate()', function(){
 

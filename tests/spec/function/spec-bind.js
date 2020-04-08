@@ -1,4 +1,4 @@
-import bind from 'mout/function/bind';
+import bind from '../../../src/function/bind';
 
     describe('function/bind()', function(){
 

@@ -1,4 +1,4 @@
-import invoke from 'mout/array/invoke';
+import invoke from '../../../src/array/invoke';
 
     describe('array/invoke', function(){
 

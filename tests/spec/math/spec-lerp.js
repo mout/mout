@@ -1,4 +1,4 @@
-import lerp from 'mout/math/lerp';
+import lerp from '../../../src/math/lerp';
 
     describe('math/lerp()', function(){
 

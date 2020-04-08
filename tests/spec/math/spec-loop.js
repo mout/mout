@@ -1,4 +1,4 @@
-import loop from 'mout/math/loop';
+import loop from '../../../src/math/loop';
 
     describe('math/loop()', function(){
 

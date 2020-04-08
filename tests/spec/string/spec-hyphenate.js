@@ -1,4 +1,4 @@
-import hyphenate from 'mout/string/hyphenate';
+import hyphenate from '../../../src/string/hyphenate';
 
     describe('string/hyphenate()', function(){
 

@@ -1,5 +1,5 @@
-import reverse from 'mout/array/reverse';
-import rand from 'mout/random/rand';
+import reverse from '../../../src/array/reverse';
+import rand from '../../../src/random/rand';
 
     describe('array/reverse', function(){
 

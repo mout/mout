@@ -1,4 +1,4 @@
-import pick from 'mout/object/pick';
+import pick from '../../../src/object/pick';
 
     describe('object/pick()', function () {
 

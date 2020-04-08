@@ -1,4 +1,4 @@
-import memoize from 'mout/function/memoize';
+import memoize from '../../../src/function/memoize';
 
     describe('function/memoize()', function(){
 

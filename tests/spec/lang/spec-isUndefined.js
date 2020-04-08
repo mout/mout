@@ -1,4 +1,4 @@
-import isUndefined from 'mout/lang/isUndefined';
+import isUndefined from '../../../src/lang/isUndefined';
 
     describe('lang/isUndefined()', function () {
 

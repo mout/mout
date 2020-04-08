@@ -1,4 +1,4 @@
-import pluck from 'mout/object/pluck';
+import pluck from '../../../src/object/pluck';
 
     describe('object/pluck', function(){
 

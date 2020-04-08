@@ -1,4 +1,4 @@
-import setParam from 'mout/queryString/setParam';
+import setParam from '../../../src/queryString/setParam';
 
     describe('queryString/setParam', function(){
 

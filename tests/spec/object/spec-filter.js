@@ -1,4 +1,4 @@
-import filter from 'mout/object/filter';
+import filter from '../../../src/object/filter';
 
     describe('object/filter()', function() {
 

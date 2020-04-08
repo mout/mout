@@ -1,4 +1,4 @@
-import escapeHtml from 'mout/string/escapeHtml';
+import escapeHtml from '../../../src/string/escapeHtml';
 
     describe('string/escapeHtml()', function () {
 

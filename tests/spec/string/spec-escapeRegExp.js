@@ -1,4 +1,4 @@
-import escapeRegExp from 'mout/string/escapeRegExp';
+import escapeRegExp from '../../../src/string/escapeRegExp';
 
     describe('string/escapeRegExp', function () {
 

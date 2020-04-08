@@ -1,4 +1,4 @@
-import replace from 'mout/string/replace';
+import replace from '../../../src/string/replace';
 
     describe('string/replace', function(){
 

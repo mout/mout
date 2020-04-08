@@ -1,4 +1,4 @@
-import startOf from 'mout/date/startOf';
+import startOf from '../../../src/date/startOf';
 
     describe('date/startOf', function(){
 

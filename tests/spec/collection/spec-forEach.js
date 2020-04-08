@@ -1,4 +1,4 @@
-import forEach from 'mout/collection/forEach';
+import forEach from '../../../src/collection/forEach';
 
     describe('collection/forEach', function(){
 

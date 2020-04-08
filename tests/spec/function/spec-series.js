@@ -1,4 +1,4 @@
-import series from 'mout/function/series';
+import series from '../../../src/function/series';
 
     describe('function/series()', function () {
 

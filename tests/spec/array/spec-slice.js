@@ -1,4 +1,4 @@
-import slice from 'mout/array/slice';
+import slice from '../../../src/array/slice';
 
     describe('array/slice', function(){
 

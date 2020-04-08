@@ -1,4 +1,4 @@
-import isDate from 'mout/lang/isDate';
+import isDate from '../../../src/lang/isDate';
 
     describe('lang/isDate()', function () {
 

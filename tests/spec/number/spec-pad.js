@@ -1,4 +1,4 @@
-import pad from 'mout/number/pad';
+import pad from '../../../src/number/pad';
 
     describe('number/pad()', function(){
         it('should add zeroes if number length is < minLength', function(){

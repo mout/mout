@@ -1,4 +1,4 @@
-import inRange from 'mout/math/inRange';
+import inRange from '../../../src/math/inRange';
 
     describe('math/inRange()', function(){
 

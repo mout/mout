@@ -1,4 +1,4 @@
-import defaults from 'mout/lang/defaults';
+import defaults from '../../../src/lang/defaults';
 
     describe('lang/defaults', function () {
 

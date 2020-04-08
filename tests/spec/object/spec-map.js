@@ -1,4 +1,4 @@
-import map from 'mout/object/map';
+import map from '../../../src/object/map';
 
     describe('object/map()', function() {
 

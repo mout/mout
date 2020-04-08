@@ -1,4 +1,4 @@
-import max from 'mout/array/max';
+import max from '../../../src/array/max';
 
     describe('array/max()', function () {
 

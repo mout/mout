@@ -1,4 +1,4 @@
-import crop from 'mout/string/crop';
+import crop from '../../../src/string/crop';
 
     describe('string/crop()', function(){
         var str = 'lorem ipsum dolor sit amet';

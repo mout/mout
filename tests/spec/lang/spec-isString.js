@@ -1,4 +1,4 @@
-import isString from 'mout/lang/isString';
+import isString from '../../../src/lang/isString';
 
     describe('lang/isString()', function () {
 

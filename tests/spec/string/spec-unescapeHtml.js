@@ -1,4 +1,4 @@
-import unescapeHtml from 'mout/string/unescapeHtml';
+import unescapeHtml from '../../../src/string/unescapeHtml';
 
     describe('string/unescapeHtml()', function () {
 

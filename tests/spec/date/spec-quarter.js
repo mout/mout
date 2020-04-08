@@ -1,4 +1,4 @@
-import quarter from 'mout/date/quarter';
+import quarter from '../../../src/date/quarter';
 
     describe('date/quarter', function(){
 

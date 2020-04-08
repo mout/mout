@@ -1,4 +1,4 @@
-import func from 'mout/function/func';
+import func from '../../../src/function/func';
 
     describe('function/func()', function () {
 

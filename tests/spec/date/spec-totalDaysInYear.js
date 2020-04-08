@@ -1,4 +1,4 @@
-import totalDaysInYear from 'mout/date/totalDaysInYear';
+import totalDaysInYear from '../../../src/date/totalDaysInYear';
 
     describe('date/totalDaysInYear', function(){
 

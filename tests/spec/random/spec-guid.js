@@ -1,4 +1,4 @@
-import guid from 'mout/random/guid';
+import guid from '../../../src/random/guid';
 import mockRandom from './helper-mockRandom';
 
     describe('random/guid()', function(){

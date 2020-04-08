@@ -1,4 +1,4 @@
-import make from 'mout/collection/make_';
+import make from '../../../src/collection/make_';
 
     describe('collection/make_', function(){
 

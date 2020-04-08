@@ -1,4 +1,4 @@
-import range from 'mout/array/range';
+import range from '../../../src/array/range';
 
     describe('array/range()', function () {
 

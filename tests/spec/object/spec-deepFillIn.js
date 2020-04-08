@@ -1,4 +1,4 @@
-import deepFillIn from 'mout/object/deepFillIn';
+import deepFillIn from '../../../src/object/deepFillIn';
 
     describe('object/deepFillIn', function(){
 

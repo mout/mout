@@ -1,4 +1,4 @@
-import rol from 'mout/number/rol';
+import rol from '../../../src/number/rol';
 
     describe('number/rol()', function(){
         it('should rotate bits left', function(){

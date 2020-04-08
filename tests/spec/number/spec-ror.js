@@ -1,4 +1,4 @@
-import ror from 'mout/number/ror';
+import ror from '../../../src/number/ror';
 
     describe('number/ror()', function(){
         it('should rotate bits right', function(){

@@ -1,4 +1,4 @@
-import kindOf from 'mout/lang/kindOf';
+import kindOf from '../../../src/lang/kindOf';
 
     describe('lang/kindOf()', function(){
 

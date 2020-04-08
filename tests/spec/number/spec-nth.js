@@ -1,4 +1,4 @@
-import nth from 'mout/number/nth';
+import nth from '../../../src/number/nth';
 
     describe('number/nth', function(){
 

@@ -1,4 +1,4 @@
-import flatten from 'mout/object/flatten';
+import flatten from '../../../src/object/flatten';
 
     describe('object/flatten()', function () {
 

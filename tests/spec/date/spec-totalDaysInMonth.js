@@ -1,4 +1,4 @@
-import totalDaysInMonth from 'mout/date/totalDaysInMonth';
+import totalDaysInMonth from '../../../src/date/totalDaysInMonth';
 
     describe('date/totalDaysInMonth', function(){
 

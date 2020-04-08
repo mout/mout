@@ -1,4 +1,4 @@
-import toString from 'mout/lang/toString';
+import toString from '../../../src/lang/toString';
 
     describe('lang/toString', function(){
 

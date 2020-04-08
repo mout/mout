@@ -1,4 +1,4 @@
-import overflow from 'mout/math/overflow';
+import overflow from '../../../src/math/overflow';
 
     describe('math/overflow', function(){
 

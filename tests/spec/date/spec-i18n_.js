@@ -1,4 +1,4 @@
-import i18n from 'mout/date/i18n_';
+import i18n from '../../../src/date/i18n_';
 
     describe('date/i18n_', function(){
 

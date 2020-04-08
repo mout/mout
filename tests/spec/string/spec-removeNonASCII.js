@@ -1,4 +1,4 @@
-import removeNonASCII from 'mout/string/removeNonASCII';
+import removeNonASCII from '../../../src/string/removeNonASCII';
 
     describe('string/removeNonASCII()', function(){
 

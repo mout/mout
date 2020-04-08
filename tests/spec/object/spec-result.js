@@ -1,4 +1,4 @@
-import result from 'mout/object/result';
+import result from '../../../src/object/result';
 
   describe('object/result', function() {
 

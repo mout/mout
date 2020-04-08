@@ -1,4 +1,4 @@
-import now from 'mout/time/now';
+import now from '../../../src/time/now';
 
     var past = now();
 

@@ -1,4 +1,4 @@
-import get from 'mout/object/get';
+import get from '../../../src/object/get';
 
         describe('object/get()', function () {
 

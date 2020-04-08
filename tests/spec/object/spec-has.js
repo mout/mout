@@ -1,4 +1,4 @@
-import has from 'mout/object/has';
+import has from '../../../src/object/has';
 
     describe('object/has()', function () {
 

@@ -1,4 +1,4 @@
-import pick from 'mout/array/pick';
+import pick from '../../../src/array/pick';
 
     describe('array/pick()', function () {
 

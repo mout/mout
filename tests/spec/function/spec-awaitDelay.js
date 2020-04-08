@@ -1,4 +1,4 @@
-import awaitDelay from 'mout/function/awaitDelay';
+import awaitDelay from '../../../src/function/awaitDelay';
 import mockNow from '../time/helper-mockNow';
 
     describe('function/awaitDelay', function(){

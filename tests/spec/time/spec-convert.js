@@ -1,4 +1,4 @@
-import convert from 'mout/time/convert';
+import convert from '../../../src/time/convert';
 
     describe('time/convert', function(){
 

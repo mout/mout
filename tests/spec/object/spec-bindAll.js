@@ -1,4 +1,4 @@
-import bindAll from 'mout/object/bindAll';
+import bindAll from '../../../src/object/bindAll';
 
     describe('object/bindAll', function(){
 

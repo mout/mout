@@ -1,4 +1,4 @@
-import isFunction from 'mout/lang/isFunction';
+import isFunction from '../../../src/lang/isFunction';
 
     describe('lang/isFunction()', function () {
 

@@ -1,4 +1,4 @@
-import values from 'mout/object/values';
+import values from '../../../src/object/values';
 
     describe('object/values()', function () {
 

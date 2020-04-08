@@ -1,4 +1,4 @@
-import escapeUnicode from 'mout/string/escapeUnicode';
+import escapeUnicode from '../../../src/string/escapeUnicode';
 
     describe('string/escapeUnicode', function(){
 

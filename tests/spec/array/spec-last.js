@@ -1,4 +1,4 @@
-import last from 'mout/array/last';
+import last from '../../../src/array/last';
 
     describe('array/last', function(){
 

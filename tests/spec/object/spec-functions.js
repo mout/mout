@@ -1,4 +1,4 @@
-import functions from 'mout/object/functions';
+import functions from '../../../src/object/functions';
 
     describe('object/functions', function(){
 

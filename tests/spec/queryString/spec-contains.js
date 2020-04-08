@@ -1,4 +1,4 @@
-import contains from 'mout/queryString/contains';
+import contains from '../../../src/queryString/contains';
 
     describe('queryString/contains()', function () {
 

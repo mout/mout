@@ -1,4 +1,4 @@
-import typecast from 'mout/string/typecast';
+import typecast from '../../../src/string/typecast';
 
     describe('string/typecast()', function () {
 

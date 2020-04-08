@@ -1,4 +1,4 @@
-import parse from 'mout/queryString/parse';
+import parse from '../../../src/queryString/parse';
 
     describe('queryString/parse()', function () {
 

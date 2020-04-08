@@ -1,4 +1,4 @@
-import inheritPrototype from 'mout/lang/inheritPrototype';
+import inheritPrototype from '../../../src/lang/inheritPrototype';
 
     describe('lang/inheritPrototype()', function(){
 

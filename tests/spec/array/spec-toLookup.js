@@ -1,4 +1,4 @@
-import toLookup from 'mout/array/toLookup';
+import toLookup from '../../../src/array/toLookup';
 
     describe('array/toLookup()', function () {
 

@@ -1,4 +1,4 @@
-import isBoolean from 'mout/lang/isBoolean';
+import isBoolean from '../../../src/lang/isBoolean';
 
     describe('lang/isBoolean()', function () {
 

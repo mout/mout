@@ -1,4 +1,4 @@
-import after from 'mout/function/after';
+import after from '../../../src/function/after';
 
     describe('function/after', function(){
 

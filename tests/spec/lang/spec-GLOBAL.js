@@ -1,4 +1,4 @@
-import GLOBAL from 'mout/lang/GLOBAL';
+import GLOBAL from '../../../src/lang/GLOBAL';
 
     describe('lang/GLOBAL', function(){
 

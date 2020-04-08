@@ -1,4 +1,4 @@
-import contains from 'mout/array/contains';
+import contains from '../../../src/array/contains';
 
     describe('array/contains()', function(){
 

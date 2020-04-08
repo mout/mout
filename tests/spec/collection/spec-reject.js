@@ -1,5 +1,5 @@
-import reject from 'mout/collection/reject';
-import size from 'mout/collection/size';
+import reject from '../../../src/collection/reject';
+import size from '../../../src/collection/size';
 
     describe('collection/reject', function(){
 

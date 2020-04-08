@@ -1,4 +1,4 @@
-import take from 'mout/array/take';
+import take from '../../../src/array/take';
 
 
     describe('array/take', function(){

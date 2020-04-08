@@ -1,4 +1,4 @@
-import isNull from 'mout/lang/isNull';
+import isNull from '../../../src/lang/isNull';
 
     describe('lang/isNull()', function () {
 

@@ -1,4 +1,4 @@
-import repeat from 'mout/string/repeat';
+import repeat from '../../../src/string/repeat';
 
     describe('string/repeat()', function () {
 

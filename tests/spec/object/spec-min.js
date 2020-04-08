@@ -1,4 +1,4 @@
-import min from 'mout/object/min';
+import min from '../../../src/object/min';
 
     describe('object/min', function(){
 

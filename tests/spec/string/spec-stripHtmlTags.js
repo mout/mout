@@ -1,4 +1,4 @@
-import stripHtmlTags from 'mout/string/stripHtmlTags';
+import stripHtmlTags from '../../../src/string/stripHtmlTags';
 
     describe('string/stripHtmlTags()', function(){
 

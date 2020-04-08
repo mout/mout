@@ -1,4 +1,4 @@
-import isKind from 'mout/lang/isKind';
+import isKind from '../../../src/lang/isKind';
 
     describe('lang/isKind()', function(){
 

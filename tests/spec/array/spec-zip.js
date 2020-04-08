@@ -1,4 +1,4 @@
-import zip from 'mout/array/zip';
+import zip from '../../../src/array/zip';
 
     describe('array/zip', function(){
 

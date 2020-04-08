@@ -1,4 +1,4 @@
-import xor from 'mout/array/xor';
+import xor from '../../../src/array/xor';
 
     describe('array/xor()', function () {
 

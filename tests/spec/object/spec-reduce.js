@@ -1,4 +1,4 @@
-import reduce from 'mout/object/reduce';
+import reduce from '../../../src/object/reduce';
 
     describe('object/reduce', function(){
 

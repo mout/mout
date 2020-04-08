@@ -1,4 +1,4 @@
-import fillIn from 'mout/object/fillIn';
+import fillIn from '../../../src/object/fillIn';
 
     describe('object/fillIn', function () {
 

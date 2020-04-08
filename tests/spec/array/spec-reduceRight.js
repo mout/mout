@@ -1,4 +1,4 @@
-import reduceRight from 'mout/array/reduceRight';
+import reduceRight from '../../../src/array/reduceRight';
 
     describe('array/reduceRight()', function () {
 

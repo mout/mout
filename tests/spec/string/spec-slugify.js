@@ -1,4 +1,4 @@
-import slugify from 'mout/string/slugify';
+import slugify from '../../../src/string/slugify';
 
     describe('string/slugify()', function(){
 

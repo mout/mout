@@ -1,4 +1,4 @@
-import isNaN from 'mout/number/isNaN';
+import isNaN from '../../../src/number/isNaN';
 
     describe('number/isNaN', function(){
 

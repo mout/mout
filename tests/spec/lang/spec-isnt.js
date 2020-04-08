@@ -1,4 +1,4 @@
-import isnt from 'mout/lang/isnt';
+import isnt from '../../../src/lang/isnt';
 
     describe('lang/isnt', function(){
 

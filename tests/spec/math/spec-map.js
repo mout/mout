@@ -1,4 +1,4 @@
-import map from 'mout/math/map';
+import map from '../../../src/math/map';
 
     describe('math/map()', function(){
 

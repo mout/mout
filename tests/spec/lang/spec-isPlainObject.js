@@ -1,4 +1,4 @@
-import isPlainObject from 'mout/lang/isPlainObject';
+import isPlainObject from '../../../src/lang/isPlainObject';
 
     describe('lang/isPlainObject', function() {
 

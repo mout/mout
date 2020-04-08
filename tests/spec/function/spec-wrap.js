@@ -1,4 +1,4 @@
-import wrap from 'mout/function/wrap';
+import wrap from '../../../src/function/wrap';
 
     var add = function(a, b){
         return a + b;

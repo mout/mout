@@ -1,4 +1,4 @@
-import deepClone from 'mout/lang/deepClone';
+import deepClone from '../../../src/lang/deepClone';
 
     describe('lang/deepClone()', function () {
 

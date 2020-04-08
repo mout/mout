@@ -1,4 +1,4 @@
-import toInt from 'mout/number/toInt';
+import toInt from '../../../src/number/toInt';
 
     describe('number/toInt()', function(){
 

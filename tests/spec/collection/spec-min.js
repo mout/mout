@@ -1,4 +1,4 @@
-import min from 'mout/collection/min';
+import min from '../../../src/collection/min';
 
     describe('collection/min', function(){
 

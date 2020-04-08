@@ -1,4 +1,4 @@
-import filter from 'mout/array/filter';
+import filter from '../../../src/array/filter';
 
     describe('array/filter()', function(){
 

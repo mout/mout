@@ -1,4 +1,4 @@
-import randBit from 'mout/random/randBit';
+import randBit from '../../../src/random/randBit';
 import mockRandom from './helper-mockRandom';
 
     describe('random/randBit()', function(){

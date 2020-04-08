@@ -9,6 +9,7 @@ global.jasmine = jasmine.env;
 
 jasmine.loadConfig({
     spec_dir: "tests/spec",
-    spec_files: ["**/spec-*.js"]
+    spec_files: ["**/spec-*.js"],
+    helpers: [require.resolve("esm")]
 });
 jasmine.execute();

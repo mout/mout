@@ -1,4 +1,4 @@
-import forIn from 'mout/object/forIn';
+import forIn from '../../../src/object/forIn';
 
     var global = this;
 

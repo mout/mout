@@ -1,4 +1,4 @@
-import findIndex from 'mout/array/findIndex';
+import findIndex from '../../../src/array/findIndex';
 
     describe('array/findIndex', function(){
 

@@ -1,4 +1,4 @@
-import contains from 'mout/string/contains';
+import contains from '../../../src/string/contains';
 
     describe('string/contains()', function () {
 

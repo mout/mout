@@ -1,4 +1,4 @@
-import isSame from 'mout/date/isSame';
+import isSame from '../../../src/date/isSame';
 
     describe('date/isSame', function(){
 

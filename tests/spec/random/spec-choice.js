@@ -1,4 +1,4 @@
-import choice from 'mout/random/choice';
+import choice from '../../../src/random/choice';
 import mockRandom from './helper-mockRandom';
 
     describe('random/choice()', function () {

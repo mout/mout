@@ -1,4 +1,4 @@
-import omit from 'mout/object/omit';
+import omit from '../../../src/object/omit';
 
     describe('object/omit()', function () {
 

@@ -1,4 +1,4 @@
-import abbr from 'mout/number/abbreviate';
+import abbr from '../../../src/number/abbreviate';
 
     describe('number/abbreviate', function () {
 

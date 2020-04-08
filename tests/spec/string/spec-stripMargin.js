@@ -1,4 +1,4 @@
-import stripMargin from 'mout/string/stripMargin';
+import stripMargin from '../../../src/string/stripMargin';
 
     describe('string/stripMargin', function () {
 

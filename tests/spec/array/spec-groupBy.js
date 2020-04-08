@@ -1,4 +1,4 @@
-import groupBy from 'mout/array/groupBy';
+import groupBy from '../../../src/array/groupBy';
 
     describe('array/groupBy', function() {
         it('should bucket appropriately', function() {

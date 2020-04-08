@@ -1,4 +1,4 @@
-import createObject from 'mout/lang/createObject';
+import createObject from '../../../src/lang/createObject';
 
     describe('lang/createObject()', function(){
 

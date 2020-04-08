@@ -1,4 +1,4 @@
-import isRegExp from 'mout/lang/isRegExp';
+import isRegExp from '../../../src/lang/isRegExp';
 
     describe('lang/isRegExp()', function () {
 

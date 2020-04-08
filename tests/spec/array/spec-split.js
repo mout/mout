@@ -1,4 +1,4 @@
-import split from 'mout/array/split';
+import split from '../../../src/array/split';
 
     describe('array/split()', function() {
 

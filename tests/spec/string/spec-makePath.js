@@ -1,4 +1,4 @@
-import makePath from 'mout/string/makePath';
+import makePath from '../../../src/string/makePath';
 
     describe('string/makePath()', function(){
 

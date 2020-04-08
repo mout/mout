@@ -1,4 +1,4 @@
-import size from 'mout/collection/size';
+import size from '../../../src/collection/size';
 
     describe('collection/size', function(){
 

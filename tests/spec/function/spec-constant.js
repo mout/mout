@@ -1,4 +1,4 @@
-import constant from 'mout/function/constant';
+import constant from '../../../src/function/constant';
 
     describe('function/constant', function(){
 

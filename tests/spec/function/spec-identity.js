@@ -1,4 +1,4 @@
-import identity from 'mout/function/identity';
+import identity from '../../../src/function/identity';
 
     describe('function/identity', function(){
 

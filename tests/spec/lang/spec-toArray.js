@@ -1,4 +1,4 @@
-import toArray from 'mout/lang/toArray';
+import toArray from '../../../src/lang/toArray';
 
     var global = this;
 

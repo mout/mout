@@ -1,4 +1,4 @@
-import some from 'mout/object/some';
+import some from '../../../src/object/some';
 
     describe('object/some', function(){
 

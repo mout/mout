@@ -1,4 +1,4 @@
-import isNumber from 'mout/lang/isNumber';
+import isNumber from '../../../src/lang/isNumber';
 
     describe('lang/isNumber()', function () {
 

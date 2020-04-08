@@ -1,4 +1,4 @@
-import deepMixIn from 'mout/object/deepMixIn';
+import deepMixIn from '../../../src/object/deepMixIn';
     describe('object/deepMixIn', function() {
 
         it('should mix properties into target', function() {

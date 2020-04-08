@@ -1,4 +1,4 @@
-import pascalCase from 'mout/string/pascalCase';
+import pascalCase from '../../../src/string/pascalCase';
 
     describe('string/pascalCase()', function(){
 

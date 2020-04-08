@@ -1,4 +1,4 @@
-import floor from 'mout/math/floor';
+import floor from '../../../src/math/floor';
 
     describe('math/floor()', function(){
 

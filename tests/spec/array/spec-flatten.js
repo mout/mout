@@ -1,4 +1,4 @@
-import flatten from 'mout/array/flatten';
+import flatten from '../../../src/array/flatten';
 
     describe('array/flatten()', function () {
 

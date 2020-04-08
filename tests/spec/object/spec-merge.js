@@ -1,4 +1,4 @@
-import merge from 'mout/object/merge';
+import merge from '../../../src/object/merge';
 
     describe('object/merge()', function () {
 

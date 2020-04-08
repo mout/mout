@@ -1,4 +1,4 @@
-import isArguments from 'mout/lang/isArguments';
+import isArguments from '../../../src/lang/isArguments';
 
     describe('lang/isArguments()', function () {
 
