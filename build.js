@@ -162,7 +162,6 @@ function release(version){
     var remote = require('./package.json').repository.url;
 
     updateJsonVersion('./package.json', version);
-    updateJsonVersion('./bower.json', version);
     updateChangelog('./CHANGELOG.md', version);
 
     _helpers.shellSeries([
@@ -277,4 +276,3 @@ function prune(){
     ls.folders.map( rm );
     ls.files.map( rm );
 }
-
