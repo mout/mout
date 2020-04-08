@@ -1,8 +1,8 @@
-define(['./make_', '../array/{{name}}', '../object/{{name}}'], function (make, arr{{u_name}}, obj{{u_name}}) {
+import make from './make_';
+import arr{{u_name}} from '../array/{{name}}';
+import obj{{u_name}} from '../object/{{name}}';
 
-    /**
-     *
-     */
-    return make(arr{{u_name}}, obj{{u_name}});
-
-});
+/**
+ *
+ */
+export default make(arr{{u_name}}, obj{{u_name}});

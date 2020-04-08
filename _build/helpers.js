@@ -49,10 +49,11 @@ _handlebars.registerHelper('csv', function(items, options){
 
 
 _handlebars.registerHelper('list', function(items, options){
+    const separator = options.hash.separator ? options.hash.separator : ',';
     items = items.map(function(val){
         return options.fn(val);
     });
-    return items.join(',\n    ');
+    return items.join(separator + '\n    ') + (separator === ';' ? separator : '');
 });
 
 
@@ -160,4 +161,3 @@ exports.shellSeries = function(cmds, cb){
     };
     execNext();
 };
-

@@ -37,7 +37,14 @@
   },
   "devDependencies": {
     "esm": "^3.2.25",
-    "jasmine": "^3.5.0"
+    "jasmine": "^3.5.0",
+    "commander": "~2.16.0",
+    "handlebars": "~4.1.2",
+    "mdoc": "~0.5.3",
+    "nodefy": "~0.2.2",
+    "regenerate": "~1.4.0",
+    "rimraf": "~2.6.2",
+    "rocambole": "~0.7.0"
   },
   "testling": {
     "preprocess": "node build testling",
