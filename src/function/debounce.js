@@ -1,32 +1,29 @@
-
-
-    /**
-     * Debounce callback execution
-     */
-    function debounce(fn, threshold, isAsap){
-        var timeout, result;
-        function debounced(){
-            var args = arguments, context = this;
-            function delayed(){
-                if (! isAsap) {
-                    result = fn.apply(context, args);
-                }
-                timeout = null;
-            }
-            if (timeout) {
-                clearTimeout(timeout);
-            } else if (isAsap) {
+/**
+ * Debounce callback execution
+ */
+function debounce(fn, threshold, isAsap) {
+    var timeout, result;
+    function debounced() {
+        var args = arguments,
+            context = this;
+        function delayed() {
+            if (!isAsap) {
                 result = fn.apply(context, args);
             }
-            timeout = setTimeout(delayed, threshold);
-            return result;
+            timeout = null;
         }
-        debounced.cancel = function(){
+        if (timeout) {
             clearTimeout(timeout);
-        };
-        return debounced;
+        } else if (isAsap) {
+            result = fn.apply(context, args);
+        }
+        timeout = setTimeout(delayed, threshold);
+        return result;
     }
+    debounced.cancel = function() {
+        clearTimeout(timeout);
+    };
+    return debounced;
+}
 
-    export default debounce;
-
-
+export default debounce;

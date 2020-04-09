@@ -1,129 +1,124 @@
 import forIn from '../../../src/object/forIn';
 
-    var global = this;
+var global = this;
 
+describe('object/forIn', function() {
+    it('should loop through all properties', function() {
+        var obj = {
+            foo: 123,
+            bar: true,
+            lorem: 'ipsum'
+        };
 
-    describe('object/forIn', function(){
+        var keys = [],
+            vals = [];
 
-        it('should loop through all properties', function(){
-
-            var obj = {
-                foo : 123,
-                bar : true,
-                lorem : 'ipsum'
-            };
-
-            var keys = [],
-                vals = [];
-
-            forIn(obj, function(val, key, o){
-                expect(o).toBe(obj);
-                keys.push(key);
-                vals.push(val);
-            });
-
-            expect(keys).toEqual(['foo', 'bar', 'lorem']);
-            expect(vals).toEqual([123, true, 'ipsum']);
-
+        forIn(obj, function(val, key, o) {
+            expect(o).toBe(obj);
+            keys.push(key);
+            vals.push(val);
         });
 
-        it('should enumerate special properties when defined', function() {
-            var obj = {
-                constructor: 'foo',
-                toString: 'bar',
-                hasOwnProperty: true
-            };
+        expect(keys).toEqual(['foo', 'bar', 'lorem']);
+        expect(vals).toEqual([123, true, 'ipsum']);
+    });
 
-            var keys = [];
-            forIn(obj, function(value, key) {
-                keys.push(key);
-            });
+    it('should enumerate special properties when defined', function() {
+        var obj = {
+            constructor: 'foo',
+            toString: 'bar',
+            hasOwnProperty: true
+        };
 
-            expect( keys.length ).toBe( 3 );
-            expect( keys ).toContain( 'constructor' );
-            expect( keys ).toContain( 'toString' );
-            expect( keys ).toContain( 'hasOwnProperty' );
+        var keys = [];
+        forIn(obj, function(value, key) {
+            keys.push(key);
         });
 
-        it('grab all enumerable properties, including inherited ones', function () {
-            function Foo(){
-                this.bar = true;
-            }
+        expect(keys.length).toBe(3);
+        expect(keys).toContain('constructor');
+        expect(keys).toContain('toString');
+        expect(keys).toContain('hasOwnProperty');
+    });
 
-            Foo.prototype.dolor = 'amet';
+    it('grab all enumerable properties, including inherited ones', function() {
+        function Foo() {
+            this.bar = true;
+        }
 
-            Foo.prototype.toString = function() {
-                return '[Foo bar: ' + this.bar + ']';
-            };
+        Foo.prototype.dolor = 'amet';
 
-            var obj = new Foo();
-            var keys = [],
-                values = [];
+        Foo.prototype.toString = function() {
+            return '[Foo bar: ' + this.bar + ']';
+        };
 
-            forIn(obj, function(value, key, o){
-                keys.push(key);
-                values.push(value);
-                expect(o).toBe(obj);
-            });
+        var obj = new Foo();
+        var keys = [],
+            values = [];
 
-            // loop order isn't guaranteed to be always the same
-            expect( keys.length ).toBe( 3 );
-            expect( keys ).toContain( 'bar' );
-            expect( keys ).toContain( 'dolor' );
-            expect( keys ).toContain( 'toString' );
-
-            expect( values.length ).toBe( 3 );
-            expect( values ).toContain( true );
-            expect( values ).toContain( 'amet' );
-            expect( values ).toContain( Foo.prototype.toString );
+        forIn(obj, function(value, key, o) {
+            keys.push(key);
+            values.push(value);
+            expect(o).toBe(obj);
         });
 
-        it('should allow custom thisObject', function () {
+        // loop order isn't guaranteed to be always the same
+        expect(keys.length).toBe(3);
+        expect(keys).toContain('bar');
+        expect(keys).toContain('dolor');
+        expect(keys).toContain('toString');
 
-            var obj = {
-                'a' : 123,
-                'b' : true,
-                'c' : 'ipsum'
-            };
+        expect(values.length).toBe(3);
+        expect(values).toContain(true);
+        expect(values).toContain('amet');
+        expect(values).toContain(Foo.prototype.toString);
+    });
 
-            var count = 0;
+    it('should allow custom thisObject', function() {
+        var obj = {
+            a: 123,
+            b: true,
+            c: 'ipsum'
+        };
 
-            forIn(obj, function(val, key, o){
-                expect(o).toBe(obj);
-                expect(this).toBe(undefined);
-                count++;
-            });
+        var count = 0;
 
-            forIn(obj, function(val, key, o){
+        forIn(obj, function(val, key, o) {
+            expect(o).toBe(obj);
+            expect(this).toBe(undefined);
+            count++;
+        });
+
+        forIn(
+            obj,
+            function(val, key, o) {
                 expect(o).toBe(obj);
                 expect(this).toBe(obj);
                 count++;
-            }, obj);
+            },
+            obj
+        );
 
-            expect( count ).toEqual( 6 );
-
-        });
-
-        it('should allow exiting the iteration early. see #94', function () {
-
-            var obj = {
-                'a' : 123,
-                'b' : true,
-                'c' : 'ipsum',
-                'd' : 456
-            };
-
-            var count = 0;
-
-            forIn(obj, function(val, key, o){
-                count++;
-                if (count === 2) {
-                    return false;
-                }
-            });
-
-            expect( count ).toBe( 2 );
-
-        });
-
+        expect(count).toEqual(6);
     });
+
+    it('should allow exiting the iteration early. see #94', function() {
+        var obj = {
+            a: 123,
+            b: true,
+            c: 'ipsum',
+            d: 456
+        };
+
+        var count = 0;
+
+        forIn(obj, function(val, key, o) {
+            count++;
+            if (count === 2) {
+                return false;
+            }
+        });
+
+        expect(count).toBe(2);
+    });
+});

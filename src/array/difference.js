@@ -4,20 +4,17 @@ import some from './some';
 import contains from './contains';
 import slice from './slice';
 
-
-    /**
-     * Return a new Array with elements that aren't present in the other Arrays.
-     */
-    function difference(arr) {
-        var arrs = slice(arguments, 1),
-            result = filter(unique(arr), function(needle){
-                return !some(arrs, function(haystack){
-                    return contains(haystack, needle);
-                });
+/**
+ * Return a new Array with elements that aren't present in the other Arrays.
+ */
+function difference(arr) {
+    var arrs = slice(arguments, 1),
+        result = filter(unique(arr), function(needle) {
+            return !some(arrs, function(haystack) {
+                return contains(haystack, needle);
             });
-        return result;
-    }
+        });
+    return result;
+}
 
-    export default difference;
-
-
+export default difference;

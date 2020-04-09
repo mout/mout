@@ -1,21 +1,19 @@
 import forOwn from './forOwn';
 import makeIterator from '../function/makeIterator_';
 
-    /**
-     * Object some
-     */
-    function some(obj, callback, thisObj) {
-        callback = makeIterator(callback, thisObj);
-        var result = false;
-        forOwn(obj, function(val, key) {
-            if (callback(val, key, obj)) {
-                result = true;
-                return false; // break
-            }
-        });
-        return result;
-    }
+/**
+ * Object some
+ */
+function some(obj, callback, thisObj) {
+    callback = makeIterator(callback, thisObj);
+    var result = false;
+    forOwn(obj, function(val, key) {
+        if (callback(val, key, obj)) {
+            result = true;
+            return false; // break
+        }
+    });
+    return result;
+}
 
-    export default some;
-
-
+export default some;

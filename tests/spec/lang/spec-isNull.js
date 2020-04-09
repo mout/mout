@@ -1,18 +1,12 @@
 import isNull from '../../../src/lang/isNull';
 
-    describe('lang/isNull()', function () {
+describe('lang/isNull()', function() {
+    it('should detect if value is a Null', function() {
+        expect(isNull(null)).toBe(true);
 
-        it('should detect if value is a Null', function () {
-
-            expect( isNull(null) ).toBe( true );
-
-            expect( isNull('') ).toBe( false );
-            expect( isNull(123) ).toBe( false );
-            expect( isNull([]) ).toBe( false );
-            expect( isNull({}) ).toBe( false );
-
-        });
-
+        expect(isNull('')).toBe(false);
+        expect(isNull(123)).toBe(false);
+        expect(isNull([])).toBe(false);
+        expect(isNull({})).toBe(false);
     });
-
-
+});

@@ -1,12 +1,8 @@
+/**
+ * Safer Object.hasOwnProperty
+ */
+function hasOwn(obj, prop) {
+    return Object.prototype.hasOwnProperty.call(obj, prop);
+}
 
-
-    /**
-     * Safer Object.hasOwnProperty
-     */
-     function hasOwn(obj, prop){
-         return Object.prototype.hasOwnProperty.call(obj, prop);
-     }
-
-     export default hasOwn;
-
-
+export default hasOwn;

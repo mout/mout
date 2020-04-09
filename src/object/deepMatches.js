@@ -1,56 +1,60 @@
 import forOwn from './forOwn';
 import isArray from '../lang/isArray';
 
-    function containsMatch(array, pattern) {
-        var i = -1, length = array.length;
-        while (++i < length) {
-            if (deepMatches(array[i], pattern)) {
-                return true;
-            }
+function containsMatch(array, pattern) {
+    var i = -1,
+        length = array.length;
+    while (++i < length) {
+        if (deepMatches(array[i], pattern)) {
+            return true;
         }
-
-        return false;
     }
 
-    function matchArray(target, pattern) {
-        var i = -1, patternLength = pattern.length;
-        while (++i < patternLength) {
-            if (!containsMatch(target, pattern[i])) {
-                return false;
-            }
+    return false;
+}
+
+function matchArray(target, pattern) {
+    var i = -1,
+        patternLength = pattern.length;
+    while (++i < patternLength) {
+        if (!containsMatch(target, pattern[i])) {
+            return false;
         }
-
-        return true;
     }
 
-    function matchObject(target, pattern) {
-        var result = true;
-        forOwn(pattern, function(val, key) {
-            if (!deepMatches(target[key], val)) {
-                // Return false to break out of forOwn early
-                return (result = false);
-            }
-        });
+    return true;
+}
 
-        return result;
-    }
+function matchObject(target, pattern) {
+    var result = true;
+    forOwn(pattern, function(val, key) {
+        if (!deepMatches(target[key], val)) {
+            // Return false to break out of forOwn early
+            return (result = false);
+        }
+    });
 
-    /**
-     * Recursively check if the objects match.
-     */
-    function deepMatches(target, pattern){
-        if (target && typeof target === 'object' &&
-            pattern && typeof pattern === 'object') {
-            if (isArray(target) && isArray(pattern)) {
-                return matchArray(target, pattern);
-            } else {
-                return matchObject(target, pattern);
-            }
+    return result;
+}
+
+/**
+ * Recursively check if the objects match.
+ */
+function deepMatches(target, pattern) {
+    if (
+        target &&
+        typeof target === 'object' &&
+        pattern &&
+        typeof pattern === 'object'
+    ) {
+        if (isArray(target) && isArray(pattern)) {
+            return matchArray(target, pattern);
         } else {
-            return target === pattern;
+            return matchObject(target, pattern);
         }
+    } else {
+        return target === pattern;
     }
+}
 
-    export default deepMatches;
-
-
+export default deepMatches;

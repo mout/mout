@@ -1,20 +1,18 @@
 import isPrimitive from '../lang/isPrimitive';
 
-    /**
-     * get "nested" object property
-     */
-    function get(obj, prop){
-        if (!obj) return;
-        var parts = prop.split('.'),
-            last = parts.pop();
-        while (prop = parts.shift()) {
-            obj = obj[prop];
-            if (obj == null) return;
-        }
-
-        return obj[last];
+/**
+ * get "nested" object property
+ */
+function get(obj, prop) {
+    if (!obj) return;
+    var parts = prop.split('.'),
+        last = parts.pop();
+    while ((prop = parts.shift())) {
+        obj = obj[prop];
+        if (obj == null) return;
     }
 
-    export default get;
+    return obj[last];
+}
 
-
+export default get;

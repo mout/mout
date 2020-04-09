@@ -1,22 +1,20 @@
 import toString from '../lang/toString';
 import escapeRegExp from './escapeRegExp';
-    var DEFAULT_MARGIN_CHAR = '|';
-    /**
-     * Strip leading characters followed by 'marginChar' from every line in a String.
-     *
-     * marginChar defaults to '|'.
-     */
-    function stripMargin(str, marginChar) {
-        var regexp;
+var DEFAULT_MARGIN_CHAR = '|';
+/**
+ * Strip leading characters followed by 'marginChar' from every line in a String.
+ *
+ * marginChar defaults to '|'.
+ */
+function stripMargin(str, marginChar) {
+    var regexp;
 
-        marginChar = escapeRegExp(marginChar || DEFAULT_MARGIN_CHAR);
-        str = toString(str);
+    marginChar = escapeRegExp(marginChar || DEFAULT_MARGIN_CHAR);
+    str = toString(str);
 
-        regexp = new RegExp('^.*' + marginChar, 'gm');
+    regexp = new RegExp('^.*' + marginChar, 'gm');
 
-        return str.replace(regexp, '');
-    }
+    return str.replace(regexp, '');
+}
 
-    export default stripMargin;
-
-
+export default stripMargin;

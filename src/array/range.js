@@ -1,27 +1,25 @@
 import countSteps from '../math/countSteps';
 
-    /**
-     * Returns an Array of numbers inside range.
-     */
-    function range(start, stop, step) {
-        if (stop == null) {
-            stop = start;
-            start = 0;
-        }
-        step = step || 1;
+/**
+ * Returns an Array of numbers inside range.
+ */
+function range(start, stop, step) {
+    if (stop == null) {
+        stop = start;
+        start = 0;
+    }
+    step = step || 1;
 
-        var result = [],
-            nSteps = countSteps(stop - start, step),
-            i = start;
+    var result = [],
+        nSteps = countSteps(stop - start, step),
+        i = start;
 
-        while (i <= stop) {
-            result.push(i);
-            i += step;
-        }
-
-        return result;
+    while (i <= stop) {
+        result.push(i);
+        i += step;
     }
 
-    export default range;
+    return result;
+}
 
-
+export default range;

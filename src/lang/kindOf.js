@@ -1,9 +1,7 @@
-
-    /**
-     * Gets the "kind" of value. (e.g. "String", "Number", etc)
-     */
-    function kindOf(val) {
-        return Object.prototype.toString.call(val).slice(8, -1);
-    }
-    export default kindOf;
-
+/**
+ * Gets the "kind" of value. (e.g. "String", "Number", etc)
+ */
+function kindOf(val) {
+    return Object.prototype.toString.call(val).slice(8, -1);
+}
+export default kindOf;

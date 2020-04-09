@@ -1,16 +1,12 @@
-
-
-    /**
-     * Returns last element of array.
-     */
-    function last(arr){
-        if (arr == null || arr.length < 1) {
-            return undefined;
-        }
-
-        return arr[arr.length - 1];
+/**
+ * Returns last element of array.
+ */
+function last(arr) {
+    if (arr == null || arr.length < 1) {
+        return undefined;
     }
 
-    export default last;
+    return arr[arr.length - 1];
+}
 
-
+export default last;

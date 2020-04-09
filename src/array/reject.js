@@ -1,25 +1,26 @@
 import makeIterator from '../function/makeIterator_';
 
-    /**
-     * Array reject
-     */
-    function reject(arr, callback, thisObj) {
-        callback = makeIterator(callback, thisObj);
-        var results = [];
-        if (arr == null) {
-            return results;
-        }
-
-        var i = -1, len = arr.length, value;
-        while (++i < len) {
-            value = arr[i];
-            if (!callback(value, i, arr)) {
-                results.push(value);
-            }
-        }
-
+/**
+ * Array reject
+ */
+function reject(arr, callback, thisObj) {
+    callback = makeIterator(callback, thisObj);
+    var results = [];
+    if (arr == null) {
         return results;
     }
 
-    export default reject;
+    var i = -1,
+        len = arr.length,
+        value;
+    while (++i < len) {
+        value = arr[i];
+        if (!callback(value, i, arr)) {
+            results.push(value);
+        }
+    }
 
+    return results;
+}
+
+export default reject;

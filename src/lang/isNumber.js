@@ -1,8 +1,7 @@
 import isKind from './isKind';
-    /**
-     */
-    function isNumber(val) {
-        return isKind(val, 'Number');
-    }
-    export default isNumber;
-
+/**
+ */
+function isNumber(val) {
+    return isKind(val, 'Number');
+}
+export default isNumber;

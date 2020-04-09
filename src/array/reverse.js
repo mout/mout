@@ -1,14 +1,10 @@
+/**
+ * Returns a copy of the array in reversed order.
+ */
+function reverse(array) {
+    var copy = array.slice();
+    copy.reverse();
+    return copy;
+}
 
-
-    /**
-     * Returns a copy of the array in reversed order.
-     */
-    function reverse(array) {
-        var copy = array.slice();
-        copy.reverse();
-        return copy;
-    }
-
-    export default reverse;
-
-
+export default reverse;

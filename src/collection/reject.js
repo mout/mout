@@ -1,16 +1,18 @@
 import filter from './filter';
 import makeIterator from '../function/makeIterator_';
 
-    /**
-     * Inverse or collection/filter
-     */
-    function reject(list, iterator, thisObj) {
-        iterator = makeIterator(iterator, thisObj);
-        return filter(list, function(value, index, list) {
+/**
+ * Inverse or collection/filter
+ */
+function reject(list, iterator, thisObj) {
+    iterator = makeIterator(iterator, thisObj);
+    return filter(
+        list,
+        function(value, index, list) {
             return !iterator(value, index, list);
-        }, thisObj);
-    }
+        },
+        thisObj
+    );
+}
 
-    export default reject;
-
-
+export default reject;

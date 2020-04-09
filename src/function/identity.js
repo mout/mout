@@ -1,12 +1,8 @@
+/**
+ * Returns the first argument provided to it.
+ */
+function identity(val) {
+    return val;
+}
 
-
-    /**
-     * Returns the first argument provided to it.
-     */
-    function identity(val){
-        return val;
-    }
-
-    export default identity;
-
-
+export default identity;

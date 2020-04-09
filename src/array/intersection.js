@@ -4,21 +4,18 @@ import every from './every';
 import contains from './contains';
 import slice from './slice';
 
-
-    /**
-     * Return a new Array with elements common to all Arrays.
-     * - based on underscore.js implementation
-     */
-    function intersection(arr) {
-        var arrs = slice(arguments, 1),
-            result = filter(unique(arr), function(needle){
-                return every(arrs, function(haystack){
-                    return contains(haystack, needle);
-                });
+/**
+ * Return a new Array with elements common to all Arrays.
+ * - based on underscore.js implementation
+ */
+function intersection(arr) {
+    var arrs = slice(arguments, 1),
+        result = filter(unique(arr), function(needle) {
+            return every(arrs, function(haystack) {
+                return contains(haystack, needle);
             });
-        return result;
-    }
+        });
+    return result;
+}
 
-    export default intersection;
-
-
+export default intersection;

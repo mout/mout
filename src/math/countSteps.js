@@ -1,16 +1,14 @@
+/**
+ * Count number of full steps.
+ */
+function countSteps(val, step, overflow) {
+    val = Math.floor(val / step);
 
-    /**
-    * Count number of full steps.
-    */
-    function countSteps(val, step, overflow){
-        val = Math.floor(val / step);
-
-        if (overflow) {
-            return val % overflow;
-        }
-
-        return val;
+    if (overflow) {
+        return val % overflow;
     }
 
-    export default countSteps;
+    return val;
+}
 
+export default countSteps;

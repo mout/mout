@@ -1,25 +1,23 @@
 import filter from './filter';
 
-    /**
-     * @return {array} Array of unique items
-     */
-    function unique(arr, compare){
-        compare = compare || isEqual;
-        return filter(arr, function(item, i, arr){
-            var n = arr.length;
-            while (++i < n) {
-                if ( compare(item, arr[i]) ) {
-                    return false;
-                }
+/**
+ * @return {array} Array of unique items
+ */
+function unique(arr, compare) {
+    compare = compare || isEqual;
+    return filter(arr, function(item, i, arr) {
+        var n = arr.length;
+        while (++i < n) {
+            if (compare(item, arr[i])) {
+                return false;
             }
-            return true;
-        });
-    }
+        }
+        return true;
+    });
+}
 
-    function isEqual(a, b){
-        return a === b;
-    }
+function isEqual(a, b) {
+    return a === b;
+}
 
-    export default unique;
-
-
+export default unique;

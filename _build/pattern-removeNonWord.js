@@ -10,9 +10,9 @@ var pattern = regenerate()
     .addRange('a', 'z')
     .addRange('A', 'Z')
     .addRange('0', '9')
-    .addRange(0xC0, 0xFF)
+    .addRange(0xc0, 0xff)
     .add(' ', '-', '_')
-    .remove(0xF7, 0xD7)
+    .remove(0xf7, 0xd7)
     .toString();
 
 console.log('// Pattern for string/removeNonWord:');

@@ -1,34 +1,32 @@
 import forOwn from './forOwn';
 import isPlainObject from '../lang/isPlainObject';
 
-    /**
-     * Mixes objects into the target object, recursively mixing existing child
-     * objects.
-     */
-    function deepMixIn(target, objects) {
-        var i = 0,
-            n = arguments.length,
-            obj;
+/**
+ * Mixes objects into the target object, recursively mixing existing child
+ * objects.
+ */
+function deepMixIn(target, objects) {
+    var i = 0,
+        n = arguments.length,
+        obj;
 
-        while(++i < n){
-            obj = arguments[i];
-            if (obj) {
-                forOwn(obj, copyProp, target);
-            }
-        }
-
-        return target;
-    }
-
-    function copyProp(val, key) {
-        var existing = this[key];
-        if (isPlainObject(val) && isPlainObject(existing)) {
-            deepMixIn(existing, val);
-        } else {
-            this[key] = val;
+    while (++i < n) {
+        obj = arguments[i];
+        if (obj) {
+            forOwn(obj, copyProp, target);
         }
     }
 
-    export default deepMixIn;
+    return target;
+}
 
+function copyProp(val, key) {
+    var existing = this[key];
+    if (isPlainObject(val) && isPlainObject(existing)) {
+        deepMixIn(existing, val);
+    } else {
+        this[key] = val;
+    }
+}
 
+export default deepMixIn;
