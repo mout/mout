@@ -36,12 +36,16 @@
     "doc": "./doc"
   },
   "devDependencies": {
-    "esm": "^3.2.25",
-    "jasmine": "^3.5.0",
     "commander": "~2.16.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "esm": "^3.2.25",
     "handlebars": "~4.1.2",
+    "jasmine": "^3.5.0",
     "mdoc": "~0.5.3",
     "nodefy": "~0.2.2",
+    "prettier": "^1.19.1",
     "regenerate": "~1.4.0",
     "rimraf": "~2.6.2",
     "rocambole": "~0.7.0"
@@ -87,5 +91,21 @@
       "tests/testling/specs.js",
       "tests/runner.js"
     ]
+  },
+  "eslintConfig": {
+      "parserOptions": {
+        "ecmaVersion": 2015,
+        "sourceType": "module"
+      },
+      "extends": ["prettier"],
+      "plugins": ["prettier"],
+      "rules": {
+        "prettier/prettier": 1
+      }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "useTabs": false,
+    "tabWidth": 4
   }
 }

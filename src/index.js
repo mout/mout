@@ -6,18 +6,18 @@
 //run `node build` instead
 
 import array from './array';
-    import collection from './collection';
-    import date from './date';
-    import function from './function';
-    import lang from './lang';
-    import math from './math';
-    import number from './number';
-    import object from './object';
-    import queryString from './queryString';
-    import random from './random';
-    import string from './string';
-    import time from './time';
-    import fn from './function';
+import collection from './collection';
+import date from './date';
+import _function from './function';
+import lang from './lang';
+import math from './math';
+import number from './number';
+import object from './object';
+import queryString from './queryString';
+import random from './random';
+import string from './string';
+import time from './time';
+import fn from './function';
 
 export var VERSION = '1.2.2';
 
@@ -25,7 +25,7 @@ export {
     array,
     collection,
     date,
-    function,
+    _function,
     lang,
     math,
     number,

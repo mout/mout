@@ -13,7 +13,10 @@ var _fs = require('fs'),
     _path = require('path'),
     _helpers = require('./helpers'),
     _config = require('./config'),
-    _add = require('./add');
+    _add = require('./add'),
+    _CLIEngine = require('eslint').CLIEngine;
+
+var _cli = new _CLIEngine({ fix: true });
 
 
 var echo = _helpers.echo;
@@ -66,6 +69,10 @@ exports.updateSpecGroup = function(packageName){
 var pkgTemplate = _helpers.compileModuleTemplate('pkg');
 var indexTemplate = _helpers.compileModuleTemplate('index');
 
+function lintAndVerify(input){
+    return _cli.executeOnText(input).results[0].output;
+}
+
 
 function makePackage(name){
     var packageFolder = _path.basename(name);
@@ -77,8 +84,7 @@ function makePackage(name){
             'package' : packageFolder
         };
     });
-
-    _fs.writeFileSync(name + '.js', pkgTemplate({'modules' : modules}), 'utf-8');
+    _fs.writeFileSync(name + '.js', lintAndVerify(pkgTemplate({'modules' : modules})), 'utf-8');
     echoList(name +'.js');
 }
 
@@ -89,7 +95,7 @@ function makeIndex(){
     var modules = packages.map(function(fileName){
         var name = _path.basename(fileName);
         return {
-            name: name,
+            name: name === 'function' ? '_function' : name,
             path: './'+ name
         };
     });
@@ -102,10 +108,10 @@ function makeIndex(){
 
     var indexPath = srcPath('index.js');
     var packageJson = require(__dirname +'/../package.json');
-    _fs.writeFileSync(indexPath, indexTemplate({
+    _fs.writeFileSync(indexPath, lintAndVerify(indexTemplate({
         modules : modules,
         version : packageJson.version
-    }), 'utf-8');
+    })), 'utf-8');
     echo('updated index:', indexPath);
 }
 
@@ -134,7 +140,7 @@ function makeSpecGroup(name){
     });
 
     purgeFiles( [specFilePath] );
-    _fs.writeFileSync(specFilePath, specPackageTemplate({'modules' : modules}), 'utf-8');
+    _fs.writeFileSync(specFilePath, lintAndVerify(specPackageTemplate({'modules' : modules})), 'utf-8');
     echoList( specFilePath );
 
     modules.forEach(function(mod){
@@ -155,8 +161,6 @@ function makeSpecRunner(){
         return _path.basename(val);
     });
 
-    _fs.writeFileSync(_config.SPEC_INDEX_PATH, specIndexTemplate({'packages' : packagesNames}), 'utf-8');
+    _fs.writeFileSync(_config.SPEC_INDEX_PATH, lintAndVerify(specIndexTemplate({'packages' : packagesNames})), 'utf-8');
     echo('updated spec index: ', _config.SPEC_INDEX_PATH);
 }
-
-
