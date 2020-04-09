@@ -1,8 +1,22 @@
 {
   "name": "mout",
-  "description": "Modular Utilities",
   "version": "1.2.2",
+  "description": "Modular Utilities",
+  "keywords": [
+    "utilities",
+    "functional",
+    "amd-utils",
+    "stdlib"
+  ],
   "homepage": "http://moutjs.com/",
+  "bugs": {
+    "url": "https://github.com/mout/mout/issues/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mout/mout.git"
+  },
+  "license": "MIT",
   "author": "Miller Medeiros <contact@millermedeiros.com> (http://blog.millermedeiros.com)",
   "contributors": [
     "Adam Nowotny",
@@ -14,27 +28,44 @@
     "Mathias Paumgarten <mail@mathias-paumgarten.com>",
     "Zach Shipley"
   ],
-  "keywords": [
-    "utilities",
-    "functional",
-    "amd-utils",
-    "stdlib"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/mout/mout.git"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mout/mout/issues/"
-  },
   "main": "./index.js",
+  "directories": {
+    "doc": "./doc"
+  },
   "scripts": {
     "lint": "eslint '{src,tests}/**/*.js' '_build/*.js' 'build.js' --fix",
     "test": "node tests/runner.js"
   },
-  "directories": {
-    "doc": "./doc"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 4,
+    "useTabs": false
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2015,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "prettier"
+    ],
+    "extends": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": 1
+    }
   },
   "devDependencies": {
     "commander": "~2.16.0",
@@ -94,36 +125,5 @@
       "tests/testling/specs.js",
       "tests/runner.js"
     ]
-  },
-  "eslintConfig": {
-    "parserOptions": {
-      "ecmaVersion": 2015,
-      "sourceType": "module"
-    },
-    "extends": [
-      "prettier"
-    ],
-    "plugins": [
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": 1
-    }
-  },
-  "prettier": {
-    "singleQuote": true,
-    "useTabs": false,
-    "tabWidth": 4
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
