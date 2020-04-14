@@ -33,8 +33,9 @@
     "doc": "./doc"
   },
   "scripts": {
-    "lint": "eslint '{src,tests}/**/*.js' '_build/*.js' 'build.js' --fix",
-    "test": "node tests/runner.js"
+    "lint": "eslint 'src/**/*.ts' '_build/*.js' 'build.js' --fix",
+    "test": "node tests/runner.js",
+    "tsc": "tsc --project tsconfig.json"
   },
   "husky": {
     "hooks": {
@@ -68,8 +69,12 @@
     }
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.28.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.28.0",
+    "@typescript-eslint/parser": "^2.28.0",
     "commander": "~2.16.0",
     "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.2",
     "esm": "^3.2.25",
@@ -82,7 +87,9 @@
     "prettier": "^1.19.1",
     "regenerate": "~1.4.0",
     "rimraf": "~2.6.2",
-    "rocambole": "~0.7.0"
+    "rocambole": "~0.7.0",
+    "tslint": "^6.1.1",
+    "typescript": "^3.8.3"
   },
   "testling": {
     "preprocess": "node build testling",
