@@ -1,14 +1,28 @@
 module.exports = {
-    parserOptions: {
-        ecmaVersion:  2018,
-        ecmaFeatures: { modules: true },
-        sourceType: "module",
-        project: "./tsconfig.json",
-    },
     plugins: [
       "prettier"
     ],
-    parser: "@typescript-eslint/parser",
+    overrides: [
+        {
+            files: "src/**/*.ts",
+            parserOptions: {
+                ecmaVersion:  2018,
+                ecmaFeatures: { modules: true },
+                sourceType: "module",
+                project: "./tsconfig.json",
+            },
+            parser: "@typescript-eslint/parser",
+        },
+        {
+            files: ["_build/*.js", "build.js"],
+            parserOptions: {
+                ecmaVersion:  2018
+            },
+            env: {
+                node: true
+            }
+        }
+    ],
     extends: ["eslint:recommended", "google", "prettier"],
     rules: {
         "prettier/prettier": ["warn", {
