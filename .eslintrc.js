@@ -11,7 +11,11 @@ module.exports = {
     parser: "@typescript-eslint/parser",
     extends: ["eslint:recommended", "google", "prettier"],
     rules: {
-        "prettier/prettier": ["warn"],
+        "prettier/prettier": ["warn", {
+            "singleQuote": true,
+            "tabWidth": 4,
+            "useTabs": false
+        }],
         "indent": ["error", 4],
         "valid-jsdoc": ["off"],
         "comma-dangle": ["off"],
