@@ -9,7 +9,7 @@ module.exports = {
       "prettier"
     ],
     parser: "@typescript-eslint/parser",
-    extends: ["prettier", "eslint:recommended", "google"],
+    extends: ["eslint:recommended", "google", "prettier"],
     rules: {
         "prettier/prettier": ["warn"],
         "indent": ["error", 4],
