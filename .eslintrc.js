@@ -26,14 +26,13 @@ module.exports = {
     extends: ["eslint:recommended", "google", "prettier"],
     rules: {
         "prettier/prettier": ["warn", {
+            "printWidth": 100,
             "singleQuote": true,
             "tabWidth": 4,
-            "useTabs": false
+            "useTabs": false,
+            "trailingCommas": false
         }],
-        "indent": ["error", 4],
         "valid-jsdoc": ["off"],
-        "comma-dangle": ["off"],
-        "max-len": ["error", 100],
         "require-jsdoc": ["off"],
     }
 }
