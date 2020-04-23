@@ -8,8 +8,7 @@ function isValidString(val) {
  * Joins strings with the specified separator inserted between each value.
  * Null values and empty strings will be excluded.
  */
-function join(items, separator) {
-    separator = separator || '';
+function join(items, separator = '') {
     return filter(items, isValidString).join(separator);
 }
 

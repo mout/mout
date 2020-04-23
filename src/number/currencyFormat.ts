@@ -19,14 +19,14 @@ function currencyFormat(
     const fixed = val.toFixed(nDecimalDigits);
     // separate begin [$1], middle [$2] and decimal digits [$4]
     const parts = new RegExp(
-        '^(-?\\d{1,3})((?:\\d{3})+)(\\.(\\d{' + nDecimalDigits + '}))?$',
+        `^(-?\\d{1,3})((?:\\d{3})+)(\\.(\\d{${nDecimalDigits}}))?$`
     ).exec(fixed);
 
     if (parts) {
         // val >= 1000 || val <= -1000
         return (
             parts[1] +
-            parts[2].replace(/\d{3}/g, thousandsSeparator + '$&') +
+            parts[2].replace(/\d{3}/g, `${thousandsSeparator}$&`) +
             (parts[4] ? decimalSeparator + parts[4] : '')
         );
     } else {

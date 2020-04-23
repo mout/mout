@@ -7,7 +7,7 @@
 
 {{#list modules separator=";"}}import {{name}} from '{{path}}'{{/list}}
 
-export var VERSION = '{{version}}';
+export const VERSION = '{{version}}';
 
 export {
     {{#list modules}}{{name}}{{/list}}

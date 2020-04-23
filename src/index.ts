@@ -19,7 +19,7 @@ import string from './string';
 import time from './time';
 import fn from './function';
 
-export var VERSION = '1.2.2';
+export const VERSION = '1.2.2';
 
 export {
     array,

@@ -7,9 +7,7 @@ import arrEquals from '../array/equals';
 /**
  * Recursively checks for same properties and values.
  */
-function deepEquals(a, b, callback) {
-    callback = callback || is;
-
+function deepEquals(a, b, callback = is) {
     const bothObjects = isObject(a) && isObject(b);
     const bothArrays = !bothObjects && isArray(a) && isArray(b);
 

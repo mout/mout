@@ -5,9 +5,7 @@ import every from './every';
 /**
  * Compares if both arrays have the same elements
  */
-function equals(a, b, callback) {
-    callback = callback || is;
-
+function equals(a, b, callback = is) {
     if (!isArray(a) || !isArray(b)) {
         return callback(a, b);
     }

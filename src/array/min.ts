@@ -7,7 +7,7 @@ function min(arr, iterator, thisObj) {
     if (arr == null || !arr.length) {
         return -Infinity;
     } else if (arr.length && !iterator) {
-        return Math.min.apply(Math, arr);
+        return Math.min(...arr);
     } else {
         iterator = makeIterator(iterator, thisObj);
         let result;

@@ -4,9 +4,9 @@
 //     node _build/pattern-removeNonWord
 //
 
-var regenerate = require('regenerate');
+const regenerate = require('regenerate');
 
-var pattern = regenerate()
+const pattern = regenerate()
     .addRange('a', 'z')
     .addRange('A', 'Z')
     .addRange('0', '9')
@@ -16,4 +16,4 @@ var pattern = regenerate()
     .toString();
 
 console.log('// Pattern for string/removeNonWord:');
-console.log('/' + pattern + '/g');
+console.log(`/${pattern}/g`);

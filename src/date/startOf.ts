@@ -29,7 +29,7 @@ function startOf(date, period) {
         date.setMilliseconds(0);
         break;
     default:
-        throw new Error('"' + period + '" is not a valid period');
+        throw new Error(`"${period}" is not a valid period`);
     }
 
     // week is the only case that should reset the weekDay and maybe even

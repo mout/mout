@@ -96,7 +96,7 @@ function parseOffset(str) {
                 offset *= -1;
             }
 
-            return {offset: offset, time: match[1]};
+            return { offset, time: match[1] };
         }
     }
 

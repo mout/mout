@@ -15,7 +15,7 @@ function invoke(arr, methodName, var_args) {
     let value;
     while (++i < len) {
         value = arr[i];
-        value[methodName].apply(value, args);
+        value[methodName](...args);
     }
 
     return arr;

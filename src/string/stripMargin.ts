@@ -12,7 +12,7 @@ function stripMargin(str, marginChar) {
     marginChar = escapeRegExp(marginChar || DEFAULT_MARGIN_CHAR);
     str = toString(str);
 
-    regexp = new RegExp('^.*' + marginChar, 'gm');
+    regexp = new RegExp(`^.*${marginChar}`, 'gm');
 
     return str.replace(regexp, '');
 }

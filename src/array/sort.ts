@@ -38,11 +38,11 @@ function merge(left, right, compareFn) {
     }
 
     if (left.length) {
-        result.push.apply(result, left);
+        result.push(...left);
     }
 
     if (right.length) {
-        result.push.apply(result, right);
+        result.push(...right);
     }
 
     return result;

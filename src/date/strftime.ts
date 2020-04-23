@@ -20,8 +20,7 @@ const _combinations = {
 /**
  * format date based on strftime format
  */
-function strftime(date, format, localeData) {
-    localeData = localeData || i18n;
+function strftime(date, format, localeData = i18n) {
     const reToken = /%([a-z%])/gi;
 
     function makeIterator(fn) {
@@ -40,7 +39,7 @@ function expandCombinations(date, token, l10n) {
         const expanded = _combinations[token];
         return expanded === 'locale' ? l10n[token] : expanded;
     } else {
-        return '%' + token;
+        return `%${token}`;
     }
 }
 
@@ -108,7 +107,7 @@ function convertToken(date, token, l10n) {
         return '%';
     default:
         // keep unrecognized tokens
-        return '%' + token;
+        return `%${token}`;
     }
 }
 

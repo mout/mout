@@ -12,7 +12,7 @@ function escapeUnicode(str, shouldEscapePrintable) {
         }
         // we use "000" and slice(-4) for brevity, need to pad zeros,
         // unicode escape always have 4 chars after "\u"
-        return '\\u' + ('000' + ch.charCodeAt(0).toString(16)).slice(-4);
+        return `\\u${(`000${ch.charCodeAt(0).toString(16)}`).slice(-4)}`;
     });
 }
 

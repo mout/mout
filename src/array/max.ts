@@ -10,7 +10,7 @@ function max<T>(arr: T[], iterator?: Function | string, thisObj?: any): T | unde
         /* eslint-disable */
         // TODO: This requires stricter typing and a spread operator.
         // @ts-ignore
-        return Math.max.apply(Math, arr);
+        return Math.max(...arr);
         /* eslint-enable */
     } else {
         iterator = makeIterator(iterator!, thisObj);

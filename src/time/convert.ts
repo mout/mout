@@ -14,8 +14,7 @@ type unit = 'ms' |
 /**
  * convert time into another unit
  */
-function convert(val: number, sourceUnitName: unit, destinationUnitName: unit) {
-    destinationUnitName = destinationUnitName || 'ms';
+function convert(val: number, sourceUnitName: unit, destinationUnitName = 'ms') {
     return (val * getUnit(sourceUnitName)) / getUnit(destinationUnitName);
 }
 

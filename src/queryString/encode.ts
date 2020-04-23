@@ -11,17 +11,17 @@ function encode(obj) {
     let reg;
     forOwn(obj, function(val, key) {
         if (isArray(val)) {
-            arrValues = key + '=';
-            reg = new RegExp('&' + key + '+=$');
+            arrValues = `${key}=`;
+            reg = new RegExp(`&${key}+=$`);
             forEach(val, function(aValue) {
-                arrValues += encodeURIComponent(aValue) + '&' + key + '=';
+                arrValues += `${encodeURIComponent(aValue)}&${key}=`;
             });
             query.push(arrValues.replace(reg, ''));
         } else {
-            query.push(key + '=' + encodeURIComponent(val));
+            query.push(`${key}=${encodeURIComponent(val)}`);
         }
     });
-    return query.length ? '?' + query.join('&') : '';
+    return query.length ? `?${query.join('&')}` : '';
 }
 
 export default encode;

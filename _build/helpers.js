@@ -1,10 +1,7 @@
 /*jshint node:true */
 'use strict';
 
-var _fs = require('fs'),
-    _path = require('path'),
-    _handlebars = require('handlebars'),
-    _config = require('./config');
+const _fs = require('fs'), _path = require('path'), _handlebars = require('handlebars'), _config = require('./config');
 
 // Paths
 // --------
@@ -17,8 +14,8 @@ exports.specPath = _path.join.bind(_path, _config.SPEC_FOLDER);
 // ------------
 
 exports.compileTemplate = function(name) {
-    var path = _path.join(_config.TEMPLATES_FOLDER, name + '.hbs');
-    var file = _fs.readFileSync(path);
+    const path = _path.join(_config.TEMPLATES_FOLDER, `${name}.hbs`);
+    const file = _fs.readFileSync(path);
     return _handlebars.compile(file.toString());
 };
 
@@ -42,20 +39,18 @@ _handlebars.registerHelper('list', function(items, options) {
     items = items.map(function(val) {
         return options.fn(val);
     });
-    return (
-        items.join(separator + '\n    ') + (separator === ';' ? separator : '')
-    );
+    return items.join(`${separator}\n    `) + (separator === ';' ? separator : '');
 });
 
 // File system
 // -----------
 
 exports.getFolderStructure = function(folder) {
-    var fileNames = _fs.readdirSync(_path.normalize(folder));
+    let fileNames = _fs.readdirSync(_path.normalize(folder));
     fileNames = fileNames.map(function(val) {
         return _path.join(folder, val);
     });
-    var structure = {
+    const structure = {
         folders: fileNames.filter(function(name) {
             return _fs.statSync(name).isDirectory();
         }),
@@ -94,19 +89,19 @@ exports.isSilent = false;
 
 exports.echo = function(var_args) {
     if (exports.isSilent) return;
-    var args = Array.prototype.slice.call(arguments);
-    args[0] = ' ' + args[0];
-    console.log.apply(console, args);
+    const args = Array.prototype.slice.call(arguments);
+    args[0] = ` ${args[0]}`;
+    console.log(...args);
 };
 
 exports.echoList = function(var_args) {
     if (exports.isSilent) return;
     if (Array.isArray(var_args)) {
-        console.log('  - ' + var_args.join('\n  - '));
+        console.log(`  - ${var_args.join('\n  - ')}`);
     } else {
-        var args = Array.prototype.slice.call(arguments);
-        args[0] = '  - ' + args[0];
-        console.log.apply(console, args);
+        const args = Array.prototype.slice.call(arguments);
+        args[0] = `  - ${args[0]}`;
+        console.log(...args);
     }
 };
 
@@ -116,18 +111,14 @@ exports.echoList = function(var_args) {
 // this would be way easier on a shell/bash script :P
 
 exports.shell = function(cmd, cb) {
-    var child_process = require('child_process');
-    var parts = cmd.split(/\s+/g);
-    var p = child_process.spawn(parts[0], parts.slice(1), { stdio: 'inherit' });
+    const child_process = require('child_process');
+    const parts = cmd.split(/\s+/g);
+    const p = child_process.spawn(parts[0], parts.slice(1), { stdio: 'inherit' });
     p.on('exit', function(code) {
-        var err = null;
+        let err = null;
         if (code) {
             err = new Error(
-                'command "' +
-                    cmd +
-                    '" exited with wrong status code "' +
-                    code +
-                    '"'
+                `command "${cmd}" exited with wrong status code "${code}"`
             );
             err.code = code;
             err.cmd = cmd;
@@ -137,7 +128,7 @@ exports.shell = function(cmd, cb) {
 };
 
 exports.shellSeries = function(cmds, cb) {
-    var execNext = function() {
+    const execNext = function() {
         exports.shell(cmds.shift(), function(err) {
             if (err) {
                 cb(err);
