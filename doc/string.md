@@ -435,10 +435,10 @@ startsWith('lorem ipsum', 'ipsum'); // false
 
 
 
-## slugify(str[, delimeter]):String
+## slugify(str[, delimiter]):String
 
 Convert to lower case, remove accents, remove non-word chars and replace spaces
-with the delimeter. The default delimeter is a hyphen.
+with the delimiter. The default delimiter is a hyphen.
 
 Note that this does not split camelCase text.
 
