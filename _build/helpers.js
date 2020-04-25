@@ -1,7 +1,9 @@
-/*jshint node:true */
 'use strict';
 
-const _fs = require('fs'), _path = require('path'), _handlebars = require('handlebars'), _config = require('./config');
+const _fs = require('fs');
+const _path = require('path');
+const _handlebars = require('handlebars');
+const _config = require('./config');
 
 // Paths
 // --------
@@ -87,17 +89,17 @@ exports.purgeFiles = function(files) {
 
 exports.isSilent = false;
 
-exports.echo = function(var_args) {
+exports.echo = function(varArgs) {
     if (exports.isSilent) return;
     const args = Array.prototype.slice.call(arguments);
     args[0] = ` ${args[0]}`;
     console.log(...args);
 };
 
-exports.echoList = function(var_args) {
+exports.echoList = function(varArgs) {
     if (exports.isSilent) return;
-    if (Array.isArray(var_args)) {
-        console.log(`  - ${var_args.join('\n  - ')}`);
+    if (Array.isArray(varArgs)) {
+        console.log(`  - ${varArgs.join('\n  - ')}`);
     } else {
         const args = Array.prototype.slice.call(arguments);
         args[0] = `  - ${args[0]}`;
@@ -111,15 +113,13 @@ exports.echoList = function(var_args) {
 // this would be way easier on a shell/bash script :P
 
 exports.shell = function(cmd, cb) {
-    const child_process = require('child_process');
+    const childProcess = require('child_process');
     const parts = cmd.split(/\s+/g);
-    const p = child_process.spawn(parts[0], parts.slice(1), { stdio: 'inherit' });
+    const p = childProcess.spawn(parts[0], parts.slice(1), { stdio: 'inherit' });
     p.on('exit', function(code) {
         let err = null;
         if (code) {
-            err = new Error(
-                `command "${cmd}" exited with wrong status code "${code}"`
-            );
+            err = new Error(`command "${cmd}" exited with wrong status code "${code}"`);
             err.code = code;
             err.cmd = cmd;
         }

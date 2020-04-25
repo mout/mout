@@ -36,5 +36,5 @@ export {
     sign,
     toInt,
     toUInt,
-    toUInt31,
+    toUInt31
 };

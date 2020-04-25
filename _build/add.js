@@ -1,11 +1,13 @@
-/*jshint node:true */
 'use strict';
 
 // create stub module and failing spec for module if it doesn't exist
 
 // ---
 
-const _fs = require('fs'), _path = require('path'), _helpers = require('./helpers'), _package = require('./package');
+const _fs = require('fs');
+const _path = require('path');
+const _helpers = require('./helpers');
+const _package = require('./package');
 
 const echo = _helpers.echo;
 
@@ -88,9 +90,7 @@ function normalizePath(path) {
     path += _path.extname(path) ? '' : '.js';
     path = _path.normalize(path);
     if (_fs.existsSync(path)) {
-        console.error(
-            `file "${path}" already exists and can't be overwritten.`
-        );
+        console.error(`file "${path}" already exists and can't be overwritten.`);
         process.exit(1);
     }
     return path;

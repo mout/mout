@@ -1,11 +1,15 @@
-/*jshint node:true */
 'use strict';
 
 // automatically generates package modules and specs
 
 // ---
 
-const _fs = require('fs'), _path = require('path'), _helpers = require('./helpers'), _config = require('./config'), _add = require('./add'), _CLIEngine = require('eslint').CLIEngine;
+const _fs = require('fs');
+const _path = require('path');
+const _helpers = require('./helpers');
+const _config = require('./config');
+const _add = require('./add');
+const _CLIEngine = require('eslint').CLIEngine;
 
 const _cli = new _CLIEngine({ fix: true });
 
@@ -28,7 +32,7 @@ exports.updateAllPackages = function() {
     echo('updating specs:');
     const specsFiles = getFolderStructure(specPath()).files;
     purgeFiles(specsFiles);
-    //make packages based on src... ensure all source files have specs.
+    // make packages based on src... ensure all source files have specs.
     srcStructure.folders.forEach(makeSpecGroup);
 
     makeSpecRunner();
@@ -66,11 +70,7 @@ function makePackage(name) {
             package: packageFolder
         };
     });
-    _fs.writeFileSync(
-        `${name}.js`,
-        lintAndVerify(pkgTemplate({ modules })),
-        'utf-8'
-    );
+    _fs.writeFileSync(`${name}.js`, lintAndVerify(pkgTemplate({ modules })), 'utf-8');
     echoList(`${name}.js`);
 }
 
@@ -108,7 +108,8 @@ function makeIndex() {
 
 // ---
 
-const specTemplate = _helpers.compileSpecTemplate('default'), specPackageTemplate = _helpers.compileSpecTemplate('package'), specIndexTemplate = _helpers.compileSpecTemplate('index');
+const specPackageTemplate = _helpers.compileSpecTemplate('package');
+const specIndexTemplate = _helpers.compileSpecTemplate('index');
 
 function makeSpecGroup(name) {
     const packageFolder = _path.basename(name);
@@ -124,11 +125,7 @@ function makeSpecGroup(name) {
     });
 
     purgeFiles([specFilePath]);
-    _fs.writeFileSync(
-        specFilePath,
-        lintAndVerify(specPackageTemplate({ modules })),
-        'utf-8'
-    );
+    _fs.writeFileSync(specFilePath, lintAndVerify(specPackageTemplate({ modules })), 'utf-8');
     echoList(specFilePath);
 
     modules.forEach(function(mod) {

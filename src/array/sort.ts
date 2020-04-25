@@ -12,11 +12,9 @@ function mergeSort(arr, compareFn) {
         compareFn = defaultCompare;
     }
 
-    let mid; let left; let right;
-
-    mid = ~~(arr.length / 2);
-    left = mergeSort(arr.slice(0, mid), compareFn);
-    right = mergeSort(arr.slice(mid, arr.length), compareFn);
+    const mid = ~~(arr.length / 2);
+    const left = mergeSort(arr.slice(0, mid), compareFn);
+    const right = mergeSort(arr.slice(mid, arr.length), compareFn);
 
     return merge(left, right, compareFn);
 }

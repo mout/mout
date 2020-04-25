@@ -5,7 +5,7 @@ import forOwn from './forOwn';
 /**
  * Copy missing properties in the obj from the defaults.
  */
-function fillIn(obj, var_defaults) {
+function fillIn(obj, varDefaults) {
     forEach(slice(arguments, 1), function(base) {
         forOwn(base, function(val, key) {
             if (obj[key] == null) {

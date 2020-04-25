@@ -3,14 +3,14 @@ import some from '../array/some';
 const datePatterns = [
     /^([0-9]{4})$/, // YYYY
     /^([0-9]{4})-([0-9]{2})$/, // YYYY-MM (YYYYMM not allowed)
-    /^([0-9]{4})-?([0-9]{2})-?([0-9]{2})$/, // YYYY-MM-DD or YYYYMMDD
+    /^([0-9]{4})-?([0-9]{2})-?([0-9]{2})$/ // YYYY-MM-DD or YYYYMMDD
 ];
 const ORD_DATE = /^([0-9]{4})-?([0-9]{3})$/; // YYYY-DDD
 
 const timePatterns = [
     /^([0-9]{2}(?:\.[0-9]*)?)$/, // HH.hh
     /^([0-9]{2}):?([0-9]{2}(?:\.[0-9]*)?)$/, // HH:MM.mm
-    /^([0-9]{2}):?([0-9]{2}):?([0-9]{2}(\.[0-9]*)?)$/, // HH:MM:SS.ss
+    /^([0-9]{2}):?([0-9]{2}):?([0-9]{2}(\.[0-9]*)?)$/ // HH:MM:SS.ss
 ];
 
 const DATE_TIME = /^(.+)T(.+)$/;
@@ -33,9 +33,7 @@ function getDate(year, month, day) {
     date.setUTCFullYear(year);
 
     const valid =
-        date.getUTCFullYear() === year &&
-        date.getUTCMonth() === month &&
-        date.getUTCDate() === day;
+        date.getUTCFullYear() === year && date.getUTCMonth() === month && date.getUTCDate() === day;
     return valid ? +date : NaN;
 }
 
@@ -55,17 +53,15 @@ function parseOrdinalDate(str) {
 }
 
 function parseDate(str) {
-    let match; let year; let month; let day;
-
-    match = matchAll(str, datePatterns);
+    const match = matchAll(str, datePatterns);
     if (match === null) {
         // Ordinal dates are verified differently.
         return parseOrdinalDate(str);
     }
 
-    year = match[1] === void 0 ? 0 : +match[1];
-    month = match[2] === void 0 ? 0 : +match[2] - 1;
-    day = match[3] === void 0 ? 1 : +match[3];
+    const year = match[1] === void 0 ? 0 : +match[1];
+    const month = match[2] === void 0 ? 0 : +match[2] - 1;
+    const day = match[3] === void 0 ? 1 : +match[3];
 
     return getDate(year, month, day);
 }
@@ -101,11 +97,10 @@ function parseOffset(str) {
     }
 
     // No time zone specified, assume UTC
-    return {offset: 0, time: str};
+    return { offset: 0, time: str };
 }
 
 function parseTime(str) {
-    let match;
     let offset = parseOffset(str);
 
     str = offset.time;
@@ -114,7 +109,7 @@ function parseTime(str) {
         return NaN;
     }
 
-    match = matchAll(str, timePatterns);
+    const match = matchAll(str, timePatterns);
     if (match === null) {
         return NaN;
     }

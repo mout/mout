@@ -4,7 +4,7 @@ import slice from './slice';
  * Call `methodName` on each item of the array passing custom arguments if
  * needed.
  */
-function invoke(arr, methodName, var_args) {
+function invoke(arr, methodName, varArgs) {
     if (arr == null) {
         return arr;
     }

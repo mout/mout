@@ -30,5 +30,5 @@ export {
     timezoneOffset,
     totalDaysInMonth,
     totalDaysInYear,
-    weekOfTheYear,
+    weekOfTheYear
 };

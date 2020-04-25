@@ -30,5 +30,5 @@ export {
     reduce,
     reject,
     size,
-    some,
+    some
 };

@@ -12,13 +12,13 @@ function checkDontEnum() {
         'hasOwnProperty',
         'isPrototypeOf',
         'propertyIsEnumerable',
-        'constructor',
+        'constructor'
     ];
 
     _hasDontEnumBug = true;
 
-    // eslint-disable-next-line guard-for-in
-    for (const _ in {toString: null}) {
+    // eslint-disable-next-line guard-for-in, no-unused-vars
+    for (const _ in { toString: null }) {
         _hasDontEnumBug = false;
     }
 }
@@ -28,7 +28,7 @@ function checkDontEnum() {
  * Enum bug on IE.
  * based on: http://whattheheadsaid.com/2010/10/a-safer-object-keys-compatibility-implementation
  */
-function forIn(obj: {[k: string]: any}, fn: Function, thisObj?: any) {
+function forIn(obj: { [k: string]: any }, fn: Function, thisObj?: any) {
     let key: string;
     let i = 0;
     // no need to check if argument is a real object that way we can use
@@ -69,7 +69,7 @@ function forIn(obj: {[k: string]: any}, fn: Function, thisObj?: any) {
 }
 
 // eslint-disable-next-line require-jsdoc
-function exec(fn: Function, obj: {[k: string]: any}, key: string, thisObj: any): any {
+function exec(fn: Function, obj: { [k: string]: any }, key: string, thisObj: any): any {
     return fn.call(thisObj, obj[key], key, obj);
 }
 

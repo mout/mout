@@ -4,7 +4,7 @@ import find from '../array/find';
 /**
  * Return first non void argument
  */
-function defaults(var_args) {
+function defaults(varArgs) {
     return find(toArray(arguments), nonVoid);
 }
 

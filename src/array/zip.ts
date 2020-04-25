@@ -18,7 +18,7 @@ function zip(arr) {
         results.push(
             map(arguments, function(item) {
                 return item == null ? undefined : item[i];
-            }),
+            })
         );
     }
 

@@ -2,7 +2,8 @@
  * Debounce callback execution
  */
 function debounce(fn, threshold, isAsap) {
-    let timeout; let result;
+    let timeout;
+    let result;
     function debounced() {
         const args = arguments;
         const context = this;

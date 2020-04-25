@@ -12,6 +12,9 @@ module.exports = {
                 project: "./tsconfig.json",
             },
             parser: "@typescript-eslint/parser",
+            env: {
+                browser: true
+            }
         },
         {
             files: ["_build/*.js", "build.js"],
@@ -34,5 +37,8 @@ module.exports = {
         }],
         "valid-jsdoc": ["off"],
         "require-jsdoc": ["off"],
+        "no-useless-escape": ["off"],
+        "prefer-rest-params": ["off"],
+        "no-invalid-this": ["off"]
     }
 }

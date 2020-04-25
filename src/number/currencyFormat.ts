@@ -7,7 +7,7 @@ function currencyFormat(
     val: number,
     nDecimalDigits?: number,
     decimalSeparator?: string,
-    thousandsSeparator?: string,
+    thousandsSeparator?: string
 ) {
     val = toNumber(val);
     nDecimalDigits = nDecimalDigits == null ? 2 : nDecimalDigits;
@@ -18,9 +18,9 @@ function currencyFormat(
     // doing a RegExp over the string
     const fixed = val.toFixed(nDecimalDigits);
     // separate begin [$1], middle [$2] and decimal digits [$4]
-    const parts = new RegExp(
-        `^(-?\\d{1,3})((?:\\d{3})+)(\\.(\\d{${nDecimalDigits}}))?$`
-    ).exec(fixed);
+    const parts = new RegExp(`^(-?\\d{1,3})((?:\\d{3})+)(\\.(\\d{${nDecimalDigits}}))?$`).exec(
+        fixed
+    );
 
     if (parts) {
         // val >= 1000 || val <= -1000

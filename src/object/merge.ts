@@ -10,11 +10,10 @@ function merge() {
     let key;
     let val;
     let obj;
-    let target;
 
     // make sure we don't modify source element and it's properties
     // objects are passed by reference
-    target = deepClone(arguments[0]);
+    const target = deepClone(arguments[0]);
 
     while ((obj = arguments[i++])) {
         for (key in obj) {

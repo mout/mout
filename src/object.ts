@@ -74,5 +74,5 @@ export {
     size,
     some,
     unset,
-    values,
+    values
 };

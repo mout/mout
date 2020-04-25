@@ -8,12 +8,12 @@ import isPlainObject from './isPlainObject';
  */
 function deepClone<T>(val: T, instanceClone?: () => T): T {
     switch (kindOf(val)) {
-    case 'Object':
-        return cloneObject(val, instanceClone);
-    case 'Array':
-        return cloneArray(val as Array, instanceClone);
-    default:
-        return clone(val);
+        case 'Object':
+            return cloneObject(val, instanceClone);
+        case 'Array':
+            return cloneArray(val as Array, instanceClone);
+        default:
+            return clone(val);
     }
 }
 

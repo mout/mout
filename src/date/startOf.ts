@@ -9,27 +9,27 @@ function startOf(date, period) {
     // intentionally removed "break" from switch since start of
     // month/year/etc should also reset the following periods
     switch (period) {
-    case 'year':
-        date.setMonth(0);
+        case 'year':
+            date.setMonth(0);
         /* falls through */
-    case 'month':
-        date.setDate(1);
+        case 'month':
+            date.setDate(1);
         /* falls through */
-    case 'week':
-    case 'day':
-        date.setHours(0);
+        case 'week':
+        case 'day':
+            date.setHours(0);
         /* falls through */
-    case 'hour':
-        date.setMinutes(0);
+        case 'hour':
+            date.setMinutes(0);
         /* falls through */
-    case 'minute':
-        date.setSeconds(0);
+        case 'minute':
+            date.setSeconds(0);
         /* falls through */
-    case 'second':
-        date.setMilliseconds(0);
-        break;
-    default:
-        throw new Error(`"${period}" is not a valid period`);
+        case 'second':
+            date.setMilliseconds(0);
+            break;
+        default:
+            throw new Error(`"${period}" is not a valid period`);
     }
 
     // week is the only case that should reset the weekDay and maybe even

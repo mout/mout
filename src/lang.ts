@@ -66,5 +66,5 @@ export {
     kindOf,
     toArray,
     toNumber,
-    toString,
+    toString
 };

@@ -6,7 +6,7 @@ const activeLocale = mixIn({}, enUS, {
     // we expose a "set" method to allow overriding the global locale
     set: function(localeData) {
         mixIn(activeLocale, localeData);
-    },
+    }
 });
 
 export default activeLocale;

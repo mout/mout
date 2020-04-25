@@ -34,5 +34,5 @@ export {
     random,
     string,
     time,
-    fn,
+    fn
 };

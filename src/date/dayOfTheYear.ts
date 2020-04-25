@@ -1,5 +1,3 @@
-import isDate from '../lang/isDate';
-
 /**
  * return the day of the year (1..366)
  */

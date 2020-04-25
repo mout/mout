@@ -11,7 +11,7 @@ function reject(obj, callback, thisObj) {
         function(value, index, obj) {
             return !callback(value, index, obj);
         },
-        thisObj,
+        thisObj
     );
 }
 

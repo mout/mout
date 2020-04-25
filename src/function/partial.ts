@@ -15,12 +15,12 @@ function partial(f) {
         const rest = slice(arguments);
 
         // Don't waste time checking for placeholders if there aren't any.
-        const args = has_ ?
-            take(as.length, function(i) {
-                const a = as[i];
-                return a === _ ? rest.shift() : a;
-            }) :
-            as;
+        const args = has_
+            ? take(as.length, function(i) {
+                  const a = as[i];
+                  return a === _ ? rest.shift() : a;
+              })
+            : as;
 
         return f.apply(this, rest.length ? args.concat(rest) : args);
     };

@@ -12,15 +12,4 @@ import randSign from './random/randSign';
 import randString from './random/randString';
 import random from './random/random';
 
-export {
-    choice,
-    guid,
-    rand,
-    randBit,
-    randBool,
-    randHex,
-    randInt,
-    randSign,
-    randString,
-    random,
-};
+export { choice, guid, rand, randBit, randBool, randHex, randInt, randSign, randString, random };

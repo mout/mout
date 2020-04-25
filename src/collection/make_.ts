@@ -10,9 +10,7 @@ function makeCollectionMethod(arrMethod, objMethod, defaultReturn) {
             return defaultReturn;
         }
         // array-like is treated as array
-        return typeof args[0].length === 'number'
-            ? arrMethod(...args)
-            : objMethod(...args);
+        return typeof args[0].length === 'number' ? arrMethod(...args) : objMethod(...args);
     };
 }
 

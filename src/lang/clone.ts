@@ -7,20 +7,20 @@ import mixIn from '../object/mixIn';
  */
 function clone<T = unknown>(val: T): T {
     switch (kindOf(val)) {
-    case 'Object':
-        return cloneObject(val);
-    case 'Array':
-        return cloneArray(val);
-    case 'RegExp':
-        return cloneRegExp(val);
-    case 'Date':
-        return cloneDate(val);
-    default:
-        return val;
+        case 'Object':
+            return cloneObject(val);
+        case 'Array':
+            return cloneArray(val);
+        case 'RegExp':
+            return cloneRegExp(val);
+        case 'Date':
+            return cloneDate(val);
+        default:
+            return val;
     }
 }
 
-function cloneObject<T extends {}}>(source: T): T {
+function cloneObject<T extends {}>(source: T): T {
     if (isPlainObject(source)) {
         return mixIn({}, source);
     } else {

@@ -95,25 +95,21 @@ function renameModule(moduleName, newName) {
 function convert(destinationPath) {
     const glob = _path.join(_config.SRC_FOLDER, '/**/**.js');
     _helpers.echo('Converting modules to node.js:');
-    require('nodefy').batchConvert(glob, destinationPath, function(
-        err,
-        results
-    ) {
+    require('nodefy').batchConvert(glob, destinationPath, function(err, results) {
         if (err) {
             console.error(err.toString());
             process.exit(1);
         }
 
         function checkKeys(mod, name) {
+            let keys;
             try {
-                var keys = Object.keys(mod);
+                keys = Object.keys(mod);
             } catch (err) {
                 throw new Error(`"${name}" is not an object`);
             }
             if (!keys.length) {
-                throw new Error(
-                    `"${name}" does't contain any enumerable properties`
-                );
+                throw new Error(`"${name}" does't contain any enumerable properties`);
             }
         }
 
@@ -132,7 +128,7 @@ function convert(destinationPath) {
             process.exit(1);
         }
 
-        results = results.map(function({outputPath}) {
+        results = results.map(function({ outputPath }) {
             return outputPath;
         });
         _helpers.echoList(results);
@@ -181,11 +177,7 @@ function updateJsonVersion(path, version) {
     const target = require(path);
     const fs = require('fs');
     target.version = version;
-    fs.writeFileSync(
-        path,
-        JSON.stringify(target, null, '  '),
-        _config.ENCODING
-    );
+    fs.writeFileSync(path, JSON.stringify(target, null, '  '), _config.ENCODING);
 }
 
 function updateChangelog(path, version) {
@@ -195,10 +187,7 @@ function updateChangelog(path, version) {
     const dashedLine = new Array(release.length + 1).join('-');
     // add version number and release date to changelog if first h2 doesn't
     // start with "v"
-    content = content.replace(
-        /^(?!v)[^\n]+\n\-+/m,
-        `${release}\n${dashedLine}`
-    );
+    content = content.replace(/^(?!v)[^\n]+\n\-+/m, `${release}\n${dashedLine}`);
     fs.writeFileSync(path, content, _config.ENCODING);
 }
 

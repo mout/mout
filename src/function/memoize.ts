@@ -18,7 +18,7 @@ function memoize(fn, resolver) {
         throw new TypeError('Expected a function');
     }
 
-    var memoized = function() {
+    const memoized = function() {
         const cache = memoized.cache;
         const key = resolver ? resolver.apply(this, arguments) : arguments[0];
 

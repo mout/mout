@@ -37,15 +37,7 @@ export default {
         'Dez'
     ],
 
-    days: [
-        'Sonntag',
-        'Montag',
-        'Dienstag',
-        'Mittwoch',
-        'Donnerstag',
-        'Freitag',
-        'Samstag'
-    ],
+    days: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
 
     days_abbr: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa']
 };

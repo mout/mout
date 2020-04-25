@@ -11,7 +11,7 @@ function reject(list, iterator, thisObj) {
         function(value, index, list) {
             return !iterator(value, index, list);
         },
-        thisObj,
+        thisObj
     );
 }
 

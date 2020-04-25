@@ -1,11 +1,13 @@
-/*jshint node:true */
 'use strict';
 
 // rename module and update specs
 
 // ---
 
-const _fs = require('fs'), _path = require('path'), _helpers = require('./helpers'), _package = require('./package'), _rocambole = require('rocambole');
+const _fs = require('fs');
+const _helpers = require('./helpers');
+const _package = require('./package');
+const _rocambole = require('rocambole');
 
 const echo = _helpers.echo;
 
@@ -16,9 +18,7 @@ exports.renameModule = function(oldName, newName) {
     const srcOut = `${_helpers.srcPath(newName)}.js`;
 
     if (!_fs.existsSync(srcIn)) {
-        console.error(
-            `can't rename file "${srcIn}", file doesn't exist.`
-        );
+        console.error(`can't rename file "${srcIn}", file doesn't exist.`);
         process.exit(1);
     } else if (_fs.statSync(srcIn).isDirectory()) {
         console.error("can't rename packages, only modules");
@@ -49,9 +49,7 @@ exports.renameModule = function(oldName, newName) {
 exports.mv = function(oldPath, newPath) {
     if (_fs.existsSync(oldPath)) {
         if (_fs.existsSync(newPath)) {
-            console.error(
-                `file "${newPath}" already exists and can't be overwritten.`
-            );
+            console.error(`file "${newPath}" already exists and can't be overwritten.`);
             process.exit(1);
         } else {
             _fs.renameSync(oldPath, newPath);
@@ -75,18 +73,12 @@ function updateSource(path, oldName, newName) {
     const oldFn = oldName.split('/').pop();
     const newFn = newName.split('/').pop();
 
-    _rocambole.recursive(ast, function({type, id, argument, callee}) {
+    _rocambole.recursive(ast, function({ type, id, argument, callee }) {
         if (type === 'FunctionDeclaration' && id.name === oldFn) {
             id.startToken.value = newFn;
-        } else if (
-            type === 'ReturnStatement' &&
-            argument.name === oldFn
-        ) {
+        } else if (type === 'ReturnStatement' && argument.name === oldFn) {
             argument.startToken.value = newFn;
-        } else if (
-            type === 'CallExpression' &&
-            callee.name === oldFn
-        ) {
+        } else if (type === 'CallExpression' && callee.name === oldFn) {
             callee.startToken.value = newFn;
         }
     });
@@ -102,7 +94,7 @@ function updateSpec(path, oldName, newName) {
     const oldFn = oldName.split('/').pop();
     const newFn = newName.split('/').pop();
 
-    _rocambole.recursive(ast, function({type, expression, callee}) {
+    _rocambole.recursive(ast, function({ type, expression, callee }) {
         if (
             type === 'ExpressionStatement' &&
             expression.type === 'CallExpression' &&
@@ -110,21 +102,15 @@ function updateSpec(path, oldName, newName) {
         ) {
             // update define
             if (expression.callee.name === 'define') {
-                expression['arguments'].forEach(function({type, elements, params}) {
+                expression['arguments'].forEach(function({ type, elements, params }) {
                     if (type === 'ArrayExpression') {
-                        elements.forEach(function({startToken}) {
-                            if (
-                                startToken.type === 'String' &&
-                                re.test(startToken.value)
-                            ) {
-                                startToken.value = startToken.value.replace(
-                                    re,
-                                    `$1${newName}$2`
-                                );
+                        elements.forEach(function({ startToken }) {
+                            if (startToken.type === 'String' && re.test(startToken.value)) {
+                                startToken.value = startToken.value.replace(re, `$1${newName}$2`);
                             }
                         });
                     } else if (type === 'FunctionExpression') {
-                        params.forEach(function({name, startToken}) {
+                        params.forEach(function({ name, startToken }) {
                             if (name === oldFn) {
                                 startToken.value = newFn;
                             }
@@ -136,20 +122,11 @@ function updateSpec(path, oldName, newName) {
             // update describe
             if (expression.callee.name === 'describe') {
                 const arg = expression['arguments'][0];
-                if (
-                    arg.startToken.type === 'String' &&
-                    re.test(arg.startToken.value)
-                ) {
-                    arg.startToken.value = arg.startToken.value.replace(
-                        re,
-                        `$1${newName}$2`
-                    );
+                if (arg.startToken.type === 'String' && re.test(arg.startToken.value)) {
+                    arg.startToken.value = arg.startToken.value.replace(re, `$1${newName}$2`);
                 }
             }
-        } else if (
-            type === 'CallExpression' &&
-            callee.name === oldFn
-        ) {
+        } else if (type === 'CallExpression' && callee.name === oldFn) {
             // update calls
             callee.startToken.value = newFn;
         }

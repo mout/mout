@@ -3,7 +3,7 @@ import enforcePrecision from './enforcePrecision';
 const _defaultDict = {
     thousand: 'K',
     million: 'M',
-    billion: 'B',
+    billion: 'B'
 };
 
 /**
@@ -14,7 +14,8 @@ function abbreviateNumber(val: number, nDecimals?: number, dict?: typeof _defaul
     dict = dict || _defaultDict;
     val = enforcePrecision(val, nDecimals);
 
-    let str; let mod;
+    let str;
+    let mod;
 
     if (val < 1000000) {
         mod = enforcePrecision(val / 1000, nDecimals);

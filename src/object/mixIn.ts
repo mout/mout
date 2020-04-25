@@ -30,7 +30,6 @@ function mixIn<T, M>(
 }
 
 function copyProp(this: Record<string, any>, val: any, key: string) {
-    // eslint-disable-next-line no-invalid-this
     this[key] = val;
 }
 
