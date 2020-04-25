@@ -28,6 +28,7 @@
     "Mathias Paumgarten <mail@mathias-paumgarten.com>",
     "Zach Shipley"
   ],
+  "sideEffects": false,
   "main": "./index.js",
   "directories": {
     "doc": "./doc"
