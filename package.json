@@ -35,7 +35,7 @@
   },
   "scripts": {
     "lint": "eslint src/**/*.ts _build/*.js build.js",
-    "fix": "eslint --fix src/**/*.ts _build/*.js build.js",
+    "fix": "npm run lint -- --fix",
     "test": "node tests/runner.js",
     "tsc": "tsc --project tsconfig.json"
   },
