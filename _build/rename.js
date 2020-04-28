@@ -14,8 +14,8 @@ const echo = _helpers.echo;
 // --
 
 exports.renameModule = function(oldName, newName) {
-    const srcIn = `${_helpers.srcPath(oldName)}.js`;
-    const srcOut = `${_helpers.srcPath(newName)}.js`;
+    const srcIn = `${_helpers.srcPath(oldName)}.ts`;
+    const srcOut = `${_helpers.srcPath(newName)}.ts`;
 
     if (!_fs.existsSync(srcIn)) {
         console.error(`can't rename file "${srcIn}", file doesn't exist.`);

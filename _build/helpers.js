@@ -70,7 +70,7 @@ exports.getFolderStructure = function(folder) {
 };
 
 function hasJsExtension(name) {
-    return /\.js$/.test(name);
+    return /\.[jt]s$/.test(name);
 }
 
 exports.purgeFiles = function(files) {
