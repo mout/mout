@@ -1,4 +1,4 @@
-import sign from '../../../src/number/sign';
+import sign from '../../../number/sign';
 
 describe('number/sign()', function() {
     it('should return -1 if number is negative', function() {

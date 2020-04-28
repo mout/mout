@@ -1,4 +1,4 @@
-import MAX_SAFE_INTEGER from '../../../src/number/MAX_SAFE_INTEGER';
+import MAX_SAFE_INTEGER from '../../../number/MAX_SAFE_INTEGER';
 
 describe('number/MAX_SAFE_INTEGER', function() {
     it('should be equal (2 ^ 52) - 1', function() {

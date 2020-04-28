@@ -1,4 +1,4 @@
-import toInt from '../../../src/number/toInt';
+import toInt from '../../../number/toInt';
 
 describe('number/toInt()', function() {
     it('should remove decimal digits', function() {

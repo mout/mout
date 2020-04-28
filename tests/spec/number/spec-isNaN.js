@@ -1,4 +1,4 @@
-import isNaN from '../../../src/number/isNaN';
+import isNaN from '../../../number/isNaN';
 
 describe('number/isNaN', function() {
     it('should return true only for the NaN value', function() {

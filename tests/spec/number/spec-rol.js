@@ -1,4 +1,4 @@
-import rol from '../../../src/number/rol';
+import rol from '../../../number/rol';
 
 describe('number/rol()', function() {
     it('should rotate bits left', function() {
