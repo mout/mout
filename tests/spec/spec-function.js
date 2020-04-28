@@ -1,5 +1,5 @@
-//automatically generated, do not edit!
-//run `node build` instead
+// automatically generated, do not edit!
+// run `node build` instead
 
 import './function/spec-after';
 import './function/spec-awaitDelay';
