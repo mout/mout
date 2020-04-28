@@ -10,35 +10,35 @@ _cli.option('-s, --silent', 'suppress log messages.');
 
 _cli.command('doc')
     .description('build documentation.')
-    .action(cmd(buildDocs));
+    .action(buildDocs);
 
 _cli.command('pkg')
     .description('update packages and specs')
-    .action(cmd(updatePackages));
+    .action(updatePackages);
 
 _cli.command('add <moduleName> [templateName]')
     .description('add a new module.')
-    .action(cmd(addModule));
+    .action(addModule);
 
 _cli.command('mv <moduleName> <newName>')
     .description('rename module.')
-    .action(cmd(renameModule));
+    .action(renameModule);
 
 _cli.command('cjs <destinationPath>')
     .description('convert mout into a node.js compatible package.')
-    .action(cmd(convert));
+    .action(convert);
 
 _cli.command('release <version>')
     .description('bump version number, run tests, git tag, publish')
-    .action(cmd(release));
+    .action(release);
 
 _cli.command('testling')
     .description('prepare files for ci.testling.com')
-    .action(cmd(generateTestBundle));
+    .action(generateTestBundle);
 
 _cli.command('prune')
     .description('remove cjs files created during "release"')
-    .action(cmd(prune));
+    .action(prune);
 
 _cli.parse(process.argv);
 
@@ -47,23 +47,6 @@ if (!_cli.args.length) {
     _cli.outputHelp();
     process.exit(0);
 }
-
-// just a helper to run multiple commands in sequence and process global
-// options before executing them.
-function cmd() {
-    const fns = Array.prototype.slice.call(arguments);
-    return function() {
-        if (_cli.silent) {
-            _helpers.isSilent = true;
-        }
-        const args = Array.prototype.slice.call(arguments);
-        fns.forEach(function(fn) {
-            fn(...args);
-        });
-    };
-}
-
-// --
 
 function buildDocs() {
     const mdoc = require('mdoc');
@@ -255,5 +238,12 @@ function prune() {
     const rimraf = require('rimraf');
     const rm = line => rimraf.sync(_path.basename(line));
     ls.folders.map(rm);
-    ls.files.map(rm);
+    ls.files.map(convertJsToTsFile).map(rm);
+}
+
+function convertJsToTsFile(path) {
+    const parts = path.split('.');
+    parts.pop();
+    parts.push('js');
+    return parts.join('.');
 }
