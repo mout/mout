@@ -1,9 +1,9 @@
-import find from '../../../src/collection/find';
+import find from '../../../collection/find';
 
 describe('collection/find', function() {
     it('should return first match for array', function() {
-        var obj = { a: 'b' },
-            arr = [123, 'foo', 'bar', obj];
+        const obj = { a: 'b' };
+        const arr = [123, 'foo', 'bar', obj];
 
         expect(
             find(arr, function(val) {
@@ -23,12 +23,12 @@ describe('collection/find', function() {
     });
 
     it('should return first match for object', function() {
-        var inner = {
+        const inner = {
             first: 1,
             second: 2
         };
 
-        var obj = {
+        const obj = {
             a: 123,
             b: 'foo',
             c: 'bar',
@@ -53,12 +53,12 @@ describe('collection/find', function() {
     });
 
     it('should support shorthand syntax', function() {
-        var obj = {
+        const obj = {
             '0': { foo: 'bar', lorem: 'ipsum', id: 1 },
             '1': { foo: 'bar', lorem: 'ipsum', id: 2 },
             '2': { foo: 'bar', lorem: 'ipsum', id: 4 }
         };
-        var arr = [obj[0], obj[1], obj[2]];
+        const arr = [obj[0], obj[1], obj[2]];
 
         expect(find(obj, { lorem: 'ipsum', id: 1 })).toEqual(obj[0]);
         expect(find(obj, { amet: 123 })).toBeUndefined();
@@ -68,11 +68,11 @@ describe('collection/find', function() {
     });
 
     it('should allow string shorthand syntax', function() {
-        var obj = {
+        const obj = {
             '0': { foo: 'bar', lorem: 'ipsum', id: 0 },
             '1': { foo: 'bar', lorem: 'ipsum', id: 1 }
         };
-        var arr = [obj[0], obj[1]];
+        const arr = [obj[0], obj[1]];
 
         expect(find(obj, 'id')).toEqual(obj[1]);
         expect(find(obj, 'amet')).toBeUndefined();

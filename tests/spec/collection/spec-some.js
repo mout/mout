@@ -1,14 +1,14 @@
-import some from '../../../src/collection/some';
+import some from '../../../collection/some';
 
 describe('collection/some', function() {
-    var isEven = function(val, i, arr) {
+    const isEven = function(val, i, arr) {
         return val % 2 === 0;
     };
 
     it('should work on normal array', function() {
-        var a1 = [1, 2, 3];
-        var a2 = [1, 3, 5];
-        var a3 = [2, 4, 6];
+        const a1 = [1, 2, 3];
+        const a2 = [1, 3, 5];
+        const a3 = [2, 4, 6];
 
         expect(some(a1, isEven)).toBe(true);
         expect(some(a2, isEven)).toBe(false);
@@ -16,9 +16,9 @@ describe('collection/some', function() {
     });
 
     it('should work on normal object', function() {
-        var a1 = { a: 1, b: 2, c: 3 };
-        var a2 = { a: 1, b: 3, c: 5 };
-        var a3 = { a: 2, b: 4, c: 6 };
+        const a1 = { a: 1, b: 2, c: 3 };
+        const a2 = { a: 1, b: 3, c: 5 };
+        const a3 = { a: 2, b: 4, c: 6 };
 
         expect(some(a1, isEven)).toBe(true);
         expect(some(a2, isEven)).toBe(false);
@@ -26,11 +26,11 @@ describe('collection/some', function() {
     });
 
     it('should iterate over sparse items. see #64', function() {
-        var a1 = [1, 2, 3];
+        const a1 = [1, 2, 3];
         a1[10] = 8;
-        var a2 = [1, 3, 5];
+        const a2 = [1, 3, 5];
         a2[10] = 7;
-        var a3 = [2, 4, 6];
+        const a3 = [2, 4, 6];
         a3[10] = 10;
 
         expect(some(a1, isEven)).toBe(true);
@@ -55,8 +55,8 @@ describe('collection/some', function() {
     });
 
     it('should be incremental', function() {
-        var a = [1, 2, 3];
-        var compare = [];
+        const a = [1, 2, 3];
+        const compare = [];
         expect(
             some(a, function(val) {
                 compare.push(val);
@@ -67,12 +67,12 @@ describe('collection/some', function() {
     });
 
     it('should support shorthand syntax', function() {
-        var obj = {
+        const obj = {
             '0': { foo: 'bar', lorem: 'ipsum', id: 1 },
             '1': { foo: 'bar', lorem: 'ipsum', id: 2 },
             '2': { foo: 'bar', lorem: 'ipsum', id: 4 }
         };
-        var arr = [obj[0], obj[1], obj[2]];
+        const arr = [obj[0], obj[1], obj[2]];
 
         expect(some(obj, { foo: 'bar', lorem: 'ipsum' })).toEqual(true);
         expect(some(obj, { lorem: 'ipsum', id: 1 })).toEqual(true);
@@ -84,12 +84,12 @@ describe('collection/some', function() {
     });
 
     it('should allow string shorthand syntax', function() {
-        var obj = {
+        const obj = {
             '0': { foo: 'bar', lorem: 'ipsum', id: 1 },
             '1': { foo: 'bar', lorem: 'ipsum', id: 2 },
             '2': { foo: 'bar', lorem: 'ipsum', id: 0 }
         };
-        var arr = [obj[0], obj[1], obj[2]];
+        const arr = [obj[0], obj[1], obj[2]];
 
         expect(some(obj, 'foo')).toEqual(true);
         expect(some(obj, 'id')).toEqual(true);

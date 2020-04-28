@@ -1,4 +1,4 @@
-import max from '../../../src/collection/max';
+import max from '../../../collection/max';
 
 describe('collection/max', function() {
     it('should return maximum value (array)', function() {
@@ -50,12 +50,12 @@ describe('collection/max', function() {
     });
 
     it('should allow string shorthand syntax', function() {
-        var obj = {
+        const obj = {
             '0': { foo: 'bar', lorem: 'ipsum', id: 1 },
             '1': { foo: 'bar', lorem: 'ipsum', id: 2 },
             '2': { foo: 'bar', lorem: 'ipsum', id: 0 }
         };
-        var arr = [obj[0], obj[1], obj[2]];
+        const arr = [obj[0], obj[1], obj[2]];
 
         expect(max(obj, 'id')).toEqual(obj[1]);
         expect(max(obj, 'amet')).toBeUndefined();

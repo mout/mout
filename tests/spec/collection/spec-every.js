@@ -1,14 +1,14 @@
-import every from '../../../src/collection/every';
+import every from '../../../collection/every';
 
 describe('collection/every', function() {
-    var isEven = function(val, i, arr) {
+    const isEven = function(val, i, arr) {
         return val % 2 === 0;
     };
 
     it('should work on normal array', function() {
-        var a1 = [1, 2, 3];
-        var a2 = [1, 3, 5];
-        var a3 = [2, 4, 6];
+        const a1 = [1, 2, 3];
+        const a2 = [1, 3, 5];
+        const a3 = [2, 4, 6];
 
         expect(every(a1, isEven)).toBe(false);
         expect(every(a2, isEven)).toBe(false);
@@ -16,11 +16,11 @@ describe('collection/every', function() {
     });
 
     it('should iterate over sparse items. see #64', function() {
-        var a1 = [1, 2, 3];
+        const a1 = [1, 2, 3];
         a1[10] = 8;
-        var a2 = [1, 3, 5];
+        const a2 = [1, 3, 5];
         a2[10] = 7;
-        var a3 = [2, 4, 6];
+        const a3 = [2, 4, 6];
         a3[10] = 10;
 
         // IMPORTANT
@@ -37,15 +37,15 @@ describe('collection/every', function() {
     });
 
     it('should work on empty arrays', function() {
-        //it is vacuously true that all elements of the empty set satisfy any given condition.
+        // it is vacuously true that all elements of the empty set satisfy any given condition.
         expect(every([], isEven)).toBe(true);
     });
 
     it('should loop forwards to avoid undesired behavior', function() {
         // not that the loop order should matter on a truth check over all
         // elements
-        var a1 = [1, 3, 7];
-        var result = [];
+        const a1 = [1, 3, 7];
+        const result = [];
         expect(
             every(a1, function(val, i, arr) {
                 result.push(val);
@@ -56,9 +56,9 @@ describe('collection/every', function() {
     });
 
     it('should work on normal object', function() {
-        var a1 = { a: 1, b: 2, c: 3 };
-        var a2 = { a: 1, b: 3, c: 5 };
-        var a3 = { a: 2, b: 4, c: 6 };
+        const a1 = { a: 1, b: 2, c: 3 };
+        const a2 = { a: 1, b: 3, c: 5 };
+        const a3 = { a: 2, b: 4, c: 6 };
 
         expect(every(a1, isEven)).toBe(false);
         expect(every(a2, isEven)).toBe(false);
@@ -70,12 +70,12 @@ describe('collection/every', function() {
     });
 
     it('should support shorthand syntax', function() {
-        var obj = {
+        const obj = {
             '0': { foo: 'bar', lorem: 'ipsum', id: 1 },
             '1': { foo: 'bar', lorem: 'ipsum', id: 2 },
             '2': { foo: 'bar', lorem: 'ipsum', id: 4 }
         };
-        var arr = [obj[0], obj[1], obj[2]];
+        const arr = [obj[0], obj[1], obj[2]];
 
         expect(every(obj, { foo: 'bar', lorem: 'ipsum' })).toEqual(true);
         expect(every(obj, { lorem: 'ipsum', id: 1 })).toEqual(false);
@@ -87,12 +87,12 @@ describe('collection/every', function() {
     });
 
     it('should allow string shorthand syntax', function() {
-        var obj = {
+        const obj = {
             '0': { foo: 'bar', lorem: 'ipsum', id: 1 },
             '1': { foo: 'bar', lorem: 'ipsum', id: 2 },
             '2': { foo: 'bar', lorem: 'ipsum', id: 0 }
         };
-        var arr = [obj[0], obj[1], obj[2]];
+        const arr = [obj[0], obj[1], obj[2]];
 
         expect(every(obj, 'foo')).toEqual(true);
         expect(every(obj, 'id')).toEqual(false);

@@ -1,4 +1,4 @@
-import min from '../../../src/collection/min';
+import min from '../../../collection/min';
 
 describe('collection/min', function() {
     it('should return minimum value (array)', function() {
@@ -50,12 +50,12 @@ describe('collection/min', function() {
     });
 
     it('should allow string shorthand syntax', function() {
-        var obj = {
+        const obj = {
             '0': { foo: 'bar', lorem: 'ipsum', id: 1 },
             '1': { foo: 'bar', lorem: 'ipsum', id: 2 },
             '2': { foo: 'bar', lorem: 'ipsum', id: 0 }
         };
-        var arr = [obj[0], obj[1], obj[2]];
+        const arr = [obj[0], obj[1], obj[2]];
 
         expect(min(obj, 'id')).toEqual(obj[2]);
         expect(min(obj, 'amet')).toBeUndefined();
