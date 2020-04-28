@@ -1,4 +1,4 @@
-import isFinite from '../../../src/lang/isFinite';
+import isFinite from '../../../lang/isFinite';
 
 describe('lang/isFinite', function() {
     it("should return false for all values that aren't finite", function() {

@@ -1,4 +1,4 @@
-import isFunction from '../../../src/lang/isFunction';
+import isFunction from '../../../lang/isFunction';
 
 describe('lang/isFunction()', function() {
     it('should detect if value is a function', function() {

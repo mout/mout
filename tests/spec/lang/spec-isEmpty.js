@@ -1,4 +1,4 @@
-import isEmpty from '../../../src/lang/isEmpty';
+import isEmpty from '../../../lang/isEmpty';
 
 describe('lang/isEmpty', function() {
     it('should work on strings', function() {
@@ -32,10 +32,10 @@ describe('lang/isEmpty', function() {
         expect(isEmpty(false)).toEqual(true);
         expect(isEmpty(true)).toEqual(true);
 
-        var fn = function() {};
-        var fn_2 = function() {};
-        fn_2.bar = 'ipsum';
+        const fn = function() {};
+        const fn2 = function() {};
+        fn2.bar = 'ipsum';
         expect(isEmpty(fn)).toEqual(true);
-        expect(isEmpty(fn_2)).toEqual(true);
+        expect(isEmpty(fn2)).toEqual(true);
     });
 });

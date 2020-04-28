@@ -1,4 +1,4 @@
-import isNaN from '../../../src/lang/isNaN';
+import isNaN from '../../../lang/isNaN';
 
 describe('lang/isNaN', function() {
     it("should return true for everything that isn't a number", function() {

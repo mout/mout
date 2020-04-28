@@ -1,7 +1,8 @@
-import inheritPrototype from '../../../src/lang/inheritPrototype';
+import inheritPrototype from '../../../lang/inheritPrototype';
 
 describe('lang/inheritPrototype()', function() {
-    var Foo, Bar;
+    let Foo;
+    let Bar;
 
     beforeEach(function() {
         Foo = function FooCtor(name) {
@@ -21,8 +22,8 @@ describe('lang/inheritPrototype()', function() {
         inheritPrototype(Bar, Foo);
         Bar.prototype.test = true;
 
-        var a = new Foo('ipsum');
-        var b = new Bar('asd');
+        const a = new Foo('ipsum');
+        const b = new Bar('asd');
 
         expect(a.getName()).toEqual('ipsum');
         expect(a.test).toBeUndefined();
@@ -40,7 +41,7 @@ describe('lang/inheritPrototype()', function() {
     });
 
     it('should return the prototype object', function() {
-        var proto = inheritPrototype(Bar, Foo);
+        const proto = inheritPrototype(Bar, Foo);
         expect(proto).toBe(Bar.prototype);
     });
 });

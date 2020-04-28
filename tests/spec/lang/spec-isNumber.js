@@ -1,4 +1,4 @@
-import isNumber from '../../../src/lang/isNumber';
+import isNumber from '../../../lang/isNumber';
 
 describe('lang/isNumber()', function() {
     it('should detect if value is a Number', function() {

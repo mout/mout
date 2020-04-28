@@ -1,4 +1,4 @@
-import isString from '../../../src/lang/isString';
+import isString from '../../../lang/isString';
 
 describe('lang/isString()', function() {
     it('should detect if value is a string', function() {

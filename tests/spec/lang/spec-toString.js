@@ -1,4 +1,4 @@
-import toString from '../../../src/lang/toString';
+import toString from '../../../lang/toString';
 
 describe('lang/toString', function() {
     it('should convert null to empty string', function() {

@@ -1,4 +1,4 @@
-import isInteger from '../../../src/lang/isInteger';
+import isInteger from '../../../lang/isInteger';
 
 describe('lang/isInteger', function() {
     it("should return false if value isn't an integer", function() {

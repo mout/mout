@@ -1,4 +1,4 @@
-import kindOf from '../../../src/lang/kindOf';
+import kindOf from '../../../lang/kindOf';
 
 describe('lang/kindOf()', function() {
     it('should get the kind of value', function() {

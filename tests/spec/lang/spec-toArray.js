@@ -1,10 +1,10 @@
-import toArray from '../../../src/lang/toArray';
+import toArray from '../../../lang/toArray';
 
-var global = this;
+const global = this;
 
 describe('lang/toArray()', function() {
     it('should convert array like objects into array', function() {
-        var obj = {
+        const obj = {
             '0': 'foo',
             '1': 'bar',
             '2': 'dolor',
@@ -15,8 +15,8 @@ describe('lang/toArray()', function() {
     });
 
     it('should convert arguments obj', function() {
-        var result;
-        var fn = function(a, b, c) {
+        let result;
+        const fn = function(a, b, c) {
             result = toArray(arguments);
         };
 
@@ -42,14 +42,12 @@ describe('lang/toArray()', function() {
         expect(toArray(new RegExp('\\w+'))).toEqual([/\w+/]);
 
         expect(toArray(global)).toEqual([global]);
-        expect(toArray({ foo: 'bar', lorem: 123 })).toEqual([
-            { foo: 'bar', lorem: 123 }
-        ]);
+        expect(toArray({ foo: 'bar', lorem: 123 })).toEqual([{ foo: 'bar', lorem: 123 }]);
 
         expect(toArray(true)).toEqual([true]);
         expect(toArray(false)).toEqual([false]);
 
-        var fn = function() {};
+        const fn = function() {};
         expect(toArray(fn)).toEqual([fn]);
     });
 
@@ -61,8 +59,8 @@ describe('lang/toArray()', function() {
 
     it('should convert HTMLCollection to real array - #58', function() {
         if (typeof document === 'undefined') return; // node.js doesn't have a document
-        var els = document.getElementsByTagName('*');
-        var arr = toArray(els);
+        const els = document.getElementsByTagName('*');
+        const arr = toArray(els);
         expect(Object.prototype.toString.call(arr)).toBe('[object Array]');
         expect(arr.length).toBe(els.length);
     });

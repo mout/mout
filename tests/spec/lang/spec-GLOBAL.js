@@ -1,4 +1,4 @@
-import GLOBAL from '../../../src/lang/GLOBAL';
+import GLOBAL from '../../../lang/GLOBAL';
 
 describe('lang/GLOBAL', function() {
     it('should return the global object', function() {

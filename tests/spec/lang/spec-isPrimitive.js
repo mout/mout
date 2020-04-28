@@ -1,4 +1,4 @@
-import isPrimitive from '../../../src/lang/isPrimitive';
+import isPrimitive from '../../../lang/isPrimitive';
 
 describe('lang/isPrimitive', function() {
     it('should return true when primitive value', function() {
