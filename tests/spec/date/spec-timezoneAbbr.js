@@ -1,4 +1,4 @@
-import timezoneAbbr from '../../../src/date/timezoneAbbr';
+import timezoneAbbr from '../../../date/timezoneAbbr';
 
 describe('date/timezoneAbbr', function() {
     it('should return timezone abbreviation or similar data', function() {

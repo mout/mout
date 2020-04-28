@@ -1,7 +1,7 @@
-import startOf from '../../../src/date/startOf';
+import startOf from '../../../date/startOf';
 
 describe('date/startOf', function() {
-    var baseDate;
+    let baseDate;
 
     beforeEach(function() {
         baseDate = new Date(2013, 3, 5, 11, 27, 43, 123);
@@ -28,15 +28,11 @@ describe('date/startOf', function() {
     });
 
     it('should return start of the minute', function() {
-        expect(startOf(baseDate, 'minute')).toEqual(
-            new Date(2013, 3, 5, 11, 27)
-        );
+        expect(startOf(baseDate, 'minute')).toEqual(new Date(2013, 3, 5, 11, 27));
     });
 
     it('should return start of the second', function() {
-        expect(startOf(baseDate, 'second')).toEqual(
-            new Date(2013, 3, 5, 11, 27, 43)
-        );
+        expect(startOf(baseDate, 'second')).toEqual(new Date(2013, 3, 5, 11, 27, 43));
     });
 
     it('should throw error if invalid "period"', function() {

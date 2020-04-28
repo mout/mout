@@ -1,4 +1,4 @@
-import totalDaysInYear from '../../../src/date/totalDaysInYear';
+import totalDaysInYear from '../../../date/totalDaysInYear';
 
 describe('date/totalDaysInYear', function() {
     it('should return total days in year', function() {

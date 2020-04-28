@@ -1,4 +1,4 @@
-import totalDaysInMonth from '../../../src/date/totalDaysInMonth';
+import totalDaysInMonth from '../../../date/totalDaysInMonth';
 
 describe('date/totalDaysInMonth', function() {
     it('should return number of days in the month', function() {

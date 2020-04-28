@@ -1,4 +1,4 @@
-import i18n from '../../../src/date/i18n_';
+import i18n from '../../../date/i18n_';
 
 describe('date/i18n_', function() {
     it('should contain localization info', function() {
@@ -11,8 +11,8 @@ describe('date/i18n_', function() {
     });
 
     it('should allow overriding the global data', function() {
-        var am = i18n.am;
-        var old = i18n;
+        const am = i18n.am;
+        const old = i18n;
         i18n.set({
             am: 'FOO'
         });
