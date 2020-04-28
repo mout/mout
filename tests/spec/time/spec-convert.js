@@ -1,4 +1,4 @@
-import convert from '../../../src/time/convert';
+import convert from '../../../time/convert';
 
 describe('time/convert', function() {
     it('should convert value to millisecond by default', function() {

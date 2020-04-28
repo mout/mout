@@ -1,8 +1,8 @@
-import parseMs from '../../../src/time/parseMs';
+import parseMs from '../../../time/parseMs';
 
 describe('time/parseMs()', function() {
     it('should handle milliseconds to seconds', function() {
-        var time = parseMs(999);
+        let time = parseMs(999);
 
         expect(time.milliseconds).toBe(999);
         expect(time.seconds).toBe(0);
@@ -28,7 +28,7 @@ describe('time/parseMs()', function() {
     });
 
     it('should handle seconds to minutes', function() {
-        var time = parseMs(59999);
+        let time = parseMs(59999);
 
         expect(time.milliseconds).toBe(999);
         expect(time.seconds).toBe(59);
@@ -54,7 +54,7 @@ describe('time/parseMs()', function() {
     });
 
     it('should handle minutes to hours', function() {
-        var time = parseMs(3599999);
+        let time = parseMs(3599999);
 
         expect(time.milliseconds).toBe(999);
         expect(time.seconds).toBe(59);
@@ -80,7 +80,7 @@ describe('time/parseMs()', function() {
     });
 
     it('should handle hours to days', function() {
-        var time = parseMs(86399999);
+        let time = parseMs(86399999);
 
         expect(time.milliseconds).toBe(999);
         expect(time.seconds).toBe(59);

@@ -1,6 +1,6 @@
-// import math from '../../../src/src/math';
+// import math from '../../../src/math';
 
-//     describe('../../../src/math', function(){
+//     describe('../../../math', function(){
 
 //         it('', function(){
 //             expect( math() ).toBe({});

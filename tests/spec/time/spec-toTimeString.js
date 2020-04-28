@@ -1,4 +1,4 @@
-import toTimeString from '../../../src/time/toTimeString';
+import toTimeString from '../../../time/toTimeString';
 
 describe('time/toTimeString()', function() {
     it('should convert to proper units', function() {
