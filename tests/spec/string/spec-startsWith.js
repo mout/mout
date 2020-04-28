@@ -1,4 +1,4 @@
-import startsWith from '../../../src/string/startsWith';
+import startsWith from '../../../string/startsWith';
 
 describe('string/startsWith()', function() {
     it('should return true if string starts with prefix', function() {

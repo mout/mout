@@ -1,4 +1,4 @@
-import lpad from '../../../src/string/lpad';
+import lpad from '../../../string/lpad';
 
 describe('string/lpad()', function() {
     it('should add chars to the left if length is < minLength', function() {

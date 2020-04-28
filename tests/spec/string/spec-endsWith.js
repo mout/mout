@@ -1,4 +1,4 @@
-import endsWith from '../../../src/string/endsWith';
+import endsWith from '../../../string/endsWith';
 
 describe('string/endsWith()', function() {
     it('should return true if string ends with suffix', function() {

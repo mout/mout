@@ -1,11 +1,9 @@
-import replaceAccents from '../../../src/string/replaceAccents';
+import replaceAccents from '../../../string/replaceAccents';
 
 describe('string/replaceAccents()', function() {
     it('should replace all Basic Latin and Latin-1 accented chars with regular ones', function() {
-        var accents =
-            'áÁâÂàÀåÅãÃäÄçÇéÉêÊèÈëËíÍîÎìÌïÏñÑóÓôÔòÒØõÕöÖÐþúÚûÛùÙüÜýÝÿ';
-        var regular =
-            'aAaAaAaAaAaAcCeEeEeEeEiIiIiIiInNoOoOoOOoOoODpuUuUuUuUyYy';
+        const accents = 'áÁâÂàÀåÅãÃäÄçÇéÉêÊèÈëËíÍîÎìÌïÏñÑóÓôÔòÒØõÕöÖÐþúÚûÛùÙüÜýÝÿ';
+        const regular = 'aAaAaAaAaAaAcCeEeEeEeEiIiIiIiInNoOoOoOOoOoODpuUuUuUuUyYy';
         expect(replaceAccents(accents)).toEqual(regular);
     });
 

@@ -1,4 +1,4 @@
-import WHITE_SPACES from '../../../src/string/WHITE_SPACES';
+import WHITE_SPACES from '../../../string/WHITE_SPACES';
 
 describe('string/WHITE_SPACES', function() {
     it('should contain all white space chars', function() {

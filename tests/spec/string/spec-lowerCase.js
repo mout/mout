@@ -1,4 +1,4 @@
-import lowerCase from '../../../src/string/lowerCase';
+import lowerCase from '../../../string/lowerCase';
 
 describe('string/lowerCase()', function() {
     it('should convert string to lower case', function() {

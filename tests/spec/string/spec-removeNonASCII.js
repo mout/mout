@@ -1,11 +1,10 @@
-import removeNonASCII from '../../../src/string/removeNonASCII';
+import removeNonASCII from '../../../string/removeNonASCII';
 
 describe('string/removeNonASCII()', function() {
     it('should remove non-printable chars', function() {
-        var accents =
-            'áÁâÂàÀåÅãÃäÄçÇéÉêÊèÈëËíÍîÎìÌïÏñÑóÓôÔòÒØõÕöÖÐþúÚûÛùÙüÜýÝÿ';
-        var printable = 'lorem ~!@#$%^&*()_+`-={}[]|\\:";\'/?><., ipsum';
-        var str = accents + printable;
+        const accents = 'áÁâÂàÀåÅãÃäÄçÇéÉêÊèÈëËíÍîÎìÌïÏñÑóÓôÔòÒØõÕöÖÐþúÚûÛùÙüÜýÝÿ';
+        const printable = 'lorem ~!@#$%^&*()_+`-={}[]|\\:";\'/?><., ipsum';
+        const str = accents + printable;
 
         expect(removeNonASCII(str)).toEqual(printable);
     });
