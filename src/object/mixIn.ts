@@ -8,28 +8,20 @@ import forOwn from './forOwn';
  * @param {...object} objects    Objects to be combined (0...n objects).
  * @return {object} Target Object.
  */
-function mixIn<T, M>(
-    target: Record<string, T>,
-    ...objects: Array<Record<string, T>>
-): Record<string, T> {
+function mixIn(target, objects) {
     let i = 0;
-    const n = objects.length;
-    let obj: Record<string, T>;
+    const n = arguments.length;
+    let obj;
     while (++i < n) {
-        obj = objects[i];
+        obj = arguments[i];
         if (obj != null) {
-            for (const key in obj) {
-                if (Object.prototype.hasOwnProperty.call(obj, key)) {
-                    target[key] = obj[key];
-                }
-            }
             forOwn(obj, copyProp, target);
         }
     }
     return target;
 }
 
-function copyProp(this: Record<string, any>, val: any, key: string) {
+function copyProp(val, key) {
     this[key] = val;
 }
 

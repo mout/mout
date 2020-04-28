@@ -44,7 +44,7 @@ function getUnit(unitName: unit) {
         case 'week':
             return 604800000;
         default:
-            throw new Error(`${unitName} is not a valid unit`);
+            throw new Error(`"${unitName}" is not a valid unit`);
     }
 }
 

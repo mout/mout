@@ -3,17 +3,14 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Return maximum value inside array
  */
-function max<T>(arr: T[], iterator?: Function | string, thisObj?: any): T | undefined {
+function max(arr, iterator, thisObj) {
     if (arr == null || !arr.length) {
-        return undefined;
+        return Infinity;
     } else if (arr.length && !iterator) {
-        /* eslint-disable */
-        // TODO: This requires stricter typing and a spread operator.
-        // @ts-ignore
-        return Math.max(...arr);
-        /* eslint-enable */
+        // eslint-disable-next-line prefer-spread
+        return Math.max.apply(Math, arr);
     } else {
-        iterator = makeIterator(iterator!, thisObj);
+        iterator = makeIterator(iterator, thisObj);
         let result;
         let compare = -Infinity;
         let value;

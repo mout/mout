@@ -44,7 +44,7 @@ function expandCombinations(date, token, l10n) {
 }
 
 function convertToken(date, token, l10n) {
-    const day = date.getDay();
+    let day;
     switch (token) {
         case 'a':
             return l10n.days_abbr[date.getDay()];
@@ -88,6 +88,7 @@ function convertToken(date, token, l10n) {
         case 't':
             return '\t';
         case 'u':
+            day = date.getDay();
             return day === 0 ? 7 : day;
         case 'U':
             return pad(weekOfTheYear(date), 2);
