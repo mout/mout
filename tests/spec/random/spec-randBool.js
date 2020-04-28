@@ -1,4 +1,4 @@
-import randBool from '../../../src/random/randBool';
+import randBool from '../../../random/randBool';
 import mockRandom from './helper-mockRandom';
 
 describe('random/randBool', function() {

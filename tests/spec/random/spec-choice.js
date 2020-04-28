@@ -1,4 +1,4 @@
-import choice from '../../../src/random/choice';
+import choice from '../../../random/choice';
 import mockRandom from './helper-mockRandom';
 
 describe('random/choice()', function() {
@@ -11,9 +11,9 @@ describe('random/choice()', function() {
     });
 
     it('should pick a random argument', function() {
-        var choices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-        var a = choice.apply(null, choices),
-            b = choice.apply(null, choices);
+        const choices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const a = choice(...choices);
+        const b = choice(...choices);
 
         expect(choices).toContain(a);
         expect(choices).toContain(b);
@@ -21,10 +21,10 @@ describe('random/choice()', function() {
     });
 
     it('should work with array', function() {
-        var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-        var a = choice(arr),
-            b = choice(arr);
+        const a = choice(arr);
+        const b = choice(arr);
 
         expect(arr).toContain(a);
         expect(arr).toContain(b);
