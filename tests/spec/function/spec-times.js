@@ -1,9 +1,9 @@
-import times from '../../../src/function/times';
+import times from '../../../function/times';
 
 describe('function/times', function() {
     it('should iterate a given amount of times passing the index', function() {
-        var amount = 5;
-        var count = 0;
+        const amount = 5;
+        let count = 0;
 
         times(amount, function(i) {
             count += i;
@@ -13,8 +13,8 @@ describe('function/times', function() {
     });
 
     it('should cancel the iteration if returned false', function() {
-        var amount = 5;
-        var count = 0;
+        const amount = 5;
+        let count = 0;
 
         times(amount, function(i) {
             count++;
@@ -25,8 +25,8 @@ describe('function/times', function() {
     });
 
     it('should execute callback in context', function() {
-        var amount = 5;
-        var object = {
+        const amount = 5;
+        const object = {
             count: 0
         };
 

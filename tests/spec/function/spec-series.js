@@ -1,16 +1,16 @@
-import series from '../../../src/function/series';
+import series from '../../../function/series';
 
 describe('function/series()', function() {
     it('should execute a list of functions in series', function() {
-        var arr = [4, 2, 1, 5];
+        const arr = [4, 2, 1, 5];
 
-        var a = [];
-        var b = [];
-        var c = [];
+        const a = [];
+        const b = [];
+        const c = [];
 
         function forEach(arr, fn) {
-            var n = arr.length;
-            var i = 0;
+            const n = arr.length;
+            let i = 0;
             while (i < n) {
                 fn(arr[i]);
                 i += 1;

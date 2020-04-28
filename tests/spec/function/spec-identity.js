@@ -1,4 +1,4 @@
-import identity from '../../../src/function/identity';
+import identity from '../../../function/identity';
 
 describe('function/identity', function() {
     it('should return first argument provided to it', function() {
@@ -6,7 +6,7 @@ describe('function/identity', function() {
         expect(identity(3)).toBe(3);
         expect(identity(null)).toBe(null);
         expect(identity(void 0)).toBe(void 0);
-        var obj = {};
+        const obj = {};
         expect(identity(obj)).toBe(obj);
     });
 });

@@ -1,4 +1,4 @@
-import awaitDelay from '../../../src/function/awaitDelay';
+import awaitDelay from '../../../function/awaitDelay';
 import mockNow from '../time/helper-mockNow';
 
 describe('function/awaitDelay', function() {
@@ -13,11 +13,11 @@ describe('function/awaitDelay', function() {
     });
 
     it('should wait for delay', function() {
-        var count = 0;
-        var fn = function() {
+        let count = 0;
+        const fn = function() {
             count++;
         };
-        var callback = awaitDelay(fn, 100);
+        const callback = awaitDelay(fn, 100);
 
         callback();
         expect(count).toBe(0);
@@ -27,11 +27,11 @@ describe('function/awaitDelay', function() {
     });
 
     it('should wait for callback and always be async', function() {
-        var count = 0;
-        var fn = function() {
+        let count = 0;
+        const fn = function() {
             count++;
         };
-        var callback = awaitDelay(fn, 100);
+        const callback = awaitDelay(fn, 100);
 
         jasmine.clock.tick(100);
         expect(count).toBe(0);
@@ -45,11 +45,11 @@ describe('function/awaitDelay', function() {
     });
 
     it('should not be called before delay even if called multiple times', function() {
-        var count = 0;
-        var fn = function() {
+        let count = 0;
+        const fn = function() {
             count++;
         };
-        var callback = awaitDelay(fn, 30);
+        const callback = awaitDelay(fn, 30);
 
         callback();
         callback();
@@ -60,11 +60,11 @@ describe('function/awaitDelay', function() {
     });
 
     it('should carry arguments', function() {
-        var count = 0;
-        var fn = function(a) {
+        let count = 0;
+        const fn = function(a) {
             count = a;
         };
-        var callback = awaitDelay(fn, 100);
+        const callback = awaitDelay(fn, 100);
 
         jasmine.clock.tick(100);
 
@@ -75,11 +75,11 @@ describe('function/awaitDelay', function() {
     });
 
     it('should carry arguments from premature call', function() {
-        var count = 0;
-        var fn = function(a) {
+        let count = 0;
+        const fn = function(a) {
             count = a;
         };
-        var callback = awaitDelay(fn, 100);
+        const callback = awaitDelay(fn, 100);
 
         callback(2);
         expect(count).toBe(0);
@@ -89,15 +89,15 @@ describe('function/awaitDelay', function() {
     });
 
     it('should allow changing the context', function() {
-        var val;
-        var ctx;
-        var foo = { bar: 'baz' };
+        let val;
+        let ctx;
+        const foo = { bar: 'baz' };
 
-        var fn = function(a) {
+        const fn = function(a) {
             val = a;
             ctx = this;
         };
-        var callback = awaitDelay(fn, 100);
+        const callback = awaitDelay(fn, 100);
 
         callback.call(foo, 2);
         expect(val).toBeUndefined();
@@ -109,13 +109,13 @@ describe('function/awaitDelay', function() {
     });
 
     it('should allow using `clearTimeout` to cancel the delayed call', function() {
-        var count = 0;
-        var fn = function() {
+        let count = 0;
+        const fn = function() {
             count++;
         };
-        var callback = awaitDelay(fn, 100);
+        const callback = awaitDelay(fn, 100);
 
-        var timeout = callback();
+        let timeout = callback();
         expect(count).toBe(0);
         jasmine.clock.tick(50);
         clearTimeout(timeout);
