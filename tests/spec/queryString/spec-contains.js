@@ -1,9 +1,9 @@
-import contains from '../../../src/queryString/contains';
+import contains from '../../../queryString/contains';
 
 describe('queryString/contains()', function() {
     it('should check if param exists', function() {
-        var query = '?foo=bar&a=123&b=false&c=null';
-        var url = 'http://example.com/?foo=bar&a=123&b=false&c=null';
+        const query = '?foo=bar&a=123&b=false&c=null';
+        const url = 'http://example.com/?foo=bar&a=123&b=false&c=null';
 
         expect(contains(query, 'foo')).toEqual(true);
         expect(contains(url, 'foo')).toEqual(true);
