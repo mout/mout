@@ -1,4 +1,4 @@
-import clamp from '../../../src/math/clamp';
+import clamp from '../../../math/clamp';
 
 describe('math/clamp()', function() {
     it('should return max if val bigger than max', function() {
@@ -34,8 +34,6 @@ describe('math/clamp()', function() {
         expect(clamp(-6, -10, -2)).toEqual(-6);
 
         expect(clamp(10, -Number.MAX_VALUE, Number.MAX_VALUE)).toEqual(10);
-        expect(clamp(1234567890, -Number.MAX_VALUE, Number.MAX_VALUE)).toEqual(
-            1234567890
-        );
+        expect(clamp(1234567890, -Number.MAX_VALUE, Number.MAX_VALUE)).toEqual(1234567890);
     });
 });

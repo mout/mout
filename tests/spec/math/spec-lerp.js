@@ -1,4 +1,4 @@
-import lerp from '../../../src/math/lerp';
+import lerp from '../../../math/lerp';
 
 describe('math/lerp()', function() {
     it('interpolate values', function() {

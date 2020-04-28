@@ -1,4 +1,4 @@
-import countSteps from '../../../src/math/countSteps';
+import countSteps from '../../../math/countSteps';
 
 describe('math/countSteps()', function() {
     it('count number of full steps', function() {

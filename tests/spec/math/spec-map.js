@@ -1,4 +1,4 @@
-import map from '../../../src/math/map';
+import map from '../../../math/map';
 
 describe('math/map()', function() {
     it('map a number from one scale to another', function() {

@@ -1,4 +1,4 @@
-import ceil from '../../../src/math/ceil';
+import ceil from '../../../math/ceil';
 
 describe('math/ceil', function() {
     it('should round value up', function() {

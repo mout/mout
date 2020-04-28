@@ -1,4 +1,4 @@
-import overflow from '../../../src/math/overflow';
+import overflow from '../../../math/overflow';
 
 describe('math/overflow', function() {
     it('should return number if within bounds', function() {
