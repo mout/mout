@@ -1,8 +1,8 @@
-import namespace from '../../../src/object/namespace';
+import namespace from '../../../object/namespace';
 
 describe('object/namespace()', function() {
     it('should create nested properties if not existent and return the created object', function() {
-        var o = {};
+        const o = {};
         namespace(o, 'foo.bar');
         expect(o.foo).toEqual({ bar: {} });
         expect(o.foo.bar).toEqual({});
@@ -13,13 +13,13 @@ describe('object/namespace()', function() {
     });
 
     it('should reuse existing objects', function() {
-        var o = {
+        const o = {
             foo: {
                 lorem: 'ipsum'
             }
         };
 
-        var f = o.foo;
+        const f = o.foo;
 
         expect(namespace(o, 'foo.bar')).toEqual({});
         expect(o.foo).toEqual(f);
@@ -27,14 +27,14 @@ describe('object/namespace()', function() {
     });
 
     it('should return original object if no path', function() {
-        var obj = {};
+        const obj = {};
         expect(namespace(obj)).toEqual(obj);
         expect(namespace(obj, '')).toEqual(obj);
         expect(namespace(obj, null)).toEqual(obj);
     });
 
     it("shouldn't overwrite existing object", function() {
-        var obj = {
+        const obj = {
             foo: {
                 bar: {
                     val: 123
@@ -42,7 +42,7 @@ describe('object/namespace()', function() {
             }
         };
 
-        var foo = obj.foo;
+        const foo = obj.foo;
 
         expect(namespace(obj, 'foo.bar')).toEqual(foo.bar);
     });

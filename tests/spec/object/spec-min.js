@@ -1,4 +1,4 @@
-import min from '../../../src/object/min';
+import min from '../../../object/min';
 
 describe('object/min', function() {
     it('should return minimum value', function() {
@@ -26,7 +26,7 @@ describe('object/min', function() {
     });
 
     it('should allow string shorthand syntax', function() {
-        var obj = {
+        const obj = {
             a: { foo: 'bar', lorem: 'ipsum', id: 1 },
             b: { foo: 'bar', lorem: 'ipsum', id: 2 },
             c: { foo: 'bar', lorem: 'ipsum', id: 0 }

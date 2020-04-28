@@ -1,4 +1,4 @@
-import matches from '../../../src/object/matches';
+import matches from '../../../object/matches';
 
 describe('object/matches', function() {
     it('should check if target contains all given properties', function() {

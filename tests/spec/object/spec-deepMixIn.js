@@ -1,7 +1,7 @@
-import deepMixIn from '../../../src/object/deepMixIn';
+import deepMixIn from '../../../object/deepMixIn';
 describe('object/deepMixIn', function() {
     it('should mix properties into target', function() {
-        var target = {
+        const target = {
             foo: true
         };
 
@@ -14,7 +14,7 @@ describe('object/deepMixIn', function() {
     });
 
     it('should mix in multiple objects', function() {
-        var target = {};
+        const target = {};
 
         deepMixIn(target, { foo: true }, { bar: true });
 
@@ -25,15 +25,15 @@ describe('object/deepMixIn', function() {
     });
 
     it('should return target object', function() {
-        var target = {};
+        const target = {};
 
-        var result = deepMixIn(target, { foo: true });
+        const result = deepMixIn(target, { foo: true });
 
         expect(result).toBe(target);
     });
 
     it('should mix in child objects', function() {
-        var target = {
+        const target = {
             foo: { bar: 'a' }
         };
 
@@ -43,8 +43,8 @@ describe('object/deepMixIn', function() {
     });
 
     it('should keep original child objects', function() {
-        var foo = { foo: true };
-        var target = { foo: foo };
+        const foo = { foo: true };
+        const target = { foo: foo };
 
         deepMixIn(target, { foo: { bar: true } });
 
@@ -54,8 +54,8 @@ describe('object/deepMixIn', function() {
     });
 
     it('should keep added child objects', function() {
-        var foo = { foo: true };
-        var target = {};
+        const foo = { foo: true };
+        const target = {};
 
         deepMixIn(target, { foo: foo });
 
@@ -63,7 +63,7 @@ describe('object/deepMixIn', function() {
     });
 
     it('should overwrite existing values in target if value is not an object', function() {
-        var target = {
+        const target = {
             foo: { a: true },
             bar: [1, 2, 3]
         };
@@ -77,13 +77,13 @@ describe('object/deepMixIn', function() {
 
     it('should copy values that are not plain objects by reference', function() {
         function Custom() {}
-        var source = {
+        const source = {
             custom: new Custom(),
             items: [1, 2, 3],
             regexp: /test/
         };
 
-        var target = {
+        const target = {
             items: [5]
         };
 

@@ -1,4 +1,4 @@
-import functions from '../../../src/object/functions';
+import functions from '../../../object/functions';
 
 describe('object/functions', function() {
     it('should return a sorted list of all enumerable properties that have function values', function() {
@@ -13,8 +13,6 @@ describe('object/functions', function() {
     });
 
     it('should return an empty array if no functions found', function() {
-        expect(
-            functions({ a: 123, b: '123', c: [1], d: { e: '123' } })
-        ).toEqual([]);
+        expect(functions({ a: 123, b: '123', c: [1], d: { e: '123' } })).toEqual([]);
     });
 });

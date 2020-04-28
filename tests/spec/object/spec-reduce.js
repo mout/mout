@@ -1,10 +1,10 @@
-import reduce from '../../../src/object/reduce';
+import reduce from '../../../object/reduce';
 
 describe('object/reduce', function() {
     it('should reduce object into a single value', function() {
-        var obj = { a: 1, b: 2, c: 3, d: 4 };
-        var compare1 = [];
-        var compare2 = [];
+        const obj = { a: 1, b: 2, c: 3, d: 4 };
+        const compare1 = [];
+        const compare2 = [];
 
         function sum(prev, cur, key, list) {
             compare1.push(prev);
@@ -24,7 +24,7 @@ describe('object/reduce', function() {
     });
 
     it('should allow init value', function() {
-        var obj = { a: 1, b: 2, c: 3, d: 4 };
+        const obj = { a: 1, b: 2, c: 3, d: 4 };
 
         function sum(prev, cur, key, list) {
             return prev + cur;
@@ -56,10 +56,10 @@ describe('object/reduce', function() {
 
     it('should allow "undefined" as initial value', function() {
         // thx @jdalton for catching this one see #gh-57
-        var obj = { a: 1, b: 2, c: 3 };
-        var compare = [];
+        const obj = { a: 1, b: 2, c: 3 };
+        const compare = [];
 
-        var r = reduce(
+        const r = reduce(
             obj,
             function(prev, cur, key, list) {
                 compare.push(prev);

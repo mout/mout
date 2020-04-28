@@ -1,8 +1,8 @@
-import fillIn from '../../../src/object/fillIn';
+import fillIn from '../../../object/fillIn';
 
 describe('object/fillIn', function() {
     it('should copy missing properties', function() {
-        var a = {
+        const a = {
             foo: 'bar',
             lorem: 123,
             b: {
@@ -10,7 +10,7 @@ describe('object/fillIn', function() {
             }
         };
 
-        var obj = fillIn({ lorem: 'ipsum' }, a);
+        const obj = fillIn({ lorem: 'ipsum' }, a);
 
         expect(obj.foo).toEqual('bar');
         expect(obj.lorem).toEqual('ipsum');
@@ -18,11 +18,7 @@ describe('object/fillIn', function() {
     });
 
     it('should allow copying properties from multiple objects', function() {
-        var obj = fillIn(
-            { lorem: 'ipsum' },
-            { foo: 'bar', lorem: 'dolor' },
-            { num: 123 }
-        );
+        const obj = fillIn({ lorem: 'ipsum' }, { foo: 'bar', lorem: 'dolor' }, { num: 123 });
 
         expect(obj.foo).toEqual('bar');
         expect(obj.lorem).toEqual('ipsum');
@@ -30,8 +26,8 @@ describe('object/fillIn', function() {
     });
 
     it('should not fill in nested arrays', function() {
-        var base = { arr: [1, 2], b: 'foo' };
-        var obj = fillIn({ arr: [null, void 0, 'c'] }, base);
+        const base = { arr: [1, 2], b: 'foo' };
+        const obj = fillIn({ arr: [null, void 0, 'c'] }, base);
         expect(obj).toEqual({
             arr: [null, void 0, 'c'],
             b: 'foo'

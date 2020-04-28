@@ -1,11 +1,11 @@
-import equals from '../../../src/object/equals';
+import equals from '../../../object/equals';
 
 describe('object/equals', function() {
     it('should return equal when objects have same properties and values', function() {
         expect(equals({ test: true }, { test: true })).toBe(true);
 
-        var a = { foo: 'foo-value', bar: 'bar-value' };
-        var b = { foo: 'foo-value', bar: 'bar-value' };
+        const a = { foo: 'foo-value', bar: 'bar-value' };
+        const b = { foo: 'foo-value', bar: 'bar-value' };
         expect(equals(a, b)).toBe(true);
     });
 
@@ -22,15 +22,15 @@ describe('object/equals', function() {
     });
 
     it('should require objects to have same properties', function() {
-        var a = { test: true };
-        var b = { test: true, special: true };
+        const a = { test: true };
+        const b = { test: true, special: true };
         expect(equals(a, b)).toBe(false);
         expect(equals(b, a)).toBe(false);
     });
 
     it('should require objects to have same values', function() {
-        var a = { test: true, special: true };
-        var b = { test: true, special: false };
+        const a = { test: true, special: true };
+        const b = { test: true, special: false };
         expect(equals(a, b)).toBe(false);
     });
 
@@ -47,8 +47,8 @@ describe('object/equals', function() {
         function Test() {}
         Test.prototype.test = true;
 
-        var a = new Test();
-        var b = new Test();
+        const a = new Test();
+        const b = new Test();
         a.test = true;
         expect(equals(a, b)).toBe(false);
 
@@ -66,14 +66,14 @@ describe('object/equals', function() {
     });
 
     it('should ignore order of keys', function() {
-        var a = { a: 1, b: 2 };
-        var b = { b: 2, a: 1 };
+        const a = { a: 1, b: 2 };
+        const b = { b: 2, a: 1 };
         expect(equals(a, b)).toBe(true);
     });
 
     it('should allow custom compare function', function() {
-        var a = { a: 1, b: 2 };
-        var b = { a: '1', b: '02' };
+        const a = { a: 1, b: 2 };
+        const b = { a: '1', b: '02' };
 
         function numericCompare(a, b) {
             return +a === +b;

@@ -1,8 +1,8 @@
-import hasOwn from '../../../src/object/hasOwn';
+import hasOwn from '../../../object/hasOwn';
 
 describe('object/hasOwn()', function() {
     it('should check if object hasOwnProperty', function() {
-        var obj = {
+        const obj = {
             a: 1,
             b: 'foo'
         };
@@ -19,7 +19,7 @@ describe('object/hasOwn()', function() {
     });
 
     it('should work even if overwrite prototype properties, including hasOwnProperty', function() {
-        var obj = {
+        const obj = {
             a: 1,
             b: 'foo',
             hasOwnProperty: 'yes',

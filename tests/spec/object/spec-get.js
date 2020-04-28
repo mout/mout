@@ -1,8 +1,8 @@
-import get from '../../../src/object/get';
+import get from '../../../object/get';
 
 describe('object/get()', function() {
     it('should get nested property', function() {
-        var foo = {
+        const foo = {
             bar: {
                 lorem: {
                     ipsum: 'dolor'
@@ -13,7 +13,7 @@ describe('object/get()', function() {
     });
 
     it('should get nested property when encountering non-primitive', function() {
-        var foo = {
+        const foo = {
             bar: {
                 lorem: function() {}
             }
@@ -25,7 +25,7 @@ describe('object/get()', function() {
     });
 
     it('should get nested property when encountering primitive', function() {
-        var foo = {
+        const foo = {
             bar: {
                 lorem: 'ipsum'
             }
@@ -35,35 +35,35 @@ describe('object/get()', function() {
     });
 
     it('should return undefined if non existent', function() {
-        var foo = {
+        const foo = {
             bar: {
                 lorem: 'ipsum'
             }
         };
-        var undef;
+        let undef;
         expect(get(foo, 'bar.dolor')).toBe(undef);
     });
 
     it('should return undefined when encountering null', function() {
-        var foo = {
+        const foo = {
             bar: null
         };
 
-        var undef;
+        let undef;
         expect(get(foo, 'foo.bar.baz')).toBe(undef);
     });
 
     it('should return undefined for undefined input objects', function() {
-        var foo = undefined;
+        const foo = undefined;
 
-        var undef;
+        let undef;
         expect(get(foo, 'bar.baz')).toBe(undef);
     });
 
     it('should return undefined for null input objects', function() {
-        var foo = null;
+        const foo = null;
 
-        var undef;
+        let undef;
         expect(get(foo, 'bar.baz')).toBe(undef);
     });
 });
