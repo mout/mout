@@ -17,14 +17,31 @@ module.exports = {
             }
         },
         {
-            files: ["_build/*.js", "build.js"],
+            files: ["tests/spec/**/*.js"],
+            parserOptions: {
+                ecmaFeatures: {
+                    modules: true
+                }
+            },
+            parser: "babel-eslint",
+            env: {
+                jasmine: true,
+                browser: true
+            },
+            rules: {
+                "no-new-wrappers": ["off"],
+                "no-new-object": ["off"],
+            }
+        },
+        {
+            files: ["_build/*.js", "build.js", "tests/runner.js"],
             parserOptions: {
                 ecmaVersion:  2018
             },
             env: {
                 node: true
             }
-        }
+        },
     ],
     extends: ["eslint:recommended", "google", "prettier"],
     rules: {
@@ -40,6 +57,6 @@ module.exports = {
         "require-jsdoc": ["off"],
         "no-useless-escape": ["off"],
         "prefer-rest-params": ["off"],
-        "no-invalid-this": ["off"]
+        "no-invalid-this": ["off"],
     }
 }
