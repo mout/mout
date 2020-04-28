@@ -1,10 +1,10 @@
-import lastIndexOf from '../../../src/array/lastIndexOf';
+import lastIndexOf from '../../../array/lastIndexOf';
 
 describe('array/lastIndexOf()', function() {
-    var lastIdx = lastIndexOf;
+    const lastIdx = lastIndexOf;
 
     it('should work in regular arrays', function() {
-        var arr = [1, 'a', 2, 'b'];
+        const arr = [1, 'a', 2, 'b'];
 
         expect(lastIdx(arr, 1)).toEqual(0);
         expect(lastIdx(arr, 'a')).toEqual(1);
@@ -15,7 +15,7 @@ describe('array/lastIndexOf()', function() {
     });
 
     it('should iterate over sparse items. see #64', function() {
-        var arr = [];
+        const arr = [];
         arr[1] = 1;
         arr[3] = 'a';
         arr[4] = undefined; // it's a trap!
@@ -35,7 +35,7 @@ describe('array/lastIndexOf()', function() {
     });
 
     it('should handle fromIndex', function() {
-        var arr = [1, 'a', 2, 'b'];
+        const arr = [1, 'a', 2, 'b'];
 
         expect(lastIdx(arr, 1, 2)).toEqual(0);
         expect(lastIdx(arr, 'a', -4)).toEqual(-1);
@@ -46,7 +46,7 @@ describe('array/lastIndexOf()', function() {
     });
 
     it('should handle fromIndex in sparse arrays', function() {
-        var arr = [];
+        const arr = [];
         arr[1] = 1;
         arr[3] = 'a';
         arr[6] = 2;
@@ -61,7 +61,7 @@ describe('array/lastIndexOf()', function() {
     });
 
     it('should handle negative fromIndex', function() {
-        var arr = [1, 'a', 2, 'b'];
+        const arr = [1, 'a', 2, 'b'];
 
         expect(lastIdx(arr, 1, -2)).toEqual(0);
         expect(lastIdx(arr, 'a', -2)).toEqual(1);
@@ -74,7 +74,7 @@ describe('array/lastIndexOf()', function() {
     });
 
     it('should handle fromIndex greater than length', function() {
-        var arr = [1, 'a', 2, 'b'];
+        const arr = [1, 'a', 2, 'b'];
 
         expect(lastIdx(arr, 1, 15)).toEqual(0);
         expect(lastIdx(arr, 'a', 15)).toEqual(1);

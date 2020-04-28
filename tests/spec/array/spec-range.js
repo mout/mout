@@ -1,4 +1,4 @@
-import range from '../../../src/array/range';
+import range from '../../../array/range';
 
 describe('array/range()', function() {
     it('should return an array with range steps', function() {

@@ -1,18 +1,18 @@
-import invoke from '../../../src/array/invoke';
+import invoke from '../../../array/invoke';
 
 describe('array/invoke', function() {
     it('should call methods on each item', function() {
-        var items = [
+        const items = [
             [3, 2, 1],
             [9, 5, 2]
         ];
-        invoke(items, 'sort'); //sort is done in place
+        invoke(items, 'sort'); // sort is done in place
         expect(items[0]).toEqual([1, 2, 3]);
         expect(items[1]).toEqual([2, 5, 9]);
     });
 
     it('allow passing custom args', function() {
-        var items = [
+        const items = [
             {
                 count: 0,
                 add: function(a, b) {
@@ -32,7 +32,7 @@ describe('array/invoke', function() {
     });
 
     it('should return source array', function() {
-        var arr = [
+        const arr = [
             [3, 2, 1],
             [4, 2, 8]
         ];

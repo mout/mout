@@ -1,4 +1,4 @@
-import equals from '../../../src/array/equals';
+import equals from '../../../array/equals';
 
 describe('array/equals', function() {
     it('should check if array contains same elements', function() {
@@ -13,9 +13,9 @@ describe('array/equals', function() {
     });
 
     it('should allow custom compare functions', function() {
-        var a = [1, 'bar', {}];
-        var b = ['1', 'bar', {}];
-        var compare = function(a, b) {
+        const a = [1, 'bar', {}];
+        const b = ['1', 'bar', {}];
+        const compare = function(a, b) {
             return String(a) === String(b);
         };
         expect(equals(a, b, compare)).toBe(true);

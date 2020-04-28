@@ -1,13 +1,13 @@
-import toLookup from '../../../src/array/toLookup';
+import toLookup from '../../../array/toLookup';
 
 describe('array/toLookup()', function() {
     it('should create an object with the key specified as a string', function() {
-        var arr = [
+        const arr = [
             { name: 'a', thing: 1 },
             { name: 'b', thing: 2 }
         ];
 
-        var result = toLookup(arr, 'name');
+        const result = toLookup(arr, 'name');
         expect(result).toEqual({
             a: { name: 'a', thing: 1 },
             b: { name: 'b', thing: 2 }
@@ -15,10 +15,9 @@ describe('array/toLookup()', function() {
     });
 
     it('should create an object with the key specified as a function', function() {
-        var arr = [{ name: 'a', thing: 1 }, null],
-            result;
+        const arr = [{ name: 'a', thing: 1 }, null];
 
-        result = toLookup(arr, function(v) {
+        const result = toLookup(arr, function(v) {
             if (v === null) {
                 return 'null';
             } else {

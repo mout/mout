@@ -1,10 +1,10 @@
-import reduce from '../../../src/array/reduce';
+import reduce from '../../../array/reduce';
 
 describe('array/reduce()', function() {
     it('should reduce array into a single value', function() {
-        var arr = [1, 2, 3, 4];
-        var compare1 = [];
-        var compare2 = [];
+        const arr = [1, 2, 3, 4];
+        const compare1 = [];
+        const compare2 = [];
 
         function sum(prev, cur, idx, arr) {
             compare1.push(prev);
@@ -24,7 +24,7 @@ describe('array/reduce()', function() {
     });
 
     it('should allow init value', function() {
-        var arr = [1, 2, 3, 4];
+        const arr = [1, 2, 3, 4];
 
         function sum(prev, cur, idx, arr) {
             return prev + cur;
@@ -39,7 +39,7 @@ describe('array/reduce()', function() {
     });
 
     it('should pass proper params to callback', function() {
-        var base = [1, 2, 3, 4];
+        const base = [1, 2, 3, 4];
 
         function foo(prev, cur, idx, arr) {
             expect(arr[idx - 1]).toBe(prev);
@@ -60,7 +60,7 @@ describe('array/reduce()', function() {
     });
 
     it('should throw error if null/undefined', function() {
-        var testFunc = function() {};
+        const testFunc = function() {};
 
         expect(function() {
             reduce(null, testFunc);
@@ -78,7 +78,7 @@ describe('array/reduce()', function() {
     });
 
     it('should work on null/undefined array if initVal provided', function() {
-        var testFunc = function() {};
+        const testFunc = function() {};
 
         expect(reduce(null, testFunc, 10)).toBe(10);
         expect(reduce(undefined, testFunc, 10)).toBe(10);
@@ -86,12 +86,12 @@ describe('array/reduce()', function() {
 
     it('should loop over sparse items. see #64', function() {
         function specialSum(prev, cur, i, arr) {
-            var a = prev == null ? 1 : prev;
-            var b = cur == null ? 1 : cur;
+            const a = prev == null ? 1 : prev;
+            const b = cur == null ? 1 : cur;
             return a + b;
         }
 
-        var base = [1, 5];
+        const base = [1, 5];
         base[7] = 4;
         base[10] = undefined;
 
@@ -105,10 +105,10 @@ describe('array/reduce()', function() {
 
     it('should allow "undefined" as initial value', function() {
         // thx @jdalton for catching this one see #gh-57
-        var base = [1, 2, 3];
-        var compare = [];
+        const base = [1, 2, 3];
+        const compare = [];
 
-        var r = reduce(
+        const r = reduce(
             base,
             function(prev, cur, i, arr) {
                 compare.push(prev);

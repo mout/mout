@@ -1,18 +1,18 @@
-import findIndex from '../../../src/array/findIndex';
+import findIndex from '../../../array/findIndex';
 
 describe('array/findIndex', function() {
     it('should return index of first match', function() {
-        var items = [1, { a: 1 }, 1, 'foo', 'bar', { a: 1 }];
+        const items = [1, { a: 1 }, 1, 'foo', 'bar', { a: 1 }];
 
-        var findOne = function(val) {
-                return val === 1;
-            },
-            isString = function(val) {
-                return typeof val === 'string';
-            },
-            findObj = function(val) {
-                return val.a === 1;
-            };
+        const findOne = function(val) {
+            return val === 1;
+        };
+        const isString = function(val) {
+            return typeof val === 'string';
+        };
+        const findObj = function(val) {
+            return val.a === 1;
+        };
 
         expect(findIndex(items, findOne)).toEqual(0);
         expect(findIndex(items, isString)).toEqual(3);
@@ -20,20 +20,20 @@ describe('array/findIndex', function() {
     });
 
     it('should support object shortcut syntax', function() {
-        var items = [1, { a: 1 }, 1, 'foo', 'bar', { a: 1 }];
+        const items = [1, { a: 1 }, 1, 'foo', 'bar', { a: 1 }];
 
         expect(findIndex(items, { a: 1 })).toEqual(1);
     });
 
     it('should support string shortcut syntax', function() {
-        var items = [1, { a: 1 }, 1, 'foo', 'bar', { a: 1 }];
+        const items = [1, { a: 1 }, 1, 'foo', 'bar', { a: 1 }];
 
         expect(findIndex(items, 'a')).toEqual(1);
     });
 
     it('should return -1 when not found', function() {
-        var items = [1, { a: 1 }, 1, 'foo', 'bar', { a: 1 }];
-        var findTwo = function(val) {
+        const items = [1, { a: 1 }, 1, 'foo', 'bar', { a: 1 }];
+        const findTwo = function(val) {
             return val === 2;
         };
 
@@ -41,7 +41,7 @@ describe('array/findIndex', function() {
     });
 
     it('should return -1 when array is null/undefined', function() {
-        var testFunc = function() {
+        const testFunc = function() {
             return true;
         };
 

@@ -1,9 +1,9 @@
-import map from '../../../src/array/map';
+import map from '../../../array/map';
 
 describe('array/map()', function() {
     it('should return a new array with modified items', function() {
-        var base = [1, 2, 3, 4, 5];
-        var r = map(base, function(val, i) {
+        const base = [1, 2, 3, 4, 5];
+        const r = map(base, function(val, i) {
             return val + i;
         });
 
@@ -16,8 +16,8 @@ describe('array/map()', function() {
             return 1;
         }
 
-        var base = new Array(3);
-        var r = map(base, toOne);
+        const base = new Array(3);
+        let r = map(base, toOne);
 
         // IMPORTANT
         // ---------
@@ -31,7 +31,7 @@ describe('array/map()', function() {
     });
 
     it('should return empty array if target is null/undefined', function() {
-        var testFunc = function() {
+        const testFunc = function() {
             return {};
         };
 
@@ -40,12 +40,12 @@ describe('array/map()', function() {
     });
 
     it('should allow shorthand string syntax (same as "pluck")', function() {
-        var arr = [{ a: 1 }, { b: 1 }, { a: 3, c: 3 }];
+        const arr = [{ a: 1 }, { b: 1 }, { a: 3, c: 3 }];
         expect(map(arr, 'a')).toEqual([1, undefined, 3]);
     });
 
     it('should return same values if no callback (identity)', function() {
-        var arr = [1, 2, 3];
+        const arr = [1, 2, 3];
         expect(map(arr)).toEqual([1, 2, 3]);
         expect(map(arr)).not.toBe(arr);
     });

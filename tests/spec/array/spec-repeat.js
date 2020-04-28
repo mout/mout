@@ -1,4 +1,4 @@
-import repeat from '../../../src/array/repeat';
+import repeat from '../../../array/repeat';
 
 describe('array/repeat()', function() {
     it('should create an array of size 0.', function() {

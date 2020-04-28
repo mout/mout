@@ -1,14 +1,14 @@
-import collect from '../../../src/array/collect';
+import collect from '../../../array/collect';
 
 describe('array/collect', function() {
     it('should map items and concatenate results', function() {
-        var source = [0, 1, 2, 3],
-            thisObj = {};
-        var result = collect(
+        const source = [0, 1, 2, 3];
+        const thisObj = {};
+        const result = collect(
             source,
             function(value) {
-                var i = 0,
-                    arr = [];
+                let i = 0;
+                const arr = [];
                 while (i++ < value) {
                     arr.push(value);
                 }
@@ -23,8 +23,8 @@ describe('array/collect', function() {
     });
 
     it('should allow undefined map result', function() {
-        var source = [1, 2, 3, 4];
-        var result = collect(source, function(value) {
+        const source = [1, 2, 3, 4];
+        const result = collect(source, function(value) {
             if (value % 2 !== 0) {
                 return [value];
             }
@@ -38,8 +38,8 @@ describe('array/collect', function() {
             return [1];
         }
 
-        var base = new Array(3);
-        var result = collect(base, toOne);
+        const base = new Array(3);
+        let result = collect(base, toOne);
         expect(result).toEqual([1, 1, 1]);
 
         base[5] = 'foo';
@@ -53,7 +53,7 @@ describe('array/collect', function() {
     });
 
     it('should allow shorthand syntax (same as "pluck")', function() {
-        var arr = [{ a: [] }, { b: 1 }, { a: [1] }, { a: [2, 3] }];
+        const arr = [{ a: [] }, { b: 1 }, { a: [1] }, { a: [2, 3] }];
         expect(collect(arr, 'a')).toEqual([1, 2, 3]);
     });
 });

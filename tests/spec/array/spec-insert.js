@@ -1,8 +1,8 @@
-import insert from '../../../src/array/insert';
+import insert from '../../../array/insert';
 
 describe('array/insert()', function() {
     it('should push item if not present and return the length', function() {
-        var arr = [1, 2, 3];
+        const arr = [1, 2, 3];
 
         expect(insert(arr, 3)).toBe(3);
         expect(arr.length).toBe(3);
@@ -14,7 +14,7 @@ describe('array/insert()', function() {
     });
 
     it('should accept multiple items', function() {
-        var arr = ['a', 'b'];
+        const arr = ['a', 'b'];
 
         expect(insert(arr, 'a', 'b')).toBe(2);
         expect(arr.length).toBe(2);

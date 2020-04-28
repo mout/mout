@@ -1,4 +1,4 @@
-import shuffle from '../../../src/array/shuffle';
+import shuffle from '../../../array/shuffle';
 import mockRandom from '../random/helper-mockRandom';
 
 describe('array/shuffle()', function() {
@@ -11,9 +11,9 @@ describe('array/shuffle()', function() {
     });
 
     it('should return new array with shuffled items', function() {
-        var arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
-        var arr2 = arr.slice();
-        var result = shuffle(arr);
+        const arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+        const arr2 = arr.slice();
+        const result = shuffle(arr);
 
         expect(result).not.toBe(arr);
         expect(result).not.toEqual(arr2);

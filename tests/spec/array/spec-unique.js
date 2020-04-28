@@ -1,9 +1,9 @@
-import unique from '../../../src/array/unique';
+import unique from '../../../array/unique';
 
 describe('array/unique()', function() {
     it('should remove duplicates', function() {
-        var source = ['a', 1, 2, 'c', 'b', 2, 1, 'b', 'c'];
-        var result = unique(source);
+        const source = ['a', 1, 2, 'c', 'b', 2, 1, 'b', 'c'];
+        const result = unique(source);
 
         // should not affect original array
         expect(source.length).toEqual(9);
@@ -18,8 +18,8 @@ describe('array/unique()', function() {
     });
 
     it('should support custom compare function', function() {
-        var arr = [{ name: 'foo' }, { name: 'bar' }, { name: 'foo' }];
-        var result = unique(arr, function(a, b) {
+        const arr = [{ name: 'foo' }, { name: 'bar' }, { name: 'foo' }];
+        const result = unique(arr, function(a, b) {
             return a.name === b.name;
         });
         // note that it removes duplicates starting from begin of array

@@ -1,4 +1,4 @@
-import last from '../../../src/array/last';
+import last from '../../../array/last';
 
 describe('array/last', function() {
     it('should return the last element of an array', function() {
