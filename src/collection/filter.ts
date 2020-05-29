@@ -4,7 +4,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * filter collection values, returns array.
  */
-function filter(list, iterator, thisObj) {
+function filter(list, iterator, thisObj?: any) {
     iterator = makeIterator(iterator, thisObj);
     const results = [];
     if (!list) {

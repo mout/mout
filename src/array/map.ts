@@ -3,7 +3,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Array map
  */
-function map(arr, callback, thisObj) {
+function map(arr, callback, thisObj?: any) {
     callback = makeIterator(callback, thisObj);
     const results = [];
     if (arr == null) {

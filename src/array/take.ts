@@ -2,7 +2,7 @@
  * Iterates over a callback a set amount of times
  * returning the results
  */
-function take(n, callback, thisObj) {
+function take(n, callback, thisObj?: any) {
     let i = -1;
     const arr = [];
     if (!thisObj) {

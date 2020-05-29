@@ -3,7 +3,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Array some
  */
-function some(arr, callback, thisObj) {
+function some(arr, callback, thisObj?: any) {
     callback = makeIterator(callback, thisObj);
     let result = false;
     if (arr == null) {

@@ -3,7 +3,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Array filter
  */
-function filter(arr, callback, thisObj) {
+function filter(arr, callback, thisObj?: any) {
     callback = makeIterator(callback, thisObj);
     const results = [];
     if (arr == null) {

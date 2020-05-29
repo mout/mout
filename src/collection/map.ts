@@ -6,7 +6,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Map collection values, returns Array.
  */
-function map(list, callback, thisObj) {
+function map(list, callback, thisObj?: any) {
     callback = makeIterator(callback, thisObj);
     // list.length to check array-like object, if not array-like
     // we simply map all the object values

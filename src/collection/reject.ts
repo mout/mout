@@ -4,7 +4,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Inverse or collection/filter
  */
-function reject(list, iterator, thisObj) {
+function reject(list, iterator, thisObj?: any) {
     iterator = makeIterator(iterator, thisObj);
     return filter(
         list,

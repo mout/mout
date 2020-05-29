@@ -4,7 +4,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Object reject
  */
-function reject(obj, callback, thisObj) {
+function reject(obj, callback, thisObj?: any) {
     callback = makeIterator(callback, thisObj);
     return filter(
         obj,

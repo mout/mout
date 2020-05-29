@@ -1,7 +1,7 @@
 /**
  * Array forEach
  */
-function forEach(arr, callback, thisObj) {
+function forEach(arr, callback, thisObj?: any) {
     if (arr == null) {
         return;
     }
