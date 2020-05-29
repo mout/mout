@@ -5,19 +5,19 @@
 // automatically generated, do not edit!
 // run `node build` instead
 
-import array from './array';
-import collection from './collection';
-import date from './date';
-import _function from './function';
-import lang from './lang';
-import math from './math';
-import number from './number';
-import object from './object';
-import queryString from './queryString';
-import random from './random';
-import string from './string';
-import time from './time';
-import fn from './function';
+import * as array from './array';
+import * as collection from './collection';
+import * as date from './date';
+import * as _function from './function';
+import * as lang from './lang';
+import * as math from './math';
+import * as number from './number';
+import * as object from './object';
+import * as queryString from './queryString';
+import * as random from './random';
+import * as string from './string';
+import * as time from './time';
+import * as fn from './function';
 
 export const VERSION = '1.2.2';
 

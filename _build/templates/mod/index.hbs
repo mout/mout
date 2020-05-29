@@ -5,7 +5,7 @@
 //automatically generated, do not edit!
 //run `node build` instead
 
-{{#list modules separator=";"}}import {{name}} from '{{path}}'{{/list}}
+{{#list modules separator=";"}}import * as {{name}} from '{{path}}'{{/list}}
 
 export const VERSION = '{{version}}';
 
