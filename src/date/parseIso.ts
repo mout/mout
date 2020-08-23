@@ -77,7 +77,7 @@ function getTime(hr, min, sec) {
     return ((hr * 60 + min) * 60 + sec) * 1000;
 }
 
-function parseOffset(str) {
+function parseOffset(str): { offset: number; time: string } {
     let match;
     if (str.charAt(str.length - 1) === 'Z') {
         str = str.substring(0, str.length - 1);
@@ -101,15 +101,13 @@ function parseOffset(str) {
 }
 
 function parseTime(str) {
-    let offset = parseOffset(str);
+    const { offset, time } = parseOffset(str);
 
-    str = offset.time;
-    offset = offset.offset;
     if (isNaN(offset)) {
         return NaN;
     }
 
-    const match = matchAll(str, timePatterns);
+    const match = matchAll(time, timePatterns);
     if (match === null) {
         return NaN;
     }

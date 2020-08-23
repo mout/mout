@@ -2,16 +2,18 @@
  * Gets the "kind" of value. (e.g. "String", "Number", etc)
  */
 type Type =
-    | 'Undefined'
-    | 'Null'
-    | 'Object'
+    | 'Arguments'
     | 'Array'
     | 'Boolean'
-    | 'Function'
     | 'Date'
+    | 'Function'
+    | 'Null'
+    | 'Number'
+    | 'Object'
     | 'RegExp'
+    | 'String'
     | 'Symbol'
-    | 'Number';
+    | 'Undefined';
 
 function kindOf(val: any): Type {
     return Object.prototype.toString.call(val).slice(8, -1) as Type;

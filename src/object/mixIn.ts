@@ -8,7 +8,7 @@ import forOwn from './forOwn';
  * @param {...object} objects    Objects to be combined (0...n objects).
  * @return {object} Target Object.
  */
-function mixIn(target, objects) {
+function mixIn(target, ...objects) {
     let i = 0;
     const n = arguments.length;
     let obj;

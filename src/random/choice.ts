@@ -1,12 +1,12 @@
 import randInt from './randInt';
-import isArray from '../lang/isArray';
 
 /**
  * Returns a random element from the supplied arguments
  * or from the array (if single argument is an array).
  */
-function choice(items) {
-    const target = arguments.length === 1 && isArray(items) ? items : arguments;
+function choice<T>(...items: T[] | T[][]) {
+    const target: T[] =
+        items.length === 1 && Array.isArray(items[0]) ? (items[0] as T[]) : (items as T[]);
     return target[randInt(0, target.length - 1)];
 }
 

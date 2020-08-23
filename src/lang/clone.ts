@@ -5,16 +5,16 @@ import mixIn from '../object/mixIn';
 /**
  * Clone native types.
  */
-function clone<T = unknown>(val: T): T {
+function clone(val) {
     switch (kindOf(val)) {
         case 'Object':
-            return cloneObject(val);
+            return cloneObject(val) as {};
         case 'Array':
-            return cloneArray(val);
+            return cloneArray(val) as Array<unknown>;
         case 'RegExp':
-            return cloneRegExp(val);
+            return cloneRegExp(val) as RegExp;
         case 'Date':
-            return cloneDate(val);
+            return cloneDate(val) as Date;
         default:
             return val;
     }

@@ -6,14 +6,13 @@ import isPlainObject from './isPlainObject';
 /**
  * Recursively clone native types.
  */
-function deepClone<T>(val: T, instanceClone?: () => T): T {
-    switch (kindOf(val)) {
-        case 'Object':
-            return cloneObject(val, instanceClone);
-        case 'Array':
-            return cloneArray(val as Array, instanceClone);
-        default:
-            return clone(val);
+function deepClone(val, instanceClone?: Function) {
+    if (Array.isArray(val)) {
+        return cloneArray(val, instanceClone);
+    } else if (kindOf(val) === 'Object') {
+        return cloneObject(val, instanceClone);
+    } else {
+        return clone(val);
     }
 }
 
@@ -35,8 +34,8 @@ function cloneObject(source, instanceClone) {
     }
 }
 
-function cloneArray<T>(arr: T[], instanceClone?: () => T): T[] {
-    const out = [];
+function cloneArray<T>(arr: T[], instanceClone?: Function): T[] {
+    const out: T[] = [];
     const n = arr.length;
     let i = -1;
     while (++i < n) {

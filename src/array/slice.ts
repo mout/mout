@@ -1,7 +1,7 @@
 /**
  * Create slice of source array or array-like object
  */
-function slice(arr, start, end) {
+function slice<T>(arr: T[] | IArguments, start?: number, end?: number): T[] {
     const len = arr.length;
 
     if (start == null) {

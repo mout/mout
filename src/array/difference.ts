@@ -7,7 +7,7 @@ import slice from './slice';
 /**
  * Return a new Array with elements that aren't present in the other Arrays.
  */
-function difference(arr) {
+function difference(arr, ...others) {
     const arrs = slice(arguments, 1);
     const result = filter(unique(arr), function(needle) {
         return !some(arrs, function(haystack) {

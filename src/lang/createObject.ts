@@ -7,7 +7,7 @@ import mixIn from '../object/mixIn';
  * @param {object} [props] Object properties.
  * @return {object} Created object.
  */
-function createObject(parent, props) {
+function createObject(parent, props?) {
     function F() {}
     F.prototype = parent;
     return mixIn(new F(), props);

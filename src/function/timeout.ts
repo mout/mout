@@ -1,11 +1,7 @@
-import slice from '../array/slice';
-
 /**
  * Delays the call of a function within a given context.
  */
-function timeout(fn, millis, context) {
-    const args = slice(arguments, 3);
-
+function timeout(fn, millis, context, ...args) {
     return setTimeout(function() {
         fn.apply(context, args);
     }, millis);

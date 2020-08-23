@@ -3,7 +3,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Return maximum value inside array
  */
-function max(arr, iterator, thisObj?: any) {
+function max(arr, iterator?, thisObj?: any) {
     if (arr == null || !arr.length) {
         return Infinity;
     } else if (arr.length && !iterator) {

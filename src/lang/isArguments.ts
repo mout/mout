@@ -1,9 +1,10 @@
 import isKind from './isKind';
 
-/**
- */
-// eslint-disable-next-line no-undef
-const isArgs = isKind(arguments, 'Arguments')
+function getArguments() {
+    return arguments;
+}
+
+const isArgs = isKind(getArguments(), 'Arguments')
     ? function(val) {
           return isKind(val, 'Arguments');
       }

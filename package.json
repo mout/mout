@@ -36,7 +36,7 @@
   "scripts": {
     "lint": "eslint src/**/*.ts tests/**/*.js _build/*.js build.js",
     "fix": "npm run lint -- --fix",
-    "test": "node tests/runner.js",
+    "test": "npm run tsc || mv dist/* . && node tests/runner.js && node build prune",
     "tsc": "tsc --project tsconfig.json"
   },
   "husky": {

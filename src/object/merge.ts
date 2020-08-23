@@ -5,7 +5,7 @@ import isObject from '../lang/isObject';
 /**
  * Deep merge objects.
  */
-function merge() {
+function merge<T extends {}>(...values: T[]) {
     let i = 1;
     let key;
     let val;
@@ -13,9 +13,9 @@ function merge() {
 
     // make sure we don't modify source element and it's properties
     // objects are passed by reference
-    const target = deepClone(arguments[0]);
+    const target = deepClone(values[0]);
 
-    while ((obj = arguments[i++])) {
+    while ((obj = values[i++])) {
         for (key in obj) {
             if (!hasOwn(obj, key)) {
                 continue;

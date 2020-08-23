@@ -1,5 +1,4 @@
 import indexOf from '../array/indexOf';
-import slice from '../array/slice';
 import take from '../array/take';
 
 const _ = {};
@@ -7,20 +6,17 @@ const _ = {};
 /**
  * Creates a partially applied function.
  */
-function partial(f) {
-    const as = slice(arguments, 1);
-    const has_ = indexOf(as, _) !== -1;
+function partial(f, ...outerArgs) {
+    const has_ = indexOf(outerArgs, _) !== -1;
 
-    return function() {
-        const rest = slice(arguments);
-
+    return function(...rest) {
         // Don't waste time checking for placeholders if there aren't any.
         const args = has_
-            ? take(as.length, function(i) {
-                  const a = as[i];
+            ? take(outerArgs.length, function(i) {
+                  const a = outerArgs[i];
                   return a === _ ? rest.shift() : a;
               })
-            : as;
+            : outerArgs;
 
         return f.apply(this, rest.length ? args.concat(rest) : args);
     };

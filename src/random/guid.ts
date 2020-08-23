@@ -1,5 +1,5 @@
-import randHex from './randHex';
 import choice from './choice';
+import randHex from './randHex';
 
 /**
  * Returns pseudo-random guid (UUID v4)
@@ -8,7 +8,7 @@ import choice from './choice';
  * "random/random" documentation for more info about it and how to replace
  * the default PRNG.
  */
-function guid() {
+function guid(): string {
     return (
         randHex(8) +
         '-' +
