@@ -1,8 +1,22 @@
 {
   "name": "mout",
+  "version": "2.0.0-alpha.1",
   "description": "Modular Utilities",
-  "version": "1.2.2",
+  "keywords": [
+    "utilities",
+    "functional",
+    "amd-utils",
+    "stdlib"
+  ],
   "homepage": "http://moutjs.com/",
+  "bugs": {
+    "url": "https://github.com/mout/mout/issues/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mout/mout.git"
+  },
+  "license": "MIT",
   "author": "Miller Medeiros <contact@millermedeiros.com> (http://blog.millermedeiros.com)",
   "contributors": [
     "Adam Nowotny",
@@ -14,40 +28,50 @@
     "Mathias Paumgarten <mail@mathias-paumgarten.com>",
     "Zach Shipley"
   ],
-  "keywords": [
-    "utilities",
-    "functional",
-    "amd-utils",
-    "stdlib"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/mout/mout.git"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mout/mout/issues/"
-  },
+  "sideEffects": false,
   "main": "./index.js",
-  "scripts": {
-    "pretest": "node build pkg",
-    "test": "istanbul test tests/runner.js --hook-run-in-context"
-  },
   "directories": {
     "doc": "./doc"
   },
+  "scripts": {
+    "lint": "eslint src/**/*.ts tests/**/*.js _build/*.js build.js",
+    "fix": "npm run lint -- --fix",
+    "test": "npm run tsc && mv dist/* . && node tests/runner.js && node build prune",
+    "tsc": "tsc --project tsconfig.json"
+  },
+  "husky": {
+    "hooks": {
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "npm run lint",
+      "git add"
+    ]
+  },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.28.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.28.0",
+    "@typescript-eslint/parser": "^2.28.0",
+    "babel-eslint": "^10.1.0",
     "commander": "~2.16.0",
-    "handlebars": "~4.1.2",
-    "istanbul": "~0.4.5",
-    "jasmine-node": "^1.15.0",
-    "jshint": "~2.9.5",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "esm": "^3.2.25",
+    "handlebars": "^4.7.6",
+    "husky": "^3.1.0",
+    "jasmine": "^3.5.0",
+    "lint-staged": "^9.5.0",
     "mdoc": "~0.5.3",
     "nodefy": "~0.2.2",
+    "prettier": "^1.19.1",
     "regenerate": "~1.4.0",
-    "requirejs": "~2.3.5",
     "rimraf": "~2.6.2",
-    "rocambole": "~0.7.0"
+    "rocambole": "~0.7.0",
+    "tslint": "^6.1.1",
+    "typescript": "^3.8.3"
   },
   "testling": {
     "preprocess": "node build testling",

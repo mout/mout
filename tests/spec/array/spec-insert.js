@@ -1,33 +1,27 @@
-define(['mout/array/insert'], function (insert) {
+import insert from '../../../array/insert';
 
-    describe('array/insert()', function(){
+describe('array/insert()', function() {
+    it('should push item if not present and return the length', function() {
+        const arr = [1, 2, 3];
 
-        it('should push item if not present and return the length', function(){
+        expect(insert(arr, 3)).toBe(3);
+        expect(arr.length).toBe(3);
+        expect(arr).toEqual([1, 2, 3]);
 
-            var arr = [1, 2, 3];
+        expect(insert(arr, 4)).toBe(4);
+        expect(arr.length).toBe(4);
+        expect(arr).toEqual([1, 2, 3, 4]);
+    });
 
-            expect( insert(arr, 3) ).toBe( 3 );
-            expect( arr.length ).toBe( 3 );
-            expect( arr ).toEqual( [1,2,3] );
+    it('should accept multiple items', function() {
+        const arr = ['a', 'b'];
 
-            expect( insert(arr, 4) ).toBe( 4 );
-            expect( arr.length ).toBe( 4 );
-            expect( arr ).toEqual( [1,2,3,4] );
-        });
+        expect(insert(arr, 'a', 'b')).toBe(2);
+        expect(arr.length).toBe(2);
+        expect(arr).toEqual(['a', 'b']);
 
-        it('should accept multiple items', function () {
-
-            var arr = ['a', 'b'];
-
-            expect( insert(arr, 'a', 'b') ).toBe( 2 );
-            expect( arr.length ).toBe( 2 );
-            expect( arr ).toEqual( ['a', 'b'] );
-
-            expect( insert(arr, 1, 2, 'b', 3, 'a', 'c') ).toBe( 6 );
-            expect( arr.length ).toBe( 6 );
-            expect( arr ).toEqual( ['a', 'b', 1, 2, 3, 'c'] );
-
-        });
-
+        expect(insert(arr, 1, 2, 'b', 3, 'a', 'c')).toBe(6);
+        expect(arr.length).toBe(6);
+        expect(arr).toEqual(['a', 'b', 1, 2, 3, 'c']);
     });
 });

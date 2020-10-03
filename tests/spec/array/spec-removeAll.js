@@ -1,29 +1,25 @@
-define(['mout/array/removeAll'], function (removeAll) {
+import removeAll from '../../../array/removeAll';
 
-    describe('array/removeAll()', function(){
+describe('array/removeAll()', function() {
+    it('should work in normal array', function() {
+        const arr = [1, 'a', 2, 'b', 'a', 'a'];
 
-        it('should work in normal array', function(){
-            var arr = [1, 'a', 2, 'b', 'a', 'a'];
-
-            removeAll(arr, 'a');
-            expect( arr[1] ).toBe( 2 );
-            expect( arr.length ).toEqual( 3 );
-        });
-
-        it('should work in sparse array', function(){
-            var arr = [];
-            arr[1] = 1;
-            arr[3] = 'a';
-            arr[6] = 2;
-            arr[8] = 'b';
-            arr[9] = 'a';
-            arr[15] = 'a';
-
-            removeAll(arr, 'a');
-            expect( arr[3] ).toBeUndefined();
-            expect( arr.length ).toEqual( 13 );
-        });
-
+        removeAll(arr, 'a');
+        expect(arr[1]).toBe(2);
+        expect(arr.length).toEqual(3);
     });
 
+    it('should work in sparse array', function() {
+        const arr = [];
+        arr[1] = 1;
+        arr[3] = 'a';
+        arr[6] = 2;
+        arr[8] = 'b';
+        arr[9] = 'a';
+        arr[15] = 'a';
+
+        removeAll(arr, 'a');
+        expect(arr[3]).toBeUndefined();
+        expect(arr.length).toEqual(13);
+    });
 });

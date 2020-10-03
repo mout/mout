@@ -1,32 +1,26 @@
-define(['mout/lang/ctorApply'], function (ctorApply) {
+import ctorApply from '../../../lang/ctorApply';
 
-    describe('lang/ctorApply()', function () {
+describe('lang/ctorApply()', function() {
+    it('should call constructor only once passing arguments and keep prototype chain', function() {
+        let _count = 0;
 
-        it('should call constructor only once passing arguments and keep prototype chain', function () {
+        const Foo = function(a, b, c) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+            _count++;
+        };
 
-            var _count = 0;
+        // make sure prototype chain is maintained
+        Foo.prototype.get = function(key) {
+            return this[key];
+        };
 
-            var Foo = function(a, b, c){
-                this.a = a;
-                this.b = b;
-                this.c = c;
-                _count++;
-            };
+        const obj = ctorApply(Foo, ['lorem', 'ipsum', 123]);
 
-            //make sure prototype chain is maintained
-            Foo.prototype.get = function(key){
-                return this[key];
-            };
-
-            var obj = ctorApply(Foo, ['lorem', 'ipsum', 123]);
-
-            expect( _count ).toEqual( 1 );
-            expect( obj.get('a') ).toEqual( 'lorem' );
-            expect( obj.get('b') ).toEqual( 'ipsum' );
-            expect( obj.get('c') ).toEqual( 123 );
-
-        });
-
+        expect(_count).toEqual(1);
+        expect(obj.get('a')).toEqual('lorem');
+        expect(obj.get('b')).toEqual('ipsum');
+        expect(obj.get('c')).toEqual(123);
     });
-
 });

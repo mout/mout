@@ -1,0 +1,15 @@
+import filter from './filter';
+
+function isValidString(val) {
+    return val != null && val !== '';
+}
+
+/**
+ * Joins strings with the specified separator inserted between each value.
+ * Null values and empty strings will be excluded.
+ */
+function join(items, separator = '') {
+    return filter(items, isValidString).join(separator);
+}
+
+export default join;

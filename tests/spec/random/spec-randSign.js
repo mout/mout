@@ -1,45 +1,43 @@
-define(['mout/random/randSign', './helper-mockRandom'], function (randSign, mockRandom) {
+import randSign from '../../../random/randSign';
+import mockRandom from './helper-mockRandom';
 
-    describe('random/randSign()', function(){
+describe('random/randSign()', function() {
+    beforeEach(function() {
+        mockRandom.start();
+    });
 
-        beforeEach(function(){
-            mockRandom.start();
-        });
+    afterEach(function() {
+        mockRandom.end();
+    });
 
-        afterEach(function(){
-            mockRandom.end();
-        });
+    it('returns a random number at each call', function() {
+        const a = randSign();
+        const b = randSign();
 
-        it('returns a random number at each call', function(){
-            var a = randSign(),
-                b = randSign();
+        expect(a).not.toBeUndefined();
+        expect(a).not.toEqual(Infinity);
+        expect(a).not.toEqual(NaN);
+        expect(a).not.toEqual(b);
+    });
 
-            expect( a ).not.toBeUndefined();
-            expect( a ).not.toEqual( Infinity );
-            expect( a ).not.toEqual( NaN );
-            expect( a ).not.toEqual( b );
-        });
+    it('shouldn\t be biased', function() {
+        let c1 = 0;
+        let c2 = 0;
+        let n = 10;
+        let rnd;
 
-        it('shouldn\t be biased', function () {
-            var c1 = 0,
-                c_1 = 0,
-                n = 10,
-                rnd;
-
-            while (n--) {
-                rnd = randSign();
-                if ( rnd === 1 ){
-                    c1++;
-                } else if ( rnd === -1) {
-                    c_1++;
-                } else {
-                    expect(rnd).toBe('fail, out of range.');
-                }
+        while (n--) {
+            rnd = randSign();
+            if (rnd === 1) {
+                c1++;
+            } else if (rnd === -1) {
+                c2++;
+            } else {
+                expect(rnd).toBe('fail, out of range.');
             }
+        }
 
-            expect( c_1 ).toEqual(5);
-            expect( c1 ).toEqual(5);
-        });
-
+        expect(c2).toEqual(5);
+        expect(c1).toEqual(5);
     });
 });

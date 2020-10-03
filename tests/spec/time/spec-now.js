@@ -1,18 +1,14 @@
-define(['mout/time/now'], function (now) {
+import now from '../../../time/now';
 
-    var past = now();
+const past = now();
 
-    describe('time/now()', function () {
-
-        it('should return an integer', function() {
-            var b = now();
-            expect( b.toFixed('0') ).toEqual( b + '' );
-        });
-
-        it('should be greater than first call', function () {
-            expect( now() ).toBeGreaterThan( past );
-        });
-
+describe('time/now()', function() {
+    it('should return an integer', function() {
+        const b = now();
+        expect(b.toFixed('0')).toEqual(b + '');
     });
 
+    it('should be greater than first call', function() {
+        expect(now()).toBeGreaterThan(past);
+    });
 });

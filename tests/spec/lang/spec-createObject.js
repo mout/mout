@@ -1,42 +1,35 @@
-define(['mout/lang/createObject'], function (createObject) {
+import createObject from '../../../lang/createObject';
 
-    describe('lang/createObject()', function(){
+describe('lang/createObject()', function() {
+    it('should create an object', function() {
+        const base = { foo: 'bar' };
+        const result = createObject(base);
 
-        it('should create an object', function(){
+        expect(JSON.parse(JSON.stringify(result, ['foo']))).toEqual(base);
 
-            var base = {foo: 'bar'};
-            var result = createObject(base);
+        result.foo = 'asd';
+        expect(result.foo).toEqual('asd');
+        expect(base.foo).toEqual('bar');
+    });
 
-            expect(result).toEqual(base);
+    it('should mixIn new properties', function() {
+        const base = { foo: 'bar' };
+        const props = { lorem: 'ipsum', num: 5, test: null };
+        const result = createObject(base, props);
 
-            result.foo = 'asd';
-            expect(result.foo).toEqual('asd');
-            expect(base.foo).toEqual('bar');
-
+        expect(JSON.parse(JSON.stringify(result, ['foo', 'lorem', 'num', 'test']))).toEqual({
+            foo: 'bar',
+            lorem: 'ipsum',
+            num: 5,
+            test: null
         });
 
-        it('should mixIn new properties', function(){
-
-            var base = {foo: 'bar'};
-            var props = {lorem : 'ipsum', num:5, test:null};
-            var result = createObject(base, props);
-
-            expect(result).toEqual( {
-                foo : 'bar',
-                lorem : 'ipsum',
-                num : 5,
-                test : null
-            } );
-
-            result.foo = 'asd';
-            result.num = 9000;
-            expect(result.foo).toEqual('asd');
-            expect(result.num).toEqual(9000);
-            expect(result.test).toEqual(null);
-            expect(base.foo).toEqual('bar');
-            expect(props.num).toEqual(5);
-
-        });
-
+        result.foo = 'asd';
+        result.num = 9000;
+        expect(result.foo).toEqual('asd');
+        expect(result.num).toEqual(9000);
+        expect(result.test).toEqual(null);
+        expect(base.foo).toEqual('bar');
+        expect(props.num).toEqual(5);
     });
 });

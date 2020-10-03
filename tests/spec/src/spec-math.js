@@ -1,11 +1,9 @@
-define(['mout/src/math'], function(math){
+// import math from '../../../src/math';
 
-    describe('mout/math', function(){
+//     describe('../../../math', function(){
 
-        it('', function(){
-            expect( math() ).toBe({});
-        });
+//         it('', function(){
+//             expect( math() ).toBe({});
+//         });
 
-    });
-
-});
+//     });

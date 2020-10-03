@@ -1,36 +1,43 @@
-define(['mout/array/split'], function(split) {
+import split from '../../../array/split';
 
-    describe('array/split()', function() {
-
-        it('should split array into segments', function() {
-            var arr = [1, 2, 3, 4, 5, 6];
-            expect( split(arr, 3) ).toEqual([ [1, 2], [3, 4], [5, 6] ]);
-        });
-
-        it('should default to 2 segments', function() {
-            var arr = [1, 2, 3, 4, 5, 6];
-            expect( split(arr) ).toEqual([ [1, 2, 3], [4, 5, 6] ]);
-        });
-
-        it('should put remaining items on first segments if not even split', function() {
-            var arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
-            expect( split(arr, 3) ).toEqual(
-                [ ['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h'] ]);
-        });
-
-        it('should return empty array when input is empty', function() {
-            expect( split([]) ).toEqual([]);
-        });
-
-        it('should return empty array when input is null/undefined', function() {
-            expect( split(null) ).toEqual( [] );
-            expect( split(undefined) ).toEqual( [] );
-        });
-
-        it('should not return empty segments', function() {
-            var arr = [1, 2];
-            expect( split(arr, 3) ).toEqual([ [1], [2] ]);
-        });
+describe('array/split()', function() {
+    it('should split array into segments', function() {
+        const arr = [1, 2, 3, 4, 5, 6];
+        expect(split(arr, 3)).toEqual([
+            [1, 2],
+            [3, 4],
+            [5, 6]
+        ]);
     });
 
+    it('should default to 2 segments', function() {
+        const arr = [1, 2, 3, 4, 5, 6];
+        expect(split(arr)).toEqual([
+            [1, 2, 3],
+            [4, 5, 6]
+        ]);
+    });
+
+    it('should put remaining items on first segments if not even split', function() {
+        const arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+        expect(split(arr, 3)).toEqual([
+            ['a', 'b', 'c'],
+            ['d', 'e', 'f'],
+            ['g', 'h']
+        ]);
+    });
+
+    it('should return empty array when input is empty', function() {
+        expect(split([])).toEqual([]);
+    });
+
+    it('should return empty array when input is null/undefined', function() {
+        expect(split(null)).toEqual([]);
+        expect(split(undefined)).toEqual([]);
+    });
+
+    it('should not return empty segments', function() {
+        const arr = [1, 2];
+        expect(split(arr, 3)).toEqual([[1], [2]]);
+    });
 });

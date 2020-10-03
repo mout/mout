@@ -1,51 +1,48 @@
-define(['mout/string/truncate'], function (truncate) {
+import truncate from '../../../string/truncate';
 
-    describe('string/truncate()', function(){
-        var str = 'lorem ipsum dolor sit amet';
+describe('string/truncate()', function() {
+    const str = 'lorem ipsum dolor sit amet';
 
-        it('should limit number of chars', function(){
-            var r1 = truncate(str, 10);
-            expect( r1.length ).toBeLessThan( 11 );
-            expect( r1 ).toEqual( 'lorem i...' );
+    it('should limit number of chars', function() {
+        const r1 = truncate(str, 10);
+        expect(r1.length).toBeLessThan(11);
+        expect(r1).toEqual('lorem i...');
 
-            var r2 = truncate(str, 14);
-            expect( r2.length ).toBeLessThan( 15 );
-            expect( r2 ).toEqual( 'lorem ipsum...' );
-        });
-
-        it('should append string param', function(){
-            var r1 = truncate(str, 10, '--');
-            expect( r1.length ).toBeLessThan( 11 );
-            expect( r1 ).toEqual( 'lorem ip--' );
-        });
-
-        it('last char before append shouldn\'t be a whitespace', function(){
-            var r1 = truncate(str, 12, '=');
-            var r2 = truncate(str, 13, '=');
-
-            expect( r2.length ).toBeLessThan( 14 );
-            expect( r2 ).toEqual( 'lorem ipsum=' );
-            expect( r1 ).toEqual( r2 );
-        });
-
-        it('should allow cropping at full words', function(){
-            var r1 = truncate(str, 10, null, true);
-            expect( r1.length ).toBeLessThan( 11 );
-            expect( r1 ).toEqual( 'lorem...' );
-
-            var r2 = truncate(str, 14, null, true);
-            expect( r2.length ).toBeLessThan( 15 );
-            expect( r2 ).toEqual( 'lorem ipsum...' );
-        });
-
-        it('should treat null as empty string', function(){
-            expect( truncate(null, 1) ).toBe('');
-        });
-
-        it('should treat undefined as empty string', function(){
-            expect( truncate(void 0, 1) ).toBe('');
-        });
-
+        const r2 = truncate(str, 14);
+        expect(r2.length).toBeLessThan(15);
+        expect(r2).toEqual('lorem ipsum...');
     });
 
+    it('should append string param', function() {
+        const r1 = truncate(str, 10, '--');
+        expect(r1.length).toBeLessThan(11);
+        expect(r1).toEqual('lorem ip--');
+    });
+
+    it("last char before append shouldn't be a whitespace", function() {
+        const r1 = truncate(str, 12, '=');
+        const r2 = truncate(str, 13, '=');
+
+        expect(r2.length).toBeLessThan(14);
+        expect(r2).toEqual('lorem ipsum=');
+        expect(r1).toEqual(r2);
+    });
+
+    it('should allow cropping at full words', function() {
+        const r1 = truncate(str, 10, null, true);
+        expect(r1.length).toBeLessThan(11);
+        expect(r1).toEqual('lorem...');
+
+        const r2 = truncate(str, 14, null, true);
+        expect(r2.length).toBeLessThan(15);
+        expect(r2).toEqual('lorem ipsum...');
+    });
+
+    it('should treat null as empty string', function() {
+        expect(truncate(null, 1)).toBe('');
+    });
+
+    it('should treat undefined as empty string', function() {
+        expect(truncate(void 0, 1)).toBe('');
+    });
 });

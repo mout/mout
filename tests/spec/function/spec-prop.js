@@ -1,16 +1,10 @@
-define(['mout/function/prop'], function (prop) {
+import prop from '../../../function/prop';
 
-    describe('function/prop()', function () {
+describe('function/prop()', function() {
+    it('should grab property from object', function() {
+        const o = { foo: 'bar' };
+        const getFoo = prop('foo');
 
-        it('should grab property from object', function () {
-
-            var o = {foo : 'bar'};
-            var getFoo = prop('foo');
-
-            expect( getFoo(o) ).toBe('bar');
-
-        });
-
+        expect(getFoo(o)).toBe('bar');
     });
-
 });

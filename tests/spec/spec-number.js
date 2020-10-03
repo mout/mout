@@ -1,23 +1,20 @@
-//automatically generated, do not edit!
-//run `node build` instead
-define([
-    './number/spec-MAX_INT',
-    './number/spec-MAX_SAFE_INTEGER',
-    './number/spec-MAX_UINT',
-    './number/spec-MIN_INT',
-    './number/spec-abbreviate',
-    './number/spec-currencyFormat',
-    './number/spec-enforcePrecision',
-    './number/spec-isNaN',
-    './number/spec-nth',
-    './number/spec-ordinal',
-    './number/spec-pad',
-    './number/spec-rol',
-    './number/spec-ror',
-    './number/spec-sign',
-    './number/spec-toInt',
-    './number/spec-toUInt',
-    './number/spec-toUInt31'
-], function(){
-    //noop
-});
+// automatically generated, do not edit!
+// run `node build` instead
+
+import './number/spec-MAX_INT';
+import './number/spec-MAX_SAFE_INTEGER';
+import './number/spec-MAX_UINT';
+import './number/spec-MIN_INT';
+import './number/spec-abbreviate';
+import './number/spec-currencyFormat';
+import './number/spec-enforcePrecision';
+import './number/spec-isNaN';
+import './number/spec-nth';
+import './number/spec-ordinal';
+import './number/spec-pad';
+import './number/spec-rol';
+import './number/spec-ror';
+import './number/spec-sign';
+import './number/spec-toInt';
+import './number/spec-toUInt';
+import './number/spec-toUInt31';

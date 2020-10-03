@@ -1,7 +1,4 @@
 //automatically generated, do not edit!
 //run `node build` instead
-define([
-    {{#list packages}}'./spec-{{this}}'{{/list}}
-], function(){
-    //noop
-});
+
+{{#list packages separator=";"}}import './spec-{{this}}'{{/list}}

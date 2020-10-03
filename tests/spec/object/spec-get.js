@@ -1,77 +1,69 @@
-define(
-    [
-        'mout/object/get'
-    ],
-    function (get) {
+import get from '../../../object/get';
 
-        describe('object/get()', function () {
+describe('object/get()', function() {
+    it('should get nested property', function() {
+        const foo = {
+            bar: {
+                lorem: {
+                    ipsum: 'dolor'
+                }
+            }
+        };
+        expect(get(foo, 'bar.lorem.ipsum')).toBe('dolor');
+    });
 
-            it('should get nested property', function () {
-                var foo = {
-                    bar : {
-                        lorem : {
-                            ipsum : 'dolor'
-                        }
-                    }
-                };
-                expect( get(foo, 'bar.lorem.ipsum') ).toBe( 'dolor' );
-            });
+    it('should get nested property when encountering non-primitive', function() {
+        const foo = {
+            bar: {
+                lorem: function() {}
+            }
+        };
 
-            it('should get nested property when encountering non-primitive', function () {
-                var foo = {
-                    bar : {
-                        lorem : function(){}
-                    }
-                };
+        foo.bar.lorem.ipsum = 'dolor';
 
-                foo.bar.lorem.ipsum = 'dolor'
+        expect(get(foo, 'bar.lorem.ipsum')).toBe('dolor');
+    });
 
-                expect( get(foo, 'bar.lorem.ipsum') ).toBe( 'dolor' );
-            });
+    it('should get nested property when encountering primitive', function() {
+        const foo = {
+            bar: {
+                lorem: 'ipsum'
+            }
+        };
 
-            it('should get nested property when encountering primitive', function () {
-                var foo = {
-                    bar : {
-                        lorem : 'ipsum'
-                    }
-                };
+        expect(get(foo, 'bar.lorem.toString')).toBe(foo.bar.lorem.toString);
+    });
 
-                expect( get(foo, 'bar.lorem.toString') ).toBe( foo.bar.lorem.toString );
-            });
+    it('should return undefined if non existent', function() {
+        const foo = {
+            bar: {
+                lorem: 'ipsum'
+            }
+        };
+        let undef;
+        expect(get(foo, 'bar.dolor')).toBe(undef);
+    });
 
-            it('should return undefined if non existent', function () {
-                var foo = {
-                    bar : {
-                        lorem : 'ipsum'
-                    }
-                };
-                var undef;
-                expect( get(foo, 'bar.dolor') ).toBe( undef );
-            });
+    it('should return undefined when encountering null', function() {
+        const foo = {
+            bar: null
+        };
 
-            it('should return undefined when encountering null', function() {
-                var foo = {
-                    bar: null
-                };
+        let undef;
+        expect(get(foo, 'foo.bar.baz')).toBe(undef);
+    });
 
-                var undef;
-                expect( get(foo, 'foo.bar.baz') ).toBe(undef);
-            });
+    it('should return undefined for undefined input objects', function() {
+        const foo = undefined;
 
-            it('should return undefined for undefined input objects', function() {
-              var foo = undefined;
+        let undef;
+        expect(get(foo, 'bar.baz')).toBe(undef);
+    });
 
-              var undef;
-              expect( get(foo, 'bar.baz') ).toBe(undef);
-            });
+    it('should return undefined for null input objects', function() {
+        const foo = null;
 
-            it('should return undefined for null input objects', function() {
-              var foo = null;
-
-              var undef;
-              expect( get(foo, 'bar.baz') ).toBe(undef);
-            });
-        });
-
-    }
-);
+        let undef;
+        expect(get(foo, 'bar.baz')).toBe(undef);
+    });
+});

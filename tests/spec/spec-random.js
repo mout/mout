@@ -1,16 +1,13 @@
-//automatically generated, do not edit!
-//run `node build` instead
-define([
-    './random/spec-choice',
-    './random/spec-guid',
-    './random/spec-rand',
-    './random/spec-randBit',
-    './random/spec-randBool',
-    './random/spec-randHex',
-    './random/spec-randInt',
-    './random/spec-randSign',
-    './random/spec-randString',
-    './random/spec-random'
-], function(){
-    //noop
-});
+// automatically generated, do not edit!
+// run `node build` instead
+
+import './random/spec-choice';
+import './random/spec-guid';
+import './random/spec-rand';
+import './random/spec-randBit';
+import './random/spec-randBool';
+import './random/spec-randHex';
+import './random/spec-randInt';
+import './random/spec-randSign';
+import './random/spec-randString';
+import './random/spec-random';

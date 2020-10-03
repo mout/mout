@@ -1,10 +1,7 @@
-//automatically generated, do not edit!
-//run `node build` instead
-define([
-    './time/spec-convert',
-    './time/spec-now',
-    './time/spec-parseMs',
-    './time/spec-toTimeString'
-], function(){
-    //noop
-});
+// automatically generated, do not edit!
+// run `node build` instead
+
+import './time/spec-convert';
+import './time/spec-now';
+import './time/spec-parseMs';
+import './time/spec-toTimeString';
