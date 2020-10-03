@@ -3,7 +3,8 @@
     "allowJs": true,
     "lib": ["ES2015"],
     "outDir": "dist",
-    "module": "CommonJS"
+    "module": "CommonJS",
+    "declaration": true,
   },
   "include": [
     "src/**/*.ts"
