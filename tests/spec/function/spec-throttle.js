@@ -1,4 +1,4 @@
-import throttle from '../../../src/function/throttle';
+import throttle from '../../../function/throttle';
 import mockNow from '../time/helper-mockNow';
 
 describe('function/throttle', function() {
@@ -13,9 +13,9 @@ describe('function/throttle', function() {
     });
 
     it('should execute callback only once per interval', function() {
-        var i = 0;
-        var count = 0;
-        var cb = throttle(function() {
+        let i = 0;
+        let count = 0;
+        const cb = throttle(function() {
             count++;
         }, 50);
 
@@ -64,8 +64,8 @@ describe('function/throttle', function() {
     });
 
     it('should not call again at tail if called just once', function() {
-        var count = 0;
-        var cb = throttle(function() {
+        let count = 0;
+        const cb = throttle(function() {
             count++;
         }, 50);
 
@@ -76,8 +76,8 @@ describe('function/throttle', function() {
     });
 
     it('should allow passing args and should use first supplied value by default', function() {
-        var count = 0;
-        var cb = throttle(function(x, y) {
+        let count = 0;
+        const cb = throttle(function(x, y) {
             count += x + y;
         }, 50);
 
@@ -91,7 +91,7 @@ describe('function/throttle', function() {
     });
 
     it('throttled fn should always return first returned value', function() {
-        var cb = throttle(function(val) {
+        const cb = throttle(function(val) {
             return val;
         }, 50);
         expect(cb('x')).toEqual('x');
@@ -99,8 +99,8 @@ describe('function/throttle', function() {
     });
 
     it('should allow to cancel the throttled call', function() {
-        var count = 0;
-        var cb = throttle(function() {
+        let count = 0;
+        const cb = throttle(function() {
             count++;
         }, 50);
         cb();

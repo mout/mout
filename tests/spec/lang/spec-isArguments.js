@@ -1,4 +1,4 @@
-import isArguments from '../../../src/lang/isArguments';
+import isArguments from '../../../lang/isArguments';
 
 describe('lang/isArguments()', function() {
     it('should detect if value is arguments', function() {

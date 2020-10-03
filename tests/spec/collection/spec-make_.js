@@ -1,13 +1,13 @@
-import make from '../../../src/collection/make_';
+import make from '../../../collection/make_';
 
 describe('collection/make_', function() {
     it('should return a function', function() {
-        var fn = make();
+        const fn = make();
         expect(typeof fn).toBe('function');
     });
 
     it('should call method based on first argument and return value', function() {
-        var fn = make(
+        const fn = make(
             function() {
                 return 'array';
             },
@@ -21,10 +21,10 @@ describe('collection/make_', function() {
     });
 
     it('should forward all arguments', function() {
-        var calledArr;
-        var calledObj;
+        let calledArr;
+        let calledObj;
 
-        var fn = make(
+        const fn = make(
             function() {
                 calledArr = [].slice.call(arguments);
             },
@@ -44,14 +44,14 @@ describe('collection/make_', function() {
     });
 
     it('should threat array-like objects as arrays', function() {
-        var obj = {
+        const obj = {
             '0': '1',
             '1': 'b',
             '2': 'c',
             length: 3
         };
 
-        var fn = make(
+        const fn = make(
             function() {
                 return 'array';
             },
@@ -64,7 +64,7 @@ describe('collection/make_', function() {
     });
 
     it('`null` and `undefined` should return default value', function() {
-        var fn = make(
+        const fn = make(
             function() {
                 return 'array';
             },

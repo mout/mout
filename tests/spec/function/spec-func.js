@@ -1,13 +1,13 @@
-import func from '../../../src/function/func';
+import func from '../../../function/func';
 
 describe('function/func()', function() {
     it('should call method of object', function() {
-        var o = {
+        const o = {
             getFoo: function() {
                 return 'bar';
             }
         };
-        var getFoo = func('getFoo');
+        const getFoo = func('getFoo');
 
         expect(getFoo(o)).toBe('bar');
     });

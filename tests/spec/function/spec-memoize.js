@@ -1,8 +1,8 @@
-import memoize from '../../../src/function/memoize';
+import memoize from '../../../function/memoize';
 
 describe('function/memoize()', function() {
     it('should produce identical results of a memoized version of fibonacci', function() {
-        var fib = function(n) {
+        let fib = function(n) {
             return n < 2 ? n : fib(n - 1) + fib(n - 2);
         };
 
@@ -15,10 +15,10 @@ describe('function/memoize()', function() {
     });
 
     it('should check hasOwnProperty', function() {
-        var o = function(str) {
+        const o = function(str) {
             return str;
         };
-        var fastO = memoize(o);
+        const fastO = memoize(o);
 
         expect(o('toString')).toEqual('toString');
 
@@ -27,7 +27,7 @@ describe('function/memoize()', function() {
 
     it('should cache results', function() {
         // Expose the cache.
-        var upper = memoize(function(s) {
+        const upper = memoize(function(s) {
             return s.toUpperCase();
         });
 
@@ -48,9 +48,9 @@ describe('function/memoize()', function() {
     });
 
     it("should take a hasher, which doesn't change keys", function() {
-        var hashed = memoize(
+        const hashed = memoize(
             function(key) {
-                //https://github.com/jashkenas/underscore/pull/1679#discussion_r13736209
+                // https://github.com/jashkenas/underscore/pull/1679#discussion_r13736209
 
                 expect(/[a-z]+/.test(key)).toBe(true);
                 return key;
@@ -69,7 +69,7 @@ describe('function/memoize()', function() {
 
     describe('cache', function() {
         // Test that the hash function can be used to swizzle the key.
-        var objCacher = memoize(
+        const objCacher = memoize(
             function(value, key) {
                 return {
                     key: key,
@@ -80,8 +80,8 @@ describe('function/memoize()', function() {
                 return key;
             }
         );
-        var myObj = objCacher('a', 'alpha');
-        var myObjAlias = objCacher('b', 'alpha');
+        const myObj = objCacher('a', 'alpha');
+        const myObjAlias = objCacher('b', 'alpha');
 
         it('should create an object if second argument used as key', function() {
             expect(myObj).toBeDefined();

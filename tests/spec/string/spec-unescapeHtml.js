@@ -1,4 +1,4 @@
-import unescapeHtml from '../../../src/string/unescapeHtml';
+import unescapeHtml from '../../../string/unescapeHtml';
 
 describe('string/unescapeHtml()', function() {
     it('should convert &amp;', function() {

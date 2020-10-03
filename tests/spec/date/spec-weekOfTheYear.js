@@ -1,4 +1,4 @@
-import weekOfTheYear from '../../../src/date/weekOfTheYear';
+import weekOfTheYear from '../../../date/weekOfTheYear';
 
 describe('date/weekOfTheYear', function() {
     it('should return the week of year starting from Sunday', function() {

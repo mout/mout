@@ -1,4 +1,4 @@
-import nth from '../../../src/number/nth';
+import nth from '../../../number/nth';
 
 describe('number/nth', function() {
     it('should return "st" for numbers ending in "1" besides numbers that ends in "11"', function() {

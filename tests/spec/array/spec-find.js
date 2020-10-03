@@ -1,9 +1,9 @@
-import find from '../../../src/array/find';
+import find from '../../../array/find';
 
 describe('array/find', function() {
     it('should return first match', function() {
-        var obj = { a: 'b' },
-            arr = [123, 'foo', 'bar', obj];
+        const obj = { a: 'b' };
+        const arr = [123, 'foo', 'bar', obj];
 
         expect(
             find(arr, function(val) {
@@ -23,7 +23,7 @@ describe('array/find', function() {
     });
 
     it('should return undefined if array is null/undefined', function() {
-        var testFunc = function() {
+        const testFunc = function() {
             return true;
         };
 
@@ -32,15 +32,15 @@ describe('array/find', function() {
     });
 
     it('should support object shortcut syntax', function() {
-        var obj = { a: 'b' },
-            arr = [123, 'foo', 'bar', obj];
+        const obj = { a: 'b' };
+        const arr = [123, 'foo', 'bar', obj];
 
         expect(find(arr, { a: 'b' })).toEqual(obj);
     });
 
     it('should support string shortcut syntax', function() {
-        var obj = { a: 'b' },
-            arr = [123, 'foo', 'bar', obj];
+        const obj = { a: 'b' };
+        const arr = [123, 'foo', 'bar', obj];
         expect(find(arr, 'a')).toEqual(obj);
     });
 });

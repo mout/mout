@@ -1,12 +1,12 @@
-import merge from '../../../src/object/merge';
+import merge from '../../../object/merge';
 
 describe('object/merge()', function() {
     it('should merge object properties without affecting any object', function() {
-        var obj1 = { a: 0, b: 1 };
-        var obj2 = { c: 2, d: 3 };
-        var obj3 = { a: 4, d: 5 };
+        const obj1 = { a: 0, b: 1 };
+        const obj2 = { c: 2, d: 3 };
+        const obj3 = { a: 4, d: 5 };
 
-        var out = { a: 4, b: 1, c: 2, d: 5 };
+        const out = { a: 4, b: 1, c: 2, d: 5 };
 
         expect(merge(obj1, obj2, obj3)).toEqual(out);
         expect(out).not.toEqual(obj1);
@@ -15,8 +15,8 @@ describe('object/merge()', function() {
     });
 
     it('should do a deep merge', function() {
-        var obj1 = { a: { b: 1, c: 1, d: { e: 1, f: 1 } } };
-        var obj2 = { a: { b: 2, d: { f: 'yeah' } } };
+        const obj1 = { a: { b: 1, c: 1, d: { e: 1, f: 1 } } };
+        const obj2 = { a: { b: 2, d: { f: 'yeah' } } };
 
         expect(merge(obj1, obj2)).toEqual({
             a: { b: 2, c: 1, d: { e: 1, f: 'yeah' } }
@@ -24,20 +24,20 @@ describe('object/merge()', function() {
     });
 
     it('should clone objects during merge', function() {
-        var obj1 = { a: { b: 1 } };
-        var obj2 = { a: { c: 2 } };
+        const obj1 = { a: { b: 1 } };
+        const obj2 = { a: { c: 2 } };
 
-        var out = merge(obj1, obj2);
+        const out = merge(obj1, obj2);
         expect(out).toEqual({ a: { b: 1, c: 2 } });
         expect(out.a).not.toBe(obj1.a);
         expect(out.a).not.toBe(obj2.a);
     });
 
     it('should deep clone arrays during merge', function() {
-        var obj1 = { a: [1, 2, [3, 4]] };
-        var obj2 = { b: [5, 6] };
+        const obj1 = { a: [1, 2, [3, 4]] };
+        const obj2 = { b: [5, 6] };
 
-        var out = merge(obj1, obj2);
+        const out = merge(obj1, obj2);
         expect(out.a).toEqual([1, 2, [3, 4]]);
         expect(out.a).not.toBe(obj1.a);
 

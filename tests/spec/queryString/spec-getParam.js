@@ -1,9 +1,9 @@
-import getParam from '../../../src/queryString/getParam';
+import getParam from '../../../queryString/getParam';
 
 describe('queryString/getParam()', function() {
     it('should parse full URL or query string, get parameter value and typecast by default', function() {
-        var query = '?foo=bar&a=123&b=false&c=null&q=hello+world';
-        var url = 'http://example.com/' + query;
+        const query = '?foo=bar&a=123&b=false&c=null&q=hello+world';
+        const url = 'http://example.com/' + query;
 
         expect(getParam(query, 'foo')).toEqual('bar');
         expect(getParam(query, 'foo')).toEqual(getParam(url, 'foo'));
@@ -16,8 +16,7 @@ describe('queryString/getParam()', function() {
     });
 
     it('should allow toggling the typecast', function() {
-        var query = '?foo=bar&a=123&b=false&c=null';
-        var url = 'http://example.com/?foo=bar&a=123&b=false&c=null';
+        const query = '?foo=bar&a=123&b=false&c=null';
 
         expect(getParam(query, 'foo', true)).toEqual('bar');
         expect(getParam(query, 'foo', false)).toEqual('bar');

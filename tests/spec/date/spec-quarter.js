@@ -1,4 +1,4 @@
-import quarter from '../../../src/date/quarter';
+import quarter from '../../../date/quarter';
 
 describe('date/quarter', function() {
     it('should return quarter number', function() {

@@ -1,8 +1,8 @@
-import removeAll from '../../../src/array/removeAll';
+import removeAll from '../../../array/removeAll';
 
 describe('array/removeAll()', function() {
     it('should work in normal array', function() {
-        var arr = [1, 'a', 2, 'b', 'a', 'a'];
+        const arr = [1, 'a', 2, 'b', 'a', 'a'];
 
         removeAll(arr, 'a');
         expect(arr[1]).toBe(2);
@@ -10,7 +10,7 @@ describe('array/removeAll()', function() {
     });
 
     it('should work in sparse array', function() {
-        var arr = [];
+        const arr = [];
         arr[1] = 1;
         arr[3] = 'a';
         arr[6] = 2;

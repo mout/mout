@@ -1,22 +1,22 @@
-import deepFillIn from '../../../src/object/deepFillIn';
+import deepFillIn from '../../../object/deepFillIn';
 
 describe('object/deepFillIn', function() {
     it('should copy missing properties', function() {
-        var a = {
+        const a = {
             foo: 'bar',
             lorem: 123,
             b: {
                 c: 'd'
             }
         };
-        var obj = deepFillIn({ lorem: 'ipsum' }, a);
+        const obj = deepFillIn({ lorem: 'ipsum' }, a);
         expect(obj.foo).toEqual('bar');
         expect(obj.lorem).toEqual('ipsum');
         expect(obj.b).toBe(a.b);
     });
 
     it('should copy nested properties', function() {
-        var a = {
+        const a = {
             foo: 'bar',
             lorem: 123,
             b: {
@@ -26,13 +26,13 @@ describe('object/deepFillIn', function() {
                 }
             }
         };
-        var b = {
+        const b = {
             e: 'f',
             dolor: {
                 '1': 456
             }
         };
-        var obj = deepFillIn(
+        const obj = deepFillIn(
             {
                 lorem: 'ipsum',
                 b: b
@@ -51,11 +51,11 @@ describe('object/deepFillIn', function() {
     });
 
     it('should allow multiple default objects', function() {
-        var a = { lorem: 'ipsum', dolor: { sit: 'amet' } };
-        var b = { foo: 'bar', lorem: 'dolor', dolor: { sit: 456, it: 78 } };
-        var c = { num: 123, foo: null, dolor: { maecennas: 'ullamcor' } };
+        const a = { lorem: 'ipsum', dolor: { sit: 'amet' } };
+        const b = { foo: 'bar', lorem: 'dolor', dolor: { sit: 456, it: 78 } };
+        const c = { num: 123, foo: null, dolor: { maecennas: 'ullamcor' } };
 
-        var obj = deepFillIn(a, b, c);
+        const obj = deepFillIn(a, b, c);
 
         expect(obj).toEqual({
             lorem: 'ipsum',
@@ -71,12 +71,12 @@ describe('object/deepFillIn', function() {
 
     it('should copy values that are not plain objects by reference', function() {
         function Custom() {}
-        var defaults = {
+        const defaults = {
             custom: new Custom(),
             items: [1, 2, 3]
         };
 
-        var target = {};
+        const target = {};
         deepFillIn(target, defaults);
 
         expect(target.custom).toBe(defaults.custom);

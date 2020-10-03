@@ -3,7 +3,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Array every
  */
-function every(arr, callback, thisObj) {
+function every(arr, callback, thisObj?: any) {
     callback = makeIterator(callback, thisObj);
     let result = true;
     if (arr == null) {

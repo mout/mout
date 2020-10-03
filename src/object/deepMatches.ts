@@ -41,12 +41,7 @@ function matchObject(target, pattern) {
  * Recursively check if the objects match.
  */
 function deepMatches(target, pattern) {
-    if (
-        target &&
-        typeof target === 'object' &&
-        pattern &&
-        typeof pattern === 'object'
-    ) {
+    if (target && typeof target === 'object' && pattern && typeof pattern === 'object') {
         if (isArray(target) && isArray(pattern)) {
             return matchArray(target, pattern);
         } else {

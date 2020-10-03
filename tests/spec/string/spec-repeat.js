@@ -1,4 +1,4 @@
-import repeat from '../../../src/string/repeat';
+import repeat from '../../../string/repeat';
 
 describe('string/repeat()', function() {
     it('should repeat string n times', function() {

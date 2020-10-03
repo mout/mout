@@ -7,7 +7,6 @@ import hasOwn from '../object/hasOwn';
  */
 function decode(queryStr, shouldTypecast) {
     const queryArr = (queryStr || '').replace('?', '').split('&');
-    const reg = /([^=]+)=(.+)/;
     let i = -1;
     const obj = {};
     let equalIndex;

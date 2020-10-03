@@ -3,7 +3,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Array reject
  */
-function reject(arr, callback, thisObj) {
+function reject(arr, callback, thisObj?: any) {
     callback = makeIterator(callback, thisObj);
     const results = [];
     if (arr == null) {

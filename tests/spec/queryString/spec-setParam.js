@@ -1,11 +1,9 @@
-import setParam from '../../../src/queryString/setParam';
+import setParam from '../../../queryString/setParam';
 
 describe('queryString/setParam', function() {
     it("should add value if it doesn't exist", function() {
         expect(setParam('foo.com', 'bar', true)).toBe('foo.com?bar=true');
-        expect(setParam('foo.com?bar=1', 'ipsum', 'dolor')).toBe(
-            'foo.com?bar=1&ipsum=dolor'
-        );
+        expect(setParam('foo.com?bar=1', 'ipsum', 'dolor')).toBe('foo.com?bar=1&ipsum=dolor');
     });
 
     it('should encode value', function() {
@@ -15,28 +13,18 @@ describe('queryString/setParam', function() {
     });
 
     it('should update value if it exists', function() {
-        expect(setParam('foo.com?bar=2', 'bar', false)).toBe(
-            'foo.com?bar=false'
+        expect(setParam('foo.com?bar=2', 'bar', false)).toBe('foo.com?bar=false');
+        expect(setParam('foo.com?bar=1&ipsum=dolor%20amet&maecennas=3', 'bar', 'amet')).toBe(
+            'foo.com?bar=amet&ipsum=dolor%20amet&maecennas=3'
         );
-        expect(
-            setParam(
-                'foo.com?bar=1&ipsum=dolor%20amet&maecennas=3',
-                'bar',
-                'amet'
-            )
-        ).toBe('foo.com?bar=amet&ipsum=dolor%20amet&maecennas=3');
     });
 
     it('should work with just the query string', function() {
-        expect(setParam('?dolor=amet', 'ipsum', 123)).toEqual(
-            '?dolor=amet&ipsum=123'
+        expect(setParam('?dolor=amet', 'ipsum', 123)).toEqual('?dolor=amet&ipsum=123');
+        expect(setParam('?dolor=amet&ipsum=5', 'ipsum', 123)).toEqual('?dolor=amet&ipsum=123');
+        expect(setParam('?dolor=amet&ipsum=5&maecennas=ullamcor', 'ipsum', 123)).toEqual(
+            '?dolor=amet&ipsum=123&maecennas=ullamcor'
         );
-        expect(setParam('?dolor=amet&ipsum=5', 'ipsum', 123)).toEqual(
-            '?dolor=amet&ipsum=123'
-        );
-        expect(
-            setParam('?dolor=amet&ipsum=5&maecennas=ullamcor', 'ipsum', 123)
-        ).toEqual('?dolor=amet&ipsum=123&maecennas=ullamcor');
     });
 
     it('should work with empty url', function() {

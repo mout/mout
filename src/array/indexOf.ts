@@ -1,8 +1,7 @@
 /**
  * Array.indexOf
  */
-function indexOf(arr, item, fromIndex) {
-    fromIndex = fromIndex || 0;
+function indexOf(arr, item, fromIndex = 0) {
     if (arr == null) {
         return -1;
     }

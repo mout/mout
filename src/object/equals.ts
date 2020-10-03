@@ -18,9 +18,7 @@ function checkProperties(value, key) {
 /**
  * Checks if two objects have the same keys and values.
  */
-function equals(a, b, callback) {
-    callback = callback || is;
-
+function equals(a, b, callback = is) {
     if (!isObject(a) || !isObject(b)) {
         return callback(a, b);
     }

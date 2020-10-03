@@ -1,4 +1,4 @@
-import max from '../../../src/object/max';
+import max from '../../../object/max';
 
 describe('object/max', function() {
     it('should return maximum value', function() {
@@ -26,7 +26,7 @@ describe('object/max', function() {
     });
 
     it('should allow string shorthand syntax', function() {
-        var obj = {
+        const obj = {
             a: { foo: 'bar', lorem: 'ipsum', id: 1 },
             b: { foo: 'bar', lorem: 'ipsum', id: 2 },
             c: { foo: 'bar', lorem: 'ipsum', id: 0 }

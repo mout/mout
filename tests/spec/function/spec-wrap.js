@@ -1,12 +1,12 @@
-import wrap from '../../../src/function/wrap';
+import wrap from '../../../function/wrap';
 
-var add = function(a, b) {
+const add = function(a, b) {
     return a + b;
 };
 
 describe('function/wrap', function() {
     it('should create a wrapped function', function() {
-        var wrapped = wrap(add, function(func, a, b) {
+        const wrapped = wrap(add, function(func, a, b) {
             return func(a + 2, b);
         });
 
@@ -14,10 +14,10 @@ describe('function/wrap', function() {
     });
 
     it('should pass the correct `wrapper` arguments', function() {
-        var args;
-        var noop = function() {};
+        let args;
+        const noop = function() {};
 
-        var wrapped = wrap(noop, function() {
+        const wrapped = wrap(noop, function() {
             args || (args = Array.prototype.slice.call(arguments));
         });
 
@@ -26,11 +26,11 @@ describe('function/wrap', function() {
     });
 
     it('should not set a `this` binding', function() {
-        var wrapped = wrap(add, function(func) {
+        const wrapped = wrap(add, function(func) {
             return func(this.a, this.b);
         });
 
-        var object = {
+        const object = {
             wrapped: wrapped,
             a: 1,
             b: 2

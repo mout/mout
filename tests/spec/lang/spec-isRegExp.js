@@ -1,4 +1,4 @@
-import isRegExp from '../../../src/lang/isRegExp';
+import isRegExp from '../../../lang/isRegExp';
 
 describe('lang/isRegExp()', function() {
     it('should detect if value is a RegExp', function() {

@@ -1,8 +1,8 @@
-import bindAll from '../../../src/object/bindAll';
+import bindAll from '../../../object/bindAll';
 
 describe('object/bindAll', function() {
     it('should bind all methods by default', function() {
-        var obj = {
+        const obj = {
             foo: 'bar',
             a: function() {
                 return this.foo;
@@ -25,7 +25,7 @@ describe('object/bindAll', function() {
     });
 
     it('should allow binding just a few methods', function() {
-        var obj = {
+        const obj = {
             foo: 'bar',
             a: function() {
                 return this.foo;

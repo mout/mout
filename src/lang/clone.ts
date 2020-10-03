@@ -7,20 +7,20 @@ import mixIn from '../object/mixIn';
  */
 function clone(val) {
     switch (kindOf(val)) {
-    case 'Object':
-        return cloneObject(val);
-    case 'Array':
-        return cloneArray(val);
-    case 'RegExp':
-        return cloneRegExp(val);
-    case 'Date':
-        return cloneDate(val);
-    default:
-        return val;
+        case 'Object':
+            return cloneObject(val) as {};
+        case 'Array':
+            return cloneArray(val) as Array<unknown>;
+        case 'RegExp':
+            return cloneRegExp(val) as RegExp;
+        case 'Date':
+            return cloneDate(val) as Date;
+        default:
+            return val;
     }
 }
 
-function cloneObject(source) {
+function cloneObject<T extends {}>(source: T): T {
     if (isPlainObject(source)) {
         return mixIn({}, source);
     } else {
@@ -28,7 +28,7 @@ function cloneObject(source) {
     }
 }
 
-function cloneRegExp(r) {
+function cloneRegExp(r: RegExp): RegExp {
     let flags = '';
     flags += r.multiline ? 'm' : '';
     flags += r.global ? 'g' : '';
@@ -36,11 +36,11 @@ function cloneRegExp(r) {
     return new RegExp(r.source, flags);
 }
 
-function cloneDate(date) {
+function cloneDate(date: Date): Date {
     return new Date(+date);
 }
 
-function cloneArray(arr) {
+function cloneArray<T>(arr: T[]): T[] {
     return arr.slice();
 }
 

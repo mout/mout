@@ -1,4 +1,4 @@
-import rpad from '../../../src/string/rpad';
+import rpad from '../../../string/rpad';
 
 describe('string/rpad()', function() {
     it('should add chars to the right if length is < minLength', function() {

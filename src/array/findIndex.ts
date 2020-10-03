@@ -3,7 +3,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Returns the index of the first item that matches criteria
  */
-function findIndex(arr, iterator, thisObj) {
+function findIndex(arr, iterator, thisObj?: any) {
     iterator = makeIterator(iterator, thisObj);
     if (arr == null) {
         return -1;

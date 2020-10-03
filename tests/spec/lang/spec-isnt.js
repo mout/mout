@@ -1,4 +1,4 @@
-import isnt from '../../../src/lang/isnt';
+import isnt from '../../../lang/isnt';
 
 describe('lang/isnt', function() {
     it('should return true if arguments are not identical', function() {
@@ -18,9 +18,9 @@ describe('lang/isnt', function() {
         expect(isnt(1, 1)).toBe(false);
         expect(isnt(0, 0)).toBe(false);
         expect(isnt('a', 'a')).toBe(false);
-        var obj = {};
+        const obj = {};
         expect(isnt(obj, obj)).toBe(false);
-        var arr = [];
+        const arr = [];
         expect(isnt(arr, arr)).toBe(false);
         expect(isnt(NaN, NaN)).toBe(false);
         expect(isnt(Infinity, Infinity)).toBe(false);

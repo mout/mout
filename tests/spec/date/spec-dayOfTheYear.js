@@ -1,4 +1,4 @@
-import dayOfTheYear from '../../../src/date/dayOfTheYear';
+import dayOfTheYear from '../../../date/dayOfTheYear';
 
 describe('date/dayOfTheYear', function() {
     it('should return day of the year', function() {

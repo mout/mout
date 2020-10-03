@@ -5,7 +5,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Bucket the array values.
  */
-function groupBy(arr, categorize, thisObj) {
+function groupBy(arr, categorize, thisObj?: any) {
     if (categorize) {
         categorize = makeIterator(categorize, thisObj);
     } else {

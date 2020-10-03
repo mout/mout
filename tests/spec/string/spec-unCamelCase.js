@@ -1,4 +1,4 @@
-import unCamelCase from '../../../src/string/unCamelCase';
+import unCamelCase from '../../../string/unCamelCase';
 
 describe('string/unCamelCase()', function() {
     it('should add space between camelCase text', function() {
@@ -7,7 +7,7 @@ describe('string/unCamelCase()', function() {
     });
 
     it('should use specified separator', function() {
-        var str = 'loremIpsumDolor';
+        const str = 'loremIpsumDolor';
         expect(unCamelCase(str, '-')).toEqual('lorem-ipsum-dolor');
     });
 

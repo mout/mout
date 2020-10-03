@@ -1,23 +1,23 @@
-import replace from '../../../src/string/replace';
+import replace from '../../../string/replace';
 
 describe('string/replace', function() {
     it('should replace single string', function() {
-        var result = replace('test foo', 'foo', 'result');
+        const result = replace('test foo', 'foo', 'result');
         expect(result).toEqual('test result');
     });
 
     it('should replace multiple searches with single string', function() {
-        var result = replace('test one two', ['one', 'two'], 'n');
+        const result = replace('test one two', ['one', 'two'], 'n');
         expect(result).toEqual('test n n');
     });
 
     it('should replace multiple searches with multiple strings', function() {
-        var result = replace('test one two', ['one', 'two'], ['1', '2']);
+        const result = replace('test one two', ['one', 'two'], ['1', '2']);
         expect(result).toEqual('test 1 2');
     });
 
     it('should replace with regexp', function() {
-        var result = replace('test 1 2', /\d+/g, 'n');
+        const result = replace('test 1 2', /\d+/g, 'n');
         expect(result).toEqual('test n n');
     });
 
@@ -29,11 +29,7 @@ describe('string/replace', function() {
             return m.charCodeAt(0);
         }
 
-        var result = replace(
-            '1 2 3 a',
-            [/\d+/g, /[a-z]/g],
-            [replaceNum, replaceLetter]
-        );
+        const result = replace('1 2 3 a', [/\d+/g, /[a-z]/g], [replaceNum, replaceLetter]);
 
         expect(result).toEqual('1 4 9 97');
     });

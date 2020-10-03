@@ -7,12 +7,10 @@ const DEFAULT_MARGIN_CHAR = '|';
  * marginChar defaults to '|'.
  */
 function stripMargin(str, marginChar) {
-    let regexp;
-
     marginChar = escapeRegExp(marginChar || DEFAULT_MARGIN_CHAR);
     str = toString(str);
 
-    regexp = new RegExp('^.*' + marginChar, 'gm');
+    const regexp = new RegExp(`^.*${marginChar}`, 'gm');
 
     return str.replace(regexp, '');
 }

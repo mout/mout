@@ -1,4 +1,4 @@
-import debounce from '../../../src/function/debounce';
+import debounce from '../../../function/debounce';
 import mockNow from '../time/helper-mockNow';
 
 describe('function/debounce', function() {
@@ -13,8 +13,8 @@ describe('function/debounce', function() {
     });
 
     it('should execute callback only once after consecutive calls and just after interval', function() {
-        var count = 0;
-        var cb = debounce(function() {
+        let count = 0;
+        const cb = debounce(function() {
             count++;
         }, 50);
         cb();
@@ -26,8 +26,8 @@ describe('function/debounce', function() {
     });
 
     it('should allow passing args and should use last supplied value by default', function() {
-        var count = 0;
-        var cb = debounce(function(a, b) {
+        let count = 0;
+        const cb = debounce(function(a, b) {
             count += a + b;
         }, 50);
         cb(1, 2);
@@ -39,8 +39,8 @@ describe('function/debounce', function() {
     });
 
     it('should allow executing callback at begin', function() {
-        var count = 0;
-        var cb = debounce(
+        let count = 0;
+        const cb = debounce(
             function() {
                 count++;
             },
@@ -59,8 +59,8 @@ describe('function/debounce', function() {
     });
 
     it('should use first supplied args if it executes asap', function() {
-        var count = 0;
-        var cb = debounce(
+        let count = 0;
+        const cb = debounce(
             function(a, b) {
                 count += a + b;
             },
@@ -79,8 +79,8 @@ describe('function/debounce', function() {
     });
 
     it('should allow to cancel the debounced call', function() {
-        var count = 0;
-        var cb = debounce(function() {
+        let count = 0;
+        const cb = debounce(function() {
             count++;
         }, 50);
         cb();

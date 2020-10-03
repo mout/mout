@@ -1,7 +1,7 @@
-import after from '../../../src/function/after';
+import after from '../../../function/after';
 
 describe('function/after', function() {
-    var count = 0;
+    let count = 0;
 
     function tick() {
         count++;
@@ -12,7 +12,7 @@ describe('function/after', function() {
     });
 
     it('should the callback after appropriate calls', function() {
-        var callback = after(tick, 3);
+        const callback = after(tick, 3);
 
         callback();
         callback();
@@ -22,7 +22,7 @@ describe('function/after', function() {
     });
 
     it('should not call closure before', function() {
-        var callback = after(tick, 5);
+        const callback = after(tick, 5);
 
         callback();
         callback();
@@ -33,7 +33,7 @@ describe('function/after', function() {
     });
 
     it('should continue calling the callback after the minimum amount of calls', function() {
-        var callback = after(tick, 3);
+        const callback = after(tick, 3);
 
         callback();
         callback();

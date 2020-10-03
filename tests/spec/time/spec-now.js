@@ -1,10 +1,10 @@
-import now from '../../../src/time/now';
+import now from '../../../time/now';
 
-var past = now();
+const past = now();
 
 describe('time/now()', function() {
     it('should return an integer', function() {
-        var b = now();
+        const b = now();
         expect(b.toFixed('0')).toEqual(b + '');
     });
 

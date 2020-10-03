@@ -1,33 +1,33 @@
-import hyphenate from '../../../src/string/hyphenate';
+import hyphenate from '../../../string/hyphenate';
 
 describe('string/hyphenate()', function() {
     it('should split camelCase text', function() {
-        var str = 'loremIpsum';
+        const str = 'loremIpsum';
         expect(hyphenate(str)).toEqual('lorem-ipsum');
     });
 
     it('should replace spaces with hyphens', function() {
-        var str = '  lorem ipsum    dolor';
+        const str = '  lorem ipsum    dolor';
         expect(hyphenate(str)).toEqual('lorem-ipsum-dolor');
     });
 
     it('should remove non-word chars', function() {
-        var str = ' %# lorem ipsum  ? $  dolor';
+        const str = ' %# lorem ipsum  ? $  dolor';
         expect(hyphenate(str)).toEqual('lorem-ipsum-dolor');
     });
 
     it('should replace accents', function() {
-        var str = 'spéçïãl chârs';
+        const str = 'spéçïãl chârs';
         expect(hyphenate(str)).toEqual('special-chars');
     });
 
     it('should convert to lowercase', function() {
-        var str = 'LOREM IPSUM';
+        const str = 'LOREM IPSUM';
         expect(hyphenate(str)).toEqual('lorem-ipsum');
     });
 
     it('should do it all at once', function() {
-        var str = '  %$ & loremIpsum @ dolor spéçïãl  ! chârs  )( )  ';
+        const str = '  %$ & loremIpsum @ dolor spéçïãl  ! chârs  )( )  ';
         expect(hyphenate(str)).toEqual('lorem-ipsum-dolor-special-chars');
     });
 

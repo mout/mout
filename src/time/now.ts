@@ -8,10 +8,10 @@ function now() {
 }
 
 now.get =
-    typeof Date.now === 'function' ?
-        Date.now :
-        function() {
-            return +new Date();
-        };
+    typeof Date.now === 'function'
+        ? Date.now
+        : function() {
+              return +new Date();
+          };
 
 export default now;

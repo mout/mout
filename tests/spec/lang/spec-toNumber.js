@@ -1,4 +1,4 @@
-import toNumber from '../../../src/lang/toNumber';
+import toNumber from '../../../lang/toNumber';
 
 describe('lang/toNumber', function() {
     it('should convert null to zero', function() {

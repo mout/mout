@@ -1,9 +1,9 @@
-import forEach from '../../../src/array/forEach';
+import forEach from '../../../array/forEach';
 
 describe('array/forEach()', function() {
     it('should loop and pass params to callback', function() {
-        var result = 0;
-        var items = [1, 2, 3, 4, 5];
+        let result = 0;
+        const items = [1, 2, 3, 4, 5];
 
         forEach(items, function(val, i, arr) {
             expect(arr).toBe(items);
@@ -21,12 +21,12 @@ describe('array/forEach()', function() {
         // there is no way to support sparse arrays properly on IE 7-8
         // so we dropped sparse array support altogether. see #64
 
-        var arr1 = new Array(6);
+        const arr1 = new Array(6);
         arr1[2] = 3;
         arr1[5] = 8;
         arr1[10] = undefined; // it's a trap!
 
-        var result = [];
+        const result = [];
 
         forEach(arr1, function(val, i, arr) {
             expect(arr).toBe(arr1);
@@ -43,8 +43,8 @@ describe('array/forEach()', function() {
     });
 
     it('should allow exiting the iteration early. see #94', function() {
-        var arr = [1, 2, 3, 4, 5];
-        var count = 0;
+        const arr = [1, 2, 3, 4, 5];
+        let count = 0;
 
         forEach(arr, function() {
             count++;
@@ -57,8 +57,8 @@ describe('array/forEach()', function() {
     });
 
     it('should not execute loop if array is null/undefined. match collection/forEach behavior. see #93', function() {
-        var count = 0;
-        var testFunc = function() {
+        let count = 0;
+        const testFunc = function() {
             count++;
         };
 

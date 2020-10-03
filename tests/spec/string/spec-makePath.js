@@ -1,16 +1,12 @@
-import makePath from '../../../src/string/makePath';
+import makePath from '../../../string/makePath';
 
 describe('string/makePath()', function() {
     it('should convert to path', function() {
-        expect(makePath('lorem', 'ipsum', 'dolor')).toEqual(
-            'lorem/ipsum/dolor'
-        );
+        expect(makePath('lorem', 'ipsum', 'dolor')).toEqual('lorem/ipsum/dolor');
     });
 
     it('should ignore empty/null values', function() {
-        expect(makePath('lorem', null, 'ipsum', '', null, 'dolor')).toEqual(
-            'lorem/ipsum/dolor'
-        );
+        expect(makePath('lorem', null, 'ipsum', '', null, 'dolor')).toEqual('lorem/ipsum/dolor');
     });
 
     it('should ignore empty/null values at begin', function() {
@@ -35,11 +31,7 @@ describe('string/makePath()', function() {
     });
 
     it('should not remove duplicate slashes if after ":" (protocol)', function() {
-        expect(makePath('file:///dolor/', '/', '/ipsum', '//')).toEqual(
-            'file:///dolor/ipsum/'
-        );
-        expect(makePath('http://dolor/', '/', '/ipsum', '//')).toEqual(
-            'http://dolor/ipsum/'
-        );
+        expect(makePath('file:///dolor/', '/', '/ipsum', '//')).toEqual('file:///dolor/ipsum/');
+        expect(makePath('http://dolor/', '/', '/ipsum', '//')).toEqual('http://dolor/ipsum/');
     });
 });

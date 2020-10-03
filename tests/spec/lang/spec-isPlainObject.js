@@ -1,4 +1,4 @@
-import isPlainObject from '../../../src/lang/isPlainObject';
+import isPlainObject from '../../../lang/isPlainObject';
 
 describe('lang/isPlainObject', function() {
     it('should return true when plain object', function() {

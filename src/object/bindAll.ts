@@ -5,8 +5,8 @@ import forEach from '../array/forEach';
 /**
  * Binds methods of the object to be run in it's own context.
  */
-function bindAll<K extends string, T extends {[k in K]: T[K]}>(obj: T, ...args: K[]) {
-    const keys: K[] = args.length > 1 ? args : functions(obj);
+function bindAll<T extends {}>(obj: T, ...args: Array<keyof T>) {
+    const keys = args.length > 0 ? args : functions(obj);
     forEach(keys, function(key) {
         obj[key] = bind(obj[key], obj);
     });

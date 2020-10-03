@@ -1,8 +1,8 @@
-import encode from '../../../src/queryString/encode';
+import encode from '../../../queryString/encode';
 
 describe('queryString/encode()', function() {
     it('should convert simple object into query string.', function() {
-        var q = {
+        const q = {
             a: 123,
             b: false,
             c: null,
@@ -12,7 +12,7 @@ describe('queryString/encode()', function() {
     });
 
     it('should encode special chars', function() {
-        var q = {
+        const q = {
             a: 'bar',
             b: 'lorem ipsum',
             c: 'spéçîãl çhârs'
@@ -23,7 +23,7 @@ describe('queryString/encode()', function() {
     });
 
     it('should run through Array values.', function() {
-        var q = {
+        const q = {
             a: 'foo',
             b: [0, false, null, undefined, 'spéçîãl çhârs'],
             c: [],

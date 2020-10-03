@@ -4,7 +4,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Maps the items in the array and concatenates the result arrays.
  */
-function collect(arr, callback, thisObj) {
+function collect(arr, callback, thisObj?: any) {
     callback = makeIterator(callback, thisObj);
     const results = [];
     if (arr == null) {

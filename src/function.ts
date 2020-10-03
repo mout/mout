@@ -36,5 +36,5 @@ export {
     throttle,
     timeout,
     times,
-    wrap,
+    wrap
 };

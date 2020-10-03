@@ -1,4 +1,4 @@
-import ordinal from '../../../src/number/ordinal';
+import ordinal from '../../../number/ordinal';
 
 describe('number/ordinal', function() {
     it('should return "[N]st" if number ends with "1" and [N]th if number ends with "11"', function() {

@@ -1,4 +1,4 @@
-import is from '../../../src/lang/is';
+import is from '../../../lang/is';
 
 describe('lang/is', function() {
     it('should return false if arguments are not identical', function() {
@@ -18,9 +18,9 @@ describe('lang/is', function() {
         expect(is(1, 1)).toBe(true);
         expect(is(0, 0)).toBe(true);
         expect(is('a', 'a')).toBe(true);
-        var obj = {};
+        const obj = {};
         expect(is(obj, obj)).toBe(true);
-        var arr = [];
+        const arr = [];
         expect(is(arr, arr)).toBe(true);
         expect(is(NaN, NaN)).toBe(true);
         expect(is(Infinity, Infinity)).toBe(true);

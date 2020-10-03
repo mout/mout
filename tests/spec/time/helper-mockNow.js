@@ -1,9 +1,9 @@
-import now from '../../../src/time/now';
+import now from '../../../time/now';
 
-var time;
-var original = now.get;
-var interval;
-var _exports = {};
+let time;
+const original = now.get;
+let interval;
+const _exports = {};
 
 _exports.start = function(ts) {
     time = ts != null ? ts : 1382023145920;

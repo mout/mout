@@ -1,4 +1,4 @@
-import stripMargin from '../../../src/string/stripMargin';
+import stripMargin from '../../../string/stripMargin';
 
 describe('string/stripMargin', function() {
     it('should strip leading characters up to | from a string', function() {

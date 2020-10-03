@@ -1,4 +1,4 @@
-import contains from '../../../src/string/contains';
+import contains from '../../../string/contains';
 
 describe('string/contains()', function() {
     it('should return true if string contains substring', function() {

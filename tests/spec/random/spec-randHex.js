@@ -1,4 +1,4 @@
-import randHex from '../../../src/random/randHex';
+import randHex from '../../../random/randHex';
 import mockRandom from './helper-mockRandom';
 
 describe('random/randHex()', function() {
@@ -11,8 +11,8 @@ describe('random/randHex()', function() {
     });
 
     it('should return a random hexadecimal value', function() {
-        var a = randHex(),
-            b = randHex();
+        const a = randHex();
+        const b = randHex();
         expect(a).not.toEqual(b);
     });
 

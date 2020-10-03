@@ -5,7 +5,7 @@ const CAMEL_CASE_BORDER = /([a-z\xE0-\xFF])([A-Z\xC0\xDF])/g;
 /**
  * Add space between camelCase text.
  */
-function unCamelCase(str, delimiter) {
+function unCamelCase(str: string, delimiter: string | null = ' '): string {
     if (delimiter == null) {
         delimiter = ' ';
     }

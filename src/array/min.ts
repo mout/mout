@@ -3,11 +3,11 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Return minimum value inside array
  */
-function min(arr, iterator, thisObj) {
+function min(arr, iterator, thisObj?: any) {
     if (arr == null || !arr.length) {
         return -Infinity;
     } else if (arr.length && !iterator) {
-        return Math.min.apply(Math, arr);
+        return Math.min(...arr);
     } else {
         iterator = makeIterator(iterator, thisObj);
         let result;

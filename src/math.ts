@@ -14,17 +14,4 @@ import norm from './math/norm';
 import overflow from './math/overflow';
 import round from './math/round';
 
-export {
-    ceil,
-    clamp,
-    countSteps,
-    floor,
-    inRange,
-    isNear,
-    lerp,
-    loop,
-    map,
-    norm,
-    overflow,
-    round,
-};
+export { ceil, clamp, countSteps, floor, inRange, isNear, lerp, loop, map, norm, overflow, round };

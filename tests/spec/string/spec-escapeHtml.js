@@ -1,4 +1,4 @@
-import escapeHtml from '../../../src/string/escapeHtml';
+import escapeHtml from '../../../string/escapeHtml';
 
 describe('string/escapeHtml()', function() {
     it('should convert special chars into entities', function() {

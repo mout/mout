@@ -1,4 +1,4 @@
-import isKind from '../../../src/lang/isKind';
+import isKind from '../../../lang/isKind';
 
 describe('lang/isKind()', function() {
     it('should check kind of value', function() {

@@ -2,8 +2,8 @@
 // this file is used to run specs on multiple environments
 // ============================================================================
 
-var Jasmine = require('jasmine');
-var jasmine = new Jasmine();
+const Jasmine = require('jasmine');
+const jasmine = new Jasmine();
 
 global.jasmine = jasmine.env;
 

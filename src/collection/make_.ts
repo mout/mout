@@ -1,18 +1,13 @@
-import slice from '../array/slice';
-
 /**
  * internal method used to create other collection modules.
  */
-function makeCollectionMethod(arrMethod, objMethod, defaultReturn) {
-    return function() {
-        const args = slice(arguments);
+function makeCollectionMethod(arrMethod, objMethod, defaultReturn?) {
+    return function(...args) {
         if (args[0] == null) {
             return defaultReturn;
         }
         // array-like is treated as array
-        return typeof args[0].length === 'number' ?
-            arrMethod.apply(null, args) :
-            objMethod.apply(null, args);
+        return typeof args[0].length === 'number' ? arrMethod(...args) : objMethod(...args);
     };
 }
 

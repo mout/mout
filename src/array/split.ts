@@ -1,8 +1,7 @@
 /**
  * Split array into a fixed number of segments.
  */
-function split(array, segments) {
-    segments = segments || 2;
+function split(array, segments = 2) {
     const results = [];
     if (array == null) {
         return results;

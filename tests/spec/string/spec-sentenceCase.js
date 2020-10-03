@@ -1,8 +1,8 @@
-import sentenceCase from '../../../src/string/sentenceCase';
+import sentenceCase from '../../../string/sentenceCase';
 
 describe('string/sentenceCase()', function() {
     it('should uppercase first char of each sentence and lowercase others', function() {
-        var str = 'lorem Ipsum doLOr. sit amet dolor.';
+        const str = 'lorem Ipsum doLOr. sit amet dolor.';
         expect(sentenceCase(str)).toEqual('Lorem ipsum dolor. Sit amet dolor.');
     });
 

@@ -1,4 +1,4 @@
-import isLeapYear from '../../../src/date/isLeapYear';
+import isLeapYear from '../../../date/isLeapYear';
 
 describe('date/isLeapYear', function() {
     it('should check if it is a leap year', function() {

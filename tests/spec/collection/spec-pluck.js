@@ -1,8 +1,8 @@
-import pluck from '../../../src/collection/pluck';
+import pluck from '../../../collection/pluck';
 
 describe('collection/pluck', function() {
     it('should extract properties from items (array)', function() {
-        var users = [
+        const users = [
             {
                 name: 'John',
                 age: 21
@@ -22,7 +22,7 @@ describe('collection/pluck', function() {
     });
 
     it('should extract properties from items (object)', function() {
-        var users = {
+        const users = {
             first: {
                 name: 'John',
                 age: 21

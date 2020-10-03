@@ -5,7 +5,7 @@ import makeIterator from '../function/makeIterator_';
  * Creates a new object with all the properties where the callback returns
  * true.
  */
-function filterValues(obj, callback, thisObj) {
+function filterValues(obj, callback, thisObj?: any) {
     callback = makeIterator(callback, thisObj);
     const output = {};
     forOwn(obj, function(value, key, obj) {

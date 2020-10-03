@@ -1,4 +1,4 @@
-import round from '../../../src/math/round';
+import round from '../../../math/round';
 
 describe('math/round', function() {
     it('should round value', function() {

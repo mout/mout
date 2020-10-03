@@ -2,8 +2,11 @@
   "compilerOptions": {
     "allowJs": true,
     "lib": ["ES2015"],
-    "strict": true,
-    "outDir": "out",
-    "module": "CommonJS"
-  }
+    "outDir": "dist",
+    "module": "CommonJS",
+    "declaration": true,
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
 }

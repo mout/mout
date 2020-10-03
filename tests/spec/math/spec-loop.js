@@ -1,4 +1,4 @@
-import loop from '../../../src/math/loop';
+import loop from '../../../math/loop';
 
 describe('math/loop()', function() {
     it('should return `min` if `val` is bigger than `max`', function() {
@@ -20,8 +20,6 @@ describe('math/loop()', function() {
         expect(loop(-6, -10, -2)).toEqual(-6);
 
         expect(loop(10, -Number.MAX_VALUE, Number.MAX_VALUE)).toEqual(10);
-        expect(loop(1234567890, -Number.MAX_VALUE, Number.MAX_VALUE)).toEqual(
-            1234567890
-        );
+        expect(loop(1234567890, -Number.MAX_VALUE, Number.MAX_VALUE)).toEqual(1234567890);
     });
 });

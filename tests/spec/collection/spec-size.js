@@ -1,4 +1,4 @@
-import size from '../../../src/collection/size';
+import size from '../../../collection/size';
 
 describe('collection/size', function() {
     it('should return array length', function() {
@@ -10,24 +10,24 @@ describe('collection/size', function() {
     });
 
     it('should avoid dont enum bugs', function() {
-        var obj = {
+        const obj = {
             toString: 123,
             valueOf: true,
             hasOwnProperty: 'ipsum'
         };
 
-        var s = size(obj);
+        const s = size(obj);
 
         expect(s).toBe(3);
     });
 
     it('should not count prototype properties', function() {
-        var Foo = function() {
+        const Foo = function() {
             this.lorem = 'ipsum';
         };
         Foo.prototype = { foo: 'bar' };
 
-        var obj = new Foo();
+        const obj = new Foo();
 
         expect(obj.lorem).toEqual('ipsum');
         expect(obj.foo).toEqual('bar');

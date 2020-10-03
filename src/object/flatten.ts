@@ -7,7 +7,7 @@ import isPlainObject from '../lang/isPlainObject';
  */
 function flattenTo(obj, result, prefix, level) {
     forOwn(obj, function(value, key) {
-        const nestedPrefix = prefix ? prefix + '.' + key : key;
+        const nestedPrefix = prefix ? `${prefix}.${key}` : key;
 
         if (level !== 0 && isPlainObject(value)) {
             flattenTo(value, result, nestedPrefix, level - 1);

@@ -1,4 +1,4 @@
-import floor from '../../../src/math/floor';
+import floor from '../../../math/floor';
 
 describe('math/floor()', function() {
     it('floor value to full steps', function() {

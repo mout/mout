@@ -1,4 +1,4 @@
-import filter from '../../../src/collection/filter';
+import filter from '../../../collection/filter';
 
 describe('collection/filter', function() {
     // no need to test full behavior since it reuses the array/object methods
@@ -19,14 +19,14 @@ describe('collection/filter', function() {
     });
 
     it('should return empty array if target is null', function() {
-        var result = filter(null, function(val) {
+        const result = filter(null, function(val) {
             return true;
         });
         expect(result).toEqual([]);
     });
 
     it('should return array if target is array-like', function() {
-        var result = filter(
+        const result = filter(
             {
                 '0': 'a',
                 '1': 'b',
@@ -41,37 +41,29 @@ describe('collection/filter', function() {
     });
 
     it('should support shorthand syntax', function() {
-        var obj = {
+        const obj = {
             '0': { foo: 'bar', lorem: 'ipsum', id: 1 },
             '1': { foo: 'bar', lorem: 'ipsum', id: 2 },
             '2': { foo: 'bar', lorem: 'ipsum', id: 4 }
         };
-        var arr = [obj[0], obj[1], obj[2]];
+        const arr = [obj[0], obj[1], obj[2]];
 
-        expect(filter(obj, { foo: 'bar', lorem: 'ipsum' })).toEqual([
-            obj[0],
-            obj[1],
-            obj[2]
-        ]);
+        expect(filter(obj, { foo: 'bar', lorem: 'ipsum' })).toEqual([obj[0], obj[1], obj[2]]);
         expect(filter(obj, { lorem: 'ipsum', id: 1 })).toEqual([obj[0]]);
         expect(filter(obj, { amet: 123 })).toEqual([]);
 
-        expect(filter(arr, { foo: 'bar', lorem: 'ipsum' })).toEqual([
-            obj[0],
-            obj[1],
-            obj[2]
-        ]);
+        expect(filter(arr, { foo: 'bar', lorem: 'ipsum' })).toEqual([obj[0], obj[1], obj[2]]);
         expect(filter(arr, { lorem: 'ipsum', id: 1 })).toEqual([obj[0]]);
         expect(filter(arr, { amet: 123 })).toEqual([]);
     });
 
     it('should allow string shorthand syntax', function() {
-        var obj = {
+        const obj = {
             '0': { foo: 'bar', lorem: 'ipsum', id: 1 },
             '1': { foo: 'bar', lorem: 'ipsum', id: 2 },
             '2': { foo: 'bar', lorem: 'ipsum', id: 0 }
         };
-        var arr = [obj[0], obj[1], obj[2]];
+        const arr = [obj[0], obj[1], obj[2]];
 
         expect(filter(obj, 'foo')).toEqual([obj[0], obj[1], obj[2]]);
         expect(filter(obj, 'id')).toEqual([obj[0], obj[1]]);

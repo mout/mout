@@ -4,7 +4,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Object some
  */
-function some(obj, callback, thisObj) {
+function some(obj, callback, thisObj?: any) {
     callback = makeIterator(callback, thisObj);
     let result = false;
     forOwn(obj, function(val, key) {

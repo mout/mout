@@ -1,4 +1,4 @@
-import randSign from '../../../src/random/randSign';
+import randSign from '../../../random/randSign';
 import mockRandom from './helper-mockRandom';
 
 describe('random/randSign()', function() {
@@ -11,8 +11,8 @@ describe('random/randSign()', function() {
     });
 
     it('returns a random number at each call', function() {
-        var a = randSign(),
-            b = randSign();
+        const a = randSign();
+        const b = randSign();
 
         expect(a).not.toBeUndefined();
         expect(a).not.toEqual(Infinity);
@@ -21,23 +21,23 @@ describe('random/randSign()', function() {
     });
 
     it('shouldn\t be biased', function() {
-        var c1 = 0,
-            c_1 = 0,
-            n = 10,
-            rnd;
+        let c1 = 0;
+        let c2 = 0;
+        let n = 10;
+        let rnd;
 
         while (n--) {
             rnd = randSign();
             if (rnd === 1) {
                 c1++;
             } else if (rnd === -1) {
-                c_1++;
+                c2++;
             } else {
                 expect(rnd).toBe('fail, out of range.');
             }
         }
 
-        expect(c_1).toEqual(5);
+        expect(c2).toEqual(5);
         expect(c1).toEqual(5);
     });
 });

@@ -5,7 +5,7 @@ import rtrim from './rtrim';
 /**
  * Remove white-spaces from beginning and end of string.
  */
-function trim(str, chars) {
+function trim(str, chars?: string[]) {
     str = toString(str);
     chars = chars || WHITE_SPACES;
     return ltrim(rtrim(str, chars), chars);

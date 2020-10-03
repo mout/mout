@@ -1,5 +1,5 @@
-//automatically generated, do not edit!
-//run `node build` instead
+// automatically generated, do not edit!
+// run `node build` instead
 
 import './number/spec-MAX_INT';
 import './number/spec-MAX_SAFE_INTEGER';

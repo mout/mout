@@ -1,15 +1,15 @@
-import deepClone from '../../../src/lang/deepClone';
+import deepClone from '../../../lang/deepClone';
 
 describe('lang/deepClone()', function() {
     it('should create a new object and copy properties', function() {
-        var a = { a: 1, b: 2, c: 'foo' };
-        var b = deepClone(a);
+        const a = { a: 1, b: 2, c: 'foo' };
+        const b = deepClone(a);
         expect(b).toEqual(a);
         expect(b).not.toBe(a);
     });
 
     it('should deep clone objects', function() {
-        var a = {
+        const a = {
             a: 1,
             b: {
                 c: 'lorem',
@@ -19,7 +19,7 @@ describe('lang/deepClone()', function() {
                 }
             }
         };
-        var b = deepClone(a);
+        const b = deepClone(a);
 
         expect(b).toEqual(a);
         expect(b).not.toBe(a);
@@ -30,12 +30,12 @@ describe('lang/deepClone()', function() {
     });
 
     it('should deep clone arrays', function() {
-        var a = {
+        const a = {
             a: 1,
             b: [1, 2, ['lorem', { c: 'ipsum', d: ['dolor', 'amet'] }]]
         };
 
-        var b = deepClone(a);
+        const b = deepClone(a);
 
         expect(b).toEqual(a);
         expect(b).not.toBe(a);
@@ -48,11 +48,11 @@ describe('lang/deepClone()', function() {
     });
 
     it('should handle RegExp', function() {
-        var a = {
+        const a = {
             a: 1,
             b: /foo\/bar\/(.+)/
         };
-        var b = deepClone(a);
+        const b = deepClone(a);
 
         expect(b).toEqual(a);
         expect(b).not.toBe(a);
@@ -61,11 +61,11 @@ describe('lang/deepClone()', function() {
     });
 
     it('should handle Date', function() {
-        var a = {
+        const a = {
             a: 1,
             b: new Date()
         };
-        var b = deepClone(a);
+        const b = deepClone(a);
 
         expect(b).toEqual(a);
         expect(b).not.toBe(a);
@@ -76,11 +76,11 @@ describe('lang/deepClone()', function() {
     it('should invoke function to clone instances', function() {
         function CustomType() {}
 
-        var a = {
+        const a = {
             test: new CustomType()
         };
 
-        var result = deepClone(a, function(x) {
+        const result = deepClone(a, function(x) {
             expect(x).toBe(a.test);
             return 1;
         });
@@ -90,11 +90,11 @@ describe('lang/deepClone()', function() {
 
     it('should copy custom instances by reference by default', function() {
         function CustomType() {}
-        var a = {
+        const a = {
             test: new CustomType()
         };
 
-        var result = deepClone(a);
+        const result = deepClone(a);
         expect(result.test).toBe(a.test);
     });
 });

@@ -1,18 +1,18 @@
-import values from '../../../src/object/values';
+import values from '../../../object/values';
 
 describe('object/values()', function() {
     it('should get object values', function() {
-        var obj = {
+        const obj = {
             foo: 123,
             bar: true,
             lorem: 'ipsum'
         };
 
-        var v = values(obj);
+        const v = values(obj);
 
         expect(v.length).toBe(3);
 
-        var haystack = [123, true, 'ipsum'];
+        const haystack = [123, true, 'ipsum'];
         expect(v[0] !== v[1] && v[0] !== v[2]).toBe(true);
         expect(haystack).toContain(v[0]);
         expect(haystack).toContain(v[1]);
@@ -20,17 +20,17 @@ describe('object/values()', function() {
     });
 
     it('should avoid dont enum bugs', function() {
-        var obj = {
+        const obj = {
             toString: 123,
             valueOf: true,
             hasOwnProperty: 'ipsum'
         };
 
-        var v = values(obj);
+        const v = values(obj);
 
         expect(v.length).toBe(3);
 
-        var haystack = [123, true, 'ipsum'];
+        const haystack = [123, true, 'ipsum'];
         expect(v[0] !== v[1] && v[0] !== v[2]).toBe(true);
         expect(haystack).toContain(v[0]);
         expect(haystack).toContain(v[1]);
@@ -38,12 +38,12 @@ describe('object/values()', function() {
     });
 
     it('should filter prototype properties', function() {
-        var Foo = function() {
+        const Foo = function() {
             this.lorem = 'ipsum';
         };
         Foo.prototype = { foo: 'bar' };
 
-        var obj = new Foo();
+        const obj = new Foo();
 
         expect(obj.lorem).toEqual('ipsum');
         expect(obj.foo).toEqual('bar');

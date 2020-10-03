@@ -1,4 +1,4 @@
-import isUndefined from '../../../src/lang/isUndefined';
+import isUndefined from '../../../lang/isUndefined';
 
 describe('lang/isUndefined()', function() {
     it('should detect if value is undefined', function() {

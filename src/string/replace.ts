@@ -20,10 +20,7 @@ function replace(str, search, replacements) {
     while (++i < searchLength) {
         // Use the first replacement for all searches if only one
         // replacement is provided
-        str = str.replace(
-            search[i],
-            replacements[replacementsLength === 1 ? 0 : i],
-        );
+        str = str.replace(search[i], replacements[replacementsLength === 1 ? 0 : i]);
     }
 
     return str;

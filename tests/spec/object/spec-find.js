@@ -1,13 +1,13 @@
-import find from '../../../src/object/find';
+import find from '../../../object/find';
 
 describe('object/find', function() {
     it("should return a property that returns true on the truthy test, loop order isn't ensured", function() {
-        var inner = {
+        const inner = {
             first: 1,
             second: 2
         };
 
-        var obj = {
+        const obj = {
             a: 123,
             b: 'foo',
             c: inner
@@ -31,7 +31,7 @@ describe('object/find', function() {
     });
 
     it("should avoid don't enum bug on IE 7-8", function() {
-        var obj = {
+        const obj = {
             a: 123,
             toString: 'foo123',
             z: 'bar'
@@ -44,7 +44,7 @@ describe('object/find', function() {
     });
 
     it('should support shorthand syntax', function() {
-        var obj = {
+        const obj = {
             a: { foo: 'bar', lorem: 'ipsum', id: 1 },
             b: { foo: 'bar', lorem: 'ipsum', id: 2 },
             c: { foo: 'bar', lorem: 'ipsum', id: 4 }
@@ -54,7 +54,7 @@ describe('object/find', function() {
     });
 
     it('should allow string shorthand syntax', function() {
-        var obj = {
+        const obj = {
             a: { foo: 1, bar: null },
             b: { foo: 0, bar: '' },
             c: { foo: 0, bar: 'amet' }

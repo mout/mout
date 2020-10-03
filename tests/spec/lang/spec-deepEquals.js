@@ -1,4 +1,4 @@
-import deepEquals from '../../../src/lang/deepEquals';
+import deepEquals from '../../../lang/deepEquals';
 
 describe('lang/deepEquals', function() {
     it('should check object values', function() {
@@ -8,8 +8,8 @@ describe('lang/deepEquals', function() {
     });
 
     it('should recursively check values', function() {
-        var a = { value: { a: 1 } };
-        var b = { value: { a: 1 } };
+        const a = { value: { a: 1 } };
+        const b = { value: { a: 1 } };
         expect(deepEquals(a, b)).toBe(true);
 
         b.a = 2;
@@ -17,21 +17,21 @@ describe('lang/deepEquals', function() {
     });
 
     it('should ensure objects have same properties', function() {
-        var a = { value: { a: 1 } };
-        var b = { value: { a: 1, b: 2 } };
+        const a = { value: { a: 1 } };
+        const b = { value: { a: 1, b: 2 } };
         expect(deepEquals(a, b)).toBe(false);
         expect(deepEquals(b, a)).toBe(false);
     });
 
     it('should ignore order of keys', function() {
-        var a = { value: { a: 1, b: 2 } };
-        var b = { value: { b: 2, a: 1 } };
+        const a = { value: { a: 1, b: 2 } };
+        const b = { value: { b: 2, a: 1 } };
         expect(deepEquals(a, b)).toBe(true);
     });
 
     it('should check arrays', function() {
-        var a = { value: { a: [1, 3, [5, { c: 6 }]], b: 2 } };
-        var b = { value: { b: 2, a: [1, 3, [5, { c: 6 }]] } };
+        const a = { value: { a: [1, 3, [5, { c: 6 }]], b: 2 } };
+        const b = { value: { b: 2, a: [1, 3, [5, { c: 6 }]] } };
         expect(deepEquals(a, b)).toBe(true);
     });
 
@@ -52,15 +52,15 @@ describe('lang/deepEquals', function() {
         function B() {}
         B.prototype.isA = false;
 
-        var a = { foo: new A() };
-        var b = { foo: new B() };
+        const a = { foo: new A() };
+        const b = { foo: new B() };
 
         expect(deepEquals(a, b)).toBe(true);
     });
 
     it('should allow custom compare function', function() {
-        var a = { a: 1, b: { value: 2 } };
-        var b = { a: '1', b: { value: '02.0' } };
+        const a = { a: 1, b: { value: 2 } };
+        const b = { a: '1', b: { value: '02.0' } };
 
         function numericCompare(a, b) {
             return +a === +b;

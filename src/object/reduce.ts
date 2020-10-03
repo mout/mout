@@ -4,7 +4,7 @@ import size from './size';
 /**
  * Object reduce
  */
-function reduce(obj, callback, memo, thisObj) {
+function reduce(obj, callback, memo, thisObj?: any) {
     let initial = arguments.length > 2;
 
     if (!size(obj) && !initial) {

@@ -1,8 +1,8 @@
-import indicesOf from '../../../src/array/indicesOf';
+import indicesOf from '../../../array/indicesOf';
 
 describe('array/indicesOf()', function() {
     it('should work in regular arrays', function() {
-        var arr = [1, 'a', 'a', 4, 'a', 4];
+        const arr = [1, 'a', 'a', 4, 'a', 4];
         expect(indicesOf(arr, 1)).toEqual([0]);
         expect(indicesOf(arr, 'a')).toEqual([1, 2, 4]);
         expect(indicesOf(arr, 4)).toEqual([3, 5]);
@@ -10,7 +10,7 @@ describe('array/indicesOf()', function() {
     });
 
     it('should iterate over sparse items. see #64', function() {
-        var arr = [];
+        const arr = [];
         arr[1] = 1;
         arr[3] = 'a';
         arr[4] = undefined; // it's a trap!
@@ -24,7 +24,7 @@ describe('array/indicesOf()', function() {
     });
 
     it('should handle fromIndex', function() {
-        var arr = [1, 'a', 2, 'b', 1];
+        const arr = [1, 'a', 2, 'b', 1];
 
         expect(indicesOf(arr, 1, 2)).toEqual([4]);
         expect(indicesOf(arr, 1, -1)).toEqual([4]);
@@ -45,7 +45,7 @@ describe('array/indicesOf()', function() {
     });
 
     it('should handle negative fromIndex', function() {
-        var arr = [1, 'a', 2, 'b', 1];
+        const arr = [1, 'a', 2, 'b', 1];
 
         expect(indicesOf(arr, 1, -2)).toEqual([4]);
         expect(indicesOf(arr, 1, -12)).toEqual([0, 4]);
@@ -61,7 +61,7 @@ describe('array/indicesOf()', function() {
     });
 
     it('should handle fromIndex greater than length', function() {
-        var arr = [1, 'a', 2, 'b', 1];
+        const arr = [1, 'a', 2, 'b', 1];
 
         expect(indicesOf(arr, 1, 10)).toEqual([]);
         expect(indicesOf(arr, 'a', 100)).toEqual([]);

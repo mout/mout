@@ -1,9 +1,9 @@
-import createObject from '../../../src/lang/createObject';
+import createObject from '../../../lang/createObject';
 
 describe('lang/createObject()', function() {
     it('should create an object', function() {
-        var base = { foo: 'bar' };
-        var result = createObject(base);
+        const base = { foo: 'bar' };
+        const result = createObject(base);
 
         expect(JSON.parse(JSON.stringify(result, ['foo']))).toEqual(base);
 
@@ -13,13 +13,11 @@ describe('lang/createObject()', function() {
     });
 
     it('should mixIn new properties', function() {
-        var base = { foo: 'bar' };
-        var props = { lorem: 'ipsum', num: 5, test: null };
-        var result = createObject(base, props);
+        const base = { foo: 'bar' };
+        const props = { lorem: 'ipsum', num: 5, test: null };
+        const result = createObject(base, props);
 
-        expect(
-            JSON.parse(JSON.stringify(result, ['foo', 'lorem', 'num', 'test']))
-        ).toEqual({
+        expect(JSON.parse(JSON.stringify(result, ['foo', 'lorem', 'num', 'test']))).toEqual({
             foo: 'bar',
             lorem: 'ipsum',
             num: 5,

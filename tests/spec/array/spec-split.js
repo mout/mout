@@ -1,8 +1,8 @@
-import split from '../../../src/array/split';
+import split from '../../../array/split';
 
 describe('array/split()', function() {
     it('should split array into segments', function() {
-        var arr = [1, 2, 3, 4, 5, 6];
+        const arr = [1, 2, 3, 4, 5, 6];
         expect(split(arr, 3)).toEqual([
             [1, 2],
             [3, 4],
@@ -11,7 +11,7 @@ describe('array/split()', function() {
     });
 
     it('should default to 2 segments', function() {
-        var arr = [1, 2, 3, 4, 5, 6];
+        const arr = [1, 2, 3, 4, 5, 6];
         expect(split(arr)).toEqual([
             [1, 2, 3],
             [4, 5, 6]
@@ -19,7 +19,7 @@ describe('array/split()', function() {
     });
 
     it('should put remaining items on first segments if not even split', function() {
-        var arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+        const arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
         expect(split(arr, 3)).toEqual([
             ['a', 'b', 'c'],
             ['d', 'e', 'f'],
@@ -37,7 +37,7 @@ describe('array/split()', function() {
     });
 
     it('should not return empty segments', function() {
-        var arr = [1, 2];
+        const arr = [1, 2];
         expect(split(arr, 3)).toEqual([[1], [2]]);
     });
 });

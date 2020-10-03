@@ -1,4 +1,4 @@
-import escapeUnicode from '../../../src/string/escapeUnicode';
+import escapeUnicode from '../../../string/escapeUnicode';
 
 describe('string/escapeUnicode', function() {
     it('should escape only especial chars by default', function() {

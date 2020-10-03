@@ -1,4 +1,4 @@
-import isObject from '../../../src/lang/isObject';
+import isObject from '../../../lang/isObject';
 
 describe('lang/isObject()', function() {
     it('should detect if value is an object', function() {

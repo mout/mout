@@ -1,4 +1,4 @@
-import timeout from '../../../src/function/timeout';
+import timeout from '../../../function/timeout';
 
 describe('function/timeout', function() {
     function doIt() {
@@ -18,7 +18,7 @@ describe('function/timeout', function() {
     });
 
     it('should delay the execution', function() {
-        var callback = jasmine.createSpy();
+        const callback = jasmine.createSpy();
         timeout(callback, 300);
 
         jasmine.clock.tick(100);
@@ -29,7 +29,7 @@ describe('function/timeout', function() {
     });
 
     it('should call function in given context', function() {
-        var context = { a: 0 };
+        const context = { a: 0 };
         timeout(doIt, 300, context);
 
         jasmine.clock.tick(350);
@@ -37,7 +37,7 @@ describe('function/timeout', function() {
     });
 
     it('should curry arguments', function() {
-        var context = { a: 0 };
+        const context = { a: 0 };
         timeout(manipulate, 300, context, 5);
 
         jasmine.clock.tick(350);
@@ -45,8 +45,8 @@ describe('function/timeout', function() {
     });
 
     it('should cancel a timemout', function() {
-        var callback = jasmine.createSpy();
-        var id = timeout(callback, 200);
+        const callback = jasmine.createSpy();
+        const id = timeout(callback, 200);
 
         jasmine.clock.tick(100);
         clearTimeout(id);

@@ -1,4 +1,4 @@
-import min from '../../../src/array/min';
+import min from '../../../array/min';
 
 describe('array/min()', function() {
     it('should return minimum value', function() {
@@ -26,7 +26,7 @@ describe('array/min()', function() {
     });
 
     it('should allow shorthand string iterator', function() {
-        var arr = [
+        const arr = [
             { a: 1, b: 3 },
             { a: 4, b: 1 },
             { a: 2, b: 8 }
@@ -36,8 +36,8 @@ describe('array/min()', function() {
     });
 
     it('should pass thisObj to callback', function() {
-        var arr = [{ a: 1, b: 0 }, { b: 0.5 }, { c: 1.5 }];
-        var context = ['a', 'b', 'c'];
+        const arr = [{ a: 1, b: 0 }, { b: 0.5 }, { c: 1.5 }];
+        const context = ['a', 'b', 'c'];
         function map(val, i) {
             return val[this[i]];
         }

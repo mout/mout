@@ -1,7 +1,7 @@
-import result from '../../../src/object/result';
+import result from '../../../object/result';
 
 describe('object/result', function() {
-    var object = {
+    const object = {
         attribute: 'attribute',
         anotherAttribute: 'anotherAttribute',
         falsey: '',

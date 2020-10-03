@@ -1,4 +1,4 @@
-import isBoolean from '../../../src/lang/isBoolean';
+import isBoolean from '../../../lang/isBoolean';
 
 describe('lang/isBoolean()', function() {
     it('should detect if value is a Boolean', function() {

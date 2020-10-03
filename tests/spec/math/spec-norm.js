@@ -1,4 +1,4 @@
-import norm from '../../../src/math/norm';
+import norm from '../../../math/norm';
 
 describe('math/norm()', function() {
     it('should normalize value inside range', function() {

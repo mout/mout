@@ -1,11 +1,11 @@
-import pick from '../../../src/array/pick';
+import pick from '../../../array/pick';
 
 describe('array/pick()', function() {
     it('should remove a random item from the array and return it', function() {
-        var arr = [1, 2, 3, 4, 5, 6],
-            copy = arr.concat();
+        const arr = [1, 2, 3, 4, 5, 6];
+        const copy = arr.concat();
 
-        var a = pick(arr);
+        const a = pick(arr);
 
         expect(copy).toContain(a);
         expect(arr).not.toContain(a);
@@ -13,10 +13,10 @@ describe('array/pick()', function() {
     });
 
     it('should return undefined if empty array', function() {
-        var arr = [],
-            copy = arr.concat();
+        const arr = [];
+        arr.concat();
 
-        var a = pick(arr);
+        const a = pick(arr);
 
         expect(a).toBeUndefined();
         expect(arr).not.toContain(a);
@@ -29,10 +29,10 @@ describe('array/pick()', function() {
     });
 
     it('should return a new array with N random items and remove items from original array if user supply second argument', function() {
-        var arr = [1, 2, 3, 4, 5, 6];
-        var copy = arr.concat();
+        const arr = [1, 2, 3, 4, 5, 6];
+        const copy = arr.concat();
 
-        var result = pick(arr, 3);
+        const result = pick(arr, 3);
 
         expect(result.length).toEqual(3);
         expect(arr.length).toEqual(3);
@@ -44,7 +44,7 @@ describe('array/pick()', function() {
         expect(copy).toContain(result[2]);
         expect(arr).not.toContain(result[2]);
 
-        var result2 = pick(arr, 3);
+        const result2 = pick(arr, 3);
 
         expect(result2.length).toEqual(3);
         expect(arr.length).toEqual(0);
@@ -66,8 +66,8 @@ describe('array/pick()', function() {
     });
 
     it('should limit the amount of items based on array.length', function() {
-        var arr = [1];
-        var result = pick(arr, 2);
+        const arr = [1];
+        const result = pick(arr, 2);
         expect(result).toEqual([1]);
         expect(arr.length).toEqual(0);
     });

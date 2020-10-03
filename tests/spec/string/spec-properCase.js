@@ -1,4 +1,4 @@
-import properCase from '../../../src/string/properCase';
+import properCase from '../../../string/properCase';
 
 describe('string/properCase()', function() {
     it('should uppercase first char of each word and lowercase others', function() {

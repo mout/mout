@@ -2,12 +2,13 @@ import forOwn from './forOwn';
 
 /**
  * Combine properties from all the objects into first one.
- * - This method affects target object in place, if you want to create a new Object pass an empty object as first param.
+ * - This method affects target object in place, if you want to create a new Object pass an empty
+ * object as first param.
  * @param {object} target    Target Object
  * @param {...object} objects    Objects to be combined (0...n objects).
  * @return {object} Target Object.
  */
-function mixIn(target, objects) {
+function mixIn(target, ...objects) {
     let i = 0;
     const n = arguments.length;
     let obj;

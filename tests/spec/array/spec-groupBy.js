@@ -1,4 +1,4 @@
-import groupBy from '../../../src/array/groupBy';
+import groupBy from '../../../array/groupBy';
 
 describe('array/groupBy', function() {
     it('should bucket appropriately', function() {
@@ -14,7 +14,7 @@ describe('array/groupBy', function() {
     });
 
     it('should accept thisArg', function() {
-        var x = {
+        const x = {
             '1': 'left',
             '2': 'left',
             '3': 'left',

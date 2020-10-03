@@ -4,7 +4,7 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Object every
  */
-function every(obj, callback, thisObj) {
+function every(obj, callback, thisObj?: any) {
     callback = makeIterator(callback, thisObj);
     let result = true;
     forOwn(obj, function(val, key) {

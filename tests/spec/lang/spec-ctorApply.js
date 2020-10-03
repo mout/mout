@@ -1,22 +1,22 @@
-import ctorApply from '../../../src/lang/ctorApply';
+import ctorApply from '../../../lang/ctorApply';
 
 describe('lang/ctorApply()', function() {
     it('should call constructor only once passing arguments and keep prototype chain', function() {
-        var _count = 0;
+        let _count = 0;
 
-        var Foo = function(a, b, c) {
+        const Foo = function(a, b, c) {
             this.a = a;
             this.b = b;
             this.c = c;
             _count++;
         };
 
-        //make sure prototype chain is maintained
+        // make sure prototype chain is maintained
         Foo.prototype.get = function(key) {
             return this[key];
         };
 
-        var obj = ctorApply(Foo, ['lorem', 'ipsum', 123]);
+        const obj = ctorApply(Foo, ['lorem', 'ipsum', 123]);
 
         expect(_count).toEqual(1);
         expect(obj.get('a')).toEqual('lorem');

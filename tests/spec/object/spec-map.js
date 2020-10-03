@@ -1,13 +1,13 @@
-import map from '../../../src/object/map';
+import map from '../../../object/map';
 
 describe('object/map()', function() {
     it('should return a new object with updated values', function() {
-        var obj = {
+        const obj = {
             a: 1,
             b: 2
         };
 
-        var result = map(obj, function(x) {
+        const result = map(obj, function(x) {
             return x + 1;
         });
         expect(result.a).toEqual(2);
@@ -16,12 +16,12 @@ describe('object/map()', function() {
     });
 
     it('should pass key as second parameter', function() {
-        var obj = {
+        const obj = {
             a: null,
             b: null
         };
 
-        var result = map(obj, function(val, key) {
+        const result = map(obj, function(val, key) {
             return key;
         });
         expect(result.a).toEqual('a');
@@ -30,12 +30,12 @@ describe('object/map()', function() {
     });
 
     it('should pass object as third parameter', function() {
-        var obj = {
+        const obj = {
             a: null,
             b: null
         };
 
-        var result = map(obj, function(v, k, obj) {
+        const result = map(obj, function(v, k, obj) {
             return obj;
         });
         expect(result.a).toBe(obj);
@@ -43,24 +43,24 @@ describe('object/map()', function() {
     });
 
     it('should keep undefined/null properties', function() {
-        var obj = {
+        const obj = {
             u: undefined,
             n: null
         };
 
-        var result = map(obj, function(v) {
+        const result = map(obj, function(v) {
             return v;
         });
-        expect('u' in obj).toBe(true);
-        expect(obj.u).toBeUndefined();
-        expect(obj.n).toBeNull();
+        expect('u' in result).toBe(true);
+        expect(result.u).toBeUndefined();
+        expect(result.n).toBeNull();
     });
 
     it('should use provided this object', function() {
-        var obj = { foo: null },
-            thisObj = {};
+        const obj = { foo: null };
+        const thisObj = {};
 
-        var result = map(
+        const result = map(
             obj,
             function() {
                 return this;
@@ -71,7 +71,7 @@ describe('object/map()', function() {
     });
 
     it('should allow string shorthand syntax', function() {
-        var obj = {
+        const obj = {
             a: { foo: 'bar', lorem: 'ipsum', id: 1 },
             b: { foo: 'bar', lorem: 'ipsum', id: 2 },
             c: { foo: 'bar', lorem: 'ipsum', id: 0 }
@@ -86,11 +86,11 @@ describe('object/map()', function() {
     });
 
     it('should return a new object with unchanged values if no callback', function() {
-        var obj = {
+        const obj = {
             a: 1,
             b: 2
         };
-        var result = map(obj);
+        const result = map(obj);
         expect(result).toEqual({ a: 1, b: 2 });
         expect(result).not.toBe(obj);
     });

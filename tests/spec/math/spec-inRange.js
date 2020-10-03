@@ -1,4 +1,4 @@
-import inRange from '../../../src/math/inRange';
+import inRange from '../../../math/inRange';
 
 describe('math/inRange()', function() {
     it('should return true if val is inside range', function() {
@@ -8,9 +8,7 @@ describe('math/inRange()', function() {
         expect(inRange(-6, -10, -2)).toEqual(true);
 
         expect(inRange(10, -Number.MAX_VALUE, Number.MAX_VALUE)).toEqual(true);
-        expect(
-            inRange(1234567890, -Number.MAX_VALUE, Number.MAX_VALUE)
-        ).toEqual(true);
+        expect(inRange(1234567890, -Number.MAX_VALUE, Number.MAX_VALUE)).toEqual(true);
     });
 
     it('should return false if val is outside range', function() {

@@ -1,4 +1,4 @@
-import isArray from '../../../src/lang/isArray';
+import isArray from '../../../lang/isArray';
 
 describe('lang/isArray()', function() {
     it('should detect if value is a Array', function() {

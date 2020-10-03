@@ -1,10 +1,10 @@
-import indexOf from '../../../src/array/indexOf';
+import indexOf from '../../../array/indexOf';
 
 describe('array/indexOf()', function() {
-    var idx = indexOf;
+    const idx = indexOf;
 
     it('should work in regular arrays', function() {
-        var arr = [1, 'a', 2, 'b'];
+        const arr = [1, 'a', 2, 'b'];
 
         expect(idx(arr, 1)).toEqual(0);
         expect(idx(arr, 'a')).toEqual(1);
@@ -15,7 +15,7 @@ describe('array/indexOf()', function() {
     });
 
     it('should loop all items, even if sparse. see #64', function() {
-        var arr = [];
+        const arr = [];
         arr[0] = 'bar';
         arr[1] = 1;
         arr[3] = 'a';
@@ -36,7 +36,7 @@ describe('array/indexOf()', function() {
     });
 
     it('should handle fromIndex', function() {
-        var arr = [1, 'a', 2, 'b'];
+        const arr = [1, 'a', 2, 'b'];
 
         expect(idx(arr, 1, 2)).toEqual(-1);
         expect(idx(arr, 'a', 2)).toEqual(-1);
@@ -47,7 +47,7 @@ describe('array/indexOf()', function() {
     });
 
     it('should handle fromIndex in sparse arrays. see #64', function() {
-        var arr = [];
+        const arr = [];
         arr[1] = 1;
         arr[3] = 'a';
         arr[6] = 2;
@@ -62,7 +62,7 @@ describe('array/indexOf()', function() {
     });
 
     it('should handle negative fromIndex', function() {
-        var arr = [1, 'a', 2, 'b'];
+        const arr = [1, 'a', 2, 'b'];
 
         expect(idx(arr, 1, -2)).toEqual(-1);
         expect(idx(arr, 'a', -2)).toEqual(-1);
@@ -73,7 +73,7 @@ describe('array/indexOf()', function() {
     });
 
     it('should handle fromIndex greater than length', function() {
-        var arr = [1, 'a', 2, 'b'];
+        const arr = [1, 'a', 2, 'b'];
 
         expect(idx(arr, 1, 15)).toEqual(-1);
         expect(idx(arr, 'a', 15)).toEqual(-1);

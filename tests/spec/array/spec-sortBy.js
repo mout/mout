@@ -1,27 +1,27 @@
-import sortBy from '../../../src/array/sortBy';
+import sortBy from '../../../array/sortBy';
 
 describe('array/sortBy', function() {
     it('should sort array with function', function() {
-        var arr = [{ a: 1 }, { a: 3 }, { a: 2 }];
+        const arr = [{ a: 1 }, { a: 3 }, { a: 2 }];
 
-        var result = sortBy(arr, function(item) {
+        const result = sortBy(arr, function(item) {
             return item.a;
         });
         expect(result).toEqual([arr[0], arr[2], arr[1]]);
     });
 
     it('should sort array with property name', function() {
-        var arr = [{ a: 3 }, { a: 5 }, { a: 1 }];
+        const arr = [{ a: 3 }, { a: 5 }, { a: 1 }];
 
-        var result = sortBy(arr, 'a');
+        sortBy(arr, 'a');
         expect(sortBy(arr, 'a')).toEqual([arr[2], arr[0], arr[1]]);
     });
 
     it('should pass index and context to accessor', function() {
-        var context = {},
-            arr = [{ b: 'a' }, { b: 'c' }, { b: 'b' }];
+        const context = {};
+        const arr = [{ b: 'a' }, { b: 'c' }, { b: 'b' }];
 
-        var result = sortBy(
+        const result = sortBy(
             arr,
             function(item) {
                 expect(this).toBe(context);
@@ -34,14 +34,14 @@ describe('array/sortBy', function() {
     });
 
     it('should handle null array', function() {
-        var result = sortBy(null, function() {
+        const result = sortBy(null, function() {
             return 1;
         });
         expect(result).toEqual([]);
     });
 
     it('should handle empty array', function() {
-        var result = sortBy([], function() {
+        const result = sortBy([], function() {
             return 1;
         });
         expect(result).toEqual([]);

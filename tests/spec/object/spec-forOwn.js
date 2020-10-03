@@ -1,17 +1,15 @@
-import forOwn from '../../../src/object/forOwn';
-
-var global = this;
+import forOwn from '../../../object/forOwn';
 
 describe('object/forOwn()', function() {
     it('should loop through all properties', function() {
-        var obj = {
+        const obj = {
             foo: 123,
             bar: true,
             lorem: 'ipsum'
         };
 
-        var keys = [],
-            vals = [];
+        const keys = [];
+        const vals = [];
 
         forOwn(obj, function(val, key, o) {
             expect(o).toBe(obj);
@@ -22,7 +20,7 @@ describe('object/forOwn()', function() {
         expect(keys.length).toBe(3);
 
         // loop order isn't guaranteed to be always the same
-        var haystack = ['foo', 'bar', 'lorem'];
+        let haystack = ['foo', 'bar', 'lorem'];
         expect(keys[0] !== keys[1] && keys[0] !== keys[2]).toBe(true);
         expect(haystack).toContain(keys[0]);
         expect(haystack).toContain(keys[1]);
@@ -36,14 +34,14 @@ describe('object/forOwn()', function() {
     });
 
     it('should fix dont enum bug', function() {
-        var obj = {
+        const obj = {
             toString: 123,
             valueOf: true,
             hasOwnProperty: 'ipsum'
         };
 
-        var keys = [],
-            vals = [];
+        const keys = [];
+        const vals = [];
 
         forOwn(obj, function(val, key, o) {
             expect(o).toBe(obj);
@@ -53,7 +51,7 @@ describe('object/forOwn()', function() {
 
         expect(keys.length).toBe(3);
 
-        var haystack = ['toString', 'valueOf', 'hasOwnProperty'];
+        let haystack = ['toString', 'valueOf', 'hasOwnProperty'];
         expect(keys[0] !== keys[1] && keys[0] !== keys[2]).toBe(true);
         expect(haystack).toContain(keys[0]);
         expect(haystack).toContain(keys[1]);
@@ -67,13 +65,13 @@ describe('object/forOwn()', function() {
     });
 
     it('should allow custom thisObject', function() {
-        var obj = {
+        const obj = {
             a: 123,
             b: true,
             c: 'ipsum'
         };
 
-        var count = 0;
+        let count = 0;
 
         forOwn(obj, function(val, key, o) {
             expect(o).toBe(obj);
@@ -95,15 +93,15 @@ describe('object/forOwn()', function() {
     });
 
     it('should filter prototype properties', function() {
-        var Foo = function() {
+        const Foo = function() {
             this.lorem = 'ipsum';
         };
         Foo.prototype = { foo: 'bar' };
 
-        var obj = new Foo();
+        const obj = new Foo();
 
-        var keys = [],
-            vals = [];
+        const keys = [];
+        const vals = [];
 
         forOwn(obj, function(val, key, o) {
             expect(o).toBe(obj);
@@ -116,14 +114,14 @@ describe('object/forOwn()', function() {
     });
 
     it('should allow exiting the iteration early. see #94', function() {
-        var obj = {
+        const obj = {
             a: 123,
             b: true,
             c: 'ipsum',
             d: 456
         };
 
-        var count = 0;
+        let count = 0;
 
         forOwn(obj, function(val, key, o) {
             count++;

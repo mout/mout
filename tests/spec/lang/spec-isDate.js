@@ -1,4 +1,4 @@
-import isDate from '../../../src/lang/isDate';
+import isDate from '../../../lang/isDate';
 
 describe('lang/isDate()', function() {
     it('should detect if value is a Date', function() {

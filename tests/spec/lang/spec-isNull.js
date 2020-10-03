@@ -1,4 +1,4 @@
-import isNull from '../../../src/lang/isNull';
+import isNull from '../../../lang/isNull';
 
 describe('lang/isNull()', function() {
     it('should detect if value is a Null', function() {

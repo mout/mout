@@ -1,4 +1,4 @@
-import upperCase from '../../../src/string/upperCase';
+import upperCase from '../../../string/upperCase';
 
 describe('string/upperCase()', function() {
     it('should convert string to lower case', function() {

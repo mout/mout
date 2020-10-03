@@ -1,8 +1,8 @@
-import compact from '../../../src/array/compact';
+import compact from '../../../array/compact';
 
 describe('array/compact()', function() {
     it('should remove null and undefined items', function() {
-        var arr = [1, 2, null, false, '', 'foo', undefined];
+        const arr = [1, 2, null, false, '', 'foo', undefined];
         arr[10] = 'bar';
 
         expect(compact(arr).length).toBe(6);

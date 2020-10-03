@@ -1,4 +1,4 @@
-import isNear from '../../../src/math/isNear';
+import isNear from '../../../math/isNear';
 
 describe('math/isNear()', function() {
     it('should return true if val is close to target +/- threshold', function() {

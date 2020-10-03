@@ -1,17 +1,15 @@
-import forIn from '../../../src/object/forIn';
-
-var global = this;
+import forIn from '../../../object/forIn';
 
 describe('object/forIn', function() {
     it('should loop through all properties', function() {
-        var obj = {
+        const obj = {
             foo: 123,
             bar: true,
             lorem: 'ipsum'
         };
 
-        var keys = [],
-            vals = [];
+        const keys = [];
+        const vals = [];
 
         forIn(obj, function(val, key, o) {
             expect(o).toBe(obj);
@@ -24,13 +22,13 @@ describe('object/forIn', function() {
     });
 
     it('should enumerate special properties when defined', function() {
-        var obj = {
+        const obj = {
             constructor: 'foo',
             toString: 'bar',
             hasOwnProperty: true
         };
 
-        var keys = [];
+        const keys = [];
         forIn(obj, function(value, key) {
             keys.push(key);
         });
@@ -52,9 +50,9 @@ describe('object/forIn', function() {
             return '[Foo bar: ' + this.bar + ']';
         };
 
-        var obj = new Foo();
-        var keys = [],
-            values = [];
+        const obj = new Foo();
+        const keys = [];
+        const values = [];
 
         forIn(obj, function(value, key, o) {
             keys.push(key);
@@ -75,13 +73,13 @@ describe('object/forIn', function() {
     });
 
     it('should allow custom thisObject', function() {
-        var obj = {
+        const obj = {
             a: 123,
             b: true,
             c: 'ipsum'
         };
 
-        var count = 0;
+        let count = 0;
 
         forIn(obj, function(val, key, o) {
             expect(o).toBe(obj);
@@ -103,14 +101,14 @@ describe('object/forIn', function() {
     });
 
     it('should allow exiting the iteration early. see #94', function() {
-        var obj = {
+        const obj = {
             a: 123,
             b: true,
             c: 'ipsum',
             d: 456
         };
 
-        var count = 0;
+        let count = 0;
 
         forIn(obj, function(val, key, o) {
             count++;

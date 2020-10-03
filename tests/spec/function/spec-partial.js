@@ -1,18 +1,18 @@
-import partial from '../../../src/function/partial';
+import partial from '../../../function/partial';
 
-var _ = partial._;
+const _ = partial._;
 
-var add = function(a, b) {
+const add = function(a, b) {
     return a + b;
 };
 
-var append = function(a, b, c) {
+const append = function(a, b, c) {
     return a + b + c;
 };
 
 describe('function/partial', function() {
     it('should curry arguments', function() {
-        var addTen = partial(add, 10);
+        const addTen = partial(add, 10);
         expect(addTen(2)).toBe(12);
         expect(addTen(5)).toBe(15);
     });

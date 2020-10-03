@@ -47,7 +47,7 @@ function toUtc(d) {
         d.getHours(),
         d.getMinutes(),
         d.getSeconds(),
-        d.getMilliseconds(),
+        d.getMilliseconds()
     );
 }
 
@@ -102,10 +102,7 @@ function getFractionalMonth(start, end) {
             daysElapsed = endDay + baseDay;
             // total days should be relative to 1st day of next month if
             // startDay > endTotalDays
-            totalDays =
-                startDay > endTotalDays ?
-                    endTotalDays + baseDay + 1 :
-                    startDay + baseDay;
+            totalDays = startDay > endTotalDays ? endTotalDays + baseDay + 1 : startDay + baseDay;
         } else {
             // fractional is only based on endMonth eg: Jan 12 - Feb 18
             // (6 fractional days, 28 days until next full month)
@@ -120,9 +117,9 @@ function getFractionalMonth(start, end) {
 }
 
 function getFractionalYear(start, end, elapsedYears) {
-    const base = elapsedYears ?
-        new Date(end.getFullYear(), start.getMonth(), start.getDate()) :
-        start;
+    const base = elapsedYears
+        ? new Date(end.getFullYear(), start.getMonth(), start.getDate())
+        : start;
     const elapsedDays = diff(base, end, 'day');
     return elapsedDays / totalDaysInYear(end);
 }

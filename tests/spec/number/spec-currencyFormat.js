@@ -1,4 +1,4 @@
-import currencyFormat from '../../../src/number/currencyFormat';
+import currencyFormat from '../../../number/currencyFormat';
 
 describe('number/currencyFormat()', function() {
     it('should format numbers into a currency-like format', function() {

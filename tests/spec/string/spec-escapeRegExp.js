@@ -1,4 +1,4 @@
-import escapeRegExp from '../../../src/string/escapeRegExp';
+import escapeRegExp from '../../../string/escapeRegExp';
 
 describe('string/escapeRegExp', function() {
     it('should escape special chars', function() {

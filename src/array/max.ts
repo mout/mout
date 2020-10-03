@@ -3,10 +3,11 @@ import makeIterator from '../function/makeIterator_';
 /**
  * Return maximum value inside array
  */
-function max(arr, iterator, thisObj) {
+function max(arr, iterator?, thisObj?: any) {
     if (arr == null || !arr.length) {
         return Infinity;
     } else if (arr.length && !iterator) {
+        // eslint-disable-next-line prefer-spread
         return Math.max.apply(Math, arr);
     } else {
         iterator = makeIterator(iterator, thisObj);

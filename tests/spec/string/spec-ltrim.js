@@ -1,14 +1,14 @@
-import ltrim from '../../../src/string/ltrim';
+import ltrim from '../../../string/ltrim';
 
 describe('string/ltrim()', function() {
     it('should remove whitespaces from begin of string', function() {
-        var str = '   \t \t \t\t     lorem  ipsum    \t \t  \t\t  ';
+        const str = '   \t \t \t\t     lorem  ipsum    \t \t  \t\t  ';
         expect(ltrim(str)).toEqual('lorem  ipsum    \t \t  \t\t  ');
     });
 
     it('should remove specified chars from begin of string', function() {
-        var str = '-+-*test*-+-';
-        var chars = ['-', '+', '*'];
+        const str = '-+-*test*-+-';
+        const chars = ['-', '+', '*'];
         expect(ltrim(str, chars)).toEqual('test*-+-');
     });
 

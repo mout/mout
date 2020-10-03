@@ -3,9 +3,9 @@ import forOwn from './forOwn';
 /**
  * Get object values
  */
-function values(obj) {
-    const vals = [];
-    forOwn(obj, function(val, key) {
+function values<T>(obj: Record<string, T>): T[] {
+    const vals: T[] = [];
+    forOwn(obj, function(val: T, key: string) {
         vals.push(val);
     });
     return vals;

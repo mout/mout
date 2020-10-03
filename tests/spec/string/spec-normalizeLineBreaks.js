@@ -1,8 +1,8 @@
-import normalizeLineBreaks from '../../../src/string/normalizeLineBreaks';
+import normalizeLineBreaks from '../../../string/normalizeLineBreaks';
 
 describe('string/normalizeLineBreaks()', function() {
     it('should convert line breaks to the same standard.', function() {
-        var str = 'foo\nbar\r\nlorem\ripsum';
+        let str = 'foo\nbar\r\nlorem\ripsum';
 
         expect(/\r\n/.test(str)).toEqual(true);
         expect(/\r/.test(str)).toEqual(true);
@@ -16,7 +16,7 @@ describe('string/normalizeLineBreaks()', function() {
     });
 
     it('should allow custom line break.', function() {
-        var str = 'foo\nbar\r\nlorem\ripsum';
+        let str = 'foo\nbar\r\nlorem\ripsum';
 
         expect(/\r\n/.test(str)).toEqual(true);
         expect(/\r/.test(str)).toEqual(true);

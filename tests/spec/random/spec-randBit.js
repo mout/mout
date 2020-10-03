@@ -1,4 +1,4 @@
-import randBit from '../../../src/random/randBit';
+import randBit from '../../../random/randBit';
 import mockRandom from './helper-mockRandom';
 
 describe('random/randBit()', function() {
@@ -11,8 +11,8 @@ describe('random/randBit()', function() {
     });
 
     it('returns a random number at each call', function() {
-        var a = randBit(),
-            b = randBit();
+        const a = randBit();
+        const b = randBit();
         expect(a).not.toBeUndefined();
         expect(a).not.toEqual(Infinity);
         expect(a).not.toEqual(NaN);
@@ -20,10 +20,10 @@ describe('random/randBit()', function() {
     });
 
     it('shouldn\t be biased', function() {
-        var c1 = 0,
-            c0 = 0,
-            n = 10,
-            rnd;
+        let c1 = 0;
+        let c0 = 0;
+        let n = 10;
+        let rnd;
 
         while (n--) {
             rnd = randBit();

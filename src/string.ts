@@ -80,5 +80,5 @@ export {
     unescapeHtml,
     unescapeUnicode,
     unhyphenate,
-    upperCase,
+    upperCase
 };

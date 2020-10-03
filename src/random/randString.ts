@@ -2,8 +2,7 @@ import isNumber from '../lang/isNumber';
 import isString from '../lang/isString';
 import randInt from './randInt';
 
-const defaultDictionary =
-    '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const defaultDictionary = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 function randomString(length, dictionary) {
     if (!isNumber(length) || length <= 0) {

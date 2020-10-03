@@ -3,8 +3,7 @@ import filter from './filter';
 /**
  * @return {array} Array of unique items
  */
-function unique(arr, compare) {
-    compare = compare || isEqual;
+function unique(arr, compare = isEqual) {
     return filter(arr, function(item, i, arr) {
         const n = arr.length;
         while (++i < n) {

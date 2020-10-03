@@ -100,5 +100,5 @@ export {
     union,
     unique,
     xor,
-    zip,
+    zip
 };

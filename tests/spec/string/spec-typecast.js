@@ -1,4 +1,4 @@
-import typecast from '../../../src/string/typecast';
+import typecast from '../../../string/typecast';
 
 describe('string/typecast()', function() {
     it('should typecast values if Number, Boolean, null or undefined', function() {

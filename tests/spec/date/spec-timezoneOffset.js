@@ -1,4 +1,4 @@
-import timezoneOffset from '../../../src/date/timezoneOffset';
+import timezoneOffset from '../../../date/timezoneOffset';
 
 describe('date/timezoneOffset', function() {
     it('should return time zone as hour and minute offset from UTC (e.g. +0900)', function() {
