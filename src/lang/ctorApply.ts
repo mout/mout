@@ -4,7 +4,8 @@ const bind = Function.prototype.bind;
  * Do fn.apply on a constructor.
  */
 function ctorApply(ctor, args) {
-    const Bound = bind.bind(ctor, undefined)(...args);
+    // eslint-disable-next-line prefer-spread
+    const Bound = bind.bind(ctor, undefined).apply(undefined, args);
     return new Bound();
 }
 

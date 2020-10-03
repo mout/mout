@@ -1,11 +1,11 @@
-import slice from '../array/slice';
-
 /**
  * Return a copy of the object, filtered to only have values for the whitelisted keys.
  */
-function pick(obj, ..._) {
-    const keys = typeof arguments[1] !== 'string' ? arguments[1] : slice(arguments, 1);
-    const out = {};
+function pick<T extends {}>(obj: T, varKeys: string[]): Partial<T>;
+function pick<T extends {}>(obj: T, ...varKeys: string[]): Partial<T>;
+function pick<T extends {}>(obj: T, ...varKeys) {
+    const keys = Array.isArray(varKeys[0]) ? (varKeys[0] as string[]) : (varKeys as string[]);
+    const out: Partial<typeof obj> = {};
     let i = 0;
     let key;
     while ((key = keys[i++])) {
