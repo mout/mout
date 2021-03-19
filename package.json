@@ -1,7 +1,7 @@
 {
-  "name": "mout",
+  "name": "@arnaudnyc/mout",
   "description": "Modular Utilities",
-  "version": "1.2.2",
+  "version": "1.2.2-secfix",
   "homepage": "http://moutjs.com/",
   "author": "Miller Medeiros <contact@millermedeiros.com> (http://blog.millermedeiros.com)",
   "contributors": [
