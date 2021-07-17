@@ -15,7 +15,12 @@ define(['./enforcePrecision'], function (enforcePrecision) {
         val = enforcePrecision(val, nDecimals);
 
         var str, mod;
+        var negative = false;
 
+        if (val < 0){
+            val = -val;
+            negative = true;
+        }
         if (val < 1000000) {
             mod = enforcePrecision(val / 1000, nDecimals);
             // might overflow to next scale during rounding
@@ -26,7 +31,9 @@ define(['./enforcePrecision'], function (enforcePrecision) {
         } else {
             str = enforcePrecision(val / 1000000000, nDecimals) + dict.billion;
         }
-
+        if (negative){
+            str = '-' + str;
+        }
         return str;
     }
 
