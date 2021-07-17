@@ -68,6 +68,41 @@ define(['mout/string/interpolate'], function (interpolate) {
             expect( interpolate('{{-#$&@_}}', replacements) ).toEqual('foo bar');
         });
 
+
+        it('should support deeply nested templates', function() {
+            var replacements = {
+                'level1': '{{level2}}',
+                'level2': 'This is {{level3}}',
+                'level3': 'somewhat deep'
+            };
+            expect( interpolate('{{level1}} nesting', replacements ) ).toBe( 'This is somewhat deep nesting' );
+            expect( interpolate('{{0}} nesting', ['{{1}}', 'This is {{2}}', 'somewhat deep']) ).toBe( 'This is somewhat deep nesting' );
+        });
+
+
+        it('should support multiple deeply nested templates', function() {
+            var replacements = {
+                'level1' : '{{level2a}}. {{level2b}}',
+                'level2a': 'This sentence is made of {{level3a}}',
+                'level2b': 'And, this one has {{level3b}}',
+                'level3a': 'three {{level4}}',
+                'level3b': 'only two',
+                'level4' : 'nested templates'
+            };
+            expect( interpolate('{{level1}} nested templates.', replacements ) ).toBe( 'This sentence is made of three nested templates. And, this one has only two nested templates.' );
+        });
+
+
+        it('should remove undefined tokens when template is deeply nested', function() {
+            var replacements = {
+                'level1': '{{level2}}',
+                'level2': 'This is{{level3}}',
+                'level4': ' Okay'
+            };
+            expect( interpolate('{{level1}} nesting.{{level4}}', replacements ) ).toBe( 'This is nesting. Okay' );
+            expect( interpolate('{{1}} nesting.{{3}}', ['{{1}}', 'This is{{2}}', undefined, ' Okay'] ) ).toBe( 'This is nesting. Okay' );
+        });
+
     });
 
 });
