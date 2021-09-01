@@ -17,7 +17,7 @@ define(['mout/number/abbreviate'], function (abbr) {
             expect( abbr(1001   )).toEqual( '1K'    );
             expect( abbr(1100   )).toEqual( '1.1K'  );
             expect( abbr(5721   )).toEqual( '5.7K'  );
-            expect( abbr(-5721   )).toEqual( '-5.7K'  );
+            expect( abbr(-5721  )).toEqual( '-5.7K'  );
 
             expect( abbr(999000    )).toEqual( '999K'   );
             expect( abbr(999900    )).toEqual( '999.9K' );
@@ -25,7 +25,7 @@ define(['mout/number/abbreviate'], function (abbr) {
             expect( abbr(999999    )).toEqual( '1M'     );
             expect( abbr(1000000   )).toEqual( '1M'     );
             expect( abbr(1000000.1 )).toEqual( '1M'     );
-            expect( abbr(-1000000.1 )).toEqual( '-1M'     );
+            expect( abbr(-1000000.1)).toEqual( '-1M'    );
             expect( abbr(1000101   )).toEqual( '1M'     );
             expect( abbr(1100000   )).toEqual( '1.1M'   );
             expect( abbr(5721000   )).toEqual( '5.7M'   );
@@ -40,7 +40,7 @@ define(['mout/number/abbreviate'], function (abbr) {
             expect( abbr(1000000001   )).toEqual( '1B'     );
             expect( abbr(1100000000   )).toEqual( '1.1B'   );
             expect( abbr(5721000000   )).toEqual( '5.7B'   );
-            expect( abbr(-5721000000   )).toEqual( '-5.7B'   );
+            expect( abbr(-5721000000  )).toEqual( '-5.7B' );
             expect( abbr(9876543210   )).toEqual( '9.9B'   ); // round
         });
 
