@@ -31,6 +31,13 @@ define(
                 expect( o.foo ).toEqual( 'bar' );
             });
 
+            it('should be safe from prototype pollution', function () {
+                var o = {};
+                var payload = JSON.parse('["constructor.prototype.polluted"]');
+                set(o, payload, 'bar');
+                expect( o.polluted ).toEqual( undefined );
+            });
+
         });
 
     }

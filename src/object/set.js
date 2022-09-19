@@ -4,15 +4,16 @@ define(['./namespace'], function (namespace) {
      * set "nested" object property
      */
     function set(obj, prop, val){
+        var stringifiedProp = prop.toString();
         // prototype pollution mitigation
-        if(prop.includes('__proto__') || prop.includes('prototype') || prop.includes('constructor')) {
+        if(stringifiedProp.includes('__proto__') || stringifiedProp.includes('prototype') || stringifiedProp.includes('constructor')) {
             return false;
         }
-        var parts = (/^(.+)\.(.+)$/).exec(prop);
+        var parts = (/^(.+)\.(.+)$/).exec(stringifiedProp);
         if (parts){
             namespace(obj, parts[1])[parts[2]] = val;
         } else {
-            obj[prop] = val;
+            obj[stringifiedProp] = val;
         }
     }
 
