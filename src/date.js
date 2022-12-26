@@ -5,6 +5,7 @@ define(function(require){
 return {
     'dayOfTheYear' : require('./date/dayOfTheYear'),
     'diff' : require('./date/diff'),
+    'format' : require('./date/format'),
     'i18n_' : require('./date/i18n_'),
     'isLeapYear' : require('./date/isLeapYear'),
     'isSame' : require('./date/isSame'),
